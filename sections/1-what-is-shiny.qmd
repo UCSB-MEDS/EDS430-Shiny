@@ -11,7 +11,7 @@ format: revealjs
 
 ---
 
-<div class="slide-title bottombr">Shiny makes building web apps easy</div>
+<div class="slide-title">Shiny makes building web apps easy</div>
 
 <p class="quote-text-bg body-text bottombr">*"**Shiny is an R package that makes it easy to build interactive web apps straight from R.** You can host standalone apps on a webpage or embed them in [R Markdown](https://rmarkdown.rstudio.com/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626) documents or build [dashboards](http://rstudio.github.io/shinydashboard/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/?_ga=2.94499804.1997816511.1640293283-2019993402.1637352626), [htmlwidgets](http://www.htmlwidgets.org/), and JavaScript [actions.](https://github.com/daattali/shinyjs/blob/master/README.md)"* - RStudio</p>
 
@@ -32,7 +32,7 @@ format: revealjs
 
 ##  {#basic-anatomy data-menu-title="Basic Anatomy"}
 
-<div class="slide-title bottombr">The basic anatomy of a Shiny app</div>
+<div class="slide-title">The basic anatomy of a Shiny app</div>
 
 <p class="body-text bottombr">Shiny apps are composed in *two* parts: (1) a **web page** that displays the app to a user (i.e. the **user interface**, or **UI** for short), and (2) a **computer** that powers the app (i.e. the **server**)</p>
 
@@ -44,10 +44,13 @@ format: revealjs
 
 ##  {#widgets data-menu-title="Widgets"}
 
-<div class="slide-title bottombr">Widgets are web elements that users can interact with via the UI</div>
+<div class="slide-title">Widgets are web elements that users can interact with via the UI</div>
 
-::: {.column width="65%"}
+::: {.column width="60%"}
 <center><img src="images/basic_widgets.png" alt="Examples of Shiny's pre-built widget options. These include buttons, single checkbox, checkbox groups, date input, date range, file input, numeric input, radio buttons, select box, sliders, and text input. The default color scheme is black and gray with selections highlighted in blue." width="675"/></center>
+:::
+
+::: {.column width="5%"}
 :::
 
 ::: {.column width="35%"}
@@ -62,7 +65,7 @@ format: revealjs
 
 ##  {#reactivity-intro data-menu-title="Reactivity Intro"}
 
-<div class="slide-title bottombr">Reactivity: a brief intro</div>
+<div class="slide-title">Reactivity: a brief intro</div>
 
 <p class="body-text bottombr">Reactivity is what makes Shiny apps responsive i.e. it lets the app instantly update itself whenever the user makes a change. At a very basic level, it looks something like this:</p>
 
@@ -83,7 +86,7 @@ format: revealjs
 
 ##  {#built-in-examples data-menu-title="Built-in Examples"}
 
-<div class="slide-title bottombr">The Shiny packages comes with 11 built-in examples</div>
+<div class="slide-title">The Shiny packages comes with 11 built-in examples</div>
 
 <p class="small-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Check out the available Shiny app examples by running this code in your console:</p>
 
@@ -123,7 +126,7 @@ sliderInput(inputId = "bins",
 
 ##  {#lets-build-our-own data-menu-title="Let's Build Our Own"}
 
-<div class="slide-title bottombr">Let's build our own!</div>
+<div class="slide-title">Let's build our own!</div>
 
 <p class="body-text"> We're going to cover a lot over our two days. Here's a general **roadmap** of what you can expect:</p>
 
@@ -133,6 +136,6 @@ TBD
 
 ##  {#the-data data-menu-title="The Data"}
 
-<div class="slide-title bottombr">The data</div>
+<div class="slide-title">The data</div>
 
 TBD

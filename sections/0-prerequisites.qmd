@@ -7,7 +7,7 @@ format: revealjs
 <div class="slide-title">`r fontawesome::fa("check", fill = "#047C90", a11y = "sem")` Prerequisites</div>
 
 ::: {.column width="70%"}
-<div class="body-text topbr bottombr">*This workshop assumes that participants have the following:*</div>
+<div class="body-text bottombr">*This workshop assumes that participants have the following:*</div>
 
 <div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` R/RStudio installed & a basic familiarity with the language</div>
 
@@ -33,9 +33,9 @@ install.packages(c("shiny", "tidyverse", "palmerpenguins", "DT", "shinyWidgets",
 
 ## {#resources1 data-menu-title="Resources"}
 
-<div class="slide-title bottombr">There are *lots* of really great Shiny resources out there</div>
+<div class="slide-title">There are *lots* of really great Shiny resources out there</div>
 
-<p class="body-text topbr">This workshop draws on many great online resources, including:</p>
+<p class="body-text">This workshop draws on many great online resources, including:</p>
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Garrett Grolemund's [Building Web Applications with Shiny](https://shiny.rstudio.com/tutorial/) tutorial (find the [GitHub Repo here](ttps://github.com/rstudio-education/shiny.rstudio.com-tutorial))</p>  
 
@@ -51,11 +51,11 @@ install.packages(c("shiny", "tidyverse", "palmerpenguins", "DT", "shinyWidgets",
 
 ## {#resources1 data-menu-title="More resources"}
 
-<div class="slide-title bottombr">There are *lots* of really great Shiny resources out there</div>
+<div class="slide-title">There are *lots* of really great Shiny resources out there</div>
 
-<p class="body-text topbr">Be sure to check out Posit/RStudio's great instructional resources and examples as well:</p>
+<p class="body-text bottombr">Be sure to check out Posit/RStudio's great instructional resources and examples as well:</p>
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` A thoughtfully organized [Articles](https://shiny.rstudio.com/articles/) page</p>
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` The [Shiny User Showcase](https://shiny.rstudio.com/gallery/#user-showcase), a collection of Shiny apps and their source code developed by the Shiny developer community -- many of these featured apps are winners or honorable mentions of the [annual Shiny contest](https://www.rstudio.com/blog/winners-of-the-3rd-annual-shiny-contest/)!</p>
@@ -63,7 +63,10 @@ install.packages(c("shiny", "tidyverse", "palmerpenguins", "DT", "shinyWidgets",
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny Demos](https://shiny.rstudio.com/gallery/#demos), a series of apps created by the Shiny developers to highlight specific features of the shiny package -- these are *excellent* resources to turn to when you are learning how to implement a new type of widget, working on the layout of your app, and more.</p>
 :::
 
-::: {.column width="50%"}
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
 ```{r}
 #| echo: false
 #| out-width: 90%
