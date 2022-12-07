@@ -1,0 +1,61 @@
+---
+format: revealjs
+---
+
+##  {#what-is-shiny data-menu-title="What is Shiny?" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("r-project", fill = "#d2e3f3", a11y = "sem")` What is Shiny?</p>
+<p class="caption-text">*Think interactive web pages built by people who love to code in R (i.e. hopefully many of you!), no JavaScript experience necessary.*</p>
+</div>
+
+---
+
+<div class="slide-title bottombr">Shiny makes building web apps easy</div>
+
+<p class="quote-text-bg body-text bottombr">*"**Shiny is an R package that makes it easy to build interactive web apps straight from R.** You can host standalone apps on a webpage or embed them in [R Markdown](https://rmarkdown.rstudio.com/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626) documents or build [dashboards](http://rstudio.github.io/shinydashboard/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/?_ga=2.94499804.1997816511.1640293283-2019993402.1637352626), [htmlwidgets](http://www.htmlwidgets.org/), and JavaScript [actions.](https://github.com/daattali/shinyjs/blob/master/README.md)"* - RStudio</p>
+
+<center><img src="images/worldbank-shiny.gif" alt="A gif of Andre Duarte's 'Worldbank-Shiny' app. On the lefthand side of the app, the title 'Gapminder Interactive Plot' sits above a series of three widgets. The first is a dropdown menu where the user can select a region (e.g. Europe & Central Asia) or view all regions at the same time. The next two widgets are slider inputs -- the first allows the user to select a year between 1960 and 2014, and the second allows the user to select a population size between 500 and 5000. On the right hand side of the app is a bubble plot of Fertility Rate vs. Life Expectancy, which updates as inputs are changed by the user. Hovering a bubble displays thge corresponding Country, Region, Population, Life Expectancy, and Fertility Rate." width="700"/></center>
+
+<center><p class="small-text gray-text topbr">[Worldbank-Shiny](https://github.com/aguimaraesduarte/WorldBank-Shiny) app to visualize fertility rate vs. life expectancy from 1960 to 2015, by [Andre Duarte](https://github.com/aguimaraesduarte)</p></center>
+
+---
+
+##  {#app-anatomoy data-menu-title="Anatomy of an app" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("puzzle-piece", fill = "#d2e3f3", a11y = "sem")` The anatomoy of a Shiny app</p>
+<p class="caption-text">*What does a Shiny app look like under the hood?*</p>
+</div>
+
+---
+
+##  {#basic-anatomoy data-menu-title="Basic Anatomy"}
+
+<div class="slide-title bottombr">The basic anatomy of a Shiny app</div>
+
+<p class="body-text bottombr">Shiny apps are composed in *two* parts: (1) a **web page** that displays the app to a user (i.e. the **user interface**, or **UI** for short), and (2) a **computer** that powers the app (i.e. the **server**)</p>
+
+<center><img src="images/basic_shiny_app.png" alt="A simple schematic of a Shiny app, which includes the User Interface (UI, colored in blue) and the Server (colored in orange). The UI creates what the user will see and interact with, while the server builds the outputs that react and update based on user inputs." width="675"/></center>
+
+<p class="body-text bottombr">The **UI** controls the **layout and appearance** of your app and is written in HTML (except we use functions from the `{shiny}` package to write that HTML). The **server** handles the **logic** of the app -- in other words, it is a set of instructions that tells the webpage what to display when a user interacts with it.</p>
+
+---
+
+##  {#widgets data-menu-title="Widgets"}
+
+<div class="slide-title bottombr">Widgets are web elements that users can interact with via the UI</div>
+
+::: {.column width="65%"}
+<center><img src="images/basic_widgets.png" alt="Examples of Shiny's pre-built widget options. These include buttons, single checkbox, checkbox groups, date input, date range, file input, numeric input, radio buttons, select box, sliders, and text input. The default color scheme is black and gray with selections highlighted in blue." width="675"/></center>
+:::
+
+::: {.column width="35%"}
+<br>
+
+<p class="body-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets collect information from the user which is then used to update outputs created in the server.</p>
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Shiny comes with a variety of [pre-built widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) (see left), but you can also explore widget extensions using the [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets) package.</p>
+:::
+
+

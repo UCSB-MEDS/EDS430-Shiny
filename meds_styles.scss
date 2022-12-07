@@ -1,0 +1,170 @@
+/*-- scss:defaults --*/
+
+// fonts
+//@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Roboto+Mono:wght@300&family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Nunito+Sans:wght@200&family=Roboto+Mono:wght@300&family=Sanchez&display=swap');
+
+// Fonts (CSS rules)
+//$font-family-sans-serif: 'Nunito Sans', sans-serif;
+//$font-family-monospace: 'Roboto Mono', monospace;
+$font-family-serif: 'Sanchez', serif;
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$font-family-monospace: 'Roboto Mono', monospace;
+
+// Colors
+$baby-blue: #d2e3f3;
+$teal: #047C90;
+$dark-blue: #003660;
+$white: #FFFFFF;
+$green: #78A540;
+$magenta: #900C3F;
+$off-white: #F7F7F7;
+$gray: #ADADAD;
+
+// scss variables
+$presentation-title-slide-text-align: "left";
+$body-bg: $white;
+$link-color: $green;
+$code-color: $magenta;
+$code-bg: $off-white;
+$code-block-font-size: 0.4em;
+$code-block-bg: $off-white;
+
+/*-- scss:rules --*/
+
+// HTML selectors //
+
+strong, b {
+  font-weight: 900; // does not change weight?
+  color: $teal;
+}
+
+th {
+font-size: 35px;
+}
+
+td {
+  font-size: 20px;
+}
+
+/* h3 {
+  font-family: $font-family-serif;
+  color: $teal;
+  font-size: 1.4em;
+  font-weight: 700;
+} */
+
+// Class selectors //
+
+.custom-title {
+  font-family: $font-family-serif;
+  color: $baby-blue;
+  font-size: 1.7em;
+  //position: absolute;
+  left: 20px;
+}
+
+.custom-subtitle {
+  font-family: $font-family-sans-serif;
+  color: $baby-blue;
+  font-size: 1.2em;
+  font-weight: 900;
+  //position: absolute;
+  left: 20px;
+}
+
+.custom-subtitle2 {
+  font-family: $font-family-sans-serif;
+  color: $baby-blue;
+  font-size: 1em;
+  //position: absolute;
+  left: 20px;
+}
+
+.custom-subtitle3 {
+  font-family: $font-family-sans-serif;
+  color: $baby-blue;
+  font-size: 0.8em;
+  //position: absolute;
+  left: 20px;
+}
+
+.title-footer {
+  text-align: center !important;
+  color: $baby-blue;
+  font-size: 0.4em !important;
+}
+
+.slide-title {
+  font-family: $font-family-serif;
+  color: $teal;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.large-body-text {
+  font-family: $font-family-sans-serif;
+  color: $teal;
+  font-size: 1em;
+}
+
+.body-text {
+	font-size: 23px;
+	line-height: 1.7em;
+	margin-bottom: 1em;
+}
+
+.small-text {
+  font-size: 19px;
+	line-height: 1.5em;
+}
+
+.gray-text {
+  color: $gray;
+}
+
+.important-text-bg {
+  background-color: rgba(217, 178, 189, 0.5);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 8px;
+  border-radius: 25px;
+}
+
+.quote-text-bg {
+  background-color: rgba(218, 224, 224, 0.5);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 8px;
+  border-radius: 15px;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.page-center {
+  //padding: 70px 0;
+  line-height: 700px;
+  text-align: center;
+}
+
+ .topbr {
+    display: inline-block;
+    margin-top: 1em;
+}
+
+ .bottombr {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.panel-tabset {
+  font-size: 30px;
+}
