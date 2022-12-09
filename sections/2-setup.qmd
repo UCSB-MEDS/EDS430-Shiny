@@ -81,7 +81,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title">Run your app</div>
 
-<p class="small-text">Once you have saved your `app.R` file, the "Run" code button should turn into a "Run App" button that looks like:</span> <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/>. Click that button to run your app (alternatively, run `runApp("directory-name")` in your console -- for me, that looks like, `runApp(one-file-app)`)!</p>
+<p class="small-text">Once you have saved your `app.R` file, the "Run" code button should turn into a "Run App" button that looks like:</span> <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/>. Click that button to run your app (alternatively, run `runApp("directory-name")` in your console -- for me, that looks like, `runApp("one-file-app")`)!</p>
 
 . . .
 
@@ -103,7 +103,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title">Create a two-file Shiny app</div>
 
-<p class="body-text">Moving forward, we'll be building apps using the two-file format -- you'll find that code expands quickly, even when building relatively small apps. This two-file approach (well, three if you use a `global.R` file, which is encouraged) will help to keep our code a bit more manageable.</p>
+<p class="body-text">In practice, you will likely find yourself opting for the the two-file format -- code expands quickly, even when building relatively small apps. This two-file approach (well, three if you use a `global.R` file, which is encouraged) will help to keep your code a bit more manageable.</p>
 
 . . . 
 

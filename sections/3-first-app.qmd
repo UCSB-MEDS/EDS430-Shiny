@@ -1,0 +1,142 @@
+---
+format: revealjs
+---
+
+##  {#build-app data-menu-title="Building Out Your 1st App" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building out your first app</p>
+<p class="caption-text">*Here, we'll create our first reactive object and establish a general Shiny coding workflow.*</p>
+</div>
+
+---
+
+##  {#roadmap-app1 data-menu-title="Roadmap (app #1)"}
+
+<div class="slide-title bottombr">Roadmap for app #1</div>
+
+<p class="body-text">We'll start by building a small **single-file app** using data from the `{palmerpenguins}` package. We'll build out the the following features:</p>
+
+::: {.column width="45%"}
+<br>
+<br>
+
+<p class="body-text">**(a)** A title and subtitle</p>
+
+<p class="body-text topbr">**(b)** A slider widget for users to select a range of penguin body masses</p>
+
+<p class="body-text topbr">**(c)** A reactive scatterplot that updates based on user-supplied values</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700"/></center>
+:::
+
+---
+
+##  {#adding-text data-menu-title="Adding text"}
+
+<div class="slide-title">Add text in the UI</div>
+
+<p class="small-text">We'll do this in the **UI** within `fluidPage()`, a layout function that sets up the basic visual structure of the page and scales components in real time to fill all available browser width. Add a title and subtitle to your app (be sure to separate each with a comma, `,`), save, and run:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+# user interface ----
+ui <- fluidPage(
+  
+  # app title ----
+  "My App Title",
+  
+  # app subtitle ----
+  "Exploring Antarctic Penguins and Temperatures"
+  
+  )
+```
+
+. . . 
+
+<p class="small-text">Recall that the UI is actually just an HTML document. We can style our text by adding static HTML elements using `tags` -- a list of functions that parallel common HTML tags (e.g. `<h1>` == `tags$h1()`) The most common tags also have wrapper functions (e.g. `h1()`).</p>
+
+```{r}
+#| eval: false
+#| echo: true
+# user interface ----
+ui <- fluidPage(
+  
+  # app title ----
+  tags$h1("My App Title"), # alternatively, you can use the `h1()` wrapper function
+  
+  # app subtitle ----
+  p(strong("Exploring Antarctic Penguins and Temperatures")) # alternatively, `tags$p(tags$strong("text"))`
+  
+  )
+```
+
+---
+
+##  {#inputs-outputs data-menu-title="Inputs & Outputs"}
+
+<div class="slide-title">What are inputs and outputs?</div>
+
+<p class="small-text">Next, we will begin to add some inputs and outputs to our UI inside `fluidPage()` (anything that you put into `fluidPage()` will appear in our app's user interface...and we want inputs and outputs to show up there!).</p>
+
+<p class="small-text">**Inputs** (or widgets) are the things that users can interact with (e.g. toggle, slide) and provide values to your app. The input functions below correspond to the widgets you see on [slide #9](https://ucsb-meds.github.io/EDS430-Shiny/#/widgets). **Outputs** are the R objects that your user sees (e.g. tables, plots) and are what respond when a user interacts with/changes an input value.</p>
+
+<p class="small-text">The `shiny` package comes with a number of input and output functions, but you can extend these with additional packages (e.g. `shinyWidgets`, `plotly`, `DT`, etc.; more on those later).</p>
+
+::: {.column width="45%"}
+<p class="body-text">**Examples of Input Functions:**</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `actionButton()`</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `checkboxInput()`</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `checkboxGroupInput()`</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `dateInput()`</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `dateRangeInput()`</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `radioButtons()`</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `selectInput()`</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `sliderInput()`</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `textInput()`</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` See full list of `shiny` input functions [here](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/)</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<p class="body-text">**Examples of Output Functions:**</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `dataTableOutput()` (inserts an interactive table)</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `imageOutput()` (inserts an image)</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `plotOutput()` (inserts a plot)</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `tableOutput()` (inserts a table)</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `textOutput()` (inserts text)</p>  
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` See full list of `shiny` output functions [here](https://shiny.rstudio.com/tutorial/written-tutorial/lesson4/)</p>  
+:::
+---
+
+##  {#reactive-plot-app1 data-menu-title="Adding reactive plot (app #1)"}
+
+<div class="slide-title">Adding our reactive plot</div>
+
+<p class="small-text">Next, we'll create a **scatterplot of penguin bill lengths vs. penguin flipper lengths** using the `penguins` data set from the `{palmerpengiuns}` package. We will make this scatterplot *reactive* by adding a `sliderInput` that allows users to filter the displayed data points by **selecting a range of penguin body masses** (e.g. only plot bill and flipper lengths for penguins with body masses ranging from 4,500 grams to 6,000 grams).</p>
+
+::: {.column width="45%"}
+<br>
+<br>
+<p class="small-text">**To create a reactive plot, we will follow these steps:**</p>
+<p class="smaller-text">**1.** Add an input (e.g. `sliderInput`) to the **UI** that users can interact with</p>
+<p class="smaller-text">**2.** Add an output (e.g. `plotOutput`) to the **UI** that creates a *placeholder space* to fill with our eventual reactive output</p>
+<p class="smaller-text">**3.** Tell the server how to assemble inputs into outputs</p>
+:::
+
+::: {.column width="5%"}
+::: 
+
+::: {.column width="45%"}
+<center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700"/></center>
+:::
+
+---

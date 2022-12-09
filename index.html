@@ -506,7 +506,7 @@ Be sure to check out Posit/RStudio’s great instructional resources and example
 Shiny makes building web apps easy
 </div>
 <p class="quote-text-bg body-text bottombr">
-<em>“<strong>Shiny is an R package that makes it easy to build interactive web apps straight from R.</strong> You can host standalone apps on a webpage or embed them in <a href="https://rmarkdown.rstudio.com/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626">R Markdown</a> documents or build <a href="http://rstudio.github.io/shinydashboard/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626">dashboards</a>. You can also extend your Shiny apps with <a href="http://rstudio.github.io/shinythemes/?_ga=2.94499804.1997816511.1640293283-2019993402.1637352626">CSS themes</a>, <a href="http://www.htmlwidgets.org/">htmlwidgets</a>, and JavaScript <a href="https://github.com/daattali/shinyjs/blob/master/README.md">actions.</a>”</em> - RStudio
+<em>“<strong>Shiny is an R package that makes it easy to build interactive web apps straight from R.</strong> You can host standalone apps on a webpage or embed them in <a href="https://rmarkdown.rstudio.com/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626">R Markdown</a> documents or build <a href="http://rstudio.github.io/shinydashboard/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626">dashboards</a>. You can also extend your Shiny apps with <a href="http://rstudio.github.io/shinythemes/?_ga=2.94499804.1997816511.1640293283-2019993402.1637352626">CSS themes</a>, <a href="http://www.htmlwidgets.org/">htmlwidgets</a>, and JavaScript <a href="https://github.com/daattali/shinyjs/blob/master/README.md">actions.</a>”</em> <strong>- RStudio</strong>
 </p>
 <center>
 <img src="images/worldbank-shiny.gif" alt="A gif of Andre Duarte's 'Worldbank-Shiny' app. On the lefthand side of the app, the title 'Gapminder Interactive Plot' sits above a series of three widgets. The first is a dropdown menu where the user can select a region (e.g. Europe &amp; Central Asia) or view all regions at the same time. The next two widgets are slider inputs -- the first allows the user to select a year between 1960 and 2014, and the second allows the user to select a population size between 500 and 5000. On the right hand side of the app is a bubble plot of Fertility Rate vs. Life Expectancy, which updates as inputs are changed by the user. Hovering a bubble displays thge corresponding Country, Region, Population, Life Expectancy, and Fertility Rate." width="700">
@@ -716,7 +716,7 @@ You can create a single-file app using RStudio’s built-in Shiny app template (
 Run your app
 </div>
 <p class="small-text">
-Once you have saved your <code>app.R</code> file, the “Run” code button should turn into a “Run App” button that looks like: <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;">. Click that button to run your app (alternatively, run <code>runApp("directory-name")</code> in your console – for me, that looks like, <code>runApp(one-file-app)</code>)!
+Once you have saved your <code>app.R</code> file, the “Run” code button should turn into a “Run App” button that looks like: <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;">. Click that button to run your app (alternatively, run <code>runApp("directory-name")</code> in your console – for me, that looks like, <code>runApp("one-file-app")</code>)!
 </p>
 <div class="fragment">
 <p class="small-text topbr">
@@ -740,7 +740,7 @@ You should also notice a red stop sign, <img src="images/stop.png" alt="A red he
 Create a two-file Shiny app
 </div>
 <p class="body-text">
-Moving forward, we’ll be building apps using the two-file format – you’ll find that code expands quickly, even when building relatively small apps. This two-file approach (well, three if you use a <code>global.R</code> file, which is encouraged) will help to keep our code a bit more manageable.
+In practice, you will likely find yourself opting for the the two-file format – code expands quickly, even when building relatively small apps. This two-file approach (well, three if you use a <code>global.R</code> file, which is encouraged) will help to keep your code a bit more manageable.
 </p>
 <div class="fragment">
 <p class="small-text topbr">
@@ -775,7 +775,7 @@ Moving forward, we’ll be building apps using the two-file format – you’ll 
 </div>
 <div class="fragment">
 <p class="small-text">
-<strong>3.</strong> Lastly, let’s create a <code>global.R</code> file within <code>/two-file-app</code> and add dependencies (right now, that’s just loading the <code>shiny</code> package) Run your app as we did earlier.
+<strong>3.</strong> Lastly, let’s create a <code>global.R</code> file within <code>/two-file-app</code> and add dependencies (right now, that’s just loading the <code>shiny</code> package). Run your app as we did earlier.
 </p>
 <p class="body-text">
 <strong><code>global.R</code></strong>
@@ -785,7 +785,193 @@ Moving forward, we’ll be building apps using the two-file format – you’ll 
 <span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(shiny)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="TheEnd" class="slide level2" data-menu-title="~End Slide~"><h2></h2>
+</section><section id="build-app" class="slide level2" data-menu-title="Building Out Your 1st App" data-background="#053660"><h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<svg aria-label="Tools" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Tools</title>
+<path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z"></path></svg> Building out your first app
+</p>
+<p class="caption-text">
+<em>Here, we’ll create our first reactive object and establish a general Shiny coding workflow.</em>
+</p>
+</div>
+</section><section id="roadmap-app1" class="slide level2" data-menu-title="Roadmap (app #1)"><h2></h2>
+<div class="slide-title bottombr">
+Roadmap for app #1
+</div>
+<p class="body-text">
+We’ll start by building a small <strong>single-file app</strong> using data from the <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a> package. We’ll build out the the following features:
+</p>
+<div class="column" style="width:45%;">
+<p><br><br></p>
+<p class="body-text">
+<strong>(a)</strong> A title and subtitle
+</p>
+<p class="body-text topbr">
+<strong>(b)</strong> A slider widget for users to select a range of penguin body masses
+</p>
+<p class="body-text topbr">
+<strong>(c)</strong> A reactive scatterplot that updates based on user-supplied values
+</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700">
+</center>
+</div>
+</section><section id="adding-text" class="slide level2" data-menu-title="Adding text"><h2></h2>
+<div class="slide-title">
+Add text in the UI
+</div>
+<p class="small-text">
+We’ll do this in the <strong>UI</strong> within <code>fluidPage()</code>, a layout function that sets up the basic visual structure of the page and scales components in real time to fill all available browser width. Add a title and subtitle to your app (be sure to separate each with a comma, <code>,</code>), save, and run:
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># user interface ----</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="co"># app title ----</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="st">"My App Title"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6"></a>  </span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="co"># app subtitle ----</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>  <span class="st">"Exploring Antarctic Penguins and Temperatures"</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>  </span>
+<span id="cb9-10"><a href="#cb9-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p class="small-text">
+Recall that the UI is actually just an HTML document. We can style our text by adding static HTML elements using <code>tags</code> – a list of functions that parallel common HTML tags (e.g.&nbsp;<code>&lt;h1&gt;</code> == <code>tags$h1()</code>) The most common tags also have wrapper functions (e.g.&nbsp;<code>h1()</code>).
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># user interface ----</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="co"># app title ----</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"My App Title"</span>), <span class="co"># alternatively, you can use the `h1()` wrapper function</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  </span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="co"># app subtitle ----</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>  <span class="fu">p</span>(<span class="fu">strong</span>(<span class="st">"Exploring Antarctic Penguins and Temperatures"</span>)) <span class="co"># alternatively, `tags$p(tags$strong("text"))`</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>  </span>
+<span id="cb10-10"><a href="#cb10-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="inputs-outputs" class="slide level2" data-menu-title="Inputs &amp; Outputs"><h2></h2>
+<div class="slide-title">
+What are inputs and outputs?
+</div>
+<p class="small-text">
+Next, we will begin to add some inputs and outputs to our UI inside <code>fluidPage()</code> (anything that you put into <code>fluidPage()</code> will appear in our app’s user interface…and we want inputs and outputs to show up there!).
+</p>
+<p class="small-text">
+<strong>Inputs</strong> (or widgets) are the things that users can interact with (e.g.&nbsp;toggle, slide) and provide values to your app. The input functions below correspond to the widgets you see on <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/widgets">slide #9</a>. <strong>Outputs</strong> are the R objects that your user sees (e.g.&nbsp;tables, plots) and are what respond when a user interacts with/changes an input value.
+</p>
+<p class="small-text">
+The <code>shiny</code> package comes with a number of input and output functions, but you can extend these with additional packages (e.g.&nbsp;<code>shinyWidgets</code>, <code>plotly</code>, <code>DT</code>, etc.; more on those later).
+</p>
+<div class="column" style="width:45%;">
+<p class="body-text">
+<strong>Examples of Input Functions:</strong>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>actionButton()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>checkboxInput()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>checkboxGroupInput()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>dateInput()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>dateRangeInput()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>radioButtons()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>selectInput()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>sliderInput()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>textInput()</code>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg> See full list of <code>shiny</code> input functions <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/">here</a>
+</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<p class="body-text">
+<strong>Examples of Output Functions:</strong>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>dataTableOutput()</code> (inserts an interactive table)
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>imageOutput()</code> (inserts an image)
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>plotOutput()</code> (inserts a plot)
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>tableOutput()</code> (inserts a table)
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><code>textOutput()</code> (inserts text)
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg> See full list of <code>shiny</code> output functions <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson4/">here</a>
+</p>
+</div>
+</section><section id="reactive-plot-app1" class="slide level2" data-menu-title="Adding reactive plot (app #1)"><h2></h2>
+<div class="slide-title">
+Adding our reactive plot
+</div>
+<p class="small-text">
+Next, we’ll create a <strong>scatterplot of penguin bill lengths vs.&nbsp;penguin flipper lengths</strong> using the <code>penguins</code> data set from the <code>{palmerpengiuns}</code> package. We will make this scatterplot <em>reactive</em> by adding a <code>sliderInput</code> that allows users to filter the displayed data points by <strong>selecting a range of penguin body masses</strong> (e.g.&nbsp;only plot bill and flipper lengths for penguins with body masses ranging from 4,500 grams to 6,000 grams).
+</p>
+<div class="column" style="width:45%;">
+<br><br><p class="small-text">
+<strong>To create a reactive plot, we will follow these steps:</strong>
+</p>
+<p class="smaller-text">
+<strong>1.</strong> Add an input (e.g.&nbsp;<code>sliderInput</code>) to the <strong>UI</strong> that users can interact with
+</p>
+<p class="smaller-text">
+<strong>2.</strong> Add an output (e.g.&nbsp;<code>plotOutput</code>) to the <strong>UI</strong> that creates a <em>placeholder space</em> to fill with our eventual reactive output
+</p>
+<p class="smaller-text">
+<strong>3.</strong> Tell the server how to assemble inputs into outputs
+</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700">
+</center>
+</div>
+</section><section class="slide level2"></section><section id="TheEnd" class="slide level2" data-menu-title="~End Slide~"><h2></h2>
 <center>
 <div class="slide-title bottombr">
 I’m excited to see what <em>Shiny</em> new apps you all create!
