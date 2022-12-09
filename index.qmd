@@ -51,7 +51,7 @@ format:
 
 ---
 
-{{< include sections/setup.qmd >}}
+{{< include sections/2-setup.qmd >}}
 
 ---
 

@@ -97,6 +97,8 @@ library(shiny)
 runExample(example = NA)
 ```
 
+. . .
+
 <p class="small-text topbr bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Run the first example, which plots R’s built-in `faithful` data set with a configurable number of bins:</p>
 
 ```{r}
