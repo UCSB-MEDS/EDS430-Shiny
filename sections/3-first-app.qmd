@@ -125,11 +125,10 @@ ui <- fluidPage(
 
 ::: {.column width="45%"}
 <br>
-<br>
 <p class="small-text">**To create a reactive plot, we will follow these steps:**</p>
-<p class="smaller-text">**1.** Add an input (e.g. `sliderInput`) to the **UI** that users can interact with</p>
-<p class="smaller-text">**2.** Add an output (e.g. `plotOutput`) to the **UI** that creates a *placeholder space* to fill with our eventual reactive output</p>
-<p class="smaller-text">**3.** Tell the server how to assemble inputs into outputs</p>
+<p class="small-text topbr">**1.** Add an input (e.g. `sliderInput`) to the **UI** that users can interact with</p>
+<p class="small-text">**2.** Add an output (e.g. `plotOutput`) to the **UI** that creates a *placeholder space* to fill with our eventual reactive output</p>
+<p class="small-text">**3.** Tell the **server** how to assemble inputs into outputs</p>
 :::
 
 ::: {.column width="5%"}
@@ -140,3 +139,137 @@ ui <- fluidPage(
 :::
 
 ---
+
+##  {#input-syntax data-menu-title="Input Syntax"}
+
+<div class="slide-title">Input function syntax</div>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **All input functions have the same first argument, `inputId`** (**NOTE:** `Id` *not* `ID`), **which is used to connect the front end of your app (the UI) with the back end (the server).** For example, if your UI has an `inputId = "name"`, the server function will access it using the syntax `input$name`. The `inputId` has two constraints: **(1)** it must be a simple string containing only letters, numbers, and underscores, **(2)** it must be unique.</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Most input functions have a second parameter called `label`, which is used to create a human-readable label for the control, which will appear in the UI.</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` The remaining arguments are unique to each input function. Oftentimes, these include a `value` parameter, which lets you set the default value of your widget, where applicable.</p>
+
+<p class="body-text topbr">**A couple examples:**</p>
+```{r}
+#| eval: false
+#| echo: true
+sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):", value = c(3000, 4000), ...)
+
+selectInput(inputId = "island", label = "Choose and island:", ...)
+```
+
+<p class="small-text topbr">Check out the interactive [Shiny Widgets Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html) to learn how to implement the most common widgets.</p>
+
+---
+
+##  {#add-input data-menu-title="Add an Input"}
+
+<div class="slide-title">**Step 1:** Add an input to your app</div>
+
+<p class="body-text">First let's add a `sliderInput()` that will allow users to select a range of penguin body masses (g).</p>
+
+```{r}
+#| eval: false
+#| echo: true
+# user interface ----
+ui <- fluidPage(
+  
+  # ~ previous code omitted for brevity ~
+  
+  # body mass slider input ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+              min = 2700, max = 6300, value = c(3000, 4000))
+  )
+```
+
+. . . 
+
+<p class="body-text">When you run your app, you should see something similar to the image below. It's operable, but does not yet have an associated output.</p>
+
+<center><img src="images/3000_4000.png" alt="A basic Shiny app, with a title that says 'My App Title', a subtitle that says, 'Exploring Palmer Penguins and Antarctic Temperatures, and a slider input with a label that says 'Select a range of body masses (g)'. The slider bar has a minimum value of 2,700 and a maximum value of 6,300, and the moveable slider selectors currently range from 3,000 to 4,000." width="450"/></center>
+
+---
+
+##  {#output-syntax data-menu-title="Output Syntax"}
+
+<div class="slide-title">Output function syntax</div>
+
+<p class="body-text">Outputs in the UI create **placeholders** which are later filled by the server function.</p>
+
+<p class="body-text topbr"> Similar to input functions, **all output functions take the same first argument, `outputId`** (again, note `Id` not `ID`), **which connects the front end UI with the back end server.** For example, if your UI contains an output function with an `outputId = "plot"`, the server function will access it (or in other words, know to place the plot in that particular placeholder) using the syntax `output$plot`.</p>
+
+</p>
+
+<p class="body-text topbr">**A couple examples:**</p>
+```{r}
+#| eval: false
+#| echo: true
+plotOutput(outputId = "bodyMass_scatterPlot")
+
+dataTableOutput(outputId = "penguin_data")
+```
+
+---
+
+##  {#add-output data-menu-title="Add Output"}
+
+<div class="slide-title">**Step 2:** Add an output to your app</div>
+
+<p class="small-text">Let's now add a `plotOutput()` to our app, which will be updated based on the user inputs via the `sliderInput()`.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+
+# user interface ----
+ui <- fluidPage(
+  
+  # ~ previous code omitted for brevity ~
+  
+  # body mass slider input ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+              min = 2700, max = 6300, value = c(3000, 4000)),
+  
+  # body mass plot ouput ----
+  plotOutput(outputId = "bodyMass_scatterPlot")
+  
+  )
+```
+
+. . . 
+
+:::{.column width="45%"}
+<br>
+<p class="small-text">Okay, it looks like nothing changed?? Remember, `*Output()` functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders. We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named "*bodyMass_scatterPlot*":</p>
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="45%"}
+<center><img src="images/output_placeholder.png" alt="A Google Chrome browser window with our Shiny app open on the left-hand side and the underlying HTML document open on the right. The app looks the same as before, except hovering over the HTML associated with our new plotOutput highlights a blue square region beneath the sliderInput. This highlighted region is the placeholder where our plot will eventually be rendered." width="450"/></center>
+:::
+
+---
+
+##  {#rendering-outputs data-menu-title="Rendering outputs"}
+
+<div class="slide-title">Rendering outputs</div>
+
+<p class="body-text">Each `*Output()` function in the UI is coupled with a `render*()` function in the server, which contains the "instructions" for creating the output based on user inputs (or in other words, the instructions for making your output *reactive*).</p>
+
+<center><p class="body-text topbr">**Examples of `*Output()` functions and their corresponding `render*()` functions:**</p></center>
+
+| Output function     | Render function      |
+|---------------------|----------------------|
+| `dataTableOutput()` | `renderDataTable()`  |  
+| `imageOutput()`     | `renderImage()`      |   
+| `plotOutput()`      | `renderPlot()`       |  
+| `tableOutput()`     | `renderTable()`      |  
+| `textOutput()`      | `renderText()`       |  
+
+
+
+
+

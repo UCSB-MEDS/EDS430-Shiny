@@ -952,17 +952,17 @@ Adding our reactive plot
 Next, we’ll create a <strong>scatterplot of penguin bill lengths vs.&nbsp;penguin flipper lengths</strong> using the <code>penguins</code> data set from the <code>{palmerpengiuns}</code> package. We will make this scatterplot <em>reactive</em> by adding a <code>sliderInput</code> that allows users to filter the displayed data points by <strong>selecting a range of penguin body masses</strong> (e.g.&nbsp;only plot bill and flipper lengths for penguins with body masses ranging from 4,500 grams to 6,000 grams).
 </p>
 <div class="column" style="width:45%;">
-<br><br><p class="small-text">
+<br><p class="small-text">
 <strong>To create a reactive plot, we will follow these steps:</strong>
 </p>
-<p class="smaller-text">
+<p class="small-text topbr">
 <strong>1.</strong> Add an input (e.g.&nbsp;<code>sliderInput</code>) to the <strong>UI</strong> that users can interact with
 </p>
-<p class="smaller-text">
+<p class="small-text">
 <strong>2.</strong> Add an output (e.g.&nbsp;<code>plotOutput</code>) to the <strong>UI</strong> that creates a <em>placeholder space</em> to fill with our eventual reactive output
 </p>
-<p class="smaller-text">
-<strong>3.</strong> Tell the server how to assemble inputs into outputs
+<p class="small-text">
+<strong>3.</strong> Tell the <strong>server</strong> how to assemble inputs into outputs
 </p>
 </div><div class="column" style="width:5%;">
 
@@ -971,7 +971,153 @@ Next, we’ll create a <strong>scatterplot of penguin bill lengths vs.&nbsp;peng
 <img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700">
 </center>
 </div>
-</section><section class="slide level2"></section><section id="TheEnd" class="slide level2" data-menu-title="~End Slide~"><h2></h2>
+</section><section id="input-syntax" class="slide level2" data-menu-title="Input Syntax"><h2></h2>
+<div class="slide-title">
+Input function syntax
+</div>
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><strong>All input functions have the same first argument, <code>inputId</code></strong> (<strong>NOTE:</strong> <code>Id</code> <em>not</em> <code>ID</code>), <strong>which is used to connect the front end of your app (the UI) with the back end (the server).</strong> For example, if your UI has an <code>inputId = "name"</code>, the server function will access it using the syntax <code>input$name</code>. The <code>inputId</code> has two constraints: <strong>(1)</strong> it must be a simple string containing only letters, numbers, and underscores, <strong>(2)</strong> it must be unique.
+</p>
+<p class="small-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg> Most input functions have a second parameter called <code>label</code>, which is used to create a human-readable label for the control, which will appear in the UI.
+</p>
+<p class="small-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg> The remaining arguments are unique to each input function. Oftentimes, these include a <code>value</code> parameter, which lets you set the default value of your widget, where applicable.
+</p>
+<p class="body-text topbr">
+<strong>A couple examples:</strong>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>), ...)</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">"island"</span>, <span class="at">label =</span> <span class="st">"Choose and island:"</span>, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p class="small-text topbr">
+Check out the interactive <a href="https://shiny.rstudio.com/gallery/widget-gallery.html">Shiny Widgets Gallery</a> to learn how to implement the most common widgets.
+</p>
+</section><section id="add-input" class="slide level2" data-menu-title="Add an Input"><h2></h2>
+<div class="slide-title">
+<strong>Step 1:</strong> Add an input to your app
+</div>
+<p class="body-text">
+First let’s add a <code>sliderInput()</code> that will allow users to select a range of penguin body masses (g).
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># user interface ----</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb12-3"><a href="#cb12-3"></a>  </span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  </span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="co"># body mass slider input ----</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>))</span>
+<span id="cb12-9"><a href="#cb12-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p class="body-text">
+When you run your app, you should see something similar to the image below. It’s operable, but does not yet have an associated output.
+</p>
+<center>
+<img src="images/3000_4000.png" alt="A basic Shiny app, with a title that says 'My App Title', a subtitle that says, 'Exploring Palmer Penguins and Antarctic Temperatures, and a slider input with a label that says 'Select a range of body masses (g)'. The slider bar has a minimum value of 2,700 and a maximum value of 6,300, and the moveable slider selectors currently range from 3,000 to 4,000." width="450">
+</center>
+</div>
+</section><section id="output-syntax" class="slide level2" data-menu-title="Output Syntax"><h2></h2>
+<div class="slide-title">
+Output function syntax
+</div>
+<p class="body-text">
+Outputs in the UI create <strong>placeholders</strong> which are later filled by the server function.
+</p>
+<p class="body-text topbr">
+Similar to input functions, <strong>all output functions take the same first argument, <code>outputId</code></strong> (again, note <code>Id</code> not <code>ID</code>), <strong>which connects the front end UI with the back end server.</strong> For example, if your UI contains an output function with an <code>outputId = "plot"</code>, the server function will access it (or in other words, know to place the plot in that particular placeholder) using the syntax <code>output$plot</code>.
+</p>
+
+<p class="body-text topbr">
+<strong>A couple examples:</strong>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="st">"penguin_data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="add-output" class="slide level2" data-menu-title="Add Output"><h2></h2>
+<div class="slide-title">
+<strong>Step 2:</strong> Add an output to your app
+</div>
+<p class="small-text">
+Let’s now add a <code>plotOutput()</code> to our app, which will be updated based on the user inputs via the <code>sliderInput()</code>.
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># user interface ----</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb14-3"><a href="#cb14-3"></a>  </span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>  </span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="co"># body mass slider input ----</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb14-8"><a href="#cb14-8"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
+<span id="cb14-9"><a href="#cb14-9"></a>  </span>
+<span id="cb14-10"><a href="#cb14-10"></a>  <span class="co"># body mass plot ouput ----</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>)</span>
+<span id="cb14-12"><a href="#cb14-12"></a>  </span>
+<span id="cb14-13"><a href="#cb14-13"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="column" style="width:45%;">
+<br><p class="small-text">
+Okay, it looks like nothing changed?? Remember, <code>*Output()</code> functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders. We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named “<em>bodyMass_scatterPlot</em>”:
+</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/output_placeholder.png" alt="A Google Chrome browser window with our Shiny app open on the left-hand side and the underlying HTML document open on the right. The app looks the same as before, except hovering over the HTML associated with our new plotOutput highlights a blue square region beneath the sliderInput. This highlighted region is the placeholder where our plot will eventually be rendered." width="450">
+</center>
+</div>
+</div>
+</section><section id="rendering-outputs" class="slide level2" data-menu-title="Rendering outputs"><h2></h2>
+<div class="slide-title">
+Rendering outputs
+</div>
+<p class="body-text">
+Each <code>*Output()</code> function in the UI is coupled with a <code>render*()</code> function in the server, which contains the “instructions” for creating the output based on user inputs (or in other words, the instructions for making your output <em>reactive</em>).
+</p>
+<center>
+<p class="body-text topbr">
+<strong>Examples of <code>*Output()</code> functions and their corresponding <code>render*()</code> functions:</strong>
+</p>
+</center>
+<table>
+<thead><tr class="header">
+<th>Output function</th>
+<th>Render function</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>dataTableOutput()</code></td>
+<td><code>renderDataTable()</code></td>
+</tr>
+<tr class="even">
+<td><code>imageOutput()</code></td>
+<td><code>renderImage()</code></td>
+</tr>
+<tr class="odd">
+<td><code>plotOutput()</code></td>
+<td><code>renderPlot()</code></td>
+</tr>
+<tr class="even">
+<td><code>tableOutput()</code></td>
+<td><code>renderTable()</code></td>
+</tr>
+<tr class="odd">
+<td><code>textOutput()</code></td>
+<td><code>renderText()</code></td>
+</tr>
+</tbody>
+</table></section><section id="TheEnd" class="slide level2" data-menu-title="~End Slide~"><h2></h2>
 <center>
 <div class="slide-title bottombr">
 I’m excited to see what <em>Shiny</em> new apps you all create!
