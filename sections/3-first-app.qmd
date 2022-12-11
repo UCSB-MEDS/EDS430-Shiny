@@ -172,6 +172,7 @@ selectInput(inputId = "island", label = "Choose and island:", ...)
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: "6-8"
 # user interface ----
 ui <- fluidPage(
   
@@ -221,6 +222,7 @@ dataTableOutput(outputId = "penguin_data")
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: "10-11"
 
 # user interface ----
 ui <- fluidPage(
@@ -269,7 +271,112 @@ ui <- fluidPage(
 | `tableOutput()`     | `renderTable()`      |  
 | `textOutput()`      | `renderText()`       |  
 
+---
 
+##  {#assemble data-menu-title="Assemble Inputs into Outputs"}
 
+<div class="slide-title">**Step 3:** Tell the server how to assemble inputs into outputs</div>
 
+<p class="small-text">Now that we've designed our input/output in the UI, we need to write the server instructions (i.e. write the server function) on how to actually assemble our input (body mass range via a slider input) into the output (scatter plot).</p>
+
+<p class="small-text">The **server function** is defined with two arguments, `input` and `output`, both of which are list-like objects. You *must* define both of these arguments within the server function. `input` contains the values of all the different inputs at any given time, while `output` is where you'll save output objects to display in the app.</p>
+
+<p class="small-text">***This part can be intimidating, but if you follow these three rules, you will successfully create reactivity within your shiny app!***</p>
+
+<p class="large-body-text">**Rules:**</p>
+
+. . . 
+
+<p class="body-text">**1.** Save objects you want to display to `output$<id>`</p>
+
+<p class="body-text">**2.** Build reactive objects using a `render*()` function</p>
+
+<p class="body-text">**3.** Access input values with `input$<id>`</p>
+
+---
+
+##  {#rule1 data-menu-title="Rule #1"}
+
+<div class="slide-title-smaller">**Rule 1:** Save objects you want to display to `output$<id>`</div>
+
+<p class="small-text">In our **UI**, we created a placeholder for our plot using the `plotOutput()` function and gave it the Id `"bodyMass_scatterplot"`. In our server, we will save our plot to the output argument by its `outputId`:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "18-19"
+
+# user interface ----
+ui <- fluidPage(
+  
+  # ~ previous code omitted for brevity ~
+  
+  # body mass slider ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+              min = 2700, max = 6300, value = c(3000, 4000)),
+  
+  # body mass plot output ----
+  plotOutput(outputId = "bodyMass_scatterPlot") 
+  
+)
+
+# server instructions ----
+server <- function(input, output) {
+  
+  # render the scatter plot ----
+  output$bodyMass_scatterPlot <- # code to generate plot here
+  
+}
+```
+
+<p class="small-text important-text-bg">**Note:** In the **UI**, our `outputId` is quoted (`"bodyMass_scatterPlot"`), but not in the **server** (`bodyMass_scatterPlot`).</p>
+
+---
+
+##  {#rule2 data-menu-title="Rule #2"}
+
+<div class="slide-title-smaller">**Rule 2:** Build reactive objects with `render*()`</div>
+
+<p class="small-text">Use the appropriate `render*()` function to make your output reactive (e.g. if you have a     `plotOutput` in your UI, you will need to use `renderPlot()` in your server).</p>
+
+<p class="small-text">Within your `render*()`, write any code inside a set of curly braces, `{}`. This allows you to include as many lines of code as it takes to build your object.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "18-23"
+
+# user interface ----
+ui <- fluidPage(
+  
+  # ~ previous code omitted for brevity ~
+  
+  # body mass slider ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+              min = 2700, max = 6300, value = c(3000, 4000)),
+  
+  # body mass plot output ----
+  plotOutput(outputId = "bodyMass_scatterPlot") 
+  
+)
+
+# server instructions ----
+server <- function(input, output) {
+  
+  # render the scatter plot ----
+  output$bodyMass_scatterPlot <- renderPlot({
+    
+     # code to generate plot here
+    
+  }) 
+}
+```
+
+---
+
+---
+
+##  {#rule3 data-menu-title="Rule #3"}
+
+<div class="slide-title-smaller">**Rule 3:** Access input values with `input$<id>`</div>
 
