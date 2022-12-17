@@ -13,7 +13,7 @@ format: revealjs
 
 ##  {#github-repo data-menu-title="Create GitHub Repo"}
 
-<div class="slide-title bottombr">Create your GitHub repo</div>
+<div class="slide-title">Create your GitHub repo</div>
 
 <p class="body-text">Let's start by creating a GitHub repo to house our soon-to-be app(s), then we'll clone our repo to our computer. I'm using RStudio to clone my repo in the example below, but you can also do this via the command line using `git clone <repo-url>`.</p>
 
@@ -39,7 +39,7 @@ format: revealjs
 
 <center><img src="images/one-vs-two.png" alt="" width="700"/></center>
 
-<p class="body-text">Why two options? Before v0.10.2, Shiny apps needed to be split into **two separate files**, `ui.R` and `server.R`, that defined the UI and server components, respectively. With v0.10.2+, users can create a **single-file app**, `app.R`, which contains both the UI and server components together. While it largely comes down to personal preference, a **single-file format is best for smaller apps or when creating a [reprex](https://reprex.tidyverse.org/)**, while the **two-file format is beneficial when writing large, complex apps** where breaking apart code can make things a bit more navigable/maintainable.</p>                                                                
+<p class="small-text">Why two options? Before v0.10.2, Shiny apps needed to be split into **two separate files**, `ui.R` and `server.R`, that defined the UI and server components, respectively. With v0.10.2+, users can create a **single-file app**, `app.R`, which contains both the UI and server components together. While it largely comes down to personal preference, a **single-file format is best for smaller apps or when creating a [reprex](https://reprex.tidyverse.org/)**, while the **two-file format is beneficial when writing large, complex apps** where breaking apart code can make things a bit more navigable/maintainable.</p>                                                                
 
 ---
 
@@ -55,7 +55,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">**2.** Create a new R script inside `/one-file-app` and name it `app.R` -- you **must** name your script `app.R`. Copy the following code into `app.R`, or use the `shinyapp` [snippet](https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html) to automatically generate a shiny app template.<p>
+<p class="small-text">**2.** Create a new R script inside `/one-file-app` and name it `app.R` -- you **must** name your script `app.R`. Copy/type the following code into `app.R`, or use the `shinyapp` [snippet](https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html) to automatically generate a shiny app template.<p>
 
 ```{r}
 #| eval: false

@@ -1,5 +1,7 @@
 ---
 format: revealjs
+editor_options: 
+  chunk_output_type: console
 ---
 
 ##  {#build-app data-menu-title="Building Out Your 1st App" background="#053660"}
@@ -144,7 +146,7 @@ ui <- fluidPage(
 
 <div class="slide-title">Input function syntax</div>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **All input functions have the same first argument, `inputId`** (**NOTE:** `Id` *not* `ID`), **which is used to connect the front end of your app (the UI) with the back end (the server).** For example, if your UI has an `inputId = "name"`, the server function will access it using the syntax `input$name`. The `inputId` has two constraints: **(1)** it must be a simple string containing only letters, numbers, and underscores, **(2)** it must be unique.</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **All input functions have the same first argument, `inputId`** (**NOTE:** `Id` *not* `ID`), **which is used to connect the front end of your app (the UI) with the back end (the server).** For example, if your UI has an `inputId = "name"`, the server function will access that input value using the syntax `input$name`. The `inputId` has two constraints: **(1)** it must be a simple string containing only letters, numbers, and underscores, **(2)** it must be unique within your app.</p>
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Most input functions have a second parameter called `label`, which is used to create a human-readable label for the control, which will appear in the UI.</p>
 
@@ -217,7 +219,7 @@ dataTableOutput(outputId = "penguin_data")
 
 <div class="slide-title">**Step 2:** Add an output to your app</div>
 
-<p class="small-text">Let's now add a `plotOutput()` to our app, which will be updated based on the user inputs via the `sliderInput()`.</p>
+<p class="small-text">Let's now add a `plotOutput()`, which will be updated based on the user inputs via the `sliderInput()`, then run the app.</p>
 
 ```{r}
 #| eval: false
@@ -243,7 +245,7 @@ ui <- fluidPage(
 
 :::{.column width="45%"}
 <br>
-<p class="small-text">Okay, it looks like nothing changed?? Remember, `*Output()` functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders. We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named "*bodyMass_scatterPlot*":</p>
+<p class="small-text">Okay, it looks like nothing changed?? **Remember, `*Output()` functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders.** We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named "*bodyMass_scatterPlot*":</p>
 :::
 
 :::{.column width="5%"}
@@ -277,7 +279,7 @@ ui <- fluidPage(
 
 <div class="slide-title">**Step 3:** Tell the server how to assemble inputs into outputs</div>
 
-<p class="small-text">Now that we've designed our input/output in the UI, we need to write the server instructions (i.e. write the server function) on how to actually assemble our input (body mass range via a slider input) into the output (scatter plot).</p>
+<p class="small-text">Now that we've designed our input/output in the UI, we need to write the server instructions (i.e. write the server function) on how to use the input value(s) (i.e. penguin body mass range via a slider input) to update the output (scatter plot).</p>
 
 <p class="small-text">The **server function** is defined with two arguments, `input` and `output`, both of which are list-like objects. You *must* define both of these arguments within the server function. `input` contains the values of all the different inputs at any given time, while `output` is where you'll save output objects to display in the app.</p>
 
@@ -299,12 +301,14 @@ ui <- fluidPage(
 
 <div class="slide-title-smaller">**Rule 1:** Save objects you want to display to `output$<id>`</div>
 
-<p class="small-text">In our **UI**, we created a placeholder for our plot using the `plotOutput()` function and gave it the Id `"bodyMass_scatterplot"`. In our server, we will save our plot to the output argument by its `outputId`:</p>
-
+::: {.column width="65%"}
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "18-19"
+#| code-line-numbers: "21-22"
+
+# load packages ----
+library(shiny)
 
 # user interface ----
 ui <- fluidPage(
@@ -328,12 +332,21 @@ server <- function(input, output) {
   
 }
 ```
+:::
 
-<p class="small-text important-text-bg">**Note:** In the **UI**, our `outputId` is quoted (`"bodyMass_scatterPlot"`), but not in the **server** (`bodyMass_scatterPlot`).</p>
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
+<br>
+<p class="small-text bottombr">In our **UI**, we created a placeholder for our plot using the `plotOutput()` function and gave it the Id `"bodyMass_scatterplot"`. In our server, we will save our plot to the output argument by its `outputId`.</p>
+
+<p class="small-text important-text-bg topbr">**Note:** In the **UI**, our `outputId` is quoted (`"bodyMass_scatterPlot"`), but not in the **server** (`bodyMass_scatterPlot`).</p>
+:::
 
 ---
 
-##  {#rule2 data-menu-title="Rule #2"}
+##  {#rule2.1 data-menu-title="Rule #2a"}
 
 <div class="slide-title-smaller">**Rule 2:** Build reactive objects with `render*()`</div>
 
@@ -344,7 +357,10 @@ server <- function(input, output) {
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "18-23"
+#| code-line-numbers: "22-26"
+
+# load packages ----
+library(shiny)
 
 # user interface ----
 ui <- fluidPage(
@@ -374,9 +390,328 @@ server <- function(input, output) {
 
 ---
 
+##  {#rule2.2 data-menu-title="Practice in seperate script"}
+
+<div class="slide-title-smaller">**An Aside:** Draft objects (e.g. plots) in a separate script first</div>
+
+<p class="body-text bottombr">I find it easier to experiment and draft my objects (e.g. plots) first in a separate script, then copy the code over to the server after. I want to make a plot that looks like this:</p>
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+
+# load packages
+library(palmerpenguins)
+library(tidyverse)
+
+# create plot
+ggplot(na.omit(penguins), 
+       aes(x = flipper_length_mm, y = bill_length_mm, 
+           color = species, shape = species)) +
+  geom_point() +
+  scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+  scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+  labs(x = "Flipper length (mm)", y = "Bill length (mm)", 
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(legend.position = c(0.85, 0.2),
+        legend.background = element_rect(color = "white"))
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/penguin_scatterplot.png" alt="A scatterplot with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis. Data points are colored by penguins species: Adelie in orange circles, Chinstrap in purple triangles, and Gentoo in green squares." width="450"/></center>
+:::
+
+<p class="small-text important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to `~/R/practice-script.R`.</p>
+
 ---
 
-##  {#rule3 data-menu-title="Rule #3"}
+##  {#rule2.3 data-menu-title="Copy code into server"}
+
+<div class="slide-title-smaller">Copy your plot code into the server</div>
+
+<p class="body-text">Copy your code over to your app, placing it inside the `{}` (and make sure to add any additional required packages to the top of your `app.R` script). Run your app. What do you notice?</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "25-35" 
+
+# load packages ----
+library(shiny)
+library(palmerpenguins)
+library(tidyverse)
+
+# user interface ----
+ui <- fluidPage(
+  
+  # ~ previous code omitted for brevity ~
+  
+  # body mass slider ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+              min = 2700, max = 6300, value = c(3000, 4000)),
+  
+  # body mass plot output ----
+  plotOutput(outputId = "bodyMass_scatterPlot")
+  
+)
+
+# server instructions ----
+server <- function(input, output) {
+  
+  # render the scatter plot ----
+  output$bodyMass_scatterPlot <- renderPlot({ 
+      ggplot(na.omit(penguins),
+             aes(x = flipper_length_mm, y = bill_length_mm,
+                 color = species, shape = species)) + 
+        geom_point() + 
+        scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+        scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+        labs(x = "Flipper length (mm)", y = "Bill length (mm)", 
+             color = "Penguin species", shape = "Penguin species") + 
+        theme_minimal() + 
+        theme(legend.position = c(0.85, 0.2), 
+              legend.background = element_rect(color = "white")) 
+  }) 
+```
+
+---
+
+##  {#non-reactive-plot data-menu-title="Non-reactive plot appears"}
+
+<div class="slide-title-smaller">A non-reactive plot now lives in our `plotOutput()` placeholder</div>
+
+<p class="body-text">We have a plot (yay!), but it isn't reactive. We have not yet told the server how to update the plot based on user inputs via the `sliderInput()` in the UI. Let's do that next...</p>
+
+ADD GIF OF NONREACTIVE PLOT HERE
+
+---
+
+##  {#practice-filtering data-menu-title="Practice filtering data"}
+
+<div class="slide-title-smaller">Practice filtering data in our separate script</div>
+
+<p class="small-text">First, create a new data frame where we filter the `body_mass_g` column for observations within a specific range of values (in this example, values ranging from 3000 - 4000):</p>
+
+. . . 
+
+```{r}
+#| eval: true
+#| echo: true
+# load packages
+library(palmerpenguins)
+library(tidyverse)
+
+# filter penguins df for observations where body_mass_g >= 3000 & <= 4000
+body_mass_df <- penguins %>%
+  filter(body_mass_g %in% 3000:4000)
+```
+
+. . .
+
+<p class="small-text">Then, substitute in the new filtered data and plot:</p>
+:::{.column width="55%"}
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2"
+
+# plot new, filtered data
+ggplot(na.omit(body_mass_df), # plot 'body_mass_df' rather than 'penguins' df
+       aes(x = flipper_length_mm, y = bill_length_mm, 
+           color = species, shape = species)) +
+  geom_point() +
+  scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+  scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+  labs(x = "Flipper length (mm)", y = "Bill length (mm)", 
+       color = "Penguin species", shape = "Penguin species") +
+  theme_minimal() +
+  theme(legend.position = c(0.85, 0.2),
+        legend.background = element_rect(color = "white"))
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+<center><img src="images/filtered_penguin_plot.png" alt="A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins. For all species, bill length tends to increase with flipper length." width="450"/></center>
+:::
+
+---
+
+##  {#what-needs-updating data-menu-title="What needs to be reactive?"}
+
+<div class="slide-title-smaller">Which part of our code needs to be updated when a user changes the slider range input?</div>
+
+. . . 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2"
+body_mass_df <- penguins %>%
+  filter(body_mass_g %in% 3000:4000) # 3000:4000 needs to be update-able (or in other words, reactive)!
+```
+
+. . . 
+
+<p class="body-text">**For example:**</p>
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+body_mass_df <- penguins %>%
+  filter(body_mass_g %in% 2857:5903)
+```
+
+<center><img src="images/2857_5903.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 2,857 and a maximum of 5,903." width="450"/></center>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+body_mass_df <- penguins %>%
+  filter(body_mass_g %in% 3725:5191)
+```
+
+<center><img src="images/3725_5191.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 3,725 and a maximum of 5,191." width="450"/></center>
+:::
+
+---
+
+##  {#rule3.1 data-menu-title="Rule #3a"}
 
 <div class="slide-title-smaller">**Rule 3:** Access input values with `input$<id>`</div>
 
+<p class="small-text">Recall that in our **UI**, we gave our `sliderInput()` an `inputId = "body_mass"`.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "9"
+
+# load packages (omitted for brevity) ----
+
+# user interface ----
+ui <- fluidPage(
+  
+  # ~ previous code omitted for brevity ~
+  
+  # body mass slider ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):", 
+              min = 2700, max = 6300, value = c(3000, 4000)),
+  
+  # body mass plot output ----
+  plotOutput(outputId = "bodyMass_scatterPlot")
+  
+)
+
+# server instructions ----
+server <- function(input, output) {
+      
+  # render the scatter plot ----
+  output$bodyMass_scatterPlot <- renderPlot({ 
+      ggplot(na.omit(penguins, aes(...)) + # etc. (omitted for brevity)
+  }) 
+    
+}
+```
+
+---
+
+##  {#rule3.2 data-menu-title="Rule #3b"}
+
+<div class="slide-title-smaller">**Rule 3:** Access input values with `input$<id>`</div>
+
+<p class="smaller-text">In our server, we can access the values of that slider input using the syntax, `input$body_mass`. *If you want your output to change according to the input values, substitute hard-coded values (e.g. 3725:5191) with the input values from the UI (e.g. `input$body_mass[1]:input$body_mass[2]`)*.</p>
+
+<p class="smaller-text important-text-bg">**Importantly**, we need to use `reactive()` to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, **the data frame name must be followed by `()`**.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "20-29"
+
+# load packages (omitted for brevity) ----
+
+# user interface ----
+ui <- fluidPage(
+  
+  # ~ previous code omitted for brevity ~
+  
+  # body mass slider ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):", 
+              min = 2700, max = 6300, value = c(3000, 4000)),
+  
+  # body mass plot output ----
+  plotOutput(outputId = "bodyMass_scatterPlot")
+  
+)
+
+# server instructions ----
+server <- function(input, output) {
+  
+   # filter body masses ----
+      body_mass_df <- reactive({ 
+        penguins %>%  
+          filter(body_mass_g %in% input$body_mass[1]:input$body_mass[2]) 
+      })
+      
+  # render the scatter plot ----
+  output$bodyMass_scatterPlot <- renderPlot({ 
+      ggplot(na.omit(body_mass_df(), aes(...)) + # etc. (omitted for brevity)
+  }) 
+    
+}
+```
+
+---
+
+##  {#run-that-app data-menu-title="Run that app!"}
+
+<div class="slide-title">Okay, RUN THAT APP!</div>
+
+<p class="body-text">You should now have a reactive Shiny app! *Note that reactivity automatically occurs whenever you use an **input value** to **render** an **output object**.*</p>
+
+<center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="550"/></center>
+
+---
+
+##  {#recapp-app1 data-menu-title="Recap: app #1"}
+
+<div class="slide-title-smaller">Recap: We created our first *reactive* Shiny app following these steps: </div>
+
+. . . 
+
+<p class="body-text">**1.** We created an `app.R` file in it's own directory and began our app with the [template](http://localhost:7907/#/single-file), though you can also create a [two-file Shiny app](http://localhost:7907/#/two-file) by using separate `ui.R` and `server.R` files.</p>
+
+. . .
+
+<p class="body-text topbr">**2.** We added an input to the `fluidPage()` in our **UI** using an `*Input()` function and gave it a *unique* `inputId` (e.g. `inputId = "unique_input_Id_name"`)</p>
+
+. . . 
+
+<p class="body-text topbr">**3.** We created a placeholder for our reactive object by using an `*Output()` function in the `fluidPage()` of our **UI** and gave it an `outputId` (e.g. `outputId = "output_Id_name"`)</p>
+
+. . .
+
+<p class="body-text topbr">**4.** We wrote the **server** instructions for how to assemble inputs into outputs, following these rules:</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` save objects that you want to display to `output$<id>`</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` build reactive objects using a `render*()` function (and similarly, build reactive data frames using `reactive()`</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` access input values with `input$<id>`</p>
+
+. . . 
+
+<center><p class="medium-body-text topbr">And we saw that reactivity automatically occurs whenever we use an ***input value*** to ***render*** an ***output object***.</p></center>

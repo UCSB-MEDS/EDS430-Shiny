@@ -644,7 +644,7 @@ The data
 </p>
 </div>
 </section><section id="github-repo" class="slide level2" data-menu-title="Create GitHub Repo"><h2></h2>
-<div class="slide-title bottombr">
+<div class="slide-title">
 Create your GitHub repo
 </div>
 <p class="body-text">
@@ -673,7 +673,7 @@ You have the option of creating either a <strong>single-file app</strong> or <st
 <center>
 <img src="images/one-vs-two.png" alt="" width="700">
 </center>
-<p class="body-text">
+<p class="small-text">
 Why two options? Before v0.10.2, Shiny apps needed to be split into <strong>two separate files</strong>, <code>ui.R</code> and <code>server.R</code>, that defined the UI and server components, respectively. With v0.10.2+, users can create a <strong>single-file app</strong>, <code>app.R</code>, which contains both the UI and server components together. While it largely comes down to personal preference, a <strong>single-file format is best for smaller apps or when creating a <a href="https://reprex.tidyverse.org/">reprex</a></strong>, while the <strong>two-file format is beneficial when writing large, complex apps</strong> where breaking apart code can make things a bit more navigable/maintainable.
 </p>
 </section><section id="single-file" class="slide level2" data-menu-title="Single-file App"><h2></h2>
@@ -690,7 +690,7 @@ You can create a single-file app using RStudio’s built-in Shiny app template (
 </div>
 <div class="fragment">
 <p class="small-text">
-<strong>2.</strong> Create a new R script inside <code>/one-file-app</code> and name it <code>app.R</code> – you <strong>must</strong> name your script <code>app.R</code>. Copy the following code into <code>app.R</code>, or use the <code>shinyapp</code> <a href="https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html">snippet</a> to automatically generate a shiny app template.
+<strong>2.</strong> Create a new R script inside <code>/one-file-app</code> and name it <code>app.R</code> – you <strong>must</strong> name your script <code>app.R</code>. Copy/type the following code into <code>app.R</code>, or use the <code>shinyapp</code> <a href="https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html">snippet</a> to automatically generate a shiny app template.
 </p>
 <p>
 </p>
@@ -977,7 +977,7 @@ Input function syntax
 </div>
 <p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><strong>All input functions have the same first argument, <code>inputId</code></strong> (<strong>NOTE:</strong> <code>Id</code> <em>not</em> <code>ID</code>), <strong>which is used to connect the front end of your app (the UI) with the back end (the server).</strong> For example, if your UI has an <code>inputId = "name"</code>, the server function will access it using the syntax <code>input$name</code>. The <code>inputId</code> has two constraints: <strong>(1)</strong> it must be a simple string containing only letters, numbers, and underscores, <strong>(2)</strong> it must be unique.
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><strong>All input functions have the same first argument, <code>inputId</code></strong> (<strong>NOTE:</strong> <code>Id</code> <em>not</em> <code>ID</code>), <strong>which is used to connect the front end of your app (the UI) with the back end (the server).</strong> For example, if your UI has an <code>inputId = "name"</code>, the server function will access that input value using the syntax <code>input$name</code>. The <code>inputId</code> has two constraints: <strong>(1)</strong> it must be a simple string containing only letters, numbers, and underscores, <strong>(2)</strong> it must be unique within your app.
 </p>
 <p class="small-text topbr">
 <svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
@@ -1048,7 +1048,7 @@ Similar to input functions, <strong>all output functions take the same first arg
 <strong>Step 2:</strong> Add an output to your app
 </div>
 <p class="small-text">
-Let’s now add a <code>plotOutput()</code> to our app, which will be updated based on the user inputs via the <code>sliderInput()</code>.
+Let’s now add a <code>plotOutput()</code>, which will be updated based on the user inputs via the <code>sliderInput()</code>, then run the app.
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14" data-code-line-numbers="10-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># user interface ----</span></span>
@@ -1068,7 +1068,7 @@ Let’s now add a <code>plotOutput()</code> to our app, which will be updated ba
 <div class="fragment">
 <div class="column" style="width:45%;">
 <br><p class="small-text">
-Okay, it looks like nothing changed?? Remember, <code>*Output()</code> functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders. We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named “<em>bodyMass_scatterPlot</em>”:
+Okay, it looks like nothing changed?? <strong>Remember, <code>*Output()</code> functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders.</strong> We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named “<em>bodyMass_scatterPlot</em>”:
 </p>
 </div><div class="column" style="width:5%;">
 
@@ -1122,7 +1122,7 @@ Each <code>*Output()</code> function in the UI is coupled with a <code>render*()
 <strong>Step 3:</strong> Tell the server how to assemble inputs into outputs
 </div>
 <p class="small-text">
-Now that we’ve designed our input/output in the UI, we need to write the server instructions (i.e.&nbsp;write the server function) on how to actually assemble our input (body mass range via a slider input) into the output (scatter plot).
+Now that we’ve designed our input/output in the UI, we need to write the server instructions (i.e.&nbsp;write the server function) on how to use the input value(s) (i.e.&nbsp;penguin body mass range via a slider input) to update the output (scatter plot).
 </p>
 <p class="small-text">
 The <strong>server function</strong> is defined with two arguments, <code>input</code> and <code>output</code>, both of which are list-like objects. You <em>must</em> define both of these arguments within the server function. <code>input</code> contains the values of all the different inputs at any given time, while <code>output</code> is where you’ll save output objects to display in the app.
@@ -1147,37 +1147,44 @@ The <strong>server function</strong> is defined with two arguments, <code>input<
 </section><section id="rule1" class="slide level2" data-menu-title="Rule #1"><h2></h2>
 <div class="slide-title-smaller">
 <strong>Rule 1:</strong> Save objects you want to display to <code>output$&lt;id&gt;</code>
-</div>
-<p class="small-text">
-In our <strong>UI</strong>, we created a placeholder for our plot using the <code>plotOutput()</code> function and gave it the Id <code>"bodyMass_scatterplot"</code>. In our server, we will save our plot to the output argument by its <code>outputId</code>:
-</p>
+</div><div class="column" style="width:65%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="18-19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># user interface ----</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb15-3"><a href="#cb15-3"></a>  </span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  </span>
-<span id="cb15-6"><a href="#cb15-6"></a>  <span class="co"># body mass slider ----</span></span>
-<span id="cb15-7"><a href="#cb15-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
-<span id="cb15-8"><a href="#cb15-8"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
-<span id="cb15-9"><a href="#cb15-9"></a>  </span>
-<span id="cb15-10"><a href="#cb15-10"></a>  <span class="co"># body mass plot output ----</span></span>
-<span id="cb15-11"><a href="#cb15-11"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>) </span>
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="21-22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># load packages ----</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># user interface ----</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb15-6"><a href="#cb15-6"></a>  </span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>  </span>
+<span id="cb15-9"><a href="#cb15-9"></a>  <span class="co"># body mass slider ----</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb15-11"><a href="#cb15-11"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb15-12"><a href="#cb15-12"></a>  </span>
-<span id="cb15-13"><a href="#cb15-13"></a>)</span>
-<span id="cb15-14"><a href="#cb15-14"></a></span>
-<span id="cb15-15"><a href="#cb15-15"></a><span class="co"># server instructions ----</span></span>
-<span id="cb15-16"><a href="#cb15-16"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb15-17"><a href="#cb15-17"></a>  </span>
-<span id="cb15-18"><a href="#cb15-18"></a>  <span class="co"># render the scatter plot ----</span></span>
-<span id="cb15-19"><a href="#cb15-19"></a>  output<span class="sc">$</span>bodyMass_scatterPlot <span class="ot">&lt;-</span> <span class="co"># code to generate plot here</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>  <span class="co"># body mass plot output ----</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>) </span>
+<span id="cb15-15"><a href="#cb15-15"></a>  </span>
+<span id="cb15-16"><a href="#cb15-16"></a>)</span>
+<span id="cb15-17"><a href="#cb15-17"></a></span>
+<span id="cb15-18"><a href="#cb15-18"></a><span class="co"># server instructions ----</span></span>
+<span id="cb15-19"><a href="#cb15-19"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb15-20"><a href="#cb15-20"></a>  </span>
-<span id="cb15-21"><a href="#cb15-21"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-21"><a href="#cb15-21"></a>  <span class="co"># render the scatter plot ----</span></span>
+<span id="cb15-22"><a href="#cb15-22"></a>  output<span class="sc">$</span>bodyMass_scatterPlot <span class="ot">&lt;-</span> <span class="co"># code to generate plot here</span></span>
+<span id="cb15-23"><a href="#cb15-23"></a>  </span>
+<span id="cb15-24"><a href="#cb15-24"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p class="small-text important-text-bg">
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:30%;">
+<br><p class="small-text bottombr">
+In our <strong>UI</strong>, we created a placeholder for our plot using the <code>plotOutput()</code> function and gave it the Id <code>"bodyMass_scatterplot"</code>. In our server, we will save our plot to the output argument by its <code>outputId</code>.
+</p>
+<p class="small-text important-text-bg topbr">
 <strong>Note:</strong> In the <strong>UI</strong>, our <code>outputId</code> is quoted (<code>"bodyMass_scatterPlot"</code>), but not in the <strong>server</strong> (<code>bodyMass_scatterPlot</code>).
 </p>
-</section><section id="rule2" class="slide level2" data-menu-title="Rule #2"><h2></h2>
+</div>
+</section><section id="rule2.1" class="slide level2" data-menu-title="Rule #2a"><h2></h2>
 <div class="slide-title-smaller">
 <strong>Rule 2:</strong> Build reactive objects with <code>render*()</code>
 </div>
@@ -1188,30 +1195,331 @@ Use the appropriate <code>render*()</code> function to make your output reactive
 Within your <code>render*()</code>, write any code inside a set of curly braces, <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code>. This allows you to include as many lines of code as it takes to build your object.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="18-23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># user interface ----</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb16-3"><a href="#cb16-3"></a>  </span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>  </span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="co"># body mass slider ----</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
-<span id="cb16-9"><a href="#cb16-9"></a>  </span>
-<span id="cb16-10"><a href="#cb16-10"></a>  <span class="co"># body mass plot output ----</span></span>
-<span id="cb16-11"><a href="#cb16-11"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>) </span>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="22-26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># load packages ----</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># user interface ----</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb16-6"><a href="#cb16-6"></a>  </span>
+<span id="cb16-7"><a href="#cb16-7"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a>  </span>
+<span id="cb16-9"><a href="#cb16-9"></a>  <span class="co"># body mass slider ----</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb16-11"><a href="#cb16-11"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb16-12"><a href="#cb16-12"></a>  </span>
-<span id="cb16-13"><a href="#cb16-13"></a>)</span>
-<span id="cb16-14"><a href="#cb16-14"></a></span>
-<span id="cb16-15"><a href="#cb16-15"></a><span class="co"># server instructions ----</span></span>
-<span id="cb16-16"><a href="#cb16-16"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb16-17"><a href="#cb16-17"></a>  </span>
-<span id="cb16-18"><a href="#cb16-18"></a>  <span class="co"># render the scatter plot ----</span></span>
-<span id="cb16-19"><a href="#cb16-19"></a>  output<span class="sc">$</span>bodyMass_scatterPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb16-20"><a href="#cb16-20"></a>    </span>
-<span id="cb16-21"><a href="#cb16-21"></a>     <span class="co"># code to generate plot here</span></span>
-<span id="cb16-22"><a href="#cb16-22"></a>    </span>
-<span id="cb16-23"><a href="#cb16-23"></a>  }) </span>
-<span id="cb16-24"><a href="#cb16-24"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-13"><a href="#cb16-13"></a>  <span class="co"># body mass plot output ----</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>) </span>
+<span id="cb16-15"><a href="#cb16-15"></a>  </span>
+<span id="cb16-16"><a href="#cb16-16"></a>)</span>
+<span id="cb16-17"><a href="#cb16-17"></a></span>
+<span id="cb16-18"><a href="#cb16-18"></a><span class="co"># server instructions ----</span></span>
+<span id="cb16-19"><a href="#cb16-19"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb16-20"><a href="#cb16-20"></a>  </span>
+<span id="cb16-21"><a href="#cb16-21"></a>  <span class="co"># render the scatter plot ----</span></span>
+<span id="cb16-22"><a href="#cb16-22"></a>  output<span class="sc">$</span>bodyMass_scatterPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb16-23"><a href="#cb16-23"></a>    </span>
+<span id="cb16-24"><a href="#cb16-24"></a>     <span class="co"># code to generate plot here</span></span>
+<span id="cb16-25"><a href="#cb16-25"></a>    </span>
+<span id="cb16-26"><a href="#cb16-26"></a>  }) </span>
+<span id="cb16-27"><a href="#cb16-27"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="rule2.2" class="slide level2" data-menu-title="Practice in seperate script"><h2></h2>
+<div class="slide-title-smaller">
+<strong>An Aside:</strong> Draft objects (e.g.&nbsp;plots) in a separate script first
+</div>
+<p class="body-text bottombr">
+I find it easier to experiment and draft my objects (e.g.&nbsp;plots) first in a separate script, then copy the code over to the server after. I want to make a plot that looks like this:
+</p>
+<div class="column" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># load packages</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="co"># create plot</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins), </span>
+<span id="cb17-7"><a href="#cb17-7"></a>       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm, </span>
+<span id="cb17-8"><a href="#cb17-8"></a>           <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="dv">19</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Bill length (mm)"</span>, </span>
+<span id="cb17-13"><a href="#cb17-13"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>, <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.2</span>),</span>
+<span id="cb17-16"><a href="#cb17-16"></a>        <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/penguin_scatterplot.png" alt="A scatterplot with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis. Data points are colored by penguins species: Adelie in orange circles, Chinstrap in purple triangles, and Gentoo in green squares." width="450">
+</center>
+</div>
+<p class="small-text important-text-bg">
+<strong>Tip:</strong> Save your practice script in a separate directory (i.e.&nbsp;not inside your app directory) – I typically save mine to <code>~/R/practice-script.R</code>.
+</p>
+</section><section id="rule2.3" class="slide level2" data-menu-title="Copy code into server"><h2></h2>
+<div class="slide-title-smaller">
+Copy your plot code into the server
+</div>
+<p class="body-text">
+Copy your code over to your app, placing it inside the <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> (and make sure to add any additional required packages to the top of your <code>app.R</code> script). Run your app. What do you notice?
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="25-35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># load packages ----</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="co"># user interface ----</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb18-8"><a href="#cb18-8"></a>  </span>
+<span id="cb18-9"><a href="#cb18-9"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a>  </span>
+<span id="cb18-11"><a href="#cb18-11"></a>  <span class="co"># body mass slider ----</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
+<span id="cb18-14"><a href="#cb18-14"></a>  </span>
+<span id="cb18-15"><a href="#cb18-15"></a>  <span class="co"># body mass plot output ----</span></span>
+<span id="cb18-16"><a href="#cb18-16"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>)</span>
+<span id="cb18-17"><a href="#cb18-17"></a>  </span>
+<span id="cb18-18"><a href="#cb18-18"></a>)</span>
+<span id="cb18-19"><a href="#cb18-19"></a></span>
+<span id="cb18-20"><a href="#cb18-20"></a><span class="co"># server instructions ----</span></span>
+<span id="cb18-21"><a href="#cb18-21"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb18-22"><a href="#cb18-22"></a>  </span>
+<span id="cb18-23"><a href="#cb18-23"></a>  <span class="co"># render the scatter plot ----</span></span>
+<span id="cb18-24"><a href="#cb18-24"></a>  output<span class="sc">$</span>bodyMass_scatterPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({ </span>
+<span id="cb18-25"><a href="#cb18-25"></a>      <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins),</span>
+<span id="cb18-26"><a href="#cb18-26"></a>             <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm,</span>
+<span id="cb18-27"><a href="#cb18-27"></a>                 <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span> </span>
+<span id="cb18-28"><a href="#cb18-28"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb18-29"><a href="#cb18-29"></a>        <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
+<span id="cb18-30"><a href="#cb18-30"></a>        <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="dv">19</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb18-31"><a href="#cb18-31"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Bill length (mm)"</span>, </span>
+<span id="cb18-32"><a href="#cb18-32"></a>             <span class="at">color =</span> <span class="st">"Penguin species"</span>, <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span> </span>
+<span id="cb18-33"><a href="#cb18-33"></a>        <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb18-34"><a href="#cb18-34"></a>        <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.2</span>), </span>
+<span id="cb18-35"><a href="#cb18-35"></a>              <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>)) </span>
+<span id="cb18-36"><a href="#cb18-36"></a>  }) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="non-reactive-plot" class="slide level2" data-menu-title="Non-reactive plot appears"><h2></h2>
+<div class="slide-title-smaller">
+A non-reactive plot now lives in our <code>plotOutput()</code> placeholder
+</div>
+<p class="body-text">
+We have a plot (yay!), but it isn’t reactive. We have not yet told the server how to update the plot based on user inputs via the <code>sliderInput()</code> in the UI. Let’s do that next…
+</p>
+<p>ADD GIF OF NONREACTIVE PLOT HERE</p>
+</section><section id="practice-filtering" class="slide level2" data-menu-title="Practice filtering data"><h2></h2>
+<div class="slide-title-smaller">
+Practice filtering data in our separate script
+</div>
+<p class="small-text">
+First, create a new data frame where we filter the <code>body_mass_g</code> column for observations within a specific range of values (in this example, values ranging from 3000 - 4000):
+</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># load packages</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb19-4"><a href="#cb19-4"></a></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="co"># filter penguins df for observations where body_mass_g &gt;= 3000 &amp; &lt;= 4000</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>body_mass_df <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> <span class="dv">3000</span><span class="sc">:</span><span class="dv">4000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p class="small-text">
+Then, substitute in the new filtered data and plot:
+</p>
+<div class="column" style="width:55%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># plot new, filtered data</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(body_mass_df), <span class="co"># plot 'body_mass_df' rather than 'penguins' df</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm, </span>
+<span id="cb20-4"><a href="#cb20-4"></a>           <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="dv">19</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Bill length (mm)"</span>, </span>
+<span id="cb20-9"><a href="#cb20-9"></a>       <span class="at">color =</span> <span class="st">"Penguin species"</span>, <span class="at">shape =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.2</span>),</span>
+<span id="cb20-12"><a href="#cb20-12"></a>        <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:35%;">
+<center>
+<img src="images/filtered_penguin_plot.png" alt="A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins. For all species, bill length tends to increase with flipper length." width="450">
+</center>
+</div>
+</div>
+</section><section id="what-needs-updating" class="slide level2" data-menu-title="What needs to be reactive?"><h2></h2>
+<div class="slide-title-smaller">
+Which part of our code needs to be updated when a user changes the slider range input?
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>body_mass_df <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> <span class="dv">3000</span><span class="sc">:</span><span class="dv">4000</span>) <span class="co"># 3000:4000 needs to be update-able (or in other words, reactive)!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p class="body-text">
+<strong>For example:</strong>
+</p>
+<div class="column" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>body_mass_df <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> <span class="dv">2857</span><span class="sc">:</span><span class="dv">5903</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<center>
+<img src="images/2857_5903.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 2,857 and a maximum of 5,903." width="450">
+</center>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>body_mass_df <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> <span class="dv">3725</span><span class="sc">:</span><span class="dv">5191</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<center>
+<img src="images/3725_5191.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 3,725 and a maximum of 5,191." width="450">
+</center>
+</div>
+</div>
+</section><section id="rule3.1" class="slide level2" data-menu-title="Rule #3a"><h2></h2>
+<div class="slide-title-smaller">
+<strong>Rule 3:</strong> Access input values with <code>input$&lt;id&gt;</code>
+</div>
+<p class="small-text">
+Recall that in our <strong>UI</strong>, we gave our <code>sliderInput()</code> an <code>inputId = "body_mass"</code>.
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># load packages (omitted for brevity) ----</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="co"># user interface ----</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  </span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>  </span>
+<span id="cb24-8"><a href="#cb24-8"></a>  <span class="co"># body mass slider ----</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, </span>
+<span id="cb24-10"><a href="#cb24-10"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
+<span id="cb24-11"><a href="#cb24-11"></a>  </span>
+<span id="cb24-12"><a href="#cb24-12"></a>  <span class="co"># body mass plot output ----</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>)</span>
+<span id="cb24-14"><a href="#cb24-14"></a>  </span>
+<span id="cb24-15"><a href="#cb24-15"></a>)</span>
+<span id="cb24-16"><a href="#cb24-16"></a></span>
+<span id="cb24-17"><a href="#cb24-17"></a><span class="co"># server instructions ----</span></span>
+<span id="cb24-18"><a href="#cb24-18"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb24-19"><a href="#cb24-19"></a>      </span>
+<span id="cb24-20"><a href="#cb24-20"></a>  <span class="co"># render the scatter plot ----</span></span>
+<span id="cb24-21"><a href="#cb24-21"></a>  output<span class="sc">$</span>bodyMass_scatterPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({ </span>
+<span id="cb24-22"><a href="#cb24-22"></a>      <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(penguins, <span class="fu">aes</span>(...)) <span class="sc">+</span> <span class="co"># etc. (omitted for brevity)</span></span>
+<span id="cb24-23"><a href="#cb24-23"></a>  <span class="er">}</span>) </span>
+<span id="cb24-24"><a href="#cb24-24"></a>    </span>
+<span id="cb24-25"><a href="#cb24-25"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="rule3.2" class="slide level2" data-menu-title="Rule #3b"><h2></h2>
+<div class="slide-title-smaller">
+<strong>Rule 3:</strong> Access input values with <code>input$&lt;id&gt;</code>
+</div>
+<p class="smaller-text">
+In our server, we can access the values of that slider input using the syntax, <code>input$body_mass</code>. <em>If you want your output to change according to the input values, substitute hard-coded values (e.g.&nbsp;3725:5191) with the input values from the UI (e.g.&nbsp;<code>input$body_mass[1]:input$body_mass[2]</code>)</em>.
+</p>
+<p class="smaller-text important-text-bg">
+<strong>Importantly</strong>, we need to use <code>reactive()</code> to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, <strong>the data frame name must be followed by <code>()</code></strong>.
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="20-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># load packages (omitted for brevity) ----</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="co"># user interface ----</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb25-5"><a href="#cb25-5"></a>  </span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>  </span>
+<span id="cb25-8"><a href="#cb25-8"></a>  <span class="co"># body mass slider ----</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, </span>
+<span id="cb25-10"><a href="#cb25-10"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
+<span id="cb25-11"><a href="#cb25-11"></a>  </span>
+<span id="cb25-12"><a href="#cb25-12"></a>  <span class="co"># body mass plot output ----</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>)</span>
+<span id="cb25-14"><a href="#cb25-14"></a>  </span>
+<span id="cb25-15"><a href="#cb25-15"></a>)</span>
+<span id="cb25-16"><a href="#cb25-16"></a></span>
+<span id="cb25-17"><a href="#cb25-17"></a><span class="co"># server instructions ----</span></span>
+<span id="cb25-18"><a href="#cb25-18"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb25-19"><a href="#cb25-19"></a>  </span>
+<span id="cb25-20"><a href="#cb25-20"></a>   <span class="co"># filter body masses ----</span></span>
+<span id="cb25-21"><a href="#cb25-21"></a>      body_mass_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({ </span>
+<span id="cb25-22"><a href="#cb25-22"></a>        penguins <span class="sc">%&gt;%</span>  </span>
+<span id="cb25-23"><a href="#cb25-23"></a>          <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> input<span class="sc">$</span>body_mass[<span class="dv">1</span>]<span class="sc">:</span>input<span class="sc">$</span>body_mass[<span class="dv">2</span>]) </span>
+<span id="cb25-24"><a href="#cb25-24"></a>      })</span>
+<span id="cb25-25"><a href="#cb25-25"></a>      </span>
+<span id="cb25-26"><a href="#cb25-26"></a>  <span class="co"># render the scatter plot ----</span></span>
+<span id="cb25-27"><a href="#cb25-27"></a>  output<span class="sc">$</span>bodyMass_scatterPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({ </span>
+<span id="cb25-28"><a href="#cb25-28"></a>      <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">body_mass_df</span>(), <span class="fu">aes</span>(...)) <span class="sc">+</span> <span class="co"># etc. (omitted for brevity)</span></span>
+<span id="cb25-29"><a href="#cb25-29"></a>  <span class="er">}</span>) </span>
+<span id="cb25-30"><a href="#cb25-30"></a>    </span>
+<span id="cb25-31"><a href="#cb25-31"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="run-that-app" class="slide level2" data-menu-title="Run that app!"><h2></h2>
+<div class="slide-title">
+Okay, RUN THAT APP!
+</div>
+<p class="body-text">
+You should now have a reactive Shiny app! <em>Note that reactivity automatically occurs whenever you use an <strong>input value</strong> to <strong>render</strong> an <strong>output object</strong>.</em>
+</p>
+<center>
+<img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="550">
+</center>
+</section><section id="recapp-app1" class="slide level2" data-menu-title="Recap: app #1"><h2></h2>
+<div class="slide-title-smaller">
+Recap: We created our first <em>reactive</em> Shiny app following these steps:
+</div>
+<div class="fragment">
+<p class="body-text">
+<strong>1.</strong> We created an <code>app.R</code> file in it’s own directory and began our app with the <a href="http://localhost:7907/#/single-file">template</a>, though you can also create a <a href="http://localhost:7907/#/two-file">two-file Shiny app</a> by using separate <code>ui.R</code> and <code>server.R</code> files.
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<strong>2.</strong> We added an input to the <code>fluidPage()</code> in our <strong>UI</strong> using an <code>*Input()</code> function and gave it a <em>unique</em> <code>inputId</code> (e.g.&nbsp;<code>inputId = "unique_input_Id_name"</code>)
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<strong>3.</strong> We created a placeholder for our reactive object by using an <code>*Output()</code> function in the <code>fluidPage()</code> of our <strong>UI</strong> and gave it an <code>outputId</code> (e.g.&nbsp;<code>outputId = "output_Id_name"</code>)
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<strong>4.</strong> We wrote the <strong>server</strong> instructions for how to assemble inputs into outputs, following these rules:
+</p>
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg> save objects that you want to display to <code>output$&lt;id&gt;</code>
+</p>
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg> build reactive objects using a <code>render*()</code> function (and similarly, build reactive data frames using <code>reactive()</code>
+</p>
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg> access input values with <code>input$&lt;id&gt;</code>
+</p>
+</div>
+<div class="fragment">
+<center>
+<p class="medium-body-text topbr">
+And we saw that reactivity automatically occurs whenever we use an <strong><em>input value</em></strong> to <strong><em>render</em></strong> an <strong><em>output object</em></strong>.
+</p>
+</center>
 </div>
 </section><section id="TheEnd" class="slide level2" data-menu-title="~End Slide~"><h2></h2>
 <center>
