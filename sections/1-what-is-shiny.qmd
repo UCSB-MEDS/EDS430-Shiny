@@ -132,7 +132,18 @@ sliderInput(inputId = "bins",
 
 <p class="body-text"> We're going to cover a lot over our two days. Here's a general **roadmap** of what you can expect:</p>
 
-TBD
+::: {.column width="45%"}
+<p class="medium-body-text">**Day 1**</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` build a single-file Shiny app with two reactive plots</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<p class="medium-body-text">**Day 2**</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` TBD</p>
+:::
 
 ---
 

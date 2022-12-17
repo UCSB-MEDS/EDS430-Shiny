@@ -715,3 +715,9 @@ server <- function(input, output) {
 . . . 
 
 <center><p class="medium-body-text topbr">And we saw that reactivity automatically occurs whenever we use an ***input value*** to ***render*** an ***output object***.</p></center>
+
+---
+
+##  {#app1-ex1 data-menu-title="App #1, Exercise 1"}
+
+<div class="slide-title-orange">Exercise 1: Add another reactive widget</div>

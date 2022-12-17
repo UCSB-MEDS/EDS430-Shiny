@@ -18,6 +18,7 @@ $dark-blue: #003660;
 $white: #FFFFFF;
 $green: #78A540;
 $magenta: #900C3F;
+$orange: #EA8226;
 $off-white: #F7F7F7;
 $gray: #ADADAD;
 
@@ -98,6 +99,14 @@ td {
 .slide-title {
   font-family: $font-family-serif;
   color: $teal;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.slide-title-orange {
+  font-family: $font-family-serif;
+  color: $orange;
   font-size: 1.4em;
   font-weight: 700;
   margin-bottom: 0.5em;
