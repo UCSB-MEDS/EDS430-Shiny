@@ -89,6 +89,8 @@ shinyApp(ui = ui, server = server)
 
 <p class="small-text topbr">You should also notice a red stop sign, <img src="images/stop.png" alt="A red hexagon with the word 'STOP' printed in white across the center." style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, appear in the top right corner of your console indicating that R is busy--this is because your R session is currently acting as your Shiny app server and listening for any user interaction with your app. Because of this, you won't be able to run any commands in the console until you quit your app. Do so by pressing the stop button.</p>
 
+:::: {.columns}
+
 ::: {.column width="50%"}
 <center><img src="images/blank_app.png" alt="" width="400"/></center>
 :::
@@ -96,6 +98,8 @@ shinyApp(ui = ui, server = server)
 ::: {.column width="50%"}
 <center><img src="images/run_app_RStudio.png" alt="" width="400"/></center>
 :::
+
+::::
 
 ---
 
@@ -112,6 +116,8 @@ shinyApp(ui = ui, server = server)
 . . . 
 
 <p class="small-text">**2.** Create two new R scripts inside `/two-file-app` named `ui.R` and `server.R` -- you **must** name your scripts `ui.R` and `server.R`. Copy the following code into the respective files. **Note:** When splitting your UI and server into separate files, you do not need to include the `shinyApp(ui = ui, server = server)` line of code (as required in your single-file app).<p>
+
+:::: {.columns}
 
 ::: {.column width="45%"}
 <p class="body-text">**`ui.R`**</p>
@@ -135,6 +141,8 @@ ui <- fluidPage()
 server <- function(input, output) {}
 ```
 :::
+
+::::
 
 . . . 
 

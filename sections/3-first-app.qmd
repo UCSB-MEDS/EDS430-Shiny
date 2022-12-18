@@ -19,6 +19,8 @@ editor_options:
 
 <p class="body-text">We'll start by building a small **single-file app** using data from the `{palmerpenguins}` package. We'll build out the the following features:</p>
 
+:::: {.columns}
+
 ::: {.column width="45%"}
 <br>
 <br>
@@ -36,6 +38,8 @@ editor_options:
 ::: {.column width="45%"}
 <center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700"/></center>
 :::
+
+::::
 
 ---
 
@@ -55,7 +59,7 @@ ui <- fluidPage(
   "My App Title",
   
   # app subtitle ----
-  "Exploring Antarctic Penguins and Temperatures"
+  "Exploring Antarctic Penguin Data"
   
   )
 ```
@@ -74,7 +78,7 @@ ui <- fluidPage(
   tags$h1("My App Title"), # alternatively, you can use the `h1()` wrapper function
   
   # app subtitle ----
-  p(strong("Exploring Antarctic Penguins and Temperatures")) # alternatively, `tags$p(tags$strong("text"))`
+  p(strong("Exploring Antarctic Penguin Data")) # alternatively, `tags$p(tags$strong("text"))`
   
   )
 ```
@@ -90,6 +94,8 @@ ui <- fluidPage(
 <p class="small-text">**Inputs** (or widgets) are the things that users can interact with (e.g. toggle, slide) and provide values to your app. The input functions below correspond to the widgets you see on [slide #9](https://ucsb-meds.github.io/EDS430-Shiny/#/widgets). **Outputs** are the R objects that your user sees (e.g. tables, plots) and are what respond when a user interacts with/changes an input value.</p>
 
 <p class="small-text">The `shiny` package comes with a number of input and output functions, but you can extend these with additional packages (e.g. `shinyWidgets`, `plotly`, `DT`, etc.; more on those later).</p>
+
+:::: {.columns}
 
 ::: {.column width="45%"}
 <p class="body-text">**Examples of Input Functions:**</p>
@@ -117,6 +123,9 @@ ui <- fluidPage(
 <p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `textOutput()` (inserts text)</p>  
 <p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` See full list of `shiny` output functions [here](https://shiny.rstudio.com/tutorial/written-tutorial/lesson4/)</p>  
 :::
+
+::::
+
 ---
 
 ##  {#reactive-plot-app1 data-menu-title="Adding reactive plot (app #1)"}
@@ -124,6 +133,8 @@ ui <- fluidPage(
 <div class="slide-title">Adding our reactive plot</div>
 
 <p class="small-text">Next, we'll create a **scatterplot of penguin bill lengths vs. penguin flipper lengths** using the `penguins` data set from the `{palmerpengiuns}` package. We will make this scatterplot *reactive* by adding a `sliderInput` that allows users to filter the displayed data points by **selecting a range of penguin body masses** (e.g. only plot bill and flipper lengths for penguins with body masses ranging from 4,500 grams to 6,000 grams).</p>
+
+:::: {.columns}
 
 ::: {.column width="45%"}
 <br>
@@ -139,6 +150,8 @@ ui <- fluidPage(
 ::: {.column width="45%"}
 <center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700"/></center>
 :::
+
+::::
 
 ---
 
@@ -243,6 +256,8 @@ ui <- fluidPage(
 
 . . . 
 
+:::: {.columns}
+
 :::{.column width="45%"}
 <br>
 <p class="small-text">Okay, it looks like nothing changed?? **Remember, `*Output()` functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders.** We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named "*bodyMass_scatterPlot*":</p>
@@ -254,6 +269,8 @@ ui <- fluidPage(
 :::{.column width="45%"}
 <center><img src="images/output_placeholder.png" alt="A Google Chrome browser window with our Shiny app open on the left-hand side and the underlying HTML document open on the right. The app looks the same as before, except hovering over the HTML associated with our new plotOutput highlights a blue square region beneath the sliderInput. This highlighted region is the placeholder where our plot will eventually be rendered." width="450"/></center>
 :::
+
+::::
 
 ---
 
@@ -301,6 +318,8 @@ ui <- fluidPage(
 
 <div class="slide-title-smaller">**Rule 1:** Save objects you want to display to `output$<id>`</div>
 
+:::: {.columns}
+
 ::: {.column width="65%"}
 ```{r}
 #| eval: false
@@ -343,6 +362,10 @@ server <- function(input, output) {
 
 <p class="small-text important-text-bg topbr">**Note:** In the **UI**, our `outputId` is quoted (`"bodyMass_scatterPlot"`), but not in the **server** (`bodyMass_scatterPlot`).</p>
 :::
+
+::::
+
+<p class="smaller-text">**A (possibly) simpler way to remember this:** I'm first going to tell my server to create an output using the syntax `output$`. I will then tell my server to place that output in the placeholder named "bodyMass_scatterPlot" (created in my UI) using the syntax `output$bodyMass_scatterPlot`. </p>
 
 ---
 
@@ -396,6 +419,8 @@ server <- function(input, output) {
 
 <p class="body-text bottombr">I find it easier to experiment and draft my objects (e.g. plots) first in a separate script, then copy the code over to the server after. I want to make a plot that looks like this:</p>
 
+:::: {.columns}
+
 ::: {.column width="45%"}
 ```{r}
 #| eval: false
@@ -426,6 +451,8 @@ ggplot(na.omit(penguins),
 ::: {.column width="45%"}
 <center><img src="images/penguin_scatterplot.png" alt="A scatterplot with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis. Data points are colored by penguins species: Adelie in orange circles, Chinstrap in purple triangles, and Gentoo in green squares." width="450"/></center>
 :::
+
+::::
 
 <p class="small-text important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to `~/R/practice-script.R`.</p>
 
@@ -508,13 +535,16 @@ library(palmerpenguins)
 library(tidyverse)
 
 # filter penguins df for observations where body_mass_g >= 3000 & <= 4000
-body_mass_df <- penguins %>%
+body_mass_df <- penguins |> 
   filter(body_mass_g %in% 3000:4000)
 ```
 
 . . .
 
 <p class="small-text">Then, substitute in the new filtered data and plot:</p>
+
+:::: {.columns}
+
 :::{.column width="55%"}
 ```{r}
 #| eval: false
@@ -543,6 +573,8 @@ ggplot(na.omit(body_mass_df), # plot 'body_mass_df' rather than 'penguins' df
 <center><img src="images/filtered_penguin_plot.png" alt="A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins. For all species, bill length tends to increase with flipper length." width="450"/></center>
 :::
 
+::::
+
 ---
 
 ##  {#what-needs-updating data-menu-title="What needs to be reactive?"}
@@ -555,7 +587,7 @@ ggplot(na.omit(body_mass_df), # plot 'body_mass_df' rather than 'penguins' df
 #| eval: false
 #| echo: true
 #| code-line-numbers: "2"
-body_mass_df <- penguins %>%
+body_mass_df <- penguins |> 
   filter(body_mass_g %in% 3000:4000) # 3000:4000 needs to be update-able (or in other words, reactive)!
 ```
 
@@ -563,11 +595,13 @@ body_mass_df <- penguins %>%
 
 <p class="body-text">**For example:**</p>
 
+:::: {.columns}
+
 ::: {.column width="45%"}
 ```{r}
 #| eval: false
 #| echo: true
-body_mass_df <- penguins %>%
+body_mass_df <- penguins |> 
   filter(body_mass_g %in% 2857:5903)
 ```
 
@@ -581,12 +615,14 @@ body_mass_df <- penguins %>%
 ```{r}
 #| eval: false
 #| echo: true
-body_mass_df <- penguins %>%
+body_mass_df <- penguins |> 
   filter(body_mass_g %in% 3725:5191)
 ```
 
 <center><img src="images/3725_5191.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 3,725 and a maximum of 5,191." width="450"/></center>
 :::
+
+::::
 
 ---
 
@@ -662,11 +698,11 @@ ui <- fluidPage(
 # server instructions ----
 server <- function(input, output) {
   
-   # filter body masses ----
-      body_mass_df <- reactive({ 
-        penguins %>%  
-          filter(body_mass_g %in% input$body_mass[1]:input$body_mass[2]) 
-      })
+  # filter body masses ----
+  body_mass_df <- reactive({ 
+    penguins |> 
+      filter(body_mass_g %in% input$body_mass[1]:input$body_mass[2]) 
+  })
       
   # render the scatter plot ----
   output$bodyMass_scatterPlot <- renderPlot({ 
@@ -718,6 +754,17 @@ server <- function(input, output) {
 
 ---
 
-##  {#app1-ex1 data-menu-title="App #1, Exercise 1"}
+##  {#app1-ex1 data-menu-title="App #1, Exercise 1" background="#047C90"}
 
-<div class="slide-title-orange">Exercise 1: Add another reactive widget</div>
+<div class="slide-title-white">Exercise 1: Add another reactive widget</div>
+
+---
+
+##  {#app1-ex1-solution data-menu-title="App #1, Exercise 1 Solution" background="#047C90"}
+
+<div class="slide-title-white">Exercise 1: A solution</div>
+
+```{r}
+#| eval: false
+#| echo: true
+```

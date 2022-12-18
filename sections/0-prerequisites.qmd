@@ -6,8 +6,10 @@ format: revealjs
 
 <div class="slide-title">`r fontawesome::fa("check", fill = "#047C90", a11y = "sem")` Prerequisites</div>
 
+:::: {.columns} 
+
 ::: {.column width="70%"}
-<div class="body-text bottombr">*This workshop assumes that participants have the following:*</div>
+<p class="body-text bottombr">*This workshop assumes that participants have the following:*</p>
 
 <div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` R/RStudio installed & a basic familiarity with the language</div>
 
@@ -18,7 +20,9 @@ format: revealjs
 <center><img src="images/shiny.png" alt="A blue hexagon with the word 'Shiny' in cursive lettering printed across the center." width="150"/></center>
 :::
 
-<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` The required R packages installed. You can install/update them all at once by running:</div>
+::::
+
+<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You have the required R packages installed. You can install/update them all at once by running:</div>
 
 ```{r}
 #| eval: false
@@ -26,9 +30,9 @@ format: revealjs
 install.packages(c("shiny", "tidyverse", "palmerpenguins", "DT", "shinyWidgets", "bslib", "thematic"))
 ```
 
-<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You have downloaded the data</div>  
+<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You have downloaded data _____ </div>
 
-<center><div class="large-body-text topbr">No prior Shiny experience is necessary!</div></center>
+<center><div class="large-body-text">No prior Shiny experience necessary!</div></center>
 
 ---
 
@@ -57,6 +61,8 @@ install.packages(c("shiny", "tidyverse", "palmerpenguins", "DT", "shinyWidgets",
 
 <p class="body-text bottombr">Be sure to check out Posit/RStudio's great instructional resources and examples as well:</p>
 
+:::: {.columns} 
+
 ::: {.column width="45%"}
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` A thoughtfully organized [Articles](https://shiny.rstudio.com/articles/) page</p>
 
@@ -69,14 +75,12 @@ install.packages(c("shiny", "tidyverse", "palmerpenguins", "DT", "shinyWidgets",
 :::
 
 ::: {.column width="45%"}
+<!-- <iframe src="https://shiny.rstudio.com/articles/" title="Shiny Articles" height=400 width=450></iframe> -->
 ```{r}
 #| echo: false
 #| out-width: 90%
-knitr::include_url("https://shiny.rstudio.com/articles/")
+# knitr::include_url("https://shiny.rstudio.com/articles/")
 ```
 :::
 
-
-
-
-
+::::
