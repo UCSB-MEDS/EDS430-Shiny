@@ -766,7 +766,7 @@ Once you have saved your <code>app.R</code> file, the “Run” code button shou
 </p>
 <div class="fragment">
 <p class="small-text topbr">
-You won’t see much yet, as we have only built a blank app (but a functioning app, nonetheless!). In your RStudio console, you should see something like: <code>Listening on http://127.0.0.1:XXXX</code>, which is the URL where your app can be found. 127.0.0.1 is a standard address that means “this computer,” and the last four digits represent a randomly assigned port number.
+You won’t see much yet, as we have only built a blank app (but a functioning app, nonetheless!). In your RStudio console, you should see something like: <code>Listening on http://127.0.0.1:XXXX</code>, which is the URL where your app can be found. 127.0.0.1 is a standard address that means “this computer,” and the last four digits represent a randomly assigned port number. You can click the “Open in Browser” button, <img src="images/open_in_browser.png" alt="A button found on the top left-hand side of the RStudio viewer window that says 'Open in Browser' next to a small browser window icon with an arrow pointing up and to the right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:110px;height:20px;">, to see how your app will appear when viewed in your web browser.
 </p>
 <p class="small-text topbr">
 You should also notice a red stop sign, <img src="images/stop.png" alt="A red hexagon with the word 'STOP' printed in white across the center." style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;">, appear in the top right corner of your console indicating that R is busy–this is because your R session is currently acting as your Shiny app server and listening for any user interaction with your app. Because of this, you won’t be able to run any commands in the console until you quit your app. Do so by pressing the stop button.
@@ -1256,7 +1256,7 @@ In our <strong>UI</strong>, we created a placeholder for our plot using the <cod
 </div>
 </div>
 <p class="smaller-text">
-<strong>A (possibly) simpler way to remember this:</strong> I’m first going to tell my server to create an output using the syntax <code>output$</code>. I will then tell my server to place that output in the placeholder named “bodyMass_scatterPlot” (created in my UI) using the syntax <code>output$bodyMass_scatterPlot</code>.
+<strong>I sometimes like to think to myself:</strong> “First, I’m going to tell my server to create an output using the syntax <code>output$</code>. Then, I will then tell my server to place that output in the placeholder named”bodyMass_scatterPlot” (created in my UI) using the syntax <code>output$bodyMass_scatterPlot</code>.
 </p>
 </section>
 <section id="rule2.1" class="slide level2" data-menu-title="Rule #2a">
@@ -1392,10 +1392,12 @@ Copy your code over to your app, placing it inside the <code>{}</code> (and make
 <div class="slide-title-smaller">
 A non-reactive plot now lives in our <code>plotOutput()</code> placeholder
 </div>
-<p class="body-text">
+<p class="body-text bottombr">
 We have a plot (yay!), but it isn’t reactive. We have not yet told the server how to update the plot based on user inputs via the <code>sliderInput()</code> in the UI. Let’s do that next…
 </p>
-<p>ADD GIF OF NONREACTIVE PLOT HERE</p>
+<center>
+<img src="images/nonreactive_app.gif" alt="A user changes the sliderInput meant associated with the penguin data scatterplot, but the plot does not update (i.e. it is not yet reactive)." width="450">
+</center>
 </section>
 <section id="practice-filtering" class="slide level2" data-menu-title="Practice filtering data">
 <h2></h2>
@@ -1418,7 +1420,7 @@ First, create a new data frame where we filter the <code>body_mass_g</code> colu
 </div>
 <div class="fragment">
 <p class="small-text">
-Then, substitute in the new filtered data and plot:
+Then, plot the new filtered data frame:
 </p>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -1619,19 +1621,135 @@ And we saw that reactivity automatically occurs whenever we use an <strong><em>i
 </center>
 </div>
 </section>
-<section id="app1-ex1" class="slide level2" data-menu-title="App #1, Exercise 1" data-background="#047C90">
+<section id="app1-ex1" class="slide level2" data-menu-title="Exercise 1 Prompt">
 <h2></h2>
-<div class="slide-title-white">
-Exercise 1: Add another reactive widget
+<div class="slide-title-smaller">
+<svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title><path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> Exercise 1: Add another reactive widget
 </div>
+<p class="small-text bottombr">
+<code>{DT}</code> is a package that provides an <a href="https://rstudio.github.io/DT/">R interface</a> to the JavaScript library <a href="https://datatables.net/">DataTables</a> (you may have already used the DT package in your knitted RMarkdown/Quarto HTML documents). DT datatables allow for filtering, pagination, sorting, and lots of other neat features for tables on your HTML pages.
+</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<br>
+<p class="small-text topbr">
+<strong>Working alone or in groups, add a reactive <code>DT</code> datatable to your app with a <code>checkboxGroupInput</code> that allows users to select which year(s) to include in the table. Configure your <code>checkboxGroupInput</code> so that the years 2007 and 2008 are pre-selected.</strong>
+</p>
+<p class="small-text topbr">
+In the end, your app should look something like the example to the right.
+</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/DT.gif" alt="A gif of our current Shiny app, demonstrating the newly added DT::datatable. The user is able to select which years (2007, 2008, 2009) to display data for by clicking on one more more checkboxes." width="550">
+</center>
+</div>
+</div>
+<p><br></p>
+<center>
+<p class="large-body-text">
+See next slide for some tips on getting started!
+</p>
+</center>
 </section>
-<section id="app1-ex1-solution" class="slide level2" data-menu-title="App #1, Exercise 1 Solution" data-background="#047C90">
+<section id="app1-ex1-tips" class="slide level2" data-menu-title="Exercise 1 Tips">
 <h2></h2>
-<div class="slide-title-white">
-Exercise 1: A solution
+<div class="slide-title-smaller">
+<svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title><path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"></path></svg> Exercise 1: Tips
+</div>
+<p class="body-text topbr">
+<strong>Tips:</strong>
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Use <code>?checkboxGroupInput</code> to learn more about which arguments you need (remember, all inputs require an <code>inputId</code> and oftentimes a <code>label</code>, but there are others required to make this work as well)
+</p>
+<p class="smaller-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Both <code>shiny</code> and <code>DT</code> packages have a <code>renderDataTable()</code> function – be sure to use the one from the <code>DT</code> package using the syntax, <code>packagename::functionname()</code>
+</p>
+<p class="smaller-text bottombr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> There are lots of ways to customize DT tables, but to create a basic one, all you need is to <code>DT::dataTable(your_dataframe)</code>
+</p><p>
+</p><p class="body-text topbr">
+<strong>And remember</strong> to follow the steps outlined on the previous slides (jump back to <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1">slide 26</a>):
+</p>
+<p class="small-text">
+<strong>1.</strong> Add an input (e.g.&nbsp;<code>checkboxGroupInput</code>) to the <strong>UI</strong> that users can interact with
+</p><p>
+</p><p class="small-text">
+<strong>2.</strong> Add an output (e.g.&nbsp;<code>DT::datatableOutput</code>) to the <strong>UI</strong> that creates a placeholder space to fill with our eventual reactive output
+</p><p>
+</p><p class="small-text">
+<strong>3.</strong> Tell the <strong>server</strong> how to assemble inputs into outputs following 3 rules:
+</p><p>
+</p><p class="smaller-text">
+<strong>3.1</strong> Save objects you want to display to <code>output$&lt;id&gt;</code>
+</p><p>
+</p><p class="smaller-text">
+<strong>3.2</strong> Build reactive objects using a <code>render*()</code> function
+</p><p>
+</p><p class="smaller-text">
+<strong>3.3</strong> Access input values with <code>input$&lt;id&gt;</code>
+</p><p>
+</p><center>
+<p class="large-body-text topbr">
+See next slide for a solution!
+</p>
+</center>
+</section>
+<section id="app1-ex1-solution" class="slide level2" data-menu-title="Exercise 1 Solution">
+<h2></h2>
+<div class="slide-title-smaller">
+<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 1: A solution
 </div>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># load packages ----</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="fu">library</span>(DT)</span>
+<span id="cb26-6"><a href="#cb26-6"></a></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="co"># user interface ----</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb26-9"><a href="#cb26-9"></a>  </span>
+<span id="cb26-10"><a href="#cb26-10"></a>  <span class="co"># title &amp; subtitle (omitted for brevity) ----</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a>  </span>
+<span id="cb26-12"><a href="#cb26-12"></a>  <span class="co"># body mass slider input &amp; output (omitted for brevity) ----</span></span>
+<span id="cb26-13"><a href="#cb26-13"></a></span>
+<span id="cb26-14"><a href="#cb26-14"></a>  <span class="co"># year input ----</span></span>
+<span id="cb26-15"><a href="#cb26-15"></a>  <span class="fu">checkboxGroupInput</span>(<span class="at">inputId =</span> <span class="st">"year"</span>, <span class="at">label =</span> <span class="st">"Select year(s):"</span>,</span>
+<span id="cb26-16"><a href="#cb26-16"></a>                     <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"The year 2007"</span> <span class="ot">=</span> <span class="st">"2007"</span>, <span class="st">"2008"</span>, <span class="st">"2009"</span>), <span class="co"># OR `unique(penguins$year)` | </span><span class="al">NOTE</span><span class="co">: update display name using "New Name" = "observation name"</span></span>
+<span id="cb26-17"><a href="#cb26-17"></a>                     <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"2007"</span>, <span class="st">"2008"</span>)),</span>
+<span id="cb26-18"><a href="#cb26-18"></a>  </span>
+<span id="cb26-19"><a href="#cb26-19"></a>  <span class="co"># DT output ----</span></span>
+<span id="cb26-20"><a href="#cb26-20"></a>  DT<span class="sc">::</span><span class="fu">dataTableOutput</span>(<span class="at">outputId =</span> <span class="st">"penguin_data"</span>)</span>
+<span id="cb26-21"><a href="#cb26-21"></a>  </span>
+<span id="cb26-22"><a href="#cb26-22"></a>)</span>
+<span id="cb26-23"><a href="#cb26-23"></a></span>
+<span id="cb26-24"><a href="#cb26-24"></a><span class="co"># server instructions ----</span></span>
+<span id="cb26-25"><a href="#cb26-25"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb26-26"><a href="#cb26-26"></a>  </span>
+<span id="cb26-27"><a href="#cb26-27"></a>  <span class="co"># reactive scatterplot (omitted for brevity) ----</span></span>
+<span id="cb26-28"><a href="#cb26-28"></a>  </span>
+<span id="cb26-29"><a href="#cb26-29"></a>  <span class="co"># filter for years ----</span></span>
+<span id="cb26-30"><a href="#cb26-30"></a>  years_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb26-31"><a href="#cb26-31"></a>    penguins <span class="sc">|&gt;</span> </span>
+<span id="cb26-32"><a href="#cb26-32"></a>      <span class="fu">filter</span>(year <span class="sc">%in%</span> input<span class="sc">$</span>year) <span class="co"># return observations where year is "in" the set of options provided by the user via the checkboxGroupInput</span></span>
+<span id="cb26-33"><a href="#cb26-33"></a>  })</span>
+<span id="cb26-34"><a href="#cb26-34"></a>  </span>
+<span id="cb26-35"><a href="#cb26-35"></a>  <span class="co"># render the DT::datatable ----</span></span>
+<span id="cb26-36"><a href="#cb26-36"></a>  output<span class="sc">$</span>penguin_data <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({</span>
+<span id="cb26-37"><a href="#cb26-37"></a>    </span>
+<span id="cb26-38"><a href="#cb26-38"></a>    DT<span class="sc">::</span><span class="fu">datatable</span>(<span class="fu">years_df</span>(), <span class="co"># check out https://rstudio.github.io/DT/ for lots of fun ways to customize your table!</span></span>
+<span id="cb26-39"><a href="#cb26-39"></a>                  <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pagelength =</span> <span class="dv">10</span>),</span>
+<span id="cb26-40"><a href="#cb26-40"></a>                  <span class="at">rownames =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-41"><a href="#cb26-41"></a>    </span>
+<span id="cb26-42"><a href="#cb26-42"></a>  })</span>
+<span id="cb26-43"><a href="#cb26-43"></a>  </span>
+<span id="cb26-44"><a href="#cb26-44"></a>}</span>
+<span id="cb26-45"><a href="#cb26-45"></a></span>
+<span id="cb26-46"><a href="#cb26-46"></a><span class="co"># combine UI &amp; server into an app ----</span></span>
+<span id="cb26-47"><a href="#cb26-47"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="TheEnd" class="slide level2" data-menu-title="~End Slide~">

@@ -365,7 +365,7 @@ server <- function(input, output) {
 
 ::::
 
-<p class="smaller-text">**A (possibly) simpler way to remember this:** I'm first going to tell my server to create an output using the syntax `output$`. I will then tell my server to place that output in the placeholder named "bodyMass_scatterPlot" (created in my UI) using the syntax `output$bodyMass_scatterPlot`. </p>
+<p class="smaller-text">**I sometimes like to think to myself:** "First, I'm going to tell my server to create an output using the syntax `output$`. Then, I will then tell my server to place that output in the placeholder named "bodyMass_scatterPlot" (created in my UI) using the syntax `output$bodyMass_scatterPlot`. </p>
 
 ---
 
@@ -513,9 +513,9 @@ server <- function(input, output) {
 
 <div class="slide-title-smaller">A non-reactive plot now lives in our `plotOutput()` placeholder</div>
 
-<p class="body-text">We have a plot (yay!), but it isn't reactive. We have not yet told the server how to update the plot based on user inputs via the `sliderInput()` in the UI. Let's do that next...</p>
+<p class="body-text bottombr">We have a plot (yay!), but it isn't reactive. We have not yet told the server how to update the plot based on user inputs via the `sliderInput()` in the UI. Let's do that next...</p>
 
-ADD GIF OF NONREACTIVE PLOT HERE
+<center><img src="images/nonreactive_app.gif" alt="A user changes the sliderInput meant associated with the penguin data scatterplot, but the plot does not update (i.e. it is not yet reactive)." width="450"/></center>
 
 ---
 
@@ -541,7 +541,7 @@ body_mass_df <- penguins |>
 
 . . .
 
-<p class="small-text">Then, substitute in the new filtered data and plot:</p>
+<p class="small-text">Then, plot the new filtered data frame:</p>
 
 :::: {.columns}
 
@@ -754,17 +754,110 @@ server <- function(input, output) {
 
 ---
 
-##  {#app1-ex1 data-menu-title="App #1, Exercise 1" background="#047C90"}
+##  {#app1-ex1 data-menu-title="Exercise 1 Prompt"}
 
-<div class="slide-title-white">Exercise 1: Add another reactive widget</div>
+<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 1: Add another reactive widget</div>
+
+<p class="small-text bottombr">`{DT}` is a package that provides an [R interface](https://rstudio.github.io/DT/) to the JavaScript library [DataTables](https://datatables.net/) (you may have already used the DT package in your knitted RMarkdown/Quarto HTML documents). DT datatables allow for filtering, pagination, sorting, and lots of other neat features for tables on your HTML pages.</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<br>
+<p class="small-text topbr">**Working alone or in groups, add a reactive `DT` datatable to your app with a `checkboxGroupInput` that allows users to select which year(s) to include in the table. Configure your `checkboxGroupInput` so that the years 2007 and 2008 are pre-selected.**</p>
+<p class="small-text topbr">In the end, your app should look something like the example to the right.</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/DT.gif" alt="A gif of our current Shiny app, demonstrating the newly added DT::datatable. The user is able to select which years (2007, 2008, 2009) to display data for by clicking on one more more checkboxes." width="550"/></center>
+:::
+
+::::
+
+<br>
+
+<center><p class="large-body-text">See next slide for some tips on getting started!</p></center>
 
 ---
 
-##  {#app1-ex1-solution data-menu-title="App #1, Exercise 1 Solution" background="#047C90"}
+##  {#app1-ex1-tips data-menu-title="Exercise 1 Tips"}
 
-<div class="slide-title-white">Exercise 1: A solution</div>
+<div class="slide-title-smaller">`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 1: Tips</div>
+
+<p class="body-text topbr">**Tips:**</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use `?checkboxGroupInput` to learn more about which arguments you need (remember, all inputs require an `inputId` and oftentimes a `label`, but there are others required to make this work as well)</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Both `shiny` and `DT` packages have a `renderDataTable()` function -- be sure to use the one from the `DT` package using the syntax, `packagename::functionname()`</p>
+<p class="smaller-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` There are lots of ways to customize DT tables, but to create a basic one, all you need is to `DT::dataTable(your_dataframe)`<p>
+
+
+<p class="body-text topbr">**And remember** to follow the steps outlined on the previous slides (jump back to [slide 26](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1)):</p>
+
+<p class="small-text">**1.** Add an input (e.g. `checkboxGroupInput`) to the **UI** that users can interact with<p>
+<p class="small-text">**2.** Add an output (e.g. `DT::datatableOutput`) to the **UI** that creates a placeholder space to fill with our eventual reactive output<p>
+<p class="small-text">**3.** Tell the **server** how to assemble inputs into outputs following 3 rules:<p>
+<p class="smaller-text">**3.1** Save objects you want to display to `output$<id>`<p>
+<p class="smaller-text">**3.2** Build reactive objects using a `render*()` function<p>
+<p class="smaller-text">**3.3** Access input values with `input$<id>`<p>
+
+<center><p class="large-body-text topbr">See next slide for a solution!</p></center>
+
+---
+
+##  {#app1-ex1-solution data-menu-title="Exercise 1 Solution"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 1: A solution</div>
 
 ```{r}
 #| eval: false
 #| echo: true
+# load packages ----
+library(shiny)
+library(palmerpenguins)
+library(tidyverse)
+library(DT)
+
+# user interface ----
+ui <- fluidPage(
+  
+  # title & subtitle (omitted for brevity) ----
+  
+  # body mass slider input & output (omitted for brevity) ----
+
+  # year input ----
+  checkboxGroupInput(inputId = "year", label = "Select year(s):",
+                     choices = c("The year 2007" = "2007", "2008", "2009"), # OR `unique(penguins$year)` | NOTE: update display name using "New Name" = "observation name"
+                     selected = c("2007", "2008")),
+  
+  # DT output ----
+  DT::dataTableOutput(outputId = "penguin_data")
+  
+)
+
+# server instructions ----
+server <- function(input, output) {
+  
+  # reactive scatterplot (omitted for brevity) ----
+  
+  # filter for years ----
+  years_df <- reactive({
+    penguins |> 
+      filter(year %in% input$year) # `%in%` = return observations where year is "in" the set of options provided by the user via the checkboxGroupInput
+  })
+  
+  # render the DT::datatable ----
+  output$penguin_data <- DT::renderDataTable({
+    
+    DT::datatable(years_df(), # check out https://rstudio.github.io/DT/ for lots of fun ways to customize your table!
+                  options = list(pagelength = 10),
+                  rownames = FALSE)
+    
+  })
+  
+}
+
+# combine UI & server into an app ----
+shinyApp(ui = ui, server = server)
 ```
