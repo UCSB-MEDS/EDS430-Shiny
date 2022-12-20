@@ -60,7 +60,7 @@ format: revealjs
 
 <p class="body-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets collect information from the user which is then used to update outputs created in the server.</p>
 
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Shiny comes with a variety of [pre-built widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) (see left), but you can also explore widget extensions using the [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets) package.</p>
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Shiny comes with a set of of [standard widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) (see left), but you can also explore widget extensions using a variety of other packages (e.g. [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets), [`{DT}`](https://rstudio.github.io/DT/), [`{plotly}`](https://plotly.com/r/))</p>
 :::
 
 ::::

@@ -59,6 +59,36 @@ format:
 
 ---
 
+##  {#break1 data-menu-title="Break" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("mug-hot", fill = "#d2e3f3", a11y = "sem")` Break</p>
+<p class="caption-text">*Give your eyes a break from the computer screen!*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 10,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+{{< include sections/4-second-app.qmd >}}
+
+---
+
 ## {#TheEnd data-menu-title="~End Slide~"}
 
 <center><div class="slide-title bottombr">I'm excited to see what *Shiny* new apps you all create!</div></center>
