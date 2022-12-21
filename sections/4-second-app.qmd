@@ -6,7 +6,7 @@ format: revealjs
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building out your 2nd app</p>
-<p class="caption-text">*Up until now, we've been adding our text and widgets in a pretty unstructured way -- elements are stacked on top of one another within a single column. Next up, we'll learn how to customize the layout of our app to make it a bit more visually pleasing.*</p>
+<p class="caption-text">*Up until now, we've been adding our text and widgets in a pretty unstructured way -- elements are stacked on top of one another within a single column. Next, we'll learn how to customize the layout of our app to make it a bit more visually pleasing.*</p>
 </div>
 
 ---
@@ -19,7 +19,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be comfortable creating a shiny app using the two-file (`ui.R` & `server.R`) format</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be comfortable creating a shiny app using the two-file (`ui.R` & `server.R`) format along with a `global.R` file</p>
 
 . . .
 
@@ -33,7 +33,15 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be using shiny extension packages to improve the appearance and overall user experience of your app</p>
 
-. .  .
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to import larger bodies of text using `includeMarkdown()` (rather than writing & styling text within your UI)</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully publish and *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
+
+. . .
 
 <p class="medium-body-text topbr">New packages used:</p> 
 
@@ -55,12 +63,255 @@ format: revealjs
 
 ---
 
+##  {#unstructured-app1 data-menu-title="Unstructured first app"}
+
+<div class="slide-title-smaller">We created a perfectly functional first app, but it's not so visually pleasing</div>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<br>
+<br>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` nothing really grabs your eye</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` inputs & outputs are stacked vertically on top of one another (which requires a lot of vertical scrolling)</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` widget label text is difficult to distinguish from other text</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/app1.gif" alt="A gif of our first Shiny app. The title, 'My App Title' is in large black text at the top. Underneath, the subtitle, 'Exploring Antarctc Penguin Data' is in smaller black text. Immediately beneath, there is a sliderInput with black text above it that says, 'Select a range of body masses (g). The user is sliding both upper and lower ends to select a range of body masses to display data for. The scatterplot, with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis, updates accordingly. The user then scrolls down to a DT datatable. Immediately below the first plot is text that says 'Select year(s):' with checkboxes next to the years 2007, 2008, and 2009. The boxes next to 2007 and 2008 are already checked. The user also selects the box next to 2009. The user then uses a drop down menu to display 50 entries (rather than the default 10). The user clicks on the 'bill_length_mm' column to rearrange the data in descending order." width="550"/></center> 
+:::
+
+::::
+
+<p class="body-text">Before we jump into adding reactive outputs to our next app, we'll first plan out the visual structure of our UI -- first on paper, then with layout functions.</p>
+
+---
+
 ##  {#two-source data-menu-title="Two source panes"}
 
 <div class="slide-title">Two files? Try two panes!</div>
 
-<p class="body-text bottombr">You can open multiple scripts up side-by-side by navigating to **Tools** > **Global Options** > **Pane Layout** > **Add Column**</p>
+<p class="body-text bottombr">We'll be building out a **two-file shiny app** this time around. You can open multiple scripts up side-by-side by navigating to **Tools** > **Global Options** > **Pane Layout** > **Add Column**</p>
 
 <center><img src="images/two_source.png" alt="RStudio with three columns. (From left to right): (1) a source pane with `ui.R` open (2) a second source pane on the top with `server.R` open and the console on the bottom, (3) Environment/History/Git/etc. on the top and Files/Plots/Packages/etc. on the bottom" width="650"/></center>
 
 <p class="body-text topbr">This setup is certainly not required/necessary -- organize your IDE however you work best!</p>
+
+---
+
+##  {#global.R data-menu-title="global.R"}
+
+<div class="slide-title-smaller">A `global.R` file can help you keep code organized</div>
+
+<p class="small-text bottombr">While not a requirement of a shiny app, a `global.R` file will help reduce redundant code, increase your app's speed, and help keep code more clearly organized. It works by running once when your app is first launched, making any logic, objects, etc. contained in it available to both the `ui.R` and `server.R` files (or, in the case of a single-file shiny app, the `app.R` file). It's a great place for things like:</p>
+
+. . . 
+
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` loading packages</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` importing data</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` sourcing scripts (particularly functions -- we'll talk more about functions later)</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` data wrangling (though you'll want to do any major data cleaning before bringing your data into your app)</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` building custom `ggplot` themes</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` etc.</p>
+
+. . . 
+
+<p class="small-text topbr bottombr">`global.R` *must* be saved to the same directory as your `ui.R` and `server.R` files.</p>
+
+. . . 
+
+<center><p class="medium-body-text">**Exercise:** Create a `global.R` file inside your `/two-file-app` directory and load the `{shiny}` package at the top -- we'll continue to add to this file as we work on our app.</p></center>
+
+---
+
+##  {#layout-functions data-menu-title="Layout functions"}
+
+<div class="slide-title-smaller">Layout functions provide the high-level visual structure of your app</div>
+
+<p class="small-text">Layouts are created using a **hierarchy** of function calls *inside* `fluidPage()`. Layouts often require a series functions -- **container** functions establish the larger area within which other layout elements are placed. See some minimal examples of these layout functions on the following slide.</p>
+
+<p class="small-text">**Some useful layout function pairings:**</p>
+```{r}
+#| eval: false
+#| echo: true
+# sidebar for inputs & main area for outputs within the sidebarLayout() container
+sidebarLayout(
+  sidebarPanel(),
+  mainPanel()
+)
+# multi-row fluid layout (add any number of fluidRow()s to a fluidPage())
+fluidRow(
+  column(4, ...),
+  column(8, ...)
+)
+# tabPanel()s to contain HTML components (e.g. inputs/outputs) within the tabsetPanel() container
+tabsetPanel(
+  tabPanel()
+)
+# page with top-level navigation bar that can be used to toggle tabPanel() elements
+navbarPage(
+  tabPanel()
+)
+```
+
+. . .
+
+<p class="smallest-text">**Note:** Under the hood, `fluidPage()` sets up all the HTML, CSS, and Javascript that Shiny needs. It's a super important function! Therefore, all layout functions are called inside `fluidPage()`. Check out the documentation for `fixedPage()` and `fillPage()` which may be substituted for `fluidPage()` in more specialized situations.</p>
+
+---
+
+##  {#layout-function-examples data-menu-title="Layout Examples"}
+
+<div class="slide-title-smaller">Example UI layouts</div>
+
+::: {.panel-tabset}
+
+## Sidebar & main area
+
+<p class="body-text">To create a page with a **side bar and main area** to contain your inputs and outputs (respectively), explore the following layout functions and read up on the [sidebarLayout documentation](https://shiny.rstudio.com/reference/shiny/1.6.0/sidebarlayout):</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+fluidPage(
+  titlePanel(
+    # app title/description
+  ),
+  sidebarLayout(
+    sidebarPanel(
+      # inputs here
+    ),
+    mainPanel(
+      # outputs here
+    )
+  )
+)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/sidebar_layout.png" alt="A simplified schematic of a Shiny app with a sidebar layout. The page as a whole is created with the fluidPage() function. The titlePanel() function creates a row at the top of the page for a title. The sidebarLayout() function creates a new row below titlePanel(). Within the sidebarLayout(), there are two side-by-side columns created using the sidebarPanel() function (to the left) and the mainPanel() function (to the right)." width="650"/></center>
+:::
+
+::::
+
+## Page with multiple rows
+
+<p class="body-text">To create a **page with multiple rows**, explore the following layout functions and check out the [fluid layout](https://shiny.rstudio.com/reference/shiny/1.6.0/fluidpage) documentation. Note that each row is made up of **12** columns. The first argument of the `column()` function takes a value of 1-12 to specify the number of columns to occupy.</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+fluidPage(
+  fluidRow(
+    column(4, 
+      ...
+    ),
+    column(8, 
+      ...
+    )
+  ),
+  fluidRow(
+    column(6, 
+      ...
+    ),
+    column(6, 
+      ...
+    )
+  )
+)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/multirow_layout.png" alt="A simplified schematic of a Shiny app with a multi-row layout. The page as a whole is created with the fluidPage() function. Within that, the fluidRow() function is used twice to create two stacked (one atop the other) rows on the page. Within each fluidRow are two side-by-side columns, each created using the column() function. Each row is made up of 12 columns. The column() function takes a value of 1-12 as the first arguement to specify how many of those 12 columns to occupy." width="650"/></center>
+:::
+
+::::
+
+## Tabs
+
+<p class="body-text">You may find that you eventually end up with too much content to fit on a single application page. Enter `tabsetPanel()` and `tabPanel()`. `tabsetPanel()` creates a container for any number of `tabPanel()`s. Each `tabPanel()` can contain any number of HTML components (e.g. inputs and outputs). Find the [tabsetPanel documentation here](https://shiny.rstudio.com/reference/shiny/1.5.0/tabsetpanel) and check out this example:</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+tabsetPanel(
+  tabPanel("Tab 1", 
+    # an input
+    # an output
+  ),
+  tabPanel("Tab 2"),
+  tabPanel("Tab 3")
+)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/tabsetPanel_layout.png" alt="A simplified schematic of a Shiny app with a tabsetPanel layout. The page as a whole is created with the fluidPage() function. Within that, the tabsetPanel() function creates a container within which three tabPanel()s ('Tab 1', 'Tab 2', 'Tab 3') are defined (for this particular example). Tab 1 is highlighted and has placeholder text which says '# an input' and then on the line below, '# an output'." width="650"/></center>
+:::
+
+::::
+
+## Navbar
+
+<p class="body-text">You may also want to use a navigation bar (`navbarPage()`) with different pages (created using `tabPanel()`) to organize your application. Read through the [navbarPage documentation](https://shiny.rstudio.com/reference/shiny/1.6.0/navbarpage) and try running the example below:</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+fluidPage(
+  navbarPage(
+    "My app",
+    tabPanel("Tab 1",
+             # an input
+             # an output
+             ),
+    tabPanel("Tab 2")
+  )
+)  
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/navbarPage_layout.png" alt="A simplified schematic of a Shiny app with a navbarPage layout. The page as a whole is created with the fluidPage() function. Within that, the navbarPage() function creates a top-level navigation bar that can be used to toggle between two tabPanel()s ('Tab 1', 'Tab 2'), which are definted for this particular example. Tab 1 is highlighted and has placeholder text which says '# an input' and then on the line below, '# an output'." width="650"/></center>
+:::
+
+::::
+
+:::
+
+<center><p class="small-text">Examples adapted from [Mastering Shiny, Ch. 6](https://mastering-shiny.org/action-layout.html#action-layout), by Hadley Wickham:</p></center>
+
+---
+
+##  {#blah data-menu-title="blah"}
+
+<div class="slide-title-smaller">next slide</div>

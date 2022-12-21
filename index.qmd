@@ -89,6 +89,10 @@ countdown::countdown(
 
 ---
 
+{{< include sections/accessibility.qmd >}}
+
+---
+
 ## {#TheEnd data-menu-title="~End Slide~"}
 
 <center><div class="slide-title bottombr">I'm excited to see what *Shiny* new apps you all create!</div></center>
