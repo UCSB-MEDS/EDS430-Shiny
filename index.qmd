@@ -4,6 +4,7 @@ format:
     slide-number: true
     # preview-links: true
     code-link: true
+    code-overflow: scroll
     highlight-style: a11y
     chalkboard: true
     # self-contained: true
