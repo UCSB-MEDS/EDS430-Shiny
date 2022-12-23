@@ -90,7 +90,7 @@ countdown::countdown(
 
 ---
 
-{{< include sections/accessibility.qmd >}}
+<!-- {{< include sections/accessibility.qmd >}} -->
 
 ---
 

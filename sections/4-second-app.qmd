@@ -93,32 +93,6 @@ gif here
 
 ---
 
-##  {#unstructured-app1 data-menu-title="Unstructured first app"}
-
-<div class="slide-title-smaller">We created a perfectly functional first app, but it's not so visually pleasing</div>
-
-:::: {.columns}
-
-::: {.column width="45%"}
-<br>
-<br>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` nothing really grabs your eye</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` inputs & outputs are stacked vertically on top of one another (which requires a lot of vertical scrolling)</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` widget label text is difficult to distinguish from other text</p>
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-<center><img src="images/app1.gif" alt="A gif of our first Shiny app. The title, 'My App Title' is in large black text at the top. Underneath, the subtitle, 'Exploring Antarctc Penguin Data' is in smaller black text. Immediately beneath, there is a sliderInput with black text above it that says, 'Select a range of body masses (g). The user is sliding both upper and lower ends to select a range of body masses to display data for. The scatterplot, with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis, updates accordingly. The user then scrolls down to a DT datatable. Immediately below the first plot is text that says 'Select year(s):' with checkboxes next to the years 2007, 2008, and 2009. The boxes next to 2007 and 2008 are already checked. The user also selects the box next to 2009. The user then uses a drop down menu to display 50 entries (rather than the default 10). The user clicks on the 'bill_length_mm' column to rearrange the data in descending order." width="550"/></center> 
-:::
-
-::::
-
-<p class="body-text">Before we jump into adding reactive outputs to our next app, we'll first plan out the visual structure of our UI -- first on paper, then with layout functions.</p>
-
----
 
 ##  {#two-source data-menu-title="Two source panes"}
 
@@ -154,6 +128,33 @@ gif here
 . . . 
 
 <center><p class="medium-body-text">**Exercise:** Create a `global.R` file inside your `/two-file-app` directory and load the `{shiny}` package at the top -- we'll continue to add to this file as we work on our app.</p></center>
+
+---
+
+##  {#unstructured-app1 data-menu-title="Unstructured first app"}
+
+<div class="slide-title-smaller">We created a perfectly functional first app, but it's not so visually pleasing</div>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<br>
+<br>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` nothing really grabs your eye</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` inputs & outputs are stacked vertically on top of one another (which requires a lot of vertical scrolling)</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` widget label text is difficult to distinguish from other text</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/app1.gif" alt="A gif of our first Shiny app. The title, 'My App Title' is in large black text at the top. Underneath, the subtitle, 'Exploring Antarctc Penguin Data' is in smaller black text. Immediately beneath, there is a sliderInput with black text above it that says, 'Select a range of body masses (g). The user is sliding both upper and lower ends to select a range of body masses to display data for. The scatterplot, with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis, updates accordingly. The user then scrolls down to a DT datatable. Immediately below the first plot is text that says 'Select year(s):' with checkboxes next to the years 2007, 2008, and 2009. The boxes next to 2007 and 2008 are already checked. The user also selects the box next to 2009. The user then uses a drop down menu to display 50 entries (rather than the default 10). The user clicks on the 'bill_length_mm' column to rearrange the data in descending order." width="550"/></center> 
+:::
+
+::::
+
+<p class="body-text">Before we jump into adding reactive outputs to our next app, we'll first plan out the visual structure of our UI -- first on paper, then with layout functions.</p>
 
 ---
 
@@ -348,9 +349,9 @@ fluidPage(
 
 <div class="slide-title-smaller">Build a navbar with two pages</div>
 
-<p class="small-text">First, let's build a UI that has a navigation bar with two tabs -- one for background information and one to contain our plots.</p>
+<p class="small-text">First, let's build a UI that has a navigation bar with two tabs -- one for background information and one to contain our data visualizations</p>
 
-<p class="small-text">**Tip:** It can be *super* helpful add code comments at the start and end of each UI element -- for example, see `# data viz tabPanel---` and `# END data viz tabPanel`, below. Adding text that you will eventually replace with content (e.g. plots, tables, images, longer text) may help to visualize what you're working towards as well.</p>
+<p class="smaller-text">**Tip:** It can be *super* helpful add code comments at the start and end of each UI element -- for example, see `# data viz tabPanel---` and `# END data viz tabPanel`, below. Adding text that you will eventually replace with content (e.g. plots, tables, images, longer text) may help to visualize what you're working towards as well.</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -359,17 +360,17 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    "My app title",
+    "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
-    tabPanel(title = "Welcome to my app",
+    tabPanel(title = "About this App",
       
       "background info will go here" # REPLACE THIS WITH CONTENT
       
     ), # END (Page 1) intro tabPanel
     
     # (Page 2) data viz tabPanel ----
-    tabPanel(title = "Explore the data",
+    tabPanel(title =  "Explore the Data",
       
       "reactive plots will go here" # REPLACE THIS WITH CONTENT
       
@@ -384,51 +385,47 @@ ui <- fluidPage(
 
 ##  {#add-tabs data-menu-title="Add tabs"}
 
-<div class="slide-title-smaller">Add three tabs (one for each plot we'll be creating) to the "Explore the data" page</div>
+<div class="slide-title-smaller">Add two tabs to the "Explore the Data" page</div>
 
-<p class="small-text">Give your tabs the following titles: `Crab`, `Trout`, and `Bison`.</p>
+<p class="small-text">Give your tabs the following titles: `Trout` and `Penguins`.</p>
 
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "18-39"
+#| code-line-numbers: "18-35"
 ui <- fluidPage(
   
   # navbar page ----
   navbarPage(
     
-    "My app title",
+    "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
-    tabPanel(title = "Welcome to my app",
+    tabPanel(title = "About this App",
       
       "background info will go here"  # REPLACE THIS WITH CONTENT
       
     ), # END (Page 1) intro tabPanel
     
     # (Page 2) data viz tabPanel ----
-    tabPanel(title = "Explore the data",
+    tabPanel(title =  "Explore the Data",
       
       # tabsetPanel to contain tabs for data viz ----
       tabsetPanel(
         
-        tabPanel(title = "Crab",
-                 
-                 "crab data viz here", # REPLACE THIS WITH CONTENT
-                 
-                 ), # END crab tabPnel
-        
+        # trout tabPanel ----
         tabPanel(title = "Trout",
                 
                   "trout data viz here"  # REPLACE THIS WITH CONTENT
                  
                  ), # END trout tabPanel 
         
-        tabPanel(title = "Bison",
+        # penguin tabPanel ----
+        tabPanel(title = "Penguins",
                  
-                 "bison data viz here"  # REPLACE THIS WITH CONTENT
+                 "penguin data viz here"  # REPLACE THIS WITH CONTENT
                  
-                 ) # END bison tabPanel
+                 ) # END penguin tabPanel
         
       ) # END tabsetPanel
       
@@ -443,156 +440,35 @@ ui <- fluidPage(
 
 ##  {#sidebar-main-panels data-menu-title="Create sidebar & main panels"}
 
-<div class="slide-title-smaller">Create sidebar & main panel areas for crab plot inputs & outputs</div>
+<div class="slide-title-smaller">Add sidebar and main panels to the `Trout` tab</div>
 
-<p class="small-text">Let's add a sidebar and main panel to the `Crab` tab -- we'll eventually place our input in the sidebar and output in the main panel.</p>
+<p class="small-text">We'll eventually place our input in the sidebar and output in the main panel.</p>
 
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "23-40"
+#| code-line-numbers: "23-41"
 ui <- fluidPage(
   
   # navbar page ----
   navbarPage(
     
-    "My app title",
+    "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
-    tabPanel(title = "Welcome to my app",
+    tabPanel(title = "About this App",
       
       "background info will go here"  # REPLACE THIS WITH CONTENT
       
     ), # END (Page 1) intro tabPanel
     
     # (Page 2) data viz tabPanel ----
-    tabPanel(title = "Explore the data",
+    tabPanel(title = "Explore the Data",
       
       # tabsetPanel to contain tabs for data viz ----
       tabsetPanel(
         
-        tabPanel(title = "Crab",
-                 
-                 # crab plot sidebarLayout ----
-                 sidebarLayout(
-                   
-                   # crab plot sidebarPanel ----
-                   sidebarPanel(
-                     
-                     "crab plot input(s) go here" # REPLACE THIS WITH CONTENT
-                     
-                   ), # END crab plot sidebarPanel
-                   
-                   # crab plot mainPanel ----
-                   mainPanel(
-                     
-                     "crab plot output goes here" # REPLACE THIS WITH CONTENT
-                     
-                   ) # END crab plot mainPanel
-                   
-                 ) # END crab plot sidebarLayout
-                 
-                 ), # END crab tabPanel
-        
-        tabPanel(title = "Trout",
-                
-                  "trout data viz here"  # REPLACE THIS WITH CONTENT
-                 
-                 ), # END trout tabPanel 
-        
-        tabPanel(title = "Bison",
-                 
-                 "bison data viz here"  # REPLACE THIS WITH CONTENT
-                 
-                 ) # END bison tabPanel
-        
-      ) # END tabsetPanel
-      
-    ) # END (Page 2) data viz tabPanel
-    
-  ) # END navbarPage
-  
-) # END fluidPage
-```
-
----
-
-##  {#exercise2-prompt data-menu-title="Exercise 2 Prompt"}
-
-<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 2: Add sidebar and main panels to the `Trout` and `Bison` tabs</div>
-
-:::: {.columns}
-
-::: {.column width="45%"}
-<br>
-<br>
-<p class="body-text">I encourage you to type these out yourself, rather than copy/paste! And be sure to add text where your inputs/outputs will eventually be placed. When you're done, you app should look like this:</p>
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-<center><img src="images/app2_layout.gif" alt="Our new app, which does not yet contain any content (e.g inputs and outputs), but does have an organized layout structure. There is a navbar across the top of the page, with the title 'My app title' on the left-hand side of the navbar. There are two pages on the navbar: one says 'Welcome to my app' and the second says 'Explore the data'. The user clicks into the second page to reveal three tabs named 'Crab', 'Trout', and 'Bison'. Each tab has a gray box (a sidebar) on the lefthand side and a main panel space to the right." width="550"/></center>
-:::
-
-::::
-
-<center><p class="large-body-text">See next slide for a solution!</p></center>
-
----
-
-##  {#exercise2-solution data-menu-title="Exercise 2 Solution"}
-
-<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 2: A solution</div>
-
-```{r}
-#| eval: false
-#| echo: true
-#| code-line-numbers: "46-63|69-86"
-ui <- fluidPage(
-  
-  # navbar page ----
-  navbarPage(
-    
-    "My app title",
-    
-    # (Page 1) intro tabPanel ----
-    tabPanel(title = "Welcome to my app",
-      
-      "background info will go here" # REPLACE THIS WITH CONTENT
-      
-    ), # END (Page 1) intro tabPanel
-    
-    # (Page 2) data viz tabPanel ----
-    tabPanel(title = "Explore the data",
-      
-      # tabsetPanel to contain tabs for data viz ----
-      tabsetPanel(
-        
-        tabPanel(title = "Crab",
-                 
-                 # crab plot sidebarLayout ----
-                 sidebarLayout(
-                   
-                   # crab plot sidebarPanel ----
-                   sidebarPanel(
-                     
-                     "crab plot input(s) go here" # REPLACE THIS WITH CONTENT
-                     
-                   ), # END crab plot sidebarPanel
-                   
-                   # crab plot mainPanel ----
-                   mainPanel(
-                     
-                     "crab plot output goes here" # REPLACE THIS WITH CONTENT
-                     
-                   ) # END crab plot mainPanel
-                   
-                 ) # END crab plot sidebarLayout
-                 
-                 ), # END crab tabPanel
-        
+        # trout tabPanel ----
         tabPanel(title = "Trout",
                 
                  # trout plot sidebarLayout ----
@@ -616,28 +492,12 @@ ui <- fluidPage(
                  
                  ), # END trout tabPanel 
         
-        tabPanel(title = "Bison",
+        # penguin tabPanel ----
+        tabPanel(title = "Penguins",
                  
-                 # bison plot sidebarLayout ----
-                 sidebarLayout(
-                   
-                   # bison plot sidebarPanel ----
-                   sidebarPanel(
-                     
-                     "bison plot input(s) go here" # REPLACE THIS WITH CONTENT
-                     
-                   ), # END bison plot sidebarPanel
-                   
-                   # bison plot mainPanel ----
-                   mainPanel(
-                     
-                     "bison plot output goes here" # REPLACE THIS WITH CONTENT
-                     
-                   ) # END bison plot mainPanel
-                   
-                 ) # END bison plot sidebarLayout
+                 "penguin data viz here"  # REPLACE THIS WITH CONTENT
                  
-                 ) # END bison tabPanel
+                 ) # END penguin tabPanel
         
       ) # END tabsetPanel
       
@@ -648,5 +508,186 @@ ui <- fluidPage(
 ) # END fluidPage
 ```
 
+---
 
+##  {#exercise2-prompt data-menu-title="Exercise 2 Prompt"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 2: Add sidebar and main panels to the `Penguins` tab</div>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<br>
+<br>
+<p class="body-text">I encourage you to the code out yourself, rather than copy/paste! And be sure to add text where your input/output will eventually be placed. When you're done, you app should look like this:</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/app2_layout.gif" alt="Our new app, which does not yet contain any content (e.g inputs and outputs), but does have an organized layout structure. There is a navbar across the top of the page, with the title 'My app title' on the left-hand side of the navbar. There are two pages on the navbar: one says 'Welcome to my app' and the second says 'Explore the data'. The user clicks into the second page to reveal two tabs named 'Trout', and 'Bison'. Each tab has a gray box (a sidebar) on the lefthand side and a main panel space to the right." width="550"/></center>
+:::
+
+::::
+
+<center><p class="large-body-text">See next slide for a solution!</p></center>
+
+---
+
+##  {#exercise2-solution data-menu-title="Exercise 2 Solution"}
+
+<div class="slide-title">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 2: A solution</div>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "48-65"
+ui <- fluidPage(
+  
+  # navbar page ----
+  navbarPage(
+    
+    "LTER Animal Data Explorer",
+    
+    # (Page 1) intro tabPanel ----
+    tabPanel(title = "About this App",
+      
+      "background info will go here" # REPLACE THIS WITH CONTENT
+      
+    ), # END (Page 1) intro tabPanel
+    
+    # (Page 2) data viz tabPanel ----
+    tabPanel(title = "Animal Data Explorer",
+      
+      # tabsetPanel to contain tabs for data viz ----
+      tabsetPanel(
+        
+        # trout tabPanel ----
+        tabPanel(title = "Trout",
+                
+                 # trout plot sidebarLayout ----
+                 sidebarLayout(
+                   
+                   # trout plot sidebarPanel ----
+                   sidebarPanel(
+                     
+                     "trout plot input(s) go here" # REPLACE THIS WITH CONTENT
+                     
+                   ), # END trout plot sidebarPanel
+                   
+                   # trout plot mainPanel ----
+                   mainPanel(
+                     
+                     "trout plot output goes here" # REPLACE THIS WITH CONTENT
+                     
+                   ) # END trout plot mainPanel
+                   
+                 ) # END trout plot sidebarLayout
+                 
+                 ), # END trout tabPanel 
+        
+        # penguin tabPanel ----
+        tabPanel(title = "Penguins",
+                 
+                 # penguin plot sidebarLayout ----
+                 sidebarLayout(
+                   
+                   # penguin plot sidebarPanel ----
+                   sidebarPanel(
+                     
+                     "penguin plot input(s) go here" # REPLACE THIS WITH CONTENT
+                     
+                   ), # END penguin plot sidebarPanel
+                   
+                   # penguin plot mainPanel ----
+                   mainPanel(
+                     
+                     "penguin plot output goes here" # REPLACE THIS WITH CONTENT
+                     
+                   ) # END penguin plot mainPanel
+                   
+                 ) # END penguin plot sidebarLayout
+                 
+                 ) # END penguin tabPanel
+        
+      ) # END tabsetPanel
+      
+    ) # END (Page 2) data viz tabPanel
+    
+  ) # END navbarPage
+  
+) # END fluidPage
+```
+
+---
+
+##  {#layout-review data-menu-title="Layout review"}
+
+<div class="slide-title">Some thoughts/notes</div>
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a rough sketch of your intended layout can help orient yourself before hitting the keyboard</p>
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` keeping clean code is important -- we haven't even any added any content yet and our UI is already almost 100 lines of code!</p>
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` use rainbow parentheses code comments and plenty of space to keep things looking manageable and navigable.</p>
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Things can get out of hand quickly -- add one layout section at a time, run your app to check that things look as you intent, then continue.</p>
+
+---
+
+##  {#practice-app2-plots data-menu-title="Practice app 2 plots"}
+
+<div class="slide-title">We'll be turning these two static gpplots into reactive objects within our shiny app.</div>
+
+<p class="small-text">Using data sets from the `{lterdatasampler}` package, we'll build plots to explore the body sizes of two different animal species found at LTER sites: Cutthroat trout (Andrews Forest LTER), and Bison ([Konza Prairie Biological Station LTER](http://lter.konza.ksu.edu/konza-prairie-long-term-ecological-research-lter)) -- random, I know.</p>
+
+::: {.panel-tabset}
+
+## Trout
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+:::
+
+::::
+
+## Penguins
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+:::
+
+::::
+
+:::
+
+
+---
+
+##  {#tbd data-menu-title="tbd"}
+
+<div class="slide-title">tbd</div>
 
