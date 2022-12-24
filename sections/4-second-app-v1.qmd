@@ -13,7 +13,7 @@ format: revealjs
 
 ##  {#LO2 data-menu-title="Learning Objectives 2"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2v1</div>
 
 <p class="medium-body-text bottombr">By the end of building out this second app, you should:</p>
 
@@ -29,9 +29,9 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have more practice building reactive outputs -- and placing them within the layout structure of your app</p>
 
-. . . 
+. .  .
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be using shiny extension packages to improve the appearance and overall user experience of your app</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be able to create multiple inputs that control a given output</p>
 
 . . . 
 
@@ -39,7 +39,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully publish and *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully publish an app using [shinyapps.io](https://www.shinyapps.io/)</p>
 
 . . .
 
@@ -49,18 +49,6 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinyWidgets}`: extend shiny widgets with some different, fun options</p>
 
-. . . 
-
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinycssloaders}`: add loading animations to shiny outputs</p>
-
-. . . 
-
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{plotly}`: leverage plotly's interactive features within your shiny app</p>
-
-. . .
-
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: create custom themes</p>
-
 . . .
 
 <p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{lterdatasampler}`: data</p>
@@ -69,24 +57,25 @@ format: revealjs
 
 ##  {#roadmap-app2 data-menu-title="Roadmap (app #2)"}
 
-<div class="slide-title-smaller">Roadmap for app #2</div>
+<div class="slide-title-smaller">Roadmap for app #2v1</div>
 
-<p class="body-text">We'll be building our our **two-file app** using data from the `{lterdatasampler}` package. We'll focus on creating a more visually pleasing UI layout and add three reactive plots.</p>
+<p class="body-text">We'll be building out our **two-file app** using data from the `{lterdatasampler}` and `{palmerpenguins}` packages. We'll focus on creating a functional app that has a more visually pleasing UI layout (and we'll refine it's appearance even further in [v2]()). By the end of v1, we'll have created:</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="body-text">**(a)** A navigation bar with two __</p>
-<p class="body-text">**(b)** Three tabs within one of the ___ -- each tab will contain one reactive plot</p>
-<p class="body-text">**(c)** WIDGETS HERE</p>
+<br>
+<p class="small-text">**(a)** A navigation bar with two pages, one of which will contain two tabs (one tab for each plot)</p>
+<p class="small-text">**(b)** A `pickerInput` *and* `checkboxGroupButtons` for users to filter cutthroat trout data in a reactive scatterplot</p>
+<p class="small-text">**(c)** A `pickerInput` for users to filter penguin data *and* a `sliderInput` to adjust the number of bins in a reactive histogram</p>
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
-gif here
-<!-- <center><img src="images/app1.gif" alt="" width="550"/></center>  -->
+<br>
+<center><img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750"/></center>
 :::
 
 ::::

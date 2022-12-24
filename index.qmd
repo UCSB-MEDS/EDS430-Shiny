@@ -4,7 +4,6 @@ format:
     slide-number: true
     # preview-links: true
     code-link: true
-    code-overflow: scroll
     highlight-style: a11y
     chalkboard: true
     # self-contained: true
@@ -86,7 +85,7 @@ countdown::countdown(
 
 ---
 
-{{< include sections/4-second-app.qmd >}}
+{{< include sections/4-second-app-v1.qmd >}}
 
 ---
 

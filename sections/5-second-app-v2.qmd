@@ -1,0 +1,57 @@
+---
+format: revealjs
+---
+
+##  {#LO3 data-menu-title="Learning Objectives 3"}
+
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2 (v2)</div>
+
+<p class="medium-body-text bottombr">By the end of building out this second app, you should:</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be comfortable creating a shiny app using the two-file (`ui.R` & `server.R`) format along with a `global.R` file</p>
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand how to use layout functions to customize the visual structure of your app's UI</p>
+
+. .  .
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have more practice building reactive outputs -- and placing them within the layout structure of your app</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be using shiny extension packages to improve the appearance and overall user experience of your app</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to import larger bodies of text using `includeMarkdown()` (rather than writing & styling text within your UI)</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully publish and *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
+
+. . .
+
+<p class="medium-body-text topbr">New packages used:</p> 
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinyWidgets}`: extend shiny widgets with some different, fun options</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinycssloaders}`: add loading animations to shiny outputs</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{plotly}`: leverage plotly's interactive features within your shiny app</p>
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: create custom themes</p>
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{lterdatasampler}`: data</p>
