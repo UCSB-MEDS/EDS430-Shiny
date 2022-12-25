@@ -1398,7 +1398,7 @@ I find it easier to experiment and draft my objects (e.g.&nbsp;plots) first in a
 </div>
 </div>
 <p class="small-text important-text-bg">
-<strong>Tip:</strong> Save your practice script in a separate directory (i.e.&nbsp;not inside your app directory) – I typically save mine to <code>~/R/practice_script.R</code>.
+<strong>Tip:</strong> Save your practice script in a separate directory (i.e.&nbsp;not inside your app directory) – I typically save mine to something like <code>~/R/practice_script.R</code>.
 </p>
 </section>
 <section id="rule2.3" class="slide level2" data-menu-title="Copy code into server">
@@ -1886,7 +1886,7 @@ Find the complete code for app #1 on <a href="https://github.com/samanthacsik/ED
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_065f4c4f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_36c05e70" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1987,6 +1987,11 @@ We’ll be building out our <strong>two-file app</strong> using data from the <c
 </center>
 </div>
 </div>
+<div class="fragment">
+<p class="small-text">
+You’ll notice that there are some UI quirks (e.g.&nbsp;blank plots or even a scary red error message that appear when no data is selected) that can make the user experience less than ideal (and even confusing) – we’ll learn about ways to improve this in v2 of our app.
+</p>
+</div>
 </section>
 <section id="two-source" class="slide level2" data-menu-title="Two source panes">
 <h2></h2>
@@ -2002,6 +2007,121 @@ We’ll be building out a <strong>two-file shiny app</strong> this time around. 
 <p class="body-text topbr">
 This setup is certainly not required/necessary – organize your IDE however you work best!
 </p>
+</section>
+<section id="app2-plots" class="slide level2" data-menu-title="Draft Plots (app#2)">
+<h2></h2>
+<div class="slide-title-smaller">
+Practice data wrangling, filtering &amp; viz first!
+</div>
+<p class="small-text">
+Here’s what I’ve done in my <code>~R/practice_script_app2_lter.R</code> file:
+</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Trout plot</a></li><li><a href="#tabset-1-2">Penguin plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">library</span>(lterdatasampler)</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb27-4"><a href="#cb27-4"></a></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="co">#............custom ggplot theme (apply to both plots)...........</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>myCustomTheme <span class="ot">&lt;-</span> <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb27-8"><a href="#cb27-8"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb27-9"><a href="#cb27-9"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb27-10"><a href="#cb27-10"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
+<span id="cb27-11"><a href="#cb27-11"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb27-12"><a href="#cb27-12"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span>
+<span id="cb27-13"><a href="#cb27-13"></a></span>
+<span id="cb27-14"><a href="#cb27-14"></a><span class="co">#.......................wrangle trout data.......................</span></span>
+<span id="cb27-15"><a href="#cb27-15"></a>clean_trout <span class="ot">&lt;-</span> and_vertebrates <span class="sc">|&gt;</span></span>
+<span id="cb27-16"><a href="#cb27-16"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"Cutthroat trout"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb27-17"><a href="#cb27-17"></a>  <span class="fu">select</span>(year, sampledate, section, reach, species, <span class="at">length_mm =</span> length_1_mm, weight_g, <span class="at">channel_type =</span> unittype) <span class="sc">|&gt;</span> </span>
+<span id="cb27-18"><a href="#cb27-18"></a>  <span class="fu">mutate</span>(<span class="at">channel_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb27-19"><a href="#cb27-19"></a>    channel_type <span class="sc">==</span> <span class="st">"C"</span> <span class="sc">~</span> <span class="st">"cascade"</span>,</span>
+<span id="cb27-20"><a href="#cb27-20"></a>    channel_type <span class="sc">==</span> <span class="st">"I"</span> <span class="sc">~</span> <span class="st">"riffle"</span>,</span>
+<span id="cb27-21"><a href="#cb27-21"></a>    channel_type <span class="sc">==</span><span class="st">"IP"</span> <span class="sc">~</span> <span class="st">"isolated pool"</span>,</span>
+<span id="cb27-22"><a href="#cb27-22"></a>    channel_type <span class="sc">==</span><span class="st">"P"</span> <span class="sc">~</span> <span class="st">"pool"</span>,</span>
+<span id="cb27-23"><a href="#cb27-23"></a>    channel_type <span class="sc">==</span><span class="st">"R"</span> <span class="sc">~</span> <span class="st">"rapid"</span>,</span>
+<span id="cb27-24"><a href="#cb27-24"></a>    channel_type <span class="sc">==</span><span class="st">"S"</span> <span class="sc">~</span> <span class="st">"step (small falls)"</span>,</span>
+<span id="cb27-25"><a href="#cb27-25"></a>    channel_type <span class="sc">==</span><span class="st">"SC"</span> <span class="sc">~</span> <span class="st">"side channel"</span></span>
+<span id="cb27-26"><a href="#cb27-26"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb27-27"><a href="#cb27-27"></a>  <span class="fu">mutate</span>(<span class="at">section =</span> <span class="fu">case_when</span>(</span>
+<span id="cb27-28"><a href="#cb27-28"></a>    section <span class="sc">==</span> <span class="st">"CC"</span> <span class="sc">~</span> <span class="st">"clear cut forest"</span>,</span>
+<span id="cb27-29"><a href="#cb27-29"></a>    section <span class="sc">==</span> <span class="st">"OG"</span> <span class="sc">~</span> <span class="st">"old growth forest"</span></span>
+<span id="cb27-30"><a href="#cb27-30"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb27-31"><a href="#cb27-31"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb27-32"><a href="#cb27-32"></a></span>
+<span id="cb27-33"><a href="#cb27-33"></a><span class="co">#..................practice filtering trout data.................</span></span>
+<span id="cb27-34"><a href="#cb27-34"></a>trout_filtered_df <span class="ot">&lt;-</span> clean_trout <span class="sc">|&gt;</span> </span>
+<span id="cb27-35"><a href="#cb27-35"></a>  <span class="fu">filter</span>(channel_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"pool"</span>, <span class="st">"rapid"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-36"><a href="#cb27-36"></a>  <span class="fu">filter</span>(section <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"clear cut forest"</span>))</span>
+<span id="cb27-37"><a href="#cb27-37"></a></span>
+<span id="cb27-38"><a href="#cb27-38"></a><span class="co">#........................plot trout data.........................</span></span>
+<span id="cb27-39"><a href="#cb27-39"></a><span class="fu">ggplot</span>(trout_filtered_df, <span class="fu">aes</span>(<span class="at">x =</span> length_mm, <span class="at">y =</span> weight_g, <span class="at">color =</span> channel_type, <span class="at">shape =</span> channel_type)) <span class="sc">+</span></span>
+<span id="cb27-40"><a href="#cb27-40"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb27-41"><a href="#cb27-41"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="st">"#2E2585"</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="st">"#337538"</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="st">"#DCCD7D"</span>, </span>
+<span id="cb27-42"><a href="#cb27-42"></a>                                <span class="st">"pool"</span> <span class="ot">=</span> <span class="st">"#5DA899"</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="st">"#C16A77"</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="st">"#9F4A96"</span>, </span>
+<span id="cb27-43"><a href="#cb27-43"></a>                                <span class="st">"side channel"</span> <span class="ot">=</span> <span class="st">"#94CBEC"</span>)) <span class="sc">+</span></span>
+<span id="cb27-44"><a href="#cb27-44"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="dv">15</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="dv">19</span>, </span>
+<span id="cb27-45"><a href="#cb27-45"></a>                                <span class="st">"pool"</span> <span class="ot">=</span> <span class="dv">18</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="dv">8</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="dv">23</span>, </span>
+<span id="cb27-46"><a href="#cb27-46"></a>                                <span class="st">"side channel"</span> <span class="ot">=</span> <span class="dv">25</span>)) <span class="sc">+</span></span>
+<span id="cb27-47"><a href="#cb27-47"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Trout Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Trout Weight (g)"</span>, <span class="at">color =</span> <span class="st">"Channel Type"</span>, <span class="at">shape =</span> <span class="st">"Channel Type"</span>) <span class="sc">+</span></span>
+<span id="cb27-48"><a href="#cb27-48"></a>  myCustomTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/trout_plot.png" alt="A scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. Data points are colored and shaped by Channel Type, with data collected from pools represented with green diamonds and data collected from rapids represented by red stars." width="550">
+</center>
+<center>
+<p class="small-text gray-text">
+We’ll build 2 inputs: one to select <code>channel_type</code> and one to select <code>section</code>.
+</p>
+</center>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#..........................load packages.........................</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb28-4"><a href="#cb28-4"></a></span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="co">#..................practice filtering for island.................</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>island_df <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">"Dream"</span>)</span>
+<span id="cb28-8"><a href="#cb28-8"></a></span>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="co">#........................plot penguin data.......................</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(island_df), <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>  <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> <span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
+<span id="cb28-14"><a href="#cb28-14"></a>       <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a>  myCustomTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/penguin_plot.png" alt="A histogram of penguin Flipper lengths (mm) with bars colored by species. Adelie are orange and Chinstrap are purple." width="550">
+</center>
+<center>
+<p class="small-text gray-text">
+We’ll build 2 inputs: one to select <code>island</code> change the number of histogram bins.
+</p>
+</center>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="global.R" class="slide level2" data-menu-title="global.R">
 <h2></h2>
@@ -2085,24 +2205,24 @@ Layouts are created using a <strong>hierarchy</strong> of function calls <em>ins
 <strong>Some useful layout function pairings:</strong>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># sidebar for inputs &amp; main area for outputs within the sidebarLayout() container</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">sidebarLayout</span>(</span>
-<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">sidebarPanel</span>(),</span>
-<span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">mainPanel</span>()</span>
-<span id="cb27-5"><a href="#cb27-5"></a>)</span>
-<span id="cb27-6"><a href="#cb27-6"></a><span class="co"># multi-row fluid layout (add any number of fluidRow()s to a fluidPage())</span></span>
-<span id="cb27-7"><a href="#cb27-7"></a><span class="fu">fluidRow</span>(</span>
-<span id="cb27-8"><a href="#cb27-8"></a>  <span class="fu">column</span>(<span class="dv">4</span>, ...),</span>
-<span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">column</span>(<span class="dv">8</span>, ...)</span>
-<span id="cb27-10"><a href="#cb27-10"></a>)</span>
-<span id="cb27-11"><a href="#cb27-11"></a><span class="co"># tabPanel()s to contain HTML components (e.g. inputs/outputs) within the tabsetPanel() container</span></span>
-<span id="cb27-12"><a href="#cb27-12"></a><span class="fu">tabsetPanel</span>(</span>
-<span id="cb27-13"><a href="#cb27-13"></a>  <span class="fu">tabPanel</span>()</span>
-<span id="cb27-14"><a href="#cb27-14"></a>)</span>
-<span id="cb27-15"><a href="#cb27-15"></a><span class="co"># page with top-level navigation bar that can be used to toggle tabPanel() elements</span></span>
-<span id="cb27-16"><a href="#cb27-16"></a><span class="fu">navbarPage</span>(</span>
-<span id="cb27-17"><a href="#cb27-17"></a>  <span class="fu">tabPanel</span>()</span>
-<span id="cb27-18"><a href="#cb27-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># sidebar for inputs &amp; main area for outputs within the sidebarLayout() container</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">sidebarLayout</span>(</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">sidebarPanel</span>(),</span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">mainPanel</span>()</span>
+<span id="cb29-5"><a href="#cb29-5"></a>)</span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="co"># multi-row fluid layout (add any number of fluidRow()s to a fluidPage())</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="fu">fluidRow</span>(</span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">column</span>(<span class="dv">4</span>, ...),</span>
+<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">column</span>(<span class="dv">8</span>, ...)</span>
+<span id="cb29-10"><a href="#cb29-10"></a>)</span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="co"># tabPanel()s to contain HTML components (e.g. inputs/outputs) within the tabsetPanel() container</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a><span class="fu">tabsetPanel</span>(</span>
+<span id="cb29-13"><a href="#cb29-13"></a>  <span class="fu">tabPanel</span>()</span>
+<span id="cb29-14"><a href="#cb29-14"></a>)</span>
+<span id="cb29-15"><a href="#cb29-15"></a><span class="co"># page with top-level navigation bar that can be used to toggle tabPanel() elements</span></span>
+<span id="cb29-16"><a href="#cb29-16"></a><span class="fu">navbarPage</span>(</span>
+<span id="cb29-17"><a href="#cb29-17"></a>  <span class="fu">tabPanel</span>()</span>
+<span id="cb29-18"><a href="#cb29-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p class="smallest-text">
@@ -2119,28 +2239,28 @@ Example UI layouts
 <strong>Note:</strong> You can combine multiple layout function groups to really customize your UI – for example, you can create a navbar, include tabs, and also establish sidebar and main panel areas for inputs and outputs.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Sidebar &amp; main area</a></li><li><a href="#tabset-1-2">Page with multiple rows</a></li><li><a href="#tabset-1-3">Tabs</a></li><li><a href="#tabset-1-4">Navbar</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Sidebar &amp; main area</a></li><li><a href="#tabset-2-2">Page with multiple rows</a></li><li><a href="#tabset-2-3">Tabs</a></li><li><a href="#tabset-2-4">Navbar</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
+<div id="tabset-2-1">
 <p class="body-text">
 To create a page with a <strong>side bar and main area</strong> to contain your inputs and outputs (respectively), explore the following layout functions and read up on the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/sidebarlayout">sidebarLayout documentation</a>:
 </p>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">fluidPage</span>(</span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">titlePanel</span>(</span>
-<span id="cb28-3"><a href="#cb28-3"></a>    <span class="co"># app title/description</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a>  ),</span>
-<span id="cb28-5"><a href="#cb28-5"></a>  <span class="fu">sidebarLayout</span>(</span>
-<span id="cb28-6"><a href="#cb28-6"></a>    <span class="fu">sidebarPanel</span>(</span>
-<span id="cb28-7"><a href="#cb28-7"></a>      <span class="co"># inputs here</span></span>
-<span id="cb28-8"><a href="#cb28-8"></a>    ),</span>
-<span id="cb28-9"><a href="#cb28-9"></a>    <span class="fu">mainPanel</span>(</span>
-<span id="cb28-10"><a href="#cb28-10"></a>      <span class="co"># outputs here</span></span>
-<span id="cb28-11"><a href="#cb28-11"></a>    )</span>
-<span id="cb28-12"><a href="#cb28-12"></a>  )</span>
-<span id="cb28-13"><a href="#cb28-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">fluidPage</span>(</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">titlePanel</span>(</span>
+<span id="cb30-3"><a href="#cb30-3"></a>    <span class="co"># app title/description</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  ),</span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb30-6"><a href="#cb30-6"></a>    <span class="fu">sidebarPanel</span>(</span>
+<span id="cb30-7"><a href="#cb30-7"></a>      <span class="co"># inputs here</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>    ),</span>
+<span id="cb30-9"><a href="#cb30-9"></a>    <span class="fu">mainPanel</span>(</span>
+<span id="cb30-10"><a href="#cb30-10"></a>      <span class="co"># outputs here</span></span>
+<span id="cb30-11"><a href="#cb30-11"></a>    )</span>
+<span id="cb30-12"><a href="#cb30-12"></a>  )</span>
+<span id="cb30-13"><a href="#cb30-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -2151,31 +2271,31 @@ To create a page with a <strong>side bar and main area</strong> to contain your 
 </div>
 </div>
 </div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <p class="body-text">
 To create a <strong>page with multiple rows</strong>, explore the following layout functions and check out the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/fluidpage">fluid layout</a> documentation. Note that each row is made up of <strong>12</strong> columns. The first argument of the <code>column()</code> function takes a value of 1-12 to specify the number of columns to occupy.
 </p>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">fluidPage</span>(</span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">fluidRow</span>(</span>
-<span id="cb29-3"><a href="#cb29-3"></a>    <span class="fu">column</span>(<span class="dv">4</span>, </span>
-<span id="cb29-4"><a href="#cb29-4"></a>      ...</span>
-<span id="cb29-5"><a href="#cb29-5"></a>    ),</span>
-<span id="cb29-6"><a href="#cb29-6"></a>    <span class="fu">column</span>(<span class="dv">8</span>, </span>
-<span id="cb29-7"><a href="#cb29-7"></a>      ...</span>
-<span id="cb29-8"><a href="#cb29-8"></a>    )</span>
-<span id="cb29-9"><a href="#cb29-9"></a>  ),</span>
-<span id="cb29-10"><a href="#cb29-10"></a>  <span class="fu">fluidRow</span>(</span>
-<span id="cb29-11"><a href="#cb29-11"></a>    <span class="fu">column</span>(<span class="dv">6</span>, </span>
-<span id="cb29-12"><a href="#cb29-12"></a>      ...</span>
-<span id="cb29-13"><a href="#cb29-13"></a>    ),</span>
-<span id="cb29-14"><a href="#cb29-14"></a>    <span class="fu">column</span>(<span class="dv">6</span>, </span>
-<span id="cb29-15"><a href="#cb29-15"></a>      ...</span>
-<span id="cb29-16"><a href="#cb29-16"></a>    )</span>
-<span id="cb29-17"><a href="#cb29-17"></a>  )</span>
-<span id="cb29-18"><a href="#cb29-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">fluidPage</span>(</span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb31-3"><a href="#cb31-3"></a>    <span class="fu">column</span>(<span class="dv">4</span>, </span>
+<span id="cb31-4"><a href="#cb31-4"></a>      ...</span>
+<span id="cb31-5"><a href="#cb31-5"></a>    ),</span>
+<span id="cb31-6"><a href="#cb31-6"></a>    <span class="fu">column</span>(<span class="dv">8</span>, </span>
+<span id="cb31-7"><a href="#cb31-7"></a>      ...</span>
+<span id="cb31-8"><a href="#cb31-8"></a>    )</span>
+<span id="cb31-9"><a href="#cb31-9"></a>  ),</span>
+<span id="cb31-10"><a href="#cb31-10"></a>  <span class="fu">fluidRow</span>(</span>
+<span id="cb31-11"><a href="#cb31-11"></a>    <span class="fu">column</span>(<span class="dv">6</span>, </span>
+<span id="cb31-12"><a href="#cb31-12"></a>      ...</span>
+<span id="cb31-13"><a href="#cb31-13"></a>    ),</span>
+<span id="cb31-14"><a href="#cb31-14"></a>    <span class="fu">column</span>(<span class="dv">6</span>, </span>
+<span id="cb31-15"><a href="#cb31-15"></a>      ...</span>
+<span id="cb31-16"><a href="#cb31-16"></a>    )</span>
+<span id="cb31-17"><a href="#cb31-17"></a>  )</span>
+<span id="cb31-18"><a href="#cb31-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -2186,21 +2306,21 @@ To create a <strong>page with multiple rows</strong>, explore the following layo
 </div>
 </div>
 </div>
-<div id="tabset-1-3">
+<div id="tabset-2-3">
 <p class="body-text">
 You may find that you eventually end up with too much content to fit on a single application page. Enter <code>tabsetPanel()</code> and <code>tabPanel()</code>. <code>tabsetPanel()</code> creates a container for any number of <code>tabPanel()</code>s. Each <code>tabPanel()</code> can contain any number of HTML components (e.g.&nbsp;inputs and outputs). Find the <a href="https://shiny.rstudio.com/reference/shiny/1.5.0/tabsetpanel">tabsetPanel documentation here</a> and check out this example:
 </p>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">tabsetPanel</span>(</span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">tabPanel</span>(<span class="st">"Tab 1"</span>, </span>
-<span id="cb30-3"><a href="#cb30-3"></a>    <span class="co"># an input</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a>    <span class="co"># an output</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a>  ),</span>
-<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">tabPanel</span>(<span class="st">"Tab 2"</span>),</span>
-<span id="cb30-7"><a href="#cb30-7"></a>  <span class="fu">tabPanel</span>(<span class="st">"Tab 3"</span>)</span>
-<span id="cb30-8"><a href="#cb30-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">tabsetPanel</span>(</span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">tabPanel</span>(<span class="st">"Tab 1"</span>, </span>
+<span id="cb32-3"><a href="#cb32-3"></a>    <span class="co"># an input</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>    <span class="co"># an output</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  ),</span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">tabPanel</span>(<span class="st">"Tab 2"</span>),</span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="fu">tabPanel</span>(<span class="st">"Tab 3"</span>)</span>
+<span id="cb32-8"><a href="#cb32-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -2211,23 +2331,23 @@ You may find that you eventually end up with too much content to fit on a single
 </div>
 </div>
 </div>
-<div id="tabset-1-4">
+<div id="tabset-2-4">
 <p class="body-text">
 You may also want to use a navigation bar (<code>navbarPage()</code>) with different pages (created using <code>tabPanel()</code>) to organize your application. Read through the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/navbarpage">navbarPage documentation</a> and try running the example below:
 </p>
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">fluidPage</span>(</span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">navbarPage</span>(</span>
-<span id="cb31-3"><a href="#cb31-3"></a>    <span class="st">"My app"</span>,</span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Tab 1"</span>,</span>
-<span id="cb31-5"><a href="#cb31-5"></a>             <span class="co"># an input</span></span>
-<span id="cb31-6"><a href="#cb31-6"></a>             <span class="co"># an output</span></span>
-<span id="cb31-7"><a href="#cb31-7"></a>             ),</span>
-<span id="cb31-8"><a href="#cb31-8"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Tab 2"</span>)</span>
-<span id="cb31-9"><a href="#cb31-9"></a>  )</span>
-<span id="cb31-10"><a href="#cb31-10"></a>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">fluidPage</span>(</span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">navbarPage</span>(</span>
+<span id="cb33-3"><a href="#cb33-3"></a>    <span class="st">"My app"</span>,</span>
+<span id="cb33-4"><a href="#cb33-4"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Tab 1"</span>,</span>
+<span id="cb33-5"><a href="#cb33-5"></a>             <span class="co"># an input</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>             <span class="co"># an output</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a>             ),</span>
+<span id="cb33-8"><a href="#cb33-8"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Tab 2"</span>)</span>
+<span id="cb33-9"><a href="#cb33-9"></a>  )</span>
+<span id="cb33-10"><a href="#cb33-10"></a>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -2258,30 +2378,30 @@ First, let’s build a UI that has a navigation bar with two tabs – one for ba
 <strong>Tip:</strong> It can be <em>super</em> helpful add code comments at the start and end of each UI element – for example, see <code># data viz tabPanel---</code> and <code># END data viz tabPanel</code>, below. Adding text that you will eventually replace with content (e.g.&nbsp;plots, tables, images, longer text) may help to visualize what you’re working towards as well.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb32-2"><a href="#cb32-2"></a>  </span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="co"># navbar page ----</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">navbarPage</span>(</span>
-<span id="cb32-5"><a href="#cb32-5"></a>    </span>
-<span id="cb32-6"><a href="#cb32-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
-<span id="cb32-7"><a href="#cb32-7"></a>    </span>
-<span id="cb32-8"><a href="#cb32-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
-<span id="cb32-9"><a href="#cb32-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
-<span id="cb32-10"><a href="#cb32-10"></a>      </span>
-<span id="cb32-11"><a href="#cb32-11"></a>      <span class="st">"background info will go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb32-12"><a href="#cb32-12"></a>      </span>
-<span id="cb32-13"><a href="#cb32-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
-<span id="cb32-14"><a href="#cb32-14"></a>    </span>
-<span id="cb32-15"><a href="#cb32-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
-<span id="cb32-16"><a href="#cb32-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span>  <span class="st">"Explore the Data"</span>,</span>
-<span id="cb32-17"><a href="#cb32-17"></a>      </span>
-<span id="cb32-18"><a href="#cb32-18"></a>      <span class="st">"reactive plots will go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb32-19"><a href="#cb32-19"></a>      </span>
-<span id="cb32-20"><a href="#cb32-20"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
-<span id="cb32-21"><a href="#cb32-21"></a>    </span>
-<span id="cb32-22"><a href="#cb32-22"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
-<span id="cb32-23"><a href="#cb32-23"></a>  </span>
-<span id="cb32-24"><a href="#cb32-24"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb34-2"><a href="#cb34-2"></a>  </span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="co"># navbar page ----</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">navbarPage</span>(</span>
+<span id="cb34-5"><a href="#cb34-5"></a>    </span>
+<span id="cb34-6"><a href="#cb34-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
+<span id="cb34-7"><a href="#cb34-7"></a>    </span>
+<span id="cb34-8"><a href="#cb34-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
+<span id="cb34-10"><a href="#cb34-10"></a>      </span>
+<span id="cb34-11"><a href="#cb34-11"></a>      <span class="st">"background info will go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb34-12"><a href="#cb34-12"></a>      </span>
+<span id="cb34-13"><a href="#cb34-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
+<span id="cb34-14"><a href="#cb34-14"></a>    </span>
+<span id="cb34-15"><a href="#cb34-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
+<span id="cb34-16"><a href="#cb34-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span>  <span class="st">"Explore the Data"</span>,</span>
+<span id="cb34-17"><a href="#cb34-17"></a>      </span>
+<span id="cb34-18"><a href="#cb34-18"></a>      <span class="st">"reactive plots will go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb34-19"><a href="#cb34-19"></a>      </span>
+<span id="cb34-20"><a href="#cb34-20"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
+<span id="cb34-21"><a href="#cb34-21"></a>    </span>
+<span id="cb34-22"><a href="#cb34-22"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
+<span id="cb34-23"><a href="#cb34-23"></a>  </span>
+<span id="cb34-24"><a href="#cb34-24"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="add-tabs" class="slide level2" data-menu-title="Add tabs">
@@ -2293,116 +2413,116 @@ Add two tabs to the “Explore the Data” page
 Give your tabs the following titles: <code>Trout</code> and <code>Penguins</code>.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33" data-code-line-numbers="18-35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb33-2"><a href="#cb33-2"></a>  </span>
-<span id="cb33-3"><a href="#cb33-3"></a>  <span class="co"># navbar page ----</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">navbarPage</span>(</span>
-<span id="cb33-5"><a href="#cb33-5"></a>    </span>
-<span id="cb33-6"><a href="#cb33-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
-<span id="cb33-7"><a href="#cb33-7"></a>    </span>
-<span id="cb33-8"><a href="#cb33-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
-<span id="cb33-9"><a href="#cb33-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
-<span id="cb33-10"><a href="#cb33-10"></a>      </span>
-<span id="cb33-11"><a href="#cb33-11"></a>      <span class="st">"background info will go here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb33-12"><a href="#cb33-12"></a>      </span>
-<span id="cb33-13"><a href="#cb33-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
-<span id="cb33-14"><a href="#cb33-14"></a>    </span>
-<span id="cb33-15"><a href="#cb33-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
-<span id="cb33-16"><a href="#cb33-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span>  <span class="st">"Explore the Data"</span>,</span>
-<span id="cb33-17"><a href="#cb33-17"></a>      </span>
-<span id="cb33-18"><a href="#cb33-18"></a>      <span class="co"># tabsetPanel to contain tabs for data viz ----</span></span>
-<span id="cb33-19"><a href="#cb33-19"></a>      <span class="fu">tabsetPanel</span>(</span>
-<span id="cb33-20"><a href="#cb33-20"></a>        </span>
-<span id="cb33-21"><a href="#cb33-21"></a>        <span class="co"># trout tabPanel ----</span></span>
-<span id="cb33-22"><a href="#cb33-22"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
-<span id="cb33-23"><a href="#cb33-23"></a>                </span>
-<span id="cb33-24"><a href="#cb33-24"></a>                  <span class="st">"trout data viz here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb33-25"><a href="#cb33-25"></a>                 </span>
-<span id="cb33-26"><a href="#cb33-26"></a>                 ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
-<span id="cb33-27"><a href="#cb33-27"></a>        </span>
-<span id="cb33-28"><a href="#cb33-28"></a>        <span class="co"># penguin tabPanel ----</span></span>
-<span id="cb33-29"><a href="#cb33-29"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Penguins"</span>,</span>
-<span id="cb33-30"><a href="#cb33-30"></a>                 </span>
-<span id="cb33-31"><a href="#cb33-31"></a>                 <span class="st">"penguin data viz here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb33-32"><a href="#cb33-32"></a>                 </span>
-<span id="cb33-33"><a href="#cb33-33"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin tabPanel</span></span>
-<span id="cb33-34"><a href="#cb33-34"></a>        </span>
-<span id="cb33-35"><a href="#cb33-35"></a>      ) <span class="co"># </span><span class="re">END</span><span class="co"> tabsetPanel</span></span>
-<span id="cb33-36"><a href="#cb33-36"></a>      </span>
-<span id="cb33-37"><a href="#cb33-37"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
-<span id="cb33-38"><a href="#cb33-38"></a>    </span>
-<span id="cb33-39"><a href="#cb33-39"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
-<span id="cb33-40"><a href="#cb33-40"></a>  </span>
-<span id="cb33-41"><a href="#cb33-41"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="18-35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb35-2"><a href="#cb35-2"></a>  </span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="co"># navbar page ----</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">navbarPage</span>(</span>
+<span id="cb35-5"><a href="#cb35-5"></a>    </span>
+<span id="cb35-6"><a href="#cb35-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
+<span id="cb35-7"><a href="#cb35-7"></a>    </span>
+<span id="cb35-8"><a href="#cb35-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
+<span id="cb35-9"><a href="#cb35-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
+<span id="cb35-10"><a href="#cb35-10"></a>      </span>
+<span id="cb35-11"><a href="#cb35-11"></a>      <span class="st">"background info will go here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb35-12"><a href="#cb35-12"></a>      </span>
+<span id="cb35-13"><a href="#cb35-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
+<span id="cb35-14"><a href="#cb35-14"></a>    </span>
+<span id="cb35-15"><a href="#cb35-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
+<span id="cb35-16"><a href="#cb35-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span>  <span class="st">"Explore the Data"</span>,</span>
+<span id="cb35-17"><a href="#cb35-17"></a>      </span>
+<span id="cb35-18"><a href="#cb35-18"></a>      <span class="co"># tabsetPanel to contain tabs for data viz ----</span></span>
+<span id="cb35-19"><a href="#cb35-19"></a>      <span class="fu">tabsetPanel</span>(</span>
+<span id="cb35-20"><a href="#cb35-20"></a>        </span>
+<span id="cb35-21"><a href="#cb35-21"></a>        <span class="co"># trout tabPanel ----</span></span>
+<span id="cb35-22"><a href="#cb35-22"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
+<span id="cb35-23"><a href="#cb35-23"></a>                </span>
+<span id="cb35-24"><a href="#cb35-24"></a>                  <span class="st">"trout data viz here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb35-25"><a href="#cb35-25"></a>                 </span>
+<span id="cb35-26"><a href="#cb35-26"></a>                 ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
+<span id="cb35-27"><a href="#cb35-27"></a>        </span>
+<span id="cb35-28"><a href="#cb35-28"></a>        <span class="co"># penguin tabPanel ----</span></span>
+<span id="cb35-29"><a href="#cb35-29"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Penguins"</span>,</span>
+<span id="cb35-30"><a href="#cb35-30"></a>                 </span>
+<span id="cb35-31"><a href="#cb35-31"></a>                 <span class="st">"penguin data viz here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb35-32"><a href="#cb35-32"></a>                 </span>
+<span id="cb35-33"><a href="#cb35-33"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin tabPanel</span></span>
+<span id="cb35-34"><a href="#cb35-34"></a>        </span>
+<span id="cb35-35"><a href="#cb35-35"></a>      ) <span class="co"># </span><span class="re">END</span><span class="co"> tabsetPanel</span></span>
+<span id="cb35-36"><a href="#cb35-36"></a>      </span>
+<span id="cb35-37"><a href="#cb35-37"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
+<span id="cb35-38"><a href="#cb35-38"></a>    </span>
+<span id="cb35-39"><a href="#cb35-39"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
+<span id="cb35-40"><a href="#cb35-40"></a>  </span>
+<span id="cb35-41"><a href="#cb35-41"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sidebar-main-panels" class="slide level2" data-menu-title="Create sidebar &amp; main panels">
 <h2></h2>
 <div class="slide-title-smaller">
-Add sidebar and main panels to the <code>Trout</code> tab
+Add sidebar &amp; main panels to the <code>Trout</code> tab
 </div>
 <p class="small-text">
 We’ll eventually place our input in the sidebar and output in the main panel.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34" data-code-line-numbers="23-41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb34-2"><a href="#cb34-2"></a>  </span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="co"># navbar page ----</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">navbarPage</span>(</span>
-<span id="cb34-5"><a href="#cb34-5"></a>    </span>
-<span id="cb34-6"><a href="#cb34-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
-<span id="cb34-7"><a href="#cb34-7"></a>    </span>
-<span id="cb34-8"><a href="#cb34-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
-<span id="cb34-9"><a href="#cb34-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
-<span id="cb34-10"><a href="#cb34-10"></a>      </span>
-<span id="cb34-11"><a href="#cb34-11"></a>      <span class="st">"background info will go here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb34-12"><a href="#cb34-12"></a>      </span>
-<span id="cb34-13"><a href="#cb34-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
-<span id="cb34-14"><a href="#cb34-14"></a>    </span>
-<span id="cb34-15"><a href="#cb34-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
-<span id="cb34-16"><a href="#cb34-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Explore the Data"</span>,</span>
-<span id="cb34-17"><a href="#cb34-17"></a>      </span>
-<span id="cb34-18"><a href="#cb34-18"></a>      <span class="co"># tabsetPanel to contain tabs for data viz ----</span></span>
-<span id="cb34-19"><a href="#cb34-19"></a>      <span class="fu">tabsetPanel</span>(</span>
-<span id="cb34-20"><a href="#cb34-20"></a>        </span>
-<span id="cb34-21"><a href="#cb34-21"></a>        <span class="co"># trout tabPanel ----</span></span>
-<span id="cb34-22"><a href="#cb34-22"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
-<span id="cb34-23"><a href="#cb34-23"></a>                </span>
-<span id="cb34-24"><a href="#cb34-24"></a>                 <span class="co"># trout plot sidebarLayout ----</span></span>
-<span id="cb34-25"><a href="#cb34-25"></a>                 <span class="fu">sidebarLayout</span>(</span>
-<span id="cb34-26"><a href="#cb34-26"></a>                   </span>
-<span id="cb34-27"><a href="#cb34-27"></a>                   <span class="co"># trout plot sidebarPanel ----</span></span>
-<span id="cb34-28"><a href="#cb34-28"></a>                   <span class="fu">sidebarPanel</span>(</span>
-<span id="cb34-29"><a href="#cb34-29"></a>                     </span>
-<span id="cb34-30"><a href="#cb34-30"></a>                     <span class="st">"trout plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb34-31"><a href="#cb34-31"></a>                     </span>
-<span id="cb34-32"><a href="#cb34-32"></a>                   ), <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarPanel</span></span>
-<span id="cb34-33"><a href="#cb34-33"></a>                   </span>
-<span id="cb34-34"><a href="#cb34-34"></a>                   <span class="co"># trout plot mainPanel ----</span></span>
-<span id="cb34-35"><a href="#cb34-35"></a>                   <span class="fu">mainPanel</span>(</span>
-<span id="cb34-36"><a href="#cb34-36"></a>                     </span>
-<span id="cb34-37"><a href="#cb34-37"></a>                     <span class="st">"trout plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb34-38"><a href="#cb34-38"></a>                     </span>
-<span id="cb34-39"><a href="#cb34-39"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
-<span id="cb34-40"><a href="#cb34-40"></a>                   </span>
-<span id="cb34-41"><a href="#cb34-41"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarLayout</span></span>
-<span id="cb34-42"><a href="#cb34-42"></a>                 </span>
-<span id="cb34-43"><a href="#cb34-43"></a>                 ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
-<span id="cb34-44"><a href="#cb34-44"></a>        </span>
-<span id="cb34-45"><a href="#cb34-45"></a>        <span class="co"># penguin tabPanel ----</span></span>
-<span id="cb34-46"><a href="#cb34-46"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Penguins"</span>,</span>
-<span id="cb34-47"><a href="#cb34-47"></a>                 </span>
-<span id="cb34-48"><a href="#cb34-48"></a>                 <span class="st">"penguin data viz here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb34-49"><a href="#cb34-49"></a>                 </span>
-<span id="cb34-50"><a href="#cb34-50"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin tabPanel</span></span>
-<span id="cb34-51"><a href="#cb34-51"></a>        </span>
-<span id="cb34-52"><a href="#cb34-52"></a>      ) <span class="co"># </span><span class="re">END</span><span class="co"> tabsetPanel</span></span>
-<span id="cb34-53"><a href="#cb34-53"></a>      </span>
-<span id="cb34-54"><a href="#cb34-54"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
-<span id="cb34-55"><a href="#cb34-55"></a>    </span>
-<span id="cb34-56"><a href="#cb34-56"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
-<span id="cb34-57"><a href="#cb34-57"></a>  </span>
-<span id="cb34-58"><a href="#cb34-58"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="23-41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb36-2"><a href="#cb36-2"></a>  </span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="co"># navbar page ----</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">navbarPage</span>(</span>
+<span id="cb36-5"><a href="#cb36-5"></a>    </span>
+<span id="cb36-6"><a href="#cb36-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
+<span id="cb36-7"><a href="#cb36-7"></a>    </span>
+<span id="cb36-8"><a href="#cb36-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
+<span id="cb36-9"><a href="#cb36-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
+<span id="cb36-10"><a href="#cb36-10"></a>      </span>
+<span id="cb36-11"><a href="#cb36-11"></a>      <span class="st">"background info will go here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb36-12"><a href="#cb36-12"></a>      </span>
+<span id="cb36-13"><a href="#cb36-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
+<span id="cb36-14"><a href="#cb36-14"></a>    </span>
+<span id="cb36-15"><a href="#cb36-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
+<span id="cb36-16"><a href="#cb36-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Explore the Data"</span>,</span>
+<span id="cb36-17"><a href="#cb36-17"></a>      </span>
+<span id="cb36-18"><a href="#cb36-18"></a>      <span class="co"># tabsetPanel to contain tabs for data viz ----</span></span>
+<span id="cb36-19"><a href="#cb36-19"></a>      <span class="fu">tabsetPanel</span>(</span>
+<span id="cb36-20"><a href="#cb36-20"></a>        </span>
+<span id="cb36-21"><a href="#cb36-21"></a>        <span class="co"># trout tabPanel ----</span></span>
+<span id="cb36-22"><a href="#cb36-22"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
+<span id="cb36-23"><a href="#cb36-23"></a>                </span>
+<span id="cb36-24"><a href="#cb36-24"></a>                 <span class="co"># trout plot sidebarLayout ----</span></span>
+<span id="cb36-25"><a href="#cb36-25"></a>                 <span class="fu">sidebarLayout</span>(</span>
+<span id="cb36-26"><a href="#cb36-26"></a>                   </span>
+<span id="cb36-27"><a href="#cb36-27"></a>                   <span class="co"># trout plot sidebarPanel ----</span></span>
+<span id="cb36-28"><a href="#cb36-28"></a>                   <span class="fu">sidebarPanel</span>(</span>
+<span id="cb36-29"><a href="#cb36-29"></a>                     </span>
+<span id="cb36-30"><a href="#cb36-30"></a>                     <span class="st">"trout plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb36-31"><a href="#cb36-31"></a>                     </span>
+<span id="cb36-32"><a href="#cb36-32"></a>                   ), <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarPanel</span></span>
+<span id="cb36-33"><a href="#cb36-33"></a>                   </span>
+<span id="cb36-34"><a href="#cb36-34"></a>                   <span class="co"># trout plot mainPanel ----</span></span>
+<span id="cb36-35"><a href="#cb36-35"></a>                   <span class="fu">mainPanel</span>(</span>
+<span id="cb36-36"><a href="#cb36-36"></a>                     </span>
+<span id="cb36-37"><a href="#cb36-37"></a>                     <span class="st">"trout plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb36-38"><a href="#cb36-38"></a>                     </span>
+<span id="cb36-39"><a href="#cb36-39"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
+<span id="cb36-40"><a href="#cb36-40"></a>                   </span>
+<span id="cb36-41"><a href="#cb36-41"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarLayout</span></span>
+<span id="cb36-42"><a href="#cb36-42"></a>                 </span>
+<span id="cb36-43"><a href="#cb36-43"></a>                 ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
+<span id="cb36-44"><a href="#cb36-44"></a>        </span>
+<span id="cb36-45"><a href="#cb36-45"></a>        <span class="co"># penguin tabPanel ----</span></span>
+<span id="cb36-46"><a href="#cb36-46"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Penguins"</span>,</span>
+<span id="cb36-47"><a href="#cb36-47"></a>                 </span>
+<span id="cb36-48"><a href="#cb36-48"></a>                 <span class="st">"penguin data viz here"</span>  <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb36-49"><a href="#cb36-49"></a>                 </span>
+<span id="cb36-50"><a href="#cb36-50"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin tabPanel</span></span>
+<span id="cb36-51"><a href="#cb36-51"></a>        </span>
+<span id="cb36-52"><a href="#cb36-52"></a>      ) <span class="co"># </span><span class="re">END</span><span class="co"> tabsetPanel</span></span>
+<span id="cb36-53"><a href="#cb36-53"></a>      </span>
+<span id="cb36-54"><a href="#cb36-54"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
+<span id="cb36-55"><a href="#cb36-55"></a>    </span>
+<span id="cb36-56"><a href="#cb36-56"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
+<span id="cb36-57"><a href="#cb36-57"></a>  </span>
+<span id="cb36-58"><a href="#cb36-58"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise2-prompt" class="slide level2" data-menu-title="Exercise 2 Prompt">
@@ -2414,7 +2534,7 @@ We’ll eventually place our input in the sidebar and output in the main panel.
 <div class="column" style="width:45%;">
 <br> <br>
 <p class="body-text">
-I encourage you to the code out yourself, rather than copy/paste! And be sure to add text where your input/output will eventually be placed. When you’re done, you app should look like this:
+I encourage you to type the code out yourself, rather than copy/paste! And be sure to add text where your input/output will eventually be placed. When you’re done, you app should look like this:
 </p>
 </div><div class="column" style="width:5%;">
 
@@ -2436,140 +2556,111 @@ See next slide for a solution!
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 2: A solution
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="48-65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb35-2"><a href="#cb35-2"></a>  </span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="co"># navbar page ----</span></span>
-<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">navbarPage</span>(</span>
-<span id="cb35-5"><a href="#cb35-5"></a>    </span>
-<span id="cb35-6"><a href="#cb35-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
-<span id="cb35-7"><a href="#cb35-7"></a>    </span>
-<span id="cb35-8"><a href="#cb35-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
-<span id="cb35-9"><a href="#cb35-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
-<span id="cb35-10"><a href="#cb35-10"></a>      </span>
-<span id="cb35-11"><a href="#cb35-11"></a>      <span class="st">"background info will go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb35-12"><a href="#cb35-12"></a>      </span>
-<span id="cb35-13"><a href="#cb35-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
-<span id="cb35-14"><a href="#cb35-14"></a>    </span>
-<span id="cb35-15"><a href="#cb35-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
-<span id="cb35-16"><a href="#cb35-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Animal Data Explorer"</span>,</span>
-<span id="cb35-17"><a href="#cb35-17"></a>      </span>
-<span id="cb35-18"><a href="#cb35-18"></a>      <span class="co"># tabsetPanel to contain tabs for data viz ----</span></span>
-<span id="cb35-19"><a href="#cb35-19"></a>      <span class="fu">tabsetPanel</span>(</span>
-<span id="cb35-20"><a href="#cb35-20"></a>        </span>
-<span id="cb35-21"><a href="#cb35-21"></a>        <span class="co"># trout tabPanel ----</span></span>
-<span id="cb35-22"><a href="#cb35-22"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
-<span id="cb35-23"><a href="#cb35-23"></a>                </span>
-<span id="cb35-24"><a href="#cb35-24"></a>                 <span class="co"># trout plot sidebarLayout ----</span></span>
-<span id="cb35-25"><a href="#cb35-25"></a>                 <span class="fu">sidebarLayout</span>(</span>
-<span id="cb35-26"><a href="#cb35-26"></a>                   </span>
-<span id="cb35-27"><a href="#cb35-27"></a>                   <span class="co"># trout plot sidebarPanel ----</span></span>
-<span id="cb35-28"><a href="#cb35-28"></a>                   <span class="fu">sidebarPanel</span>(</span>
-<span id="cb35-29"><a href="#cb35-29"></a>                     </span>
-<span id="cb35-30"><a href="#cb35-30"></a>                     <span class="st">"trout plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb35-31"><a href="#cb35-31"></a>                     </span>
-<span id="cb35-32"><a href="#cb35-32"></a>                   ), <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarPanel</span></span>
-<span id="cb35-33"><a href="#cb35-33"></a>                   </span>
-<span id="cb35-34"><a href="#cb35-34"></a>                   <span class="co"># trout plot mainPanel ----</span></span>
-<span id="cb35-35"><a href="#cb35-35"></a>                   <span class="fu">mainPanel</span>(</span>
-<span id="cb35-36"><a href="#cb35-36"></a>                     </span>
-<span id="cb35-37"><a href="#cb35-37"></a>                     <span class="st">"trout plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb35-38"><a href="#cb35-38"></a>                     </span>
-<span id="cb35-39"><a href="#cb35-39"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
-<span id="cb35-40"><a href="#cb35-40"></a>                   </span>
-<span id="cb35-41"><a href="#cb35-41"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarLayout</span></span>
-<span id="cb35-42"><a href="#cb35-42"></a>                 </span>
-<span id="cb35-43"><a href="#cb35-43"></a>                 ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
-<span id="cb35-44"><a href="#cb35-44"></a>        </span>
-<span id="cb35-45"><a href="#cb35-45"></a>        <span class="co"># penguin tabPanel ----</span></span>
-<span id="cb35-46"><a href="#cb35-46"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Penguins"</span>,</span>
-<span id="cb35-47"><a href="#cb35-47"></a>                 </span>
-<span id="cb35-48"><a href="#cb35-48"></a>                 <span class="co"># penguin plot sidebarLayout ----</span></span>
-<span id="cb35-49"><a href="#cb35-49"></a>                 <span class="fu">sidebarLayout</span>(</span>
-<span id="cb35-50"><a href="#cb35-50"></a>                   </span>
-<span id="cb35-51"><a href="#cb35-51"></a>                   <span class="co"># penguin plot sidebarPanel ----</span></span>
-<span id="cb35-52"><a href="#cb35-52"></a>                   <span class="fu">sidebarPanel</span>(</span>
-<span id="cb35-53"><a href="#cb35-53"></a>                     </span>
-<span id="cb35-54"><a href="#cb35-54"></a>                     <span class="st">"penguin plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb35-55"><a href="#cb35-55"></a>                     </span>
-<span id="cb35-56"><a href="#cb35-56"></a>                   ), <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarPanel</span></span>
-<span id="cb35-57"><a href="#cb35-57"></a>                   </span>
-<span id="cb35-58"><a href="#cb35-58"></a>                   <span class="co"># penguin plot mainPanel ----</span></span>
-<span id="cb35-59"><a href="#cb35-59"></a>                   <span class="fu">mainPanel</span>(</span>
-<span id="cb35-60"><a href="#cb35-60"></a>                     </span>
-<span id="cb35-61"><a href="#cb35-61"></a>                     <span class="st">"penguin plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
-<span id="cb35-62"><a href="#cb35-62"></a>                     </span>
-<span id="cb35-63"><a href="#cb35-63"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot mainPanel</span></span>
-<span id="cb35-64"><a href="#cb35-64"></a>                   </span>
-<span id="cb35-65"><a href="#cb35-65"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarLayout</span></span>
-<span id="cb35-66"><a href="#cb35-66"></a>                 </span>
-<span id="cb35-67"><a href="#cb35-67"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin tabPanel</span></span>
-<span id="cb35-68"><a href="#cb35-68"></a>        </span>
-<span id="cb35-69"><a href="#cb35-69"></a>      ) <span class="co"># </span><span class="re">END</span><span class="co"> tabsetPanel</span></span>
-<span id="cb35-70"><a href="#cb35-70"></a>      </span>
-<span id="cb35-71"><a href="#cb35-71"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
-<span id="cb35-72"><a href="#cb35-72"></a>    </span>
-<span id="cb35-73"><a href="#cb35-73"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
-<span id="cb35-74"><a href="#cb35-74"></a>  </span>
-<span id="cb35-75"><a href="#cb35-75"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="48-65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb37-2"><a href="#cb37-2"></a>  </span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="co"># navbar page ----</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">navbarPage</span>(</span>
+<span id="cb37-5"><a href="#cb37-5"></a>    </span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="st">"LTER Animal Data Explorer"</span>,</span>
+<span id="cb37-7"><a href="#cb37-7"></a>    </span>
+<span id="cb37-8"><a href="#cb37-8"></a>    <span class="co"># (Page 1) intro tabPanel ----</span></span>
+<span id="cb37-9"><a href="#cb37-9"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"About this App"</span>,</span>
+<span id="cb37-10"><a href="#cb37-10"></a>      </span>
+<span id="cb37-11"><a href="#cb37-11"></a>      <span class="st">"background info will go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb37-12"><a href="#cb37-12"></a>      </span>
+<span id="cb37-13"><a href="#cb37-13"></a>    ), <span class="co"># </span><span class="re">END</span><span class="co"> (Page 1) intro tabPanel</span></span>
+<span id="cb37-14"><a href="#cb37-14"></a>    </span>
+<span id="cb37-15"><a href="#cb37-15"></a>    <span class="co"># (Page 2) data viz tabPanel ----</span></span>
+<span id="cb37-16"><a href="#cb37-16"></a>    <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Animal Data Explorer"</span>,</span>
+<span id="cb37-17"><a href="#cb37-17"></a>      </span>
+<span id="cb37-18"><a href="#cb37-18"></a>      <span class="co"># tabsetPanel to contain tabs for data viz ----</span></span>
+<span id="cb37-19"><a href="#cb37-19"></a>      <span class="fu">tabsetPanel</span>(</span>
+<span id="cb37-20"><a href="#cb37-20"></a>        </span>
+<span id="cb37-21"><a href="#cb37-21"></a>        <span class="co"># trout tabPanel ----</span></span>
+<span id="cb37-22"><a href="#cb37-22"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
+<span id="cb37-23"><a href="#cb37-23"></a>                </span>
+<span id="cb37-24"><a href="#cb37-24"></a>                 <span class="co"># trout plot sidebarLayout ----</span></span>
+<span id="cb37-25"><a href="#cb37-25"></a>                 <span class="fu">sidebarLayout</span>(</span>
+<span id="cb37-26"><a href="#cb37-26"></a>                   </span>
+<span id="cb37-27"><a href="#cb37-27"></a>                   <span class="co"># trout plot sidebarPanel ----</span></span>
+<span id="cb37-28"><a href="#cb37-28"></a>                   <span class="fu">sidebarPanel</span>(</span>
+<span id="cb37-29"><a href="#cb37-29"></a>                     </span>
+<span id="cb37-30"><a href="#cb37-30"></a>                     <span class="st">"trout plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb37-31"><a href="#cb37-31"></a>                     </span>
+<span id="cb37-32"><a href="#cb37-32"></a>                   ), <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarPanel</span></span>
+<span id="cb37-33"><a href="#cb37-33"></a>                   </span>
+<span id="cb37-34"><a href="#cb37-34"></a>                   <span class="co"># trout plot mainPanel ----</span></span>
+<span id="cb37-35"><a href="#cb37-35"></a>                   <span class="fu">mainPanel</span>(</span>
+<span id="cb37-36"><a href="#cb37-36"></a>                     </span>
+<span id="cb37-37"><a href="#cb37-37"></a>                     <span class="st">"trout plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb37-38"><a href="#cb37-38"></a>                     </span>
+<span id="cb37-39"><a href="#cb37-39"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
+<span id="cb37-40"><a href="#cb37-40"></a>                   </span>
+<span id="cb37-41"><a href="#cb37-41"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarLayout</span></span>
+<span id="cb37-42"><a href="#cb37-42"></a>                 </span>
+<span id="cb37-43"><a href="#cb37-43"></a>                 ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
+<span id="cb37-44"><a href="#cb37-44"></a>        </span>
+<span id="cb37-45"><a href="#cb37-45"></a>        <span class="co"># penguin tabPanel ----</span></span>
+<span id="cb37-46"><a href="#cb37-46"></a>        <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Penguins"</span>,</span>
+<span id="cb37-47"><a href="#cb37-47"></a>                 </span>
+<span id="cb37-48"><a href="#cb37-48"></a>                 <span class="co"># penguin plot sidebarLayout ----</span></span>
+<span id="cb37-49"><a href="#cb37-49"></a>                 <span class="fu">sidebarLayout</span>(</span>
+<span id="cb37-50"><a href="#cb37-50"></a>                   </span>
+<span id="cb37-51"><a href="#cb37-51"></a>                   <span class="co"># penguin plot sidebarPanel ----</span></span>
+<span id="cb37-52"><a href="#cb37-52"></a>                   <span class="fu">sidebarPanel</span>(</span>
+<span id="cb37-53"><a href="#cb37-53"></a>                     </span>
+<span id="cb37-54"><a href="#cb37-54"></a>                     <span class="st">"penguin plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb37-55"><a href="#cb37-55"></a>                     </span>
+<span id="cb37-56"><a href="#cb37-56"></a>                   ), <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarPanel</span></span>
+<span id="cb37-57"><a href="#cb37-57"></a>                   </span>
+<span id="cb37-58"><a href="#cb37-58"></a>                   <span class="co"># penguin plot mainPanel ----</span></span>
+<span id="cb37-59"><a href="#cb37-59"></a>                   <span class="fu">mainPanel</span>(</span>
+<span id="cb37-60"><a href="#cb37-60"></a>                     </span>
+<span id="cb37-61"><a href="#cb37-61"></a>                     <span class="st">"penguin plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
+<span id="cb37-62"><a href="#cb37-62"></a>                     </span>
+<span id="cb37-63"><a href="#cb37-63"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot mainPanel</span></span>
+<span id="cb37-64"><a href="#cb37-64"></a>                   </span>
+<span id="cb37-65"><a href="#cb37-65"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarLayout</span></span>
+<span id="cb37-66"><a href="#cb37-66"></a>                 </span>
+<span id="cb37-67"><a href="#cb37-67"></a>                 ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin tabPanel</span></span>
+<span id="cb37-68"><a href="#cb37-68"></a>        </span>
+<span id="cb37-69"><a href="#cb37-69"></a>      ) <span class="co"># </span><span class="re">END</span><span class="co"> tabsetPanel</span></span>
+<span id="cb37-70"><a href="#cb37-70"></a>      </span>
+<span id="cb37-71"><a href="#cb37-71"></a>    ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
+<span id="cb37-72"><a href="#cb37-72"></a>    </span>
+<span id="cb37-73"><a href="#cb37-73"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span>
+<span id="cb37-74"><a href="#cb37-74"></a>  </span>
+<span id="cb37-75"><a href="#cb37-75"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="layout-review" class="slide level2" data-menu-title="Layout review">
 <h2></h2>
 <div class="slide-title">
-Some thoughts/notes
+Review: some important things to keep in mind when you’re building your UI’s layout:
 </div>
+<div class="fragment">
 <p class="body-text">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a rough sketch of your intended layout can help orient yourself before hitting the keyboard
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> try creating a <strong>rough sketch</strong> of your intended layout <em>before</em> hitting the keyboard (think of this as UI layout pseudocode!)
 </p>
-<p class="body-text">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> keeping clean code is important – we haven’t even any added any content yet and our UI is already almost 100 lines of code!
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> keeping <strong>clean code is important</strong> – we haven’t even any added any content yet and our UI is already 75 lines of code!
 </p>
-<p class="body-text">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> use rainbow parentheses code comments and plenty of space to keep things looking manageable and navigable.
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> use <strong>rainbow parentheses</strong>, <strong>code comments</strong> and plenty of <strong>space between lines</strong> to keep things looking manageable and navigable.
 </p>
-<p class="body-text">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Things can get out of hand quickly – add one layout section at a time, run your app to check that things look as you intent, then continue.
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> things can get out of hand quickly – <strong>add one layout section at a time</strong>, run your app to check that things look as you intend, then continue.
 </p>
+</div>
 </section>
-<section id="practice-app2-plots" class="slide level2" data-menu-title="Practice app 2 plots">
-<h2></h2>
-<div class="slide-title">
-We’ll be turning these two static gpplots into reactive objects within our shiny app.
-</div>
-<p class="small-text">
-Using data sets from the <code>{lterdatasampler}</code> package, we’ll build plots to explore the body sizes of two different animal species found at LTER sites: Cutthroat trout (Andrews Forest LTER), and Bison (<a href="http://lter.konza.ksu.edu/konza-prairie-long-term-ecological-research-lter">Konza Prairie Biological Station LTER</a>) – random, I know.
-</p>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Trout</a></li><li><a href="#tabset-2-2">Penguins</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="cell">
+<section class="slide level2">
 
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-
-</div>
-</div>
-</div>
-<div id="tabset-2-2">
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="cell">
-
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="tbd" class="slide level2" data-menu-title="tbd">
 <h2></h2>

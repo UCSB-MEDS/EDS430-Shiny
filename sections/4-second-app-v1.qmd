@@ -80,8 +80,11 @@ format: revealjs
 
 ::::
 
----
+. . . 
 
+<p class="small-text">You'll notice that there are some UI quirks (e.g. blank plots or even a scary red error message that appear when no data is selected) that can make the user experience less than ideal (and even confusing) -- we'll learn about ways to improve this in v2 of our app.</p>
+
+---
 
 ##  {#two-source data-menu-title="Two source panes"}
 
@@ -92,6 +95,123 @@ format: revealjs
 <center><img src="images/two_source.png" alt="RStudio with three columns. (From left to right): (1) a source pane with `ui.R` open (2) a second source pane on the top with `server.R` open and the console on the bottom, (3) Environment/History/Git/etc. on the top and Files/Plots/Packages/etc. on the bottom" width="650"/></center>
 
 <p class="body-text topbr">This setup is certainly not required/necessary -- organize your IDE however you work best!</p>
+
+---
+
+##  {#app2-plots data-menu-title="Draft Plots (app#2)"}
+
+<div class="slide-title-smaller">Practice data wrangling, filtering & viz first!</div>
+
+<p class="small-text">Here's what I've done in my `~R/practice_script_app2_lter.R` file:</p>
+
+::: {.panel-tabset}
+
+## Trout plot
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+#..........................load packages.........................
+library(lterdatasampler)
+library(tidyverse)
+
+#............custom ggplot theme (apply to both plots)...........
+myCustomTheme <- theme_light() +
+  theme(axis.text = element_text(color = "black", size = 12),
+    axis.title = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 14, face = "bold"),
+    legend.text = element_text(size = 13),
+    legend.position = "bottom",
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.7))
+
+#.......................wrangle trout data.......................
+clean_trout <- and_vertebrates |>
+  filter(species == c("Cutthroat trout")) |>
+  select(year, sampledate, section, reach, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
+  mutate(channel_type = case_when(
+    channel_type == "C" ~ "cascade",
+    channel_type == "I" ~ "riffle",
+    channel_type =="IP" ~ "isolated pool",
+    channel_type =="P" ~ "pool",
+    channel_type =="R" ~ "rapid",
+    channel_type =="S" ~ "step (small falls)",
+    channel_type =="SC" ~ "side channel"
+  )) |> 
+  mutate(section = case_when(
+    section == "CC" ~ "clear cut forest",
+    section == "OG" ~ "old growth forest"
+  )) |> 
+  drop_na()
+
+#..................practice filtering trout data.................
+trout_filtered_df <- clean_trout |> 
+  filter(channel_type %in% c("pool", "rapid")) |> 
+  filter(section %in% c("clear cut forest"))
+
+#........................plot trout data.........................
+ggplot(trout_filtered_df, aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
+  geom_point(alpha = 0.7, size = 5) +
+  scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D", 
+                                "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96", 
+                                "side channel" = "#94CBEC")) +
+  scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19, 
+                                "pool" = 18, "rapid" = 8, "step (small falls)" = 23, 
+                                "side channel" = 25)) +
+  labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+  myCustomTheme
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/trout_plot.png" alt="A scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. Data points are colored and shaped by Channel Type, with data collected from pools represented with green diamonds and data collected from rapids represented by red stars." width="550"/></center> 
+
+<center><p class="small-text gray-text">We'll build 2 inputs: one to select `channel_type` and one to select `section`.</p></center>
+:::
+
+::::
+
+## Penguin plot
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+#..........................load packages.........................
+library(palmerpenguins)
+library(tidyverse)
+
+#..................practice filtering for island.................
+island_df <- penguins %>%
+  filter(island == "Dream")
+
+#........................plot penguin data.......................
+ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
+  geom_histogram(alpha = 0.6, bins = 25) +
+  scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+  labs(x = "Flipper length (mm)", y = "Frequency",
+       fill = "Penguin species") +
+  myCustomTheme
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/penguin_plot.png" alt="A histogram of penguin Flipper lengths (mm) with bars colored by species. Adelie are orange and Chinstrap are purple." width="550"/></center> 
+<center><p class="small-text gray-text">We'll build 2 inputs: one to select `island` change the number of histogram bins.</p></center>
+:::
+
+::::
+:::
 
 ---
 
@@ -429,7 +549,7 @@ ui <- fluidPage(
 
 ##  {#sidebar-main-panels data-menu-title="Create sidebar & main panels"}
 
-<div class="slide-title-smaller">Add sidebar and main panels to the `Trout` tab</div>
+<div class="slide-title-smaller">Add sidebar & main panels to the `Trout` tab</div>
 
 <p class="small-text">We'll eventually place our input in the sidebar and output in the main panel.</p>
 
@@ -508,7 +628,7 @@ ui <- fluidPage(
 ::: {.column width="45%"}
 <br>
 <br>
-<p class="body-text">I encourage you to the code out yourself, rather than copy/paste! And be sure to add text where your input/output will eventually be placed. When you're done, you app should look like this:</p>
+<p class="body-text">I encourage you to type the code out yourself, rather than copy/paste! And be sure to add text where your input/output will eventually be placed. When you're done, you app should look like this:</p>
 :::
 
 ::: {.column width="5%"}
@@ -613,65 +733,26 @@ ui <- fluidPage(
 
 ##  {#layout-review data-menu-title="Layout review"}
 
-<div class="slide-title">Some thoughts/notes</div>
+<div class="slide-title">Review: some important things to keep in mind when you're building your UI's layout:</div>
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a rough sketch of your intended layout can help orient yourself before hitting the keyboard</p>
+. . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` keeping clean code is important -- we haven't even any added any content yet and our UI is already almost 100 lines of code!</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` try creating a **rough sketch** of your intended layout *before* hitting the keyboard (think of this as UI layout pseudocode!)</p>
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` use rainbow parentheses code comments and plenty of space to keep things looking manageable and navigable.</p>
+. . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Things can get out of hand quickly -- add one layout section at a time, run your app to check that things look as you intent, then continue.</p>
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` keeping **clean code is important** -- we haven't even any added any content yet and our UI is already 75 lines of code!</p>
+
+. . . 
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` use **rainbow parentheses**, **code comments** and plenty of **space between lines** to keep things looking manageable and navigable.</p>
+
+. . . 
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` things can get out of hand quickly -- **add one layout section at a time**, run your app to check that things look as you intend, then continue.</p>
 
 ---
 
-##  {#practice-app2-plots data-menu-title="Practice app 2 plots"}
-
-<div class="slide-title">We'll be turning these two static gpplots into reactive objects within our shiny app.</div>
-
-<p class="small-text">Using data sets from the `{lterdatasampler}` package, we'll build plots to explore the body sizes of two different animal species found at LTER sites: Cutthroat trout (Andrews Forest LTER), and Bison ([Konza Prairie Biological Station LTER](http://lter.konza.ksu.edu/konza-prairie-long-term-ecological-research-lter)) -- random, I know.</p>
-
-::: {.panel-tabset}
-
-## Trout
-
-:::: {.columns}
-
-::: {.column width="45%"}
-```{r}
-#| eval: false
-#| echo: true
-```
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-:::
-
-::::
-
-## Penguins
-
-:::: {.columns}
-
-::: {.column width="45%"}
-```{r}
-#| eval: false
-#| echo: true
-```
-:::
-
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-:::
-
-::::
-
-:::
 
 
 ---

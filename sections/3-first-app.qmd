@@ -502,7 +502,7 @@ ggplot(na.omit(penguins),
 
 ::::
 
-<p class="small-text important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to `~/R/practice_script.R`.</p>
+<p class="small-text important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to something like `~/R/practice_script.R`.</p>
 
 ---
 
