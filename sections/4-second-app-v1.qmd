@@ -737,7 +737,7 @@ ui <- fluidPage(
 
 . . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` try creating a **rough sketch** of your intended layout *before* hitting the keyboard (think of this as UI layout pseudocode!)</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` try creating a **rough sketch** of your intended layout *before* hitting the keyboard (I like to think of this as UI layout "pseudocode")</p>
 
 . . . 
 
@@ -745,19 +745,181 @@ ui <- fluidPage(
 
 . . . 
 
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` use **rainbow parentheses**, **code comments** and plenty of **space between lines** to keep things looking manageable and navigable.</p>
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` use **rainbow parentheses**, **code comments** and plenty of **space between lines** to keep things looking manageable and navigable</p>
 
 . . . 
 
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` things can get out of hand quickly -- **add one layout section at a time**, run your app to check that things look as you intend, then continue.</p>
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` things can get out of hand quickly -- **add one layout section at a time**, run your app to check that things look as you intend, then continue</p>
 
 ---
 
-
+First up, trout
 
 ---
 
-##  {#tbd data-menu-title="tbd"}
+##  {#update-global1 data-menu-title="Update `global.R`"}
 
-<div class="slide-title">tbd</div>
+<div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
+
+<p class="small-text">We'll be using the [`and_vertebrates`](https://lter.github.io/lterdatasampler/reference/and_vertebrates.html) data set from the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/) to build our trout plot. We'll also be using the [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets) package to build a `pickerInput`. **Add both packages to the top of your `global.R` file.**</p>
+
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3-4"
+# LOAD LIBRARIES ----
+library(shiny)
+library(lterdatasampler) # using the `and_vertebrates` data set
+library(shinyWidgets) # using the `pickerInput`
+```
+
+---
+
+##  {#update-global2 data-menu-title="Update `global.R`"}
+
+<div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
+
+<p class="small-text">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too (see slide ??). Our new data object `clean_trout`, will be available to the UI & server of our app.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "6-23"
+# LOAD LIBRARIES ----
+library(shiny)
+library(lterdatasampler) # using the `and_vertebrates` data set
+library(shinyWidgets) # using the `pickerInput`
+
+# DATA WRANGLING ----
+clean_trout <- and_vertebrates |>
+  filter(species == c("Cutthroat trout")) |>
+  select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
+  mutate(channel_type = case_when(
+    channel_type == "C" ~ "cascade",
+    channel_type == "I" ~ "riffle",
+    channel_type =="IP" ~ "isolated pool",
+    channel_type =="P" ~ "pool",
+    channel_type =="R" ~ "rapid",
+    channel_type =="S" ~ "step (small falls)",
+    channel_type =="SC" ~ "side channel"
+  )) |> 
+  mutate(section = case_when(
+    section == "CC" ~ "clear cut forest",
+    section == "OG" ~ "old growth forest"
+  )) |> 
+  drop_na()
+```
+
+---
+
+##  {#trout-pickerInput data-menu-title="Add Trout `pickerInput`"}
+
+<div class="slide-title-smaller">Add a `pickerInput` for selecting `channel_type` to your UI</div>
+
+<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see previous slide)) includes the type of water body (cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel) that data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
+
+. . . 
+
+<p class="small-text topbr">**Reminder:** When we we designed our UI layout, we added a `sidebarPanel` to our **Trout** tab with the placeholder text `"trout plot input(s) go here"`. Replace that text with the code for your `pickerInput`:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+# channel type pickerInput ----
+pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
+            choices = unique(clean_trout$channel_type), # alternatively: choices = c("rapid", "cascade" ...)
+            options = pickerOptions(actionsBox = TRUE), # creates "Select All / Deselect All" buttons
+            selected = c("cascade", "pool"), 
+            multiple = TRUE) # END channel type pickerInput
+```
+
+<p class="small-text topbr">Save and run your app -- a functional `pickerInput` should now appear in your UI.</p>
+
+<br>
+
+<p class="smaller-text gray-text topbr">A `shinyWidgets::pickerInput()` is functionally equivalent to `shiny::checkboxGroupInput()`, though it allows for greater customization and looks (in my opinion) a bit nicer.</p>
+
+---
+
+##  {#trout-output data-menu-title="Add Trout output"}
+
+<div class="slide-title">Add a plot output to your UI</div>
+
+<p class="small-text">Next, we need to create a placeholder in our UI for our trout scatterplot to live. Because we'll be creating a reactive plot, we can use the `plotOutput()` function to do so.</p>
+
+. . . 
+
+<p class="small-text topbr">**Reminder:** When we we designed our UI layout, we added a `mainPanel` to our **Trout** tab with the placeholder text `"trout plot output goes here"`. Replace that text with the code for your `plotOuput()`:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+plotOutput(outputId = "trout_scatterplot")
+```
+
+<p class="small-text topbr">Save and run your app -- it won't look different at first glance, but inspecting your app in a browser window (using Chrome, right click > Inspect) will reveal a placeholder box for your plot output to eventually live:</p>
+
+<center><img src="images/trout_plotOutput.png" alt="The Trout tab of our app, which contains only a pickerInput with the variables, cascade and pool, selected. There is no visible plot yet, however using Google Chrome's developer tools shows a div (i.e. a box) placeholder where our plot will eventually appear." width="600"/></center>
+
+---
+
+##  {#trout-plot data-menu-title="Trout Reactive Plot"}
+
+<div class="slide-title-smaller">Tell the server how to assemble `pickerInput` values into your `plotOutput`</div>
+
+<p class="small-text">**Remember the three rules for building reactive outputs:** **(1)** save objects you want to display to `output$<id>`, **(2)** build reactive objects using a `render*()` function, and **(3)** access input values with `input$<id>`. When complete, your server should contain the following code:</p>
+
+:::: {.columns}
+
+::: {.column width="55%"}
+```{r}
+#| eval: false
+#| echo: true
+# filter for channel types ----
+trout_filtered_df <- reactive({
+
+    clean_trout |>
+      filter(channel_type %in% c(input$channel_type_input))
+    
+  })
+
+# trout scatterplot ----
+output$trout_scatterplot <- renderPlot({
+
+   ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
+    geom_point(alpha = 0.7, size = 5) +
+    scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D",
+                                  "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96",
+                                  "side channel" = "#94CBEC")) +
+    scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19,
+                                  "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
+                                  "side channel" = 25)) +
+    labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+    myCustomTheme
+
+  })
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="35%"}
+<br>
+<p class="body-text">**A couple reminders:**</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  If needed, reference your [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to remind yourself how you planned to filter and plot your data</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  Reactive data frames need a set of parentheses, `()`, following the name of the df (see `ggplot(trout_filtered_df() ...)`)</p>
+:::
+
+::::
+
+---
+
+##  {#run-app2v1 data-menu-title="Run the App"}
+
+<div class="slide-title">Run your app and try out your `pickerInput` widget!</div>
+
 

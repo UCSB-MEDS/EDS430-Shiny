@@ -914,6 +914,39 @@ shinyApp(ui = ui, server = server)
 
 ---
 
+##  {#common-mistakes data-menu-title="Common Mistakes"}
+
+<div class="slide-title-smaller">Common mistakes to look out for</div>
+
+<p class="body-text">It's inevitable that you'll make mistakes here and there as you build out your app...and they can be frustrating to catch. The three that I find myself making over and over again are:</p>
+
+<br>
+<br>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` misspelling `inputId` (or `outputId`) with a capital `ID` rather than `Id`</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` misspelling your inputId (or outputId) in the server (e.g. UI: `inputId = "myInputID"`, server: `input$my_Input_ID`)</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` forgetting to separate UI elements with a comma, `,`</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` forgetting the set of parentheses when calling the name of a reactive data frame in a plot (e.g. `ggplot(my_reactive_df(), aes(...))`)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/oops.gif" alt="A gif of Britney Spears in her iconic red spandex outfit singing 'Oops I did it again.'" width="700"/></center>
+:::
+
+::::
+
+
+---
+
 ##  {#app1-recap data-menu-title="App 1 Recap"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` So far, we've talked about:</div>
