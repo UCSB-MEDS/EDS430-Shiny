@@ -806,7 +806,7 @@ server <- function(input, output) {
 
 <div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 1: Add another reactive widget</div>
 
-<p class="small-text bottombr">`{DT}` is a package that provides an [R interface](https://rstudio.github.io/DT/) to the JavaScript library [DataTables](https://datatables.net/) (you may have already used the DT package in your knitted RMarkdown/Quarto HTML documents). DT datatables allow for filtering, pagination, sorting, and lots of other neat features for tables on your HTML pages.</p>
+<p class="small-text bottombr"> The [`{DT}` package](https://rstudio.github.io/DT/) provides an R interface to the JavaScript library [DataTables](https://datatables.net/) (you may have already used the DT package in your knitted RMarkdown/Quarto HTML documents). DT datatables allow for filtering, pagination, sorting, and lots of other neat features for tables on your HTML pages.</p>
 
 :::: {.columns}
 
@@ -841,7 +841,7 @@ server <- function(input, output) {
 <p class="smaller-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` There are lots of ways to customize DT tables, but to create a basic one, all you need is to `DT::dataTable(your_dataframe)`<p>
 
 
-<p class="body-text topbr">**And remember** to follow the steps outlined on the previous slides (jump back to [slide 26](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1)):</p>
+<p class="body-text topbr">**And remember** to follow the steps outlined on the previous slides (jump back to [slide 27](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1)):</p>
 
 <p class="small-text">**1.** Add an input (e.g. `checkboxGroupInput`) to the **UI** that users can interact with<p>
 <p class="small-text">**2.** Add an output (e.g. `DT::datatableOutput`) to the **UI** that creates a placeholder space to fill with our eventual reactive output<p>
@@ -858,9 +858,12 @@ server <- function(input, output) {
 
 <div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 1: A solution</div>
 
+<p class="small-text">Press the right arrow key to advance through the newly added highlighted code sections.</p>
+
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: "5|23-29|60-73"
 # load packages ----
 library(shiny)
 library(palmerpenguins)
@@ -870,13 +873,22 @@ library(DT)
 # user interface ----
 ui <- fluidPage(
   
-  # title & subtitle (omitted for brevity) ----
+  # app title ----
+  tags$h1("My App Title"),
   
-  # body mass slider input & output (omitted for brevity) ----
+  # app subtitle ----
+  p(strong("Exploring Antarctic Penguin Data")),
+  
+  # body mass slider input ----
+  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g)",
+              min = 2700, max = 6300, value = c(3000, 4000)),
 
+  # body mass plot output ----
+  plotOutput(outputId = "bodyMass_scatterPlot"),
+  
   # year input ----
   checkboxGroupInput(inputId = "year", label = "Select year(s):",
-                     choices = c("The year 2007" = "2007", "2008", "2009"), # OR `unique(penguins$year)` | NOTE: update display name using "New Name" = "observation name"
+                     choices = c("2007", "2008", "2009"), # or `unique(penguins$year)` | NOTE: update checkbox display name by using "New name" = "observation name" (e.g "The year 2007" = "2007")
                      selected = c("2007", "2008")),
   
   # DT output ----
@@ -887,18 +899,40 @@ ui <- fluidPage(
 # server instructions ----
 server <- function(input, output) {
   
-  # reactive scatterplot (omitted for brevity) ----
+  # filter body masses ----
+  body_mass_df <- reactive({
+    penguins |>
+      filter(body_mass_g %in% input$body_mass[1]:input$body_mass[2]) # return observations where body_mass_g is "in" the set of options provided by the user in the sliderInput
+  })
+
+  # render the scatterplot output ----
+  output$bodyMass_scatterPlot <- renderPlot({
+
+    ggplot(na.omit(body_mass_df()),
+           aes(x = flipper_length_mm, y = bill_length_mm,
+               color = species, shape = species)) +
+      geom_point() +
+      scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+      labs(x = "Flipper length (mm)", y = "Bill length (mm)",
+           color = "Penguin species", shape = "Penguin species") +
+      theme_minimal() +
+      theme(legend.position = c(0.85, 0.2),
+            legend.background = element_rect(color = "white"))
+    
+  }, alt = "A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins."
+  )
   
   # filter for years ----
   years_df <- reactive({
     penguins |> 
-      filter(year %in% input$year) # `%in%` = return observations where year is "in" the set of options provided by the user via the checkboxGroupInput
+      filter(year %in% input$year) # return observations where year is "in" the set of options provided by the user via the checkboxGroupInput
   })
   
   # render the DT::datatable ----
   output$penguin_data <- DT::renderDataTable({
     
-    DT::datatable(years_df(), # check out https://rstudio.github.io/DT/ for lots of fun ways to customize your table!
+    DT::datatable(years_df(),
                   options = list(pagelength = 10),
                   rownames = FALSE)
     
@@ -910,8 +944,6 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-<center><p class="medium-body-text topbr">Find the complete code for app #1 on [GitHub `r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` ](https://github.com/samanthacsik/EDS430-shiny-app/blob/main/one-file-app/app.R).</p></center>
-
 ---
 
 ##  {#common-mistakes data-menu-title="Common Mistakes"}
@@ -921,29 +953,28 @@ shinyApp(ui = ui, server = server)
 <p class="body-text">It's inevitable that you'll make mistakes here and there as you build out your app...and they can be frustrating to catch. The three that I find myself making over and over again are:</p>
 
 <br>
-<br>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` misspelling `inputId` (or `outputId`) with a capital `ID` rather than `Id`</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` misspelling `inputId` as `inputID` (or `outputId` as `outputID`)</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` misspelling your inputId (or outputId) in the server (e.g. UI: `inputId = "myInputID"`, server: `input$my_Input_ID`)</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` misspelling your inputId (or outputId) name in the server (e.g. UI: `inputId = "myInputID"`, server: `input$my_Input_ID`)</p>
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` forgetting to separate UI elements with a comma, `,`</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` forgetting the set of parentheses when calling the name of a reactive data frame in a plot (e.g. `ggplot(my_reactive_df(), aes(...))`)
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` forgetting the set of parentheses when calling the name of a reactive data frame in a plot (e.g. `ggplot(my_reactive_df(), aes(...))`)</p>
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="45%"}
+<br>
 <center><img src="images/oops.gif" alt="A gif of Britney Spears in her iconic red spandex outfit singing 'Oops I did it again.'" width="700"/></center>
 :::
 
 ::::
-
 
 ---
 

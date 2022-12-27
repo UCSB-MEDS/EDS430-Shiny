@@ -469,7 +469,7 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    "LTER Animal Data Explorer",
+    title = "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
     tabPanel(title = "About this App",
@@ -507,7 +507,7 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    "LTER Animal Data Explorer",
+    title = "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
     tabPanel(title = "About this App",
@@ -562,7 +562,7 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    "LTER Animal Data Explorer",
+    title = "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
     tabPanel(title = "About this App",
@@ -657,7 +657,7 @@ ui <- fluidPage(
   # navbar page ----
   navbarPage(
     
-    "LTER Animal Data Explorer",
+    title = "LTER Animal Data Explorer",
     
     # (Page 1) intro tabPanel ----
     tabPanel(title = "About this App",
@@ -733,7 +733,7 @@ ui <- fluidPage(
 
 ##  {#layout-review data-menu-title="Layout review"}
 
-<div class="slide-title">Review: some important things to keep in mind when you're building your UI's layout:</div>
+<div class="slide-title">Some important things to remember when building your UI's layout:</div>
 
 . . . 
 
@@ -753,7 +753,17 @@ ui <- fluidPage(
 
 ---
 
-First up, trout
+##  {#first-trout data-menu-title="First up, trout"}
+
+<p class="slide-title">Add data viz: First up, trout</p>
+
+<p class="small-text bottombr">We'll be using the [`and_vertebrates` dataset](https://lter.github.io/lterdatasampler/reference/and_vertebrates.html) from the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/) to create our first reactive plot. These data contain coastal cutthroat trout (*Oncorhynchus clarkii clarkii*) lengths and weights collected in Mack Creek, [Andrews Forest LTER](https://andrewsforest.oregonstate.edu/). Original data can be found on the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14).</p>
+
+<br>
+
+<center><img src="images/trout.png" alt="A drawing of the right-side profile of a coastal cutthroat trout." width="600"/></center>
+
+<center><p class="small-text gray-text">Image Source: Joseph R. Tomelleri, as found on the [Western Native Trout Initiative](https://westernnativetrout.org/coastal-cutthroat-trout/)</p>
 
 ---
 
@@ -761,8 +771,9 @@ First up, trout
 
 <div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
 
-<p class="small-text">We'll be using the [`and_vertebrates`](https://lter.github.io/lterdatasampler/reference/and_vertebrates.html) data set from the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/) to build our trout plot. We'll also be using the [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets) package to build a `pickerInput`. **Add both packages to the top of your `global.R` file.**</p>
+<p class="small-text">In addition to the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/), we'll also be using the [`{shinyWidgets}` package ](https://github.com/dreamRs/shinyWidgets) to add a `pickerInput` and a `checkboxGroupInput` to our app.</p>  
 
+<p class="small-text">**Import both packages at the top of your `global.R` file**</p>
 
 ```{r}
 #| eval: false
@@ -780,7 +791,7 @@ library(shinyWidgets) # using the `pickerInput`
 
 <div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
 
-<p class="small-text">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too (see slide ??). Our new data object `clean_trout`, will be available to the UI & server of our app.</p>
+<p class="small-text">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too (see slide ??). Our new data object `clean_trout`, will now be availble for us to call directly in our server.</p>
 
 ```{r}
 #| eval: false
@@ -817,7 +828,7 @@ clean_trout <- and_vertebrates |>
 
 <div class="slide-title-smaller">Add a `pickerInput` for selecting `channel_type` to your UI</div>
 
-<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see previous slide)) includes the type of water body (cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel) that data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
+<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see [previous slide](https://ucsb-meds.github.io/EDS430-Shiny/#/update-global2))) includes the type of water body (cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel) that data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
 
 . . . 
 
@@ -906,20 +917,457 @@ output$trout_scatterplot <- renderPlot({
 :::
 
 ::: {.column width="35%"}
-<br>
-<p class="body-text">**A couple reminders:**</p>
+<p class="body-text">**A couple notes/reminders:**</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  If needed, reference your [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to remind yourself how you planned to filter and plot your data</p>
+<p class="smaller-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  If needed, reference your [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to remind yourself how you planned to filter and plot your data</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  Reactive data frames need a set of parentheses, `()`, following the name of the df (see `ggplot(trout_filtered_df() ...)`)</p>
+<p class="smaller-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`  Reactive data frames need a set of parentheses, `()`, following the name of the df (see `ggplot(trout_filtered_df() ...)`)</p>
+
+<p class="smaller-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` For a cohesive appearance, save your ggplot theme parameters to a named object in `global.R` (here, `myCustomTheme`), then apply to all plots in your app. See the [following slide](https://ucsb-meds.github.io/EDS430-Shiny/#/ggplot-theme) for code.</p>
 :::
 
 ::::
 
 ---
 
-##  {#run-app2v1 data-menu-title="Run the App"}
+##  {#ggplot-theme data-menu-title="Save `ggplot` theme to `global.R`"}
+
+<div class="slide-title-smaller">Save a custom `ggplot` theme to `global.R`</div>
+
+<p class="small-text">Rather than re-typing your ggplot theme parameters out for every plot in your app, do so once in `global.R`, and save to an object name. You can then easily add your custom theme as a layer to each of your ggplots. **Bonus:** If you decide to modify your plot theme, you only have to do so in one place!</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "27-34"
+# LOAD LIBRARIES ----
+library(shiny)
+library(lterdatasampler)
+library(palmerpenguins)
+library(tidyverse)
+library(shinyWidgets)
+
+# DATA WRANGLING ----
+clean_trout <- and_vertebrates |>
+  filter(species == c("Cutthroat trout")) |>
+  select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
+  mutate(channel_type = case_when(
+    channel_type == "C" ~ "cascade",
+    channel_type == "I" ~ "riffle",
+    channel_type =="IP" ~ "isolated pool",
+    channel_type =="P" ~ "pool",
+    channel_type =="R" ~ "rapid",
+    channel_type =="S" ~ "step (small falls)",
+    channel_type =="SC" ~ "side channel"
+  )) |> 
+  mutate(section = case_when(
+    section == "CC" ~ "clear cut forest",
+    section == "OG" ~ "old growth forest"
+  )) |> 
+  drop_na()
+
+# GGPLOT THEME ----
+myCustomTheme <- theme_light() +
+  theme(axis.text = element_text(color = "black", size = 12),
+    axis.title = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 14, face = "bold"),
+    legend.text = element_text(size = 13),
+    legend.position = "bottom",
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.7))
+```
+
+---
+
+##  {#run-app2v1-first-widget  data-menu-title="Run the App"}
 
 <div class="slide-title">Run your app and try out your `pickerInput` widget!</div>
 
+<center><img src="images/app2_plot1_widget1.gif" alt="A user navigates to the 'Explore the Data' tab of our app, 'LTER Animal Data Explorer.' There is a scatterplot with Trout Length (mm) on the x-axis, and Trout Weight (g) on the y-axis. Points are colored and shaped by channel type. There is a pickerWidget to the left of the plot with the channel_types 'cascade' and 'pool' already selected. The user clicks other channel types on/off to see how the data points on the plot change." width="750"/></center>
 
+---
+
+##  {#second-input-ui data-menu-title="Add a second input"}
+
+<div class="slide-title">Add a second input that will update the same output</div>
+
+<p class="small-text">You can have more than one input control the same output. Let's now add a `checkboxGroupButtons` widget to our **UI** for selecting forest `section` (either clear cut forest or old growth forest). Check out the [function documentation](https://dreamrs.github.io/shinyWidgets/reference/checkboxGroupButtons.html) for more information on how to customize the appearance of your buttons.</p>
+
+<p class="small-text">Be sure to add the widget to the same `sidebarPanel` as our `pickerInput`:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "11-16"
+# trout plot sidebarPanel ----
+sidebarPanel(
+  
+  # channel type pickerInput ----
+  pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
+              choices = unique(clean_trout$channel_type),
+              options = pickerOptions(actionsBox = TRUE),
+              selected = c("cascade", "pool"),
+              multiple = TRUE), # END channel type pickerInput
+
+  # section checkboxGroupInput ----
+  checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section:",
+                       choices = c("clear cut forest", "old growth forest"),
+                       selected = c("clear cut forest", "old growth forest"),
+                       individual = FALSE, justified = TRUE, size = "sm",
+                       checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon"))), # END section checkboxGroupInput
+                   
+            ) # END trout plot sidebarPanel
+```
+
+---
+
+##  {#second-input-server data-menu-title="Update reactive trout df"}
+
+<div class="slide-title-smaller">Update your reactive df to *also* filter based on the new `checkboxGroupInput`</div>
+
+<p class="small-text">Return to your **server** to modify `trout_filtered_df` -- our data frame needs to be updated based on both the `pickerInput`, which selects for `channel_type` *and* the `checkboxGrouptInput`, which selects for forest `section`:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "6"
+# filter for channel types ----
+trout_filtered_df <- reactive({
+
+    clean_trout |>
+      filter(channel_type %in% c(input$channel_type_input)) |>
+      filter(section %in% c(input$section_input))
+      
+  })
+
+# trout scatterplot ----
+output$trout_scatterplot <- renderPlot({
+
+  ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
+    geom_point(alpha = 0.7, size = 5) +
+    scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D",
+                                  "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96",
+                                  "side channel" = "#94CBEC")) +
+    scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19,
+                                  "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
+                                  "side channel" = 25)) +
+    labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+    myCustomTheme
+
+ })
+```
+
+---
+
+##  {#run-app2v1-second-widget data-menu-title="Run the App"}
+
+<div class="slide-title-smaller">Run your app and try out your `pickerInput` & `checkboxGrouptInput` widgets!</div>
+
+<center><img src="images/app2_plot1_widget2.gif" alt="Our updated app, which includes the same trout scatterplot, but this time, two inputs: one selectInput that allows the user to filter for channel_type, and one checkboxGroupInput, which includes two buttons to select/deselect data collected from the clear cut forest section and the old growth forest section." width="750"/></center>
+
+---
+
+##  {#mini-break1 data-menu-title="Mini break" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Mini Break</p>
+<p class="caption-text">*Up next: your turn to add a reactive penguin plot to our "Penguin" tab!*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+##  {#second-penguins data-menu-title="Next up, penguins"}
+
+<p class="slide-title">Add data viz: Next up, penguins</p>
+
+<p class="small-text bottombr">We'll be using the `penguins` dataset from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/) to create our second reactive plot. These data contain penguin (genus *Pygoscelis*) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the [Palmer Station LTER](). Original data can be found on the EDI Data Portal ([Adélie data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5), [Gentoo data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5), and [Chinstrap data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6)).</p>
+
+<br>
+
+<center><img src="images/meet_the_penguins.png" alt="A cartoon drawing of Chinstrap (atop a purple background), Gentoo (atop a green background) and Adélie (atop an orange background) penguins." width="600"/></center>
+
+<center><p class="small-text gray-text">Artwork by [@allison_horst](https://allisonhorst.com/)</p>
+
+
+---
+
+##  {#exercise3-prompt data-menu-title="Exercise 3 Prompt"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 3: Add a reactive plot to the 'Penguins' tab</div>
+
+<p class="small-text">Working alone or in groups, add a reactive histogram of penguin flipper lengths (using the `penguins` data set from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/)) to the **Penguins** tab. Your plot should have the following features and look like the example below, when complete:</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` data colored by penguin `species`</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a `shinyWidgets::pickerInput` that allows users to filter data based on `island`, and that includes buttons to **Select All** / **Deselect All** island options at once</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a `shiny::sliderInput` that allows users to change the number of histogram bins and that by default, displays a histogram with **25** bins</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the two widgets should be placed in the `sidebarPanel` and the reactive histogram should be placed in the `mainPanel` of the **Penguins** tab</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/trout_plot.gif" alt="A user navigates to the Penguins tab of our app to reveal a histogram of penguins flipper lengths. Data are colored by species (Adelie = orange, Chinstrap = purple, Gentoo = green). The user uses a pickerInput to filter data based on the island where they were collected. The user also adjust the bin number using a sliderInput." width="750"/></center>
+:::
+
+::::
+
+<center><p class="medium-body-text">See next slide for some tips on getting started!</p></center>
+
+---
+
+##  {#exercise3-tips data-menu-title="Exercise 3 Tips"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 3: Tips</div>
+
+<p class="body-text topbr">**Tips:**</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Remember to load the `palmerpenguins` package at the top of `global.R` so that your app can find the data.</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Add your widgets to the `sidebarPanel` and your plot output to the `mainPanel` of the **Penguins** tab -- look for that placeholder text we added earlier to help place your new code in the correct spot within your UI!</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Try changing the histogram bin number in your practice code script first, before attempting to make it reactive.</p>
+
+<p class="body-text topbr">**And remember** to follow the our three steps for building reactive outputs (review [slide 27](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1), if necessary)!</p>
+
+<br>
+<br>
+<br>
+
+<center><p class="medium-body-text">See next slide for a solution!</p></center>
+
+---
+
+##  {#exercise3-solution data-menu-title="Exercise 3 Solution"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 3: A solution</div>
+
+::: {.panel-tabset}
+
+## `global.R`
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4"
+# LOAD LIBRARIES ----
+library(shiny)
+library(lterdatasampler)
+library(palmerpenguins)
+library(tidyverse)
+library(shinyWidgets)
+
+# DATA WRANGLING ----
+
+# trout data
+clean_trout <- and_vertebrates |>
+  filter(species == c("Cutthroat trout")) |>
+  select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
+  mutate(channel_type = case_when(
+    channel_type == "C" ~ "cascade",
+    channel_type == "I" ~ "riffle",
+    channel_type =="IP" ~ "isolated pool",
+    channel_type =="P" ~ "pool",
+    channel_type =="R" ~ "rapid",
+    channel_type =="S" ~ "step (small falls)",
+    channel_type =="SC" ~ "side channel"
+  )) |> 
+  mutate(section = case_when(
+    section == "CC" ~ "clear cut forest",
+    section == "OG" ~ "old growth forest"
+  )) |> 
+  drop_na()
+
+# GGPLOT THEME ----
+myCustomTheme <- theme_light() +
+  theme(#text = element_text(family = "mono"), 
+    axis.text = element_text(color = "black", size = 12),
+    axis.title = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 14, face = "bold"),
+    legend.text = element_text(size = 13),
+    legend.position = "bottom",
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.7))
+```
+
+## `ui.R`
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "61-82"
+ui <- fluidPage(
+  
+  # navbar page ----
+  navbarPage(
+    
+    title = "LTER Animal Data Explorer",
+    
+    # (Page 1) intro tabPanel ----
+    tabPanel(title = "About this App",
+    
+    ), # END (Page 1) intro tabPanel
+    
+    # (Page 2) data viz tabPanel ----
+    tabPanel(title = "Explore the Data",
+      
+      # tabsetPanel to contain tabs for data viz ----
+      tabsetPanel(
+        
+        # trout tabPanel ----
+        tabPanel(title = "Trout",
+                
+                 # trout plot sidebarLayout ----
+                 sidebarLayout(
+                   
+                   # trout plot sidebarPanel ----
+                   sidebarPanel(
+                     
+                     # channel type pickerInput ----
+                     pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
+                                 choices = unique(clean_trout$channel_type),
+                                 options = pickerOptions(actionsBox = TRUE),
+                                 selected = c("cascade", "pool"),
+                                 multiple = TRUE), # END channel type pickerInput
+
+                     # # section checkboxGroupInput ----
+                     checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section:",
+                                          choices = c("clear cut forest", "old growth forest"),
+                                          selected = c("clear cut forest", "old growth forest"),
+                                          individual = FALSE, justified = TRUE, size = "sm",
+                                          checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon"))), # END section checkboxGroupInput
+                   
+                   ), # END trout plot sidebarPanel
+                   
+                   # trout plot mainPanel ----
+                   mainPanel(
+                     
+                     plotOutput(outputId = "trout_scatterplot") # |> withSpinner(color = "#006792", type = 1)
+                     
+                   ) # END trout plot mainPanel
+                   
+                 ) # END trout plot sidebarLayout
+                 
+                 ), # END trout tabPanel 
+        
+        # penguin tabPanel ----
+        tabPanel(title = "Penguins",
+                 
+                 # penguin plot sidebarLayout ----
+                 sidebarLayout(
+                   
+                   # penguin plot sidebarPanel ----
+                   sidebarPanel(
+                     
+                     # island pickerInput ----
+                     pickerInput(inputId = "penguin_island", label = "Select an island:",
+                                 choices = c("Torgersen", "Dream", "Biscoe"),
+                                 options = pickerOptions(actionsBox = TRUE),
+                                 selected = c("Torgersen", "Dream", "Biscoe"),
+                                 multiple = T), # END island pickerInput
+
+                     # bin number sliderInput ----
+                     sliderInput(inputId = "bin_num", label = "Select number of bins:",
+                                 value = 25, max = 100, min = 1), # END bin number sliderInput
+                     
+                   ), # END penguin plot sidebarPanel
+                   
+                   # penguin plot mainPanel ----
+                   mainPanel(
+                     
+                    plotOutput(outputId = "flipperLength_histogram") # |> withSpinner(color = "#006792", type = 1)
+                     
+                   ) # END penguin plot mainPanel
+                   
+                 ) # END penguin plot sidebarLayout
+                 
+                 ) # END penguin tabPanel
+        
+      ) # END tabsetPanel
+      
+    ) # END (Page 2) data viz tabPanel
+    
+  ) # END navbarPage
+  
+) # END fluidPage
+```
+
+## `server.R`
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "28-47"
+server <- function(input, output) {
+  
+  # filter for channel types ----
+  trout_filtered_df <- reactive({
+
+      clean_trout |>
+        filter(channel_type %in% c(input$channel_type_input)) |>
+        filter(section %in% c(input$section_input))
+        
+    })
+
+  # trout scatterplot ----
+  output$trout_scatterplot <- renderPlot({
+
+    ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
+      geom_point(alpha = 0.7, size = 5) +
+      scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D",
+                                    "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96",
+                                    "side channel" = "#94CBEC")) +
+      scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19,
+                                    "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
+                                    "side channel" = 25)) +
+      labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+      myCustomTheme
+
+  })
+  
+  # filter for island ----
+  island_df <- reactive({
+
+    penguins %>%
+      filter(island == input$penguin_island)
+
+  })
+
+  # render the flipper length histogram ----
+  output$flipperLength_histogram <- renderPlot({
+
+    ggplot(na.omit(island_df()), aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram(alpha = 0.6, bins = input$bin_num) +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species") +
+      theme_minimal() +
+      theme(legend.position = "bottom",
+            legend.background = element_rect(color = "white"))
+  })
+  
+} # END server
+```
+
+:::

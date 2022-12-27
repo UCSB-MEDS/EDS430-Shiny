@@ -1,0 +1,64 @@
+---
+format: revealjs
+---
+
+##  {#deploying-apps data-menu-title="Deploying apps with shinyapps.io" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("upload", fill = "#d2e3f3", a11y = "sem")` Deploying apps with [shinyapps.io](https://www.shinyapps.io/)</p>
+<p class="caption-text">*Sharing your Shiny app with others isn't so easy when it just lives on your computer (and your R session has to act as the server that powers it). We'll now learn how to host your app using [shinyapps.io](https://www.shinyapps.io/), a free service for sharing your Shiny apps online.*</p>
+</div>
+
+---
+
+##  {#shinyapps-account data-menu-title="Set up shinyapps.io account"}
+
+<div class="slide-title-smaller">Connect your shinyapps.io account to RStudio</div>
+
+<p class="small-text">Go to [shinyapps.io](https://www.shinyapps.io/) and login or create an account (if you don't already have one) -- I created my account and login with GitHub. To use shinyapps.io, you first need to link your account with RStudio on your computer. Follow the instructions on shinyapps.io when you first create your account to install the [`{rsconnect}` package](https://github.com/rstudio/rsconnect) and authorize your account:</p>
+
+<center><img src="images/shinyapps_setup.png" alt="shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`." width="750"/></center>
+
+---
+
+##  {#deploy-app data-menu-title="Deploy your app"}
+
+<div class="slide-title-smaller">Deploy your app to shinyapps.io</div>
+
+<p class="small-text">Once your account has been authorized, run `rsconnect::deployApp("<app_directory_name>")` in your console to deploy your app to shinyapps.io.</p>
+
+<p class="small-text">Once deployed, a browser will open to your application. The URL will take the form: **https://username.shinyapps.io/your_app_directory_name**</p>
+
+<!-- <center><img src="images/tbd" alt="tbd" width="750"/></center> -->
+
+---
+
+##  {#shinyapps-dashboard data-menu-title="shinyapps.io dashboard"}
+
+<div class="slide-title-smaller">The shinyapps.io dashboard</div>
+
+<p class="small-text">Your shinyapps.io dashboard provides tons of information about your application metrics, instance (the virtualized server that your app is hosted on) and worker (a special type of R process that an Application Instance runs to service requests to an application) settings, plan management, and more. The free plan (the plan we're using here today) allows you to deploy **five** Shiny apps. You are able to archive and/or delete once-deployed apps to make space for new ones.</p>
+
+<!-- <center><img src="images/tbd" alt="tbd" width="750"/></center> -->
+
+<p class="small-text">Check out the [shinyapps.io user guide](https://docs.posit.co/shinyapps.io/index.html) for more information on hosting your apps on shinyapps.io.</p>
+
+---
+
+##  {#other-hosting-options data-menu-title="Alternative ways to host apps"}
+
+<div class="slide-title-smaller">Other ways to host your Shiny apps</div>
+
+<p class="small-text">[shinyapps.io](https://www.shinyapps.io/) is not the only Shiny app hosting service (though it's the easiest to get started with and the only one we'll be covering in detail in this workshop).</p>
+
+<p class="body-text topbr">**Posit also offers the following:**</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny server](https://posit.co/products/open-source/shinyserver/) is an open source server which you can deploy for free on your own hardware. It requires more setup and configuration, but can be used without a fee. The Bren and NCEAS servers are configured with Shiny Server for hosting in-house apps (like those created by MEDS capstone groups). ***If you're client plans to deploy/host your Shiny application, but does not yet have a their own server configured to do so, we recommend directing them to the [online instructions](https://posit.co/download/shiny-server/) for getting started with Shiny Server.***</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Posit connect](https://posit.co/products/enterprise/connect/) is a paid product that provides an advanced suite of services for hosting Shiny apps, Quarto and R Markdown reports, APIs, and more.</p>
+
+. . . 
+
+<p class="small-text important-text-bg topbr">**IMPORTANT:** Hosting on a server means that shiny applications will be prone to breaking as updates to server software are made. It is important to have an **application maintenance plan** in place. This may mean identifying who is responsible for maintaining code, or even deciding to decommission applications and archive the code repository when appropriate.</p>
+
+
