@@ -55,7 +55,7 @@ format: revealjs
 
 ---
 
-##  {#roadmap-app2 data-menu-title="Roadmap (app #2)"}
+##  {#roadmap-app2v1 data-menu-title="Roadmap (app #2v1)"}
 
 <div class="slide-title-smaller">Roadmap for app #2v1</div>
 
@@ -82,7 +82,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">You'll notice that there are some UI quirks (e.g. blank plots or even a scary red error message that appear when no data is selected) that can make the user experience less than ideal (and even confusing) -- we'll learn about ways to improve this in v2 of our app.</p>
+<p class="small-text">You'll notice that there are some UI quirks (most notably, blank plots that appear when no data is selected) that can make the user experience less than ideal (and even confusing) -- we'll learn about ways to improve this in v2 of our app.</p>
 
 ---
 
@@ -190,7 +190,7 @@ library(tidyverse)
 
 #..................practice filtering for island.................
 island_df <- penguins %>%
-  filter(island == "Dream")
+  filter(island %in% c("Dream", "Torgesen"))
 
 #........................plot penguin data.......................
 ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
@@ -207,7 +207,7 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 ::: {.column width="45%"}
 <center><img src="images/penguin_plot.png" alt="A histogram of penguin Flipper lengths (mm) with bars colored by species. Adelie are orange and Chinstrap are purple." width="550"/></center> 
-<center><p class="small-text gray-text">We'll build 2 inputs: one to select `island` change the number of histogram bins.</p></center>
+<center><p class="small-text gray-text">We'll build 2 inputs: one to select `island` and one to change the number of histogram bins.</p></center>
 :::
 
 ::::
@@ -980,7 +980,7 @@ myCustomTheme <- theme_light() +
 
 ---
 
-##  {#run-app2v1-first-widget  data-menu-title="Run the App"}
+##  {#run-app2v1-first-widget  data-menu-title="Run the App (trout pickerInput)"}
 
 <div class="slide-title">Run your app and try out your `pickerInput` widget!</div>
 
@@ -1131,7 +1131,7 @@ countdown::countdown(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/trout_plot.gif" alt="A user navigates to the Penguins tab of our app to reveal a histogram of penguins flipper lengths. Data are colored by species (Adelie = orange, Chinstrap = purple, Gentoo = green). The user uses a pickerInput to filter data based on the island where they were collected. The user also adjust the bin number using a sliderInput." width="750"/></center>
+<center><img src="images/penguin_plot.gif" alt="A user navigates to the Penguins tab of our app to reveal a histogram of penguins flipper lengths. Data are colored by species (Adelie = orange, Chinstrap = purple, Gentoo = green). The user uses a pickerInput to filter data based on the island where they were collected. The user also adjust the bin number using a sliderInput." width="750"/></center>
 :::
 
 ::::
@@ -1265,7 +1265,7 @@ ui <- fluidPage(
                    # trout plot mainPanel ----
                    mainPanel(
                      
-                     plotOutput(outputId = "trout_scatterplot") # |> withSpinner(color = "#006792", type = 1)
+                     plotOutput(outputId = "trout_scatterplot")
                      
                    ) # END trout plot mainPanel
                    
@@ -1298,7 +1298,7 @@ ui <- fluidPage(
                    # penguin plot mainPanel ----
                    mainPanel(
                      
-                    plotOutput(outputId = "flipperLength_histogram") # |> withSpinner(color = "#006792", type = 1)
+                    plotOutput(outputId = "flipperLength_histogram") 
                      
                    ) # END penguin plot mainPanel
                    
@@ -1352,7 +1352,7 @@ server <- function(input, output) {
   island_df <- reactive({
 
     penguins %>%
-      filter(island == input$penguin_island)
+      filter(island %in% input$penguin_island)
 
   })
 
@@ -1364,9 +1364,8 @@ server <- function(input, output) {
       scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
       labs(x = "Flipper length (mm)", y = "Frequency",
            fill = "Penguin species") +
-      theme_minimal() +
-      theme(legend.position = "bottom",
-            legend.background = element_rect(color = "white"))
+      myCustomTheme
+    
   })
   
 } # END server
@@ -1668,7 +1667,7 @@ ui <- fluidPage(
                    # penguin plot mainPanel ----
                    mainPanel(
                      
-                    plotOutput(outputId = "flipperLength_histogram") # |> withSpinner(color = "#006792", type = 1)
+                    plotOutput(outputId = "flipperLength_histogram") 
                      
                    ) # END penguin plot mainPanel
                    
@@ -1719,7 +1718,7 @@ Check out the **Explore the Data** page to find interactive data visualizations 
 
 <center><img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750"/></center>
 
-<p class="small-text">Again, we have some UX/UI quirks to fix (blank plots, or worse, a red error message, when all options are deselected using our widgets), which we'll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!</p>
+<p class="small-text">Again, we have some UX/UI quirks to fix (most notably, blank plots when all widget options are deselected), which we'll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!</p>
 
 ---
 
@@ -1870,7 +1869,7 @@ ui <- fluidPage(
                    # penguin plot mainPanel ----
                    mainPanel(
                      
-                    plotOutput(outputId = "flipperLength_histogram") # |> withSpinner(color = "#006792", type = 1)
+                    plotOutput(outputId = "flipperLength_histogram") 
                      
                    ) # END penguin plot mainPanel
                    
@@ -1920,7 +1919,7 @@ server <- function(input, output) {
   island_df <- reactive({
 
     penguins %>%
-      filter(island == input$penguin_island)
+      filter(island %in% input$penguin_island)
 
   })
 
@@ -1932,9 +1931,8 @@ server <- function(input, output) {
       scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
       labs(x = "Flipper length (mm)", y = "Frequency",
            fill = "Penguin species") +
-      theme_minimal() +
-      theme(legend.position = "bottom",
-            legend.background = element_rect(color = "white"))
+      myCustomTheme
+    
   })
   
 } # END server

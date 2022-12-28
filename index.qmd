@@ -93,6 +93,10 @@ countdown::countdown(
 
 ---
 
+{{< include sections/6-second-app-v2.qmd >}}
+
+---
+
 {{< include sections/accessibility.qmd >}}
 
 ---

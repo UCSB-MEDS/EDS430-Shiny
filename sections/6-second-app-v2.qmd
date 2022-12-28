@@ -1,0 +1,231 @@
+---
+format: revealjs
+---
+
+##  {#improving-app2 data-menu-title="Improving App #2 UX/UI" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("users", fill = "#d2e3f3", a11y = "sem")` Improving user experience and UI appearance</p>
+<p class="caption-text">*Our two-file-app is looking pretty good! It's functional and deployed via shinyapps.io. Next, we'll focus on making some minor tweaks that can help to improve usability and appearance.*</p>
+</div>
+
+---
+
+##  {#LO3 data-menu-title="Learning Objectives 3"}
+
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2 (v2)</div>
+
+<p class="medium-body-text bottombr">By the end of this section, you should:</p>
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand how to provide users with helpful error messages using `validate()`</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to add customizable loading animations to alert users when reactive objects are re-rendering</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to add alternate (alt) text to rendered plots</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to create and apply a custom theme</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
+
+. . .
+
+<p class="medium-body-text topbr">New packages used:</p> 
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinycssloaders}`: add loading animations to shiny outputs</p>
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: create custom themes</p>
+
+---
+
+##  {#roadmap-app2v2 data-menu-title="Roadmap (app #2v2)"}
+
+<div class="slide-title-smaller">Roadmap for app #2v2</div>
+
+<p class="body-text">We'll be refining our **two-file app** with a focus on creating a more user-friendly experience. When finished with v2, we'll have added:</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<p class="small-text">**(a)** user-friendly validation error messages that appear when all data are deselected using widgets</p>
+<p class="small-text">**(b)** loading animations our two reactive plots </p>
+<p class="small-text">**(c)** alternate (alt) text for all data visualizations</p>
+<p class="small-text">**(d)** a new, custom theme to freshen up the overall appearance</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+:::
+
+::::
+
+---
+
+##  {#no-guesswork data-menu-title="No guesswork!"}
+
+<div class="slide-title">Take out any guesswork for your app's users</div>
+
+<p class="body-text">*It's important to remove any possible points of confusion for successfully using your app.*</p>
+
+<p class="small-text topbr">In version 1 of our published app, you'll notice that users are able to **(1) Deselect All** data using the `pickerInput`s for both the trout and penguin plots, and **(2) "uncheck" both** clear cut forest and old growth forest sampling section buttons using the `checkboxGroupInput`. When any of these actions are taken by the user, all data is removed from the plot, leaving a completely blank box behind.</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<p class="small-text topbr">While this response is expected (and normal), we can generate a user-friendly [validation error](https://shiny.rstudio.com/articles/validation.html) message to provide clear guidance to our users on what is expected by the app in order to display data.</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/confusing_sign.png" alt="A sign hanging on a glass door that is divided vertically -- the left-hand side is colored blue and reads 'Don't Push' with the words stacked on top of one another. The right-hand side is colored red and reads 'Pull Only' with the words stacked on top of one another. However, when the sign is read left to right, top to bottom, it appears to say 'Don't Pull Push Only'." width="450"/></center>
+:::
+
+::::
+
+---
+
+##  {#using-validate data-menu-title="Using validate()"}
+
+<div class="slide-title">Writing validation tests</div>
+
+<p class="small-text">`validate()` tests a condition and returns an error if that conditions fails. It's used in conjunction with `need()`, which takes an expression that returns `TRUE` or `FALSE`, along with a character string to return if the condition is `FALSE`.</p>
+
+<p class="small-text">Place your validation test(s) at the start of any `reactive()` or `render*()` expression that calls `input$data`. For example, we can add two validation tests inside the reactive that generates our `trout_filtered_df` -- we'll need two separate validation tests, one for each of our inputs where users can deselect all data.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "6-12"
+server <- function(input, output) {
+  
+  # filter for channel types ----
+  trout_filtered_df <- reactive({
+
+    validate(
+      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.")
+    )
+
+    validate(
+      need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
+    )
+
+      clean_trout |>
+        filter(channel_type %in% c(input$channel_type_input)) |>
+        filter(section %in% c(input$section_input))
+        
+    })
+}
+```
+
+---
+
+##  {#exercise4-prompt-tips data-menu-title="Exercise 4 Prompt & Tips"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` & `r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 4: Add a validation test for your penguin histogram</div>
+
+<br>
+
+<p class="body-text">**To Do:**</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Construct a validation test that displays a clear but succinct message when a user deselects all islands using the `pickerWidget`</p>
+
+<br>
+
+<p class="body-text">**Tips:**</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Despite having **two** inputs, we only need **one** validation test for our Penguins plot.</p> 
+
+<br>
+<br>
+
+<center><p class="medium-body-text">See next slide for a solution!</p></center>
+
+---
+
+##  {#exercise4-solution data-menu-title="Exercise 4 Solution"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 4: A solution</div>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "39-41"
+server <- function(input, output) {
+  
+  # filter for channel types ----
+  trout_filtered_df <- reactive({
+
+    validate(
+      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.")
+    )
+
+    validate(
+      need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
+    )
+
+      clean_trout |>
+        filter(channel_type %in% c(input$channel_type_input)) |>
+        filter(section %in% c(input$section_input))
+        
+    })
+
+  # trout scatterplot ----
+  output$trout_scatterplot <- renderPlot({
+
+    ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
+      geom_point(alpha = 0.7, size = 5) +
+      scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D",
+                                    "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96",
+                                    "side channel" = "#94CBEC")) +
+      scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19,
+                                    "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
+                                    "side channel" = 25)) +
+      labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+      myCustomTheme
+
+  })
+  
+  # filter for island ----
+  island_df <- reactive({
+
+    validate(
+      need(length(input$penguin_island) > 0, "Please select at least one island to visualize data for.")
+    )
+
+    penguins %>%
+      filter(island %in% input$penguin_island)
+
+  })
+
+  # render the flipper length histogram ----
+  output$flipperLength_histogram <- renderPlot({
+
+    ggplot(na.omit(island_df()), aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram(alpha = 0.6, bins = input$bin_num) +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species") +
+      myCustomTheme
+    
+  })
+  
+} # END server
+```
+

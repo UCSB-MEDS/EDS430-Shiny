@@ -1938,7 +1938,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_26964ec4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_17d03120" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2017,7 +2017,7 @@ New packages used:
 <path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="https://github.com/lter/lterdatasampler">lterdatasampler</a>: data
 </p>
 </div>
-</section><section id="roadmap-app2" class="slide level2" data-menu-title="Roadmap (app #2)"><h2></h2>
+</section><section id="roadmap-app2v1" class="slide level2" data-menu-title="Roadmap (app #2v1)"><h2></h2>
 <div class="slide-title-smaller">
 Roadmap for app #2v1
 </div>
@@ -2045,7 +2045,7 @@ We’ll be building out our <strong>two-file app</strong> using data from the <a
 </div>
 <div class="fragment">
 <p class="small-text">
-You’ll notice that there are some UI quirks (e.g.&nbsp;blank plots or even a scary red error message that appear when no data is selected) that can make the user experience less than ideal (and even confusing) – we’ll learn about ways to improve this in v2 of our app.
+You’ll notice that there are some UI quirks (most notably, blank plots that appear when no data is selected) that can make the user experience less than ideal (and even confusing) – we’ll learn about ways to improve this in v2 of our app.
 </p>
 </div>
 </section><section id="two-source" class="slide level2" data-menu-title="Two source panes"><h2></h2>
@@ -2151,7 +2151,7 @@ We’ll build 2 inputs: one to select <code>channel_type</code> and one to selec
 <span id="cb28-4"><a href="#cb28-4"></a></span>
 <span id="cb28-5"><a href="#cb28-5"></a><span class="co">#..................practice filtering for island.................</span></span>
 <span id="cb28-6"><a href="#cb28-6"></a>island_df <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">"Dream"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">filter</span>(island <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Dream"</span>, <span class="st">"Torgesen"</span>))</span>
 <span id="cb28-8"><a href="#cb28-8"></a></span>
 <span id="cb28-9"><a href="#cb28-9"></a><span class="co">#........................plot penguin data.......................</span></span>
 <span id="cb28-10"><a href="#cb28-10"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(island_df), <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
@@ -2169,7 +2169,7 @@ We’ll build 2 inputs: one to select <code>channel_type</code> and one to selec
 </center>
 <center>
 <p class="small-text gray-text">
-We’ll build 2 inputs: one to select <code>island</code> change the number of histogram bins.
+We’ll build 2 inputs: one to select <code>island</code> and one to change the number of histogram bins.
 </p>
 </center>
 </div>
@@ -2920,7 +2920,7 @@ Rather than re-typing your ggplot theme parameters out for every plot in your ap
 <span id="cb43-33"><a href="#cb43-33"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
 <span id="cb43-34"><a href="#cb43-34"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="run-app2v1-first-widget" class="slide level2" data-menu-title="Run the App"><h2></h2>
+</section><section id="run-app2v1-first-widget" class="slide level2" data-menu-title="Run the App (trout pickerInput)"><h2></h2>
 <div class="slide-title">
 Run your app and try out your <code>pickerInput</code> widget!
 </div>
@@ -3008,7 +3008,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_7220ebbb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_eb8bc03f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3061,7 +3061,7 @@ Working alone or in groups, add a reactive histogram of penguin flipper lengths 
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/trout_plot.gif" alt="A user navigates to the Penguins tab of our app to reveal a histogram of penguins flipper lengths. Data are colored by species (Adelie = orange, Chinstrap = purple, Gentoo = green). The user uses a pickerInput to filter data based on the island where they were collected. The user also adjust the bin number using a sliderInput." width="750">
+<img src="images/penguin_plot.gif" alt="A user navigates to the Penguins tab of our app to reveal a histogram of penguins flipper lengths. Data are colored by species (Adelie = orange, Chinstrap = purple, Gentoo = green). The user uses a pickerInput to filter data based on the island where they were collected. The user also adjust the bin number using a sliderInput." width="750">
 </center>
 </div>
 </div>
@@ -3200,7 +3200,7 @@ See next slide for a solution!
 <span id="cb47-44"><a href="#cb47-44"></a>                   <span class="co"># trout plot mainPanel ----</span></span>
 <span id="cb47-45"><a href="#cb47-45"></a>                   <span class="fu">mainPanel</span>(</span>
 <span id="cb47-46"><a href="#cb47-46"></a>                     </span>
-<span id="cb47-47"><a href="#cb47-47"></a>                     <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>) <span class="co"># |&gt; withSpinner(color = "#006792", type = 1)</span></span>
+<span id="cb47-47"><a href="#cb47-47"></a>                     <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>)</span>
 <span id="cb47-48"><a href="#cb47-48"></a>                     </span>
 <span id="cb47-49"><a href="#cb47-49"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
 <span id="cb47-50"><a href="#cb47-50"></a>                   </span>
@@ -3233,7 +3233,7 @@ See next slide for a solution!
 <span id="cb47-77"><a href="#cb47-77"></a>                   <span class="co"># penguin plot mainPanel ----</span></span>
 <span id="cb47-78"><a href="#cb47-78"></a>                   <span class="fu">mainPanel</span>(</span>
 <span id="cb47-79"><a href="#cb47-79"></a>                     </span>
-<span id="cb47-80"><a href="#cb47-80"></a>                    <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) <span class="co"># |&gt; withSpinner(color = "#006792", type = 1)</span></span>
+<span id="cb47-80"><a href="#cb47-80"></a>                    <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) </span>
 <span id="cb47-81"><a href="#cb47-81"></a>                     </span>
 <span id="cb47-82"><a href="#cb47-82"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot mainPanel</span></span>
 <span id="cb47-83"><a href="#cb47-83"></a>                   </span>
@@ -3283,7 +3283,7 @@ See next slide for a solution!
 <span id="cb48-29"><a href="#cb48-29"></a>  island_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb48-30"><a href="#cb48-30"></a></span>
 <span id="cb48-31"><a href="#cb48-31"></a>    penguins <span class="sc">%&gt;%</span></span>
-<span id="cb48-32"><a href="#cb48-32"></a>      <span class="fu">filter</span>(island <span class="sc">==</span> input<span class="sc">$</span>penguin_island)</span>
+<span id="cb48-32"><a href="#cb48-32"></a>      <span class="fu">filter</span>(island <span class="sc">%in%</span> input<span class="sc">$</span>penguin_island)</span>
 <span id="cb48-33"><a href="#cb48-33"></a></span>
 <span id="cb48-34"><a href="#cb48-34"></a>  })</span>
 <span id="cb48-35"><a href="#cb48-35"></a></span>
@@ -3295,12 +3295,11 @@ See next slide for a solution!
 <span id="cb48-41"><a href="#cb48-41"></a>      <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
 <span id="cb48-42"><a href="#cb48-42"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
 <span id="cb48-43"><a href="#cb48-43"></a>           <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
-<span id="cb48-44"><a href="#cb48-44"></a>      <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb48-45"><a href="#cb48-45"></a>      <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb48-46"><a href="#cb48-46"></a>            <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>))</span>
-<span id="cb48-47"><a href="#cb48-47"></a>  })</span>
-<span id="cb48-48"><a href="#cb48-48"></a>  </span>
-<span id="cb48-49"><a href="#cb48-49"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-44"><a href="#cb48-44"></a>      myCustomTheme</span>
+<span id="cb48-45"><a href="#cb48-45"></a>    </span>
+<span id="cb48-46"><a href="#cb48-46"></a>  })</span>
+<span id="cb48-47"><a href="#cb48-47"></a>  </span>
+<span id="cb48-48"><a href="#cb48-48"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3316,7 +3315,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_65d20df7" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_25d57f9d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3591,7 +3590,7 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb50-92"><a href="#cb50-92"></a>                   <span class="co"># penguin plot mainPanel ----</span></span>
 <span id="cb50-93"><a href="#cb50-93"></a>                   <span class="fu">mainPanel</span>(</span>
 <span id="cb50-94"><a href="#cb50-94"></a>                     </span>
-<span id="cb50-95"><a href="#cb50-95"></a>                    <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) <span class="co"># |&gt; withSpinner(color = "#006792", type = 1)</span></span>
+<span id="cb50-95"><a href="#cb50-95"></a>                    <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) </span>
 <span id="cb50-96"><a href="#cb50-96"></a>                     </span>
 <span id="cb50-97"><a href="#cb50-97"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot mainPanel</span></span>
 <span id="cb50-98"><a href="#cb50-98"></a>                   </span>
@@ -3638,7 +3637,7 @@ Run your app one more time to admire your beautiful creation!
 <img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750">
 </center>
 <p class="small-text">
-Again, we have some UX/UI quirks to fix (blank plots, or worse, a red error message, when all options are deselected using our widgets), which we’ll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!
+Again, we have some UX/UI quirks to fix (most notably, blank plots when all widget options are deselected), which we’ll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!
 </p>
 </section><section id="app2-code" class="slide level2" data-menu-title="App #2 code (so far)"><h2></h2>
 <div class="slide-title-smaller">
@@ -3789,7 +3788,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb54-92"><a href="#cb54-92"></a>                   <span class="co"># penguin plot mainPanel ----</span></span>
 <span id="cb54-93"><a href="#cb54-93"></a>                   <span class="fu">mainPanel</span>(</span>
 <span id="cb54-94"><a href="#cb54-94"></a>                     </span>
-<span id="cb54-95"><a href="#cb54-95"></a>                    <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) <span class="co"># |&gt; withSpinner(color = "#006792", type = 1)</span></span>
+<span id="cb54-95"><a href="#cb54-95"></a>                    <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) </span>
 <span id="cb54-96"><a href="#cb54-96"></a>                     </span>
 <span id="cb54-97"><a href="#cb54-97"></a>                   ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot mainPanel</span></span>
 <span id="cb54-98"><a href="#cb54-98"></a>                   </span>
@@ -3837,7 +3836,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb55-29"><a href="#cb55-29"></a>  island_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb55-30"><a href="#cb55-30"></a></span>
 <span id="cb55-31"><a href="#cb55-31"></a>    penguins <span class="sc">%&gt;%</span></span>
-<span id="cb55-32"><a href="#cb55-32"></a>      <span class="fu">filter</span>(island <span class="sc">==</span> input<span class="sc">$</span>penguin_island)</span>
+<span id="cb55-32"><a href="#cb55-32"></a>      <span class="fu">filter</span>(island <span class="sc">%in%</span> input<span class="sc">$</span>penguin_island)</span>
 <span id="cb55-33"><a href="#cb55-33"></a></span>
 <span id="cb55-34"><a href="#cb55-34"></a>  })</span>
 <span id="cb55-35"><a href="#cb55-35"></a></span>
@@ -3849,12 +3848,11 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb55-41"><a href="#cb55-41"></a>      <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
 <span id="cb55-42"><a href="#cb55-42"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
 <span id="cb55-43"><a href="#cb55-43"></a>           <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
-<span id="cb55-44"><a href="#cb55-44"></a>      <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb55-45"><a href="#cb55-45"></a>      <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb55-46"><a href="#cb55-46"></a>            <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="st">"white"</span>))</span>
-<span id="cb55-47"><a href="#cb55-47"></a>  })</span>
-<span id="cb55-48"><a href="#cb55-48"></a>  </span>
-<span id="cb55-49"><a href="#cb55-49"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb55-44"><a href="#cb55-44"></a>      myCustomTheme</span>
+<span id="cb55-45"><a href="#cb55-45"></a>    </span>
+<span id="cb55-46"><a href="#cb55-46"></a>  })</span>
+<span id="cb55-47"><a href="#cb55-47"></a>  </span>
+<span id="cb55-48"><a href="#cb55-48"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3927,6 +3925,247 @@ Other ways to host your Shiny apps
 <p class="small-text important-text-bg topbr">
 <strong>IMPORTANT:</strong> Hosting on a server means that shiny applications will be prone to breaking as updates to server software are made. It is important to have an <strong>application maintenance plan</strong> in place. This may mean identifying who is responsible for maintaining code, or even deciding to decommission applications and archive the code repository when appropriate.
 </p>
+</div>
+</section><section id="improving-app2" class="slide level2" data-menu-title="Improving App #2 UX/UI" data-background="#053660"><h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<svg aria-label="Users" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Users</title>
+<path d="M144 160c-44.2 0-80-35.8-80-80S99.8 0 144 0s80 35.8 80 80s-35.8 80-80 80zm368 0c-44.2 0-80-35.8-80-80s35.8-80 80-80s80 35.8 80 80s-35.8 80-80 80zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM416 224c0 53-43 96-96 96s-96-43-96-96s43-96 96-96s96 43 96 96zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg> Improving user experience and UI appearance
+</p>
+<p class="caption-text">
+<em>Our two-file-app is looking pretty good! It’s functional and deployed via shinyapps.io. Next, we’ll focus on making some minor tweaks that can help to improve usability and appearance.</em>
+</p>
+</div>
+</section><section id="LO3" class="slide level2" data-menu-title="Learning Objectives 3"><h2></h2>
+<div class="slide-title">
+<svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #2 (v2)
+</div>
+<p class="medium-body-text bottombr">
+By the end of this section, you should:
+</p>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand how to provide users with helpful error messages using <code>validate()</code>
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know how to add customizable loading animations to alert users when reactive objects are re-rendering
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know how to add alternate (alt) text to rendered plots
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know how to create and apply a custom theme
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know how to <em>republish</em> an app using <a href="https://www.shinyapps.io/">shinyapps.io</a>
+</p>
+</div>
+<div class="fragment">
+<p class="medium-body-text topbr">
+New packages used:
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="Box Open" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Box Open</title>
+<path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="https://github.com/daattali/shinycssloaders">shinycssloaders</a>: add loading animations to shiny outputs
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="Box Open" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Box Open</title>
+<path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="https://rstudio.github.io/bslib/">bslib</a>: create custom themes
+</p>
+</div>
+</section><section id="roadmap-app2v2" class="slide level2" data-menu-title="Roadmap (app #2v2)"><h2></h2>
+<div class="slide-title-smaller">
+Roadmap for app #2v2
+</div>
+<p class="body-text">
+We’ll be refining our <strong>two-file app</strong> with a focus on creating a more user-friendly experience. When finished with v2, we’ll have added:
+</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p class="small-text">
+<strong>(a)</strong> user-friendly validation error messages that appear when all data are deselected using widgets
+</p>
+<p class="small-text">
+<strong>(b)</strong> loading animations our two reactive plots
+</p>
+<p class="small-text">
+<strong>(c)</strong> alternate (alt) text for all data visualizations
+</p>
+<p class="small-text">
+<strong>(d)</strong> a new, custom theme to freshen up the overall appearance
+</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+
+</div>
+</div>
+</section><section id="no-guesswork" class="slide level2" data-menu-title="No guesswork!"><h2></h2>
+<div class="slide-title">
+Take out any guesswork for your app’s users
+</div>
+<p class="body-text">
+<em>It’s important to remove any possible points of confusion for successfully using your app.</em>
+</p>
+<p class="small-text topbr">
+In version 1 of our published app, you’ll notice that users are able to <strong>(1) Deselect All</strong> data using the <code>pickerInput</code>s for both the trout and penguin plots, and <strong>(2) “uncheck” both</strong> clear cut forest and old growth forest sampling section buttons using the <code>checkboxGroupInput</code>. When any of these actions are taken by the user, all data is removed from the plot, leaving a completely blank box behind.
+</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p class="small-text topbr">
+While this response is expected (and normal), we can generate a user-friendly <a href="https://shiny.rstudio.com/articles/validation.html">validation error</a> message to provide clear guidance to our users on what is expected by the app in order to display data.
+</p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/confusing_sign.png" alt="A sign hanging on a glass door that is divided vertically -- the left-hand side is colored blue and reads 'Don't Push' with the words stacked on top of one another. The right-hand side is colored red and reads 'Pull Only' with the words stacked on top of one another. However, when the sign is read left to right, top to bottom, it appears to say 'Don't Pull Push Only'." width="450">
+</center>
+</div>
+</div>
+</section><section id="using-validate" class="slide level2" data-menu-title="Using validate()"><h2></h2>
+<div class="slide-title">
+Writing validation tests
+</div>
+<p class="small-text">
+<code>validate()</code> tests a condition and returns an error if that conditions fails. It’s used in conjunction with <code>need()</code>, which takes an expression that returns <code>TRUE</code> or <code>FALSE</code>, along with a character string to return if the condition is <code>FALSE</code>.
+</p>
+<p class="small-text">
+Place your validation test(s) at the start of any <code>reactive()</code> or <code>render*()</code> expression that calls <code>input$data</code>. For example, we can add two validation tests inside the reactive that generates our <code>trout_filtered_df</code> – we’ll need two separate validation tests, one for each of our inputs where users can deselect all data.
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56" data-code-line-numbers="6-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb56-2"><a href="#cb56-2"></a>  </span>
+<span id="cb56-3"><a href="#cb56-3"></a>  <span class="co"># filter for channel types ----</span></span>
+<span id="cb56-4"><a href="#cb56-4"></a>  trout_filtered_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb56-5"><a href="#cb56-5"></a></span>
+<span id="cb56-6"><a href="#cb56-6"></a>    <span class="fu">validate</span>(</span>
+<span id="cb56-7"><a href="#cb56-7"></a>      <span class="fu">need</span>(<span class="fu">length</span>(input<span class="sc">$</span>channel_type_input) <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"Please select at least one channel type to visualize data for."</span>)</span>
+<span id="cb56-8"><a href="#cb56-8"></a>    )</span>
+<span id="cb56-9"><a href="#cb56-9"></a></span>
+<span id="cb56-10"><a href="#cb56-10"></a>    <span class="fu">validate</span>(</span>
+<span id="cb56-11"><a href="#cb56-11"></a>      <span class="fu">need</span>(<span class="fu">length</span>(input<span class="sc">$</span>section_input) <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"Please select at least one section (clear cut forest or old growth forest) to visualize data for."</span>)</span>
+<span id="cb56-12"><a href="#cb56-12"></a>    )</span>
+<span id="cb56-13"><a href="#cb56-13"></a></span>
+<span id="cb56-14"><a href="#cb56-14"></a>      clean_trout <span class="sc">|&gt;</span></span>
+<span id="cb56-15"><a href="#cb56-15"></a>        <span class="fu">filter</span>(channel_type <span class="sc">%in%</span> <span class="fu">c</span>(input<span class="sc">$</span>channel_type_input)) <span class="sc">|&gt;</span></span>
+<span id="cb56-16"><a href="#cb56-16"></a>        <span class="fu">filter</span>(section <span class="sc">%in%</span> <span class="fu">c</span>(input<span class="sc">$</span>section_input))</span>
+<span id="cb56-17"><a href="#cb56-17"></a>        </span>
+<span id="cb56-18"><a href="#cb56-18"></a>    })</span>
+<span id="cb56-19"><a href="#cb56-19"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="exercise4-prompt-tips" class="slide level2" data-menu-title="Exercise 4 Prompt &amp; Tips"><h2></h2>
+<div class="slide-title-smaller">
+<svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
+<path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> &amp; <svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
+<path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"></path></svg> Exercise 4: Add a validation test for your penguin histogram
+</div>
+<p><br></p>
+<p class="body-text">
+<strong>To Do:</strong>
+</p>
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Construct a validation test that displays a clear but succinct message when a user deselects all islands using the <code>pickerWidget</code>
+</p>
+<p><br></p>
+<p class="body-text">
+<strong>Tips:</strong>
+</p>
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Despite having <strong>two</strong> inputs, we only need <strong>one</strong> validation test for our Penguins plot.
+</p>
+<p><br><br></p>
+<center>
+<p class="medium-body-text">
+See next slide for a solution!
+</p>
+</center>
+</section><section id="exercise4-solution" class="slide level2" data-menu-title="Exercise 4 Solution"><h2></h2>
+<div class="slide-title-smaller">
+<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
+<path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 4: A solution
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57" data-code-line-numbers="39-41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb57-2"><a href="#cb57-2"></a>  </span>
+<span id="cb57-3"><a href="#cb57-3"></a>  <span class="co"># filter for channel types ----</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a>  trout_filtered_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb57-5"><a href="#cb57-5"></a></span>
+<span id="cb57-6"><a href="#cb57-6"></a>    <span class="fu">validate</span>(</span>
+<span id="cb57-7"><a href="#cb57-7"></a>      <span class="fu">need</span>(<span class="fu">length</span>(input<span class="sc">$</span>channel_type_input) <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"Please select at least one channel type to visualize data for."</span>)</span>
+<span id="cb57-8"><a href="#cb57-8"></a>    )</span>
+<span id="cb57-9"><a href="#cb57-9"></a></span>
+<span id="cb57-10"><a href="#cb57-10"></a>    <span class="fu">validate</span>(</span>
+<span id="cb57-11"><a href="#cb57-11"></a>      <span class="fu">need</span>(<span class="fu">length</span>(input<span class="sc">$</span>section_input) <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"Please select at least one section (clear cut forest or old growth forest) to visualize data for."</span>)</span>
+<span id="cb57-12"><a href="#cb57-12"></a>    )</span>
+<span id="cb57-13"><a href="#cb57-13"></a></span>
+<span id="cb57-14"><a href="#cb57-14"></a>      clean_trout <span class="sc">|&gt;</span></span>
+<span id="cb57-15"><a href="#cb57-15"></a>        <span class="fu">filter</span>(channel_type <span class="sc">%in%</span> <span class="fu">c</span>(input<span class="sc">$</span>channel_type_input)) <span class="sc">|&gt;</span></span>
+<span id="cb57-16"><a href="#cb57-16"></a>        <span class="fu">filter</span>(section <span class="sc">%in%</span> <span class="fu">c</span>(input<span class="sc">$</span>section_input))</span>
+<span id="cb57-17"><a href="#cb57-17"></a>        </span>
+<span id="cb57-18"><a href="#cb57-18"></a>    })</span>
+<span id="cb57-19"><a href="#cb57-19"></a></span>
+<span id="cb57-20"><a href="#cb57-20"></a>  <span class="co"># trout scatterplot ----</span></span>
+<span id="cb57-21"><a href="#cb57-21"></a>  output<span class="sc">$</span>trout_scatterplot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb57-22"><a href="#cb57-22"></a></span>
+<span id="cb57-23"><a href="#cb57-23"></a>    <span class="fu">ggplot</span>(<span class="fu">trout_filtered_df</span>(), <span class="fu">aes</span>(<span class="at">x =</span> length_mm, <span class="at">y =</span> weight_g, <span class="at">color =</span> channel_type, <span class="at">shape =</span> channel_type)) <span class="sc">+</span></span>
+<span id="cb57-24"><a href="#cb57-24"></a>      <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb57-25"><a href="#cb57-25"></a>      <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="st">"#2E2585"</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="st">"#337538"</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="st">"#DCCD7D"</span>,</span>
+<span id="cb57-26"><a href="#cb57-26"></a>                                    <span class="st">"pool"</span> <span class="ot">=</span> <span class="st">"#5DA899"</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="st">"#C16A77"</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="st">"#9F4A96"</span>,</span>
+<span id="cb57-27"><a href="#cb57-27"></a>                                    <span class="st">"side channel"</span> <span class="ot">=</span> <span class="st">"#94CBEC"</span>)) <span class="sc">+</span></span>
+<span id="cb57-28"><a href="#cb57-28"></a>      <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="dv">15</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="dv">19</span>,</span>
+<span id="cb57-29"><a href="#cb57-29"></a>                                    <span class="st">"pool"</span> <span class="ot">=</span> <span class="dv">18</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="dv">8</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="dv">23</span>,</span>
+<span id="cb57-30"><a href="#cb57-30"></a>                                    <span class="st">"side channel"</span> <span class="ot">=</span> <span class="dv">25</span>)) <span class="sc">+</span></span>
+<span id="cb57-31"><a href="#cb57-31"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Trout Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Trout Weight (g)"</span>, <span class="at">color =</span> <span class="st">"Channel Type"</span>, <span class="at">shape =</span> <span class="st">"Channel Type"</span>) <span class="sc">+</span></span>
+<span id="cb57-32"><a href="#cb57-32"></a>      myCustomTheme</span>
+<span id="cb57-33"><a href="#cb57-33"></a></span>
+<span id="cb57-34"><a href="#cb57-34"></a>  })</span>
+<span id="cb57-35"><a href="#cb57-35"></a>  </span>
+<span id="cb57-36"><a href="#cb57-36"></a>  <span class="co"># filter for island ----</span></span>
+<span id="cb57-37"><a href="#cb57-37"></a>  island_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb57-38"><a href="#cb57-38"></a></span>
+<span id="cb57-39"><a href="#cb57-39"></a>    <span class="fu">validate</span>(</span>
+<span id="cb57-40"><a href="#cb57-40"></a>      <span class="fu">need</span>(<span class="fu">length</span>(input<span class="sc">$</span>penguin_island) <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">"Please select at least one island to visualize data for."</span>)</span>
+<span id="cb57-41"><a href="#cb57-41"></a>    )</span>
+<span id="cb57-42"><a href="#cb57-42"></a></span>
+<span id="cb57-43"><a href="#cb57-43"></a>    penguins <span class="sc">%&gt;%</span></span>
+<span id="cb57-44"><a href="#cb57-44"></a>      <span class="fu">filter</span>(island <span class="sc">%in%</span> input<span class="sc">$</span>penguin_island)</span>
+<span id="cb57-45"><a href="#cb57-45"></a></span>
+<span id="cb57-46"><a href="#cb57-46"></a>  })</span>
+<span id="cb57-47"><a href="#cb57-47"></a></span>
+<span id="cb57-48"><a href="#cb57-48"></a>  <span class="co"># render the flipper length histogram ----</span></span>
+<span id="cb57-49"><a href="#cb57-49"></a>  output<span class="sc">$</span>flipperLength_histogram <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb57-50"><a href="#cb57-50"></a></span>
+<span id="cb57-51"><a href="#cb57-51"></a>    <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">island_df</span>()), <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb57-52"><a href="#cb57-52"></a>      <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> input<span class="sc">$</span>bin_num) <span class="sc">+</span></span>
+<span id="cb57-53"><a href="#cb57-53"></a>      <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
+<span id="cb57-54"><a href="#cb57-54"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
+<span id="cb57-55"><a href="#cb57-55"></a>           <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb57-56"><a href="#cb57-56"></a>      myCustomTheme</span>
+<span id="cb57-57"><a href="#cb57-57"></a>    </span>
+<span id="cb57-58"><a href="#cb57-58"></a>  })</span>
+<span id="cb57-59"><a href="#cb57-59"></a>  </span>
+<span id="cb57-60"><a href="#cb57-60"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="accessibility" class="slide level2" data-menu-title="Accessibility" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
@@ -4066,29 +4305,29 @@ Use HTML elements appropriately
 <div class="columms">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># load packages ----</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb56-3"><a href="#cb56-3"></a></span>
-<span id="cb56-4"><a href="#cb56-4"></a><span class="co"># user interface ----</span></span>
-<span id="cb56-5"><a href="#cb56-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb56-6"><a href="#cb56-6"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"This is my app's title"</span>),</span>
-<span id="cb56-7"><a href="#cb56-7"></a>  </span>
-<span id="cb56-8"><a href="#cb56-8"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 1"</span>),</span>
-<span id="cb56-9"><a href="#cb56-9"></a>  </span>
-<span id="cb56-10"><a href="#cb56-10"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section a"</span>),</span>
-<span id="cb56-11"><a href="#cb56-11"></a>  </span>
-<span id="cb56-12"><a href="#cb56-12"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section b"</span>),</span>
-<span id="cb56-13"><a href="#cb56-13"></a>  </span>
-<span id="cb56-14"><a href="#cb56-14"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section c"</span>),</span>
-<span id="cb56-15"><a href="#cb56-15"></a>  </span>
-<span id="cb56-16"><a href="#cb56-16"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 2"</span>),</span>
-<span id="cb56-17"><a href="#cb56-17"></a>)</span>
-<span id="cb56-18"><a href="#cb56-18"></a></span>
-<span id="cb56-19"><a href="#cb56-19"></a><span class="co"># server instructions ----</span></span>
-<span id="cb56-20"><a href="#cb56-20"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
-<span id="cb56-21"><a href="#cb56-21"></a></span>
-<span id="cb56-22"><a href="#cb56-22"></a><span class="co"># combine UI &amp; server into an app ----</span></span>
-<span id="cb56-23"><a href="#cb56-23"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># load packages ----</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb58-3"><a href="#cb58-3"></a></span>
+<span id="cb58-4"><a href="#cb58-4"></a><span class="co"># user interface ----</span></span>
+<span id="cb58-5"><a href="#cb58-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb58-6"><a href="#cb58-6"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"This is my app's title"</span>),</span>
+<span id="cb58-7"><a href="#cb58-7"></a>  </span>
+<span id="cb58-8"><a href="#cb58-8"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 1"</span>),</span>
+<span id="cb58-9"><a href="#cb58-9"></a>  </span>
+<span id="cb58-10"><a href="#cb58-10"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section a"</span>),</span>
+<span id="cb58-11"><a href="#cb58-11"></a>  </span>
+<span id="cb58-12"><a href="#cb58-12"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section b"</span>),</span>
+<span id="cb58-13"><a href="#cb58-13"></a>  </span>
+<span id="cb58-14"><a href="#cb58-14"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section c"</span>),</span>
+<span id="cb58-15"><a href="#cb58-15"></a>  </span>
+<span id="cb58-16"><a href="#cb58-16"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 2"</span>),</span>
+<span id="cb58-17"><a href="#cb58-17"></a>)</span>
+<span id="cb58-18"><a href="#cb58-18"></a></span>
+<span id="cb58-19"><a href="#cb58-19"></a><span class="co"># server instructions ----</span></span>
+<span id="cb58-20"><a href="#cb58-20"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb58-21"><a href="#cb58-21"></a></span>
+<span id="cb58-22"><a href="#cb58-22"></a><span class="co"># combine UI &amp; server into an app ----</span></span>
+<span id="cb58-23"><a href="#cb58-23"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -4115,15 +4354,15 @@ All images and graphical elements should include <strong>alternative (alt) text<
 Include the <code>alt</code> argument (similar to adding the <code>alt</code> attribute to an HTML element) when using <a href="https://shiny.rstudio.com/reference/shiny/1.7.1/renderplot"><code>renderPlot()</code></a> to add alt text to your reactive plots – the <code>alt</code> argument lives <em>outside</em> of the <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> but inside the <code>()</code>. For example:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># in your server</span></span>
-<span id="cb57-2"><a href="#cb57-2"></a><span class="fu">renderPlot</span>({</span>
-<span id="cb57-3"><a href="#cb57-3"></a></span>
-<span id="cb57-4"><a href="#cb57-4"></a>    <span class="fu">ggplot</span>(<span class="fu">data</span>(), <span class="fu">aes</span>(<span class="at">x =</span> var1, <span class="at">y =</span> var2)) <span class="sc">+</span> </span>
-<span id="cb57-5"><a href="#cb57-5"></a>      <span class="fu">geom_point</span>() </span>
-<span id="cb57-6"><a href="#cb57-6"></a>    </span>
-<span id="cb57-7"><a href="#cb57-7"></a>  }, <span class="at">alt =</span> <span class="st">"Alt text description"</span></span>
-<span id="cb57-8"><a href="#cb57-8"></a>  </span>
-<span id="cb57-9"><a href="#cb57-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># in your server</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="fu">renderPlot</span>({</span>
+<span id="cb59-3"><a href="#cb59-3"></a></span>
+<span id="cb59-4"><a href="#cb59-4"></a>    <span class="fu">ggplot</span>(<span class="fu">data</span>(), <span class="fu">aes</span>(<span class="at">x =</span> var1, <span class="at">y =</span> var2)) <span class="sc">+</span> </span>
+<span id="cb59-5"><a href="#cb59-5"></a>      <span class="fu">geom_point</span>() </span>
+<span id="cb59-6"><a href="#cb59-6"></a>    </span>
+<span id="cb59-7"><a href="#cb59-7"></a>  }, <span class="at">alt =</span> <span class="st">"Alt text description"</span></span>
+<span id="cb59-8"><a href="#cb59-8"></a>  </span>
+<span id="cb59-9"><a href="#cb59-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -4131,10 +4370,10 @@ Include the <code>alt</code> argument (similar to adding the <code>alt</code> at
 Similarly, use the <code>alt</code> argument within <code>tags$img</code> when adding static images to your app. For example:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># in your UI</span></span>
-<span id="cb58-2"><a href="#cb58-2"></a>tags<span class="sc">$</span><span class="fu">img</span>(<span class="at">src =</span> <span class="st">"file/path/to/img"</span>,</span>
-<span id="cb58-3"><a href="#cb58-3"></a>         <span class="at">width =</span> <span class="st">"100px"</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
-<span id="cb58-4"><a href="#cb58-4"></a>         <span class="at">alt =</span> <span class="st">"Alt text for image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># in your UI</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a>tags<span class="sc">$</span><span class="fu">img</span>(<span class="at">src =</span> <span class="st">"file/path/to/img"</span>,</span>
+<span id="cb60-3"><a href="#cb60-3"></a>         <span class="at">width =</span> <span class="st">"100px"</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
+<span id="cb60-4"><a href="#cb60-4"></a>         <span class="at">alt =</span> <span class="st">"Alt text for image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p class="small-text topbr">
 For some great tips on how and when to use alt text, check out this article by the <a href="https://www.a11yproject.com/posts/alt-text/">A11Y Project</a>. For examples of how to construct good alt text, take a peek at this resource by <a href="https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization">Datawrapper</a>.
