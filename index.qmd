@@ -101,6 +101,10 @@ countdown::countdown(
 
 ---
 
+{{< include sections/shinydashboard.qmd >}}
+
+---
+
 {{< include sections/accessibility.qmd >}}
 
 ---

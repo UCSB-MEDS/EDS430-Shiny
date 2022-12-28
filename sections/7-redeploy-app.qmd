@@ -25,3 +25,29 @@ format: revealjs
 <br>
 
 <center><p class="medium-body-text">Check out my deployed app at <https://samanthacsik.shinyapps.io/two-file-app/></p></center>
+
+---
+
+##  {#app2v2-recap data-menu-title="App 2v2 Recap"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` So far, we've talked about:</div>
+
+. . . 
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` how to deploy *and* redeploy shiny apps using the free [shinyapps.io](https://www.shinyapps.io/) hosting service</p>
+
+. . . 
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` how to improve UX by:</p> 
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("caret-right", fill = "#05859B", a11y = "sem")` (a) providing helpful messages to guide users in successfully interacting with your app</p> 
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("caret-right", fill = "#05859B", a11y = "sem")` (b) adding visual indicators that outputs are busy re-rendering</p> 
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("caret-right", fill = "#05859B", a11y = "sem")` (c) adding alt text to data visualizations to assist those using screen readers in understanding visuals within our app</p>

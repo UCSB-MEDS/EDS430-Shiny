@@ -1,0 +1,85 @@
+---
+format: revealjs
+---
+
+##  {#building-dashboards data-menu-title="Building Dashboards" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("gauge", fill = "#d2e3f3", a11y = "sem")` Building dashboards with `{shinydashboard}`</p>
+<p class="caption-text">*`{shiny}` alone is powerful and flexible, however it can take a lot of work to create a sleek/modern UI. `{shinydashboard}` provides a "template" for quickly building visually appeally dashboard apps.*</p>
+</div>
+
+---
+
+##  {#LO_dashboard data-menu-title="Learning Objectives ???"}
+
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #?(shinydashboard)</div>
+
+<p class="medium-body-text bottombr">By the time we're done with this shinydashboard, you should:</p>
+
+. . . 
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be comfortable building out a dashboard UI using `{shinydashboard}` layout functions</p>
+
+. . . 
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` tbd</p>
+
+---
+
+##  {#shinydashboard-examples data-menu-title="Examples of shinydashboards"}
+
+<div class="slide-title bottombr">Example dashboards by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+
+<p class="body-text">`r fontawesome::fa("school", fill = "#05859B", a11y = "sem")` [Bren Student Data Explorer](https://shinyapps.bren.ucsb.edu/student-data-explorer/) ([**source code**](https://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alum, [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/), during her Bren Summer Fellowship (and continued by future MEDS students!)* -- explore Bren school student demographics and career outcomes</p>
+
+<p class="body-text topbr">`r fontawesome::fa("person-hiking", fill = "#05859B", a11y = "sem")` [Sam's Strava Stats](https://samanthacsik.shinyapps.io/strava_dashboard/) ([**source code**](https://github.com/samanthacsik/strava-dashboard)), *by yours truly, [Sam Csik](https://samanthacsik.github.io/)* -- a new and ongoing side project exploring my Strava hiking/biking/walking data</p>
+
+<p class="body-text topbr">`r fontawesome::fa("fish", fill = "#05859B", a11y = "sem")` [Channel Islands National Park's Kelp Forest Monitoring Program](http://34.94.133.101/) ([**source code**](https://github.com/cullen-molitor/KFM_Shiny_App)), *by MEDS 2022 alum, [Cullen Molitor](https://cullen-molitor.github.io/)* -- explore subtidal monitoring data collected from our closest National Park</p>
+
+<p class="body-text topbr">`r fontawesome::fa("campground", fill = "#05859B", a11y = "sem")` [The Outdoor Equity App](https://shinyapps.bren.ucsb.edu/oe_app/) ([**source code**](https://github.com/outdoor-equity/outdoor-equity)), *developed by MEDS 2022 alumni [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/) & [Clarissa Boyajian](https://cboyajian.github.io/) as part of their MEDS capstone project* -- analyze patterns in the access and demand of visitors at reservable overnight sites</p>
+
+---
+
+##  {#dashboardPage data-menu-title="dashboardPage()"}
+
+<div class="slide-title-smaller">The most basic shinydashboard is made up of a header, a sidebar, and a body</div>
+
+<p class="body-text">The main difference between a **shiny app** and a **shinydashboard** are the UI elements. Rather than a `fluidPage()` (as used in our previous shiny apps), we'll create a `dashboardPage()`, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a `{shinydashboard}` page (you can run this code in an `app.R` file, if you wish).</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+#..............................setup.............................
+library(shiny)
+library(shinydashboard)
+
+#...............................ui...............................
+ui <- dashboardPage(
+  
+  dashboardHeader(), 
+  dashboardSidebar(), 
+  dashboardBody() 
+  
+) 
+
+#.............................server.............................
+server <- function(input, output) {}
+
+#......................combine ui & server.......................
+shinyApp(ui, server)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/basic_dashboard.png" alt="The most basic shinydashboard UI, with the default coloring -- a dashboardHeader in light blue, a dashboardSidebar in dark blue, and a dashboardBody in off-white." width="750"/></center>
+:::
+
+::::
+

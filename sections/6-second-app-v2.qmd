@@ -2,11 +2,11 @@
 format: revealjs
 ---
 
-##  {#improving-app2 data-menu-title="Improving App #2 UX/UI" background="#053660"}
+##  {#improving-app2 data-menu-title="Improving App #2 UX" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("users", fill = "#d2e3f3", a11y = "sem")` Improving user experience and UI appearance</p>
-<p class="caption-text">*Our two-file-app is looking pretty good! It's functional and deployed via shinyapps.io. Next, we'll focus on making some minor tweaks that can help to improve usability and appearance.*</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("users", fill = "#d2e3f3", a11y = "sem")` Improving user experience</p>
+<p class="caption-text">*Our two-file-app is looking pretty good! It's functional and deployed via shinyapps.io. Next, we'll focus on making some minor tweaks that can help to improve usability*</p>
 </div>
 
 ---
