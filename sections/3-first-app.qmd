@@ -7,7 +7,7 @@ editor_options:
 ##  {#build-app1 data-menu-title="Building Out Your 1st App" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building out your first app</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building out your 1<sup>st</sup> app</p>
 <p class="caption-text">*Here, we'll create our first reactive objects and establish a general Shiny coding workflow.*</p>
 </div>
 

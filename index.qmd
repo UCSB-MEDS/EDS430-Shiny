@@ -89,11 +89,11 @@ countdown::countdown(
 
 ---
 
-<!-- {{< include sections/deploy-app.qmd >}} -->
+{{< include sections/5-deploy-app.qmd >}}
 
 ---
 
-<!-- {{< include sections/accessibility.qmd >}} -->
+{{< include sections/accessibility.qmd >}}
 
 ---
 
