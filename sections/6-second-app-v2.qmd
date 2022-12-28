@@ -13,7 +13,7 @@ format: revealjs
 
 ##  {#LO3 data-menu-title="Learning Objectives 3"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2 (v2)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2(v2)</div>
 
 <p class="medium-body-text bottombr">By the end of this section, you should:</p>
 
@@ -60,7 +60,7 @@ format: revealjs
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="small-text">**(a)** user-friendly validation error messages that appear when all data are deselected using widgets</p>
+<p class="small-text">**(a)** user-friendly validation error messages that appear when widgets are used to deslect all data</p>
 <p class="small-text">**(b)** loading animations our two reactive plots </p>
 <p class="small-text">**(c)** alternate (alt) text for all data visualizations</p>
 <p class="small-text">**(d)** a new, custom theme to freshen up the overall appearance</p>
@@ -82,7 +82,7 @@ format: revealjs
 
 <p class="body-text">*It's important to remove any possible points of confusion for successfully using your app.*</p>
 
-<p class="small-text topbr">In version 1 of our published app, you'll notice that users are able to **(1) Deselect All** data using the `pickerInput`s for both the trout and penguin plots, and **(2) "uncheck" both** clear cut forest and old growth forest sampling section buttons using the `checkboxGroupInput`. When any of these actions are taken by the user, all data is removed from the plot, leaving a completely blank box behind.</p>
+<p class="small-text topbr">In version 1 of our published app, you'll notice that users are able to **(1) Deselect All** data using the `pickerInput`s for both the trout and penguin plots, and **(2) "uncheck" both** clear cut forest and old growth forest sampling section buttons using the `checkboxGroupInput`. When any of these actions are taken by the user, all data are removed from the plot, leaving a completely blank box behind.</p>
 
 :::: {.columns}
 
@@ -150,7 +150,7 @@ server <- function(input, output) {
 
 <p class="body-text">**Tips:**</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Despite having **two** inputs, we only need **one** validation test for our Penguins plot.</p> 
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Despite having **two** inputs, we only need **one** validation test for our Penguins plot. Why is this?</p> 
 
 <br>
 <br>

@@ -769,7 +769,7 @@ ui <- fluidPage(
 
 ---
 
-##  {#update-global1 data-menu-title="Update `global.R`"}
+##  {#import-packages-global data-menu-title="Import packages in global.R"}
 
 <div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
 
@@ -789,7 +789,7 @@ library(shinyWidgets)
 
 ---
 
-##  {#update-global2 data-menu-title="Update `global.R`"}
+##  {#wrangle-data-global data-menu-title="Wrangle data in global.R"}
 
 <div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
 
@@ -830,7 +830,7 @@ clean_trout <- and_vertebrates |>
 
 <div class="slide-title-smaller">Add a `pickerInput` for selecting `channel_type` to your UI</div>
 
-<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see [previous slide](https://ucsb-meds.github.io/EDS430-Shiny/#/update-global2))) represents the type of water body (cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel) data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
+<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see [previous slide](https://ucsb-meds.github.io/EDS430-Shiny/#/update-global2))) represents the type of water body (*cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel*) data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
 
 . . . 
 
@@ -994,7 +994,7 @@ myCustomTheme <- theme_light() +
 
 <p class="small-text">You can have more than one input control the same output. Let's now add a `checkboxGroupButtons` widget to our **UI** for selecting forest `section` (either clear cut forest or old growth forest). Check out the [function documentation](https://dreamrs.github.io/shinyWidgets/reference/checkboxGroupButtons.html) for more information on how to customize the appearance of your buttons.</p>
 
-<p class="small-text">Be sure to add the widget to the same `sidebarPanel` as our `pickerInput`:</p>
+<p class="small-text">Be sure to add the widget to the same `sidebarPanel` as our `pickerInput` (and separate them with a comma, `,`!:</p>
 
 ```{r}
 #| eval: false
@@ -1724,7 +1724,7 @@ Check out the **Explore the Data** page to find interactive data visualizations 
 
 ##  {#app2-code data-menu-title="App #2 code (so far)"}
 
-<div class="slide-title-smaller">Code recap, so far:</div>
+<div class="slide-title-smaller">Code recap for app #2v1, so far:</div>
 
 <p class="small-text">Additionally, you should have a `/text` folder within your app's directory (`/two-file-app`, if you named it as I did) that contains two markdown files, `about.md` and `footer.md`.</p>
 
@@ -1938,3 +1938,33 @@ server <- function(input, output) {
 } # END server
 ```
 :::
+
+---
+
+##  {#app2v1-recap data-menu-title="App 2v1 Recap"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` So far, we've talked about:</div>
+
+. . . 
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` structuring a two-file app (`ui.R` and `server.R`) and using a `global.R` file to help keep our code organized</p>
+
+. . . 
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` using (and combining) groups of layout functions to structure our UI</p>
+
+. . . 
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` placing inputs and outputs within the layout structure of our app's UI</p>
+
+. . .
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` extending widget options using the `{shinyWidgets}` package</p>
+
+. . . 
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` building more than one input that can be used to update the same output</p>
+
+. . . 
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` streamlining our UI by pulling out large bodies of text into separate markdown files, then adding them into our app using `includeMarkdown()`</p>

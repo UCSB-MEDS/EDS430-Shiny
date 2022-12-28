@@ -950,7 +950,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title-smaller">Common mistakes to look out for</div>
 
-<p class="body-text">It's inevitable that you'll make mistakes here and there as you build out your app...and they can be frustrating to catch. The three that I find myself making over and over again are:</p>
+<p class="body-text">It's inevitable that you'll make mistakes here and there as you build out your app...and they can be frustrating to catch. A few that I find myself making over and over again are:</p>
 
 <br>
 

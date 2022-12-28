@@ -1832,7 +1832,7 @@ Press the right arrow key to advance through the newly added highlighted code se
 Common mistakes to look out for
 </div>
 <p class="body-text">
-It’s inevitable that you’ll make mistakes here and there as you build out your app…and they can be frustrating to catch. The three that I find myself making over and over again are:
+It’s inevitable that you’ll make mistakes here and there as you build out your app…and they can be frustrating to catch. A few that I find myself making over and over again are:
 </p>
 <p><br></p>
 <div class="columns">
@@ -1938,7 +1938,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_17d03120" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f321dc65" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2727,7 +2727,7 @@ We’ll be using the <a href="https://lter.github.io/lterdatasampler/reference/a
 <p class="small-text gray-text">
 Image Source: Joseph R. Tomelleri, as found on the <a href="https://westernnativetrout.org/coastal-cutthroat-trout/">Western Native Trout Initiative</a>
 </p>
-</center></section><section id="update-global1" class="slide level2" data-menu-title="Update `global.R`"><h2></h2>
+</center></section><section id="import-packages-global" class="slide level2" data-menu-title="Import packages in global.R"><h2></h2>
 <div class="slide-title-smaller">
 Add packages &amp; wrangle data in <code>global.R</code>
 </div>
@@ -2743,7 +2743,7 @@ In addition to the <a href="https://lter.github.io/lterdatasampler/"><code>{lter
 <span id="cb38-3"><a href="#cb38-3"></a><span class="fu">library</span>(lterdatasampler) </span>
 <span id="cb38-4"><a href="#cb38-4"></a><span class="fu">library</span>(shinyWidgets) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="update-global2" class="slide level2" data-menu-title="Update `global.R`"><h2></h2>
+</section><section id="wrangle-data-global" class="slide level2" data-menu-title="Wrangle data in global.R"><h2></h2>
 <div class="slide-title-smaller">
 Add packages &amp; wrangle data in <code>global.R</code>
 </div>
@@ -2780,7 +2780,7 @@ We can also do the bulk of our data wrangling here, rather than in the server (t
 Add a <code>pickerInput</code> for selecting <code>channel_type</code> to your UI
 </div>
 <p class="small-text">
-The <code>channel_type</code> variable (originally called <code>unittype</code> – we updated the name when wrangling data (see <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/update-global2">previous slide</a>)) represents the type of water body (cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel) data were collected in. We’ll start by building a <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput()</a></code> to allow users to filter data based on <code>channel_type</code>.
+The <code>channel_type</code> variable (originally called <code>unittype</code> – we updated the name when wrangling data (see <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/update-global2">previous slide</a>)) represents the type of water body (<em>cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel</em>) data were collected in. We’ll start by building a <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput()</a></code> to allow users to filter data based on <code>channel_type</code>.
 </p>
 <div class="fragment">
 <p class="small-text topbr">
@@ -2935,7 +2935,7 @@ Add a second input that will update the same output
 You can have more than one input control the same output. Let’s now add a <code>checkboxGroupButtons</code> widget to our <strong>UI</strong> for selecting forest <code>section</code> (either clear cut forest or old growth forest). Check out the <a href="https://dreamrs.github.io/shinyWidgets/reference/checkboxGroupButtons.html">function documentation</a> for more information on how to customize the appearance of your buttons.
 </p>
 <p class="small-text">
-Be sure to add the widget to the same <code>sidebarPanel</code> as our <code>pickerInput</code>:
+Be sure to add the widget to the same <code>sidebarPanel</code> as our <code>pickerInput</code> (and separate them with a comma, <code>,</code>!:
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44" data-code-line-numbers="11-16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># trout plot sidebarPanel ----</span></span>
@@ -3008,7 +3008,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_eb8bc03f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_e702eaa5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3315,7 +3315,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_25d57f9d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_5450b2dc" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3641,7 +3641,7 @@ Again, we have some UX/UI quirks to fix (most notably, blank plots when all widg
 </p>
 </section><section id="app2-code" class="slide level2" data-menu-title="App #2 code (so far)"><h2></h2>
 <div class="slide-title-smaller">
-Code recap, so far:
+Code recap for app #2v1, so far:
 </div>
 <p class="small-text">
 Additionally, you should have a <code>/text</code> folder within your app’s directory (<code>/two-file-app</code>, if you named it as I did) that contains two markdown files, <code>about.md</code> and <code>footer.md</code>.
@@ -3857,6 +3857,47 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 </div>
 </div>
 </div>
+</section><section id="app2v1-recap" class="slide level2" data-menu-title="App 2v1 Recap"><h2></h2>
+<div class="slide-title-smaller">
+<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
+<path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> So far, we’ve talked about:
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> structuring a two-file app (<code>ui.R</code> and <code>server.R</code>) and using a <code>global.R</code> file to help keep our code organized
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> using (and combining) groups of layout functions to structure our UI
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> placing inputs and outputs within the layout structure of our app’s UI
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> extending widget options using the <a href="https://github.com/dreamRs/shinyWidgets">shinyWidgets</a> package
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> building more than one input that can be used to update the same output
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> streamlining our UI by pulling out large bodies of text into separate markdown files, then adding them into our app using <code>includeMarkdown()</code>
+</p>
+</div>
 </section><section id="deploying-apps" class="slide level2" data-menu-title="Deploying apps with shinyapps.io" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
@@ -3939,7 +3980,7 @@ Other ways to host your Shiny apps
 </section><section id="LO3" class="slide level2" data-menu-title="Learning Objectives 3"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #2 (v2)
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #2(v2)
 </div>
 <p class="medium-body-text bottombr">
 By the end of this section, you should:
