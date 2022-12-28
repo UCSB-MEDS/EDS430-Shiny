@@ -97,6 +97,10 @@ countdown::countdown(
 
 ---
 
+{{< include sections/7-redeploy-app.qmd >}}
+
+---
+
 {{< include sections/accessibility.qmd >}}
 
 ---

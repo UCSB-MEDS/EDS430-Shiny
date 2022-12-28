@@ -1,0 +1,27 @@
+---
+format: revealjs
+---
+
+##  {#redeploying-apps data-menu-title="Redeploying apps with shinyapps.io" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("upload", fill = "#d2e3f3", a11y = "sem")` Redeploying apps with [shinyapps.io](https://www.shinyapps.io/)</p>
+<p class="caption-text">*Now that we've added some updates to our app, it's time to redeploy our newest version.*</p>
+</div>
+
+---
+
+##  {#howto-redeploy data-menu-title="How to Redeploy"}
+
+<div class="slide-title-smaller bottombr">Redeploying is similar to deploying for the first time</div>
+
+<p class="body-text bottombr">Just a few quick steps before your updates are live at your URL from earlier:</p>
+
+<p class="small-text">**1.** double check to make sure any required packages are being imported in `global.R`</p>
+<p class="small-text topbr">**2.** Rerun `rsconnect::deployApp("<app-directory-nam">` in your console and type `Y` when you see the prompt `Update application currently deployed at https://githubUserName.shinyapps.io/yourAppName? [Y/n]`</p>
+<p class="small-text topbr">**3.** Give it a minute (or few) to deploy. Your deployed app will open in a browser window once processed</p>
+<p class="small-text topbr">**4.** Push all your files (including the `/rsconnect` directory) to GitHub</p>
+
+<br>
+
+<center><p class="medium-body-text">Check out my deployed app at <https://samanthacsik.shinyapps.io/two-file-app/></p></center>

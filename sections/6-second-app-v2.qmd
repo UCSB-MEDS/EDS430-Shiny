@@ -31,10 +31,6 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to create and apply a custom theme</p>
-
-. . . 
-
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
 
 . . .
@@ -45,31 +41,30 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinycssloaders}`: add loading animations to shiny outputs</p>
 
-. . .
-
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: create custom themes</p>
-
 ---
 
 ##  {#roadmap-app2v2 data-menu-title="Roadmap (app #2v2)"}
 
 <div class="slide-title-smaller">Roadmap for app #2v2</div>
 
-<p class="body-text">We'll be refining our **two-file app** with a focus on creating a more user-friendly experience. When finished with v2, we'll have added:</p>
+<p class="body-text bottombr">We'll be refining our **two-file app** with a focus on creating a more user-friendly experience. When finished with v2, we'll have added:</p>
 
 :::: {.columns}
 
-::: {.column width="45%"}
+::: {.column width="25%"}
+
+<br>
+
 <p class="small-text">**(a)** user-friendly validation error messages that appear when widgets are used to deslect all data</p>
-<p class="small-text">**(b)** loading animations our two reactive plots </p>
+<p class="small-text">**(b)** loading animations for both two reactive plots </p>
 <p class="small-text">**(c)** alternate (alt) text for all data visualizations</p>
-<p class="small-text">**(d)** a new, custom theme to freshen up the overall appearance</p>
 :::
 
 ::: {.column width="5%"}
 :::
 
-::: {.column width="45%"}
+::: {.column width="65%"}
+<center><img src="images/app2_v2.gif" alt="Our most up to date app, which includes loading animations that signal to the user whenever a plot output is re-rendering, validation error messages that alert users to what is necessary to display data (in the case that they 'Deselect All' data using the available widgets), and alt text for both data visualizations." width="750"/></center>
 :::
 
 ::::
@@ -229,3 +224,108 @@ server <- function(input, output) {
 } # END server
 ```
 
+##  {#loading-animations data-menu-title="Add loading animations"}
+
+<div class="slide-title-smaller">Add loading animations to re-rendering outputs</div>
+
+<p class="small-text">The [`{shinycssloaders} package](https://github.com/daattali/shinycssloaders) makes it easy to add visual indicators to outputs as they're loading or re-rendering. This can be particularly helpful if you have outputs that take a few seconds to render -- it alerts users that their updated inputs were recognized and that the app is working to re-render outputs.</p>
+
+<p class="small-text">Check out the [demo app](https://daattali.com/shiny/shinycssloaders-demo/) to start designing your own "spinner" (choose style, color, size).</p>
+
+<p class="small-text">We can pipe the `withSpinner()` function directly into our `plotOutput`s in `ui.R` -- here, we define the spinner color and style (there are 8 different spinner `type`s to choose from) and adjust the size of the penguin plot spinner.</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+# in ui.R
+plotOutput(outputId = "trout_scatterplot") |> 
+  withSpinner(color = "#006792", type = 1)
+
+plotOutput(outputId = "flipperLength_histogram") |> 
+  withSpinner(color = "#4BA4A4", type = 4, size = 2)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/spinners.gif" alt="Loading animations appear each time an input value is changed and plot outputs are re-rendered. The trout plot has a blue animation of three perpendicular vertical bars that undulate in length. The penguin plot has a green trailing circular pattern of small circles that grow and shrink in size as they rotate." width="550"/></center>
+:::
+
+:::: 
+
+---
+
+##  {#include-alt-text data-menu-title="Include alt text"}
+
+<div class="slide-title-smaller">Include alt text for all data visualizations</div>
+
+<p class="small-text">Alt text are **written descriptions** added to images, and importantly, to data visualizations, to **help more users understand the content**. Assistive technologies (e.g. screen readers) read alt text out loud for users to hear. When alt text is successfully added, the `alt` tag (along your text) should appear in the HTML (right click on your app's data viz to **Inpsect** and ensure that it was added).</p>
+
+:::: {.columns}
+
+::: {.column width="35%"}
+
+<br>
+
+<p class="small-text">We'll talk a bit more about alt text [later on](https://ucsb-meds.github.io/EDS430-Shiny/#/alt-text), but for now we can add alt text easily to our data visuzliations using the `alt` argument. Place this *outside* of the `{}` but inside the `()` of `renderPlot{()}`. For example, we can add alt text to our trout and penguin plots in `server.R`:</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "18|35"
+
+# in server.R
+# render trout scatterplot ----
+output$trout_scatterplot <- renderPlot({
+
+  ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
+      geom_point(alpha = 0.7, size = 5) +
+      scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D",
+                                    "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96",
+                                    "side channel" = "#94CBEC")) +
+      scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19,
+                                    "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
+                                    "side channel" = 25)) +
+      labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+      myCustomTheme
+
+ },
+  
+  alt = "A scatterplot of the relationship between cutthroat trout lengths (mm) (x-axis) and weights (g) (y-axis), with data points colored and shaped based on the water channel type from which they were collected. Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."
+  
+) # END render trout scatterplot
+
+
+# render flipperLength hisogram ----
+output$flipperLength_histogram <- renderPlot({
+
+  ggplot(na.omit(island_df()), aes(x = flipper_length_mm, fill = species)) +
+    geom_histogram(alpha = 0.6, bins = input$bin_num) +
+    scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+    labs(x = "Flipper length (mm)", y = "Frequency",
+         fill = "Penguin species") +
+    myCustomTheme
+    
+ },
+  
+  alt = "A histogram of penguin flipper lengths (mm), with data colored by penguin species. Flipper lengths tend to be smallest on Adélie penguins and largest on Gentoo penguins."
+  
+) # END render flipperLength histogram
+
+```
+:::
+
+::::
