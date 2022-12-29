@@ -11,9 +11,9 @@ format: revealjs
 
 ---
 
-##  {#LO3 data-menu-title="Learning Objectives 3"}
+##  {#LO-app2v2 data-menu-title="Learning Objectives App #2v2"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2(v2)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2v2 (two-file app)</div>
 
 <p class="medium-body-text bottombr">By the end of this section, you should:</p>
 
@@ -43,9 +43,9 @@ format: revealjs
 
 ---
 
-##  {#roadmap-app2v2 data-menu-title="Roadmap (app #2v2)"}
+##  {#roadmap-app2v2 data-menu-title="Roadmap App #2v2"}
 
-<div class="slide-title-smaller">Roadmap for app #2v2</div>
+<div class="slide-title-smaller">Roadmap for App #2v2</div>
 
 <p class="body-text bottombr">We'll be refining our **two-file app** with a focus on creating a more user-friendly experience. When finished with v2, we'll have added:</p>
 

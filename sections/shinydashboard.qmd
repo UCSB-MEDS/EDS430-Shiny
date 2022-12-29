@@ -11,11 +11,15 @@ format: revealjs
 
 ---
 
-##  {#LO_dashboard data-menu-title="Learning Objectives ???"}
+##  {#LO-app3 data-menu-title="Learning Objectives App #3"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #?(shinydashboard)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #3 (shinydashboard)</div>
 
 <p class="medium-body-text bottombr">By the time we're done with this shinydashboard, you should:</p>
+
+. . . 
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the general steps involved in pre-processing, saving & reading data into an app</p>
 
 . . . 
 
@@ -23,21 +27,181 @@ format: revealjs
 
 . . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` tbd</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand how to add static images to your app</p>
+
+. . . 
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` feel comfortable creating a basic reactive `leaflet` map</p>
+
+. . . 
+
+<p class="medium-body-text topbr">New packages used:</p> 
+
+. . .
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinydashboard}`: provides an alternative UI framework for easily building dashboard-style shiny applications</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{leaflet}`: for building interactive maps</p>
 
 ---
 
-##  {#shinydashboard-examples data-menu-title="Examples of shinydashboards"}
+##  {#roadmap-dashboard data-menu-title="Roadmap App #3"}
 
-<div class="slide-title bottombr">Example dashboards by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+<div class="slide-title">Roadmap for App #3</div>
 
-<p class="body-text">`r fontawesome::fa("school", fill = "#05859B", a11y = "sem")` [Bren Student Data Explorer](https://shinyapps.bren.ucsb.edu/student-data-explorer/) ([**source code**](https://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alum, [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/), during her Bren Summer Fellowship (and continued by future MEDS students!)* -- explore Bren school student demographics and career outcomes</p>
+<p class="body-text">In this section, we'll be building a **shinydashboard** using data downloaded from the [Arctic Data Center](). We'll be building out the following features:</p>
 
-<p class="body-text topbr">`r fontawesome::fa("person-hiking", fill = "#05859B", a11y = "sem")` [Sam's Strava Stats](https://samanthacsik.shinyapps.io/strava_dashboard/) ([**source code**](https://github.com/samanthacsik/strava-dashboard)), *by yours truly, [Sam Csik](https://samanthacsik.github.io/)* -- a new and ongoing side project exploring my Strava hiking/biking/walking data</p>
+<br>
 
-<p class="body-text topbr">`r fontawesome::fa("fish", fill = "#05859B", a11y = "sem")` [Channel Islands National Park's Kelp Forest Monitoring Program](http://34.94.133.101/) ([**source code**](https://github.com/cullen-molitor/KFM_Shiny_App)), *by MEDS 2022 alum, [Cullen Molitor](https://cullen-molitor.github.io/)* -- explore subtidal monitoring data collected from our closest National Park</p>
+:::: {.columns}
 
-<p class="body-text topbr">`r fontawesome::fa("campground", fill = "#05859B", a11y = "sem")` [The Outdoor Equity App](https://shinyapps.bren.ucsb.edu/oe_app/) ([**source code**](https://github.com/outdoor-equity/outdoor-equity)), *developed by MEDS 2022 alumni [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/) & [Clarissa Boyajian](https://cboyajian.github.io/) as part of their MEDS capstone project* -- analyze patterns in the access and demand of visitors at reservable overnight sites</p>
+::: {.column width="45%"}
+
+<br>
+
+<p class="small-text">**(a)** a `dashboardHeader` with the name of your app</p>
+<p class="small-text">**(b)** a `dashboardSidebar` with ___ `menuItem`s</p>
+<p class="small-text">**(c)** a landing page with background information about your app</p>
+<p class="small-text">**(d)** an interactive *and* reactive `leaflet` map</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<!-- <center><img src="images/shinydashboard.gif" alt="" width="750"/></center> -->
+:::
+
+::::
+
+---
+
+##  {#begin-with-data data-menu-title="Begin with Data"}
+
+<div class="slide-title">As always, let's start with the data</div>
+
+<p class="body-text bottombr">Building an app doesn't make much sense if we don't know what we're going to put in it. So, just like the last two apps, we'll start with some data wrangling and practice data visualization.</p>
+
+<p class="body-text bottombr">*Unlike* our last two apps, however, we'll be working with tabular data from the [Arctic Data Center](https://arcticdata.io/), which we'll download, process, save, then finally, read into our application. This process will likely be more similar to what you'll encounter when working on your own applications moving forward. **Take a few minutes to review the metadata record for the following data set:**</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br> 
+
+<center><p class="small-text bottombr">Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center. [doi:10.18739/A2JH3D41P](doi:10.18739/A2JH3D41P).</p></center>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/adc_logo.png" alt="The NSF Arctic Data Center Logo, which is a drawing depicting a blue mountain scape with green Northern Lights overhead." width="750"/></center>
+:::
+
+::::
+
+---
+
+##  {#processing-storing-data data-menu-title="Processing & Storing Data"}
+
+<div class="slide-title-smaller">Pre-processing data is critical</div>
+
+<p class="small-text">Where you choose to store the data used by your Shiny app will depend largely on the type and size of the file(s) and who "owns" those data. It is likely that you'll be working with data stored in a database or on a server. This is outside the scope of this workshop, but I suggest reading Dean Attali's article, [Persistent data storage in Shiny apps](https://shiny.rstudio.com/articles/persistent-data-storage.html) to start. Because we are going to be working with a relatively small data set, we'll be downloading and storing our data locally (i.e. on our machines and in our GitHub repo).</p>
+
+<p class="small-text topbr">Regardless of where you choose to store your data, you can help your application more quickly process inputs/outputs by providing it *only as much data as needed to run*. This means **pre-processing** your data.</p>
+
+. . . 
+
+:::: {.columns}
+
+::: {.column width="35%"}
+
+<br>
+
+<p class="smaller-text">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in our `R/` and save a processed version of the data to our app's directory, which we'll name `/shinydashboard`.</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+<center><img src="images/shinydashboard-directory-structure.png" alt="A schematic of the repository structure, as described." width="450"/></center>
+:::
+
+::::
+
+---
+
+##  {#lake-data-goal data-menu-title="Lake Data End Goal"}
+
+<div class="slide-title">The Goal:</div>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<center><img src="images/leaflet.gif" alt="An interactive leaflet map with 11 markers placed on different lakes throughout Northeast Alaska. Clicking on a marker reveals details about the lake including the name, elevation, average depth, and average lake bed temperature." width="750"/></center>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<p class="body-text bottombr">Our goal is to create a `leaflet` map with makers denoting each of the 11 unique lakes were data were collected. When clicked, a marker should reveal the **lake name**, **elevation** (in meters, above sea level), **average depth** of the lake (in meters), and **average lake bed temperature** (in degrees Celsius). To do so, we'll need a data frame that looks like the example below:</p>
+
+<img src="images/lakes_df.png" alt="An example of our desired final data frame, with 6 attributes (Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) and 11 rows of observations, one for each lake surveyed." width="550"/>
+:::
+
+::::
+
+
+---
+
+##  {#process-lake-data data-menu-title="Process Lake Data"}
+
+<div class="slide-title-smaller">Pre-processing data is critical</div>
+
+```{r}
+#| eval: false
+#| echo: true
+# load packages ----
+library(tidyverse)
+library(leaflet)
+
+# read in raw data ----
+lake_monitoring_data <- read_csv(here::here("raw_data/FCWO_lakemonitoringdata_2011_2022_daily.csv"))
+
+# calculate avg depth & temp ----
+avg_depth_temp <- lake_monitoring_data |> 
+  select(Site, Depth, BedTemperature) |> 
+  filter(Depth != "NaN") |>  # remove NaN (missing data) from Depth
+  drop_na(BedTemperature) |> # remove NAs (missing data) from BedTemperature
+  group_by(Site) |> 
+  summarize(
+    AvgDepth = round(mean(Depth), 1),
+    AvgTemp = round(mean(BedTemperature), 1)
+  )
+
+# join avg depth & temp to original data ---
+lake_monitoring_data <- full_join(lake_monitoring_data, avg_depth_temp)
+
+# unique lakes for mapping ----
+unique_lakes <- lake_monitoring_data |> 
+  select(Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) |> 
+  distinct()
+
+# save processed data to your app's directory ----
+write_csv(here::here("shinydashboard/data/lakes_cleaned.csv"))
+```
+
+---
+
+##  {#practice-map data-menu-title="Draft Leaflet"}
+
+<div class="slide-title-smaller">As always, draft your data viz first!</div>
 
 ---
 
@@ -45,7 +209,7 @@ format: revealjs
 
 <div class="slide-title-smaller">The most basic shinydashboard is made up of a header, a sidebar, and a body</div>
 
-<p class="body-text">The main difference between a **shiny app** and a **shinydashboard** are the UI elements. Rather than a `fluidPage()` (as used in our previous shiny apps), we'll create a `dashboardPage()`, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a `{shinydashboard}` page (you can run this code in an `app.R` file, if you wish).</p>
+<p class="small-text">The main difference between a **shiny app** and a **shinydashboard** are the UI elements. Rather than a `fluidPage()` (as used in our previous shiny apps), we'll create a `dashboardPage()`, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a `{shinydashboard}` page (you can run this code in an `app.R` file, if you wish).</p>
 
 :::: {.columns}
 
@@ -82,4 +246,22 @@ shinyApp(ui, server)
 :::
 
 ::::
+
+---
+
+##  {#shinydashboard-examples data-menu-title="Examples of shinydashboards"}
+
+<div class="slide-title bottombr">Example shiny dashboards built by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+
+<p class="small-text">`r fontawesome::fa("school", fill = "#05859B", a11y = "sem")` [Bren Student Data Explorer](https://shinyapps.bren.ucsb.edu/student-data-explorer/) ([**source code**](https://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alum, [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/), during her Bren Summer Fellowship (and continued by future MEDS students!)* -- explore Bren school student demographics and career outcomes</p>
+
+<p class="small-text topbr">`r fontawesome::fa("person-hiking", fill = "#05859B", a11y = "sem")` [Sam's Strava Stats](https://samanthacsik.shinyapps.io/strava_dashboard/) ([**source code**](https://github.com/samanthacsik/strava-dashboard)), *by yours truly, [Sam Csik](https://samanthacsik.github.io/)* -- a new and ongoing side project exploring my Strava hiking/biking/walking data</p>
+
+<p class="small-text topbr">`r fontawesome::fa("fish", fill = "#05859B", a11y = "sem")` [Channel Islands National Park's Kelp Forest Monitoring Program](http://34.94.133.101/) ([**source code**](https://github.com/cullen-molitor/KFM_Shiny_App)), *by MEDS 2022 alum, [Cullen Molitor](https://cullen-molitor.github.io/)* -- explore subtidal monitoring data collected from our closest National Park</p>
+
+<p class="small-text topbr">`r fontawesome::fa("campground", fill = "#05859B", a11y = "sem")` [The Outdoor Equity App](https://shinyapps.bren.ucsb.edu/oe_app/) ([**source code**](https://github.com/outdoor-equity/outdoor-equity)), *developed by MEDS 2022 alumni [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/) & [Clarissa Boyajian](https://cboyajian.github.io/) as part of their MEDS capstone project* -- analyze patterns in the access and demand of visitors at reservable overnight sites</p>
+
+<p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([**source code**](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
+
+
 

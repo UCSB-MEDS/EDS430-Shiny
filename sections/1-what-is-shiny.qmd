@@ -11,6 +11,8 @@ format: revealjs
 
 ---
 
+##  {#easy-web-apps data-menu-title="Shiny = easy web apps"}
+
 <div class="slide-title">Shiny makes building web apps easy</div>
 
 <p class="quote-text-bg body-text bottombr">*"**Shiny is an R package that makes it easy to build interactive web apps straight from R.** You can host standalone apps on a webpage or embed them in [R Markdown](https://rmarkdown.rstudio.com/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626) documents or build [dashboards](http://rstudio.github.io/shinydashboard/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/?_ga=2.94499804.1997816511.1640293283-2019993402.1637352626), [htmlwidgets](http://www.htmlwidgets.org/), and JavaScript [actions.](https://github.com/daattali/shinyjs/blob/master/README.md)"* **- RStudio**</p>
@@ -88,6 +90,14 @@ format: revealjs
 
 ---
 
+##  {#shinyapp-examples data-menu-title="Examples of shiny apps"}
+
+<div class="slide-title bottombr">Example shiny apps built by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+
+<p class="body-text">`r fontawesome::fa("fish-fins", fill = "#05859B", a11y = "sem")` [Moorea Coral Reef LTER Shiny Application](https://shinyapps.bren.ucsb.edu/ShinyAppMooreaViz/) ([**source code**](hhttps://github.com/MCR-LTER/MEDSttps://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alumni, [Allie Cole](https://www.linkedin.com/in/allie-ingrid-cole-60351a1ba/), [Felicia Cruz](https://www.linkedin.com/in/cruz-felicia/), [Jake Eisaguirre](https://jake-eisaguirre.github.io/) & [Charles Henrickson](https://www.linkedin.com/in/charles-hendrickson-0001a0223/) as part of their MEDS capstone project* -- visualize spatial and temporal patterns of coral reef stressors surrounding Moorea, French Polyneisa</p>
+
+---
+
 ##  {#built-in-examples data-menu-title="Built-in Examples"}
 
 <div class="slide-title">The Shiny packages comes with 11 built-in examples</div>
@@ -152,11 +162,3 @@ sliderInput(inputId = "bins",
 :::
 
 ::::
-
----
-
-##  {#the-data data-menu-title="The Data"}
-
-<div class="slide-title">The data</div>
-
-TBD

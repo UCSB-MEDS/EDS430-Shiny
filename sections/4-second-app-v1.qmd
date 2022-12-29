@@ -11,9 +11,9 @@ format: revealjs
 
 ---
 
-##  {#LO2 data-menu-title="Learning Objectives 2"}
+##  {#LO-app2v2 data-menu-title="Learning Objectives App #2v1"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2(v1)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2v1 (two-file app)</div>
 
 <p class="medium-body-text bottombr">By the end of building out this second app, you should:</p>
 
@@ -55,9 +55,9 @@ format: revealjs
 
 ---
 
-##  {#roadmap-app2v1 data-menu-title="Roadmap (app #2v1)"}
+##  {#roadmap-app2v1 data-menu-title="Roadmap App #2v1"}
 
-<div class="slide-title-smaller">Roadmap for app #2v1</div>
+<div class="slide-title-smaller">Roadmap for App #2v1</div>
 
 <p class="body-text">We'll be building out our **two-file app** using data from the `{lterdatasampler}` and `{palmerpenguins}` packages. We'll focus on creating a functional app that has a more visually pleasing UI layout (and we'll refine it's appearance even further in [v2]()). By the end of v1, we'll have created:</p>
 
@@ -826,7 +826,7 @@ clean_trout <- and_vertebrates |>
 
 ---
 
-##  {#trout-pickerInput data-menu-title="Add Trout `pickerInput`"}
+##  {#trout-pickerInput data-menu-title="Add Trout pickerInput()"}
 
 <div class="slide-title-smaller">Add a `pickerInput` for selecting `channel_type` to your UI</div>
 
@@ -932,7 +932,7 @@ output$trout_scatterplot <- renderPlot({
 
 ---
 
-##  {#ggplot-theme data-menu-title="Save `ggplot` theme to `global.R`"}
+##  {#ggplot-theme data-menu-title="Save theme to global.R"}
 
 <div class="slide-title-smaller">Save a custom `ggplot` theme to `global.R`</div>
 
@@ -1558,7 +1558,7 @@ ui <- fluidPage(
 
 ---
 
-##  {#includeMarkdown data-menu-title="Instead, use includeMarkdown()"}
+##  {#includeMarkdown data-menu-title="includeMarkdown()"}
 
 <div class="slide-title-smaller">Instead, use `includeMarkdown()` to read in text from separate `.md` files</div>
 

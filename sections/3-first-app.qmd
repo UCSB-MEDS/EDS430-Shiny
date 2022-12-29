@@ -13,9 +13,9 @@ editor_options:
 
 ---
 
-##  {#LO1 data-menu-title="Learning Objectives 1"}
+##  {#LO-app1 data-menu-title="Learning Objectives App #1"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #1</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #1 (single-file app)</div>
 
 <p class="medium-body-text bottombr">By the end of building out this first app, you should be a bit more familiar with:</p>
 
@@ -61,9 +61,9 @@ editor_options:
 
 ---
 
-##  {#roadmap-app1 data-menu-title="Roadmap (app #1)"}
+##  {#roadmap-app1 data-menu-title="Roadmap App#1"}
 
-<div class="slide-title bottombr">Roadmap for app #1</div>
+<div class="slide-title bottombr">Roadmap for App #1</div>
 
 <p class="body-text">We'll start by building a small **single-file app** using data from the `{palmerpenguins}` package. We'll build out the the following features:</p>
 
