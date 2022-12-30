@@ -78,6 +78,99 @@ format: revealjs
 
 ---
 
+##  {#what-is-a-dashboard data-menu-title="What is a dashboard?"}
+
+<div class="slide-title-smaller">But first, what do we mean by a shiny "dashboard"?</div>
+
+<p class="body-text">[`shinydashboard`](https://rstudio.github.io/shinydashboard/) is just an alternative framework for building shiny apps. In other words, shiny dashboards are just shiny apps, but with some different UI elements that make building apps with a classic "dashboard" feel to them a little bit easier.</p>
+
+<center><img src="images/simple_dashboard.png" alt="A simple shinydashboard with two boxes (one containing a histogram and one containing a sliderInput) in the body. The header reads 'Basic tabs' and the sidebar has two menu items: Dashboard and Widgets." width="700"/></center>
+
+---
+
+##  {#dashboardPage data-menu-title="dashboardPage()"}
+
+<div class="slide-title-smaller">The most basic shinydashboard is made up of a header, a sidebar, and a body</div>
+
+<p class="small-text">The main difference between a **shiny app** and a **shinydashboard** are the UI elements. Rather than a `fluidPage()` (as used in our previous shiny apps), we'll create a `dashboardPage()`, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a `{shinydashboard}` page (you can run this code in an `app.R` file, if you wish).</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+```{r}
+#| eval: false
+#| echo: true
+#..............................setup.............................
+library(shiny)
+library(shinydashboard)
+
+#...............................ui...............................
+ui <- dashboardPage(
+  
+  dashboardHeader(), 
+  dashboardSidebar(), 
+  dashboardBody() 
+  
+) 
+
+#.............................server.............................
+server <- function(input, output) {}
+
+#......................combine ui & server.......................
+shinyApp(ui, server)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/basic_dashboard.png" alt="The most basic shinydashboard UI, with the default coloring -- a dashboardHeader in light blue, a dashboardSidebar in dark blue, and a dashboardBody in off-white." width="750"/></center>
+:::
+
+::::
+
+---
+
+##  {#shinydashboard-examples data-menu-title="Examples of shinydashboards"}
+
+<div class="slide-title bottombr">Example shiny dashboards built by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+
+<p class="small-text">`r fontawesome::fa("school", fill = "#05859B", a11y = "sem")` [Bren Student Data Explorer](https://shinyapps.bren.ucsb.edu/student-data-explorer/) ([**source code**](https://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alum, [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/), during her Bren Summer Fellowship (and continued by future MEDS students!)* -- explore Bren school student demographics and career outcomes</p>
+
+<p class="small-text topbr">`r fontawesome::fa("person-hiking", fill = "#05859B", a11y = "sem")` [Sam's Strava Stats](https://samanthacsik.shinyapps.io/strava_dashboard/) ([**source code**](https://github.com/samanthacsik/strava-dashboard)), *by yours truly, [Sam Csik](https://samanthacsik.github.io/)* -- a new and ongoing side project exploring my Strava hiking/biking/walking data</p>
+
+<p class="small-text topbr">`r fontawesome::fa("fish", fill = "#05859B", a11y = "sem")` [Channel Islands National Park's Kelp Forest Monitoring Program](http://34.94.133.101/) ([**source code**](https://github.com/cullen-molitor/KFM_Shiny_App)), *by MEDS 2022 alum, [Cullen Molitor](https://cullen-molitor.github.io/)* -- explore subtidal monitoring data collected from our closest National Park</p>
+
+<p class="small-text topbr">`r fontawesome::fa("campground", fill = "#05859B", a11y = "sem")` [The Outdoor Equity App](https://shinyapps.bren.ucsb.edu/oe_app/) ([**source code**](https://github.com/outdoor-equity/outdoor-equity)), *developed by MEDS 2022 alumni [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/) & [Clarissa Boyajian](https://cboyajian.github.io/) as part of their MEDS capstone project* -- analyze patterns in the access and demand of visitors at reservable overnight sites</p>
+
+<p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([**source code**](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
+
+---
+
+##  {#setup-dashboard-directory data-menu-title="Dashboard Setup"}
+
+<div class="slide-title-smaller">Setup begins the same as our previous apps</div>
+
+<p class="body-text bottombr">First, create a subdirectory called `/shinydashboard` and add a `ui.R`,  `server.R`, and `global.R` file.</p>
+
+<p class="body-text bottombr">Load the following libraries at the top of your `global.R` file, to start (we'll continue adding to this as we build out our app):</p>
+
+```{r}
+#| eval: false
+#| echo: true
+# LOAD LIBRARIES ----
+library(shiny)
+library(shinydashboard)
+```
+
+. . . 
+
+<p class="body-text topbr">We'll put the app aside for a moment now while we work on downloading and pre-processing our data, as well as practice creating our data visualization *outside* of our app.</p>
+
+---
+
+
 ##  {#begin-with-data data-menu-title="Begin with Data"}
 
 <div class="slide-title">As always, let's start with the data</div>
@@ -92,7 +185,7 @@ format: revealjs
 
 <br> 
 
-<center><p class="small-text bottombr">Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center. [doi:10.18739/A2JH3D41P](doi:10.18739/A2JH3D41P).</p></center>
+<center><p class="small-text bottombr">Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center. [doi:10.18739/A2JH3D41P](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P).</p></center>
 :::
 
 ::: {.column width="5%"}
@@ -147,7 +240,7 @@ format: revealjs
 :::
 
 ::: {.column width="45%"}
-<p class="body-text bottombr">Our goal is to create a `leaflet` map with makers denoting each of the 11 unique lakes where data were collected. When clicked, a marker should reveal the **lake name**, **elevation** (in meters, above sea level), **average depth** of the lake (in meters), and **average lake bed temperature** (in degrees Celsius). *To do so, we'll need a data frame that looks like the example below:*</p>
+<p class="body-text bottombr">Our goal is to create a `leaflet` map with makers placed on each of the 11 unique lakes where data were collected. When clicked, a marker should reveal the **lake name**, **elevation** (in meters, above sea level), **average depth** of the lake (in meters), and **average lake bed temperature** (in degrees Celsius). *To do so, we'll need a data frame that looks like the example below:*</p>
 
 <img src="images/lakes_df.png" alt="An example of our desired final data frame, with 6 attributes (Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) and 11 rows of observations, one for each lake surveyed." width="550"/>
 :::
@@ -381,63 +474,103 @@ leaflet() |>
 
 ---
 
-##  {#dashboardPage data-menu-title="dashboardPage()"}
+##  {#build-dashboard-ui data-menu-title="Build Dashboard UI"}
 
-<div class="slide-title-smaller">The most basic shinydashboard is made up of a header, a sidebar, and a body</div>
+<div class="slide-title-smaller">Designing our dashboard UI</div>
 
-<p class="small-text">The main difference between a **shiny app** and a **shinydashboard** are the UI elements. Rather than a `fluidPage()` (as used in our previous shiny apps), we'll create a `dashboardPage()`, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a `{shinydashboard}` page (you can run this code in an `app.R` file, if you wish).</p>
+<p class="small-text">Now that we have a better sense of what our app will include, let's start building out our UI.</p>
 
-:::: {.columns}
+<p class="small-text">To start, let's add our server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on [slide 110](), but alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` -- this can help with organization as you app grows in complexity.</p>
 
-::: {.column width="45%"}
+<p class="small-text">Run your app to make sure it works -- you should see a super basic dashboard. If it doesn't look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).</p>
+
+::: {.panel-tabset}
+
+## `ui.R`
+
 ```{r}
 #| eval: false
 #| echo: true
-#..............................setup.............................
+#........................dashboardHeader.........................
+header <- dashboardHeader()
+
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar()
+
+#..........................dashboardBody.........................
+body <- dashboardBody()
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+## `server.R`
+
+```{r}
+#| eval: false
+#| echo: true
+server <- function(input, output) {}
+```
+
+## `global.R` 
+
+```{r}
+#| eval: false
+#| echo: true
+# LOAD LIBRARIES ----
 library(shiny)
 library(shinydashboard)
-
-#...............................ui...............................
-ui <- dashboardPage(
-  
-  dashboardHeader(), 
-  dashboardSidebar(), 
-  dashboardBody() 
-  
-) 
-
-#.............................server.............................
-server <- function(input, output) {}
-
-#......................combine ui & server.......................
-shinyApp(ui, server)
 ```
-:::
 
-::: {.column width="5%"}
 :::
-
-::: {.column width="45%"}
-<center><img src="images/basic_dashboard.png" alt="The most basic shinydashboard UI, with the default coloring -- a dashboardHeader in light blue, a dashboardSidebar in dark blue, and a dashboardBody in off-white." width="750"/></center>
-:::
-
-::::
 
 ---
 
-##  {#shinydashboard-examples data-menu-title="Examples of shinydashboards"}
+##  {#title-menuItems data-menu-title="Title & menuItems"}
 
-<div class="slide-title bottombr">Example shiny dashboards built by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+<div class="slide-title-smaller">Add a title & menuItems</div>
 
-<p class="small-text">`r fontawesome::fa("school", fill = "#05859B", a11y = "sem")` [Bren Student Data Explorer](https://shinyapps.bren.ucsb.edu/student-data-explorer/) ([**source code**](https://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alum, [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/), during her Bren Summer Fellowship (and continued by future MEDS students!)* -- explore Bren school student demographics and career outcomes</p>
+<p class="small-text">Add a title to `dashboardHeader()` and make more space using `titleWidth`, if necessary.</p>
 
-<p class="small-text topbr">`r fontawesome::fa("person-hiking", fill = "#05859B", a11y = "sem")` [Sam's Strava Stats](https://samanthacsik.shinyapps.io/strava_dashboard/) ([**source code**](https://github.com/samanthacsik/strava-dashboard)), *by yours truly, [Sam Csik](https://samanthacsik.github.io/)* -- a new and ongoing side project exploring my Strava hiking/biking/walking data</p>
+<p class="small-text">Next, we'll create a `sidebarMenu()` that contains two `menuItem`s. `sidebarMenu()` can also contain shiny inputs (read more [here](https://rstudio.github.io/shinydashboard/structure.html#sidebar)), though we'll be using ours just for navigation purposes. Be sure to provide each `menuItem()` with `text` as you'd like it to appear in your app, and a `tabName` which will be used to place `dashboardBody()` content in the appropriate `menuItem()`. Optionally, you can provide an icon. By default, `icon()` uses icons from [FontAwesome](https://fontawesome.com/).</p>
 
-<p class="small-text topbr">`r fontawesome::fa("fish", fill = "#05859B", a11y = "sem")` [Channel Islands National Park's Kelp Forest Monitoring Program](http://34.94.133.101/) ([**source code**](https://github.com/cullen-molitor/KFM_Shiny_App)), *by MEDS 2022 alum, [Cullen Molitor](https://cullen-molitor.github.io/)* -- explore subtidal monitoring data collected from our closest National Park</p>
+```{r}
+#| eval: false
+#| echo: true
+#........................dashboardHeader.........................
+header <- dashboardHeader(
+  
+  # add title ----
+  title = "AK Lake Monitoring",
+  titleWidth = 400
+  
+) # END dashboardHeader
 
-<p class="small-text topbr">`r fontawesome::fa("campground", fill = "#05859B", a11y = "sem")` [The Outdoor Equity App](https://shinyapps.bren.ucsb.edu/oe_app/) ([**source code**](https://github.com/outdoor-equity/outdoor-equity)), *developed by MEDS 2022 alumni [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/) & [Clarissa Boyajian](https://cboyajian.github.io/) as part of their MEDS capstone project* -- analyze patterns in the access and demand of visitors at reservable overnight sites</p>
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar(
+  
+  # sidebarMenu ----
+  sidebarMenu(
+    
+    menuItem("Welcome", tabName = "welcome", icon = icon("star")),
+    menuItem("Dashboard", tabName = "dashboard", icon = icon("gauge"))
+    
+  ) # END sidebarMenu
+  
+)
 
-<p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([**source code**](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
+#..........................dashboardBody.........................
+body <- dashboardBody()
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+Add `title` to `dashboardHeader()`
+
+Add `sidebarMenu` to `dashboardbody()` -- sidebarMenu behaves similarly to tabs in shiny app `tabPanel` but it's also more flexible and can contain shiny inputs
+
+Add `menuItem`s to `sidebarMenu`
 
 
 

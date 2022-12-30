@@ -1947,7 +1947,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_038a2153" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_49981417" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3017,7 +3017,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b3e2d86e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_58596331" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3324,7 +3324,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0f72db71" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_a6de9195" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4452,6 +4452,98 @@ In this section, we’ll be building a <strong>shinydashboard</strong> using dat
 <!-- <center><img src="images/shinydashboard.gif" alt="" width="750"/></center> -->
 </div>
 </div>
+</section><section id="what-is-a-dashboard" class="slide level2" data-menu-title="What is a dashboard?"><h2></h2>
+<div class="slide-title-smaller">
+But first, what do we mean by a shiny “dashboard”?
+</div>
+<p class="body-text">
+<a href="https://rstudio.github.io/shinydashboard/"><code>shinydashboard</code></a> is just an alternative framework for building shiny apps. In other words, shiny dashboards are just shiny apps, but with some different UI elements that make building apps with a classic “dashboard” feel to them a little bit easier.
+</p>
+<center>
+<img src="images/simple_dashboard.png" alt="A simple shinydashboard with two boxes (one containing a histogram and one containing a sliderInput) in the body. The header reads 'Basic tabs' and the sidebar has two menu items: Dashboard and Widgets." width="700">
+</center>
+</section><section id="dashboardPage" class="slide level2" data-menu-title="dashboardPage()"><h2></h2>
+<div class="slide-title-smaller">
+The most basic shinydashboard is made up of a header, a sidebar, and a body
+</div>
+<p class="small-text">
+The main difference between a <strong>shiny app</strong> and a <strong>shinydashboard</strong> are the UI elements. Rather than a <code>fluidPage()</code> (as used in our previous shiny apps), we’ll create a <code>dashboardPage()</code>, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a> page (you can run this code in an <code>app.R</code> file, if you wish).
+</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co">#..............................setup.............................</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb60-3"><a href="#cb60-3"></a><span class="fu">library</span>(shinydashboard)</span>
+<span id="cb60-4"><a href="#cb60-4"></a></span>
+<span id="cb60-5"><a href="#cb60-5"></a><span class="co">#...............................ui...............................</span></span>
+<span id="cb60-6"><a href="#cb60-6"></a>ui <span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(</span>
+<span id="cb60-7"><a href="#cb60-7"></a>  </span>
+<span id="cb60-8"><a href="#cb60-8"></a>  <span class="fu">dashboardHeader</span>(), </span>
+<span id="cb60-9"><a href="#cb60-9"></a>  <span class="fu">dashboardSidebar</span>(), </span>
+<span id="cb60-10"><a href="#cb60-10"></a>  <span class="fu">dashboardBody</span>() </span>
+<span id="cb60-11"><a href="#cb60-11"></a>  </span>
+<span id="cb60-12"><a href="#cb60-12"></a>) </span>
+<span id="cb60-13"><a href="#cb60-13"></a></span>
+<span id="cb60-14"><a href="#cb60-14"></a><span class="co">#.............................server.............................</span></span>
+<span id="cb60-15"><a href="#cb60-15"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb60-16"><a href="#cb60-16"></a></span>
+<span id="cb60-17"><a href="#cb60-17"></a><span class="co">#......................combine ui &amp; server.......................</span></span>
+<span id="cb60-18"><a href="#cb60-18"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<img src="images/basic_dashboard.png" alt="The most basic shinydashboard UI, with the default coloring -- a dashboardHeader in light blue, a dashboardSidebar in dark blue, and a dashboardBody in off-white." width="750">
+</center>
+</div>
+</div>
+</section><section id="shinydashboard-examples" class="slide level2" data-menu-title="Examples of shinydashboards"><h2></h2>
+<div class="slide-title bottombr">
+Example shiny dashboards built by some familiar folks <svg aria-label="Face Smile" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Face Smile</title>
+<path d="M256 352C293.2 352 319.2 334.5 334.4 318.1C343.3 308.4 358.5 307.7 368.3 316.7C378 325.7 378.6 340.9 369.6 350.6C347.7 374.5 309.7 400 256 400C202.3 400 164.3 374.5 142.4 350.6C133.4 340.9 133.1 325.7 143.7 316.7C153.5 307.7 168.7 308.4 177.6 318.1C192.8 334.5 218.8 352 256 352zM208.4 208C208.4 225.7 194 240 176.4 240C158.7 240 144.4 225.7 144.4 208C144.4 190.3 158.7 176 176.4 176C194 176 208.4 190.3 208.4 208zM304.4 208C304.4 190.3 318.7 176 336.4 176C354 176 368.4 190.3 368.4 208C368.4 225.7 354 240 336.4 240C318.7 240 304.4 225.7 304.4 208zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path></svg>
+</div>
+<p class="small-text">
+<svg aria-label="School" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>School</title>
+<path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4l-139 92.7L37.6 126C15.6 130.9 0 150.3 0 172.8V464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V172.8c0-22.5-15.6-42-37.6-46.9L476.8 98.1 337.8 5.4zM256 416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H256V416zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM408 176c0 48.6-39.4 88-88 88s-88-39.4-88-88s39.4-88 88-88s88 39.4 88 88zm-88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"></path></svg><a href="https://shinyapps.bren.ucsb.edu/student-data-explorer/">Bren Student Data Explorer</a> (<a href="https://github.com/UCSB-MEDS/shiny-dashboard"><strong>source code</strong></a>), <em>by MEDS 2022 alum, <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a>, during her Bren Summer Fellowship (and continued by future MEDS students!)</em> – explore Bren school student demographics and career outcomes
+</p>
+<p class="small-text topbr">
+<svg aria-label="Person hiking" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Person hiking</title>
+<path d="M288 48c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM243.3 230.7L224.2 307l49.7 49.7c9 9 14.1 21.2 14.1 33.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V397.3l-73.9-73.9c-15.8-15.8-22.2-38.6-16.9-60.3l20.4-84c8.3-34.1 42.7-54.9 76.7-46.4c19 4.8 35.6 16.4 46.4 32.7L305.1 208H336V184c0-13.3 10.7-24 24-24s24 10.7 24 24v55.8c0 .1 0 .2 0 .2s0 .2 0 .2V488c0 13.3-10.7 24-24 24s-24-10.7-24-24V272H296.6c-16 0-31-8-39.9-21.4l-13.3-20zM81.1 471.9L117.3 334c3 4.2 6.4 8.2 10.1 11.9l41.9 41.9L142.9 488.1c-4.5 17.1-22 27.3-39.1 22.8s-27.3-22-22.8-39.1zm55.5-346L101.4 266.5c-3 12.1-14.9 19.9-27.2 17.9l-47.9-8c-14-2.3-22.9-16.3-19.2-30L31.9 155c9.5-34.8 41.1-59 77.2-59h4.2c15.6 0 27.1 14.7 23.3 29.8z"></path></svg><a href="https://samanthacsik.shinyapps.io/strava_dashboard/">Sam’s Strava Stats</a> (<a href="https://github.com/samanthacsik/strava-dashboard"><strong>source code</strong></a>), <em>by yours truly, <a href="https://samanthacsik.github.io/">Sam Csik</a></em> – a new and ongoing side project exploring my Strava hiking/biking/walking data
+</p>
+<p class="small-text topbr">
+<svg aria-label="Fish" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Fish</title>
+<path d="M180.5 141.5C219.7 108.5 272.6 80 336 80s116.3 28.5 155.5 61.5c39.1 33 66.9 72.4 81 99.8c4.7 9.2 4.7 20.1 0 29.3c-14.1 27.4-41.9 66.8-81 99.8C452.3 403.5 399.4 432 336 432s-116.3-28.5-155.5-61.5c-16.2-13.7-30.5-28.5-42.7-43.1L48.1 379.6c-12.5 7.3-28.4 5.3-38.7-4.9S-3 348.7 4.2 336.1L50 256 4.2 175.9c-7.2-12.6-5-28.4 5.3-38.6s26.1-12.2 38.7-4.9l89.7 52.3c12.2-14.6 26.5-29.4 42.7-43.1zM448 256c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z"></path></svg><a href="http://34.94.133.101/">Channel Islands National Park’s Kelp Forest Monitoring Program</a> (<a href="https://github.com/cullen-molitor/KFM_Shiny_App"><strong>source code</strong></a>), <em>by MEDS 2022 alum, <a href="https://cullen-molitor.github.io/">Cullen Molitor</a></em> – explore subtidal monitoring data collected from our closest National Park
+</p>
+<p class="small-text topbr">
+<svg aria-label="Campground" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Campground</title>
+<path d="M377 52c11-13.8 8.8-33.9-5-45s-33.9-8.8-45 5L288 60.8 249 12c-11-13.8-31.2-16-45-5s-16 31.2-5 45l48 60L12.3 405.4C4.3 415.4 0 427.7 0 440.4V464c0 26.5 21.5 48 48 48H288 528c26.5 0 48-21.5 48-48V440.4c0-12.7-4.3-25.1-12.3-35L329 112l48-60zM288 448H168.5L288 291.7 407.5 448H288z"></path></svg><a href="https://shinyapps.bren.ucsb.edu/oe_app/">The Outdoor Equity App</a> (<a href="https://github.com/outdoor-equity/outdoor-equity"><strong>source code</strong></a>), <em>developed by MEDS 2022 alumni <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a> &amp; <a href="https://cboyajian.github.io/">Clarissa Boyajian</a> as part of their MEDS capstone project</em> – analyze patterns in the access and demand of visitors at reservable overnight sites
+</p>
+<p class="small-text topbr">
+<svg aria-label="Sun" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Sun</title>
+<path d="M505.2 324.8l-47.73-68.78l47.75-68.81c7.359-10.62 8.797-24.12 3.844-36.06c-4.969-11.94-15.52-20.44-28.22-22.72l-82.39-14.88l-14.89-82.41c-2.281-12.72-10.76-23.25-22.69-28.22c-11.97-4.936-25.42-3.498-36.12 3.844L256 54.49L187.2 6.709C176.5-.6016 163.1-2.039 151.1 2.896c-11.92 4.971-20.4 15.5-22.7 28.19l-14.89 82.44L31.15 128.4C18.42 130.7 7.854 139.2 2.9 151.2C-2.051 163.1-.5996 176.6 6.775 187.2l47.73 68.78l-47.75 68.81c-7.359 10.62-8.795 24.12-3.844 36.06c4.969 11.94 15.52 20.44 28.22 22.72l82.39 14.88l14.89 82.41c2.297 12.72 10.78 23.25 22.7 28.22c11.95 4.906 25.44 3.531 36.09-3.844L256 457.5l68.83 47.78C331.3 509.7 338.8 512 346.3 512c4.906 0 9.859-.9687 14.56-2.906c11.92-4.969 20.4-15.5 22.7-28.19l14.89-82.44l82.37-14.88c12.73-2.281 23.3-10.78 28.25-22.75C514.1 348.9 512.6 335.4 505.2 324.8zM456.8 339.2l-99.61 18l-18 99.63L256 399.1L172.8 456.8l-18-99.63l-99.61-18L112.9 255.1L55.23 172.8l99.61-18l18-99.63L256 112.9l83.15-57.75l18.02 99.66l99.61 18L399.1 255.1L456.8 339.2zM256 143.1c-61.85 0-111.1 50.14-111.1 111.1c0 61.85 50.15 111.1 111.1 111.1s111.1-50.14 111.1-111.1C367.1 194.1 317.8 143.1 256 143.1zM256 319.1c-35.28 0-63.99-28.71-63.99-63.99S220.7 192 256 192s63.99 28.71 63.99 63.1S291.3 319.1 256 319.1z"></path></svg><a href="https://energysiting.github.io/energysiting-dashboard/">Energy Siting Dashboard</a> (<a href="https://github.com/energysiting/energysiting-dashboard"><strong>source code</strong></a>), <em>developed by MEDS 2022 alumni <a href="https://palomacartwright.github.io/">Paloma Cartwright</a>, <a href="https://joedecesaro.github.io/">Joe DeCesaro</a>, <a href="https://www.linkedin.com/in/daniel-kerstan-5b162321b/">Daniel Kerstan</a> &amp; <a href="https://www.linkedin.com/in/desik-somasundaram-902a8a120/">Desik Somasundaram</a> as part of their MEDS capstone project</em> – explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States
+</p>
+</section><section id="setup-dashboard-directory" class="slide level2" data-menu-title="Dashboard Setup"><h2></h2>
+<div class="slide-title-smaller">
+Setup begins the same as our previous apps
+</div>
+<p class="body-text bottombr">
+First, create a subdirectory called <code>/shinydashboard</code> and add a <code>ui.R</code>, <code>server.R</code>, and <code>global.R</code> file.
+</p>
+<p class="body-text bottombr">
+Load the following libraries at the top of your <code>global.R</code> file, to start (we’ll continue adding to this as we build out our app):
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb61-3"><a href="#cb61-3"></a><span class="fu">library</span>(shinydashboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+We’ll put the app aside for a moment now while we work on downloading and pre-processing our data, as well as practice creating our data visualization <em>outside</em> of our app.
+</p>
+</div>
 </section><section id="begin-with-data" class="slide level2" data-menu-title="Begin with Data"><h2></h2>
 <div class="slide-title">
 As always, let’s start with the data
@@ -4467,7 +4559,7 @@ Building an app doesn’t make much sense if we don’t know what we’re going 
 <p><br></p>
 <center>
 <p class="small-text bottombr">
-Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center. <a href="doi:10.18739/A2JH3D41P">doi:10.18739/A2JH3D41P</a>.
+Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center. <a href="https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P">doi:10.18739/A2JH3D41P</a>.
 </p>
 </center>
 </div><div class="column" style="width:5%;">
@@ -4516,7 +4608,7 @@ The Goal:
 
 </div><div class="column" style="width:45%;">
 <p class="body-text bottombr">
-Our goal is to create a <code>leaflet</code> map with makers denoting each of the 11 unique lakes where data were collected. When clicked, a marker should reveal the <strong>lake name</strong>, <strong>elevation</strong> (in meters, above sea level), <strong>average depth</strong> of the lake (in meters), and <strong>average lake bed temperature</strong> (in degrees Celsius). <em>To do so, we’ll need a data frame that looks like the example below:</em>
+Our goal is to create a <code>leaflet</code> map with makers placed on each of the 11 unique lakes where data were collected. When clicked, a marker should reveal the <strong>lake name</strong>, <strong>elevation</strong> (in meters, above sea level), <strong>average depth</strong> of the lake (in meters), and <strong>average lake bed temperature</strong> (in degrees Celsius). <em>To do so, we’ll need a data frame that looks like the example below:</em>
 </p>
 <p><img src="images/lakes_df.png" alt="An example of our desired final data frame, with 6 attributes (Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) and 11 rows of observations, one for each lake surveyed." width="550"></p>
 </div>
@@ -4529,36 +4621,36 @@ Process lake data &amp; save new file
 <strong>NOTE:</strong> In this example exercise, I’ve removed all rows with missing values (i.e.&nbsp;<code>NaN</code>s in the <code>Depth</code> column &amp; <code>NA</code>s in the <code>BedTemperature</code> column) before calculating averages. <em>This is NOT good practice – exploring and thinking critically about missing data is an important part of data analysis, and in a real-life scenario, you should consider the most appropriate method for handling them.</em>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
-<span id="cb60-2"><a href="#cb60-2"></a></span>
-<span id="cb60-3"><a href="#cb60-3"></a><span class="co"># load packages ----</span></span>
-<span id="cb60-4"><a href="#cb60-4"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb60-5"><a href="#cb60-5"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb60-6"><a href="#cb60-6"></a></span>
-<span id="cb60-7"><a href="#cb60-7"></a><span class="co"># read in raw data ----</span></span>
-<span id="cb60-8"><a href="#cb60-8"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"raw_data"</span>, <span class="st">"FCWO_lakemonitoringdata_2011_2022_daily.csv"</span>))</span>
-<span id="cb60-9"><a href="#cb60-9"></a></span>
-<span id="cb60-10"><a href="#cb60-10"></a><span class="co"># calculate avg depth &amp; temp ----</span></span>
-<span id="cb60-11"><a href="#cb60-11"></a>avg_depth_temp <span class="ot">&lt;-</span> lake_monitoring_data <span class="sc">|&gt;</span> </span>
-<span id="cb60-12"><a href="#cb60-12"></a>  <span class="fu">select</span>(Site, Depth, BedTemperature) <span class="sc">|&gt;</span> </span>
-<span id="cb60-13"><a href="#cb60-13"></a>  <span class="fu">filter</span>(Depth <span class="sc">!=</span> <span class="st">"NaN"</span>) <span class="sc">|&gt;</span>  <span class="co"># remove NaN (missing data) from Depth</span></span>
-<span id="cb60-14"><a href="#cb60-14"></a>  <span class="fu">drop_na</span>(BedTemperature) <span class="sc">|&gt;</span> <span class="co"># remove NAs (missing data) from BedTemperature</span></span>
-<span id="cb60-15"><a href="#cb60-15"></a>  <span class="fu">group_by</span>(Site) <span class="sc">|&gt;</span> </span>
-<span id="cb60-16"><a href="#cb60-16"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb60-17"><a href="#cb60-17"></a>    <span class="at">AvgDepth =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Depth), <span class="dv">1</span>),</span>
-<span id="cb60-18"><a href="#cb60-18"></a>    <span class="at">AvgTemp =</span> <span class="fu">round</span>(<span class="fu">mean</span>(BedTemperature), <span class="dv">1</span>)</span>
-<span id="cb60-19"><a href="#cb60-19"></a>  )</span>
-<span id="cb60-20"><a href="#cb60-20"></a></span>
-<span id="cb60-21"><a href="#cb60-21"></a><span class="co"># join avg depth &amp; temp to original data (match rows based on 'Site') ---</span></span>
-<span id="cb60-22"><a href="#cb60-22"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">full_join</span>(lake_monitoring_data, avg_depth_temp)</span>
-<span id="cb60-23"><a href="#cb60-23"></a></span>
-<span id="cb60-24"><a href="#cb60-24"></a><span class="co"># get unique lakes observations (with corresponding lat, lon, elev, avgDepth, avgTemp) for mapping ----</span></span>
-<span id="cb60-25"><a href="#cb60-25"></a>unique_lakes <span class="ot">&lt;-</span> lake_monitoring_data <span class="sc">|&gt;</span> </span>
-<span id="cb60-26"><a href="#cb60-26"></a>  <span class="fu">select</span>(Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) <span class="sc">|&gt;</span> </span>
-<span id="cb60-27"><a href="#cb60-27"></a>  <span class="fu">distinct</span>()</span>
-<span id="cb60-28"><a href="#cb60-28"></a></span>
-<span id="cb60-29"><a href="#cb60-29"></a><span class="co"># save processed data to your app's data directory ----</span></span>
-<span id="cb60-30"><a href="#cb60-30"></a><span class="fu">write_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"shinydashboard"</span>, <span class="st">"data"</span>, <span class="st">"lake_data_processed.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a></span>
+<span id="cb62-3"><a href="#cb62-3"></a><span class="co"># load packages ----</span></span>
+<span id="cb62-4"><a href="#cb62-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb62-5"><a href="#cb62-5"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb62-6"><a href="#cb62-6"></a></span>
+<span id="cb62-7"><a href="#cb62-7"></a><span class="co"># read in raw data ----</span></span>
+<span id="cb62-8"><a href="#cb62-8"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"raw_data"</span>, <span class="st">"FCWO_lakemonitoringdata_2011_2022_daily.csv"</span>))</span>
+<span id="cb62-9"><a href="#cb62-9"></a></span>
+<span id="cb62-10"><a href="#cb62-10"></a><span class="co"># calculate avg depth &amp; temp ----</span></span>
+<span id="cb62-11"><a href="#cb62-11"></a>avg_depth_temp <span class="ot">&lt;-</span> lake_monitoring_data <span class="sc">|&gt;</span> </span>
+<span id="cb62-12"><a href="#cb62-12"></a>  <span class="fu">select</span>(Site, Depth, BedTemperature) <span class="sc">|&gt;</span> </span>
+<span id="cb62-13"><a href="#cb62-13"></a>  <span class="fu">filter</span>(Depth <span class="sc">!=</span> <span class="st">"NaN"</span>) <span class="sc">|&gt;</span>  <span class="co"># remove NaN (missing data) from Depth</span></span>
+<span id="cb62-14"><a href="#cb62-14"></a>  <span class="fu">drop_na</span>(BedTemperature) <span class="sc">|&gt;</span> <span class="co"># remove NAs (missing data) from BedTemperature</span></span>
+<span id="cb62-15"><a href="#cb62-15"></a>  <span class="fu">group_by</span>(Site) <span class="sc">|&gt;</span> </span>
+<span id="cb62-16"><a href="#cb62-16"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb62-17"><a href="#cb62-17"></a>    <span class="at">AvgDepth =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Depth), <span class="dv">1</span>),</span>
+<span id="cb62-18"><a href="#cb62-18"></a>    <span class="at">AvgTemp =</span> <span class="fu">round</span>(<span class="fu">mean</span>(BedTemperature), <span class="dv">1</span>)</span>
+<span id="cb62-19"><a href="#cb62-19"></a>  )</span>
+<span id="cb62-20"><a href="#cb62-20"></a></span>
+<span id="cb62-21"><a href="#cb62-21"></a><span class="co"># join avg depth &amp; temp to original data (match rows based on 'Site') ---</span></span>
+<span id="cb62-22"><a href="#cb62-22"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">full_join</span>(lake_monitoring_data, avg_depth_temp)</span>
+<span id="cb62-23"><a href="#cb62-23"></a></span>
+<span id="cb62-24"><a href="#cb62-24"></a><span class="co"># get unique lakes observations (with corresponding lat, lon, elev, avgDepth, avgTemp) for mapping ----</span></span>
+<span id="cb62-25"><a href="#cb62-25"></a>unique_lakes <span class="ot">&lt;-</span> lake_monitoring_data <span class="sc">|&gt;</span> </span>
+<span id="cb62-26"><a href="#cb62-26"></a>  <span class="fu">select</span>(Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) <span class="sc">|&gt;</span> </span>
+<span id="cb62-27"><a href="#cb62-27"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb62-28"><a href="#cb62-28"></a></span>
+<span id="cb62-29"><a href="#cb62-29"></a><span class="co"># save processed data to your app's data directory ----</span></span>
+<span id="cb62-30"><a href="#cb62-30"></a><span class="fu">write_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"shinydashboard"</span>, <span class="st">"data"</span>, <span class="st">"lake_data_processed.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="file-types" class="slide level2" data-menu-title="File Types"><h2></h2>
 <div class="slide-title-smaller">
@@ -4583,38 +4675,38 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-6-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6968488a941608381f43" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-6968488a941608381f43">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c42c822e73cd5bdbe95c" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c42c822e73cd5bdbe95c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 <div id="tabset-6-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
-<span id="cb61-2"><a href="#cb61-2"></a></span>
-<span id="cb61-3"><a href="#cb61-3"></a><span class="co"># omitted for brevity (see slide 112 for code)</span></span>
-<span id="cb61-4"><a href="#cb61-4"></a></span>
-<span id="cb61-5"><a href="#cb61-5"></a><span class="co">#..........................PRACTICE VIZ..........................</span></span>
-<span id="cb61-6"><a href="#cb61-6"></a></span>
-<span id="cb61-7"><a href="#cb61-7"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb61-8"><a href="#cb61-8"></a>  </span>
-<span id="cb61-9"><a href="#cb61-9"></a>  <span class="co"># add tiles</span></span>
-<span id="cb61-10"><a href="#cb61-10"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldImagery"</span>, <span class="co"># make note of using appropriate tiles</span></span>
-<span id="cb61-11"><a href="#cb61-11"></a>                   <span class="at">options =</span> <span class="fu">providerTileOptions</span>(<span class="at">maxNativeZoom =</span> <span class="dv">19</span>, <span class="at">maxZoom =</span> <span class="dv">100</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb61-12"><a href="#cb61-12"></a>  </span>
-<span id="cb61-13"><a href="#cb61-13"></a>  <span class="co"># add mini map</span></span>
-<span id="cb61-14"><a href="#cb61-14"></a>  <span class="fu">addMiniMap</span>(<span class="at">toggleDisplay =</span> <span class="cn">TRUE</span>, <span class="at">minimized =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb61-15"><a href="#cb61-15"></a>  </span>
-<span id="cb61-16"><a href="#cb61-16"></a>  <span class="co"># set view over AK</span></span>
-<span id="cb61-17"><a href="#cb61-17"></a>  <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">152.048442</span>, <span class="at">lat =</span> <span class="fl">70.249234</span>, <span class="at">zoom =</span> <span class="dv">6</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb61-18"><a href="#cb61-18"></a>  </span>
-<span id="cb61-19"><a href="#cb61-19"></a>  <span class="co"># add markers</span></span>
-<span id="cb61-20"><a href="#cb61-20"></a>  <span class="fu">addMarkers</span>(<span class="at">data =</span>  unique_lakes,</span>
-<span id="cb61-21"><a href="#cb61-21"></a>             <span class="at">lng =</span> unique_lakes<span class="sc">$</span>Longitude, <span class="at">lat =</span> unique_lakes<span class="sc">$</span>Latitude,</span>
-<span id="cb61-22"><a href="#cb61-22"></a>             <span class="at">popup =</span> <span class="fu">paste</span>(<span class="st">"Site Name:"</span>, unique_lakes<span class="sc">$</span>Site, <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb61-23"><a href="#cb61-23"></a>                           <span class="st">"Elevation:"</span>, unique_lakes<span class="sc">$</span>Elevation, <span class="st">"meters (above SL)"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb61-24"><a href="#cb61-24"></a>                           <span class="st">"Avg Depth:"</span>, unique_lakes<span class="sc">$</span>AvgDepth, <span class="st">"meters"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb61-25"><a href="#cb61-25"></a>                           <span class="st">"Avg Lake Bed Temperature:"</span>, unique_lakes<span class="sc">$</span>AvgTemp, <span class="st">"deg Celsius"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a></span>
+<span id="cb63-3"><a href="#cb63-3"></a><span class="co"># omitted for brevity (see slide 112 for code)</span></span>
+<span id="cb63-4"><a href="#cb63-4"></a></span>
+<span id="cb63-5"><a href="#cb63-5"></a><span class="co">#..........................PRACTICE VIZ..........................</span></span>
+<span id="cb63-6"><a href="#cb63-6"></a></span>
+<span id="cb63-7"><a href="#cb63-7"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb63-8"><a href="#cb63-8"></a>  </span>
+<span id="cb63-9"><a href="#cb63-9"></a>  <span class="co"># add tiles</span></span>
+<span id="cb63-10"><a href="#cb63-10"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldImagery"</span>, <span class="co"># make note of using appropriate tiles</span></span>
+<span id="cb63-11"><a href="#cb63-11"></a>                   <span class="at">options =</span> <span class="fu">providerTileOptions</span>(<span class="at">maxNativeZoom =</span> <span class="dv">19</span>, <span class="at">maxZoom =</span> <span class="dv">100</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb63-12"><a href="#cb63-12"></a>  </span>
+<span id="cb63-13"><a href="#cb63-13"></a>  <span class="co"># add mini map</span></span>
+<span id="cb63-14"><a href="#cb63-14"></a>  <span class="fu">addMiniMap</span>(<span class="at">toggleDisplay =</span> <span class="cn">TRUE</span>, <span class="at">minimized =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb63-15"><a href="#cb63-15"></a>  </span>
+<span id="cb63-16"><a href="#cb63-16"></a>  <span class="co"># set view over AK</span></span>
+<span id="cb63-17"><a href="#cb63-17"></a>  <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">152.048442</span>, <span class="at">lat =</span> <span class="fl">70.249234</span>, <span class="at">zoom =</span> <span class="dv">6</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb63-18"><a href="#cb63-18"></a>  </span>
+<span id="cb63-19"><a href="#cb63-19"></a>  <span class="co"># add markers</span></span>
+<span id="cb63-20"><a href="#cb63-20"></a>  <span class="fu">addMarkers</span>(<span class="at">data =</span>  unique_lakes,</span>
+<span id="cb63-21"><a href="#cb63-21"></a>             <span class="at">lng =</span> unique_lakes<span class="sc">$</span>Longitude, <span class="at">lat =</span> unique_lakes<span class="sc">$</span>Latitude,</span>
+<span id="cb63-22"><a href="#cb63-22"></a>             <span class="at">popup =</span> <span class="fu">paste</span>(<span class="st">"Site Name:"</span>, unique_lakes<span class="sc">$</span>Site, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb63-23"><a href="#cb63-23"></a>                           <span class="st">"Elevation:"</span>, unique_lakes<span class="sc">$</span>Elevation, <span class="st">"meters (above SL)"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb63-24"><a href="#cb63-24"></a>                           <span class="st">"Avg Depth:"</span>, unique_lakes<span class="sc">$</span>AvgDepth, <span class="st">"meters"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb63-25"><a href="#cb63-25"></a>                           <span class="st">"Avg Lake Bed Temperature:"</span>, unique_lakes<span class="sc">$</span>AvgTemp, <span class="st">"deg Celsius"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4635,111 +4727,140 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-04e04a23f8bb2c6fcc1c" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-04e04a23f8bb2c6fcc1c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e9862771438efff28c4b" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e9862771438efff28c4b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 <div id="tabset-7-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62" data-code-line-numbers="5-10|26-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
-<span id="cb62-2"><a href="#cb62-2"></a></span>
-<span id="cb62-3"><a href="#cb62-3"></a><span class="co"># omitted for brevity (see slide 112 for code)</span></span>
-<span id="cb62-4"><a href="#cb62-4"></a></span>
-<span id="cb62-5"><a href="#cb62-5"></a><span class="co">#.......................PRACTICE FILTERING.......................</span></span>
-<span id="cb62-6"><a href="#cb62-6"></a></span>
-<span id="cb62-7"><a href="#cb62-7"></a>filtered_lakes <span class="ot">&lt;-</span> unique_lakes <span class="sc">|&gt;</span> </span>
-<span id="cb62-8"><a href="#cb62-8"></a>  <span class="fu">filter</span>(Elevation <span class="sc">&gt;=</span> <span class="dv">8</span> <span class="sc">&amp;</span> Elevation <span class="sc">&lt;=</span> <span class="dv">20</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-9"><a href="#cb62-9"></a>  <span class="fu">filter</span>(AvgDepth <span class="sc">&gt;=</span> <span class="dv">2</span> <span class="sc">&amp;</span> AvgDepth <span class="sc">&lt;=</span> <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-10"><a href="#cb62-10"></a>  <span class="fu">filter</span>(AvgTemp <span class="sc">&gt;=</span> <span class="dv">4</span> <span class="sc">&amp;</span> AvgTemp <span class="sc">&lt;=</span> <span class="dv">6</span>)</span>
-<span id="cb62-11"><a href="#cb62-11"></a></span>
-<span id="cb62-12"><a href="#cb62-12"></a><span class="co">#..........................PRACTICE VIZ..........................</span></span>
-<span id="cb62-13"><a href="#cb62-13"></a></span>
-<span id="cb62-14"><a href="#cb62-14"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb62-15"><a href="#cb62-15"></a>  </span>
-<span id="cb62-16"><a href="#cb62-16"></a>  <span class="co"># add tiles</span></span>
-<span id="cb62-17"><a href="#cb62-17"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldImagery"</span>, <span class="co"># make note of using appropriate tiles</span></span>
-<span id="cb62-18"><a href="#cb62-18"></a>                   <span class="at">options =</span> <span class="fu">providerTileOptions</span>(<span class="at">maxNativeZoom =</span> <span class="dv">19</span>, <span class="at">maxZoom =</span> <span class="dv">100</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb62-19"><a href="#cb62-19"></a>  </span>
-<span id="cb62-20"><a href="#cb62-20"></a>  <span class="co"># add mini map</span></span>
-<span id="cb62-21"><a href="#cb62-21"></a>  <span class="fu">addMiniMap</span>(<span class="at">toggleDisplay =</span> <span class="cn">TRUE</span>, <span class="at">minimized =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-22"><a href="#cb62-22"></a>  </span>
-<span id="cb62-23"><a href="#cb62-23"></a>  <span class="co"># set view over AK</span></span>
-<span id="cb62-24"><a href="#cb62-24"></a>  <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">152.048442</span>, <span class="at">lat =</span> <span class="fl">70.249234</span>, <span class="at">zoom =</span> <span class="dv">6</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-25"><a href="#cb62-25"></a>  </span>
-<span id="cb62-26"><a href="#cb62-26"></a>  <span class="co"># add markers</span></span>
-<span id="cb62-27"><a href="#cb62-27"></a>  <span class="fu">addMarkers</span>(<span class="at">data =</span>  filtered_lakes,</span>
-<span id="cb62-28"><a href="#cb62-28"></a>             <span class="at">lng =</span> filtered_lakes<span class="sc">$</span>Longitude, <span class="at">lat =</span> filtered_lakes<span class="sc">$</span>Latitude,</span>
-<span id="cb62-29"><a href="#cb62-29"></a>             <span class="at">popup =</span> <span class="fu">paste</span>(<span class="st">"Site Name:"</span>, filtered_lakes<span class="sc">$</span>Site, <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb62-30"><a href="#cb62-30"></a>                           <span class="st">"Elevation:"</span>, filtered_lakes<span class="sc">$</span>Elevation, <span class="st">"meters (above SL)"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb62-31"><a href="#cb62-31"></a>                           <span class="st">"Avg Depth:"</span>, filtered_lakes<span class="sc">$</span>AvgDepth, <span class="st">"meters"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb62-32"><a href="#cb62-32"></a>                           <span class="st">"Avg Lake Bed Temperature:"</span>, filtered_lakes<span class="sc">$</span>AvgTemp, <span class="st">"deg Celsius"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64" data-code-line-numbers="5-10|26-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
+<span id="cb64-2"><a href="#cb64-2"></a></span>
+<span id="cb64-3"><a href="#cb64-3"></a><span class="co"># omitted for brevity (see slide 112 for code)</span></span>
+<span id="cb64-4"><a href="#cb64-4"></a></span>
+<span id="cb64-5"><a href="#cb64-5"></a><span class="co">#.......................PRACTICE FILTERING.......................</span></span>
+<span id="cb64-6"><a href="#cb64-6"></a></span>
+<span id="cb64-7"><a href="#cb64-7"></a>filtered_lakes <span class="ot">&lt;-</span> unique_lakes <span class="sc">|&gt;</span> </span>
+<span id="cb64-8"><a href="#cb64-8"></a>  <span class="fu">filter</span>(Elevation <span class="sc">&gt;=</span> <span class="dv">8</span> <span class="sc">&amp;</span> Elevation <span class="sc">&lt;=</span> <span class="dv">20</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb64-9"><a href="#cb64-9"></a>  <span class="fu">filter</span>(AvgDepth <span class="sc">&gt;=</span> <span class="dv">2</span> <span class="sc">&amp;</span> AvgDepth <span class="sc">&lt;=</span> <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb64-10"><a href="#cb64-10"></a>  <span class="fu">filter</span>(AvgTemp <span class="sc">&gt;=</span> <span class="dv">4</span> <span class="sc">&amp;</span> AvgTemp <span class="sc">&lt;=</span> <span class="dv">6</span>)</span>
+<span id="cb64-11"><a href="#cb64-11"></a></span>
+<span id="cb64-12"><a href="#cb64-12"></a><span class="co">#..........................PRACTICE VIZ..........................</span></span>
+<span id="cb64-13"><a href="#cb64-13"></a></span>
+<span id="cb64-14"><a href="#cb64-14"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb64-15"><a href="#cb64-15"></a>  </span>
+<span id="cb64-16"><a href="#cb64-16"></a>  <span class="co"># add tiles</span></span>
+<span id="cb64-17"><a href="#cb64-17"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldImagery"</span>, <span class="co"># make note of using appropriate tiles</span></span>
+<span id="cb64-18"><a href="#cb64-18"></a>                   <span class="at">options =</span> <span class="fu">providerTileOptions</span>(<span class="at">maxNativeZoom =</span> <span class="dv">19</span>, <span class="at">maxZoom =</span> <span class="dv">100</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb64-19"><a href="#cb64-19"></a>  </span>
+<span id="cb64-20"><a href="#cb64-20"></a>  <span class="co"># add mini map</span></span>
+<span id="cb64-21"><a href="#cb64-21"></a>  <span class="fu">addMiniMap</span>(<span class="at">toggleDisplay =</span> <span class="cn">TRUE</span>, <span class="at">minimized =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb64-22"><a href="#cb64-22"></a>  </span>
+<span id="cb64-23"><a href="#cb64-23"></a>  <span class="co"># set view over AK</span></span>
+<span id="cb64-24"><a href="#cb64-24"></a>  <span class="fu">setView</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">152.048442</span>, <span class="at">lat =</span> <span class="fl">70.249234</span>, <span class="at">zoom =</span> <span class="dv">6</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb64-25"><a href="#cb64-25"></a>  </span>
+<span id="cb64-26"><a href="#cb64-26"></a>  <span class="co"># add markers</span></span>
+<span id="cb64-27"><a href="#cb64-27"></a>  <span class="fu">addMarkers</span>(<span class="at">data =</span>  filtered_lakes,</span>
+<span id="cb64-28"><a href="#cb64-28"></a>             <span class="at">lng =</span> filtered_lakes<span class="sc">$</span>Longitude, <span class="at">lat =</span> filtered_lakes<span class="sc">$</span>Latitude,</span>
+<span id="cb64-29"><a href="#cb64-29"></a>             <span class="at">popup =</span> <span class="fu">paste</span>(<span class="st">"Site Name:"</span>, filtered_lakes<span class="sc">$</span>Site, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb64-30"><a href="#cb64-30"></a>                           <span class="st">"Elevation:"</span>, filtered_lakes<span class="sc">$</span>Elevation, <span class="st">"meters (above SL)"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb64-31"><a href="#cb64-31"></a>                           <span class="st">"Avg Depth:"</span>, filtered_lakes<span class="sc">$</span>AvgDepth, <span class="st">"meters"</span>, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb64-32"><a href="#cb64-32"></a>                           <span class="st">"Avg Lake Bed Temperature:"</span>, filtered_lakes<span class="sc">$</span>AvgTemp, <span class="st">"deg Celsius"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-</section><section id="dashboardPage" class="slide level2" data-menu-title="dashboardPage()"><h2></h2>
+</section><section id="build-dashboard-ui" class="slide level2" data-menu-title="Build Dashboard UI"><h2></h2>
 <div class="slide-title-smaller">
-The most basic shinydashboard is made up of a header, a sidebar, and a body
+Designing our dashboard UI
 </div>
 <p class="small-text">
-The main difference between a <strong>shiny app</strong> and a <strong>shinydashboard</strong> are the UI elements. Rather than a <code>fluidPage()</code> (as used in our previous shiny apps), we’ll create a <code>dashboardPage()</code>, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a> page (you can run this code in an <code>app.R</code> file, if you wish).
+Now that we have a better sense of what our app will include, let’s start building out our UI.
 </p>
-<div class="columns">
-<div class="column" style="width:45%;">
+<p class="small-text">
+To start, let’s add our server function to <code>server.R</code> and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on <a href="">slide 110</a>, but alternatively, you can split the UI into separate pieces, then combine them into a <code>dashboardPage</code> the end of <code>ui.R</code> – this can help with organization as you app grows in complexity.
+</p>
+<p class="small-text">
+Run your app to make sure it works – you should see a super basic dashboard. If it doesn’t look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).
+</p>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-8-1"><code>ui.R</code></a></li>
+<li><a href="#tabset-8-2"><code>server.R</code></a></li>
+<li><a href="#tabset-8-3"><code>global.R</code></a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-8-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="co">#..............................setup.............................</span></span>
-<span id="cb63-2"><a href="#cb63-2"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb63-3"><a href="#cb63-3"></a><span class="fu">library</span>(shinydashboard)</span>
-<span id="cb63-4"><a href="#cb63-4"></a></span>
-<span id="cb63-5"><a href="#cb63-5"></a><span class="co">#...............................ui...............................</span></span>
-<span id="cb63-6"><a href="#cb63-6"></a>ui <span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(</span>
-<span id="cb63-7"><a href="#cb63-7"></a>  </span>
-<span id="cb63-8"><a href="#cb63-8"></a>  <span class="fu">dashboardHeader</span>(), </span>
-<span id="cb63-9"><a href="#cb63-9"></a>  <span class="fu">dashboardSidebar</span>(), </span>
-<span id="cb63-10"><a href="#cb63-10"></a>  <span class="fu">dashboardBody</span>() </span>
-<span id="cb63-11"><a href="#cb63-11"></a>  </span>
-<span id="cb63-12"><a href="#cb63-12"></a>) </span>
-<span id="cb63-13"><a href="#cb63-13"></a></span>
-<span id="cb63-14"><a href="#cb63-14"></a><span class="co">#.............................server.............................</span></span>
-<span id="cb63-15"><a href="#cb63-15"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
-<span id="cb63-16"><a href="#cb63-16"></a></span>
-<span id="cb63-17"><a href="#cb63-17"></a><span class="co">#......................combine ui &amp; server.......................</span></span>
-<span id="cb63-18"><a href="#cb63-18"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-<center>
-<img src="images/basic_dashboard.png" alt="The most basic shinydashboard UI, with the default coloring -- a dashboardHeader in light blue, a dashboardSidebar in dark blue, and a dashboardBody in off-white." width="750">
-</center>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
+<span id="cb65-2"><a href="#cb65-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>()</span>
+<span id="cb65-3"><a href="#cb65-3"></a></span>
+<span id="cb65-4"><a href="#cb65-4"></a><span class="co">#........................dashboardSidebar........................</span></span>
+<span id="cb65-5"><a href="#cb65-5"></a>sidebar <span class="ot">&lt;-</span> <span class="fu">dashboardSidebar</span>()</span>
+<span id="cb65-6"><a href="#cb65-6"></a></span>
+<span id="cb65-7"><a href="#cb65-7"></a><span class="co">#..........................dashboardBody.........................</span></span>
+<span id="cb65-8"><a href="#cb65-8"></a>body <span class="ot">&lt;-</span> <span class="fu">dashboardBody</span>()</span>
+<span id="cb65-9"><a href="#cb65-9"></a></span>
+<span id="cb65-10"><a href="#cb65-10"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
+<span id="cb65-11"><a href="#cb65-11"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="shinydashboard-examples" class="slide level2" data-menu-title="Examples of shinydashboards"><h2></h2>
-<div class="slide-title bottombr">
-Example shiny dashboards built by some familiar folks <svg aria-label="Face Smile" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Face Smile</title>
-<path d="M256 352C293.2 352 319.2 334.5 334.4 318.1C343.3 308.4 358.5 307.7 368.3 316.7C378 325.7 378.6 340.9 369.6 350.6C347.7 374.5 309.7 400 256 400C202.3 400 164.3 374.5 142.4 350.6C133.4 340.9 133.1 325.7 143.7 316.7C153.5 307.7 168.7 308.4 177.6 318.1C192.8 334.5 218.8 352 256 352zM208.4 208C208.4 225.7 194 240 176.4 240C158.7 240 144.4 225.7 144.4 208C144.4 190.3 158.7 176 176.4 176C194 176 208.4 190.3 208.4 208zM304.4 208C304.4 190.3 318.7 176 336.4 176C354 176 368.4 190.3 368.4 208C368.4 225.7 354 240 336.4 240C318.7 240 304.4 225.7 304.4 208zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path></svg>
+<div id="tabset-8-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-8-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb67-3"><a href="#cb67-3"></a><span class="fu">library</span>(shinydashboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="title-menuItems" class="slide level2" data-menu-title="Title &amp; menuItems"><h2></h2>
+<div class="slide-title-smaller">
+Add a title &amp; menuItems
 </div>
 <p class="small-text">
-<svg aria-label="School" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>School</title>
-<path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4l-139 92.7L37.6 126C15.6 130.9 0 150.3 0 172.8V464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V172.8c0-22.5-15.6-42-37.6-46.9L476.8 98.1 337.8 5.4zM256 416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H256V416zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM408 176c0 48.6-39.4 88-88 88s-88-39.4-88-88s39.4-88 88-88s88 39.4 88 88zm-88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"></path></svg><a href="https://shinyapps.bren.ucsb.edu/student-data-explorer/">Bren Student Data Explorer</a> (<a href="https://github.com/UCSB-MEDS/shiny-dashboard"><strong>source code</strong></a>), <em>by MEDS 2022 alum, <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a>, during her Bren Summer Fellowship (and continued by future MEDS students!)</em> – explore Bren school student demographics and career outcomes
+Add a title to <code>dashboardHeader()</code> and make more space using <code>titleWidth</code>, if necessary.
 </p>
-<p class="small-text topbr">
-<svg aria-label="Person hiking" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Person hiking</title>
-<path d="M288 48c0 26.5-21.5 48-48 48s-48-21.5-48-48s21.5-48 48-48s48 21.5 48 48zM243.3 230.7L224.2 307l49.7 49.7c9 9 14.1 21.2 14.1 33.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V397.3l-73.9-73.9c-15.8-15.8-22.2-38.6-16.9-60.3l20.4-84c8.3-34.1 42.7-54.9 76.7-46.4c19 4.8 35.6 16.4 46.4 32.7L305.1 208H336V184c0-13.3 10.7-24 24-24s24 10.7 24 24v55.8c0 .1 0 .2 0 .2s0 .2 0 .2V488c0 13.3-10.7 24-24 24s-24-10.7-24-24V272H296.6c-16 0-31-8-39.9-21.4l-13.3-20zM81.1 471.9L117.3 334c3 4.2 6.4 8.2 10.1 11.9l41.9 41.9L142.9 488.1c-4.5 17.1-22 27.3-39.1 22.8s-27.3-22-22.8-39.1zm55.5-346L101.4 266.5c-3 12.1-14.9 19.9-27.2 17.9l-47.9-8c-14-2.3-22.9-16.3-19.2-30L31.9 155c9.5-34.8 41.1-59 77.2-59h4.2c15.6 0 27.1 14.7 23.3 29.8z"></path></svg><a href="https://samanthacsik.shinyapps.io/strava_dashboard/">Sam’s Strava Stats</a> (<a href="https://github.com/samanthacsik/strava-dashboard"><strong>source code</strong></a>), <em>by yours truly, <a href="https://samanthacsik.github.io/">Sam Csik</a></em> – a new and ongoing side project exploring my Strava hiking/biking/walking data
+<p class="small-text">
+Next, we’ll create a <code>sidebarMenu()</code> that contains two <code>menuItem</code>s. <code>sidebarMenu()</code> can also contain shiny inputs (read more <a href="https://rstudio.github.io/shinydashboard/structure.html#sidebar">here</a>), though we’ll be using ours just for navigation purposes. Be sure to provide each <code>menuItem()</code> with <code>text</code> as you’d like it to appear in your app, and a <code>tabName</code> which will be used to place <code>dashboardBody()</code> content in the appropriate <code>menuItem()</code>. Optionally, you can provide an icon. By default, <code>icon()</code> uses icons from <a href="https://fontawesome.com/">FontAwesome</a>.
 </p>
-<p class="small-text topbr">
-<svg aria-label="Fish" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Fish</title>
-<path d="M180.5 141.5C219.7 108.5 272.6 80 336 80s116.3 28.5 155.5 61.5c39.1 33 66.9 72.4 81 99.8c4.7 9.2 4.7 20.1 0 29.3c-14.1 27.4-41.9 66.8-81 99.8C452.3 403.5 399.4 432 336 432s-116.3-28.5-155.5-61.5c-16.2-13.7-30.5-28.5-42.7-43.1L48.1 379.6c-12.5 7.3-28.4 5.3-38.7-4.9S-3 348.7 4.2 336.1L50 256 4.2 175.9c-7.2-12.6-5-28.4 5.3-38.6s26.1-12.2 38.7-4.9l89.7 52.3c12.2-14.6 26.5-29.4 42.7-43.1zM448 256c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z"></path></svg><a href="http://34.94.133.101/">Channel Islands National Park’s Kelp Forest Monitoring Program</a> (<a href="https://github.com/cullen-molitor/KFM_Shiny_App"><strong>source code</strong></a>), <em>by MEDS 2022 alum, <a href="https://cullen-molitor.github.io/">Cullen Molitor</a></em> – explore subtidal monitoring data collected from our closest National Park
-</p>
-<p class="small-text topbr">
-<svg aria-label="Campground" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Campground</title>
-<path d="M377 52c11-13.8 8.8-33.9-5-45s-33.9-8.8-45 5L288 60.8 249 12c-11-13.8-31.2-16-45-5s-16 31.2-5 45l48 60L12.3 405.4C4.3 415.4 0 427.7 0 440.4V464c0 26.5 21.5 48 48 48H288 528c26.5 0 48-21.5 48-48V440.4c0-12.7-4.3-25.1-12.3-35L329 112l48-60zM288 448H168.5L288 291.7 407.5 448H288z"></path></svg><a href="https://shinyapps.bren.ucsb.edu/oe_app/">The Outdoor Equity App</a> (<a href="https://github.com/outdoor-equity/outdoor-equity"><strong>source code</strong></a>), <em>developed by MEDS 2022 alumni <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a> &amp; <a href="https://cboyajian.github.io/">Clarissa Boyajian</a> as part of their MEDS capstone project</em> – analyze patterns in the access and demand of visitors at reservable overnight sites
-</p>
-<p class="small-text topbr">
-<svg aria-label="Sun" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Sun</title>
-<path d="M505.2 324.8l-47.73-68.78l47.75-68.81c7.359-10.62 8.797-24.12 3.844-36.06c-4.969-11.94-15.52-20.44-28.22-22.72l-82.39-14.88l-14.89-82.41c-2.281-12.72-10.76-23.25-22.69-28.22c-11.97-4.936-25.42-3.498-36.12 3.844L256 54.49L187.2 6.709C176.5-.6016 163.1-2.039 151.1 2.896c-11.92 4.971-20.4 15.5-22.7 28.19l-14.89 82.44L31.15 128.4C18.42 130.7 7.854 139.2 2.9 151.2C-2.051 163.1-.5996 176.6 6.775 187.2l47.73 68.78l-47.75 68.81c-7.359 10.62-8.795 24.12-3.844 36.06c4.969 11.94 15.52 20.44 28.22 22.72l82.39 14.88l14.89 82.41c2.297 12.72 10.78 23.25 22.7 28.22c11.95 4.906 25.44 3.531 36.09-3.844L256 457.5l68.83 47.78C331.3 509.7 338.8 512 346.3 512c4.906 0 9.859-.9687 14.56-2.906c11.92-4.969 20.4-15.5 22.7-28.19l14.89-82.44l82.37-14.88c12.73-2.281 23.3-10.78 28.25-22.75C514.1 348.9 512.6 335.4 505.2 324.8zM456.8 339.2l-99.61 18l-18 99.63L256 399.1L172.8 456.8l-18-99.63l-99.61-18L112.9 255.1L55.23 172.8l99.61-18l18-99.63L256 112.9l83.15-57.75l18.02 99.66l99.61 18L399.1 255.1L456.8 339.2zM256 143.1c-61.85 0-111.1 50.14-111.1 111.1c0 61.85 50.15 111.1 111.1 111.1s111.1-50.14 111.1-111.1C367.1 194.1 317.8 143.1 256 143.1zM256 319.1c-35.28 0-63.99-28.71-63.99-63.99S220.7 192 256 192s63.99 28.71 63.99 63.1S291.3 319.1 256 319.1z"></path></svg><a href="https://energysiting.github.io/energysiting-dashboard/">Energy Siting Dashboard</a> (<a href="https://github.com/energysiting/energysiting-dashboard"><strong>source code</strong></a>), <em>developed by MEDS 2022 alumni <a href="https://palomacartwright.github.io/">Paloma Cartwright</a>, <a href="https://joedecesaro.github.io/">Joe DeCesaro</a>, <a href="https://www.linkedin.com/in/daniel-kerstan-5b162321b/">Daniel Kerstan</a> &amp; <a href="https://www.linkedin.com/in/desik-somasundaram-902a8a120/">Desik Somasundaram</a> as part of their MEDS capstone project</em> – explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States
-</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
+<span id="cb68-2"><a href="#cb68-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
+<span id="cb68-3"><a href="#cb68-3"></a>  </span>
+<span id="cb68-4"><a href="#cb68-4"></a>  <span class="co"># add title ----</span></span>
+<span id="cb68-5"><a href="#cb68-5"></a>  <span class="at">title =</span> <span class="st">"AK Lake Monitoring"</span>,</span>
+<span id="cb68-6"><a href="#cb68-6"></a>  <span class="at">titleWidth =</span> <span class="dv">400</span></span>
+<span id="cb68-7"><a href="#cb68-7"></a>  </span>
+<span id="cb68-8"><a href="#cb68-8"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> dashboardHeader</span></span>
+<span id="cb68-9"><a href="#cb68-9"></a></span>
+<span id="cb68-10"><a href="#cb68-10"></a><span class="co">#........................dashboardSidebar........................</span></span>
+<span id="cb68-11"><a href="#cb68-11"></a>sidebar <span class="ot">&lt;-</span> <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb68-12"><a href="#cb68-12"></a>  </span>
+<span id="cb68-13"><a href="#cb68-13"></a>  <span class="co"># sidebarMenu ----</span></span>
+<span id="cb68-14"><a href="#cb68-14"></a>  <span class="fu">sidebarMenu</span>(</span>
+<span id="cb68-15"><a href="#cb68-15"></a>    </span>
+<span id="cb68-16"><a href="#cb68-16"></a>    <span class="fu">menuItem</span>(<span class="st">"Welcome"</span>, <span class="at">tabName =</span> <span class="st">"welcome"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"star"</span>)),</span>
+<span id="cb68-17"><a href="#cb68-17"></a>    <span class="fu">menuItem</span>(<span class="st">"Dashboard"</span>, <span class="at">tabName =</span> <span class="st">"dashboard"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"gauge"</span>))</span>
+<span id="cb68-18"><a href="#cb68-18"></a>    </span>
+<span id="cb68-19"><a href="#cb68-19"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> sidebarMenu</span></span>
+<span id="cb68-20"><a href="#cb68-20"></a>  </span>
+<span id="cb68-21"><a href="#cb68-21"></a>)</span>
+<span id="cb68-22"><a href="#cb68-22"></a></span>
+<span id="cb68-23"><a href="#cb68-23"></a><span class="co">#..........................dashboardBody.........................</span></span>
+<span id="cb68-24"><a href="#cb68-24"></a>body <span class="ot">&lt;-</span> <span class="fu">dashboardBody</span>()</span>
+<span id="cb68-25"><a href="#cb68-25"></a></span>
+<span id="cb68-26"><a href="#cb68-26"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
+<span id="cb68-27"><a href="#cb68-27"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Add <code>title</code> to <code>dashboardHeader()</code></p>
+<p>Add <code>sidebarMenu</code> to <code>dashboardbody()</code> – sidebarMenu behaves similarly to tabs in shiny app <code>tabPanel</code> but it’s also more flexible and can contain shiny inputs</p>
+<p>Add <code>menuItem</code>s to <code>sidebarMenu</code></p>
 </section><section id="accessibility" class="slide level2" data-menu-title="Accessibility" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
@@ -4878,29 +4999,29 @@ Use HTML elements appropriately
 <div class="columms">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co"># load packages ----</span></span>
-<span id="cb64-2"><a href="#cb64-2"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb64-3"><a href="#cb64-3"></a></span>
-<span id="cb64-4"><a href="#cb64-4"></a><span class="co"># user interface ----</span></span>
-<span id="cb64-5"><a href="#cb64-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb64-6"><a href="#cb64-6"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"This is my app's title"</span>),</span>
-<span id="cb64-7"><a href="#cb64-7"></a>  </span>
-<span id="cb64-8"><a href="#cb64-8"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 1"</span>),</span>
-<span id="cb64-9"><a href="#cb64-9"></a>  </span>
-<span id="cb64-10"><a href="#cb64-10"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section a"</span>),</span>
-<span id="cb64-11"><a href="#cb64-11"></a>  </span>
-<span id="cb64-12"><a href="#cb64-12"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section b"</span>),</span>
-<span id="cb64-13"><a href="#cb64-13"></a>  </span>
-<span id="cb64-14"><a href="#cb64-14"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section c"</span>),</span>
-<span id="cb64-15"><a href="#cb64-15"></a>  </span>
-<span id="cb64-16"><a href="#cb64-16"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 2"</span>),</span>
-<span id="cb64-17"><a href="#cb64-17"></a>)</span>
-<span id="cb64-18"><a href="#cb64-18"></a></span>
-<span id="cb64-19"><a href="#cb64-19"></a><span class="co"># server instructions ----</span></span>
-<span id="cb64-20"><a href="#cb64-20"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
-<span id="cb64-21"><a href="#cb64-21"></a></span>
-<span id="cb64-22"><a href="#cb64-22"></a><span class="co"># combine UI &amp; server into an app ----</span></span>
-<span id="cb64-23"><a href="#cb64-23"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># load packages ----</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb69-3"><a href="#cb69-3"></a></span>
+<span id="cb69-4"><a href="#cb69-4"></a><span class="co"># user interface ----</span></span>
+<span id="cb69-5"><a href="#cb69-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb69-6"><a href="#cb69-6"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"This is my app's title"</span>),</span>
+<span id="cb69-7"><a href="#cb69-7"></a>  </span>
+<span id="cb69-8"><a href="#cb69-8"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 1"</span>),</span>
+<span id="cb69-9"><a href="#cb69-9"></a>  </span>
+<span id="cb69-10"><a href="#cb69-10"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section a"</span>),</span>
+<span id="cb69-11"><a href="#cb69-11"></a>  </span>
+<span id="cb69-12"><a href="#cb69-12"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section b"</span>),</span>
+<span id="cb69-13"><a href="#cb69-13"></a>  </span>
+<span id="cb69-14"><a href="#cb69-14"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section c"</span>),</span>
+<span id="cb69-15"><a href="#cb69-15"></a>  </span>
+<span id="cb69-16"><a href="#cb69-16"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 2"</span>),</span>
+<span id="cb69-17"><a href="#cb69-17"></a>)</span>
+<span id="cb69-18"><a href="#cb69-18"></a></span>
+<span id="cb69-19"><a href="#cb69-19"></a><span class="co"># server instructions ----</span></span>
+<span id="cb69-20"><a href="#cb69-20"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb69-21"><a href="#cb69-21"></a></span>
+<span id="cb69-22"><a href="#cb69-22"></a><span class="co"># combine UI &amp; server into an app ----</span></span>
+<span id="cb69-23"><a href="#cb69-23"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -4927,15 +5048,15 @@ All images and graphical elements should include <strong>alternative (alt) text<
 Include the <code>alt</code> argument (similar to adding the <code>alt</code> attribute to an HTML element) when using <a href="https://shiny.rstudio.com/reference/shiny/1.7.1/renderplot"><code>renderPlot()</code></a> to add alt text to your reactive plots – the <code>alt</code> argument lives <em>outside</em> of the <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> but inside the <code>()</code>. For example:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># in your server</span></span>
-<span id="cb65-2"><a href="#cb65-2"></a><span class="fu">renderPlot</span>({</span>
-<span id="cb65-3"><a href="#cb65-3"></a></span>
-<span id="cb65-4"><a href="#cb65-4"></a>    <span class="fu">ggplot</span>(<span class="fu">data</span>(), <span class="fu">aes</span>(<span class="at">x =</span> var1, <span class="at">y =</span> var2)) <span class="sc">+</span> </span>
-<span id="cb65-5"><a href="#cb65-5"></a>      <span class="fu">geom_point</span>() </span>
-<span id="cb65-6"><a href="#cb65-6"></a>    </span>
-<span id="cb65-7"><a href="#cb65-7"></a>  }, <span class="at">alt =</span> <span class="st">"Alt text description"</span></span>
-<span id="cb65-8"><a href="#cb65-8"></a>  </span>
-<span id="cb65-9"><a href="#cb65-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># in your server</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">renderPlot</span>({</span>
+<span id="cb70-3"><a href="#cb70-3"></a></span>
+<span id="cb70-4"><a href="#cb70-4"></a>    <span class="fu">ggplot</span>(<span class="fu">data</span>(), <span class="fu">aes</span>(<span class="at">x =</span> var1, <span class="at">y =</span> var2)) <span class="sc">+</span> </span>
+<span id="cb70-5"><a href="#cb70-5"></a>      <span class="fu">geom_point</span>() </span>
+<span id="cb70-6"><a href="#cb70-6"></a>    </span>
+<span id="cb70-7"><a href="#cb70-7"></a>  }, <span class="at">alt =</span> <span class="st">"Alt text description"</span></span>
+<span id="cb70-8"><a href="#cb70-8"></a>  </span>
+<span id="cb70-9"><a href="#cb70-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -4943,10 +5064,10 @@ Include the <code>alt</code> argument (similar to adding the <code>alt</code> at
 Similarly, use the <code>alt</code> argument within <code>tags$img</code> when adding static images to your app. For example:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># in your UI</span></span>
-<span id="cb66-2"><a href="#cb66-2"></a>tags<span class="sc">$</span><span class="fu">img</span>(<span class="at">src =</span> <span class="st">"file/path/to/img"</span>,</span>
-<span id="cb66-3"><a href="#cb66-3"></a>         <span class="at">width =</span> <span class="st">"100px"</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
-<span id="cb66-4"><a href="#cb66-4"></a>         <span class="at">alt =</span> <span class="st">"Alt text for image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># in your UI</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a>tags<span class="sc">$</span><span class="fu">img</span>(<span class="at">src =</span> <span class="st">"file/path/to/img"</span>,</span>
+<span id="cb71-3"><a href="#cb71-3"></a>         <span class="at">width =</span> <span class="st">"100px"</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
+<span id="cb71-4"><a href="#cb71-4"></a>         <span class="at">alt =</span> <span class="st">"Alt text for image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p class="small-text topbr">
 For some great tips on how and when to use alt text, check out this article by the <a href="https://www.a11yproject.com/posts/alt-text/">A11Y Project</a>. For examples of how to construct good alt text, take a peek at this resource by <a href="https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization">Datawrapper</a>.
