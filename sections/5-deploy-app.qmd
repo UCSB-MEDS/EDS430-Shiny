@@ -27,7 +27,7 @@ format: revealjs
 
 <p class="small-text">Once your account has been authorized, run `rsconnect::deployApp("<app_directory_name>")` in your console to deploy your app to shinyapps.io. Here, we'll run `rsconnect::deployApp("two-file-app")` to deploy the app we've been working on.</p>
 
-<p class="small-text">Once deployed, a browser will open to your application. The URL will take the form: **https://username.shinyapps.io/your_app_directory_name**. You should also now see an `/rsconnect` folder within your app's director -- this is generated when an application bundle is successfully deployed and contains a DCF file with information on the deployed content (i.e. the name, title, server address, account, URL, and time). **This `/rsconnect` folder should be added and committed into version control (i.e. push it to GitHub!)** so that future re-deployments target the same endpoint (i.e. your app's URL).</p>
+<p class="small-text">Once deployed, a browser will open to your application. The URL will take the form: **https://username.shinyapps.io/your_app_directory_name**. You should also now see an `/rsconnect` folder within your app's directory -- this is generated when an application bundle is successfully deployed and contains a DCF file with information on the deployed content (i.e. the name, title, server address, account, URL, and time). **This `/rsconnect` folder should be added and committed into version control (i.e. push it to GitHub!)** so that future re-deployments target the same endpoint (i.e. your app's URL).</p>
 
 <center><img src="images/deployed_v1.gif" alt="Our shiny app, now hosted at the URL https://samanthacsik.shinyapps.io/two-file-app which functions the same as when it was hosted locally." width="650"/></center>
 

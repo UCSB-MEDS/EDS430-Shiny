@@ -15,23 +15,23 @@ format: revealjs
 
 <div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #3 (shinydashboard)</div>
 
-<p class="medium-body-text bottombr">By the time we're done with this shinydashboard, you should:</p>
+<p class="medium-body-text bottombr">After this section, you should:</p>
 
 . . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the general steps involved in pre-processing, saving & reading data into an app</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the general workflow for pre-processing, saving & reading data into an app</p>
 
 . . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be comfortable building out a dashboard UI using `{shinydashboard}` layout functions</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` be comfortable building out a dashboard UI using `{shinydashboard}` layout functions</p>
 
 . . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand how to add static images to your app</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand how to add static images to your app</p>
 
 . . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` feel comfortable creating a basic reactive `leaflet` map</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` feel comfortable creating a basic reactive `leaflet` map</p>
 
 . . . 
 
@@ -119,10 +119,7 @@ format: revealjs
 :::: {.columns}
 
 ::: {.column width="35%"}
-
-<br>
-
-<p class="smaller-text">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in our `R/` and save a processed version of the data to our app's directory, which we'll name `/shinydashboard`.</p>
+<p class="smaller-text topbr">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in a separate script saved to `R/` and save a cleaned/processed version of the data to our app's directory, `/shinydashboard/data/lake_data_processed.csv`. Your repository structure should look similar to example on the right:</p>
 :::
 
 ::: {.column width="5%"}
@@ -150,29 +147,32 @@ format: revealjs
 :::
 
 ::: {.column width="45%"}
-<p class="body-text bottombr">Our goal is to create a `leaflet` map with makers denoting each of the 11 unique lakes were data were collected. When clicked, a marker should reveal the **lake name**, **elevation** (in meters, above sea level), **average depth** of the lake (in meters), and **average lake bed temperature** (in degrees Celsius). To do so, we'll need a data frame that looks like the example below:</p>
+<p class="body-text bottombr">Our goal is to create a `leaflet` map with makers denoting each of the 11 unique lakes where data were collected. When clicked, a marker should reveal the **lake name**, **elevation** (in meters, above sea level), **average depth** of the lake (in meters), and **average lake bed temperature** (in degrees Celsius). *To do so, we'll need a data frame that looks like the example below:*</p>
 
 <img src="images/lakes_df.png" alt="An example of our desired final data frame, with 6 attributes (Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) and 11 rows of observations, one for each lake surveyed." width="550"/>
 :::
 
 ::::
 
-
 ---
 
 ##  {#process-lake-data data-menu-title="Process Lake Data"}
 
-<div class="slide-title-smaller">Pre-processing data is critical</div>
+<div class="slide-title-smaller">Process lake data & save new file</div>
+
+<p class="small-text important-text-bg">**NOTE:** In this example exercise, I've removed all rows with missing values (i.e. `NaN`s in the `Depth` column & `NA`s in the `BedTemperature` column) before calculating averages. *This is NOT good practice -- exploring and thinking critically about missing data is an important part of data analysis, and in a real-life scenario, you should consider the most appropriate method for handling them.*</p>
 
 ```{r}
 #| eval: false
 #| echo: true
+#....................SETUP & DATA PROCESSING.....................
+
 # load packages ----
 library(tidyverse)
 library(leaflet)
 
 # read in raw data ----
-lake_monitoring_data <- read_csv(here::here("raw_data/FCWO_lakemonitoringdata_2011_2022_daily.csv"))
+lake_monitoring_data <- read_csv(here::here("raw_data", "FCWO_lakemonitoringdata_2011_2022_daily.csv"))
 
 # calculate avg depth & temp ----
 avg_depth_temp <- lake_monitoring_data |> 
@@ -185,23 +185,199 @@ avg_depth_temp <- lake_monitoring_data |>
     AvgTemp = round(mean(BedTemperature), 1)
   )
 
-# join avg depth & temp to original data ---
+# join avg depth & temp to original data (match rows based on 'Site') ---
 lake_monitoring_data <- full_join(lake_monitoring_data, avg_depth_temp)
 
-# unique lakes for mapping ----
+# get unique lakes observations (with corresponding lat, lon, elev, avgDepth, avgTemp) for mapping ----
 unique_lakes <- lake_monitoring_data |> 
   select(Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) |> 
   distinct()
 
-# save processed data to your app's directory ----
-write_csv(here::here("shinydashboard/data/lakes_cleaned.csv"))
+# save processed data to your app's data directory ----
+write_csv(here::here("shinydashboard", "data", "lake_data_processed.csv"))
 ```
 
 ---
 
-##  {#practice-map data-menu-title="Draft Leaflet"}
+##  {#file-types data-menu-title="File Types"}
 
-<div class="slide-title-smaller">As always, draft your data viz first!</div>
+<div class="slide-title-smaller">A note on file types</div>
+
+<p class="small-text">If you are working with tabular data (as we are in this example), you may choose to save your processed data frame as a `.rds` file (R's own data file format which stores a single R object). Not only are `.rds` file are relatively small (and therefore take up little storage space), but they also preserve data types and classes (e.g. factors and dates), eliminating the need to redefine data types after loading the file.</p>
+
+---
+
+##  {#draft-leaflet data-menu-title="Draft Leaflet"}
+
+<div class="slide-title-smaller">Draft `leaflet` map</div>
+
+<p class="small-text">There are lots of ways to customize `leaflet` maps. We'll be keeping ours relatively simple, but check out the [Leaflet for R](https://rstudio.github.io/leaflet/) documentation for more ways to get creative with your maps.</p>
+
+::: {.panel-tabset}
+
+## leaflet map
+```{r}
+#| eval: true
+#| echo: false
+
+# load packages ----
+library(tidyverse)
+library(leaflet)
+
+# read in data ----
+filtered_lakes <- read_csv(here::here("data", "lake_data_processed.csv"))
+
+# map it ----
+map <- leaflet() |> 
+  
+  # add map tiles (basemap) 
+  addProviderTiles("Esri.WorldImagery", # choose tiles that make sense for what you want to highlight
+                   options = providerTileOptions(maxNativeZoom = 19, maxZoom = 100)) |> 
+  
+  # add mini map 
+  addMiniMap(toggleDisplay = TRUE, minimized = FALSE) |> 
+  
+  # set view over AK
+  setView(lng = -152.048442, lat = 70.249234, zoom = 6) |> 
+  
+  # add markers
+  addMarkers(data = filtered_lakes,
+             lng = filtered_lakes$Longitude, lat = filtered_lakes$Latitude,
+             popup = paste("Site Name:", filtered_lakes$Site, "<br>",
+                           "Elevation:", filtered_lakes$Elevation, "meters (above SL)", "<br>",
+                           "Avg Depth:", filtered_lakes$AvgDepth, "meters", "<br>",
+                           "Avg Lake Bed Temperature:", filtered_lakes$AvgTemp, "deg Celsius"))
+
+map
+```
+
+## code
+
+```{r}
+#| eval: false
+#| echo: true
+#....................SETUP & DATA PROCESSING.....................
+
+# omitted for brevity (see slide 112 for code)
+
+#..........................PRACTICE VIZ..........................
+
+leaflet() |> 
+  
+  # add tiles
+  addProviderTiles("Esri.WorldImagery", # make note of using appropriate tiles
+                   options = providerTileOptions(maxNativeZoom = 19, maxZoom = 100)) |> 
+  
+  # add mini map
+  addMiniMap(toggleDisplay = TRUE, minimized = TRUE) |> 
+  
+  # set view over AK
+  setView(lng = -152.048442, lat = 70.249234, zoom = 6) |> 
+  
+  # add markers
+  addMarkers(data =  unique_lakes,
+             lng = unique_lakes$Longitude, lat = unique_lakes$Latitude,
+             popup = paste("Site Name:", unique_lakes$Site, "<br>",
+                           "Elevation:", unique_lakes$Elevation, "meters (above SL)", "<br>",
+                           "Avg Depth:", unique_lakes$AvgDepth, "meters", "<br>",
+                           "Avg Lake Bed Temperature:", unique_lakes$AvgTemp, "deg Celsius"))
+```
+
+:::
+
+---
+
+##  {#filter-leaflet data-menu-title="Filter Leaflet"}
+
+<div class="slide-title-smaller">Practice filtering `leaflet` observations</div>
+
+<p class="small-text">We'll eventually build three `sliderInput`s to filter lake makers by `Elevation`, `AvgDepth`, and `AvgTemp`. Practice filtering here first (and be sure to update the data frame name in your leaflet code!):</p>
+
+::: {.panel-tabset}
+
+## leaflet map (filtered)
+```{r}
+#| eval: true
+#| echo: false
+#....................SETUP & DATA PROCESSING.....................
+
+# load packages ----
+library(tidyverse)
+library(leaflet)
+
+# read in data ----
+lakes_cleaned <- read_csv(here::here("data", "lake_data_processed.csv"))
+
+#.......................PRACTICE FILTERING.......................
+filtered_lakes <- lakes_cleaned |> 
+  filter(Elevation >= 8 & Elevation <= 20) |> 
+  filter(AvgDepth >= 2 & AvgDepth <= 3) |> 
+  filter(AvgTemp >= 4 & AvgTemp <= 6)
+
+#..........................PRACTICE VIZ..........................
+map <- leaflet() |> 
+  
+  # add map tiles (basemap) 
+  addProviderTiles("Esri.WorldImagery", # choose tiles that make sense for what you want to highlight
+                   options = providerTileOptions(maxNativeZoom = 19, maxZoom = 100)) |> 
+  
+  # add mini map 
+  addMiniMap(toggleDisplay = TRUE, minimized = FALSE) |> 
+  
+  # set view over AK
+  setView(lng = -152.048442, lat = 70.249234, zoom = 6) |> 
+  
+  # add markers
+  addMarkers(data = filtered_lakes,
+             lng = filtered_lakes$Longitude, lat = filtered_lakes$Latitude,
+             popup = paste("Site Name:", filtered_lakes$Site, "<br>",
+                           "Elevation:", filtered_lakes$Elevation, "meters (above SL)", "<br>",
+                           "Avg Depth:", filtered_lakes$AvgDepth, "meters", "<br>",
+                           "Avg Lake Bed Temperature:", filtered_lakes$AvgTemp, "deg Celsius"))
+
+map
+```
+
+## code
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "5-10|26-32"
+#....................SETUP & DATA PROCESSING.....................
+
+# omitted for brevity (see slide 112 for code)
+
+#.......................PRACTICE FILTERING.......................
+
+filtered_lakes <- unique_lakes |> 
+  filter(Elevation >= 8 & Elevation <= 20) |> 
+  filter(AvgDepth >= 2 & AvgDepth <= 3) |> 
+  filter(AvgTemp >= 4 & AvgTemp <= 6)
+
+#..........................PRACTICE VIZ..........................
+
+leaflet() |> 
+  
+  # add tiles
+  addProviderTiles("Esri.WorldImagery", # make note of using appropriate tiles
+                   options = providerTileOptions(maxNativeZoom = 19, maxZoom = 100)) |> 
+  
+  # add mini map
+  addMiniMap(toggleDisplay = TRUE, minimized = TRUE) |> 
+  
+  # set view over AK
+  setView(lng = -152.048442, lat = 70.249234, zoom = 6) |> 
+  
+  # add markers
+  addMarkers(data =  filtered_lakes,
+             lng = filtered_lakes$Longitude, lat = filtered_lakes$Latitude,
+             popup = paste("Site Name:", filtered_lakes$Site, "<br>",
+                           "Elevation:", filtered_lakes$Elevation, "meters (above SL)", "<br>",
+                           "Avg Depth:", filtered_lakes$AvgDepth, "meters", "<br>",
+                           "Avg Lake Bed Temperature:", filtered_lakes$AvgTemp, "deg Celsius"))
+```
+:::
 
 ---
 

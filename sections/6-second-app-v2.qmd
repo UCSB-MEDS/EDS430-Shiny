@@ -31,7 +31,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand how to *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
 
 . . .
 
@@ -55,7 +55,7 @@ format: revealjs
 
 <br>
 
-<p class="small-text">**(a)** user-friendly validation error messages that appear when widgets are used to deslect all data</p>
+<p class="small-text">**(a)** user-friendly validation error messages that appear when widgets are used to deselect all data</p>
 <p class="small-text">**(b)** loading animations for both two reactive plots </p>
 <p class="small-text">**(c)** alternate (alt) text for all data visualizations</p>
 :::
