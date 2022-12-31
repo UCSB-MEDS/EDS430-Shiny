@@ -480,7 +480,7 @@ leaflet() |>
 
 <p class="small-text">Now that we have a better sense of what our app will include, let's start building out our UI.</p>
 
-<p class="small-text">To start, let's add our server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on [slide 110](), but alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` -- this can help with organization as you app grows in complexity.</p>
+<p class="small-text">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on [slide 110](), but alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) -- this can help with organization as you app grows in complexity.</p>
 
 <p class="small-text">Run your app to make sure it works -- you should see a super basic dashboard. If it doesn't look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).</p>
 
@@ -537,6 +537,7 @@ library(shinydashboard)
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: "4-6|13-19"
 #........................dashboardHeader.........................
 header <- dashboardHeader(
   
@@ -557,7 +558,7 @@ sidebar <- dashboardSidebar(
     
   ) # END sidebarMenu
   
-)
+) # END dashboardSidebar
 
 #..........................dashboardBody.........................
 body <- dashboardBody()
@@ -566,11 +567,441 @@ body <- dashboardBody()
 dashboardPage(header, sidebar, body)
 ```
 
-Add `title` to `dashboardHeader()`
+----
 
-Add `sidebarMenu` to `dashboardbody()` -- sidebarMenu behaves similarly to tabs in shiny app `tabPanel` but it's also more flexible and can contain shiny inputs
+##  {#tabItems data-menu-title="tabItems"}
 
-Add `menuItem`s to `sidebarMenu`
+<div class="slide-title-smaller">Add `tabItems` to your `dashboardBody`</div>
 
+<p class="small-text">Next, we'll create `tabItems` in our `dashboardBody` -- we'll make a `tabItem` (singular) for each `menuItem` added to our `dashboardSidebar`. In order to match a `menuItem` and a `tabItem`, ensure that they have matching a `tabName` (e.g. any content added to the **dashboard** `tabItem` will appear under the **dashboard** `menuItem`).</p>
 
+```{r}
+#| eval: false
+#| echo: true 
+#| code-line-numbers: "26-43"
+#........................dashboardHeader.........................
+header <- dashboardHeader(
+  
+  # add title ----
+  title = "Fish Creek Watershed Lake Monitoring",
+  titleWidth = 400
+  
+) # END dashboardHeader
 
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar(
+  
+  # sidebarMenu ----
+  sidebarMenu(
+    
+    menuItem(text = "Welcome", tabName = "welcome", icon = icon("star")),
+    menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
+    
+  ) # END sidebarMenu
+  
+) # END dashboardSidebar
+
+#..........................dashboardBody.........................
+body <- dashboardBody(
+  
+  # tabItems ----
+  tabItems(
+    
+    # welcome tabItem ----
+    tabItem(tabName = "welcome",
+            
+            "Background info here"
+            
+            ), # END welcome tabItem ----
+    
+    # dashboard tabItem ----
+    tabItem(tabName = "dashboard",
+            
+            "Dashboard content here"
+            
+            ) # END dashboard tabItem
+    
+  ) # END tabItems
+  
+) # END dashboardBody
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+---
+
+##  {#boxes data-menu-title="boxes"}
+
+<div class="slide-title-smaller">Add `box`es to contain UI content</div>
+
+<p class="small-text">[Boxes](https://rstudio.github.io/shinydashboard/structure.html#boxes) are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g. text, inputs, outputs). We'll add two side-by-side boxes to our **dashboard** tab inside a `fluidRow()`. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our `sliderInput`s and our `leafletOutput`.</p>
+
+```{r} 
+#| eval: false
+#| echo: true
+#| code-line-numbers: "39-56"
+#........................dashboardHeader.........................
+header <- dashboardHeader(
+  
+  # add title ----
+  title = "Fish Creek Watershed Lake Monitoring",
+  titleWidth = 400
+  
+) # END dashboardHeader
+
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar(
+  
+  # sidebarMenu ----
+  sidebarMenu(
+    
+    menuItem(text = "Welcome", tabName = "welcome", icon = icon("star")),
+    menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
+    
+  ) # END sidebarMenu
+  
+) # END dashboardSidebar
+
+#..........................dashboardBody.........................
+body <- dashboardBody(
+  
+  # tabItems ----
+  tabItems(
+    
+    # welcome tabItem ----
+    tabItem(tabName = "welcome",
+            
+            "background info here"
+           
+            ), # END welcome tabItem 
+    
+    # dashboard tabItem ----
+    tabItem(tabName = "dashboard",
+            
+            # fluidRow ----
+            fluidRow(
+              
+              # input box ----
+              box(width = 4,
+                  
+                  "sliderInputs here"
+                
+                  ), # END input box
+            
+              # leaflet box ----
+              box(width = 8, 
+                
+                  "leafletOutput here"
+                
+                 ) # END leaflet box
+              
+               ) # END fluidRow
+            
+            ) # END dashboard tabItem
+    
+  ) # END tabItems
+  
+) # END dashboardBody
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+##  {#fluidRow data-menu-title="fluidRow()"}
+
+<div class="slide-title-smaller">Adding `tabPanel`s to boxes</div>
+
+<p class="small-text">Lastly, we'll add two side-by-side boxes to our **welcome** tab: one normal `box` and one `tabBox`. Use `fluidRow()` to place both boxes in the same row, with each taking up half the page. Create two `tabPanel`s within the `tabBox` -- we'll eventually place field site photos in each `tabPanel`.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "39-56"
+#........................dashboardHeader.........................
+header <- dashboardHeader(
+  
+  # add title ----
+  title = "Fish Creek Watershed Lake Monitoring",
+  titleWidth = 400
+  
+) # END dashboardHeader
+
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar(
+  
+  # sidebarMenu ----
+  sidebarMenu(
+    
+    menuItem(text = "Welcome", tabName = "welcome", icon = icon("star")),
+    menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
+    
+  ) # END sidebarMenu
+  
+) # END dashboardSidebar
+
+#..........................dashboardBody.........................
+body <- dashboardBody(
+  
+  # tabItems ----
+  tabItems(
+    
+    # welcome tabItem ----
+    tabItem(tabName = "welcome",
+            
+            "background info here"
+           
+            ), # END welcome tabItem 
+    
+    # dashboard tabItem ----
+    tabItem(tabName = "dashboard",
+            
+            # fluidRow ----
+            fluidRow(
+              
+              # input box ----
+              box(width = 4,
+                  
+                  "sliderInputs here"
+                
+                  ), # END input box
+            
+              # leaflet box ----
+              box(width = 8, 
+                
+                  "leafletOutput here"
+                
+                 ) # END leaflet box
+              
+               ) # END fluidRow
+            
+            ) # END dashboard tabItem
+    
+  ) # END tabItems
+  
+) # END dashboardBody
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+---
+
+##  {#import-data data-menu-title="Read in data"}
+
+<div class="slide-title-smaller">Read data into `global.R` & add necessary packages</div>
+
+DON'T USE library(here)
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4-9"
+# LOAD LIBRARIES ----
+library(shiny)
+library(shinydashboard)
+library(tidyverse)
+library(leaflet)
+library(shinycssloaders)
+
+# READ IN DATA ----
+lake_data <- read_csv("data/lake_data_processed.csv")
+```
+
+---
+
+##  {#add-leaflet-placeholder data-menu-title="Add Leaflet Map & Widgets"}
+
+<div class="slide-title-smaller">Add a `sliderInput` & `leafletOutput` to the UI</div>
+
+<p class="small-text">I'll start by adding just one `sliderInput` to select a range of `Elevation`s to filter our map makers by. I'm also adding a `leafletOutput` to create a placeholder space for our map, along with a Spinner (from the `{shinycssloaders}` package). My inputs and map output will both live inside the same `box`.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "78-84"
+........................dashboardHeader.........................
+header <- dashboardHeader(
+  
+  # add title ----
+  title = "Fish Creek Watershed Lake Monitoring",
+  titleWidth = 400
+  
+) # END dashboardHeader
+
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar(
+  
+  # sidebarMenu ----
+  sidebarMenu(
+    
+    menuItem(text = "Welcome", tabName = "welcome", icon = icon("star")),
+    menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
+    
+  ) # END sidebarMenu
+  
+) # END dashboardSidebar
+
+#..........................dashboardBody.........................
+body <- dashboardBody(
+  
+  # tabItems ----
+  tabItems(
+    
+    # welcome tabItem ----
+    tabItem(tabName = "welcome",
+            
+            # intro information fluidRow ----
+            fluidRow(
+              
+              box(width = 6,
+                  
+                  "background text here"
+                  
+                  ),
+              
+              # photo tabBox ----
+              tabBox(width = 6, 
+                    
+                     # NOTE: titles can include an icon
+                     title = tagList(shiny::icon("camera"), "Photos from Fish Creek"),
+                     
+                     # Tab 1 ----
+                     tabPanel(title = "Tab1",
+                              
+                              "a photo here"
+                              
+                              ), # END Tab 1
+                     
+                     # Tab 2 ----
+                     tabPanel(title = "Tab2",
+                              
+                              "a second photo here"
+                              
+                              ), # END Tab 2
+                     
+                     # Tab 3 ----
+                     tabPanel(title = "Tab3",
+                              
+                              "a third photo here")
+                     
+                     ) # END photo tabBox
+              
+            ) # END intro information fluidRow
+            
+            ), # END welcome tabItem ----
+    
+    # dashboard tabItem ----
+    tabItem(tabName = "dashboard",
+            
+            # leaflet box ----
+            box(width = 12,
+                
+                # sliderInputs ----
+                sliderInput(inputId = "elevation_slider", label = "Select and Elevation range (meters above SL):",
+                            min = min(lake_data$Elevation), max = max(lake_data$Elevation),
+                            value = c(min(lake_data$Elevation), max(lake_data$Elevation))),
+                
+                # leaflet output ----
+                leafletOutput(outputId = "lake_map") |> withSpinner(type = 1, color = "#4287f5")
+                
+                ) # END leaflet box
+            
+            ) # END dashboard tabItem
+    
+  ) # END tabItems
+  
+) # END dashboardBody
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+---
+
+##  {#build-map-server data-menu-title="Build map in server.R"}
+
+<div class="slide-title-smaller">Assemble your `sliderInput` and `leafletOutput` in `server.R`</div>
+
+<p class="small-text">Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs (refer back to [slide 46](http://localhost:5238/#/app1-ex1-tips) for a reminder)!</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3-36"
+server <- function(input, output) {
+  
+  # filter lake data ----
+  filtered_lakes <- reactive ({
+    
+    lake_data |> 
+      filter(Elevation >= input$elevation_slider[1] & Elevation <= input$elevation_slider[2]) 
+    
+  })
+    
+    
+  
+  # build leaflet map ----
+  output$lake_map <- renderLeaflet({
+    
+    leaflet() |> 
+      
+      # add tiles
+      addProviderTiles("Esri.WorldImagery", 
+                       options = providerTileOptions(maxNativeZoom = 19, maxZoom = 100)) |> 
+      
+      # add mini map
+      addMiniMap(toggleDisplay = TRUE, minimized = TRUE) |> 
+      
+      # set view over AK
+      setView(lng = -152.048442, lat = 70.249234, zoom = 6) |> 
+      
+      # add markers
+      addMarkers(data =  filtered_lakes(),
+                 lng = filtered_lakes()$Longitude, lat = filtered_lakes()$Latitude,
+                 popup = paste("Site Name:", filtered_lakes()$Site, "<br>",
+                               "Elevation:", filtered_lakes()$Elevation, "meters (above SL)", "<br>",
+                               "Avg Depth:", filtered_lakes()$AvgDepth, "meters", "<br>",
+                               "Avg Lake Bed Temperature:", filtered_lakes()$AvgTemp, "deg Celsius"))
+    
+  })
+  
+}
+```
+
+---
+
+##  {#working-elev-widget data-menu-title="Test Elevation Widget"}
+
+<div class="slide-title-smaller">Run your app & test out your first widget</div>
+
+<p class="body-text">If all is good, you should see something similar to this:</p>
+
+<center><img src="images/elev_widget.gif" alt="Our Fish Creek Watershed Lake Monitoring dashboard. The 'Welcome' page has two side-by-side boxes, the left one with placeholder text reading 'background info here' and the right one with two tabs and the title 'Photos from Fish Creek'. The 'Dashboard' tab has a sliderInput to select a range of elevations. When a range is selected, the blue markers on the map are filtered accordingly. Clicking on the markers reveals more information about the specific site, including Site Name, Elevation, Avg Depth, and AvgTemp." width="750"/></center>
+
+---
+
+##  {#exercise5-prompt data-menu-title="Exercise 5 Prompt"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` `r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")`Exercise 5: Add two more `sliderInput`s to filter for `AvgDepth` & `AvgTemp`</div>
+
+<p class="body-text">**To Do:**
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Add two more `sliderInput`s, one for `AvgDepth` and one for `AvgTemp` beneath our first Elevation widget in the UI</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Update our reactive data frame so that all three widgets filter the leaflet map.</p>
+
+<br>
+<br>
+<br>
+
+<p class="medium-body-text">See next slide for a solution!</p>
+
+---
+
+##  {#exercise5-solution data-menu-title="Exercise 5 Solution"}
+
+<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 5: A solution</div>
+
+```{r}
+#| eval: false
+```

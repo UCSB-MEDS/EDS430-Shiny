@@ -751,6 +751,10 @@ ui <- fluidPage(
 
 . . . 
 
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` use the keyboard shortcut, `command` + `I` (Mac) or `control` + `I` (Windows), to align messy code -- this helps put those off-alignment parentheses back where they belong</p>
+
+. . . 
+
 <p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` things can get out of hand quickly -- **add one layout section at a time**, run your app to check that things look as you intend, then continue</p>
 
 ---
