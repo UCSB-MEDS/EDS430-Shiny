@@ -1,0 +1,6 @@
+---
+format: revealjs
+---
+
+- main benefit to UI functions is reducing duplication
+- main benefit to server functions is isolation and testing

@@ -474,11 +474,32 @@ leaflet() |>
 
 ---
 
+##  {#sketch-ui data-menu-title="Sketch the UI"}
+
+<div class="slide-title-smaller">Sketch out our dashboard UI</div>
+
+<p class="small-text">I want my dashboard to have two menu items: a welcome page with some background information, and a dashboard page with my reactive map. All elements will be placed inside `box`es, the primary building blocks of shinydashboards (more on that soon).</p> 
+
+<br>
+
+:::: {.columns} 
+
+::: {.column width="50%"}
+<center><img src="images/welcome_sketch.png" alt="A rough sketch of our dashboard welcome page. A header has a place for the app's title in the top left corner and there's a sidebar on the left-hand side of the page with our two pages (welcome and dashboard). The welcome page has a box on the left-hand side that will contain background info and maybe a photo. The right-hand side of the page has two stacked boxes. The top box will contain data citation information and the bottom box will contain a disclaimer." width="750"/></center>
+:::
+
+::: {.column width="50%"}
+<center><img src="images/dashboard_sketch.png" alt="A sketch of the dashboard page of our app, which will have two side-by-side boxes. The left-hand box will contain three sliderInputs and the right-hand box will contain our reactive leaflet map." width="750"/></center>
+:::
+
+::::
+---
+
 ##  {#build-dashboard-ui data-menu-title="Build Dashboard UI"}
 
-<div class="slide-title-smaller">Designing our dashboard UI</div>
+<div class="slide-title-smaller">Writing our dashboard UI code</div>
 
-<p class="small-text">Now that we have a better sense of what our app will include, let's start building out our UI.</p>
+<p class="small-text">Now that we have a better sense of what our app will include, let's start coding it up.</p>
 
 <p class="small-text">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on [slide 110](), but alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) -- this can help with organization as you app grows in complexity.</p>
 
@@ -528,11 +549,11 @@ library(shinydashboard)
 
 ##  {#title-menuItems data-menu-title="Title & menuItems"}
 
-<div class="slide-title-smaller">Add a title & menuItems</div>
+<div class="slide-title-smaller">Add a `title` & `menuItem`s</div>
 
-<p class="small-text">Add a title to `dashboardHeader()` and make more space using `titleWidth`, if necessary.</p>
+<p class="small-text">First, add a title to `dashboardHeader()` and make more space using `titleWidth`, if necessary.</p>
 
-<p class="small-text">Next, we'll create a `sidebarMenu()` that contains two `menuItem`s. `sidebarMenu()` can also contain shiny inputs (read more [here](https://rstudio.github.io/shinydashboard/structure.html#sidebar)), though we'll be using ours just for navigation purposes. Be sure to provide each `menuItem()` with `text` as you'd like it to appear in your app, and a `tabName` which will be used to place `dashboardBody()` content in the appropriate `menuItem()`. Optionally, you can provide an icon. By default, `icon()` uses icons from [FontAwesome](https://fontawesome.com/).</p>
+<p class="small-text">Next, we'll build our `dashboardSidebar()`. Add a `sidebarMenu()` that contains two `menuItem`s. Be sure to provide each `menuItem()` with `text` as you'd like it to appear in your app (for me, that's **Welcome** and **Dashboard**), and a `tabName` which will be used to place `dashboardBody()` content in the appropriate `menuItem()`. Optionally, you can provide an icon. By default, `icon()` uses icons from [FontAwesome](https://fontawesome.com/).</p>
 
 ```{r}
 #| eval: false
@@ -542,7 +563,7 @@ library(shinydashboard)
 header <- dashboardHeader(
   
   # add title ----
-  title = "AK Lake Monitoring",
+  title = "Fish Creek Watershed Lake Monitoring",
   titleWidth = 400
   
 ) # END dashboardHeader
@@ -553,8 +574,8 @@ sidebar <- dashboardSidebar(
   # sidebarMenu ----
   sidebarMenu(
     
-    menuItem("Welcome", tabName = "welcome", icon = icon("star")),
-    menuItem("Dashboard", tabName = "dashboard", icon = icon("gauge"))
+    menuItem(text = "Welcome", tabName = "welcome", icon = icon("star")),
+    menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
     
   ) # END sidebarMenu
   
@@ -573,7 +594,7 @@ dashboardPage(header, sidebar, body)
 
 <div class="slide-title-smaller">Add `tabItems` to your `dashboardBody`</div>
 
-<p class="small-text">Next, we'll create `tabItems` in our `dashboardBody` -- we'll make a `tabItem` (singular) for each `menuItem` added to our `dashboardSidebar`. In order to match a `menuItem` and a `tabItem`, ensure that they have matching a `tabName` (e.g. any content added to the **dashboard** `tabItem` will appear under the **dashboard** `menuItem`).</p>
+<p class="small-text">Next, we'll create `tabItems` in our `dashboardBody` -- we'll make a `tabItem` (singular) for each `menuItem` in our `dashboardSidebar`. In order to match a `menuItem` and a `tabItem`, ensure that they have matching a `tabName` (e.g. any content added to the **dashboard** `tabItem` will appear under the **dashboard** `menuItem`).</p>
 
 ```{r}
 #| eval: false
@@ -610,16 +631,16 @@ body <- dashboardBody(
     # welcome tabItem ----
     tabItem(tabName = "welcome",
             
-            "Background info here"
+            "background info here"
             
-            ), # END welcome tabItem ----
+    ), # END welcome tabItem
     
     # dashboard tabItem ----
     tabItem(tabName = "dashboard",
             
-            "Dashboard content here"
+            "dashboard content here"
             
-            ) # END dashboard tabItem
+    ) # END dashboard tabItem
     
   ) # END tabItems
   
@@ -633,9 +654,9 @@ dashboardPage(header, sidebar, body)
 
 ##  {#boxes data-menu-title="boxes"}
 
-<div class="slide-title-smaller">Add `box`es to contain UI content</div>
+<div class="slide-title-smaller">Add `box`es to contain UI content (part 1)</div>
 
-<p class="small-text">[Boxes](https://rstudio.github.io/shinydashboard/structure.html#boxes) are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g. text, inputs, outputs). We'll add two side-by-side boxes to our **dashboard** tab inside a `fluidRow()`. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our `sliderInput`s and our `leafletOutput`.</p>
+<p class="small-text">[Boxes](https://rstudio.github.io/shinydashboard/structure.html#boxes) are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g. text, inputs, outputs). Start by adding two side-by-side boxes to our **dashboard** tab inside a `fluidRow()`. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our `sliderInput`s and our `leafletOutput`.</p>
 
 ```{r} 
 #| eval: false
@@ -673,8 +694,8 @@ body <- dashboardBody(
     tabItem(tabName = "welcome",
             
             "background info here"
-           
-            ), # END welcome tabItem 
+            
+    ), # END welcome tabItem 
     
     # dashboard tabItem ----
     tabItem(tabName = "dashboard",
@@ -686,19 +707,19 @@ body <- dashboardBody(
               box(width = 4,
                   
                   "sliderInputs here"
-                
-                  ), # END input box
-            
+                  
+              ), # END input box
+              
               # leaflet box ----
               box(width = 8, 
-                
+                  
                   "leafletOutput here"
-                
-                 ) # END leaflet box
+                  
+              ) # END leaflet box
               
-               ) # END fluidRow
+            ) # END fluidRow
             
-            ) # END dashboard tabItem
+    ) # END dashboard tabItem
     
   ) # END tabItems
   
@@ -708,16 +729,16 @@ body <- dashboardBody(
 dashboardPage(header, sidebar, body)
 ```
 
-##  {#fluidRow data-menu-title="fluidRow()"}
+##  {#columns data-menu-title="Columns"}
 
-<div class="slide-title-smaller">Adding `tabPanel`s to boxes</div>
+<div class="slide-title-smaller">Add `box`es to contain UI content (part 2)</div>
 
-<p class="small-text">Lastly, we'll add two side-by-side boxes to our **welcome** tab: one normal `box` and one `tabBox`. Use `fluidRow()` to place both boxes in the same row, with each taking up half the page. Create two `tabPanel`s within the `tabBox` -- we'll eventually place field site photos in each `tabPanel`.</p>
+<p class="small-text">Lastly, add boxes to our **welcome** tab We'll use `column`s to place one box on the left-hand side of our page, and two stacked boxes on the right-hand side. Each `column` will take up half the page (**Note:** *For column-based layouts, use `NULL` for the box width, as the width is set by the column that contains the box*). We can create two `fluidRow`s within the right-hand column to stack two boxes vertically.</p>
 
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "39-56"
+#| code-line-numbers: "32-71"
 #........................dashboardHeader.........................
 header <- dashboardHeader(
   
@@ -749,9 +770,48 @@ body <- dashboardBody(
     # welcome tabItem ----
     tabItem(tabName = "welcome",
             
-            "background info here"
-           
-            ), # END welcome tabItem 
+            # left-hand column ----
+            column(width = 6,
+                   
+                   # box ----
+                   box(width = NULL,
+                       
+                       "background info here"
+                       
+                   ), # END box
+                   
+            ), # END left-hand column
+            
+            # right-hand column ----
+            column(width = 6,
+                   
+                   # first fluidRow ----
+                   fluidRow(
+                     
+                     # data source box ----
+                     box(width = NULL,
+                         
+                         "data citation here"
+                         
+                     ) # END data source box
+                     
+                   ), # END first fluidRow
+                   
+                   # second fluiRow ----
+                   fluidRow(
+                     
+                     # disclaimer box ----
+                     box(width = NULL,
+                         
+                         "disclaimer here"
+                         
+                     ) # END disclaimer box
+                     
+                   ) # END second fluidRow
+                   
+            ) # END right-hand column
+            
+    ), # END welcome tabItem
     
     # dashboard tabItem ----
     tabItem(tabName = "dashboard",
@@ -763,19 +823,19 @@ body <- dashboardBody(
               box(width = 4,
                   
                   "sliderInputs here"
-                
-                  ), # END input box
-            
-              # leaflet box ----
-              box(width = 8, 
-                
-                  "leafletOutput here"
-                
-                 ) # END leaflet box
+                  
+              ), # END input box
               
-               ) # END fluidRow
+              # leaflet box ----
+              box(width = 8,
+                  
+                  "leaflet output here"
+                  
+              ) # END leaflet box
+              
+            ) # END fluidRow
             
-            ) # END dashboard tabItem
+    ) # END dashboard tabItem
     
   ) # END tabItems
   
@@ -792,7 +852,9 @@ dashboardPage(header, sidebar, body)
 <div class="slide-title-smaller">Read data into `global.R` & add necessary packages</div>
 
 DON'T USE library(here)
+COME BACK TO THIS 
 
+<p class="body-text">Remember to load your *pre-processed* data, which should live in the `/data` folder within your app's directory.</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -810,11 +872,15 @@ lake_data <- read_csv("data/lake_data_processed.csv")
 
 ---
 
+PICK UP HERE
+
+---
+
 ##  {#add-leaflet-placeholder data-menu-title="Add Leaflet Map & Widgets"}
 
 <div class="slide-title-smaller">Add a `sliderInput` & `leafletOutput` to the UI</div>
 
-<p class="small-text">I'll start by adding just one `sliderInput` to select a range of `Elevation`s to filter our map makers by. I'm also adding a `leafletOutput` to create a placeholder space for our map, along with a Spinner (from the `{shinycssloaders}` package). My inputs and map output will both live inside the same `box`.</p>
+<p class="small-text">Start by adding just one `sliderInput` (for selecting a range of lake `Elevation`s) to the left-hand box in the **dashboard** tab. Then, add a `leafletOutput` to create a placeholder space for our map, along with a Spinner animation (from the `{shinycssloaders}` package).</p>
 
 ```{r}
 #| eval: false
