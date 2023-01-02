@@ -2,7 +2,7 @@
 format: revealjs
 ---
 
-##  {#accessibility data-menu-title="Accessibility" background="#053660"}
+##  {#accessibility data-menu-title="~~~ Accessibility ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building accessible apps</p>

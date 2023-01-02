@@ -21,7 +21,7 @@ format: revealjs
 
 ---
 
-##  {#deploy-app data-menu-title="Deploy your app"}
+##  {#deploy-app data-menu-title="~~~ Deploy your app ~~~"}
 
 <div class="slide-title-smaller">Deploy your app to shinyapps.io</div>
 

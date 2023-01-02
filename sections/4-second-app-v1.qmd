@@ -2,7 +2,7 @@
 format: revealjs
 ---
 
-##  {#build-app2 data-menu-title="Building Out Your 2nd App" background="#053660"}
+##  {#build-app2 data-menu-title="~~~ Building App #2 ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building out your 2<sup>nd</sup> app</p>
@@ -619,7 +619,7 @@ ui <- fluidPage(
 
 ---
 
-##  {#exercise2-prompt data-menu-title="Exercise 2 Prompt"}
+##  {#exercise2-prompt data-menu-title="** Exercise 2 Prompt **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 2: Add sidebar and main panels to the `Penguins` tab</div>
 
@@ -646,7 +646,7 @@ ui <- fluidPage(
 
 ---
 
-##  {#exercise2-solution data-menu-title="Exercise 2 Solution"}
+##  {#exercise2-solution data-menu-title="** Exercise 2 Solution** "}
 
 <div class="slide-title">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 2: A solution</div>
 
@@ -1113,7 +1113,7 @@ countdown::countdown(
 
 ---
 
-##  {#exercise3-prompt data-menu-title="Exercise 3 Prompt"}
+##  {#exercise3-prompt data-menu-title="** Exercise 3 Prompt **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 3: Add a reactive plot to the 'Penguins' tab</div>
 
@@ -1144,7 +1144,7 @@ countdown::countdown(
 
 ---
 
-##  {#exercise3-tips data-menu-title="Exercise 3 Tips"}
+##  {#exercise3-tips data-menu-title="** Exercise 3 Tips **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 3: Tips</div>
 
@@ -1166,7 +1166,7 @@ countdown::countdown(
 
 ---
 
-##  {#exercise3-solution data-menu-title="Exercise 3 Solution"}
+##  {#exercise3-solution data-menu-title="** Exercise 3 Solution **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 3: A solution</div>
 

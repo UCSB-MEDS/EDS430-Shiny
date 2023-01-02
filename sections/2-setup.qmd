@@ -2,7 +2,7 @@
 format: revealjs
 ---
 
-##  {#setup data-menu-title="Setup" background="#053660"}
+##  {#setup data-menu-title="~~~ Setup ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("play", fill = "#d2e3f3", a11y = "sem")` Setting up your Shiny app</p>

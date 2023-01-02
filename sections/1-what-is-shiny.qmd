@@ -2,7 +2,7 @@
 format: revealjs
 ---
 
-##  {#what-is-shiny data-menu-title="What is Shiny?" background="#053660"}
+##  {#what-is-shiny data-menu-title="~~~ What is Shiny? ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("r-project", fill = "#d2e3f3", a11y = "sem")` What is Shiny?</p>
@@ -23,7 +23,7 @@ format: revealjs
 
 ---
 
-##  {#app-anatomy data-menu-title="Anatomy of an app" background="#053660"}
+##  {#app-anatomy data-menu-title="~~~ Anatomy of an app ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("puzzle-piece", fill = "#d2e3f3", a11y = "sem")` The anatomy of a Shiny app</p>
@@ -81,7 +81,7 @@ format: revealjs
 
 ---
 
-##  {#examples-please data-menu-title="Examples Please?" background="#053660"}
+##  {#examples-please data-menu-title="~~~ Examples Please? ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("laptop-code", fill = "#d2e3f3", a11y = "sem")` Can I see an example please?</p>
@@ -144,21 +144,20 @@ sliderInput(inputId = "bins",
 
 <div class="slide-title">Let's build our own!</div>
 
-<p class="body-text"> We're going to cover a lot over our two days. Here's a general **roadmap** of what you can expect:</p>
+<p class="body-text"> We're going to cover a lot over our two days. Here's a general **outline** of all the apps we'll build during our two days together:</p>
 
-:::: {.columns}
+::: {.panel-tabset}
 
-::: {.column width="45%"}
-<p class="medium-body-text">**Day 1**</p>
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` build a single-file Shiny app with two reactive plots</p>
+## Day 1
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a single-file Shiny app with two reactive outputs (a scatterplot & a DT data table)</p>
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a two-file shiny app with two reactive plots (a scatterplot and a histogram) -- we'll also learn how to use layout functions to create a more visually-pleasing (and organized) UI.</p>
+
+## Day 2
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a shiny dashboard
+with a reactive leaflet map</p>
+
 :::
 
-::: {.column width="5%"}
-:::
 
-::: {.column width="45%"}
-<p class="medium-body-text">**Day 2**</p>
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` TBD</p>
-:::
-
-::::

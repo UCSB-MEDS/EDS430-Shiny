@@ -27,10 +27,8 @@ format: revealjs
 ```{r}
 #| eval: false
 #| echo: true
-install.packages(c("shiny", "tidyverse", "palmerpenguins", "DT", "shinyWidgets", "bslib", "thematic"))
+install.packages(c("shiny", "etc."))
 ```
-
-<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You have downloaded data _____ </div>
 
 <center><div class="large-body-text">No prior Shiny experience necessary!</div></center>
 

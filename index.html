@@ -395,7 +395,7 @@
     <div class="slides">
 
 
-<section id="title-slide" class="slide level2 center" data-menu-title="Title Slide" data-background="images/title_background.png"><h2></h2>
+<section id="title-slide" class="slide level2 center" data-menu-title="~~~ Title Slide ~~~" data-background="images/title_background.png"><h2></h2>
 <p><span class="custom-title">EDS 430 - Intro to <img src="images/shiny_text.png" alt="The word 'Shiny' in cursive lettering, which is the logo used by RStudio for their Shiny R package. The Shiny package is used to build interactive web applications." style="display: inline-block; margin: 0; position: relative; top: 25px; width:130px;height:90px;"></span></p>
 <p><span class="custom-subtitle"><em>Building reactive apps &amp; dashboards</em></span></p>
 <p><br><br></p>
@@ -440,11 +440,7 @@
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> You have the required R packages installed. You can install/update them all at once by running:
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"tidyverse"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"DT"</span>, <span class="st">"shinyWidgets"</span>, <span class="st">"bslib"</span>, <span class="st">"thematic"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="body-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> You have downloaded data _____
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"etc."</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <center>
 <div class="large-body-text">
@@ -508,7 +504,7 @@ Be sure to check out Posit/RStudio’s great instructional resources and example
 </div>
 </div>
 </div>
-</section><section id="what-is-shiny" class="slide level2" data-menu-title="What is Shiny?" data-background="#053660"><h2></h2>
+</section><section id="what-is-shiny" class="slide level2" data-menu-title="~~~ What is Shiny? ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="R Project" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>R Project</title>
@@ -533,7 +529,7 @@ Shiny makes building web apps easy
 <a href="https://github.com/aguimaraesduarte/WorldBank-Shiny">Worldbank-Shiny</a> app to visualize fertility rate vs.&nbsp;life expectancy from 1960 to 2015, by <a href="https://github.com/aguimaraesduarte">Andre Duarte</a>
 </p>
 </center>
-</section><section id="app-anatomy" class="slide level2" data-menu-title="Anatomy of an app" data-background="#053660"><h2></h2>
+</section><section id="app-anatomy" class="slide level2" data-menu-title="~~~ Anatomy of an app ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Puzzle Piece" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Puzzle Piece</title>
@@ -592,7 +588,7 @@ Reactivity is what makes Shiny apps responsive i.e.&nbsp;it lets the app instant
 <p class="body-text bottombr">
 Check out Garrett Grolemund’s article, <a href="https://shiny.rstudio.com/articles/understanding-reactivity.html">How to understand reactivity in R</a> for a more detailed overview of Shiny reactivity.
 </p>
-</section><section id="examples-please" class="slide level2" data-menu-title="Examples Please?" data-background="#053660"><h2></h2>
+</section><section id="examples-please" class="slide level2" data-menu-title="~~~ Examples Please? ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Laptop Code" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Laptop Code</title>
@@ -654,30 +650,33 @@ Change the number of bins using the <code>sliderInput</code> widget and watch th
 Let’s build our own!
 </div>
 <p class="body-text">
-We’re going to cover a lot over our two days. Here’s a general <strong>roadmap</strong> of what you can expect:
+We’re going to cover a lot over our two days. Here’s a general <strong>outline</strong> of all the apps we’ll build during our two days together:
 </p>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p class="medium-body-text">
-<strong>Day 1</strong>
-</p>
-<p class="small-text topbr">
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-1-1">Day 1</a></li>
+<li><a href="#tabset-1-2">Day 2</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p class="body-text topbr">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> build a single-file Shiny app with two reactive plots
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a single-file Shiny app with two reactive outputs (a scatterplot &amp; a DT data table)
 </p>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-<p class="medium-body-text">
-<strong>Day 2</strong>
-</p>
-<p class="small-text topbr">
+<p class="body-text topbr">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> TBD
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a two-file shiny app with two reactive plots (a scatterplot and a histogram) – we’ll also learn how to use layout functions to create a more visually-pleasing (and organized) UI.
+</p>
+</div>
+<div id="tabset-1-2">
+<p class="body-text topbr">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a shiny dashboard with a reactive leaflet map
 </p>
 </div>
 </div>
-</section><section id="setup" class="slide level2" data-menu-title="Setup" data-background="#053660"><h2></h2>
+</div>
+</section><section id="setup" class="slide level2" data-menu-title="~~~ Setup ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="play" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>play</title>
@@ -833,7 +832,7 @@ In practice, you will likely find yourself opting for the the two-file format �
 <span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(shiny)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="build-app1" class="slide level2" data-menu-title="Building Out Your 1st App" data-background="#053660"><h2></h2>
+</section><section id="build-app1" class="slide level2" data-menu-title="~~~ Building App #1 ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Screwdriver wrench" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Screwdriver wrench</title>
@@ -1658,7 +1657,7 @@ And we saw that reactivity automatically occurs whenever we use an <strong><em>i
 </p>
 </center>
 </div>
-</section><section id="app1-ex1" class="slide level2" data-menu-title="Exercise 1 Prompt"><h2></h2>
+</section><section id="app1-ex1" class="slide level2" data-menu-title="** Exercise 1 Prompt **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
 <path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> Exercise 1: Add another reactive widget
@@ -1688,7 +1687,7 @@ In the end, your app should look something like the example to the right.
 See next slide for some tips on getting started!
 </p>
 </center>
-</section><section id="app1-ex1-tips" class="slide level2" data-menu-title="Exercise 1 Tips"><h2></h2>
+</section><section id="app1-ex1-tips" class="slide level2" data-menu-title="** Exercise 1 Tips **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
 <path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"></path></svg> Exercise 1: Tips
@@ -1748,7 +1747,7 @@ See next slide for some tips on getting started!
 See next slide for a solution!
 </p>
 </center>
-</section><section id="app1-ex1-solution" class="slide level2" data-menu-title="Exercise 1 Solution"><h2></h2>
+</section><section id="app1-ex1-solution" class="slide level2" data-menu-title="** Exercise 1 Solution **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 1: A solution
@@ -1947,7 +1946,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_fbc108ca" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_353db71c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -1955,7 +1954,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 </div>
 </div>
-</section><section id="build-app2" class="slide level2" data-menu-title="Building Out Your 2nd App" data-background="#053660"><h2></h2>
+</section><section id="build-app2" class="slide level2" data-menu-title="~~~ Building App #2 ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Screwdriver wrench" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Screwdriver wrench</title>
@@ -2078,12 +2077,12 @@ Practice data wrangling, filtering &amp; viz first!
 Here’s what I’ve done in my <code>~R/practice_script_app2_lter.R</code> file:
 </p>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-1-1">Trout plot</a></li>
-<li><a href="#tabset-1-2">Penguin plot</a></li>
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-2-1">Trout plot</a></li>
+<li><a href="#tabset-2-2">Penguin plot</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-1-1">
+<div id="tabset-2-1">
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
@@ -2150,7 +2149,7 @@ We’ll build 2 inputs: one to select <code>channel_type</code> and one to selec
 </div>
 </div>
 </div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
@@ -2303,14 +2302,14 @@ Example UI layouts
 <strong>Note:</strong> You can combine multiple layout function groups to really customize your UI – for example, you can create a navbar, include tabs, and also establish sidebar and main panel areas for inputs and outputs.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-2-1">Sidebar &amp; main area</a></li>
-<li><a href="#tabset-2-2">Page with multiple rows</a></li>
-<li><a href="#tabset-2-3">Tabs</a></li>
-<li><a href="#tabset-2-4">Navbar</a></li>
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-3-1">Sidebar &amp; main area</a></li>
+<li><a href="#tabset-3-2">Page with multiple rows</a></li>
+<li><a href="#tabset-3-3">Tabs</a></li>
+<li><a href="#tabset-3-4">Navbar</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-3-1">
 <p class="body-text">
 To create a page with a <strong>side bar and main area</strong> to contain your inputs and outputs (respectively), explore the following layout functions and read up on the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/sidebarlayout">sidebarLayout documentation</a>:
 </p>
@@ -2340,7 +2339,7 @@ To create a page with a <strong>side bar and main area</strong> to contain your 
 </div>
 </div>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-3-2">
 <p class="body-text">
 To create a <strong>page with multiple rows</strong>, explore the following layout functions and check out the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/fluidpage">fluid layout</a> documentation. Note that each row is made up of <strong>12</strong> columns. The first argument of the <code>column()</code> function takes a value of 1-12 to specify the number of columns to occupy.
 </p>
@@ -2375,7 +2374,7 @@ To create a <strong>page with multiple rows</strong>, explore the following layo
 </div>
 </div>
 </div>
-<div id="tabset-2-3">
+<div id="tabset-3-3">
 <p class="body-text">
 You may find that you eventually end up with too much content to fit on a single application page. Enter <code>tabsetPanel()</code> and <code>tabPanel()</code>. <code>tabsetPanel()</code> creates a container for any number of <code>tabPanel()</code>s. Each <code>tabPanel()</code> can contain any number of HTML components (e.g.&nbsp;inputs and outputs). Find the <a href="https://shiny.rstudio.com/reference/shiny/1.5.0/tabsetpanel">tabsetPanel documentation here</a> and check out this example:
 </p>
@@ -2400,7 +2399,7 @@ You may find that you eventually end up with too much content to fit on a single
 </div>
 </div>
 </div>
-<div id="tabset-2-4">
+<div id="tabset-3-4">
 <p class="body-text">
 You may also want to use a navigation bar (<code>navbarPage()</code>) with different pages (created using <code>tabPanel()</code>) to organize your application. Read through the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/navbarpage">navbarPage documentation</a> and try running the example below:
 </p>
@@ -2587,7 +2586,7 @@ We’ll eventually place our input in the sidebar and output in the main panel.
 <span id="cb36-57"><a href="#cb36-57"></a>  </span>
 <span id="cb36-58"><a href="#cb36-58"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="exercise2-prompt" class="slide level2" data-menu-title="Exercise 2 Prompt"><h2></h2>
+</section><section id="exercise2-prompt" class="slide level2" data-menu-title="** Exercise 2 Prompt **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
 <path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> Exercise 2: Add sidebar and main panels to the <code>Penguins</code> tab
@@ -2611,7 +2610,7 @@ I encourage you to type the code out yourself, rather than copy/paste! And be su
 See next slide for a solution!
 </p>
 </center>
-</section><section id="exercise2-solution" class="slide level2" data-menu-title="Exercise 2 Solution"><h2></h2>
+</section><section id="exercise2-solution" class="slide level2" data-menu-title="** Exercise 2 Solution** "><h2></h2>
 <div class="slide-title">
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 2: A solution
@@ -3023,7 +3022,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d1fc508c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_9ba4ae7c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3046,7 +3045,7 @@ We’ll be using the <code>penguins</code> dataset from the <a href="https://all
 <p class="small-text gray-text">
 Artwork by <a href="https://allisonhorst.com/"><span class="citation" data-cites="allison_horst">@allison_horst</span></a>
 </p>
-</center></section><section id="exercise3-prompt" class="slide level2" data-menu-title="Exercise 3 Prompt"><h2></h2>
+</center></section><section id="exercise3-prompt" class="slide level2" data-menu-title="** Exercise 3 Prompt **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
 <path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> Exercise 3: Add a reactive plot to the ‘Penguins’ tab
@@ -3085,7 +3084,7 @@ Working alone or in groups, add a reactive histogram of penguin flipper lengths 
 See next slide for some tips on getting started!
 </p>
 </center>
-</section><section id="exercise3-tips" class="slide level2" data-menu-title="Exercise 3 Tips"><h2></h2>
+</section><section id="exercise3-tips" class="slide level2" data-menu-title="** Exercise 3 Tips **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
 <path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"></path></svg> Exercise 3: Tips
@@ -3114,19 +3113,19 @@ See next slide for some tips on getting started!
 See next slide for a solution!
 </p>
 </center>
-</section><section id="exercise3-solution" class="slide level2" data-menu-title="Exercise 3 Solution"><h2></h2>
+</section><section id="exercise3-solution" class="slide level2" data-menu-title="** Exercise 3 Solution **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 3: A solution
 </div>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-3-1"><code>global.R</code></a></li>
-<li><a href="#tabset-3-2"><code>ui.R</code></a></li>
-<li><a href="#tabset-3-3"><code>server.R</code></a></li>
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-4-1"><code>global.R</code></a></li>
+<li><a href="#tabset-4-2"><code>ui.R</code></a></li>
+<li><a href="#tabset-4-3"><code>server.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-4-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb46-2"><a href="#cb46-2"></a><span class="fu">library</span>(shiny)</span>
@@ -3167,7 +3166,7 @@ See next slide for a solution!
 <span id="cb46-37"><a href="#cb46-37"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-4-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47" data-code-line-numbers="61-82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb47-2"><a href="#cb47-2"></a>  </span>
@@ -3265,7 +3264,7 @@ See next slide for a solution!
 <span id="cb47-94"><a href="#cb47-94"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-3-3">
+<div id="tabset-4-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48" data-code-line-numbers="28-47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb48-2"><a href="#cb48-2"></a>  </span>
@@ -3330,7 +3329,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_656ee186" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_9cd6a39c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3503,13 +3502,13 @@ To maintain readability and an overall tidier-looking UI, you can write and styl
 I recommend saving those <code>.md</code> files in a subdirectory named <code>/text</code> within your app’s directory (e.g.&nbsp;<code>~/two-file-app/text/mytext.md</code>). See how I simplified my UI by saving my long landing page text to two new files, <code>about.md</code> and <code>footer.md</code>, then imported them into my UI using <code>includeMarkdown()</code>. <strong>Note:</strong>.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-4-1"><code>ui.R</code></a></li>
-<li><a href="#tabset-4-2"><code>text/about.md</code></a></li>
-<li><a href="#tabset-4-3"><code>text/footer.md</code></a></li>
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-5-1"><code>ui.R</code></a></li>
+<li><a href="#tabset-5-2"><code>text/about.md</code></a></li>
+<li><a href="#tabset-5-3"><code>text/footer.md</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50" data-code-line-numbers="12-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb50-2"><a href="#cb50-2"></a>  </span>
@@ -3620,7 +3619,7 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb50-107"><a href="#cb50-107"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">## Welcome to the LTER Animal Data Explorer!</span></span>
 <span id="cb51-2"><a href="#cb51-2"></a></span>
@@ -3637,7 +3636,7 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb51-13"><a href="#cb51-13"></a>Check out the **Explore the Data** page to find interactive data visualizations looking at Cutthroat trout of the <span class="co">[</span><span class="ot">Andrews Forest LTER</span><span class="co">](https://andrewsforest.oregonstate.edu/)</span> and Adelie, Gentoo &amp; Chinstrap penguins of the <span class="co">[</span><span class="ot">Palmer Station LTER</span><span class="co">](https://pallter.marine.rutgers.edu/)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-4-3">
+<div id="tabset-5-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>*This app is maintained by [Samantha Csik](https://samanthacsik.github.io/) and is updated as needed for teaching purposes. Please report any issues [here](https://github.com/samanthacsik/EDS430-shiny-app/issues). Source code can be found on [GitHub](https://github.com/samanthacsik/EDS430-shiny-app).*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -3662,13 +3661,13 @@ Code recap for app #2v1, so far:
 Additionally, you should have a <code>/text</code> folder within your app’s directory (<code>/two-file-app</code>, if you named it as I did) that contains two markdown files, <code>about.md</code> and <code>footer.md</code>.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-5-1"><code>global.R</code></a></li>
-<li><a href="#tabset-5-2"><code>ui.R</code></a></li>
-<li><a href="#tabset-5-3"><code>server.R</code></a></li>
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-6-1"><code>global.R</code></a></li>
+<li><a href="#tabset-6-2"><code>ui.R</code></a></li>
+<li><a href="#tabset-6-3"><code>server.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-6-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb53-2"><a href="#cb53-2"></a><span class="fu">library</span>(shiny)</span>
@@ -3707,7 +3706,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb53-35"><a href="#cb53-35"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-6-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb54-2"><a href="#cb54-2"></a>  </span>
@@ -3818,7 +3817,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb54-107"><a href="#cb54-107"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-5-3">
+<div id="tabset-6-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb55-2"><a href="#cb55-2"></a>  </span>
@@ -3933,7 +3932,7 @@ Go to <a href="https://www.shinyapps.io/">shinyapps.io</a> and login or create a
 <center>
 <img src="images/shinyapps_setup.png" alt="shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`." width="750">
 </center>
-</section><section id="deploy-app" class="slide level2" data-menu-title="Deploy your app"><h2></h2>
+</section><section id="deploy-app" class="slide level2" data-menu-title="~~~ Deploy your app ~~~"><h2></h2>
 <div class="slide-title-smaller">
 Deploy your app to shinyapps.io
 </div>
@@ -3982,7 +3981,7 @@ Other ways to host your Shiny apps
 <strong>IMPORTANT:</strong> Hosting on a server means that shiny applications will be prone to breaking as updates to server software are made. It is important to have an <strong>application maintenance plan</strong> in place. This may mean identifying who is responsible for maintaining code, or even deciding to decommission applications and archive the code repository when appropriate.
 </p>
 </div>
-</section><section id="improving-app2" class="slide level2" data-menu-title="Improving App #2 UX" data-background="#053660"><h2></h2>
+</section><section id="improving-app2" class="slide level2" data-menu-title="~~~ Improving App #2 UX ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Users" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Users</title>
@@ -4116,7 +4115,7 @@ Place your validation test(s) at the start of any <code>reactive()</code> or <co
 <span id="cb56-18"><a href="#cb56-18"></a>    })</span>
 <span id="cb56-19"><a href="#cb56-19"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="exercise4-prompt-tips" class="slide level2" data-menu-title="Exercise 4 Prompt &amp; Tips"><h2></h2>
+</section><section id="exercise4-prompt-tips" class="slide level2" data-menu-title="** Exercise 4 Prompt &amp; Tips **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
 <path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> &amp; <svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
@@ -4144,7 +4143,7 @@ Place your validation test(s) at the start of any <code>reactive()</code> or <co
 See next slide for a solution!
 </p>
 </center>
-</section><section id="exercise4-solution" class="slide level2" data-menu-title="Exercise 4 Solution"><h2></h2>
+</section><section id="exercise4-solution" class="slide level2" data-menu-title="** Exercise 4 Solution **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 4: A solution
@@ -4300,7 +4299,7 @@ We’ll talk a bit more about alt text <a href="https://ucsb-meds.github.io/EDS4
 </div>
 </div>
 </div>
-</section><section id="redeploying-apps" class="slide level2" data-menu-title="Redeploying apps with shinyapps.io" data-background="#053660"><h2></h2>
+</section><section id="redeploying-apps" class="slide level2" data-menu-title="~~~ Redeploying apps ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Upload" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Upload</title>
@@ -4370,7 +4369,7 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> (c) adding alt text to data visualizations to assist those using screen readers in understanding visuals within our app
 </p>
 </div>
-</section><section id="building-dashboards" class="slide level2" data-menu-title="Building Dashboards" data-background="#053660"><h2></h2>
+</section><section id="building-dashboards" class="slide level2" data-menu-title="~~~ Building Dashboards ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Gauge med" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Gauge med</title>
@@ -4673,20 +4672,20 @@ Draft <code>leaflet</code> map
 There are lots of ways to customize <code>leaflet</code> maps. We’ll be keeping ours relatively simple, but check out the <a href="https://rstudio.github.io/leaflet/">Leaflet for R</a> documentation for more ways to get creative with your maps.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-6-1">leaflet map</a></li>
-<li><a href="#tabset-6-2">code</a></li>
+<ul id="tabset-7" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-7-1">leaflet map</a></li>
+<li><a href="#tabset-7-2">code</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-31da5c5c5d35864b4398" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-31da5c5c5d35864b4398">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2eacc7e40b79f0f5f1a4" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2eacc7e40b79f0f5f1a4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-7-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
 <span id="cb63-2"><a href="#cb63-2"></a></span>
@@ -4697,7 +4696,7 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <span id="cb63-7"><a href="#cb63-7"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb63-8"><a href="#cb63-8"></a>  </span>
 <span id="cb63-9"><a href="#cb63-9"></a>  <span class="co"># add tiles</span></span>
-<span id="cb63-10"><a href="#cb63-10"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldImagery"</span>, <span class="co"># make note of using appropriate tiles</span></span>
+<span id="cb63-10"><a href="#cb63-10"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"Esri.WorldImagery"</span>, </span>
 <span id="cb63-11"><a href="#cb63-11"></a>                   <span class="at">options =</span> <span class="fu">providerTileOptions</span>(<span class="at">maxNativeZoom =</span> <span class="dv">19</span>, <span class="at">maxZoom =</span> <span class="dv">100</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb63-12"><a href="#cb63-12"></a>  </span>
 <span id="cb63-13"><a href="#cb63-13"></a>  <span class="co"># add mini map</span></span>
@@ -4725,20 +4724,20 @@ Practice filtering <code>leaflet</code> observations
 We’ll eventually build three <code>sliderInput</code>s to filter lake makers by <code>Elevation</code>, <code>AvgDepth</code>, and <code>AvgTemp</code>. Practice filtering here first (and be sure to update the data frame name in your leaflet code!):
 </p>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-7-1">leaflet map (filtered)</a></li>
-<li><a href="#tabset-7-2">code</a></li>
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-8-1">leaflet map (filtered)</a></li>
+<li><a href="#tabset-8-2">code</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bc4e957fa45eb78db0b1" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-bc4e957fa45eb78db0b1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ccac3f0cd978ef72d547" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ccac3f0cd978ef72d547">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-8-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb64" data-code-line-numbers="5-10|26-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
 <span id="cb64-2"><a href="#cb64-2"></a></span>
@@ -4809,13 +4808,13 @@ Add the server function to <code>server.R</code> and the three main UI component
 Run your app to make sure it works – you should see a super basic dashboard. If it doesn’t look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).
 </p>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-8-1"><code>ui.R</code></a></li>
-<li><a href="#tabset-8-2"><code>server.R</code></a></li>
-<li><a href="#tabset-8-3"><code>global.R</code></a></li>
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-9-1"><code>ui.R</code></a></li>
+<li><a href="#tabset-9-2"><code>server.R</code></a></li>
+<li><a href="#tabset-9-3"><code>global.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-8-1">
+<div id="tabset-9-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb65-2"><a href="#cb65-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>()</span>
@@ -4830,12 +4829,12 @@ Run your app to make sure it works – you should see a super basic dashboard. I
 <span id="cb65-11"><a href="#cb65-11"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-8-2">
+<div id="tabset-9-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-8-3">
+<div id="tabset-9-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb67-2"><a href="#cb67-2"></a><span class="fu">library</span>(shiny)</span>
@@ -5324,7 +5323,7 @@ If all is good, you should see something similar to this:
 <center>
 <img src="images/elev_widget.gif" alt="Our Fish Creek Watershed Lake Monitoring dashboard. The 'Welcome' page has a box on the left for background info, and two stacked boxes on the right for data citation and disclaimer info. The 'Dashboard' tab has a sliderInput in the left-hand box, where users can select a range of elevations. When a range is selected, the blue markers on the leaflet map in the right-hand box are filtered accordingly. Clicking on the markers reveals more information about the specific site, including Site Name, Elevation, Avg Depth, and AvgTemp." width="750">
 </center>
-</section><section id="exercise5-prompt" class="slide level2" data-menu-title="Exercise 5 Prompt"><h2></h2>
+</section><section id="exercise5-prompt" class="slide level2" data-menu-title="** Exercise 5 Prompt **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
 <path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> Exercise 5: Add two more <code>sliderInput</code>s to filter for <code>AvgDepth</code> &amp; <code>AvgTemp</code>
@@ -5346,18 +5345,18 @@ If all is good, you should see something similar to this:
 See next slide for a solution!
 </p>
 </center>
-</section><section id="exercise5-solution" class="slide level2" data-menu-title="Exercise 5 Solution"><h2></h2>
+</section><section id="exercise5-solution" class="slide level2" data-menu-title="** Exercise 5 Solution **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 5: A solution
 </div>
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-9-1"><code>ui.R</code></a></li>
-<li><a href="#tabset-9-2"><code>server.R</code></a></li>
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-10-1"><code>ui.R</code></a></li>
+<li><a href="#tabset-10-2"><code>server.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-9-1">
+<div id="tabset-10-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb75" data-code-line-numbers="91-97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb75-2"><a href="#cb75-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
@@ -5481,7 +5480,7 @@ See next slide for a solution!
 <span id="cb75-120"><a href="#cb75-120"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-9-2">
+<div id="tabset-10-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb76" data-code-line-numbers="8-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb76-2"><a href="#cb76-2"></a>  </span>
@@ -5538,7 +5537,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c7ffa08a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_ad0ba6ad" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -5546,11 +5545,11 @@ Mini Break
 </div>
 </div>
 </div>
-</section><section id="exercise6-prompt-tips" class="slide level2" data-menu-title="Exercise 6 Prompt &amp; Tips"><h2></h2>
+</section><section id="exercise6-prompt-tips" class="slide level2" data-menu-title="** Exercise 6 Prompt &amp; Tips **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
 <path d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"></path></svg> &amp; <svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
-<path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"></path></svg> Exercise 6: Add titles &amp; text to the Welcome page boxes
+<path d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM192 0C90.02 .3203 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.8 289.2 .0039 192 0zM288.4 260.1c-15.66 17.85-35.04 46.3-49.05 75.89h-94.61c-14.01-29.59-33.39-58.04-49.04-75.88C75.24 236.8 64 206.1 64 175.1C64 113.3 112.1 48.25 191.1 48C262.6 48 320 105.4 320 175.1C320 206.1 308.8 236.8 288.4 260.1zM176 80C131.9 80 96 115.9 96 160c0 8.844 7.156 16 16 16S128 168.8 128 160c0-26.47 21.53-48 48-48c8.844 0 16-7.148 16-15.99S184.8 80 176 80z"></path></svg> Exercise 6: Add titles &amp; text to Welcome page boxes
 </div>
 <p class="body-text">
 <strong>To Do:</strong>
@@ -5564,31 +5563,32 @@ Mini Break
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Create a <code>/text</code> folder within your app’s directory and add three markdown (<code>.md</code>) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:
 </p>
 <div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-10-1"><code>intro.md</code></a></li>
-<li><a href="#tabset-10-2"><code>citation.md</code></a></li>
-<li><a href="#tabset-10-3"><code>disclaimer.md</code></a></li>
+<ul id="tabset-11" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-11-1"><code>intro.md</code></a></li>
+<li><a href="#tabset-11-2"><code>citation.md</code></a></li>
+<li><a href="#tabset-11-3"><code>disclaimer.md</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-10-1">
+<div id="tabset-11-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb77-1"><a href="#cb77-1"></a>The <span class="co">[</span><span class="ot">Fish Creek Watershed Observatory (FCWO)</span><span class="co">](http://www.fishcreekwatershed.org/)</span> is a focal watershed within the <span class="co">[</span><span class="ot">National Petroleum Reserve in Alaska (NPR-A)</span><span class="co">](https://www.blm.gov/programs/energy-and-minerals/oil-and-gas/about/alaska/NPR-A)</span>. Targeted lake and stream monitoring within the watershed provide site-specific data prior to and after the establishment of new petroleum development, as well as insight into dynamics related to climate change and variability. Eleven lakes of interest (Harry Potter, Hipbone, Iceshove, L9817, L9819, L9820, Little Alaska, Lower Snowman, M9925, Middle Snowman, and Serenity) are featured in this dashboard.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-10-2">
+<div id="tabset-11-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb78-1"><a href="#cb78-1"></a>Data presented in this dashboard were collected as part of the <span class="co">[</span><span class="ot">Fish Creek Watershed Observatory</span><span class="co">](http://www.fishcreekwatershed.org/)</span> are archived and publicly accessible on the NSF <span class="co">[</span><span class="ot">Arctic Data Center</span><span class="co">](https://arcticdata.io/)</span>. **Citation:** </span>
 <span id="cb78-2"><a href="#cb78-2"></a></span>
 <span id="cb78-3"><a href="#cb78-3"></a>*Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center [doi:10.18739/A2JH3D41P](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P).*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-10-3">
+<div id="tabset-11-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb79-1"><a href="#cb79-1"></a>This app is build for demonstration/teaching purposes only and is not paid for or endorsed by the Fish Creek Watershed Observatory or affiliates in any way. The data as presented here are not intended for publication nor scientific interpretation. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
+<p><br></p>
 <p class="body-text">
 <strong>Tips:</strong>
 </p>
@@ -5596,7 +5596,7 @@ Mini Break
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg>Titles can include icons! For example: <code>title = tagList(icon("icon-name"), strong("title text here"))</code>
 </p>
-</section><section id="exercise6-solution" class="slide level2" data-menu-title="Exercise 6 Solution"><h2></h2>
+</section><section id="exercise6-solution" class="slide level2" data-menu-title="** Exercise 6 Solution **"><h2></h2>
 <div class="slide-title-smaller">
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 6: A solution
@@ -5731,7 +5731,7 @@ Mini Break
 Add a static image
 </div>
 <p class="small-text">
-As a final touch, let’s add an image to the Welcome page, inside the left-hand box beneath our intro text. First, <strong>create a <code>/www</code> folder inside your app’s directory</strong> (see <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure">slide 11</a> for a reminder). Download the map of the Fish Creek Watershed from FCWO’s website <a href="http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg">here</a> and save it to your <code>/www</code> directory.
+As a final touch, let’s add an image to the Welcome page, inside the left-hand box beneath our intro text. First, <strong>create a <code>/www</code> folder inside your app’s directory</strong> (see <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure">slide 11</a> for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO’s website <a href="http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg">here</a> and save it to your <code>/www</code> directory.
 </p>
 <p class="small-text">
 Next, use the <code>img</code> tag to add your image. Supply a file path, relative to your <code>/www</code> directory, using the <code>src</code> argument, and alt text using the <code>alt</code> argument.
@@ -6015,11 +6015,13 @@ I’ve also added a caption below our image that links to the image source, and 
 <div class="slide-title-smaller">
 Check out your finished dashboard!
 </div>
-<p><br></p>
 <center>
 <img src="images/final-dashboard.gif" alt="Our completed dashboard, with our image styled so that it fits within the background info box on the Welcome page, and three functional sliderInputs that update the leaflet map on the Dashboard page." width="750">
 </center>
-</section><section id="accessibility" class="slide level2" data-menu-title="Accessibility" data-background="#053660"><h2></h2>
+<p class="small-text">
+There’s a ton more to learn about building shinydashboards. Check out the <a href="">documentation</a> to find instructions on adding components like <a href="https://rstudio.github.io/shinydashboard/structure.html#infobox"><code>infoBox</code>es</a> and <a href="https://rstudio.github.io/shinydashboard/structure.html#valuebox"><code>valueBox</code>es</a>, building <a href="https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar">inputs in the sidebar</a>, easy ways to update the color theme using <a href="https://rstudio.github.io/shinydashboard/appearance.html#skins">skins</a>, and more.
+</p>
+</section><section id="accessibility" class="slide level2" data-menu-title="~~~ Accessibility ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
 <svg aria-label="Screwdriver wrench" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Screwdriver wrench</title>

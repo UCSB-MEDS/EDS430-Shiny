@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-##  {#build-app1 data-menu-title="Building Out Your 1st App" background="#053660"}
+##  {#build-app1 data-menu-title="~~~ Building App #1 ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building out your 1<sup>st</sup> app</p>
@@ -802,7 +802,7 @@ server <- function(input, output) {
 
 ---
 
-##  {#app1-ex1 data-menu-title="Exercise 1 Prompt"}
+##  {#app1-ex1 data-menu-title="** Exercise 1 Prompt **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 1: Add another reactive widget</div>
 
@@ -831,7 +831,7 @@ server <- function(input, output) {
 
 ---
 
-##  {#app1-ex1-tips data-menu-title="Exercise 1 Tips"}
+##  {#app1-ex1-tips data-menu-title="** Exercise 1 Tips **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 1: Tips</div>
 
@@ -854,7 +854,7 @@ server <- function(input, output) {
 
 ---
 
-##  {#app1-ex1-solution data-menu-title="Exercise 1 Solution"}
+##  {#app1-ex1-solution data-menu-title="** Exercise 1 Solution **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 1: A solution</div>
 

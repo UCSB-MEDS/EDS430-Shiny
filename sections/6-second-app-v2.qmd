@@ -2,7 +2,7 @@
 format: revealjs
 ---
 
-##  {#improving-app2 data-menu-title="Improving App #2 UX" background="#053660"}
+##  {#improving-app2 data-menu-title="~~~ Improving App #2 UX ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("users", fill = "#d2e3f3", a11y = "sem")` Improving user experience</p>
@@ -131,7 +131,7 @@ server <- function(input, output) {
 
 ---
 
-##  {#exercise4-prompt-tips data-menu-title="Exercise 4 Prompt & Tips"}
+##  {#exercise4-prompt-tips data-menu-title="** Exercise 4 Prompt & Tips **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` & `r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 4: Add a validation test for your penguin histogram</div>
 
@@ -154,7 +154,7 @@ server <- function(input, output) {
 
 ---
 
-##  {#exercise4-solution data-menu-title="Exercise 4 Solution"}
+##  {#exercise4-solution data-menu-title="** Exercise 4 Solution **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 4: A solution</div>
 
