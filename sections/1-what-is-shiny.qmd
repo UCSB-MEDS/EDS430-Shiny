@@ -144,19 +144,19 @@ sliderInput(inputId = "bins",
 
 <div class="slide-title">Let's build our own!</div>
 
-<p class="body-text"> We're going to cover a lot over our two days. Here's a general **outline** of all the apps we'll build during our two days together:</p>
+<p class="body-text"> We're going to cover a lot over our two days. Below is a general **outline** of all the apps we'll build during our two days together. At any point, you may reference the [GitHub repository](https://github.com/samanthacsik/EDS430-shiny-app) with source code for each complete app.</p>
 
 ::: {.panel-tabset}
 
 ## Day 1
 
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a single-file Shiny app with two reactive outputs (a scatterplot & a DT data table)</p>
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a two-file shiny app with two reactive plots (a scatterplot and a histogram) -- we'll also learn how to use layout functions to create a more visually-pleasing (and organized) UI.</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a single-file Shiny app with two reactive outputs (a scatterplot & a DT data table) -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app)</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a two-file shiny app with two reactive plots (a scatterplot and a histogram) -- we'll also learn how to use layout functions to create a more visually-pleasing (and organized) UI. -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>
 
 ## Day 2
 
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a shiny dashboard
-with a reactive leaflet map</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a shiny dashboard
+with a reactive leaflet map -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard)</p>
 
 :::
 

@@ -5,3 +5,13 @@ format: revealjs
 ##  {#UI-design data-menu-title="UI design is important!"}
 
 <div class="slide-title">UI design</div>
+
+From: https://engineering-shiny.org/ux-matters.html 
+- simplicity is gold: if possible, the main usage of the application does not require reading the manual; interfaces should be as self-explanatory as possible
+- adapt a defensive programming mindset; you should always fail gracefully and informatively (e.g. provide users with a helpful error message)
+- Rule of Least Surprise: in interface design, always do the least surprising thing
+make sure that if an input is necessary, it is made clear inside the app that it is (see {shinyFeedback} and also use validate()
+avoid feature-creep: the process of adding features ot the app that complicates the usage and the maintenance of the product, to the point that extreme feature-creep can lead to the product being entirely unusable and completely impossible to maintain
+- too much reactivity
+- too much interactivity (e.g. plotly) -- can add visual noise; do not make things interactive if there is no value in adding interactivity
+- accessibility

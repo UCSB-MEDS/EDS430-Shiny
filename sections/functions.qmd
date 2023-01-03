@@ -2,5 +2,334 @@
 format: revealjs
 ---
 
-- main benefit to UI functions is reducing duplication
-- main benefit to server functions is isolation and testing
+##  {#functions data-menu-title="~~~ Functions ~~~" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` Writing functions to improve readability and usability</p>
+<p class="caption-text">*Writing functions can help to reduce code duplication & make testing easier as your app(s) grows in complexity*</p>
+</div>
+
+---
+
+##  {#LO-app4 data-menu-title="Learning Objectives App #4"}
+
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #4</div>
+
+<p class="medium-body-text bottombr">By the end of building out this app, you should understand:</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` tbd</p>
+
+. . . 
+
+<p class="medium-body-text topbr">Packages used:</p> 
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{tbd}`: tbd</p>
+
+
+---
+
+##  {#function-types data-menu-title="Types of Functions"}
+
+<div class="slide-title">UI vs. Server functions</div>
+
+<p class="body-text bottombr">We'll demonstrate two different flavors of functions: those written for the UI and those written for the server:</p>
+
+<p class="small-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the main benefit to writing **UI functions** is **reducing duplication**</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the main benefit to writing **server functions** is **isolation and testing**</p>
+
+. . . 
+
+<p class="body-text topbr">Importantly, functions can live outside of your app file(s) (i.e. `app.R` or `ui.R`, `server.R` and `global.R`), helping you to break up/streamline your code. Hadley Wickham [recommends](https://mastering-shiny.org/scaling-functions.html#file-organisation) creating a folder called `/R` **inside** your app's directory (e.g. `~/app-directory/R/...`) and:</p>
+
+<p class="small-text bottombr">**(a)** storing larger functions in their own files (e.g. `~/app-directory/R/{function-name}.R`) and/or</p> 
+<p class="small-text bottombr">**(b)** creating a `utils.R` file (e.g `~/app-directory/R/utils.R`) to store smaller, simpler functions all in one script.</p> 
+
+<p class="body-text topbr">You can **source your function files into `global.R`** so that your functions are made available for use throughout your app.</p>
+
+---
+
+##  {#app-for-practicing-fxns data-menu-title="Example App for Fxn Practice"}
+
+<div class="slide-title-smaller">Create a small app for function practice</div>
+
+<p class="small-text">Create a new subdirectory called `functions-app/` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
+
+::: {.panel-tabset}
+
+## `ui.R`
+```{r}
+#| eval: false
+#| echo: true
+ui <- fluidPage(
+  
+  tags$h1("Demoing UI Functions"),
+  
+  # tabsetPanel ----
+  tabsetPanel(
+    
+    # scatterplot tab ----
+    tabPanel("Scatterplot",
+             
+             # species (scatterplot) pickerInput ----
+             pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
+                         choices = c("Adelie", "Chinstrap", "Gentoo"),
+                         options = pickerOptions(actionsBox = TRUE),
+                         selected = c("Adelie", "Chinstrap", "Gentoo"),
+                         multiple = T),
+             
+             # scatterplot output ----
+             plotOutput(outputId = "penguin_scatterplot")
+             
+             ), # END scatterplot tab
+    
+    
+    # histogram tab ----
+    tabPanel("Histogram",
+             
+             # species (histogram) pickerInput ----
+             pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
+                         choices = c("Adelie", "Chinstrap", "Gentoo"),
+                         options = pickerOptions(actionsBox = TRUE),
+                         selected = c("Adelie", "Chinstrap", "Gentoo"),
+                         multiple = T),
+             
+             # scatterplot output ----
+             plotOutput(outputId = "penguin_histogram")
+             
+             ) # END histogram tab
+    
+  ) # END tabsetPanel
+  
+) # END fluidPage
+
+```
+
+## `server.R`
+```{r}
+#| eval: false
+#| echo: true
+server <- function(input, output) {
+  
+  
+  # filter penguin species (scatterplot) ----
+  filtered_spp_scatterplot <- reactive ({
+
+    penguins |>
+      filter(species %in% input$penguin_species_scatterplot)
+
+  })
+
+  
+  # render the scatterplot output ----
+  output$penguin_scatterplot <- renderPlot({
+    
+    ggplot(na.omit(filtered_spp_scatterplot()),
+           aes(x = bill_length_mm, y = bill_depth_mm,
+               color = species, shape = species)) +
+      geom_point() +
+      geom_smooth(method = "lm", se = FALSE, aes(color = species)) + 
+      scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+      labs(x = "Flipper length (mm)", y = "Bill length (mm)",
+           color = "Penguin species", shape = "Penguin species")
+    
+  })
+  
+  
+  # filter penguin species (histogram) ----
+  filtered_spp_histogram <- reactive ({
+    
+    penguins |>
+      filter(species %in% input$penguin_species_histogram)
+    
+  })
+  
+  # render the histogram output ----
+  output$penguin_histogram <- renderPlot({
+    
+    ggplot(na.omit(filtered_spp_histogram()),
+           aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram() +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species")
+    
+  })
+  
+} # END server
+```
+
+## `global.R`
+```{r}
+#| eval: false
+#| echo: true
+# load packages ----
+library(shiny)
+library(shinyWidgets)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+:::
+
+---
+
+##  {#id-ui-duplication data-menu-title="Identify code duplication in UI"}
+
+<div class="slide-title-smaller">Identify code duplication in `ui.R`</div>
+
+<p class="body-text">Let's first focus on the UI -- where do we have nearly identically duplicated code?</p>
+
+. . . 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "11-16|27-32"
+ui <- fluidPage(
+  
+  tags$h1("Demoing UI Functions"),
+  
+  # tabsetPanel ----
+  tabsetPanel(
+    
+    # scatterplot tab ----
+    tabPanel("Scatterplot",
+             
+             # species (scatterplot) pickerInput ----
+             pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
+                         choices = c("Adelie", "Chinstrap", "Gentoo"),
+                         options = pickerOptions(actionsBox = TRUE),
+                         selected = c("Adelie", "Chinstrap", "Gentoo"),
+                         multiple = T),
+             
+             # scatterplot output ----
+             plotOutput(outputId = "penguin_scatterplot")
+             
+             ), # END scatterplot tab
+    
+    
+    # histogram tab ----
+    tabPanel("Histogram",
+             
+             # species (histogram) pickerInput ----
+             pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
+                         choices = c("Adelie", "Chinstrap", "Gentoo"),
+                         options = pickerOptions(actionsBox = TRUE),
+                         selected = c("Adelie", "Chinstrap", "Gentoo"),
+                         multiple = T),
+             
+             # scatterplot output ----
+             plotOutput(outputId = "penguin_histogram")
+             
+             ) # END histogram tab
+    
+  ) # END tabsetPanel
+  
+) # END fluidPage
+
+```
+
+##  {#id-ui-duplication data-menu-title="Identify code duplication in UI"}
+
+<div class="slide-title-smaller">Identify code duplication in `ui.R`</div>
+
+<p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInputs` is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
+
+<p class="small-text topbr">First, create an `R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
+
+<p class="small-text topbr">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
+
+<p class="small-text topbr">Once written, `source()` your function script into `global.R` to make your function availabe for use in your app.</p>
+
+::: {.panel-tabset}
+
+## `penguinSpp_pickerInput.R`
+```{r}
+#| eval: false  
+#| echo: true
+penguinSpp_pickerInput <- function(inputId) {
+  pickerInput(inputId = inputId, label = "Select a species:",
+              choices = c("Adelie", "Gentoo", "Chinstrap"),
+              options = pickerOptions(actionsBox = TRUE),
+              selected = c("Adelie", "Gentoo", "Chinstrap"),
+              multiple = TRUE)
+}
+```
+
+## `global.R` 
+```{r}
+#| eval: false  
+#| echo: true
+#| code-line-numbers: "7-8"
+# load packages ----
+library(shiny)
+library(shinyWidgets)
+library(palmerpenguins)
+library(tidyverse)
+
+# IMPORT FUNCTIONS ----
+source("R/penguinSpp_pickerInput.R")
+```
+
+:::
+
+---
+
+##  {#apply-ui-fxn data-menu-title="Apply UI function"}
+
+<div class="slide-title-smaller">Apply your function in `ui.R`</div>
+
+<p class="small-text">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function:</p>
+
+```{r}
+#| eval: false  
+#| echo: true
+#| code-line-numbers: "12|24"
+ui <- fluidPage(
+  
+  tags$h1("Demoing Functions"),
+  
+  # tabsetPanel ----
+  tabsetPanel(
+    
+    # scatterplot tab ----
+    tabPanel("Scatterplot",
+             
+             # species (scatterplot) pickerInput ---- 
+             penguinSpp_pickerInput(inputId = "penguin_species_scatterplot"),
+             
+             # scatterplot output ----
+             plotOutput(outputId = "penguin_scatterplot")
+             
+             ), # END scatterplot tab
+    
+    
+    # histogram tab ----
+    tabPanel("Histogram",
+             
+             # species (histogram) pickerInput ----
+             penguinSpp_pickerInput(inputId = "penguin_species_histogram"),
+             
+             # scatterplot output ----
+             plotOutput(outputId = "penguin_histogram")
+             
+             ) # END histogram tab
+    
+  ) # END tabsetPanel
+  
+) # END fluidPage
+
+```
+
+---
+
+we not only have reduced 10 lines of UI code into 2, but we also have made our code a bit more readable -- rather than a collaborator walking through our code and having to interpret what those two pickerInputs were doing using code comments and arguments, they instead can now see from our function name that those lines of code are likely pickerInputs that allow users to select penguin species.
+
+---
+
+Don't have to only write functions for duplicated UI elements -- can also turn elements into fucntions with more descriptive names so that your code is easier to read

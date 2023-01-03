@@ -105,6 +105,10 @@ countdown::countdown(
 
 ---
 
+{{< include sections/functions.qmd >}}
+
+---
+
 {{< include sections/accessibility.qmd >}}
 
 ---

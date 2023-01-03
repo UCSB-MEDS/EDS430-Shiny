@@ -1767,3 +1767,12 @@ dashboardPage(header, sidebar, body)
 
 <p class="small-text">There's a ton more to learn about building shinydashboards. Check out the [documentation]() to find instructions on adding components like [`infoBox`es](https://rstudio.github.io/shinydashboard/structure.html#infobox) and [`valueBox`es](https://rstudio.github.io/shinydashboard/structure.html#valuebox), building [inputs in the sidebar](https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar), easy ways to update the color theme using [skins](https://rstudio.github.io/shinydashboard/appearance.html#skins), and more.</p>
 
+---
+
+##  {#recapp-app3 data-menu-title="Recap: app #3"}
+
+<div class="slide-title-smaller">Recap: We created our first shiny dashboard....:</div>
+
+. . . 
+
+<p class="body-text">**1.** tbd</p>
