@@ -44,7 +44,9 @@ format: revealjs
 
 <div class="slide-title">Using the [`{bslib}` package](https://rstudio.github.io/bslib/) to theme Shiny apps</div>
 
-<p class="body-text">The [`{bslib}` package](https://rstudio.github.io/bslib/) provides tools for customizing [Bootstrap themes](https://getbootstrap.com/docs/4.6/getting-started/theming/) directly from R, making custom themeing quite easy.</p>
+<p class="body-text">The [`{bslib}` package](https://rstudio.github.io/bslib/) provides tools for customizing [Bootstrap themes](https://getbootstrap.com/docs/4.6/getting-started/theming/) directly from R, making custom themeing for Shiny apps (and R Markdown docs!) quite easy.</p>
+
+<br>
 
 :::: {.columns}
 
@@ -60,25 +62,31 @@ format: revealjs
 ::: {.column width="45%"}
 <center><p class="medium-body-text">Cons:</p></center>
 <p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` does **not** work with `shinydashboard` (`{bslib}` is only intended for use with `shiny` *apps*)</p>
-<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` some `shinyWidgets` may break when a `bslib` theme is applied (e.g. `pickerInput`s in our `two-file-app`)</p>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` some `shinyWidgets` may break when a `bslib` theme is applied (e.g. `pickerInput`s in our `two-file-app`) (at the time of writing this, Jan 2023).</p>
 :::
 
 ::::
 
 <br>
-<br>
 
 . . . 
 
-<center><p class="body-text topbr">**Let's practice applying new `bslib` themes to our `one-file-app` (i.e. App #1) together**</p></center>
+<center><p class="body-text topbr">**Let's practice applying new themes using `bslib` to our `one-file-app` (i.e. App #1)**</p></center>
 
 ---
 
-##  {#bslib data-menu-title="{bslib}"}
+##  {#bslib-prebuilt-themes data-menu-title="Pre-built themes with {bslib}"}
 
-<div class="slide-title">Applying & creating {bslib} themes</div>
+<div class="slide-title">Apply a pre-built theme with {bslib}</div>
 
-<p class="small-text">By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change the theme slightly to a slightly more modern Bootstrap v4 theme by setting the `theme` argument of `fluidPage()` to `bslib::bs_theme()`, *or* supply `bs_theme()` with a pre-built bootswatch theme using the `bootswatch` argument (for a list of theme names, run `bootswatch_themes()` in your console):</p>
+<p class="small-text topbr">By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change the theme to a slightly more modern Bootstrap v5 theme by setting the `theme` argument of `fluidPage()` to `bslib::bs_theme(version = 5)`, *or* supply `bs_theme()` with a pre-built bootswatch theme, as shown below (for a list of theme names, run `bootswatch_themes()` in your console):</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+<br>
 
 ```{r}
 #| eval: false
@@ -91,4 +99,147 @@ ui <- fluidPage(
   
 )
 ```
+:::
 
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/solar.png" alt="solar.png" width="550"/></center>
+:::
+
+::::
+
+---
+
+##  {#bslib-custom-themes data-menu-title="Custom themes with {bslib}"}
+
+<div class="slide-title">Create a custom theme with {bslib}</div>
+
+<p class="small-text">Alternatively, you can fully customize your own theme. Explore the [`bslib` vignette](https://rstudio.github.io/bslib/articles/bslib.html) for detailed instructions. A small example here:</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+ui <- fluidPage(
+  
+  theme = bslib::bs_theme(
+    bg = "#A36F6F", # background color
+    fg = "#FDF7F7", # foreground color
+    primary = "#483132", # primary accent color
+    base_font = font_google("Pacifico"))
+  
+  # ~ additional UI code omitted for brevity ~
+  
+)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/custom-bslib.png" alt="solar.png" width="550"/></center>
+:::
+
+::::
+
+<p class="small-text">Be sure to check out the interactive themeing widget to test custom color/font/etc. combos before committing by running `bs_theme_preview()` in your console, or visit the hosted version [here](https://testing-apps.shinyapps.io/themer-demo/). You can also call `bs_themer()` within your `server` function to open the theme customization UI alongside your app.</p>
+
+----
+
+##  {#thematic data-menu-title="{thematic} for plot themeing"}
+
+<div class="slide-title-smaller">Use `{thematic}` to extend your theme to plots</div>
+
+<p class="small-text">You probably noticed that our scatterplot looks a little silly against the darker background of our themed app. Enter the [`{thematic}` package](https://rstudio.github.io/thematic/index.html), which is built to help simplify plot themeing. Call `thematic_shiny()` before launching your app to generate plots that reflect your application's `bs_theme()`. For example:</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+thematic::thematic_shiny()
+
+ui <- fluidPage(
+  
+  theme = bslib::bs_theme(
+    bg = "#A36F6F", # background color
+    fg = "#FDF7F7", # foreground color
+    primary = "#483132", # primary accent color
+    base_font = font_google("Pacifico"))
+  
+  # ~ additional UI code omitted for brevity ~
+  
+)
+```
+:::
+
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/bslib-thematic.png" alt="" width="550"/></center>
+:::
+
+::::
+
+<p class="small-text">Read the [vignette](https://rstudio.github.io/thematic/index.html) to learn more about using the `thematic` package to easily match plot fonts to the fonts applied across your app.</p>
+
+---
+
+{fresh} for shinydashboard
+
+---
+
+intro to css
+
+---
+
+##  {#css-3ways data-menu-title="3 ways to add CSS styling"}
+
+<div class="slide-title-smaller">3 ways to add CSS styling to your apps</div>
+
+<p class="small-text">You can **(1)** add styling directly to `tags`, **(2)** add CSS rules to your `header`, and/or **(3)** build a stylesheet that is applied to your app.</p>
+
+::: {.panel-tabset}
+
+## tags
+
+<p class="small-text">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+```
+
+## header
+
+<p class="small-text">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app).</p>
+
+```{r}
+#| eval: false
+#| echo: true
+```
+
+## stylesheets
+
+<p class="small-text">Build a stylesheet inside your app's `www/` directory and import styles into your app's header. **This is the most ideal approach** -- it allows for style reuse, caching, all styling is contained in one spot, 
+
+```{r}
+#| eval: false
+#| echo: true
+```
+
+:::
