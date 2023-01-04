@@ -1,0 +1,94 @@
+---
+format: revealjs
+---
+
+##  {#themeing data-menu-title="~~~ Themeing Shiny Apps ~~~" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("paintbrush", fill = "#d2e3f3", a11y = "sem")` Styling & Themeing shiny apps</p>
+<p class="caption-text">*We've built some really cool apps so far, but they all have a pretty standard and similar appearance. In this section, we'll explore a few different approaches for styling your apps.*</p>
+</div>
+
+---
+
+##  {#LO-themeing data-menu-title="Learning Objectives (Themeing)"}
+
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives</div>
+
+<p class="medium-body-text bottombr">By the end of this section, you should be equipped with:</p>
+
+. . . 
+
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a number of different approaches for themeing and styling your shiny apps and dashboards</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` tbd</p>
+
+. . .
+
+<p class="medium-body-text topbr">New packages used:</p> 
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: tbd</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{fresh}`: tbd</p>
+
+---
+
+##  {#bslib data-menu-title="{bslib}"}
+
+<div class="slide-title">Using the [`{bslib}` package](https://rstudio.github.io/bslib/) to theme Shiny apps</div>
+
+<p class="body-text">The [`{bslib}` package](https://rstudio.github.io/bslib/) provides tools for customizing [Bootstrap themes](https://getbootstrap.com/docs/4.6/getting-started/theming/) directly from R, making custom themeing quite easy.</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<center><p class="medium-body-text">Pros:</p></center>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` easy to use</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` includes a [real-time themeing widget](https://testing-apps.shinyapps.io/themer-demo/) to try out themes before applying them to your own app</p>
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="45%"}
+<center><p class="medium-body-text">Cons:</p></center>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` does **not** work with `shinydashboard` (`{bslib}` is only intended for use with `shiny` *apps*)</p>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` some `shinyWidgets` may break when a `bslib` theme is applied (e.g. `pickerInput`s in our `two-file-app`)</p>
+:::
+
+::::
+
+<br>
+<br>
+
+. . . 
+
+<center><p class="body-text topbr">**Let's practice applying new `bslib` themes to our `one-file-app` (i.e. App #1) together**</p></center>
+
+---
+
+##  {#bslib data-menu-title="{bslib}"}
+
+<div class="slide-title">Applying & creating {bslib} themes</div>
+
+<p class="small-text">By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change the theme slightly to a slightly more modern Bootstrap v4 theme by setting the `theme` argument of `fluidPage()` to `bslib::bs_theme()`, *or* supply `bs_theme()` with a pre-built bootswatch theme using the `bootswatch` argument (for a list of theme names, run `bootswatch_themes()` in your console):</p>
+
+```{r}
+#| eval: false
+#| echo: true
+ui <- fluidPage(
+  
+  theme = bslib::bs_theme(bootswatch = "solar")
+  
+  # ~ additional UI code omitted for brevity ~
+  
+)
+```
+

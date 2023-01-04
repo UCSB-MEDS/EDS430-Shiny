@@ -30,6 +30,8 @@ format: revealjs
 install.packages(c("shiny", "etc."))
 ```
 
+<br>
+
 <center><div class="large-body-text">No prior Shiny experience necessary!</div></center>
 
 ---
@@ -43,7 +45,6 @@ install.packages(c("shiny", "etc."))
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Garrett Grolemund's [Building Web Applications with Shiny](https://shiny.rstudio.com/tutorial/) tutorial (find the [GitHub Repo here](ttps://github.com/rstudio-education/shiny.rstudio.com-tutorial))</p>  
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Allison Horst's [The Basics of Building Shiny Apps in R](https://github.com/allisonhorst/shiny-basics-sb-r-ladies) workshop</p>  
-
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Building Shiny apps - an interactive tutorial](https://deanattali.com/blog/building-shiny-apps-tutorial/), by Dean Attali</p>  
 

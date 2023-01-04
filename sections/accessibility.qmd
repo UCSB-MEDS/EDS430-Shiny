@@ -143,7 +143,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title-smaller">Include alt text with all graphical elements</div>
 
-<p class="body-text bottombr">All images and graphical elements should include **alternative (alt) text** that describe the image and/or information being represented. This text won't appear in the UI, but is detected and read by screen readers. A good rule of thumb for writing alt text for for data visualizations is <em>alt="<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>"</em> (read more in [this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/)).</p>
+<p class="body-text bottombr">All images and graphical elements should include **alternative (alt) text** that describe the image and/or information being represented. This text won't appear in the UI, but is detected and read by screen readers.</p>
 
 . . . 
 
@@ -176,7 +176,13 @@ tags$img(src = "file/path/to/img",
          alt = "Alt text for image")
 ```
 
-<p class="small-text topbr">For some great tips on how and when to use alt text, check out this article by the [A11Y Project](https://www.a11yproject.com/posts/alt-text/). For examples of how to construct good alt text, take a peek at this resource by [Datawrapper](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization).</p>
+---
+
+Tips on writing good alt text
+
+A good rule of thumb for writing alt text for for data visualizations is <em>alt="<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>"</em> (read more in [this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/)).
+
+<p class="small-text topbr">For more great tips on how and when to use alt text, check out this article by the [A11Y Project](https://www.a11yproject.com/posts/alt-text/). For examples of how to construct good alt text, take a peek at this resource by [Datawrapper](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization).</p>
 
 ---
 

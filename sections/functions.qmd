@@ -23,7 +23,7 @@ format: revealjs
 
 . . . 
 
-<p class="medium-body-text topbr">Packages used:</p> 
+<p class="medium-body-text topbr">New packages used:</p> 
 
 . . . 
 
@@ -234,9 +234,9 @@ ui <- fluidPage(
 
 ```
 
-##  {#id-ui-duplication data-menu-title="Identify code duplication in UI"}
+##  {#write-ui-function data-menu-title="Write a UI function"}
 
-<div class="slide-title-smaller">Identify code duplication in `ui.R`</div>
+<div class="slide-title-smaller">Write a function for adding a `pickerInput` to select for penguin species</div>
 
 <p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInputs` is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
 
@@ -328,8 +328,14 @@ ui <- fluidPage(
 
 ---
 
-we not only have reduced 10 lines of UI code into 2, but we also have made our code a bit more readable -- rather than a collaborator walking through our code and having to interpret what those two pickerInputs were doing using code comments and arguments, they instead can now see from our function name that those lines of code are likely pickerInputs that allow users to select penguin species.
+##  {#ui-fxn-benefits data-menu-title="Benefits of our UI function"}
 
----
+<div class="slide-title bottombr">We reduced code redundancy and increased readability!</div>
 
-Don't have to only write functions for duplicated UI elements -- can also turn elements into fucntions with more descriptive names so that your code is easier to read
+<p class="body-text">By turning our `pickerInput` code into a function, **we not only reduced *ten* lines of UI code into *two*, but we also made our UI code a bit easier to read** -- our function, `penguinSpp_pickerInput()` tells a reader/collaborator/future you *exactly* what that line of code is meant to do, which is create a `pickerInput` that allows users to select penguin species. Even without code comments or additional context, one may deduce what that line of code does.</p>
+
+. . . 
+
+<p class="body-text">As you build your UIs, consider where you can improve readability -- even if reducing code redundancy isn't a priority (or a possibility), turning UI elements into functions may make navigating your app's code base a more enjoyable experience, particularly as it grows larger and more complex.</p>
+
+

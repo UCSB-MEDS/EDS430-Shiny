@@ -442,6 +442,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"etc."</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
 <center>
 <div class="large-body-text">
 No prior Shiny experience necessary!
@@ -666,7 +667,7 @@ We’re going to cover a lot over our two days. Below is a general <strong>outli
 </p>
 <p class="small-text topbr">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a two-file shiny app with two reactive plots (a scatterplot and a histogram) – we’ll also learn how to use layout functions to create a more visually-pleasing (and organized) UI. – <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app"><svg aria-label="GitHub" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>GitHub</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a two-file shiny app with two reactive plots (a scatterplot and a histogram) – we’ll also learn how to use layout functions to create a more visually-pleasing (and organized) UI, and creating multiple inputs that update the same output. – <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app"><svg aria-label="GitHub" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>GitHub</title>
 <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> source code</a>
 </p>
 </div>
@@ -1575,7 +1576,7 @@ In our server, we can access the values of that slider input using the syntax, <
 <strong>Importantly</strong>, we need to use <code>reactive()</code> to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, <strong>the data frame name must be followed by <code>()</code></strong>.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="20-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># load packages (omitted for brevity) ----</span></span>
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="20-24|28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># load packages (omitted for brevity) ----</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
 <span id="cb25-3"><a href="#cb25-3"></a><span class="co"># user interface ----</span></span>
 <span id="cb25-4"><a href="#cb25-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -1756,7 +1757,7 @@ See next slide for a solution!
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 1: A solution
 </div>
 <p class="small-text">
-Press the right arrow key to advance through the newly added highlighted code sections.
+Press the right arrow key to advance through the newly added lines of code.
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26" data-code-line-numbers="5|23-29|60-73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># load packages ----</span></span>
@@ -1949,7 +1950,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ba3ffe12" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_1b050fa1" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3025,7 +3026,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_8c5bc1a5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_4c72901d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3332,7 +3333,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b2d61344" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_25c9ad58" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4446,7 +4447,7 @@ In this section, we’ll be building a <strong>shinydashboard</strong> using dat
 <strong>(a)</strong> a <code>dashboardHeader</code> with the name of your app
 </p>
 <p class="small-text">
-<strong>(b)</strong> a <code>dashboardSidebar</code> with ___ <code>menuItem</code>s
+<strong>(b)</strong> a <code>dashboardSidebar</code> with two <code>menuItem</code>s
 </p>
 <p class="small-text">
 <strong>(c)</strong> a landing page with background information about your app
@@ -4457,7 +4458,9 @@ In this section, we’ll be building a <strong>shinydashboard</strong> using dat
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<!-- <center><img src="images/shinydashboard.gif" alt="" width="750"/></center> -->
+<center>
+<img src="images/final-dashboard.gif" alt="A completed shinydashboard with intro text on the welcome (landing) page, dividing among boxes on the screen, and a map of the area of interest. On the dashboard page, we see three slider widgets in a box on the left-hand side of the page, and a reactive leaflet map on the right-hand side." width="750">
+</center>
 </div>
 </div>
 </section><section id="what-is-a-dashboard" class="slide level2" data-menu-title="What is a dashboard?"><h2></h2>
@@ -4667,6 +4670,7 @@ A note on file types
 <p class="small-text">
 If you are working with tabular data (as we are in this example), you may choose to save your processed data frame as a <code>.rds</code> file (R’s own data file format which stores a single R object). Not only are <code>.rds</code> file are relatively small (and therefore take up little storage space), but they also preserve data types and classes (e.g.&nbsp;factors and dates), eliminating the need to redefine data types after loading the file.
 </p>
+<p>COME BACK TO THIS</p>
 </section><section id="draft-leaflet" class="slide level2" data-menu-title="Draft Leaflet"><h2></h2>
 <div class="slide-title-smaller">
 Draft <code>leaflet</code> map
@@ -4683,8 +4687,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d406dbad6f32fb9622db" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d406dbad6f32fb9622db">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7c96a0f448607f4600ab" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7c96a0f448607f4600ab">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4735,8 +4739,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-83eb31729ecae90840e7" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-83eb31729ecae90840e7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-eb8038c7cd62b9f2504f" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-eb8038c7cd62b9f2504f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5540,7 +5544,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b2f0bd47" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_54af623c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -5604,6 +5608,9 @@ Mini Break
 <svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 6: A solution
 </div>
+<p class="small-text">
+Press the right arrow key to advance through the newly added lines of code.
+</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80" data-code-line-numbers="38-39|54-55|67-68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb80-2"><a href="#cb80-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
@@ -6059,7 +6066,7 @@ By the end of building out this app, you should understand:
 </div>
 <div class="fragment">
 <p class="medium-body-text topbr">
-Packages used:
+New packages used:
 </p>
 </div>
 <div class="fragment">
@@ -6272,9 +6279,9 @@ Let’s first focus on the UI – where do we have nearly identically duplicated
 <span id="cb86-41"><a href="#cb86-41"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="id-ui-duplication" class="slide level2" data-menu-title="Identify code duplication in UI"><h2></h2>
+</section><section id="write-ui-function" class="slide level2" data-menu-title="Write a UI function"><h2></h2>
 <div class="slide-title-smaller">
-Identify code duplication in <code>ui.R</code>
+Write a function for adding a <code>pickerInput</code> to select for penguin species
 </div>
 <p class="small-text">
 This app includes two <code>pickerInputs</code>, both of which allow users to select which penguin species to display data for. The only difference between both <code>pickerInputs</code> is the <code>inputId</code>. Let’s write a function for our <strong>penguin species pickerInput</strong> that we can use in place of these two, rather long, chunks of code.
@@ -6361,7 +6368,116 @@ Finally, replace your original UI code for building both <code>pickerInput</code
 <span id="cb89-32"><a href="#cb89-32"></a>  </span>
 <span id="cb89-33"><a href="#cb89-33"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section class="slide level2"><p>Don’t have to only write functions for duplicated UI elements – can also turn elements into fucntions with more descriptive names so that your code is easier to read</p>
+</section><section id="ui-fxn-benefits" class="slide level2" data-menu-title="Benefits of our UI function"><h2></h2>
+<div class="slide-title bottombr">
+We reduced code redundancy and increased readability!
+</div>
+<p class="body-text">
+By turning our <code>pickerInput</code> code into a function, <strong>we not only reduced <em>ten</em> lines of UI code into <em>two</em>, but we also made our UI code a bit easier to read</strong> – our function, <code>penguinSpp_pickerInput()</code> tells a reader/collaborator/future you <em>exactly</em> what that line of code is meant to do, which is create a <code>pickerInput</code> that allows users to select penguin species. Even without code comments or additional context, one may deduce what that line of code does.
+</p>
+<div class="fragment">
+<p class="body-text">
+As you build your UIs, consider where you can improve readability – even if reducing code redundancy isn’t a priority (or a possibility), turning UI elements into functions may make navigating your app’s code base a more enjoyable experience, particularly as it grows larger and more complex.
+</p>
+</div>
+</section><section id="themeing" class="slide level2" data-menu-title="~~~ Themeing Shiny Apps ~~~" data-background="#053660"><h2></h2>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">
+<svg aria-label="Paint Brush" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Paint Brush</title>
+<path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"></path></svg> Styling &amp; Themeing shiny apps
+</p>
+<p class="caption-text">
+<em>We’ve built some really cool apps so far, but they all have a pretty standard and similar appearance. In this section, we’ll explore a few different approaches for styling your apps.</em>
+</p>
+</div>
+</section><section id="LO-themeing" class="slide level2" data-menu-title="Learning Objectives (Themeing)"><h2></h2>
+<div class="slide-title">
+<svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives
+</div>
+<p class="medium-body-text bottombr">
+By the end of this section, you should be equipped with:
+</p>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a number of different approaches for themeing and styling your shiny apps and dashboards
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> tbd
+</p>
+</div>
+<div class="fragment">
+<p class="medium-body-text topbr">
+New packages used:
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="Box Open" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Box Open</title>
+<path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="https://rstudio.github.io/bslib/">bslib</a>: tbd
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="Box Open" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Box Open</title>
+<path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="https://github.com/dreamRs/fresh">fresh</a>: tbd
+</p>
+</div>
+</section><section id="bslib" class="slide level2" data-menu-title="{bslib}"><h2></h2>
+<div class="slide-title">
+Using the <a href="https://rstudio.github.io/bslib/"><code>{bslib}</code> package</a> to theme Shiny apps
+</div>
+<p class="body-text">
+The <a href="https://rstudio.github.io/bslib/"><code>{bslib}</code> package</a> provides tools for customizing <a href="https://getbootstrap.com/docs/4.6/getting-started/theming/">Bootstrap themes</a> directly from R, making custom themeing quite easy.
+</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<center>
+<p class="medium-body-text">
+Pros:
+</p>
+</center>
+<p class="small-text">
+<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
+<path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> easy to use
+</p>
+<p class="small-text">
+<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
+<path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> includes a <a href="https://testing-apps.shinyapps.io/themer-demo/">real-time themeing widget</a> to try out themes before applying them to your own app
+</p>
+</div><div class="column" style="width:4%;">
+
+</div><div class="column" style="width:45%;">
+<center>
+<p class="medium-body-text">
+Cons:
+</p>
+</center>
+<p class="small-text">
+<svg aria-label="X Mark" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>X Mark</title>
+<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg> does <strong>not</strong> work with <code>shinydashboard</code> (<a href="https://rstudio.github.io/bslib/">bslib</a> is only intended for use with <code>shiny</code> <em>apps</em>)
+</p>
+<p class="small-text">
+<svg aria-label="X Mark" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>X Mark</title>
+<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path></svg> some <code>shinyWidgets</code> may break when a <code>bslib</code> theme is applied (e.g.&nbsp;<code>pickerInput</code>s in our <code>two-file-app</code>)
+</p>
+</div>
+</div>
+<p><br><br></p>
+<div class="fragment">
+<center>
+<p class="body-text topbr">
+<strong>Let’s practice applying new <code>bslib</code> themes to our <code>one-file-app</code> together</strong>
+</p>
+</center>
+</div>
+</section><section class="slide level2"><p class="small-text">
+By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change the theme slightly to a more modern Bootstrap v4 theme by setting the <code>theme</code> argument of <code>fluidPage()</code> to <code><a href="https://rstudio.github.io/bslib/reference/bs_theme.html">bslib::bs_theme()</a></code>.
+</p>
 </section><section id="accessibility" class="slide level2" data-menu-title="~~~ Accessibility ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
@@ -6542,7 +6658,7 @@ You <em>should not</em> rely on headers for styling purposes – for example, yo
 Include alt text with all graphical elements
 </div>
 <p class="body-text bottombr">
-All images and graphical elements should include <strong>alternative (alt) text</strong> that describe the image and/or information being represented. This text won’t appear in the UI, but is detected and read by screen readers. A good rule of thumb for writing alt text for for data visualizations is <em>alt=“<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>”</em> (read more in <a href="https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20">this post</a> by <a href="https://www.amycesal.com/">Amy Cesal</a>).
+All images and graphical elements should include <strong>alternative (alt) text</strong> that describe the image and/or information being represented. This text won’t appear in the UI, but is detected and read by screen readers.
 </p>
 <div class="fragment">
 <p class="small-text">
@@ -6570,10 +6686,12 @@ Similarly, use the <code>alt</code> argument within <code>tags$img</code> when a
 <span id="cb92-3"><a href="#cb92-3"></a>         <span class="at">width =</span> <span class="st">"100px"</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
 <span id="cb92-4"><a href="#cb92-4"></a>         <span class="at">alt =</span> <span class="st">"Alt text for image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p class="small-text topbr">
-For some great tips on how and when to use alt text, check out this article by the <a href="https://www.a11yproject.com/posts/alt-text/">A11Y Project</a>. For examples of how to construct good alt text, take a peek at this resource by <a href="https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization">Datawrapper</a>.
-</p>
 </div>
+</section><section class="slide level2"><p>Tips on writing good alt text</p>
+<p>A good rule of thumb for writing alt text for for data visualizations is <em>alt=“<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>”</em> (read more in <a href="https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20">this post</a> by <a href="https://www.amycesal.com/">Amy Cesal</a>).</p>
+<p class="small-text topbr">
+For more great tips on how and when to use alt text, check out this article by the <a href="https://www.a11yproject.com/posts/alt-text/">A11Y Project</a>. For examples of how to construct good alt text, take a peek at this resource by <a href="https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization">Datawrapper</a>.
+</p>
 </section><section id="mobility" class="slide level2" data-menu-title="Mobility"><h2></h2>
 <div class="slide-title">
 Mobility

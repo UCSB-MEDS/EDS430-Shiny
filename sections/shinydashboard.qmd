@@ -62,7 +62,7 @@ format: revealjs
 <br>
 
 <p class="small-text">**(a)** a `dashboardHeader` with the name of your app</p>
-<p class="small-text">**(b)** a `dashboardSidebar` with ___ `menuItem`s</p>
+<p class="small-text">**(b)** a `dashboardSidebar` with two `menuItem`s</p>
 <p class="small-text">**(c)** a landing page with background information about your app</p>
 <p class="small-text">**(d)** an interactive *and* reactive `leaflet` map</p>
 :::
@@ -71,7 +71,7 @@ format: revealjs
 :::
 
 ::: {.column width="45%"}
-<!-- <center><img src="images/shinydashboard.gif" alt="" width="750"/></center> -->
+<center><img src="images/final-dashboard.gif" alt="A completed shinydashboard with intro text on the welcome (landing) page, dividing among boxes on the screen, and a map of the area of interest. On the dashboard page, we see three slider widgets in a box on the left-hand side of the page, and a reactive leaflet map on the right-hand side." width="750"/></center>
 :::
 
 ::::
@@ -297,6 +297,8 @@ write_csv(here::here("shinydashboard", "data", "lake_data_processed.csv"))
 <div class="slide-title-smaller">A note on file types</div>
 
 <p class="small-text">If you are working with tabular data (as we are in this example), you may choose to save your processed data frame as a `.rds` file (R's own data file format which stores a single R object). Not only are `.rds` file are relatively small (and therefore take up little storage space), but they also preserve data types and classes (e.g. factors and dates), eliminating the need to redefine data types after loading the file.</p>
+
+COME BACK TO THIS
 
 ---
 
@@ -1332,6 +1334,8 @@ This app is build for demonstration/teaching purposes only and is not paid for o
 ##  {#exercise6-solution data-menu-title="** Exercise 6 Solution **"}
 
 <div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 6: A solution</div>
+
+<p class="small-text">Press the right arrow key to advance through the newly added lines of code.</p>
 
 ```{r}
 #| eval: false

@@ -151,7 +151,7 @@ sliderInput(inputId = "bins",
 ## Day 1
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a single-file Shiny app with two reactive outputs (a scatterplot & a DT data table) -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app)</p>
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a two-file shiny app with two reactive plots (a scatterplot and a histogram) -- we'll also learn how to use layout functions to create a more visually-pleasing (and organized) UI. -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a two-file shiny app with two reactive plots (a scatterplot and a histogram) -- we'll also learn how to use layout functions to create a more visually-pleasing (and organized) UI, and creating multiple inputs that update the same output. -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>
 
 ## Day 2
 

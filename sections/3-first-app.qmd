@@ -725,7 +725,7 @@ server <- function(input, output) {
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "20-29"
+#| code-line-numbers: "20-24|28"
 
 # load packages (omitted for brevity) ----
 
@@ -858,7 +858,7 @@ server <- function(input, output) {
 
 <div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 1: A solution</div>
 
-<p class="small-text">Press the right arrow key to advance through the newly added highlighted code sections.</p>
+<p class="small-text">Press the right arrow key to advance through the newly added lines of code.</p>
 
 ```{r}
 #| eval: false
