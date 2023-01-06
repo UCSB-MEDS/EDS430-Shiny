@@ -273,7 +273,7 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 <div class="slide-title-smaller">Layout functions provide the high-level visual structure of your app</div>
 
-<p class="small-text">Layouts are created using a **hierarchy** of function calls (typically) *inside* `fluidPage()`. Layouts often require a series functions -- **container** functions establish the larger area within which other layout elements are placed. See a few minimal examples of layout functions on the following slides (though more exist!).</p>
+<p class="small-text">Layouts are created using a **hierarchy** of function calls (typically) *inside* `fluidPage()`. Layouts often require a series functions -- **container** functions establish the larger area within which other layout elements are placed. See a few minimal examples of layout functions on the following slides (though [more exist](https://shiny.rstudio.com/articles/layout-guide.html)!).</p>
 
 <p class="small-text">**Some useful layout function pairings:**</p>
 ```{r}

@@ -54,6 +54,7 @@ format: revealjs
 <center><p class="medium-body-text">Pros:</p></center>
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` easy to use</p>
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` includes a [real-time themeing widget](https://testing-apps.shinyapps.io/themer-demo/) to try out themes before applying them to your own app</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` plays well with the `{thematic}` package for matching plot styling to app</p>
 :::
 
 ::: {.column width="4%"}
@@ -62,6 +63,7 @@ format: revealjs
 ::: {.column width="45%"}
 <center><p class="medium-body-text">Cons:</p></center>
 <p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` does **not** work with `shinydashboard` (`{bslib}` is only intended for use with `shiny` *apps*)</p>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` styling is contained by the arguments available to `bs_theme()`</p>
 <p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` some `shinyWidgets` may break when a `bslib` theme is applied (e.g. `pickerInput`s in our `two-file-app`) (at the time of writing this, Jan 2023).</p>
 :::
 
@@ -105,7 +107,7 @@ ui <- fluidPage(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/solar.png" alt="solar.png" width="550"/></center>
+<center><img src="images/solar.png" alt="" width="550"/></center>
 :::
 
 ::::
@@ -145,18 +147,18 @@ ui <- fluidPage(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/custom-bslib.png" alt="solar.png" width="550"/></center>
+<center><img src="images/custom-bslib.png" alt="" width="550"/></center>
 :::
 
 ::::
 
-<p class="small-text">Be sure to check out the interactive themeing widget to test custom color/font/etc. combos before committing by running `bs_theme_preview()` in your console, or visit the hosted version [here](https://testing-apps.shinyapps.io/themer-demo/). You can also call `bs_themer()` within your `server` function to open the theme customization UI alongside your app.</p>
+<p class="small-text">Be sure to check out the interactive themeing widget to test custom color/font/etc. combos before committing by running `bs_theme_preview()` in your console, or visit the hosted version [here](https://testing-apps.shinyapps.io/themer-demo/). You can also call `bs_themer()` within your `server` function to open the theme customization UI alongside your own app.</p>
 
 ----
 
 ##  {#thematic data-menu-title="{thematic} for plot themeing"}
 
-<div class="slide-title-smaller">Use `{thematic}` to extend your theme to plots</div>
+<div class="slide-title-smaller">Use {thematic} to extend your theme to plots</div>
 
 <p class="small-text">You probably noticed that our scatterplot looks a little silly against the darker background of our themed app. Enter the [`{thematic}` package](https://rstudio.github.io/thematic/index.html), which is built to help simplify plot themeing. Call `thematic_shiny()` before launching your app to generate plots that reflect your application's `bs_theme()`. For example:</p>
 
@@ -169,6 +171,7 @@ ui <- fluidPage(
 ```{r}
 #| eval: false
 #| echo: true
+#| code-line-numbers: "1"
 thematic::thematic_shiny()
 
 ui <- fluidPage(
@@ -195,15 +198,198 @@ ui <- fluidPage(
 
 ::::
 
-<p class="small-text">Read the [vignette](https://rstudio.github.io/thematic/index.html) to learn more about using the `thematic` package to easily match plot fonts to the fonts applied across your app.</p>
+<p class="small-text">Read the [vignette](https://rstudio.github.io/thematic/index.html) to learn more about using the `thematic` package to help match plot fonts to the fonts applied across your app.</p>
 
 ---
 
-{fresh} for shinydashboard
+##  {#fresh data-menu-title="{fresh}"}
+
+<div class="slide-title">Using the [`{fresh}` package](https://dreamrs.github.io/fresh/) to theme Shiny apps & dashboards</div>
+
+<p class="body-text">The [`{fresh}` package](https://dreamrs.github.io/fresh/) provides tools for creating custom themes to use in Shiny apps *and* dashboards -- set parameters of your theme using `create_theme()`, generate a stylesheet based off your specifications, and apply your stylesheet to your app.</p>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<center><p class="medium-body-text">Pros:</p></center>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` easy to use</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` supports theme creation for *both* shiny apps and dashboards (and also `{flexdashboard}`s and `{b4dash}` applications) </p>
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="45%"}
+<center><p class="medium-body-text">Cons:</p></center>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` styling is constrained by the variables available to `create_theme()`</p>
+:::
+
+::::
+
+<br>
+
+. . . 
+
+<center><p class="body-text topbr">**Let's practice applying new themes using `fresh` to our `two-file-app` (i.e. App #2) and our `shinydashbaord` (i.e. App #3)**</p></center>
 
 ---
 
-intro to css
+##  {#fresh-workflow data-menu-title="{fresh} workflow"}
+
+<div class="slide-title">A general workflow for using `fresh` themes</div>
+
+<p class="body-text topbr">Whether you're working on a shiny *app* or a shiny *dashboard*, you'll need the following:</p>
+
+<p class="small-text topbr">**1.** a `/www` folder within your app's directory -- this is where we'll save the stylesheet (a `.css` file) that `fresh` will generate for us</p>
+<p class="small-text topbr">**2.** a separate script for building our theme using the `create_theme()` function -- I recommend saving this to `~/R` (it seemed to cause issues when saved anywhere within my app directory)</p>
+
+. . .
+
+<p class="body-text topbr">Importantly, `create_theme()` takes **different variables** to set the parameters of your theme, depending on what type of app you're building: for **shiny apps**, you'll need to use [`bs_vars_*` variables](https://dreamrs.github.io/fresh/articles/vars-shiny.html), and for **shiny dashboards** you'll use [`adminlte_*` variables](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html) (examples on the following slides).</p>
+
+<p class="body-text topbr">There are also a couple ways to apply your finished theme to your app, but we'll use the method of generating a `.css` file, then calling those styles into our app.</p>
+
+---
+
+##  {#create-fresh-app-theme data-menu-title="Create {fresh} app theme"}
+
+<div class="slide-title-smaller">Creating a `fresh` theme for `two-file-app`</div>
+
+<p class="small-text">In this example, we update the colors of our app's body, navbar, and tabPanels using the appropriate `fresh` [variables for shiny *apps*](https://dreamrs.github.io/fresh/articles/vars-shiny.html). We specify a file path, `two-file-app/www` (you'll need to create the `/www` directory, since we don't have one yet), where our stylesheet (e.g. `shiny_fresh_themes.css`, as shown here) file will be saved to.</p>
+
+<p class="small-text">Of course, these color combos are *not* recommended, but chosen purely for demonstration purposes `r fontawesome::fa("face-smile-wink", fill = "#05859B", a11y = "sem")`.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+# in a separate script: ~/R/create_fresh_theme_shiny.R
+# load library ----
+library(fresh)
+
+# create theme -----
+create_theme(
+  
+  # you can supply a bootstrap theme to begin with
+  theme = "default",
+
+  # global styling
+  bs_vars_global(
+    body_bg = "#D2D0CA",
+    text_color = "#F23ACB",
+    link_color = "#0E4BE3"
+  ),
+
+  bs_vars_navbar(
+    default_bg = "#13CC13",
+    default_color = "#66656C"
+  ),
+
+  # tabPanels
+  bs_vars_tabs(
+    border_color = "#F90909"
+  ),
+
+  # generate css file
+  output_file = "two-file-app/www/shiny_fresh_theme.css"
+)
+
+```
+
+---
+
+##  {#apply-fresh-apps-theme data-menu-title="Apply {fresh} app theme"}
+
+<div class="slide-title-smaller">Apply a `fresh` theme to our app</div>
+
+<p class="body-text">To apply our theme, provide the `theme` argument of your `fluidPage()` or `navbarPage()` with the name of our stylesheet. **Note:** shiny knows to look in the `/www` directory, so you can omit that from your file path, as shown below:</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+# navbar page ----
+ui <- navbarPage(
+
+  theme = "shiny_fresh_theme.css"
+  
+  # ~ additional UI code omitted for brevity ~
+  
+) # END navbarPage
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/fresh_app.gif" alt="" width="550"/></center>
+:::
+
+::::
+
+<br>
+
+<p class="small-text">**Note:** I found [this vignette](https://cran.r-project.org/web/packages/fresh/vignettes/fresh.html) helpful for understanding how to apply your themes.</p>
+
+---
+
+##  {#fresh-shinydashboard data-menu-title="{fresh} shiny dashboard"}
+
+<div class="slide-title-smaller">Creating a `fresh` theme for our `shinydashboard`</div>
+
+---
+
+
+---
+
+
+---
+
+intro to css & sass
+
+---
+
+##  {#sass-css data-menu-title="Sass & CSS"}
+
+<div class="slide-title">Using Sass & CSS to style Shiny apps & dashboards</div>
+
+<p class="body-text">text here</p>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<center><p class="medium-body-text">Pros:</p></center>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` applies to any web page (not just shiny apps)</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` can get real fine-tuned styling done</p>
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="45%"}
+<center><p class="medium-body-text">Cons:</p></center>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` more complex</p>
+:::
+
+::::
+
+<br>
+
+. . . 
+
+<center><p class="body-text topbr">**Let's practice writing Sass & CSS for our ____ app**</p></center>
+
+
 
 ---
 
@@ -211,7 +397,7 @@ intro to css
 
 <div class="slide-title-smaller">3 ways to add CSS styling to your apps</div>
 
-<p class="small-text">You can **(1)** add styling directly to `tags`, **(2)** add CSS rules to your `header`, and/or **(3)** build a stylesheet that is applied to your app.</p>
+<p class="small-text">You can **(1)** add styling directly to `tags`, **(2)** add CSS rules to your `header`, and/or **(3)** build a stylesheet that is applied to your app. **Creating a stylesheet is the preferred approach, and you should do this whenever possible.**</p>
 
 ::: {.panel-tabset}
 
@@ -235,7 +421,7 @@ intro to css
 
 ## stylesheets
 
-<p class="small-text">Build a stylesheet inside your app's `www/` directory and import styles into your app's header. **This is the most ideal approach** -- it allows for style reuse, caching, all styling is contained in one spot, 
+<p class="small-text">Build a stylesheet inside your app's `www/` directory and import styles into your app's header. **This is the most ideal approach** -- it allows for style reuse, caching, all styling is contained in one spot,</p>
 
 ```{r}
 #| eval: false
