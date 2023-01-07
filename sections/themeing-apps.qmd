@@ -249,7 +249,7 @@ ui <- fluidPage(
 
 <p class="body-text topbr">Importantly, `create_theme()` takes **different variables** to set the parameters of your theme, depending on what type of app you're building: for **shiny apps**, you'll need to use [`bs_vars_*` variables](https://dreamrs.github.io/fresh/articles/vars-shiny.html), and for **shiny dashboards** you'll use [`adminlte_*` variables](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html) (examples on the following slides).</p>
 
-<p class="body-text topbr">There are also a couple ways to apply your finished theme to your app, but we'll use the method of generating a `.css` file, then calling those styles into our app.</p>
+<p class="body-text topbr">There are also a [couple ways](https://cran.r-project.org/web/packages/fresh/vignettes/fresh.html) to apply your finished theme to your app, but we'll use the method of generating a `.css` file, then calling those styles into our app.</p>
 
 ---
 
@@ -276,19 +276,19 @@ create_theme(
 
   # global styling
   bs_vars_global(
-    body_bg = "#D2D0CA",
-    text_color = "#F23ACB",
-    link_color = "#0E4BE3"
+    body_bg = "#D2D0CA", # beige
+    text_color = "#F23ACB", # hot pink
+    link_color = "#0E4BE3" # royal blue
   ),
 
   bs_vars_navbar(
-    default_bg = "#13CC13",
-    default_color = "#66656C"
+    default_bg = "#13CC13", # lime green
+    default_color = "#66656C" # gray
   ),
 
   # tabPanels
   bs_vars_tabs(
-    border_color = "#F90909"
+    border_color = "#F90909" # red
   ),
 
   # generate css file
@@ -304,6 +304,8 @@ create_theme(
 <div class="slide-title-smaller">Apply a `fresh` theme to our app</div>
 
 <p class="body-text">To apply our theme, provide the `theme` argument of your `fluidPage()` or `navbarPage()` with the name of our stylesheet. **Note:** shiny knows to look in the `/www` directory, so you can omit that from your file path, as shown below:</p>
+
+<br>
 
 :::: {.columns}
 
@@ -335,25 +337,86 @@ ui <- navbarPage(
 
 ::::
 
-<br>
-
-<p class="small-text">**Note:** I found [this vignette](https://cran.r-project.org/web/packages/fresh/vignettes/fresh.html) helpful for understanding how to apply your themes.</p>
-
 ---
 
 ##  {#fresh-shinydashboard data-menu-title="{fresh} shiny dashboard"}
 
 <div class="slide-title-smaller">Creating a `fresh` theme for our `shinydashboard`</div>
 
+<p class="smaller-text">In this example, we update the colors of our app's header, body, and sidebar using the appropriate `fresh` [variables for shiny *dashboards*](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html). We specify a file path, `shinydashboard/www` where our stylesheet (e.g. `shinydashboard_fresh_themes.css`, as shown here) file will be saved to. Again, these color combos are *not* recommended, but chosen purely for demonstration purposes.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+# in a separate script: ~/R/create_fresh_theme_shinydashboard.R
+# load libraries ----
+library(fresh)
+
+# create theme ----
+create_theme(
+  
+  # change "light-blue"/"primary" color
+  adminlte_color(
+    light_blue = "#150B5A" # dark blue
+  ),
+  
+  # dashboardBody styling (includes boxes)
+  adminlte_global(
+    content_bg = "#E7B5B5" # blush pink
+  ),
+  
+  # dashboardSidebar styling
+  adminlte_sidebar(
+    width = "400px", 
+    dark_bg = "#57F8F3", # light blue
+    dark_hover_bg = "#BF21E6", # magenta
+    dark_color = "#F90000" # red
+  ),
+  
+  # generate css file
+  output_file = "shinydashboard/www/shinydashboard_fresh_theme.css"
+  
+)
+```
+
 ---
 
+##  {#apply-fresh-dashboard-theme data-menu-title="Apply {fresh} dashboard theme"}
 
----
+<div class="slide-title-smaller">Apply a `fresh` theme to our dashboard</div>
 
+<p class="body-text">To apply our theme, use the `fresh::use_theme()` function inside your `dashboardBody`, providing it with the name of your stylesheet. **Note:** shiny knows to look in the `/www` directory, so you can omit that from your file path, as shown below:</p>
 
----
+<br>
 
-intro to css & sass
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+body <- dashboardBody(
+  
+  # set theme
+  fresh::use_theme("shinydashboard_fresh_theme.css")
+  
+  # ~ additional dashboardBody code omitted for brevity ~
+  
+)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/fresh-dashboard.gif" alt="" width="550"/></center>
+:::
+
+::::
 
 ---
 
@@ -387,8 +450,29 @@ intro to css & sass
 
 . . . 
 
-<center><p class="body-text topbr">**Let's practice writing Sass & CSS for our ____ app**</p></center>
+<center><p class="body-text topbr">**We'll first review a little bit about Sass & CSS, then practice writing building our own custom stylesheets for our ____ app**</p></center>
 
+
+---
+
+##  {#css-review data-menu-title="CSS Review/Resources"}
+
+<div class="slide-title-smaller">Resources for a deeper dive</div>
+
+<p class="body-text">We'll be doing a rather high-level and quick overview of Sass & CSS today, though I encourage you to check out the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop, which takes a deeper dive.</p>
+
+. . . 
+
+<p class="body-text topbr">[W3Schools](https://www.w3schools.com/css/default.asp) is my favorite online resource for all-things CSS -- in addition to really digestible descriptions and examples, they also offer interactive tutorials to get your hands on updating (and breaking) code (in a safe space, of course).</p>
+
+---
+
+##  {#what-are-sass-css data-menu-title="What are Sass & CSS"}
+
+<div class="slide-title-smaller">What even is Sass? CSS?</div>
+
+- Sass stands for Syntactically Awesome Stylesheets and is an extension to CSS 
+- Sass is a CSS preprocessor – this means that Sass allows web developers to use Sass syntax and features that don’t currently exist in CSS (e.g. variables, which we’ll be using today), then converts that Sass code into standard CSS (browsers don’t understand Sass code, but do understand CSS).
 
 
 ---

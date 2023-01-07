@@ -27,7 +27,15 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{tbd}`: tbd</p>
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: tbd</p>
+
+. .  .
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{thematic}`: tbd</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{fresh}`: tbd</p>
 
 
 ---
