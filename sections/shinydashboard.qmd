@@ -6,7 +6,7 @@ format: revealjs
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("gauge", fill = "#d2e3f3", a11y = "sem")` Building dashboards with `{shinydashboard}`</p>
-<p class="caption-text">*`{shiny}` alone is powerful and flexible, however it can take a lot of work to create a sleek/modern UI. `{shinydashboard}` provides a "template" for quickly building visually appeally dashboard apps.*</p>
+<p class="caption-text">*`{shiny}` alone is powerful and flexible, however it can take a lot of work to create a sleek/modern UI. `{shinydashboard}` provides a "template" for quickly building visually appealing dashboard apps.*</p>
 </div>
 
 ---
@@ -1623,7 +1623,7 @@ dashboardPage(header, sidebar, body)
 
 <div class="slide-title-smaller">Use in-line CSS to adjust the image size</div>
 
-<p class="small-text">We can use in-line CSS to style our image element, as shown below. It's okay if you don't fully understand what's going on here for now -- we'll talk in greater detail about how CSS (and Sass) can be used to customize the appearance of your apps in just a bit.</p>
+<p class="small-text">We can use in-line CSS to style our image element, as shown below  (see `style` argument). It's okay if you don't fully understand what's going on here for now -- we'll talk in greater detail about how CSS (and Sass) can be used to customize the appearance of your apps in just a bit.</p>
 
 <p class="small-text">I've also added a caption below our image that links to the image source, and used in-line CSS to center my text within the box.</p>
 

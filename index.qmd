@@ -109,6 +109,10 @@ countdown::countdown(
 
 ---
 
+{{< include sections/testing.qmd >}}
+
+---
+
 {{< include sections/themeing-apps.qmd >}}
 
 ---

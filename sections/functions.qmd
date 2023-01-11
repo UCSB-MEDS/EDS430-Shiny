@@ -11,7 +11,7 @@ format: revealjs
 
 ---
 
-##  {#LO-app4 data-menu-title="Learning Objectives App #4"}
+##  {#LO-app4 data-menu-title="Learning Objectives - App #4"}
 
 <div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #4</div>
 
@@ -67,6 +67,10 @@ format: revealjs
 <p class="small-text">Create a new subdirectory called `functions-app/` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
 
 ::: {.panel-tabset}
+
+## App preview
+
+<center><img src="images/functions_demo_app.gif" alt="" width="650"/></center>
 
 ## `ui.R`
 ```{r}
@@ -247,6 +251,8 @@ ui <- fluidPage(
 <div class="slide-title-smaller">Write a function for adding a `pickerInput` to select for penguin species</div>
 
 <p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInputs` is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
+
+. . . 
 
 <p class="small-text topbr">First, create an `R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
 
