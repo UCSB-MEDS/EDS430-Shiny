@@ -22,21 +22,17 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a number of different approaches for themeing and styling your shiny apps and dashboards</p>
 
-. . . 
-
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` tbd</p>
-
 . . .
 
 <p class="medium-body-text topbr">New packages used:</p> 
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: tbd</p>
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{bslib}`: provides tools for customizing Bootstrap themes directly from R for shiny apps and RMarkdowns</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{fresh}`: tbd</p>
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{fresh}`: provides tools for creating custom themes for use with shiny, `shinydashboard`, and `bs4Dash` apps</p>
 
 ---
 
@@ -63,7 +59,7 @@ format: revealjs
 ::: {.column width="45%"}
 <center><p class="medium-body-text">Cons:</p></center>
 <p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` does **not** work with `shinydashboard` (`{bslib}` is only intended for use with `shiny` *apps*)</p>
-<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` styling is contained by the arguments available to `bs_theme()`</p>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` styling is constrained by the arguments available to `bs_theme()`</p>
 <p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` some `shinyWidgets` may break when a `bslib` theme is applied (e.g. `pickerInput`s in our `two-file-app`) (at the time of writing this, Jan 2023).</p>
 :::
 
@@ -152,7 +148,7 @@ ui <- fluidPage(
 
 ::::
 
-<p class="small-text">Be sure to check out the interactive themeing widget to test custom color/font/etc. combos before committing by running `bs_theme_preview()` in your console, or visit the hosted version [here](https://testing-apps.shinyapps.io/themer-demo/). You can also call `bs_themer()` within your `server` function to open the theme customization UI alongside your own app.</p>
+<p class="small-text">Be sure to check out the interactive themeing widget to test custom color/font/etc. combos by running `bs_theme_preview()` in your console, or visit the hosted version [here](https://testing-apps.shinyapps.io/themer-demo/). You can also call `bs_themer()` within your `server` function to open the theme customization UI alongside your own app.</p>
 
 ----
 
@@ -215,7 +211,7 @@ ui <- fluidPage(
 ::: {.column width="45%"}
 <center><p class="medium-body-text">Pros:</p></center>
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` easy to use</p>
-<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` supports theme creation for *both* shiny apps and dashboards (and also `{flexdashboard}`s and `{b4dash}` applications) </p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` supports theme creation for *both* shiny apps and dashboards (and also `{flexdashboard}`s and [`{b4dash}` applications](https://rinterface.github.io/bs4Dash/index.html)) </p>
 :::
 
 ::: {.column width="4%"}
@@ -249,7 +245,7 @@ ui <- fluidPage(
 
 <p class="body-text topbr">Importantly, `create_theme()` takes **different variables** to set the parameters of your theme, depending on what type of app you're building: for **shiny apps**, you'll need to use [`bs_vars_*` variables](https://dreamrs.github.io/fresh/articles/vars-shiny.html), and for **shiny dashboards** you'll use [`adminlte_*` variables](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html) (examples on the following slides).</p>
 
-<p class="body-text topbr">There are also a [couple ways](https://cran.r-project.org/web/packages/fresh/vignettes/fresh.html) to apply your finished theme to your app, but we'll use the method of generating a `.css` file, then calling those styles into our app.</p>
+<p class="body-text topbr">There are also a [couple ways](https://cran.r-project.org/web/packages/fresh/vignettes/fresh.html) to apply your finished theme to your app, but we'll use the method of generating a `.css` file, then calling that file in our app.</p>
 
 ---
 
@@ -424,7 +420,7 @@ body <- dashboardBody(
 
 <div class="slide-title">Using Sass & CSS to style Shiny apps & dashboards</div>
 
-<p class="body-text">text here</p>
+<p class="body-text">You can write your own stylesheets using [CSS](https://www.w3.org/Style/CSS/Overview.en.html) and [Sass](https://sass-lang.com/) to fully customize your apps, from background colors, to font styles, to size and shape of elements, and more. Unlike `bslib` and `fresh`, these are *languages*, meaning they can be a bit more challenging to get started with (but the payoff it big!).</p>
 
 <br>
 
@@ -433,7 +429,7 @@ body <- dashboardBody(
 ::: {.column width="45%"}
 <center><p class="medium-body-text">Pros:</p></center>
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` applies to any web page (not just shiny apps)</p>
-<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` can get real fine-tuned styling done</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` allows you to fine-tune your app's styling</p>
 :::
 
 ::: {.column width="4%"}
@@ -441,7 +437,7 @@ body <- dashboardBody(
 
 ::: {.column width="45%"}
 <center><p class="medium-body-text">Cons:</p></center>
-<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` more complex</p>
+<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` a steeper learning curve/generally more complex than packages like `bslib` and `fresh`</p>
 :::
 
 ::::
@@ -459,7 +455,7 @@ body <- dashboardBody(
 
 <div class="slide-title-smaller">Resources for a deeper dive</div>
 
-<p class="body-text">We'll be doing a rather high-level and quick overview of Sass & CSS today, though I encourage you to check out the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop, which takes a deeper dive.</p>
+<p class="body-text">We'll be doing a rather high-level and quick overview of Sass & CSS today, though I encourage you to check out the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop, which takes a much deeper dive (the information in that workshop is largely applicable here).</p>
 
 . . . 
 
@@ -469,11 +465,57 @@ body <- dashboardBody(
 
 ##  {#what-are-sass-css data-menu-title="What are Sass & CSS"}
 
-<div class="slide-title-smaller">What even is Sass? CSS?</div>
+<div class="slide-title-smaller">What even is CSS? Sass?</div>
 
-- Sass stands for Syntactically Awesome Stylesheets and is an extension to CSS 
-- Sass is a CSS preprocessor – this means that Sass allows web developers to use Sass syntax and features that don’t currently exist in CSS (e.g. variables, which we’ll be using today), then converts that Sass code into standard CSS (browsers don’t understand Sass code, but do understand CSS).
+:::: {.columns}
 
+::: {.column width="45%"}
+<center><img src="images/css3.png" alt="" height="400"/></center>
+<center><p class="smaller-text">**CSS** (**C**ascading **S**tyle **S**heets) is a programming language that allows you to control how HTML elements look (e.g. colors, font styles, etc.) on a webpage.</p></center>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+
+<br>
+
+<center><img src="images/sass.png" alt="" width="550"/></center>
+
+<center><p class="smaller-text topbr">**Sass** (**S**yntactically **A**wesome **S**tyle**s**heets) is a CSS extension language and CSS preprocessor -- meaning Sass needs to be converted to CSS before it can be interpreted by your web browser.</p></center> 
+:::
+
+::::
+
+---
+
+##  {#css-rule-based data-menu-title="CSS is rule-based"}
+
+<div class="slide-title-smaller">CSS is a rule-based language</div>
+
+<p class="body-text">CSS is a rule-based language, meaning that it allows you to define groups of sytles that should be applied to particular elements or groups of elements on a web page. For example, *"I want all level one headings (`<h1>` or `tags$h1()` as written in Shiny) in my app to be green with a bit of extra space between each letter"* could be coded as:</p>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<center><img src="images/css_syntax.png" alt="" width="550"/></center>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Selectors** select the HTML element(s) you want to style (*e.g. level one headings, `<h1>`)*</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` **Declaration** sit inside curly brackets, `{}`, and are made up of **property** and **value** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` A property and it's corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`</p>
+:::
+
+::::
+
+<p class="body-text">There are a variety of CSS selectors -- check out some of the basics that will take you far in styling your apps, starting [on this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/selector-types) of the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop.</p>
 
 ---
 

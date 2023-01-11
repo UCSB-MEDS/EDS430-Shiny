@@ -101,7 +101,7 @@ countdown::countdown(
 
 ---
 
-{{< include sections/shinydashboard.qmd >}}
+{{< include sections/8-shinydashboard.qmd >}}
 
 ---
 
@@ -109,11 +109,15 @@ countdown::countdown(
 
 ---
 
+{{< include sections/themeing-apps.qmd >}}
+
+---
+
 {{< include sections/testing.qmd >}}
 
 ---
 
-{{< include sections/themeing-apps.qmd >}}
+{{< include sections/user-centered-design.qmd >}}
 
 ---
 

@@ -2,16 +2,45 @@
 format: revealjs
 ---
 
-##  {#UI-design data-menu-title="UI design is important!"}
+##  {#UX-UI data-menu-title="~~~ UX/UI Design ~~~" background="#053660"}
 
-<div class="slide-title">UI design</div>
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` UX/UI matters</p>
+<p class="caption-text">*When designing your app, it's critically important that you consider your user's needs and how they will interact with your app -- it doesn't matter how innovative you back-end computations are if people don't understand how to use your app!*</p>
+</div>
 
-From: https://engineering-shiny.org/ux-matters.html 
-- simplicity is gold: if possible, the main usage of the application does not require reading the manual; interfaces should be as self-explanatory as possible
-- adapt a defensive programming mindset; you should always fail gracefully and informatively (e.g. provide users with a helpful error message)
-- Rule of Least Surprise: in interface design, always do the least surprising thing
-make sure that if an input is necessary, it is made clear inside the app that it is (see {shinyFeedback} and also use validate()
-avoid feature-creep: the process of adding features ot the app that complicates the usage and the maintenance of the product, to the point that extreme feature-creep can lead to the product being entirely unusable and completely impossible to maintain
-- too much reactivity
-- too much interactivity (e.g. plotly) -- can add visual noise; do not make things interactive if there is no value in adding interactivity
-- accessibility
+---
+
+##  {#UX-UI-design-tips data-menu-title="Tips for UX/UI design"}
+
+<div class="slide-title">Tips for designing your Shiny apps</div>
+
+<p class="body-text">[Chapters 6](https://engineering-shiny.org/ux-matters.html) and [7](https://engineering-shiny.org/dont-rush-into-coding.html) of [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/index.html), by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard provide a list of considerations as you embark on your app-building journey. Some of their suggestions are summarized below, but check out the book for greater detail, examples, and additional considerations:</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Simplicity is gold:** using the application shouldn't require reading a manual, and interfaces should be as self-explantory as possible.</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Adapt a defensive programming mindset:** your app should always fail gracefully and informatively (e.g. provide users with a helpful error message)</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Build a self-explanatory app:** consider the following three suggestions for doing so -- **(a)** remember the rule of least surprise (in UI design, always do the least surprising thing e.g. we often assume that underlined text is clickable, so if you include underlined text in your UI, there's a good chance a user will try clicking on it). **(b)** think about progression (design a clear pattern of moving forward for your user), and **(c)** related to **b**, make sure that if an input is necessary, it is made clear to your user</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Avoid feature-creep:** feature-creep is the process of adding features to an app that complicates its usage and maintenance -- this includes adding too much *reactivity* and too much *interactivity* (e.g. `plotly`) -- interactivity adds visual noise, so it's best to not make elements interactive if there is no value is gained.</p> 
+
+---
+
+##  {#UX-UI-resources data-menu-title="UX/UI resources"}
+
+<div class="slide-title">Additional resources</div>
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/index.html), by [David Granjon](https://divadnojnarg.github.io/)</p>
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny Developer Series, Episode 20: Outstanding User Interfaces with David Granjon](https://www.youtube.com/watch?v=mxvMaoXOm70)</p>
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [15 User Experience Principles and Theories](https://pathumpmgux.medium.com/15-user-experience-principles-and-theories-80f19877bd5), by [Pathum Goonawardene](https://pathumpmgux.medium.com/)</p>

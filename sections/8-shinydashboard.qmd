@@ -146,6 +146,8 @@ shinyApp(ui, server)
 
 <p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([**source code**](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
 
+<p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [Visualizing human impacts on at-risk marine biodiversity](http://ohi-science.nceas.ucsb.edu/visualizing_human_impacts/) ([source code](https://github.com/BrennieDev/CHI_shiny_app), *developed by MESM 2022 alum, [Ian Brunjes](https://github.com/BrennieDev) & [Dr. Casey O'Hara](http://oharascience.com/index.html))* -- explore how human activities and climate change impact marine biodiversity worldwide</p>
+
 ---
 
 ##  {#setup-dashboard-directory data-menu-title="Dashboard Setup"}
