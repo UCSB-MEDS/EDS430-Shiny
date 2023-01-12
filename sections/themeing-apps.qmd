@@ -509,7 +509,7 @@ body <- dashboardBody(
 
 ::: {.column width="45%"}
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Selectors** select the HTML element(s) you want to style (*e.g. level one headings, `<h1>`)*</p>
-<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` **Declaration** sit inside curly brackets, `{}`, and are made up of **property** and **value** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` **Declarations** sit inside curly brackets, `{}`, and are made up of [**property**](https://www.w3schools.com/cssref/index.php) and **value** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*</p>
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` A property and it's corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`</p>
 :::
 
@@ -637,7 +637,7 @@ shinyApp(ui, server)
 
 ## stylesheets
 
-<p class="smaller-text">Build a stylesheet (a `.css` file) inside your app's `www/` directory and load your file into your app's header. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot.</p>
+<p class="smaller-text">Build a stylesheet (a `.css` file) inside your app's `www/` directory and load your file into your app's header (for shinydashboards, include your header inside `dashboardBody()`. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot.</p>
 
 :::: {.columns}
 
@@ -645,15 +645,193 @@ shinyApp(ui, server)
 ```{r}
 #| eval: false
 #| echo: true
+# app.R
+#..............................setup.............................
+library(shiny)
+
+#...............................ui...............................
+ui <- fluidPage(
+  
+  tags$head(
+    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
+  ),
+  
+  tags$h1("My app title"),
+  
+  tags$h3("Section 1"),
+  
+  tags$h3(class = "wide-letters", "Section 2"),
+  
+  tags$button("This is a button")
+  
+)
+
+#.............................server.............................
+server <- function(input, output) {}
+
+#......................combine ui & server.......................
+shinyApp(ui, server)
 ```
 :::
 
 ::: {.column width="33%"}
+```{css}
+#| eval: false
+#| echo: true
+# www/styles.R
+/*import google fonts (Josephine Slab (serif) & Heebo (sans serfi))*/
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Josefin+Slab:wght@300&display=swap');
+
+/* element selectors */
+h1 {
+  font-family: 'Heebo', sans-serif;
+  color: #179A1F; /* green */
+}
+
+h3 {
+  font-family: 'Josefin Slab', serif;
+  color: #CA781C; /* orange */
+}
+
+button {
+  background-color: #FCF982; /* yellow */
+}
+
+
+/* class selectors */
+.wide-letters {
+  letter-spacing: 4px;
+}
+```
 :::
 
 ::: {.column width="33%"}
+<center><img src="images/stylesheet_styling.png" alt="" width="550"/></center>
 :::
 
 ::::
+
+:::
+
+---
+
+##  {#inspect-webpages data-menu-title="Inspecting"}
+
+<div class="slide-title-smaller">What if I want to style an element, but don't know how to target it?</div>
+
+<p class="small-text">Oftentimes, you'll have to do a bit of exploration to determine how to target specific elements for styling. In either your app viewer or web browser, right click on an element of interest and choose **Inspect** (or **Inspect Element**) to open up the underlying HTML and CSS. You can make temporary edits to your app (e.g. adding a background color, changing font sizes, etc.) to see how they look first, then copy the appropriate CSS rule into your stylesheet to apply to your app.</p>
+
+<center><img src="images/inspect_orientation.png" alt="" width="550"/></center>
+
+---
+
+##  {#inspect-dashboard data-menu-title="Inspect dashboard box"}
+
+<div class="slide-title-smaller">Inspect & identify how to update box styling</div>
+
+<p class="small-text">For example, let's say I want to change the color of this shinydashboard's boxes and their text. Right clicking on a box and choosing **Inspect Element** pulls up the HTML and CSS files underlying my app. Hovering over different parts of the HTML highlights different elements in the UI. The box is highlighted when I hover over `<div class="box-body">` -- this tells me that boxes are formed using the `<div>` HTML element and they're assigned a class called `box-body`. I can hop down to the CSS file (here, that's located in the bottom half of my sidebar, but depending on the size of your window/layout, the HTML and CSS might be side-by-side) and find the `.box-body` class selector. You can add property/value pairs and/or update existing property values to adjust the appearance of our box. Notice that changing the `.box-body` class selector updates **both** boxes -- upon inspecting the box containing our plot, you'll notice that it is also of class, `box-body`. Therefore changes to this class selector will apply to both boxes.</p>
+
+<center><img src="images/inspecting.gif" alt="" width="550"/></center>
+
+---
+
+##  {#write-box-css data-menu-title="Write CSS for box styling"}
+
+<div class="slide-title-smaller">Finally, apply box styling to our dashboard</div>
+
+<p class="small-text">Now that we know that we can use the `box-body` class to customize the appearance of our boxes, let's create a stylesheet and add our new rules. The `shinydashboard` framework already provides the "standard" styling for boxes, contained in the `box-body` class. Anything we specify in our own stylesheet will build upon or modify existing styling.</p>
+
+<p class="small-text">Remember to create a header and link your stylesheet within `dashboardBody()` to apply our styles.</p>
+
+::: {.panel-tabset}
+
+## Our updated shinydashboard
+
+<center><img src="images/orange-boxes.png" alt="" width="550"/></center>
+
+## `styles.css`
+```{css}
+#| eval: false
+#| echo: true
+.box-body {
+  background-color: #FCAE82; /* light orange */
+  color: #6368C6; /* purple-blue */
+}
+```
+
+## `ui.R`
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "24-27"
+#........................dashboardHeader.........................
+header <- dashboardHeader(
+  
+  # add title ----
+  title = "Penguin Dashboard"
+  
+) # END dashboardHeader
+
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar(
+  
+  # sidebarMenu ----
+  sidebarMenu(
+    
+    menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
+    
+  ) # END sidebarMenu
+  
+) # END dashboardSidebar
+
+#..........................dashboardBody.........................
+body <- dashboardBody(
+  
+  # link stylesheet
+  tags$head(
+    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
+  ),
+  
+  # tabItems ----
+  tabItems(
+    
+    # dashboard tabItem ----
+    tabItem(tabName = "dashboard",
+            
+            # fluidRow ----
+            fluidRow(
+              
+              # input box ----
+              box(width = 4,
+                  
+                  checkboxGroupInput(
+                    inputId = "penguin_species",
+                    label = "Filter by species: ",
+                    choices = c("Adelie", "Chinstrap", "Gentoo"),
+                    selected = c("Adelie", "Chinstrap", "Gentoo")
+                    
+                  ) # END checkboxGroupInput
+                  
+              ), # END input box
+              
+              # output box ----
+              box(width = 8,
+                  
+                  plotOutput(outputId = "penguin_plot")
+                  
+              ) # END output box
+              
+            ), # END fluidRow
+            
+    ) # END dashboard tabItem
+    
+  ) # END tabItems
+  
+) # END dashboardBody
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
 
 :::
