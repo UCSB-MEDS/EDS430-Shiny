@@ -529,29 +529,131 @@ body <- dashboardBody(
 
 ## tags
 
-<p class="small-text">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
+<p class="smaller-text">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
 
+:::: {.columns}
+
+::: {.column width="45%"}
 ```{r}
 #| eval: false
 #| echo: true
+#..............................setup.............................
+library(shiny)
+
+#...............................ui...............................
+ui <- fluidPage(
+  
+  # text color = purple
+  tags$h1("My app title",
+          style = "color: #711EBA;"),
+  
+  # text color = blue; increase space between letters
+  tags$h3("Section 1",
+          style = "color: #1E4DBA; letter-spacing: 4px;"),
+  
+  # no styling
+  tags$h3("Section 2"),
+  
+  # increase border thickness and color green; round corners 
+  tags$button("This is a button",
+              style = "border: 2px solid #1EBA38; border-radius: 5px")
+  
+)
+
+#.............................server.............................
+server <- function(input, output) {}
+
+#......................combine ui & server.......................
+shinyApp(ui, server)
 ```
+:::
+
+::: {.column width="5%"}
+:::
+
+
+::: {.column width="45%"}
+<center><img src="images/in-line_styling.png" alt="" width="550"/></center>
+:::
+
+::::
 
 ## header
 
-<p class="small-text">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app).</p>
+<p class="smaller-text">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app). **Note:** explore Google fonts [here](https://fonts.google.com/) and check out [this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts) for instructions on selecting a font.</p>
 
+:::: {.columns}
+
+::: {.column width="45%"}
 ```{r}
 #| eval: false
 #| echo: true
+#..............................setup.............................
+library(shiny)
+
+#...............................ui...............................
+ui <- fluidPage(
+  
+  tags$head(
+    tags$style("
+    
+      @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+    
+      h1 {font-family: 'Lobster', cursive;}
+      
+      h3 {color: blue;}
+      
+      .wide-letters {letter-spacing: 4px;}
+      
+    "
+    ) # END styles
+  ), # END head
+  
+  tags$h1("My app title"),
+  
+  tags$h3("Section 1"),
+  
+  tags$h3(class = "wide-letters", "Section 2"),
+  
+  tags$button("This is a button")
+  
+)
+
+#.............................server.............................
+server <- function(input, output) {}
+
+#......................combine ui & server.......................
+shinyApp(ui, server)
 ```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/header_styling.png" alt="" width="550"/></center>
+:::
+::::
 
 ## stylesheets
 
-<p class="small-text">Build a stylesheet inside your app's `www/` directory and import styles into your app's header. **This is the most ideal approach** -- it allows for style reuse, caching, all styling is contained in one spot,</p>
+<p class="smaller-text">Build a stylesheet (a `.css` file) inside your app's `www/` directory and load your file into your app's header. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot.</p>
 
+:::: {.columns}
+
+::: {.column width="33%"}
 ```{r}
 #| eval: false
 #| echo: true
 ```
+:::
+
+::: {.column width="33%"}
+:::
+
+::: {.column width="33%"}
+:::
+
+::::
 
 :::
