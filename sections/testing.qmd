@@ -165,7 +165,7 @@ shinyApp(ui, server)
 
 <p class="small-text topbr">**(3)** click the "Expect Shiny values" button in the recorder app sidebar to set an expectation (this will record inputs, outputs, and exported values)</p>
 
-<p class="small-text topbr">**(4)** give your test in the recorder app sidebar, then click "Save test and exit" - this will save the recorded test and setup the testing infrastructure, if it doesn't exit already</p>
+<p class="small-text topbr">**(4)** give your test a name in the recorder app sidebar, then click "Save test and exit" - this will save the recorded test and setup the testing infrastructure, if it doesn't exit already</p>
 
 ---
 

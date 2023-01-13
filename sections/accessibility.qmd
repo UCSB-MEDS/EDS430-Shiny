@@ -178,9 +178,15 @@ tags$img(src = "file/path/to/img",
 
 ---
 
-Tips on writing good alt text
+##  {#alt-text-tips data-menu-title="Alt text tips"}
 
-A good rule of thumb for writing alt text for for data visualizations is <em>alt="<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>"</em> (read more in [this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/)).
+<div class="slide-title-smaller">Tips on writing alt text for data visualizations</div>
+
+<p class="body-text">A good rule of thumb for writing alt text for data visualizations is <em>alt="<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>"</em> (see [this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/) for more). One example:</p>
+
+<center><img src="images/alt-ex.png" alt="Bar chart of gun murders per 100,000 people where America's murder rate is 6 times worse than Canada, and 30 times Australia." width="550"/></center>
+
+<p class="body-text"><em>alt="<span style="background-color: #F9C9C8;">Bar chart</span> of <span style="background-color: #FDC790;">gun murders per 100,000 people</span> where <span style="background-color: #D1EAEE;">America's murder rate is 6 times worse than Canada, and 30 times Australia</span>"</em></p>
 
 <p class="small-text topbr">For more great tips on how and when to use alt text, check out this article by the [A11Y Project](https://www.a11yproject.com/posts/alt-text/). For examples of how to construct good alt text, take a peek at this resource by [Datawrapper](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization).</p>
 

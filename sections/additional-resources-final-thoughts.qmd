@@ -1,0 +1,47 @@
+---
+format: revealjs
+---
+
+##  {#resources-final-thoughts data-menu-title="~~~ More Resources & Final Thoughts ~~~" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("lightbulb", fill = "#d2e3f3", a11y = "sem")` Additional Resources & Final Thoughts</p>
+<p class="caption-text">*We've covered a lot in this workshop, and we've only just begun to scratch the surface -- we'll end with just a few more resources to explore on your own and some final thoughts/words of wisdom*</p>
+</div>
+
+---
+
+##  {#words-of-wisdom data-menu-title="Words of wisdom"}
+
+<div class="slide-title">Some takeaway messages that are worth keeping in mind</div>
+
+<p class="small-text topbr">`r fontawesome::fa("chart-column", fill = "#05859B", a11y = "sem")` Oftentimes, the most time consuming part of building a shiny app is deciding on how to present the data visually -- make your data visualizations first, *outside of shiny*, refine, decide which variables you think are important enough to make reactive, etc. **THEN**, build them into your shiny application.</p>
+
+<p class="small-text topbr">`r fontawesome::fa("table", fill = "#05859B", a11y = "sem")` Get your data in the most wrangled form possible before loading it into your app to avoid unnecessary slowdowns.</p>
+
+<p class="small-text topbr">`r fontawesome::fa("code", fill = "#05859B", a11y = "sem")` Code expands *quickly* -- stay organized! Create a repository map, so you and your collaborators know where files live and what they do. Use rainbow parentheses, add extra space between sections of code, and include clear code comments to denote the start and end of parentheses. This will help save headaches later on.</p>
+
+<p class="small-text topbr">`r fontawesome::fa("users", fill = "#05859B", a11y = "sem")` Keep in mind the [considerations for good UX/UI design](https://ucsb-meds.github.io/EDS430-Shiny/#/UX-UI-design-tips). You're building an app for the user first and foremost -- be sure to assess often if your app is going to meet their needs.</p>
+
+<p class="small-text topbr">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Before taking the plunge, consider if you really need shiny at all -- maintaining apps can be challenging. What other options might you have for sharing your data with end users?</p>
+
+---
+
+##  {#resources data-menu-title="Resources"}
+
+<div class="slide-title">Resources</div>
+
+<p class="body-text">A quick Google search will yield *many* online resources, forum discussions, video tutorials, etc. for building Shiny applications. Many are linked throughout these slides, but here are just a few more. Be sure to poke around online yourself, and let me know if you come across any that you find particularly useful so that I can add them here!</p>
+
+<p class="body-text topbr">**Books, class materials, tutorials**</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Building Web Apps with R](https://debruine.github.io/shinyintro/index.html), by [Lisa DeBruine](https://github.com/debruine) -- an short course (paired with an online book with instructions, resources, etc.)</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`[Speeding Up R Shiny](https://www.r-bloggers.com/2021/06/speeding-up-r-shiny-the-definitive-guide/), by Jakub Sobolewski in R bloggers -- details methods on improving app performance</p>
+
+<p class="body-text topbr">**Tools**</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [R Shiny & FontAwesome Icons -- How to Use Them in Your Dashboards](https://www.r-bloggers.com/2022/09/r-shiny-fontawesome-icons-how-to-use-them-in-your-dashboards/), by Dario Radečić in R Bloggers -- instructions for setting up your [fontawesome](https://fontawesome.com/) kit</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny UI Editor](https://rstudio.github.io/shinyuieditor/) and [Nick Strayer](https://nickstrayer.me/)'s [rstudio::conf(2022) talk](https://www.rstudio.com/conference/2022/talks/new-way-to-build-shiny/) introducing it -- a visual tool for building the UI portion of a Shiny application that generates clean and human-readable code (**currently in Alpha**, as of January 2023)</p>
+

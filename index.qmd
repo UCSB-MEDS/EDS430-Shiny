@@ -125,6 +125,10 @@ countdown::countdown(
 
 ---
 
+{{< include sections/additional-resources-final-thoughts.qmd >}}
+
+---
+
 ## {#TheEnd data-menu-title="~End Slide~"}
 
 <center><div class="slide-title bottombr">I'm excited to see what *Shiny* new apps you all create!</div></center>

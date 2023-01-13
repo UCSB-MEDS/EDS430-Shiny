@@ -495,7 +495,7 @@ body <- dashboardBody(
 
 <div class="slide-title-smaller">CSS is a rule-based language</div>
 
-<p class="body-text">CSS is a rule-based language, meaning that it allows you to define groups of sytles that should be applied to particular elements or groups of elements on a web page. For example, *"I want all level one headings (`<h1>` or `tags$h1()` as written in Shiny) in my app to be green with a bit of extra space between each letter"* could be coded as:</p>
+<p class="body-text">CSS is a rule-based language, meaning that it allows you to define groups of styles that should be applied to particular elements or groups of elements on a web page. For example, *"I want all level one headings (`<h1>` or `tags$h1()` as written in Shiny) in my app to be green with a bit of extra space between each letter"* could be coded as:</p>
 
 <br>
 
