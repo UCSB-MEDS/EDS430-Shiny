@@ -5,7 +5,7 @@ format: revealjs
 ##  {#testing data-menu-title="~~~ Testing ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` Testing</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("file-code", fill = "#d2e3f3", a11y = "sem")` Testing</p>
 <p class="caption-text">*Creating automated tests for your apps can save time and effort, ensuring that they continue working as expected.*</p>
 </div>
 
@@ -50,10 +50,9 @@ format: revealjs
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` an external data source stops working or returns data in a different format than expected by your app</p>
 
-. . .
+. . . 
 
-<p class="body-text topbr">It can save a lot of time and headache to have an automated system that checks if your app is working as expected.</p>
-
+<p class="body-text topbr">It can save a lot of time and headache (for you *and* your collaborators) to have an automated system that checks if your app is working as expected.</p>
 
 ---
 
@@ -83,6 +82,8 @@ format: revealjs
 
 ::::
 
+<p class="small-text">Rather than having to write tests by hand, you can interact with your app via the "app recorder" and `shinytest2` will record the test code automatically for you. Simply rerun tests to check for consistency.</p>
+
 ---
 
 ##  {#shinytest2-resources data-menu-title="{shinytest2} resources"}
@@ -95,9 +96,11 @@ format: revealjs
 
 <p class="body-text">Additional resources:</p> 
 
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Barret Schloerke's rstudio::conf(2022) talk, *{shinytest2}: Unit testing for Shiny applications* ([recording](https://www.youtube.com/watch?v=DMgAW4m5aTI))</p>
+
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Barret Schloerke's 2022 Appsilon Shiny Confernce talk, *{shinytest2} Testing Shiny with {testthat}* ([recording](https://www.youtube.com/watch?v=EOVPBN5o8F8) & [GitHub repo](https://github.com/schloerke/presentation-2022-04-27-appsilon-shinytest2))</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny testing overview](https://shiny.rstudio.com/articles/testing-overview.html), by Winston Chang -- this article discussed the `shinytest2` precursor, `shinytest`, but provides some helpful context and is worth a read</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny testing overview](https://shiny.rstudio.com/articles/testing-overview.html), by Winston Chang -- this article discussed the `shinytest2` predecessor, `shinytest` (which is now entering maintenance mode), but provides some helpful context and is worth a read</p>
 
 ---
 
@@ -105,7 +108,7 @@ format: revealjs
 
 <div class="slide-title">Let's test the following app</div>
 
-<p class="body-text">This small app accepts a text input for users to type their name. When the "Greet" button is pressed, the app returns a short greeting message that says, "Hello ____!></p>
+<p class="body-text">This small app accepts a text input for users to type their name. When the "Greet" button is pressed, the app returns a short greeting message that says, "Hello *name*!></p>
 
 <p class="body-text">To get started, create a subdirectory called `/testing_app`, add a file named `app.R` and drop this code in your file. Take a moment to try out the app.</p>
 
@@ -157,7 +160,7 @@ shinyApp(ui, server)
 
 . . . 
 
-<p class="body-text">To test our app, we'll do the following:</p>
+<p class="body-text">To test our app specifically, we'll do the following:</p>
 
 <p class="small-text topbr">**(1)** run `shinytest2::record_test("testing_app")` in the console to launch the recorder in a browser window</p>
 
@@ -246,4 +249,20 @@ test_that("{shinytest2} recording: sam-test", {
 
 :::
 
+---
 
+##  {#testing-tips data-menu-title="Testing tips"}
+
+<div class="slide-title">Tips for testing</div>
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Record subsequent tests following the same workflow, giving each a unique name. Run `test_app("path/to/app")` to run all test scripts in your app's `tests/testhat` directory.</p>
+
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use `record_test()` fairly often -- Barret Schloerke argues that you should make a test recording for each feature of your app (many little recordings are encouraged!)</p>
+
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Limit testing to objects under your control. For example, let's say you have a reactive data frame that you then send to a `DT::datatable` -- if package maintainers update the `DT` package, your output might change which could lead to false positive failed tests. Instead, test just your data frame that gets sent to `DT`.</p>
+
+. . .
+
+<br>
+
+<center><p class="body-text">This is only a brief intro to `shinytest2`! Dig into the [documentation](https://rstudio.github.io/shinytest2/index.html) to learn more.</p></center>
