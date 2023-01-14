@@ -5,7 +5,7 @@ format: revealjs
 ##  {#accessibility data-menu-title="~~~ Accessibility ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("tools", fill = "#d2e3f3", a11y = "sem")` Building accessible apps</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("universal-access", fill = "#d2e3f3", a11y = "sem")` Building accessible apps</p>
 <p class="caption-text">*Consider web accessibilty guidelines to ensure that your app is usable by all*</p>
 </div>
 
@@ -68,7 +68,7 @@ format: revealjs
 <br>
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use HTML elements appropriately (e.g. consider hierarchy)</p> 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Include alt text for graphical elements</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Navigation</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Consider navigation from a mobility perspective </p>
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use colorblind-friendly palettes</p>
 :::
 
@@ -194,7 +194,31 @@ tags$img(src = "file/path/to/img",
 
 ##  {#mobility data-menu-title="Mobility"}
 
-<div class="slide-title">Mobility</div>
+<div class="slide-title">Consider UI navigation for those with mobility impairments</div>
+
+<p class="small-text">For users with mobility impairments, using a mouse to navigate a UI packed with widgets may be challenging -- some users may even be exclusively using a keyboard to navigate the web.</p>
+
+<p class="small-text topbr">Ideally, actions required of your user can be done using a keyboard (e.g. pressing a button in the UI) -- however from a new shiny developer standpoint, this may be technically challenging to implement (the authors of Engineering Production-Grade Shiny Apps [suggest](https://engineering-shiny.org/ux-matters.html#c.-navigation) the [`{nter}` package](https://github.com/JohnCoene/nter) for building shiny action buttons that can be triggered by pressing `enter`, however, at the time of building this workshop, the package source code hadn't been updated since 2019).</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+
+<p class="small-text topbr">**At a minimum, consider spacing out and/or limiting the number of widgets on any given page to make navigation with a mouse as easy as possible.**</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/keyboard_mouse.gif" alt="" width="350"/></center>
+:::
+
+::::
+
+
 
 ---
 

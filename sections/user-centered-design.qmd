@@ -5,7 +5,7 @@ format: revealjs
 ##  {#UX-UI data-menu-title="~~~ UX/UI Design ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` UX/UI matters</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("users", fill = "#d2e3f3", a11y = "sem")` UX/UI matters</p>
 <p class="caption-text">*When designing your app, it's critically important that you consider your user's needs and how they will interact with your app -- it doesn't matter how innovative you back-end computations are if people don't understand how to use your app!*</p>
 </div>
 
