@@ -1,0 +1,43 @@
+---
+format: revealjs
+---
+
+##  {#do-you-need-shiny data-menu-title="~~~ Shiny Alternatives ~~~" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("arrows-left-right", fill = "#d2e3f3", a11y = "sem")` Consider if you need Shiny at all`</p>
+<p class="caption-text">*While a well-developed shiny app is fun and appealing, it's worth having a conversation about whether shiny is truly necessary, or if taking an alternative approach to sharing your data might be better.*</p>
+</div>
+
+---
+
+##  {#shiny-alternatives data-menu-title="Other options"}
+
+<div class="slide-title">Additional data presentation frameworks</div>
+
+<p class="small-text">Shiny is awesome, but depending on your goals, vision, and end users, you may not need the full functionality that shiny provides. You can potentially save yourself (and your clients) the stress of deploying and maintaining apps by first considering other options:</p>
+
+. . . 
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets aren't only for Shiny! Embed interactive [htmlwidgets](https://www.htmlwidgets.org/) into your R Markdown documents that range from geo-spatial mapping with `{leaflet}` to generating interactive phylogenetic trees with `{phylocanvas}`. Check out the [htmlwidgets for R](http://gallery.htmlwidgets.org/) - gallery for many more options.</p>
+
+. . . 
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Compose multiple widgets into a dashboard using `{flexdashboard}`. Based in R Markdown, this framework allows you to produce dynamic dashboards using tools you are already familiar with. Find example projects and their source code [here](https://pkgs.rstudio.com/flexdashboard/articles/examples.html).</p>
+
+. . . 
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Embed reactive shiny components (e.g. inputs & outputs) in Quarto documents. By using some fun new code chunk options, you can instruct Quarto to spin up it's own self-contained shiny server to run your reactives. Read the [Quarto documentation](https://quarto.org/docs/interactive/shiny/) to learn more and check out some teaching examples [here](https://quarto.org/docs/interactive/shiny/#examples).</p>
+
+<center><img src="images/shiny_alts.png" alt="" width="450"/></center>
+
+---
+
+##  {#flexdashboard-examples data-menu-title="Examples of flexdashboards"}
+
+<div class="slide-title bottombr">Example flexdashboards built by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+
+<p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([**source code**](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
+
+<p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [@ADELPHIRESEARCH TWEETS Dashboard](https://spileggi.shinyapps.io/Pileggi_presentation_shiny/) ([**source code**](https://github.com/shannonpileggi/Adelphi-tweets)), *developed by R-Lady [Shannon Pileggi](https://www.pipinghotdata.com/index.html) as part of a job interview* -- read about this clever approach to showcasing your skills to a potential employer in Shannon's blogpost, [A job interview presentation inspired by the R community](https://www.pipinghotdata.com/posts/2020-08-30-a-job-interview-presentation-inspired-by-the-r-community/).</p>
+ 

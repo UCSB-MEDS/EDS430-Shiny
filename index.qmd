@@ -85,7 +85,37 @@ countdown::countdown(
 
 ---
 
-{{< include sections/4-second-app-v1.qmd >}}
+{{< include sections/4.1-second-app-v1.qmd >}}
+
+---
+
+##  {#mini-break1 data-menu-title="# Mini break 1 #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Mini Break</p>
+<p class="caption-text">*Up next: your turn to add a reactive penguin plot to our "Penguin" tab!*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+{{< include sections/4.2-second-app-v1.qmd >}}
 
 ---
 
@@ -101,7 +131,37 @@ countdown::countdown(
 
 ---
 
-{{< include sections/8-shinydashboard.qmd >}}
+{{< include sections/8.1-shinydashboard.qmd >}}
+
+---
+
+##  {#mini-break3 data-menu-title="Mini break 3" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Mini Break</p>
+<p class="caption-text">*Up next: Adding background information and an image to our Welcome tab*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
+{{< include sections/8.2-shinydashboard.qmd >}}
 
 ---
 
@@ -122,6 +182,10 @@ countdown::countdown(
 ---
 
 {{< include sections/accessibility.qmd >}}
+
+---
+
+{{< include sections/shiny_alternatives.qmd >}}
 
 ---
 

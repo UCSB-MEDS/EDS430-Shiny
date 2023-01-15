@@ -19,7 +19,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Simplicity is gold:** using the application shouldn't require reading a manual, and interfaces should be as self-explantory as possible.</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Simplicity is gold:** using the application shouldn't require reading a manual, and interfaces should be as self-explanatory as possible.</p>
 
 . . . 
 
@@ -27,7 +27,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Build a self-explanatory app:** consider the following three suggestions for doing so -- **(a)** remember the rule of least surprise (in UI design, always do the least surprising thing e.g. we often assume that underlined text is clickable, so if you include underlined text in your UI, there's a good chance a user will try clicking on it). **(b)** think about progression (design a clear pattern of moving forward for your user), and **(c)** related to **b**, make sure that if an input is necessary, it is made clear to your user</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Build a self-explanatory app:** consider the following three suggestions for doing so -- **(a)** remember the rule of least surprise (in UI design, always do the least surprising thing e.g. we often assume that underlined text is clickable, so if you include underlined text in your UI, there's a good chance a user will try clicking on it). **(b)** think about progression (design a clear pattern of moving forward for your user), and **(c)** related to **b**, make sure that if an input is necessary, it is made clear to your user. Check out the [`{shinyjs}` package](https://deanattali.com/shinyjs/) for implementing nifty ways to improve the user experience of your shiny apps.</p>
 
 . . . 
 
