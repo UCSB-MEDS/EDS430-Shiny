@@ -2,12 +2,9 @@
 format: 
   revealjs:
     slide-number: true
-    # preview-links: true
     code-link: true
     highlight-style: a11y
     chalkboard: true
-    # self-contained: true
-    # scrollable: true
     theme: 
       - meds_styles.scss
 ---
@@ -52,6 +49,19 @@ format:
 ---
 
 {{< include sections/2-setup.qmd >}}
+
+---
+
+##  {#building-app-fundamentals data-menu-title="!! Building shiny apps - practice & fundamentals !!" background="#FCD9BB"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle-orange bottombr">`r fontawesome::fa("star", fill = "#A2520E", a11y = "sem")` Building shiny apps -- practice & fundamentals</p>
+<p class="caption-text">*In the next section, we'll be building out **three** shiny applications, learning shiny fundamentals along the way:*</p>
+<p class="body-text">**(1)** a single-file shiny app (jump to section [here](https://ucsb-meds.github.io/EDS430-Shiny/#/build-app1) & find completed app source code [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app))</p>
+<p class="body-text">**(2)** a two-file shiny app (jump to section [here](https://ucsb-meds.github.io/EDS430-Shiny/#/build-app2) & find completed app source code [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app))</p>
+<p class="body-text">**(3)** a shinydashboard (jump to section [here](https://ucsb-meds.github.io/EDS430-Shiny/#/building-dashboards) & find completed app source code [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard))</p>
+</div>
+
 
 ---
 
@@ -165,7 +175,7 @@ countdown::countdown(
 
 ---
 
-{{< include sections/functions.qmd >}}
+beautifying your apps
 
 ---
 
@@ -173,7 +183,27 @@ countdown::countdown(
 
 ---
 
+debugging & testing
+
+---
+
 {{< include sections/testing.qmd >}}
+
+---
+
+streamlining code
+
+---
+
+{{< include sections/functions.qmd >}}
+
+---
+
+{{< include sections/modules.qmd >}}
+
+---
+
+designing with the user in mind
 
 ---
 
@@ -182,6 +212,10 @@ countdown::countdown(
 ---
 
 {{< include sections/accessibility.qmd >}}
+
+---
+
+wrap up
 
 ---
 

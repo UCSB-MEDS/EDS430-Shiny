@@ -961,6 +961,9 @@ shinyApp(ui = ui, server = server)
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` misspelling your inputId (or outputId) name in the server (e.g. UI: `inputId = "myInputID"`, server: `input$my_Input_ID`)</p>
 
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` repeating `inputId`s (each *must* be unique)</p>
+
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` forgetting to separate UI elements with a comma, `,`</p>
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` forgetting the set of parentheses when calling the name of a reactive data frame in a plot (e.g. `ggplot(my_reactive_df(), aes(...))`)</p>

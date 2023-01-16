@@ -5,7 +5,7 @@ format: revealjs
 ##  {#do-you-need-shiny data-menu-title="~~~ Shiny Alternatives ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("arrows-left-right", fill = "#d2e3f3", a11y = "sem")` Consider if you need Shiny at all`</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("arrows-left-right", fill = "#d2e3f3", a11y = "sem")` Consider if you need Shiny at all</p>
 <p class="caption-text">*While a well-developed shiny app is fun and appealing, it's worth having a conversation about whether shiny is truly necessary, or if taking an alternative approach to sharing your data might be better.*</p>
 </div>
 
@@ -19,7 +19,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets aren't only for Shiny! Embed interactive [htmlwidgets](https://www.htmlwidgets.org/) into your R Markdown documents that range from geo-spatial mapping with `{leaflet}` to generating interactive phylogenetic trees with `{phylocanvas}`. Check out the [htmlwidgets for R](http://gallery.htmlwidgets.org/) - gallery for many more options.</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets aren't only for Shiny! Embed interactive [htmlwidgets](https://www.htmlwidgets.org/) into your R Markdown documents that range from geo-spatial mapping with `{leaflet}` to generating network graph diagrams with `{DiagrammeR}`. Check out the [htmlwidgets for R](http://gallery.htmlwidgets.org/) - gallery for many more options.</p>
 
 . . . 
 
@@ -39,5 +39,5 @@ format: revealjs
 
 <p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([**source code**](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
 
-<p class="small-text topbr">`r fontawesome::fa("sun", fill = "#05859B", a11y = "sem")` [@ADELPHIRESEARCH TWEETS Dashboard](https://spileggi.shinyapps.io/Pileggi_presentation_shiny/) ([**source code**](https://github.com/shannonpileggi/Adelphi-tweets)), *developed by R-Lady [Shannon Pileggi](https://www.pipinghotdata.com/index.html) as part of a job interview* -- read about this clever approach to showcasing your skills to a potential employer in Shannon's blogpost, [A job interview presentation inspired by the R community](https://www.pipinghotdata.com/posts/2020-08-30-a-job-interview-presentation-inspired-by-the-r-community/).</p>
+<p class="small-text topbr">`r fontawesome::fa("handshake", fill = "#05859B", a11y = "sem")` [@ADELPHIRESEARCH TWEETS Dashboard](https://spileggi.shinyapps.io/Pileggi_presentation_shiny/) ([**source code**](https://github.com/shannonpileggi/Adelphi-tweets)), *developed by R-Lady [Shannon Pileggi](https://www.pipinghotdata.com/index.html) as part of a job interview* -- read about this clever approach to showcasing your skills to a potential employer in Shannon's blogpost, [A job interview presentation inspired by the R community](https://www.pipinghotdata.com/posts/2020-08-30-a-job-interview-presentation-inspired-by-the-r-community/).</p>
  

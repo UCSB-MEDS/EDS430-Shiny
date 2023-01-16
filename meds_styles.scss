@@ -19,6 +19,7 @@ $white: #FFFFFF;
 $green: #78A540;
 $magenta: #900C3F;
 $orange: #EA8226;
+$dark-orange: #A2520E;
 $off-white: #F7F7F7;
 $gray: #ADADAD;
 
@@ -68,6 +69,15 @@ td {
 .custom-subtitle {
   font-family: $font-family-sans-serif;
   color: $baby-blue;
+  font-size: 1.2em;
+  font-weight: 900;
+  //position: absolute;
+  left: 20px;
+}
+
+.custom-subtitle-orange {
+  font-family: $font-family-sans-serif;
+  color: $dark-orange;
   font-size: 1.2em;
   font-weight: 900;
   //position: absolute;
