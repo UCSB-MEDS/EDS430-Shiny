@@ -71,6 +71,8 @@ format:
 <p class="small-text">**(7)** [Wrap-up](https://ucsb-meds.github.io/EDS430-Shiny/#/7-wrap-up)</p>
 <p class="smaller-text">Shiny alternatives ~ Words of wisdom ~ More resources</p>
 
+<center><p class="body-text quote-text-bg">You can reference the source code of all the apps we'll be building/playing with throughout this workshop on [`r fontawesome::fa("github", fill = "#78A540", a11y = "sem")` GitHub](https://github.com/samanthacsik/EDS430-shiny-app).</p></center>
+
 ---
 
 ##  {#1-shiny-overview data-menu-title="!! (1) High-level overview of Shiny !!" background="#374F50"}
