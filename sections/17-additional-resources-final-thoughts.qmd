@@ -37,9 +37,9 @@ format: revealjs
 
 ##  {#resources data-menu-title="Resources"}
 
-<div class="slide-title">Resources</div>
+<div class="slide-title">Some more resources to send you off</div>
 
-<p class="small-text">A quick Google search will yield *many* online resources, forum discussions, video tutorials, etc. for building Shiny applications. Many are linked throughout these slides, but here are just a few more. Be sure to poke around online yourself, and let me know if you come across any that you find particularly useful so that I can add them here!</p>
+<p class="small-text">A quick Google search will yield *lots* of online resources, forum discussions, video tutorials, etc. for building Shiny applications. Many are linked throughout these slides, but here are just a few more. Be sure to poke around online yourself, and let me know if you come across any that you find particularly useful so that I can add them here!</p>
 
 <p class="body-text topbr">**Books, class materials, tutorials**</p>
 

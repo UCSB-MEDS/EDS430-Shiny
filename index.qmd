@@ -44,6 +44,49 @@ format:
 
 ---
 
+##  {#toc data-menu-title="Table of Contents"}
+
+<div class="slide-title">`r fontawesome::fa("star", fill = "#05859B", a11y = "sem")` Table of Contents `r fontawesome::fa("star", fill = "#05859B", a11y = "sem")`</div>
+
+<p class="body-text">We're going to pack a lot into two days. Here's what to expect:</p>
+
+<p class="small-text">**(1)** [High-level overview of Shiny](https://ucsb-meds.github.io/EDS430-Shiny/#/what-is-shiny)</p>
+<p class="smaller-text">What is Shiny? ~ Anatomy of a shiny app ~ Where to find examples</p>
+
+<p class="small-text">**(2)** [Building shiny apps & dashboards](https://ucsb-meds.github.io/EDS430-Shiny/#/building-app-fundamentals)</p>
+<p class="smaller-text">Setting up your repo & files ~ App #1 (single-file app) ~ App #2 (two-file app) ~ App #3 (shinydashboard) ~ Deploying apps</p>
+
+<p class="small-text">**(3)** [Beautifying your user interface (UI)](https://ucsb-meds.github.io/EDS430-Shiny/#/themeing)</p>
+<p class="smaller-text">Custom themes with `bslib` ~ Custom themes with `fresh` ~ Styling with CSS & Sass</p>
+
+<p class="small-text">**(4)** [Improving your app's user experience]()</p>
+<p class="smaller-text">Important UX considerations ~ Web accessibility</p>
+
+<p class="small-text">**(5)** [Debugging & Testing]()</p>
+<p class="smaller-text">Debugging approaches ~ Testing apps</p>
+
+<p class="small-text">**(6)** [Streamlining code]()</p>
+<p class="smaller-text">Writing functions ~ Shiny modules</p>
+
+<p class="small-text">**(7)** [Wrap-up]()</p>
+<p class="smaller-text">Shiny alternatives ~ Words of wisdom ~ More resources</p>
+
+---
+
+##  {#1-shiny-overview data-menu-title="!! (1) High-level overview of Shiny !!" background="#374F50"}
+
+<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 1: High-level overview of Shiny</p>
+
+<br>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` What is Shiny?</p> 
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Anatomy of a shiny app</p>  
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Where to find examples</p>  
+
+---
+
 {{< include sections/1-what-is-shiny.qmd >}}
 
 ---
@@ -52,16 +95,21 @@ format:
 
 ---
 
-##  {#building-app-fundamentals data-menu-title="!! Building shiny apps - practice & fundamentals !!" background="#FCD9BB"}
+##  {#2-building-apps data-menu-title="!! (2) Building shiny apps & dashboards !!" background="#374F50"}
 
-<div class="page-center vertical-center">
-<p class="custom-subtitle-orange bottombr">`r fontawesome::fa("star", fill = "#A2520E", a11y = "sem")` Building shiny apps -- practice & fundamentals</p>
-<p class="caption-text">*In the next section, we'll be building out **three** shiny applications, learning shiny fundamentals along the way:*</p>
-<p class="body-text">**(1)** a single-file shiny app (jump to section [here](https://ucsb-meds.github.io/EDS430-Shiny/#/build-app1) & find completed app source code [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app))</p>
-<p class="body-text">**(2)** a two-file shiny app (jump to section [here](https://ucsb-meds.github.io/EDS430-Shiny/#/build-app2) & find completed app source code [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app))</p>
-<p class="body-text">**(3)** a shinydashboard (jump to section [here](https://ucsb-meds.github.io/EDS430-Shiny/#/building-dashboards) & find completed app source code [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard))</p>
-</div>
+<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 2: Building shiny apps & dashboards</p>
 
+<br>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Setting up your repo & files</p>  
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #1 (single-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app)</p>  
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #2 (two-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>  
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #3 (shinydashboard) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard)</p>  
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Deploying (& redeploying) apps</p>  
 
 ---
 
@@ -175,55 +223,103 @@ countdown::countdown(
 
 ---
 
-beautifying your apps
+##  {#3-beautifying-ui data-menu-title="!! (3) Beautifying your UI !!" background="#374F50"}
+
+<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 3: Beautifying your user interface (UI)</p>
+
+<br>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Custom themes with `bslib`</p>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Custom themes with `fresh`</p>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Styling with CSS & Sass</p>
 
 ---
 
-{{< include sections/themeing-apps.qmd >}}
+{{< include sections/9-themeing-apps.qmd >}}
 
 ---
 
-debugging & testing
+##  {#4-improving-ux data-menu-title="!! (4) Improving UX !!" background="#374F50"}
+
+<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 4: Improving your app's user experience (UX)</p>
+
+<br>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Important UX considerations</p>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Web accessibility</p>
 
 ---
 
-{{< include sections/testing.qmd >}}
+{{< include sections/10-user-centered-design.qmd >}}
 
 ---
 
-streamlining code
+{{< include sections/11-accessibility.qmd >}}
 
 ---
 
-{{< include sections/functions.qmd >}}
+##  {#5-debugging-testing data-menu-title="!! (5) Debugging & Testing !!" background="#374F50"}
+
+<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 5: Debugging & testing</p>
+
+<br>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Debugging approaches</p>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Testing apps</p>
 
 ---
 
-{{< include sections/modules.qmd >}}
+<!-- {{< include sections/12-debugging.qmd >}} -->
 
 ---
 
-designing with the user in mind
+{{< include sections/13-testing.qmd >}}
 
 ---
 
-{{< include sections/user-centered-design.qmd >}}
+##  {#6-streamlining-code data-menu-title="!! (6) Streamlining Code !!" background="#374F50"}
+
+<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 6: Streamlining code</p>
+
+<br>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Writing functions</p>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Shiny modules</p>
 
 ---
 
-{{< include sections/accessibility.qmd >}}
+{{< include sections/14-functions.qmd >}}
 
 ---
 
-wrap up
+{{< include sections/15-modules.qmd >}}
 
 ---
 
-{{< include sections/shiny_alternatives.qmd >}}
+##  {#7-wrap-up data-menu-title="!! (7) Wrap-up !!" background="#374F50"}
+
+<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 7: Wrap-up</p>
+
+<br>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Shiny alternatives</p>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Words of wisdom</p>
+
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` More resources</p>
 
 ---
 
-{{< include sections/additional-resources-final-thoughts.qmd >}}
+{{< include sections/16-shiny_alternatives.qmd >}}
+
+---
+
+{{< include sections/17-additional-resources-final-thoughts.qmd >}}
 
 ---
 

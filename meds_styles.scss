@@ -114,9 +114,9 @@ td {
   margin-bottom: 0.5em;
 }
 
-.slide-title-orange {
+.slide-title-dark {
   font-family: $font-family-serif;
-  color: $orange;
+  color: $off-white;
   font-size: 1.4em;
   font-weight: 700;
   margin-bottom: 0.5em;
@@ -147,6 +147,12 @@ td {
 .medium-body-text {
   font-family: $font-family-sans-serif;
   color: $teal;
+  font-size: 0.8em;
+}
+
+.medium-body-text-white {
+  font-family: $font-family-sans-serif;
+  color: $off-white;
   font-size: 0.8em;
 }
 
