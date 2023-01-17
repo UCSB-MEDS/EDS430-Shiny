@@ -47,7 +47,7 @@ format: revealjs
 <p class="small-text bottombr">**(a)** storing larger functions in their own files (e.g. `~/app-directory/R/{function-name}.R`) and/or</p> 
 <p class="small-text bottombr">**(b)** creating a `utils.R` file (e.g `~/app-directory/R/utils.R`) to store smaller, simpler functions all in one script.</p> 
 
-<p class="body-text topbr">You can **source your function files into `global.R`** so that your functions are made available for use throughout your app.</p>
+<p class="body-text topbr">You can **source your function files into `global.R`** so that your functions are made available for use throughout your app. **NOTE:** As of Shiny version 1.5.0, any scripts stored in `~/app-directory/R/` will be automatically sourced when your application is loaded (meaning you don't *need* to `source()` them into `global.R`, if you're running at least Shiny v1.5.0).</p>
 
 ---
 
@@ -249,7 +249,7 @@ ui <- fluidPage(
 
 <p class="small-text topbr">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
 
-<p class="small-text topbr">Once written, `source()` your function script into `global.R` to make your function availabe for use in your app.</p>
+<p class="small-text topbr">Once written, `source()` your function script into `global.R` (if necessary) to make your function available for use in your app.</p>
 
 ::: {.panel-tabset}
 

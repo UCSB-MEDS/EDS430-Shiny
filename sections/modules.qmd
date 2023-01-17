@@ -35,7 +35,7 @@ format: revealjs
 
 <p class="small-text">This app, developed by [Garrett Grolemund](https://github.com/garrettgman) & [Joe Cheng's](https://github.com/jcheng5) as part of their [Modules](https://www.rstudio.com/resources/shiny-dev-con/modules/?_ga=2.163786815.1475817156.1670220567-309155161.1666221806) lesson, taught at the 2016 Shiny Developer Conference, is a prime candidate for modularization.</p>
 
-<p class="small-text">This app uses the `gapminder` data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.</p> 
+<p class="small-text">It uses the `gapminder` data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.</p> 
 
 <center><img src="images/gapminder-app.gif" alt="" width="550"/></center>
 
@@ -366,7 +366,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title-smaller">Repeated code sections</div>
 
-<p class="small-text">Taking a closer look at the gapminder app code, we'll see that the following sections of code are repeated for each region (6 times total):</p>
+<p class="small-text">Taking a closer look at the gapminder app code, we'll see that the following sections of code are repeated for each region (6 times total; only code sections for "all" regions shown below):</p>
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `tabPanel` (**UI**)</p>
 ```{r}
@@ -377,7 +377,7 @@ tabPanel(title = "All",
          plotOutput(outputId = "all_plot"),
          sliderInput(inputId = "all_year", label = "Select Year", 
                      value = 1952, min = 1952, max = 2007, step = 5, 
-                     animate = animationOptions(interval = 500))
+                     animate = animationOptions(interval = 500)))
 ```
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reactive data frame (**server**)</p>
@@ -407,7 +407,7 @@ ydata_all <- reactive({
 # "All" date range (repeated 5 more times for each subregion)
 xrange_all <- range(all_data$gdpPercap)
 yrange_all <- range(all_data$lifeExp)
-````
+```
 
 ---
 
@@ -416,6 +416,7 @@ yrange_all <- range(all_data$lifeExp)
 <div class="slide-title-smaller">Repeated code sections (cont.)</div>
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `renderPlot({})` (**server**)</p>
+
 ```{r}
 #| eval: false
 #| echo: true
@@ -451,7 +452,7 @@ output$all_plot <- renderPlot({
             add = TRUE)
   })
   
-````
+```
 
 ---
 
@@ -459,15 +460,15 @@ output$all_plot <- renderPlot({
 
 <div class="slide-title-smaller">Enter Shiny modules</div>
 
-<p class="body-text">**A shiny module is a piece of a shiny app** -- it can't be run directly, but instead is included as part of a larger app. While functions work well for code that that is either completely on the client (UI) side or completely on the server side, modules can be written for code that spans both.</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **A shiny module is a piece of a shiny app** -- it can't be run directly, but instead is included as part of a larger app. While functions work well for code that that is either completely on the client (UI) side or completely on the server side, modules can be written for code that spans both.</p>
 
 . . . 
 
-<p class="body-text">Modules can represent inputs, outputs, or both (*we'll be building a module that represents both*). Motivation for building modules can range from enabling reuse of code (once created, modules can be reused within the same app or even across different apps), to breaking up a large, complex app into smaller, separate components.</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules can represent inputs, outputs, or both** (*we'll be building a module that represents both*). Motivation for building modules can range from enabling reuse of code (once created, modules can be reused within the same app or even across different apps), to breaking up a large, complex app into smaller, separate components.</p>
 
 . . .
 
-<p class="body-text">Modules help to solve a *namespacing* problem -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for oganizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function` e.g. `plyr::arrange` vs `dplyr::arrange`).</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules help to solve a *namespacing* problem** -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for oganizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function` e.g. `plyr::arrange` vs `dplyr::arrange`).</p>
 
 ---
 
@@ -482,6 +483,7 @@ output$all_plot <- renderPlot({
 #| echo: true
 # myModule.R
 #..........................ui function...........................
+
 myModuleUI <- function(id) {
   
   ns <- NS(id)
@@ -511,11 +513,11 @@ myModuleServer <- function(id, ...) { # where `...` includes any number of addit
 
 <div class="slide-title-smaller">Where should I define/save my module?</div>
 
-<p class="body-text">Part of the appeal of creating modules is breaking your long `app.R` (or `ui.R` & `server.R`) scripts into smaller pieces. Creating a separate R script to house a given module (both the UI *and* Server function components) is typically the best course of action (a good naming convention is giving it a descriptive name with the suffix "Module" e.g. `gapModule.R`). There are a variety of places you can write and/or save your modularized code to, but I recommend one of the following two options (at least while we're just getting started on our shiny modules journey):</p>
+<p class="body-text">Part of the appeal of creating modules is breaking your long `app.R` (or `ui.R` & `server.R`) scripts into smaller pieces. **Creating a separate R script to house a given module (both the UI *and* Server function components) is typically the best course of action (a good naming convention is giving it a descriptive name with the suffix "Module" e.g. `gapModule.R`).** There are a variety of places you can write and/or save your modularized code to, but I recommend one of the following two options (at least while we're just getting started on our shiny modules journey):</p>
 
 . . . 
 
-<p class="body-text topbr">**(1)** save your modularized code script inside your app's directory (e.g. `~/app-dir/myModule.R`)</p>
+<p class="body-text topbr">**(1)** save your modularized code script inside your app's directory (e.g. `~/app-directory/myModule.R`)</p>
 
 <p class="small-text">If you choose this option, call `source("myModule.R")` from `global.R` (if using ui.R/server.R) or `app.R`.</p>
 
@@ -565,9 +567,9 @@ gapModuleUI <- function(id) { # step 2: the first argument to a UI function shou
 
 <div class="slide-title-smaller">Breaking down the Server function:</div>
 
-<p class="smaller-text">The server part of a module looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first *required* parameter, `id`, along with any other necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Americas** vs. **Asia** etc.)).</p>
+<p class="smaller-text">The server part of a module looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first *required* parameter, `id`, along with any other necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Africa** vs. **Asia** etc.)).</p>
 
-<p class="smaller-text">Next, call `moduleServer()` *inside* your server function and pass it the `id` variable, along with the module function. The module function *must* have three parameters: `input`, `output`, and `session`. You *do not* have to use `ns()` to refer to inputs and outputs here, so we can go ahead and copy our server code directly from our original app, and plop it inside the `moduleServer()` function.</p>
+<p class="smaller-text">Next, call `moduleServer()` *inside* your server function and pass it the `id` variable, along with the module function. The module function *must* have three parameters: `input`, `output`, and `session`. You *do not* have to use `ns()` to refer to inputs and outputs here. Copy server code from our original app, plop it inside the module function, and sub in our `data` parameter where ever a data frame subset is called.</p>
 
 ```{r}
 #| eval: false
@@ -576,9 +578,9 @@ gapModuleUI <- function(id) { # step 2: the first argument to a UI function shou
 
 gapModuleServer <- function(id, data) { # step 2: the first argument to a server function should always be `id`, followed by any other necessary arguments
   
-  moduleServer(id, function(input, output, session) { # step 3: call `moduleServer()`, and pass it two things -- (a) a string id that corresponds with the id used to call the module's UI function, and (b) a module server function (this MUST use the three arguments: input, output, and session; session is optional in regular (i.e. non-module) server functions)
-
-# ~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE BELOW WAS COPIED ~NEARLY~ VERBATIM (substitute `data` for individual data frame subsets) FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~   
+  moduleServer(id, function(input, output, session) { # step 3: call `moduleServer()`, and pass it two things -- (a) a string id that corresponds with the id used to call the module's UI function, and (b) a module server function (this MUST use the three arguments: input, output, and session)
+    
+    # step 4: copy server logic into the module function (only need to do this ONCE, not 6x)
     
     # creactive df to collect one year of data ----
     ydata <- reactive({
@@ -619,8 +621,6 @@ gapModuleServer <- function(id, data) { # step 2: the first argument to a server
               bg = cols, inches = 0.5, fg = "white", add = TRUE)
       
     }) # END renderPlot
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE ABOVE WAS COPIED ~NEARLY~ VERBATIM (subtitute `data` for individual data frame subsets) FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~~~~~      
     
   }) # END moduleServer
   
@@ -768,14 +768,18 @@ shinyApp(ui = ui, server = server)
 
 ---
 
-resources:
-- [Mastering Shiny, Ch. 19 - Shiny Modules](https://mastering-shiny.org/scaling-modules.html#scaling-modules ), by Hadley Wickham 
-- [Effective use of Shiny modules in application development](https://www.youtube.com/watch?v=ylLLVo2VL50), by Eric Nantz at rstudio::conf(2019)
-- [Modularizing Shiny app code](https://shiny.rstudio.com/articles/modules.html), by Winston Chang
+##  {#module-resources data-menu-title="Module resources"}
 
-1. start with gapminder app -- talk about repeated inputs/outputs, only difference is data
-2. show code -- it's LOOOONNNGGG; lots of room for mistakes, hard to read, etc.
-3. this is where modules come in handy -- modules are a **piece** of a shiny app, containing both the ui and server. They are easier to write because we only have to write the implementation code once, then recall it as many times as needed throughout the app (in our case, 6 times)
-4. basic structure of a 
+<div class="slide-title-smaller">Additional module resources</div>
 
+<p class="body-text">We've barely scratched the surface of modules. Continue on with some of the following resources:</p>
 
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Modularizing Shiny App Code](https://www.rstudio.com/resources/shiny-dev-con/modules/?_ga=2.163786815.1475817156.1670220567-309155161.1666221806) & [associated materials](https://github.com/rstudio/ShinyDeveloperConference/tree/master/Modules/Demo), by [Garrett Grolemund](https://github.com/garrettgman) & [Joe Cheng](https://github.com/jcheng5) at the 2016 Shiny Developer's Conference -- **NOTE:** This 2016 talk is an *excellent* introduction to modules and is definitely worth a watch, especially because we just explored the exact example demoed by G. Grolemund. Please note, however, that Shiny modules were overhauled in 2020 with the introduction of `moduleServer()`. The code on the previous slides has been updated to reflect those changes, and therefore differs slightly from what's taught in this video.</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Mastering Shiny, Ch. 19 - Shiny Modules](https://mastering-shiny.org/scaling-modules.html#scaling-modules ), by [Hadley Wickham](https://github.com/hadley)</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Modularizing Shiny app code](https://shiny.rstudio.com/articles/modules.html), by [Winston Chang](https://github.com/wch)</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Effective use of Shiny modules in application development](https://www.youtube.com/watch?v=ylLLVo2VL50), by [Eric Nantz](https://r-podcast.org/host/enantz/) at rstudio::conf(2019)</p>
+
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`[A beginners guide to Shiny modules](https://emilyriederer.netlify.app/post/shiny-modules/), by [Emily Riederer](https://emilyriederer.netlify.app/about/)</p>
