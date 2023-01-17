@@ -507,6 +507,26 @@ myModuleServer <- function(id, ...) { # where `...` includes any number of addit
 
 ---
 
+##  {#where-to-define-modules data-menu-title="Where to define modules"}
+
+<div class="slide-title-smaller">Where should I define/save my module?</div>
+
+<p class="body-text">Part of the appeal of creating modules is breaking your long `app.R` (or `ui.R` & `server.R`) scripts into smaller pieces. Creating a separate R script to house a given module (both the UI *and* Server function components) is typically the best course of action (a good naming convention is giving it a descriptive name with the suffix "Module" e.g. `gapModule.R`). There are a variety of places you can write and/or save your modularized code to, but I recommend one of the following two options (at least while we're just getting started on our shiny modules journey):</p>
+
+. . . 
+
+<p class="body-text topbr">**(1)** save your modularized code script inside your app's directory (e.g. `~/app-dir/myModule.R`)</p>
+
+<p class="small-text">If you choose this option, call `source("myModule.R")` from `global.R` (if using ui.R/server.R) or `app.R`.</p>
+
+. . . 
+
+<p class="body-text topbr">**(2)** save your modularized code script inside the `/R` subdirectory of your application (e.g. `~/app-dir/R/myModule.R`)</p>
+
+<p class="small-text">If you choose this option, your module will automatically be sourced (as of Shiny 1.5.0) when the application is loaded.</p>
+
+---
+
 ##  {#ui-function data-menu-title="UI function"}
 
 <div class="slide-title-smaller">Breaking down the UI function:</div>
@@ -545,7 +565,7 @@ gapModuleUI <- function(id) { # step 2: the first argument to a UI function shou
 
 <div class="slide-title-smaller">Breaking down the Server function:</div>
 
-<p class="smaller-text">The server part of a module handles the logic and looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name (here, `gapModuleServer`) and provide it with the first *required* parameter, `id`, along with any additional necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Americas** vs. **Asia** etc.)).</p>
+<p class="smaller-text">The server part of a module looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first *required* parameter, `id`, along with any other necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Americas** vs. **Asia** etc.)).</p>
 
 <p class="smaller-text">Next, call `moduleServer()` *inside* your server function and pass it the `id` variable, along with the module function. The module function *must* have three parameters: `input`, `output`, and `session`. You *do not* have to use `ns()` to refer to inputs and outputs here, so we can go ahead and copy our server code directly from our original app, and plop it inside the `moduleServer()` function.</p>
 
@@ -558,7 +578,7 @@ gapModuleServer <- function(id, data) { # step 2: the first argument to a server
   
   moduleServer(id, function(input, output, session) { # step 3: call `moduleServer()`, and pass it two things -- (a) a string id that corresponds with the id used to call the module's UI function, and (b) a module server function (this MUST use the three arguments: input, output, and session; session is optional in regular (i.e. non-module) server functions)
 
-# ~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE BELOW WAS COPIED VERBATIM FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~   
+# ~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE BELOW WAS COPIED ~NEARLY~ VERBATIM (substitute `data` for individual data frame subsets) FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~   
     
     # creactive df to collect one year of data ----
     ydata <- reactive({
@@ -600,11 +620,150 @@ gapModuleServer <- function(id, data) { # step 2: the first argument to a server
       
     }) # END renderPlot
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE ABOVE WAS COPIED VERBATIM FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE ABOVE WAS COPIED ~NEARLY~ VERBATIM (subtitute `data` for individual data frame subsets) FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~~~~~      
     
   }) # END moduleServer
   
 } # END server function
+```
+
+---
+
+##  {#using-module-1 data-menu-title="Using your module 1"}
+
+<div class="slide-title-smaller">Now let's use our module:</div>
+
+<p class="small-text">First, since we've saved our `gapModule.R` file to our app's directory, we'll need to source it at the top of our `app.R` file:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "5"
+#..............................setup.............................
+library(shiny)
+library(gapminder) 
+library(dplyr)
+source("gapModule.R") 
+
+# Note: This code creates data sets to use in each tab.
+# It removes Kuwait since Kuwait distorts the gdp scale
+all_data <- filter(gapminder, country != "Kuwait")
+africa_data <- filter(gapminder, continent == "Africa")
+americas_data <- filter(gapminder, continent == "Americas")
+asia_data <- filter(gapminder, continent == "Asia", country != "Kuwait")
+europe_data <- filter(gapminder, continent == "Europe")
+oceania_data <- filter(gapminder, continent == "Oceania")
+```
+
+---
+
+##  {#using-module-2 data-menu-title="Using your module 2"}
+
+<div class="slide-title-smaller">Now let's use our module:</div>
+
+<p class="small-text">Next, let's use our module's UI function. We'll need to define/name each of our `tabPanel`s (one for each of our six regions), but rather than building a `plotOutput` and `sliderInput` inside each `tabPanel` (each with unique `Id`s), we can instead call our `gapModuleUI()` function, and ensure that each time we call it to supply a unique character string for our `id` parameter.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "25-30"
+#..............................setup.............................
+library(shiny)
+library(gapminder) 
+library(dplyr)
+source("gapModule.R") 
+
+# Note: This code creates data sets to use in each tab.
+# It removes Kuwait since Kuwait distorts the gdp scale
+all_data <- filter(gapminder, country != "Kuwait")
+africa_data <- filter(gapminder, continent == "Africa")
+americas_data <- filter(gapminder, continent == "Americas")
+asia_data <- filter(gapminder, continent == "Asia", country != "Kuwait")
+europe_data <- filter(gapminder, continent == "Europe")
+oceania_data <- filter(gapminder, continent == "Oceania")
+
+#...............................ui...............................
+ui <- fluidPage(
+  
+  # app title ----
+  titlePanel("Gapminder"),
+  
+  # continent tabsetPanel ----
+  tabsetPanel(id = "continent", 
+              
+              tabPanel(title = "All", gapModuleUI(id = "all")),
+              tabPanel(title = "Africa", gapModuleUI(id = "africa")),
+              tabPanel(title = "Americas", gapModuleUI(id = "americas")),
+              tabPanel(title = "Asia", gapModuleUI(id = "asia")),
+              tabPanel(title = "Europe", gapModuleUI(id = "europe")),
+              tabPanel(title = "Oceania", gapModuleUI(id = "oceania"))
+              
+  ) # END continent tabsetPanel
+  
+) # END fluidPage
+```
+
+---
+
+##  {#using-module-3 data-menu-title="Using your module 3"}
+
+<div class="slide-title-smaller">Now let's use our module:</div>
+
+<p class="small-text">Finally, we can re-write our server. Rather than writing out the *lengthy* code required to make each plot six times over, we can instead call our `gapModuleServer()` function, supplying each call with `id`s that match those used in `gapModuleUI()`, along with the appropriate data subset. Now, run your app! If written correctly, your app should run exactly the same as your initial version.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "39-44"
+#..............................setup.............................
+library(shiny)
+library(gapminder) 
+library(dplyr)
+source("gapModule.R") 
+
+# Note: This code creates data sets to use in each tab.
+# It removes Kuwait since Kuwait distorts the gdp scale
+all_data <- filter(gapminder, country != "Kuwait")
+africa_data <- filter(gapminder, continent == "Africa")
+americas_data <- filter(gapminder, continent == "Americas")
+asia_data <- filter(gapminder, continent == "Asia", country != "Kuwait")
+europe_data <- filter(gapminder, continent == "Europe")
+oceania_data <- filter(gapminder, continent == "Oceania")
+
+#...............................ui...............................
+ui <- fluidPage(
+  
+  # app title ----
+  titlePanel("Gapminder"),
+  
+  # continent tabsetPanel ----
+  tabsetPanel(id = "continent", 
+              
+              tabPanel(title = "All", gapModuleUI(id = "all")),
+              tabPanel(title = "Africa", gapModuleUI(id = "africa")),
+              tabPanel(title = "Americas", gapModuleUI(id = "americas")),
+              tabPanel(title = "Asia", gapModuleUI(id = "asia")),
+              tabPanel(title = "Europe", gapModuleUI(id = "europe")),
+              tabPanel(title = "Oceania", gapModuleUI(id = "oceania"))
+              
+  ) # END continent tabsetPanel
+  
+) # END fluidPage
+
+#.............................server.............................
+server <- function(input, output) {
+  
+  gapModuleServer(id = "all", data = all_data)
+  gapModuleServer(id = "africa", data = africa_data)
+  gapModuleServer(id = "americas", data = americas_data)
+  gapModuleServer(id = "asia", data = asia_data)
+  gapModuleServer(id = "europe", data = europe_data)
+  gapModuleServer(id = "oceania", data = oceania_data)
+
+} # END server
+
+# Run the application 
+shinyApp(ui = ui, server = server)
 ```
 
 ---

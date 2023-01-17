@@ -27,7 +27,7 @@ format: revealjs
 ```{r}
 #| eval: false
 #| echo: true
-install.packages(c("shiny", "etc."))
+install.packages(pkgs = c("shiny", "shinydashboard", "shinyWidgets", "DT", "leaflet", "shinycssloaders", "tidyverse", "bslib", "fresh", "reactlog", "shinytest2", "palmerpenguins", "lterdatasampler", "gapminder"))
 ```
 
 <br>

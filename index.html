@@ -440,7 +440,7 @@
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> You have the required R packages installed. You can install/update them all at once by running:
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"etc."</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="at">pkgs =</span> <span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"shinydashboard"</span>, <span class="st">"shinyWidgets"</span>, <span class="st">"DT"</span>, <span class="st">"leaflet"</span>, <span class="st">"shinycssloaders"</span>, <span class="st">"tidyverse"</span>, <span class="st">"bslib"</span>, <span class="st">"fresh"</span>, <span class="st">"reactlog"</span>, <span class="st">"shinytest2"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"lterdatasampler"</span>, <span class="st">"gapminder"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <center>
@@ -1973,7 +1973,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_26d4fe3b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_e8a9447c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3027,7 +3027,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_58c40d9b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_08f66f7f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3329,7 +3329,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_579faabe" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f87f1cd0" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4672,8 +4672,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7187d138e88b8217ef86" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7187d138e88b8217ef86">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-03f6016693ae0f59f551" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-03f6016693ae0f59f551">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4724,8 +4724,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8eeea2350eb4da1d225e" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-8eeea2350eb4da1d225e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a103bf6ce554a9d4522d" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a103bf6ce554a9d4522d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5529,7 +5529,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d5277763" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_665e73c7" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -8215,6 +8215,29 @@ Modules are a coding pattern, organized into <strong>two</strong> functions: one
 <span id="cb118-22"><a href="#cb118-22"></a>  </span>
 <span id="cb118-23"><a href="#cb118-23"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section><section id="where-to-define-modules" class="slide level2" data-menu-title="Where to define modules"><h2></h2>
+<div class="slide-title-smaller">
+Where should I define/save my module?
+</div>
+<p class="body-text">
+Part of the appeal of creating modules is breaking your long <code>app.R</code> (or <code>ui.R</code> &amp; <code>server.R</code>) scripts into smaller pieces. Creating a separate R script to house a given module (both the UI <em>and</em> Server function components) is typically the best course of action (a good naming convention is giving it a descriptive name with the suffix “Module” e.g.&nbsp;<code>gapModule.R</code>). There are a variety of places you can write and/or save your modularized code to, but I recommend one of the following two options (at least while we’re just getting started on our shiny modules journey):
+</p>
+<div class="fragment">
+<p class="body-text topbr">
+<strong>(1)</strong> save your modularized code script inside your app’s directory (e.g.&nbsp;<code>~/app-dir/myModule.R</code>)
+</p>
+<p class="small-text">
+If you choose this option, call <code>source("myModule.R")</code> from <code>global.R</code> (if using ui.R/server.R) or <code>app.R</code>.
+</p>
+</div>
+<div class="fragment">
+<p class="body-text topbr">
+<strong>(2)</strong> save your modularized code script inside the <code>/R</code> subdirectory of your application (e.g.&nbsp;<code>~/app-dir/R/myModule.R</code>)
+</p>
+<p class="small-text">
+If you choose this option, your module will automatically be sourced (as of Shiny 1.5.0) when the application is loaded.
+</p>
+</div>
 </section><section id="ui-function" class="slide level2" data-menu-title="UI function"><h2></h2>
 <div class="slide-title-smaller">
 Breaking down the UI function:
@@ -8252,7 +8275,7 @@ Wrapping our input and output <code>Id</code>s in <code>ns()</code> will create 
 Breaking down the Server function:
 </div>
 <p class="smaller-text">
-The server part of a module handles the logic and looks very similar to a normal (i.e.&nbsp;non-modular) Shiny app server function. Begin by defining your module server function name (here, <code>gapModuleServer</code>) and provide it with the first <em>required</em> parameter, <code>id</code>, along with any additional necessary parameters (we also need to pass our particular function a <code>data</code> parameter to differentiate between data subsets (e.g.&nbsp;<strong>All</strong> vs.&nbsp;<strong>Americas</strong> vs.&nbsp;<strong>Asia</strong> etc.)).
+The server part of a module looks very similar to a normal (i.e.&nbsp;non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first <em>required</em> parameter, <code>id</code>, along with any other necessary parameters (we also need to pass our particular function a <code>data</code> parameter to differentiate between data subsets (e.g.&nbsp;<strong>All</strong> vs.&nbsp;<strong>Americas</strong> vs.&nbsp;<strong>Asia</strong> etc.)).
 </p>
 <p class="smaller-text">
 Next, call <code>moduleServer()</code> <em>inside</em> your server function and pass it the <code>id</code> variable, along with the module function. The module function <em>must</em> have three parameters: <code>input</code>, <code>output</code>, and <code>session</code>. You <em>do not</em> have to use <code>ns()</code> to refer to inputs and outputs here, so we can go ahead and copy our server code directly from our original app, and plop it inside the <code>moduleServer()</code> function.
@@ -8264,7 +8287,7 @@ Next, call <code>moduleServer()</code> <em>inside</em> your server function and 
 <span id="cb120-4"><a href="#cb120-4"></a>  </span>
 <span id="cb120-5"><a href="#cb120-5"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) { <span class="co"># step 3: call `moduleServer()`, and pass it two things -- (a) a string id that corresponds with the id used to call the module's UI function, and (b) a module server function (this MUST use the three arguments: input, output, and session; session is optional in regular (i.e. non-module) server functions)</span></span>
 <span id="cb120-6"><a href="#cb120-6"></a></span>
-<span id="cb120-7"><a href="#cb120-7"></a><span class="co"># ~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE BELOW WAS COPIED VERBATIM FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~   </span></span>
+<span id="cb120-7"><a href="#cb120-7"></a><span class="co"># ~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE BELOW WAS COPIED ~NEARLY~ VERBATIM (substitute `data` for individual data frame subsets) FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~   </span></span>
 <span id="cb120-8"><a href="#cb120-8"></a>    </span>
 <span id="cb120-9"><a href="#cb120-9"></a>    <span class="co"># creactive df to collect one year of data ----</span></span>
 <span id="cb120-10"><a href="#cb120-10"></a>    ydata <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
@@ -8306,11 +8329,135 @@ Next, call <code>moduleServer()</code> <em>inside</em> your server function and 
 <span id="cb120-46"><a href="#cb120-46"></a>      </span>
 <span id="cb120-47"><a href="#cb120-47"></a>    }) <span class="co"># </span><span class="re">END</span><span class="co"> renderPlot</span></span>
 <span id="cb120-48"><a href="#cb120-48"></a></span>
-<span id="cb120-49"><a href="#cb120-49"></a><span class="co"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE ABOVE WAS COPIED VERBATIM FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~~~~~      </span></span>
+<span id="cb120-49"><a href="#cb120-49"></a><span class="co"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~ SERVER CODE ABOVE WAS COPIED ~NEARLY~ VERBATIM (subtitute `data` for individual data frame subsets) FROM ORIGINAL APP ~~~~~~~~~~~~~~~~~~~~~~~~~~~      </span></span>
 <span id="cb120-50"><a href="#cb120-50"></a>    </span>
 <span id="cb120-51"><a href="#cb120-51"></a>  }) <span class="co"># </span><span class="re">END</span><span class="co"> moduleServer</span></span>
 <span id="cb120-52"><a href="#cb120-52"></a>  </span>
 <span id="cb120-53"><a href="#cb120-53"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="using-module-1" class="slide level2" data-menu-title="Using your module 1"><h2></h2>
+<div class="slide-title-smaller">
+Now let’s use our module:
+</div>
+<p class="small-text">
+First, since we’ve saved our <code>gapModule.R</code> file to our app’s directory, we’ll need to source it at the top of our <code>app.R</code> file:
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb121" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1"></a><span class="co">#..............................setup.............................</span></span>
+<span id="cb121-2"><a href="#cb121-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb121-3"><a href="#cb121-3"></a><span class="fu">library</span>(gapminder) </span>
+<span id="cb121-4"><a href="#cb121-4"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb121-5"><a href="#cb121-5"></a><span class="fu">source</span>(<span class="st">"gapModule.R"</span>) </span>
+<span id="cb121-6"><a href="#cb121-6"></a></span>
+<span id="cb121-7"><a href="#cb121-7"></a><span class="co"># Note: This code creates data sets to use in each tab.</span></span>
+<span id="cb121-8"><a href="#cb121-8"></a><span class="co"># It removes Kuwait since Kuwait distorts the gdp scale</span></span>
+<span id="cb121-9"><a href="#cb121-9"></a>all_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, country <span class="sc">!=</span> <span class="st">"Kuwait"</span>)</span>
+<span id="cb121-10"><a href="#cb121-10"></a>africa_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Africa"</span>)</span>
+<span id="cb121-11"><a href="#cb121-11"></a>americas_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Americas"</span>)</span>
+<span id="cb121-12"><a href="#cb121-12"></a>asia_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Asia"</span>, country <span class="sc">!=</span> <span class="st">"Kuwait"</span>)</span>
+<span id="cb121-13"><a href="#cb121-13"></a>europe_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span>)</span>
+<span id="cb121-14"><a href="#cb121-14"></a>oceania_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Oceania"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="using-module-2" class="slide level2" data-menu-title="Using your module 2"><h2></h2>
+<div class="slide-title-smaller">
+Now let’s use our module:
+</div>
+<p class="small-text">
+Next, let’s use our module’s UI function. We’ll need to define/name each of our <code>tabPanel</code>s (one for each of our six regions), but rather than building a <code>plotOutput</code> and <code>sliderInput</code> inside each <code>tabPanel</code> (each with unique <code>Id</code>s), we can instead call our <code>gapModuleUI()</code> function, and ensure that each time we call it to supply a unique character string for our <code>id</code> parameter.
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb122" data-code-line-numbers="25-30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a><span class="co">#..............................setup.............................</span></span>
+<span id="cb122-2"><a href="#cb122-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb122-3"><a href="#cb122-3"></a><span class="fu">library</span>(gapminder) </span>
+<span id="cb122-4"><a href="#cb122-4"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb122-5"><a href="#cb122-5"></a><span class="fu">source</span>(<span class="st">"gapModule.R"</span>) </span>
+<span id="cb122-6"><a href="#cb122-6"></a></span>
+<span id="cb122-7"><a href="#cb122-7"></a><span class="co"># Note: This code creates data sets to use in each tab.</span></span>
+<span id="cb122-8"><a href="#cb122-8"></a><span class="co"># It removes Kuwait since Kuwait distorts the gdp scale</span></span>
+<span id="cb122-9"><a href="#cb122-9"></a>all_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, country <span class="sc">!=</span> <span class="st">"Kuwait"</span>)</span>
+<span id="cb122-10"><a href="#cb122-10"></a>africa_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Africa"</span>)</span>
+<span id="cb122-11"><a href="#cb122-11"></a>americas_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Americas"</span>)</span>
+<span id="cb122-12"><a href="#cb122-12"></a>asia_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Asia"</span>, country <span class="sc">!=</span> <span class="st">"Kuwait"</span>)</span>
+<span id="cb122-13"><a href="#cb122-13"></a>europe_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span>)</span>
+<span id="cb122-14"><a href="#cb122-14"></a>oceania_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Oceania"</span>)</span>
+<span id="cb122-15"><a href="#cb122-15"></a></span>
+<span id="cb122-16"><a href="#cb122-16"></a><span class="co">#...............................ui...............................</span></span>
+<span id="cb122-17"><a href="#cb122-17"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb122-18"><a href="#cb122-18"></a>  </span>
+<span id="cb122-19"><a href="#cb122-19"></a>  <span class="co"># app title ----</span></span>
+<span id="cb122-20"><a href="#cb122-20"></a>  <span class="fu">titlePanel</span>(<span class="st">"Gapminder"</span>),</span>
+<span id="cb122-21"><a href="#cb122-21"></a>  </span>
+<span id="cb122-22"><a href="#cb122-22"></a>  <span class="co"># continent tabsetPanel ----</span></span>
+<span id="cb122-23"><a href="#cb122-23"></a>  <span class="fu">tabsetPanel</span>(<span class="at">id =</span> <span class="st">"continent"</span>, </span>
+<span id="cb122-24"><a href="#cb122-24"></a>              </span>
+<span id="cb122-25"><a href="#cb122-25"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"All"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"all"</span>)),</span>
+<span id="cb122-26"><a href="#cb122-26"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Africa"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"africa"</span>)),</span>
+<span id="cb122-27"><a href="#cb122-27"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Americas"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"americas"</span>)),</span>
+<span id="cb122-28"><a href="#cb122-28"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Asia"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"asia"</span>)),</span>
+<span id="cb122-29"><a href="#cb122-29"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Europe"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"europe"</span>)),</span>
+<span id="cb122-30"><a href="#cb122-30"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Oceania"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"oceania"</span>))</span>
+<span id="cb122-31"><a href="#cb122-31"></a>              </span>
+<span id="cb122-32"><a href="#cb122-32"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> continent tabsetPanel</span></span>
+<span id="cb122-33"><a href="#cb122-33"></a>  </span>
+<span id="cb122-34"><a href="#cb122-34"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="using-module-3" class="slide level2" data-menu-title="Using your module 3"><h2></h2>
+<div class="slide-title-smaller">
+Now let’s use our module:
+</div>
+<p class="small-text">
+Finally, we can re-write our server. Rather than writing out the <em>lengthy</em> code required to make each plot six times over, we can instead call our <code>gapModuleServer()</code> function, supplying each call with <code>id</code>s that match those used in <code>gapModuleUI()</code>, along with the appropriate data subset. Now, run your app! If written correctly, your app should run exactly the same as your initial version.
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb123" data-code-line-numbers="39-44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1"></a><span class="co">#..............................setup.............................</span></span>
+<span id="cb123-2"><a href="#cb123-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb123-3"><a href="#cb123-3"></a><span class="fu">library</span>(gapminder) </span>
+<span id="cb123-4"><a href="#cb123-4"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb123-5"><a href="#cb123-5"></a><span class="fu">source</span>(<span class="st">"gapModule.R"</span>) </span>
+<span id="cb123-6"><a href="#cb123-6"></a></span>
+<span id="cb123-7"><a href="#cb123-7"></a><span class="co"># Note: This code creates data sets to use in each tab.</span></span>
+<span id="cb123-8"><a href="#cb123-8"></a><span class="co"># It removes Kuwait since Kuwait distorts the gdp scale</span></span>
+<span id="cb123-9"><a href="#cb123-9"></a>all_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, country <span class="sc">!=</span> <span class="st">"Kuwait"</span>)</span>
+<span id="cb123-10"><a href="#cb123-10"></a>africa_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Africa"</span>)</span>
+<span id="cb123-11"><a href="#cb123-11"></a>americas_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Americas"</span>)</span>
+<span id="cb123-12"><a href="#cb123-12"></a>asia_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Asia"</span>, country <span class="sc">!=</span> <span class="st">"Kuwait"</span>)</span>
+<span id="cb123-13"><a href="#cb123-13"></a>europe_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span>)</span>
+<span id="cb123-14"><a href="#cb123-14"></a>oceania_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Oceania"</span>)</span>
+<span id="cb123-15"><a href="#cb123-15"></a></span>
+<span id="cb123-16"><a href="#cb123-16"></a><span class="co">#...............................ui...............................</span></span>
+<span id="cb123-17"><a href="#cb123-17"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb123-18"><a href="#cb123-18"></a>  </span>
+<span id="cb123-19"><a href="#cb123-19"></a>  <span class="co"># app title ----</span></span>
+<span id="cb123-20"><a href="#cb123-20"></a>  <span class="fu">titlePanel</span>(<span class="st">"Gapminder"</span>),</span>
+<span id="cb123-21"><a href="#cb123-21"></a>  </span>
+<span id="cb123-22"><a href="#cb123-22"></a>  <span class="co"># continent tabsetPanel ----</span></span>
+<span id="cb123-23"><a href="#cb123-23"></a>  <span class="fu">tabsetPanel</span>(<span class="at">id =</span> <span class="st">"continent"</span>, </span>
+<span id="cb123-24"><a href="#cb123-24"></a>              </span>
+<span id="cb123-25"><a href="#cb123-25"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"All"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"all"</span>)),</span>
+<span id="cb123-26"><a href="#cb123-26"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Africa"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"africa"</span>)),</span>
+<span id="cb123-27"><a href="#cb123-27"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Americas"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"americas"</span>)),</span>
+<span id="cb123-28"><a href="#cb123-28"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Asia"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"asia"</span>)),</span>
+<span id="cb123-29"><a href="#cb123-29"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Europe"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"europe"</span>)),</span>
+<span id="cb123-30"><a href="#cb123-30"></a>              <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Oceania"</span>, <span class="fu">gapModuleUI</span>(<span class="at">id =</span> <span class="st">"oceania"</span>))</span>
+<span id="cb123-31"><a href="#cb123-31"></a>              </span>
+<span id="cb123-32"><a href="#cb123-32"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> continent tabsetPanel</span></span>
+<span id="cb123-33"><a href="#cb123-33"></a>  </span>
+<span id="cb123-34"><a href="#cb123-34"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span>
+<span id="cb123-35"><a href="#cb123-35"></a></span>
+<span id="cb123-36"><a href="#cb123-36"></a><span class="co">#.............................server.............................</span></span>
+<span id="cb123-37"><a href="#cb123-37"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb123-38"><a href="#cb123-38"></a>  </span>
+<span id="cb123-39"><a href="#cb123-39"></a>  <span class="fu">gapModuleServer</span>(<span class="at">id =</span> <span class="st">"all"</span>, <span class="at">data =</span> all_data)</span>
+<span id="cb123-40"><a href="#cb123-40"></a>  <span class="fu">gapModuleServer</span>(<span class="at">id =</span> <span class="st">"africa"</span>, <span class="at">data =</span> africa_data)</span>
+<span id="cb123-41"><a href="#cb123-41"></a>  <span class="fu">gapModuleServer</span>(<span class="at">id =</span> <span class="st">"americas"</span>, <span class="at">data =</span> americas_data)</span>
+<span id="cb123-42"><a href="#cb123-42"></a>  <span class="fu">gapModuleServer</span>(<span class="at">id =</span> <span class="st">"asia"</span>, <span class="at">data =</span> asia_data)</span>
+<span id="cb123-43"><a href="#cb123-43"></a>  <span class="fu">gapModuleServer</span>(<span class="at">id =</span> <span class="st">"europe"</span>, <span class="at">data =</span> europe_data)</span>
+<span id="cb123-44"><a href="#cb123-44"></a>  <span class="fu">gapModuleServer</span>(<span class="at">id =</span> <span class="st">"oceania"</span>, <span class="at">data =</span> oceania_data)</span>
+<span id="cb123-45"><a href="#cb123-45"></a></span>
+<span id="cb123-46"><a href="#cb123-46"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span>
+<span id="cb123-47"><a href="#cb123-47"></a></span>
+<span id="cb123-48"><a href="#cb123-48"></a><span class="co"># Run the application </span></span>
+<span id="cb123-49"><a href="#cb123-49"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section class="slide level2"><p>resources: - <a href="https://mastering-shiny.org/scaling-modules.html#scaling-modules">Mastering Shiny, Ch. 19 - Shiny Modules</a>, by Hadley Wickham - <a href="https://www.youtube.com/watch?v=ylLLVo2VL50">Effective use of Shiny modules in application development</a>, by Eric Nantz at rstudio::conf(2019) - <a href="https://shiny.rstudio.com/articles/modules.html">Modularizing Shiny app code</a>, by Winston Chang</p>
 <ol type="1">
@@ -8514,29 +8661,29 @@ Use HTML elements appropriately
 <div class="columms">
 <div class="column" style="width:45%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1"></a><span class="co"># load packages ----</span></span>
-<span id="cb121-2"><a href="#cb121-2"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb121-3"><a href="#cb121-3"></a></span>
-<span id="cb121-4"><a href="#cb121-4"></a><span class="co"># user interface ----</span></span>
-<span id="cb121-5"><a href="#cb121-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb121-6"><a href="#cb121-6"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"This is my app's title"</span>),</span>
-<span id="cb121-7"><a href="#cb121-7"></a>  </span>
-<span id="cb121-8"><a href="#cb121-8"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 1"</span>),</span>
-<span id="cb121-9"><a href="#cb121-9"></a>  </span>
-<span id="cb121-10"><a href="#cb121-10"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section a"</span>),</span>
-<span id="cb121-11"><a href="#cb121-11"></a>  </span>
-<span id="cb121-12"><a href="#cb121-12"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section b"</span>),</span>
-<span id="cb121-13"><a href="#cb121-13"></a>  </span>
-<span id="cb121-14"><a href="#cb121-14"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section c"</span>),</span>
-<span id="cb121-15"><a href="#cb121-15"></a>  </span>
-<span id="cb121-16"><a href="#cb121-16"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 2"</span>),</span>
-<span id="cb121-17"><a href="#cb121-17"></a>)</span>
-<span id="cb121-18"><a href="#cb121-18"></a></span>
-<span id="cb121-19"><a href="#cb121-19"></a><span class="co"># server instructions ----</span></span>
-<span id="cb121-20"><a href="#cb121-20"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
-<span id="cb121-21"><a href="#cb121-21"></a></span>
-<span id="cb121-22"><a href="#cb121-22"></a><span class="co"># combine UI &amp; server into an app ----</span></span>
-<span id="cb121-23"><a href="#cb121-23"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1"></a><span class="co"># load packages ----</span></span>
+<span id="cb124-2"><a href="#cb124-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb124-3"><a href="#cb124-3"></a></span>
+<span id="cb124-4"><a href="#cb124-4"></a><span class="co"># user interface ----</span></span>
+<span id="cb124-5"><a href="#cb124-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb124-6"><a href="#cb124-6"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"This is my app's title"</span>),</span>
+<span id="cb124-7"><a href="#cb124-7"></a>  </span>
+<span id="cb124-8"><a href="#cb124-8"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 1"</span>),</span>
+<span id="cb124-9"><a href="#cb124-9"></a>  </span>
+<span id="cb124-10"><a href="#cb124-10"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section a"</span>),</span>
+<span id="cb124-11"><a href="#cb124-11"></a>  </span>
+<span id="cb124-12"><a href="#cb124-12"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section b"</span>),</span>
+<span id="cb124-13"><a href="#cb124-13"></a>  </span>
+<span id="cb124-14"><a href="#cb124-14"></a>  tags<span class="sc">$</span><span class="fu">h3</span>(<span class="st">"Sub-section c"</span>),</span>
+<span id="cb124-15"><a href="#cb124-15"></a>  </span>
+<span id="cb124-16"><a href="#cb124-16"></a>  tags<span class="sc">$</span><span class="fu">h2</span>(<span class="st">"Section 2"</span>),</span>
+<span id="cb124-17"><a href="#cb124-17"></a>)</span>
+<span id="cb124-18"><a href="#cb124-18"></a></span>
+<span id="cb124-19"><a href="#cb124-19"></a><span class="co"># server instructions ----</span></span>
+<span id="cb124-20"><a href="#cb124-20"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb124-21"><a href="#cb124-21"></a></span>
+<span id="cb124-22"><a href="#cb124-22"></a><span class="co"># combine UI &amp; server into an app ----</span></span>
+<span id="cb124-23"><a href="#cb124-23"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -8563,15 +8710,15 @@ All images and graphical elements should include <strong>alternative (alt) text<
 Include the <code>alt</code> argument (similar to adding the <code>alt</code> attribute to an HTML element) when using <a href="https://shiny.rstudio.com/reference/shiny/1.7.1/renderplot"><code>renderPlot()</code></a> to add alt text to your reactive plots – the <code>alt</code> argument lives <em>outside</em> of the <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> but inside the <code>()</code>. For example:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a><span class="co"># in your server</span></span>
-<span id="cb122-2"><a href="#cb122-2"></a><span class="fu">renderPlot</span>({</span>
-<span id="cb122-3"><a href="#cb122-3"></a></span>
-<span id="cb122-4"><a href="#cb122-4"></a>    <span class="fu">ggplot</span>(<span class="fu">data</span>(), <span class="fu">aes</span>(<span class="at">x =</span> var1, <span class="at">y =</span> var2)) <span class="sc">+</span> </span>
-<span id="cb122-5"><a href="#cb122-5"></a>      <span class="fu">geom_point</span>() </span>
-<span id="cb122-6"><a href="#cb122-6"></a>    </span>
-<span id="cb122-7"><a href="#cb122-7"></a>  }, <span class="at">alt =</span> <span class="st">"Alt text description"</span></span>
-<span id="cb122-8"><a href="#cb122-8"></a>  </span>
-<span id="cb122-9"><a href="#cb122-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1"></a><span class="co"># in your server</span></span>
+<span id="cb125-2"><a href="#cb125-2"></a><span class="fu">renderPlot</span>({</span>
+<span id="cb125-3"><a href="#cb125-3"></a></span>
+<span id="cb125-4"><a href="#cb125-4"></a>    <span class="fu">ggplot</span>(<span class="fu">data</span>(), <span class="fu">aes</span>(<span class="at">x =</span> var1, <span class="at">y =</span> var2)) <span class="sc">+</span> </span>
+<span id="cb125-5"><a href="#cb125-5"></a>      <span class="fu">geom_point</span>() </span>
+<span id="cb125-6"><a href="#cb125-6"></a>    </span>
+<span id="cb125-7"><a href="#cb125-7"></a>  }, <span class="at">alt =</span> <span class="st">"Alt text description"</span></span>
+<span id="cb125-8"><a href="#cb125-8"></a>  </span>
+<span id="cb125-9"><a href="#cb125-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -8579,10 +8726,10 @@ Include the <code>alt</code> argument (similar to adding the <code>alt</code> at
 Similarly, use the <code>alt</code> argument within <code>tags$img</code> when adding static images to your app. For example:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1"></a><span class="co"># in your UI</span></span>
-<span id="cb123-2"><a href="#cb123-2"></a>tags<span class="sc">$</span><span class="fu">img</span>(<span class="at">src =</span> <span class="st">"file/path/to/img"</span>,</span>
-<span id="cb123-3"><a href="#cb123-3"></a>         <span class="at">width =</span> <span class="st">"100px"</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
-<span id="cb123-4"><a href="#cb123-4"></a>         <span class="at">alt =</span> <span class="st">"Alt text for image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1"></a><span class="co"># in your UI</span></span>
+<span id="cb126-2"><a href="#cb126-2"></a>tags<span class="sc">$</span><span class="fu">img</span>(<span class="at">src =</span> <span class="st">"file/path/to/img"</span>,</span>
+<span id="cb126-3"><a href="#cb126-3"></a>         <span class="at">width =</span> <span class="st">"100px"</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
+<span id="cb126-4"><a href="#cb126-4"></a>         <span class="at">alt =</span> <span class="st">"Alt text for image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section><section id="alt-text-tips" class="slide level2" data-menu-title="Alt text tips"><h2></h2>
