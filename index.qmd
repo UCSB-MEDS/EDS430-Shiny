@@ -50,25 +50,25 @@ format:
 
 <p class="body-text">We're going to pack a lot into two days. Here's what to expect:</p>
 
-<p class="small-text">**(1)** [High-level overview of Shiny](https://ucsb-meds.github.io/EDS430-Shiny/#/what-is-shiny)</p>
+<p class="small-text">**(1)** [High-level overview of Shiny](https://ucsb-meds.github.io/EDS430-Shiny/#/1-shiny-overview)</p>
 <p class="smaller-text">What is Shiny? ~ Anatomy of a shiny app ~ Where to find examples</p>
 
-<p class="small-text">**(2)** [Building shiny apps & dashboards](https://ucsb-meds.github.io/EDS430-Shiny/#/building-app-fundamentals)</p>
+<p class="small-text">**(2)** [Building shiny apps & dashboards](https://ucsb-meds.github.io/EDS430-Shiny/#/2-building-apps)</p>
 <p class="smaller-text">Setting up your repo & files ~ App #1 (single-file app) ~ App #2 (two-file app) ~ App #3 (shinydashboard) ~ Deploying apps</p>
 
-<p class="small-text">**(3)** [Beautifying your user interface (UI)](https://ucsb-meds.github.io/EDS430-Shiny/#/themeing)</p>
+<p class="small-text">**(3)** [Beautifying your user interface (UI)](https://ucsb-meds.github.io/EDS430-Shiny/#/3-beautifying-ui)</p>
 <p class="smaller-text">Custom themes with `bslib` ~ Custom themes with `fresh` ~ Styling with CSS & Sass</p>
 
-<p class="small-text">**(4)** [Improving your app's user experience]()</p>
+<p class="small-text">**(4)** [Improving your app's user experience (UX)](https://ucsb-meds.github.io/EDS430-Shiny/#/4-improving-ux)</p>
 <p class="smaller-text">Important UX considerations ~ Web accessibility</p>
 
-<p class="small-text">**(5)** [Debugging & Testing]()</p>
+<p class="small-text">**(5)** [Debugging & Testing](https://ucsb-meds.github.io/EDS430-Shiny/#/5-debugging-testing)</p>
 <p class="smaller-text">Debugging approaches ~ Testing apps</p>
 
-<p class="small-text">**(6)** [Streamlining code]()</p>
+<p class="small-text">**(6)** [Streamlining code](https://ucsb-meds.github.io/EDS430-Shiny/#/6-streamlining-code)</p>
 <p class="smaller-text">Writing functions ~ Shiny modules</p>
 
-<p class="small-text">**(7)** [Wrap-up]()</p>
+<p class="small-text">**(7)** [Wrap-up](https://ucsb-meds.github.io/EDS430-Shiny/#/7-wrap-up)</p>
 <p class="smaller-text">Shiny alternatives ~ Words of wisdom ~ More resources</p>
 
 ---
