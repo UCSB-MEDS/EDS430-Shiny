@@ -1,0 +1,82 @@
+---
+format: revealjs
+---
+
+##  {#debugging data-menu-title="~~~ Debugging ~~~" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("bug", fill = "#d2e3f3", a11y = "sem")` Debugging</p>
+<p class="caption-text">*Like any code, you're bound to run into errors as you're developing your shiny app(s). However, Shiny can be particularly challenging to debug. In this section, we'll review a few approaches for solving pesky issues.*</p>
+</div>
+
+---
+
+##  {#LO-debugging data-menu-title="Learning Objectives - Debugging"}
+
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for Debugging</div>
+
+<p class="medium-body-text bottombr">After this section, you should:</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` tbd</p>
+
+. . . 
+
+<p class="medium-body-text topbr">New packages used:</p> 
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{reactlog}`:  tbd</p>
+
+---
+
+##  {#why-test data-menu-title="Debugging is challenging"}
+
+<div class="slide-title">Debugging can be challenging</div>
+
+<p class="body-text">Shiny apps can be particularly challenging to debug for a few reasons:</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Shiny is **reactive**, so code execution isn't as linear as other code that you're likely more familiar with (e.g. analytical pipelines written in "normal" R scripts, where each line of code is executed in succession)</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Shiny code runs behind a web server *and* the Shiny framework itself, which can obscure what's going on</p>
+
+<br>
+
+. . . 
+
+<p class="body-text">While there are a number of different tools/strategies for debugging Shiny apps, I find myself turning to one (or more) of these approaches most often:</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` isolating problematic code by commenting out as much correctly-functioning code as possible</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` adding messages to my reactives</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` using `reactlog` to trace errors</p>
+
+<br>
+
+. . . 
+
+<p class="body-text">We'll touch on each of these, briefly, but be sure to check out the Shiny article, [Debugging Shiny applications](https://shiny.rstudio.com/articles/debugging.html) and [Mastering Shiny Ch. 5.2](https://mastering-shiny.org/action-workflow.html#debugging), by Hadley Wickham for more approaches, details, and examples.</p>
+
+---
+
+##  {#non-buggy-app data-menu-title="A correctly functioning app"}
+
+<div class="slide-title">I'm building an app that should look like this...</div>
+
+<p class="small-text">In **Tab 1**, both the image and text should update whenever a new radio button is chosen. In **Tab 2**, the scatterplot should update so that only data points for penguins with body masses within our chosen range are displayed.</p>
+
+<center><img src="images/working-app.gif" alt="" width="650"/></center>
+
+---
+
+##  {#buggy-app data-menu-title="A buggy app"}
+
+<div class="slide-title">...but let's say it actually looks like this:</div>
+
+<p class="small-text">In **Tab 1**, only the image updates whenever a new radio button is chosen, and text is missing altogether. In **Tab 2**, the scatterplot updates as expected whenever the body mass range is changed.</p>
+
+<center><img src="images/buggy-app.gif" alt="" width="650"/></center>
+
+

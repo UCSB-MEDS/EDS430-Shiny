@@ -2,11 +2,11 @@
 format: revealjs
 ---
 
-##  {#themeing data-menu-title="~~~ Themeing Shiny Apps ~~~" background="#053660"}
+##  {#themeing-pkgs data-menu-title="~~~ Themeing Shiny Apps (with pkgs) ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("paintbrush", fill = "#d2e3f3", a11y = "sem")` Styling & Themeing shiny apps</p>
-<p class="caption-text">*We've built some really cool apps so far, but they all have a pretty standard and similar appearance. In this section, we'll explore a few different approaches for styling your apps.*</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("paint-roller", fill = "#d2e3f3", a11y = "sem")` Creating custom themes</p>
+<p class="caption-text">*We've built some really cool apps so far, but they all have a pretty standard and similar appearance. In this section, we'll explore two packages for creating custom themes for your apps.*</p>
 </div>
 
 ---
@@ -413,6 +413,15 @@ body <- dashboardBody(
 :::
 
 ::::
+
+---
+
+##  {#themeing-css-sass data-menu-title="~~~ Styling Shiny Apps (with CSS & Sass) ~~~" background="#053660"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">`r fontawesome::fa("paintbrush", fill = "#d2e3f3", a11y = "sem")` Styling apps with CSS & Sass</p>
+<p class="caption-text">*`bslib` & `fresh` are great ways to get started on your app customization journeys, but knowing some CSS & Sass can help you really fine-tune the appearance of your apps*</p>
+</div>
 
 ---
 

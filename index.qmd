@@ -273,7 +273,7 @@ countdown::countdown(
 
 ---
 
-<!-- {{< include sections/12-debugging.qmd >}} -->
+{{< include sections/12-debugging.qmd >}}
 
 ---
 
