@@ -41,7 +41,7 @@ editor_options:
 
 . . . 
 
-<p class="medium-body-text topbr">Packages used:</p> 
+<p class="medium-body-text topbr">Packages introduced:</p> 
 
 . . . 
 
@@ -778,7 +778,7 @@ server <- function(input, output) {
 
 . . . 
 
-<p class="body-text">**1.** We created an `app.R` file in it's own directory and began our app with the [template](http://localhost:7907/#/single-file), though you can also create a [two-file Shiny app](http://localhost:7907/#/two-file) by using separate `ui.R` and `server.R` files.</p>
+<p class="body-text">**1.** We created an `app.R` file in it's own directory and began our app with the [template](https://ucsb-meds.github.io/EDS430-Shiny/#/single-file), though you can also create a [two-file Shiny app](https://ucsb-meds.github.io/EDS430-Shiny/#/two-file) by using separate `ui.R` and `server.R` files.</p>
 
 . . .
 

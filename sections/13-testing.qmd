@@ -27,11 +27,11 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to rerun past tests</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to rerun tests</p>
 
 . . . 
 
-<p class="medium-body-text topbr">New packages used:</p> 
+<p class="medium-body-text topbr">Packages introduced:</p> 
 
 . . . 
 
@@ -67,7 +67,7 @@ format: revealjs
 
 <div class="slide-title">Enter the [`{shinytest2}` package](https://rstudio.github.io/shinytest2/articles/shinytest2.html)</div>
 
-<p class="body-text">The `{shinytest2}` package is a useful tool for conducting regression testing on shiny apps -- or in other words, testing existing app behavior for consistency over time.</p>
+<p class="body-text">The [`{shinytest2}` package](https://rstudio.github.io/shinytest2/articles/shinytest2.html) is a useful tool for conducting regression testing on shiny apps -- or in other words, testing existing app behavior for consistency over time.</p>
 
 :::: {.columns}
 

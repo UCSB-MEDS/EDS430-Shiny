@@ -35,7 +35,7 @@ format: revealjs
 
 . . .
 
-<p class="medium-body-text topbr">New packages used:</p> 
+<p class="medium-body-text topbr">Packages introduced:</p> 
 
 . . . 
 
@@ -228,7 +228,7 @@ server <- function(input, output) {
 
 <div class="slide-title-smaller">Add loading animations to re-rendering outputs</div>
 
-<p class="small-text">The [`{shinycssloaders} package](https://github.com/daattali/shinycssloaders) makes it easy to add visual indicators to outputs as they're loading or re-rendering. This can be particularly helpful if you have outputs that take a few seconds to render -- it alerts users that their updated inputs were recognized and that the app is working to re-render outputs.</p>
+<p class="small-text">The [`{shinycssloaders}` package](https://github.com/daattali/shinycssloaders) makes it easy to add visual indicators to outputs as they're loading or re-rendering. This can be particularly helpful if you have outputs that take a few seconds to render -- it alerts users that their updated inputs were recognized and that the app is working to re-render outputs.</p>
 
 <p class="small-text">Check out the [demo app](https://daattali.com/shiny/shinycssloaders-demo/) to start designing your own "spinner" (choose style, color, size).</p>
 

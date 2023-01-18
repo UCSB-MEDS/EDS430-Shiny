@@ -19,7 +19,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a general understanding of what is web accessibility and who it can benefit (spoiler alert: it benefits us all!)</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a general understanding of what web accessibility means and who it can benefit (spoiler alert: it benefits us all!)</p>
 
 . . . 
 
@@ -188,7 +188,7 @@ tags$img(src = "file/path/to/img",
 
 <p class="body-text"><em>alt="<span style="background-color: #F9C9C8;">Bar chart</span> of <span style="background-color: #FDC790;">gun murders per 100,000 people</span> where <span style="background-color: #D1EAEE;">America's murder rate is 6 times worse than Canada, and 30 times Australia</span>"</em></p>
 
-<p class="small-text topbr">For more great tips on how and when to use alt text, check out this article by the [A11Y Project](https://www.a11yproject.com/posts/alt-text/). For examples of how to construct good alt text, take a peek at this resource by [Datawrapper](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization).</p>
+<p class="small-text topbr">For more great tips on how and when to use alt text, check out [this article](https://www.a11yproject.com/posts/alt-text/) by the A11Y Project. For examples of how to construct good alt text, take a peek at [this resource](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization) by Datawrapper.</p>
 
 ---
 

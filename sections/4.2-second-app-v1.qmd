@@ -6,7 +6,7 @@ format: revealjs
 
 <p class="slide-title">Add data viz: Next up, penguins</p>
 
-<p class="small-text bottombr">We'll be using the `penguins` dataset from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/) to create our second reactive plot. These data contain penguin (genus *Pygoscelis*) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the [Palmer Station LTER](). Original data can be found on the EDI Data Portal ([Adélie data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5), [Gentoo data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5), and [Chinstrap data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6)).</p>
+<p class="small-text bottombr">We'll be using the `penguins` dataset from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/) to create our second reactive plot. These data contain penguin (genus *Pygoscelis*) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the [Palmer Station LTER](https://pallter.marine.rutgers.edu/). Original data can be found on the EDI Data Portal ([Adélie data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5), [Gentoo data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5), and [Chinstrap data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6)).</p>
 
 <br>
 
@@ -60,7 +60,7 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Try changing the histogram bin number in your practice code script first, before attempting to make it reactive</p>
 
-<p class="body-text topbr">**And remember** to follow the our three steps for building reactive outputs (review [slide 27](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1), if necessary)!</p>
+<p class="body-text topbr">**And remember** to follow the our three steps for building reactive outputs (1. add input to UI, 2. add output to UI, 3. tell server how to assemble inputs into outputs)!</p>
 
 <br>
 <br>

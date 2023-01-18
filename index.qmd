@@ -105,7 +105,7 @@ format:
 
 <p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Setting up your repo & files</p>  
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #1 (single-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app)</p>  
+<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #1 (single-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app)</p>  
 
 <p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #2 (two-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>  
 

@@ -23,7 +23,7 @@ format: revealjs
 
 . . . 
 
-<p class="medium-body-text topbr">New packages used:</p> 
+<p class="medium-body-text topbr">Packages introduced:</p> 
 
 . . . 
 

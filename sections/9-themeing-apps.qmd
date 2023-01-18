@@ -24,7 +24,7 @@ format: revealjs
 
 . . .
 
-<p class="medium-body-text topbr">New packages used:</p> 
+<p class="medium-body-text topbr">Packages introduced:</p> 
 
 . . . 
 
@@ -739,7 +739,11 @@ button {
 
 <div class="slide-title-smaller">Inspect & identify how to update box styling</div>
 
-<p class="small-text">For example, let's say I want to change the color of this shinydashboard's boxes and their text. Right clicking on a box and choosing **Inspect Element** pulls up the HTML and CSS files underlying my app. Hovering over different parts of the HTML highlights different elements in the UI. The box is highlighted when I hover over `<div class="box-body">` -- this tells me that boxes are formed using the `<div>` HTML element and they're assigned a class called `box-body`. I can hop down to the CSS file (here, that's located in the bottom half of my sidebar, but depending on the size of your window/layout, the HTML and CSS might be side-by-side) and find the `.box-body` class selector. You can add property/value pairs and/or update existing property values to adjust the appearance of our box. Notice that changing the `.box-body` class selector updates **both** boxes -- upon inspecting the box containing our plot, you'll notice that it is also of class, `box-body`. Therefore changes to this class selector will apply to both boxes.</p>
+<p class="smaller-text">For example, let's say I want to change the color of this shinydashboard's boxes and the color of the box text.</p> 
+
+<p class="smaller-text">**First, we need to determine which type of HTML element creates our box.** Right clicking on a box and choosing **Inspect Element** pulls up the HTML and CSS files underlying the app. Hovering over different parts of the HTML highlights different elements in the UI. The box is highlighted when I hover over `<div class="box-body">` -- this tells me that boxes are formed using the `<div>` HTML element and they're assigned a class called `box-body`.</p> 
+
+<p class="smaller-text">**Next, we can (temporarily) adjust the CSS rules that style these boxes to see how they work.** I can hop down to the CSS file (here, that's located in the bottom half of my sidebar, but depending on the size of your window/layout, the HTML and CSS might be side-by-side) and find the `.box-body` class selector. You can add property/value pairs and/or update existing property values to adjust the appearance of our box. Notice that changing the `.box-body` class selector updates **both** boxes -- upon inspecting the box containing our plot, you'll notice that it is also of class, `box-body`. Therefore changes to this class selector will apply to both boxes. *This process is purely for testing purposes -- refreshing your app will remove any of these changes.*</p>
 
 <center><img src="images/inspecting.gif" alt="" width="550"/></center>
 

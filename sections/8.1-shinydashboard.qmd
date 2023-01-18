@@ -6,7 +6,7 @@ format: revealjs
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("gauge", fill = "#d2e3f3", a11y = "sem")` Building dashboards with `{shinydashboard}`</p>
-<p class="caption-text">*`{shiny}` alone is powerful and flexible, however it can take a lot of work to create a sleek/modern UI. `{shinydashboard}` provides a "template" for quickly building visually appealing dashboard apps.*</p>
+<p class="caption-text">*Shiny alone is powerful and flexible, however it can take a lot of work to create a sleek/modern UI. `{shinydashboard}` provides a "template" for quickly building visually appealing dashboard apps.*</p>
 </div>
 
 ---
@@ -35,7 +35,7 @@ format: revealjs
 
 . . . 
 
-<p class="medium-body-text topbr">New packages used:</p> 
+<p class="medium-body-text topbr">Packages introduced:</p> 
 
 . . .
 
@@ -51,7 +51,7 @@ format: revealjs
 
 <div class="slide-title">Roadmap for App #3</div>
 
-<p class="body-text">In this section, we'll be building a **shinydashboard** using data downloaded from the [Arctic Data Center](). We'll be building out the following features:</p>
+<p class="body-text">In this section, we'll be building a **shinydashboard** using data downloaded from the [Arctic Data Center](https://arcticdata.io/). We'll be building out the following features:</p>
 
 <br>
 
@@ -177,7 +177,7 @@ library(shinydashboard)
 
 <p class="body-text bottombr">Building an app doesn't make much sense if we don't know what we're going to put in it. So, just like the last two apps, we'll start with some data wrangling and practice data visualization.</p>
 
-<p class="body-text bottombr">*Unlike* our last two apps, however, we'll be working with tabular data from the [Arctic Data Center](https://arcticdata.io/), which we'll download, process, save, then finally, read into our application. This process will likely be more similar to what you'll encounter when working on your own applications moving forward. **Take a few minutes to review the metadata record for the following data set:**</p>
+<p class="body-text bottombr">*Unlike* our last two apps, however, we'll be working with tabular data from the [Arctic Data Center](https://arcticdata.io/), which we'll download, process, save, then finally, read into our application. This process will likely be more similar to what you'll encounter when working on your own applications moving forward. **Take a few minutes to review the metadata record for the following data set, and download [FCWO_lakemonitoringdata_2011_2022_daily.csv](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3):**</p>
 
 :::: {.columns}
 

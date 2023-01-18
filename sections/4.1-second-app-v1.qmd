@@ -43,7 +43,7 @@ format: revealjs
 
 . . .
 
-<p class="medium-body-text topbr">New packages used:</p> 
+<p class="medium-body-text topbr">Packages introduced:</p> 
 
 . . .
 
@@ -773,7 +773,7 @@ library(shinyWidgets)
 
 <div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
 
-<p class="small-text">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too (see slide ??). Our new data object `clean_trout`, will now be availble for us to call directly in our server.</p>
+<p class="small-text">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too. Our new data object `clean_trout`, will now be available for us to call directly in our server.</p>
 
 ```{r}
 #| eval: false
@@ -810,7 +810,7 @@ clean_trout <- and_vertebrates |>
 
 <div class="slide-title-smaller">Add a `pickerInput` for selecting `channel_type` to your UI</div>
 
-<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see [previous slide](https://ucsb-meds.github.io/EDS430-Shiny/#/update-global2))) represents the type of water body (*cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel*) data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
+<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see line 9 on [previous slide](https://ucsb-meds.github.io/EDS430-Shiny/#/wrangle-data-global))) represents the type of water body (*cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel*) data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
 
 . . . 
 
