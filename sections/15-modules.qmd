@@ -13,13 +13,23 @@ format: revealjs
 
 ##  {#LO-modules data-menu-title="Learning Objectives - Modules"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Modules (`module_app`)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Modules</div>
 
 <p class="medium-body-text bottombr">By the end of this section, you should have an intro-level understanding of:</p>
 
 . .  .
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` </p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` what is a shiny module and when it might make sense to build one</p>
+
+. .  .
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the structure of a shiny module</p>
+
+. .  .
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` how to use a module</p>
+
+. .  .
 
 <p class="medium-body-text topbr">Packages used:</p> 
 

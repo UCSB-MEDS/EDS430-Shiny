@@ -11,9 +11,9 @@ format: revealjs
 
 ---
 
-##  {#LO-themeing data-menu-title="Learning Objectives (Themeing)"}
+##  {#LO-themeing data-menu-title="Learning Objectives - Themeing/Styling"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Themeing/Styling Apps</div>
 
 <p class="medium-body-text bottombr">By the end of this section, you should be equipped with:</p>
 
@@ -981,9 +981,9 @@ a {
 
 ##  {#convert-sass data-menu-title="Convert Sass to CSS"}
 
-<div class="slide-title-smaller">Next, compile Sass to CSS</div>
+<div class="slide-title-smaller">Then, compile Sass to CSS</div>
 
-<p class="small-text">Because web browsers can only interpret CSS (not Sass), we need to compile our Sass to CSS. To do this, we can use the `sass()` function from the [`{sass} package`](https://rstudio.github.io/sass/index.html). We can do this in `global.R`. The `sass()` function requires two arguments: a sass file `input` and a file path + named `.css` file `output`.</p>
+<p class="small-text">Because web browsers can only interpret CSS (not Sass), we need to compile our Sass to CSS. To do this, we can use the `sass()` function from the [`{sass}` package](https://rstudio.github.io/sass/index.html). We can do this in `global.R`. The `sass()` function requires two arguments: a sass file `input` and a file path + named `.css` file `output`.</p>
 
 <p class="small-text">We also need to apply our styles to our app by linking this newly-generated `.css` file in our app's header.</p>
 
@@ -1064,5 +1064,10 @@ a {
 
 :::
 
+---
 
+##  {#sassy-app data-menu-title="Sass/CSS-styled app"}
 
+<div class="slide-title-smaller">Once your stylesheet is applied, it should look like this:</div>
+
+<!-- <center><img src="images/tbd.png" alt="" width="550"/></center> -->

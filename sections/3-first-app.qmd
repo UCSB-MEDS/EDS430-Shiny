@@ -13,9 +13,9 @@ editor_options:
 
 ---
 
-##  {#LO-app1 data-menu-title="Learning Objectives App #1"}
+##  {#LO-app1 data-menu-title="Learning Objectives - App #1"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #1 (single-file app)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - App #1 (single-file app)</div>
 
 <p class="medium-body-text bottombr">By the end of building out this first app, you should be a bit more familiar with:</p>
 
@@ -978,51 +978,5 @@ shinyApp(ui = ui, server = server)
 :::
 
 ::::
-
----
-
-##  {#app1-recap data-menu-title="App 1 Recap"}
-
-<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` So far, we've talked about:</div>
-
-. . . 
-
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` how to find working **examples** of apps (built-in using the `{shiny}` package and via other online resources)</p>
-
-. . . 
-
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the **anatomy of a shiny app** (UI & server) and **how to set one up** (both single and two-file apps -- though more on two-file apps soon!)</p>
-
-. . .
-
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **running** and **quitting** a shiny app (and opening it up in your browser window)</p>
-
-. . .
-
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` adding and styling **text** using `tags`</p>
-
-. . .
-
-<p class="small-text bottombr topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **reactivity** (using input values to render outputs objects) and a **general workflow** to follow to create reactive outputs -- which includes the following:</p>
-
-. . .
-
-<p class="smaller-text topbr">`r fontawesome::fa("caret-right", fill = "#05859B", a11y = "sem")` implementing **widgets** from the `{shiny}` package using `*Input()` functions (specifically `sliderInput()` & `checkboxGroupInput()`)</p>
-
-. . .
-
-<p class="smaller-text topbr">`r fontawesome::fa("caret-right", fill = "#05859B", a11y = "sem")` creating **placeholders** in the UI for our reactive outputs to live using `*Output()` functions (specifically `plotOutput()` and `DT::datatableOutput()`)</p>
-
-. . .
-
-<p class="smaller-text topbr">`r fontawesome::fa("caret-right", fill = "#05859B", a11y = "sem")` writing the server instructions for **rendering outputs** using `render*()` functions (specifically `renderPlot()` & `DT::renderDataTable()`)</p>
-
-. . .
-
-<p class="smaller-text topbr">`r fontawesome::fa("caret-right", fill = "#05859B", a11y = "sem")` creating **reactive data frames** using `reactive()`</p>
-
-. . .
-
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Importantly, **practice building outputs in a separate script** before trying to make them reactive!</p>
 
 

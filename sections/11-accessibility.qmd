@@ -11,9 +11,9 @@ format: revealjs
 
 ---
 
-##  {#LO-something data-menu-title="Learning Objectives ?"}
+##  {#LO-accessibility data-menu-title="Learning Objectives - Accessibility"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives ???</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Accessibility</div>
 
 <p class="medium-body-text bottombr">By the end of this section, you should:</p>
 

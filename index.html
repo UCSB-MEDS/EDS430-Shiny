@@ -664,39 +664,12 @@ Change the number of bins using the <code>sliderInput</code> widget and watch th
 <span id="cb4-6"><a href="#cb4-6"></a>             <span class="at">value =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="lets-build-our-own" class="slide level2" data-menu-title="Let's Build Our Own"><h2></h2>
-<div class="slide-title">
-Let’s build our own!
-</div>
-<p class="body-text">
-We’re going to cover a lot over our two days. Below is a general <strong>outline</strong> of all the apps we’ll build during our two days together. At any point, you may reference the <a href="https://github.com/samanthacsik/EDS430-shiny-app">GitHub repository</a> with source code for each complete app.
+<div class="fragment">
+<center>
+<p class="medium-body-text">
+Now let’s build our own!
 </p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-1-1">Day 1</a></li>
-<li><a href="#tabset-1-2">Day 2</a></li>
-</ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a single-file Shiny app with two reactive outputs (a scatterplot &amp; a DT data table) – <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app"><svg aria-label="GitHub" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>GitHub</title>
-<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> source code</a>
-</p>
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a two-file shiny app with two reactive plots (a scatterplot and a histogram) – we’ll also learn how to use layout functions to create a more visually-pleasing (and organized) UI, and creating multiple inputs that update the same output. – <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app"><svg aria-label="GitHub" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>GitHub</title>
-<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> source code</a>
-</p>
-</div>
-<div id="tabset-1-2">
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a shiny dashboard with a reactive leaflet map – <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard"><svg aria-label="GitHub" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>GitHub</title>
-<path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> source code</a>
-</p>
-</div>
-</div>
+</center>
 </div>
 </section><section id="setup" class="slide level2" data-menu-title="~~~ Setup ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
@@ -890,10 +863,10 @@ In practice, you will likely find yourself opting for the the two-file format �
 <em>Here, we’ll create our first reactive objects and establish a general Shiny coding workflow.</em>
 </p>
 </div>
-</section><section id="LO-app1" class="slide level2" data-menu-title="Learning Objectives App #1"><h2></h2>
+</section><section id="LO-app1" class="slide level2" data-menu-title="Learning Objectives - App #1"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #1 (single-file app)
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - App #1 (single-file app)
 </div>
 <p class="medium-body-text bottombr">
 By the end of building out this first app, you should be a bit more familiar with:
@@ -1921,71 +1894,6 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </center>
 </div>
 </div>
-</section><section id="app1-recap" class="slide level2" data-menu-title="App 1 Recap"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
-<path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> So far, we’ve talked about:
-</div>
-<div class="fragment">
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> how to find working <strong>examples</strong> of apps (built-in using the <a href="https://shiny.rstudio.com/">shiny</a> package and via other online resources)
-</p>
-</div>
-<div class="fragment">
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> the <strong>anatomy of a shiny app</strong> (UI &amp; server) and <strong>how to set one up</strong> (both single and two-file apps – though more on two-file apps soon!)
-</p>
-</div>
-<div class="fragment">
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg><strong>running</strong> and <strong>quitting</strong> a shiny app (and opening it up in your browser window)
-</p>
-</div>
-<div class="fragment">
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> adding and styling <strong>text</strong> using <code>tags</code>
-</p>
-</div>
-<div class="fragment">
-<p class="small-text bottombr topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg><strong>reactivity</strong> (using input values to render outputs objects) and a <strong>general workflow</strong> to follow to create reactive outputs – which includes the following:
-</p>
-</div>
-<div class="fragment">
-<p class="smaller-text topbr">
-<svg aria-label="Caret Right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Caret Right</title>
-<path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> implementing <strong>widgets</strong> from the <a href="https://shiny.rstudio.com/">shiny</a> package using <code>*Input()</code> functions (specifically <code>sliderInput()</code> &amp; <code>checkboxGroupInput()</code>)
-</p>
-</div>
-<div class="fragment">
-<p class="smaller-text topbr">
-<svg aria-label="Caret Right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Caret Right</title>
-<path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> creating <strong>placeholders</strong> in the UI for our reactive outputs to live using <code>*Output()</code> functions (specifically <code>plotOutput()</code> and <code>DT::datatableOutput()</code>)
-</p>
-</div>
-<div class="fragment">
-<p class="smaller-text topbr">
-<svg aria-label="Caret Right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Caret Right</title>
-<path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> writing the server instructions for <strong>rendering outputs</strong> using <code>render*()</code> functions (specifically <code>renderPlot()</code> &amp; <code><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">DT::renderDataTable()</a></code>)
-</p>
-</div>
-<div class="fragment">
-<p class="smaller-text topbr">
-<svg aria-label="Caret Right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Caret Right</title>
-<path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> creating <strong>reactive data frames</strong> using <code>reactive()</code>
-</p>
-</div>
-<div class="fragment">
-<p class="small-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Importantly, <strong>practice building outputs in a separate script</strong> before trying to make them reactive!
-</p>
-</div>
 </section><section id="break1" class="slide level2" data-menu-title="# Break #" data-background="#047C90"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
@@ -1998,7 +1906,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_12286fe5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_9c15d56c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2016,10 +1924,10 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 <em>Up until now, we’ve been adding our text and widgets in a pretty unstructured way – elements are stacked on top of one another within a single column. Next, we’ll learn how to customize the layout of our app to make it a bit more visually pleasing.</em>
 </p>
 </div>
-</section><section id="LO-app2v1" class="slide level2" data-menu-title="Learning Objectives App #2v1"><h2></h2>
+</section><section id="LO-app2v1" class="slide level2" data-menu-title="Learning Objectives - App #2v1"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #2v1 (two-file app)
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - App #2v1 (two-file app)
 </div>
 <p class="medium-body-text bottombr">
 By the end of building out this second app, you should:
@@ -2129,12 +2037,12 @@ Practice data wrangling, filtering &amp; viz first!
 Here’s what I’ve done in my <code>~R/practice_script_app2_lter.R</code> file:
 </p>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-2-1">Trout plot</a></li>
-<li><a href="#tabset-2-2">Penguin plot</a></li>
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-1-1">Trout plot</a></li>
+<li><a href="#tabset-1-2">Penguin plot</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-1-1">
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
@@ -2201,7 +2109,7 @@ We’ll build 2 inputs: one to select <code>channel_type</code> and one to selec
 </div>
 </div>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-1-2">
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
@@ -2350,14 +2258,14 @@ Example UI layouts
 <strong>Note:</strong> You can combine multiple layout function groups to really customize your UI – for example, you can create a navbar, include tabs, and also establish sidebar and main panel areas for inputs and outputs.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-3-1">Sidebar &amp; main area</a></li>
-<li><a href="#tabset-3-2">Page with multiple rows</a></li>
-<li><a href="#tabset-3-3">Tabs</a></li>
-<li><a href="#tabset-3-4">Navbar</a></li>
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-2-1">Sidebar &amp; main area</a></li>
+<li><a href="#tabset-2-2">Page with multiple rows</a></li>
+<li><a href="#tabset-2-3">Tabs</a></li>
+<li><a href="#tabset-2-4">Navbar</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-2-1">
 <p class="body-text">
 To create a page with a <strong>side bar and main area</strong> to contain your inputs and outputs (respectively), explore the following layout functions and read up on the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/sidebarlayout">sidebarLayout documentation</a>:
 </p>
@@ -2387,7 +2295,7 @@ To create a page with a <strong>side bar and main area</strong> to contain your 
 </div>
 </div>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-2-2">
 <p class="body-text">
 To create a <strong>page with multiple rows</strong>, explore the following layout functions and check out the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/fluidpage">fluid layout</a> documentation. Note that each row is made up of <strong>12</strong> columns. The first argument of the <code>column()</code> function takes a value of 1-12 to specify the number of columns to occupy.
 </p>
@@ -2422,7 +2330,7 @@ To create a <strong>page with multiple rows</strong>, explore the following layo
 </div>
 </div>
 </div>
-<div id="tabset-3-3">
+<div id="tabset-2-3">
 <p class="body-text">
 You may find that you eventually end up with too much content to fit on a single application page. Enter <code>tabsetPanel()</code> and <code>tabPanel()</code>. <code>tabsetPanel()</code> creates a container for any number of <code>tabPanel()</code>s. Each <code>tabPanel()</code> can contain any number of HTML components (e.g.&nbsp;inputs and outputs). Find the <a href="https://shiny.rstudio.com/reference/shiny/1.5.0/tabsetpanel">tabsetPanel documentation here</a> and check out this example:
 </p>
@@ -2447,7 +2355,7 @@ You may find that you eventually end up with too much content to fit on a single
 </div>
 </div>
 </div>
-<div id="tabset-3-4">
+<div id="tabset-2-4">
 <p class="body-text">
 You may also want to use a navigation bar (<code>navbarPage()</code>) with different pages (created using <code>tabPanel()</code>) to organize your application. Read through the <a href="https://shiny.rstudio.com/reference/shiny/1.6.0/navbarpage">navbarPage documentation</a> and try running the example below:
 </p>
@@ -3052,7 +2960,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b409fd23" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_5f6c6e71" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3149,13 +3057,13 @@ See next slide for a solution!
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 3: A solution
 </div>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-4-1"><code>global.R</code></a></li>
-<li><a href="#tabset-4-2"><code>ui.R</code></a></li>
-<li><a href="#tabset-4-3"><code>server.R</code></a></li>
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-3-1"><code>global.R</code></a></li>
+<li><a href="#tabset-3-2"><code>ui.R</code></a></li>
+<li><a href="#tabset-3-3"><code>server.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-3-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb46-2"><a href="#cb46-2"></a><span class="fu">library</span>(shiny)</span>
@@ -3196,7 +3104,7 @@ See next slide for a solution!
 <span id="cb46-37"><a href="#cb46-37"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-3-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47" data-code-line-numbers="61-82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb47-2"><a href="#cb47-2"></a>  </span>
@@ -3289,7 +3197,7 @@ See next slide for a solution!
 <span id="cb47-89"><a href="#cb47-89"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-4-3">
+<div id="tabset-3-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48" data-code-line-numbers="28-47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb48-2"><a href="#cb48-2"></a>  </span>
@@ -3354,7 +3262,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_85e39d5c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_c288d858" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3522,13 +3430,13 @@ To maintain readability and an overall tidier-looking UI, you can write and styl
 I recommend saving those <code>.md</code> files in a subdirectory named <code>/text</code> within your app’s directory (e.g.&nbsp;<code>~/two-file-app/text/mytext.md</code>). See how I simplified my UI by saving my long landing page text to two new files, <code>about.md</code> and <code>footer.md</code>, then imported them into my UI using <code>includeMarkdown()</code>.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-5-1"><code>ui.R</code></a></li>
-<li><a href="#tabset-5-2"><code>text/about.md</code></a></li>
-<li><a href="#tabset-5-3"><code>text/footer.md</code></a></li>
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-4-1"><code>ui.R</code></a></li>
+<li><a href="#tabset-4-2"><code>text/about.md</code></a></li>
+<li><a href="#tabset-4-3"><code>text/footer.md</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-4-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50" data-code-line-numbers="8-21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb50-2"><a href="#cb50-2"></a>  </span>
@@ -3636,7 +3544,7 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb50-104"><a href="#cb50-104"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-4-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">## Welcome to the LTER Animal Data Explorer!</span></span>
 <span id="cb51-2"><a href="#cb51-2"></a></span>
@@ -3653,7 +3561,7 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb51-13"><a href="#cb51-13"></a>Check out the **Explore the Data** page to find interactive data visualizations looking at Cutthroat trout of the <span class="co">[</span><span class="ot">Andrews Forest LTER</span><span class="co">](https://andrewsforest.oregonstate.edu/)</span> and Adelie, Gentoo &amp; Chinstrap penguins of the <span class="co">[</span><span class="ot">Palmer Station LTER</span><span class="co">](https://pallter.marine.rutgers.edu/)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-5-3">
+<div id="tabset-4-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>*This app is maintained by [Samantha Csik](https://samanthacsik.github.io/) and is updated as needed for teaching purposes. Please report any issues [here](https://github.com/samanthacsik/EDS430-shiny-app/issues). Source code can be found on [GitHub](https://github.com/samanthacsik/EDS430-shiny-app).*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -3678,13 +3586,13 @@ Code recap for app #2v1, so far:
 Additionally, you should have a <code>/text</code> folder within your app’s directory (<code>/two-file-app</code>, if you named it as I did) that contains two markdown files, <code>about.md</code> and <code>footer.md</code>.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-6-1"><code>global.R</code></a></li>
-<li><a href="#tabset-6-2"><code>ui.R</code></a></li>
-<li><a href="#tabset-6-3"><code>server.R</code></a></li>
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-5-1"><code>global.R</code></a></li>
+<li><a href="#tabset-5-2"><code>ui.R</code></a></li>
+<li><a href="#tabset-5-3"><code>server.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-5-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb53-2"><a href="#cb53-2"></a><span class="fu">library</span>(shiny)</span>
@@ -3723,7 +3631,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb53-35"><a href="#cb53-35"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-5-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb54-2"><a href="#cb54-2"></a>  </span>
@@ -3831,7 +3739,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb54-104"><a href="#cb54-104"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-6-3">
+<div id="tabset-5-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb55-2"><a href="#cb55-2"></a>  </span>
@@ -3884,47 +3792,6 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 </div>
 </div>
 </div>
-</div>
-</section><section id="app2v1-recap" class="slide level2" data-menu-title="App 2v1 Recap"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
-<path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> So far, we’ve talked about:
-</div>
-<div class="fragment">
-<p class="body-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> structuring a two-file app (<code>ui.R</code> and <code>server.R</code>) and using a <code>global.R</code> file to help keep our code organized
-</p>
-</div>
-<div class="fragment">
-<p class="body-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> using (and combining) groups of layout functions to structure our UI
-</p>
-</div>
-<div class="fragment">
-<p class="body-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> placing inputs and outputs within the layout structure of our app’s UI
-</p>
-</div>
-<div class="fragment">
-<p class="body-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> extending widget options using the <a href="https://github.com/dreamRs/shinyWidgets">shinyWidgets</a> package
-</p>
-</div>
-<div class="fragment">
-<p class="body-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> building more than one input that can be used to update the same output
-</p>
-</div>
-<div class="fragment">
-<p class="body-text topbr">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> streamlining our UI by pulling out large bodies of text into separate markdown files, then adding them into our app using <code>includeMarkdown()</code>
-</p>
 </div>
 </section><section id="deploying-apps" class="slide level2" data-menu-title="Deploying apps with shinyapps.io" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
@@ -4005,10 +3872,10 @@ Other ways to host your Shiny apps
 <em>Our two-file-app is looking pretty good! It’s functional and deployed via shinyapps.io. Next, we’ll focus on making some minor tweaks that can help to improve usability</em>
 </p>
 </div>
-</section><section id="LO-app2v2" class="slide level2" data-menu-title="Learning Objectives App #2v2"><h2></h2>
+</section><section id="LO-app2v2" class="slide level2" data-menu-title="Learning Objectives - App #2v2"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #2v2 (two-file app)
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - App #2v2 (two-file app)
 </div>
 <p class="medium-body-text bottombr">
 By the end of this section, you should:
@@ -4265,7 +4132,7 @@ Alt text are <strong>written descriptions</strong> added to images, and importan
 </p>
 <div class="columns">
 <div class="column" style="width:35%;">
-<p><br></p>
+<p><br><br></p>
 <p class="small-text">
 We’ll talk a bit more about alt text <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/alt-text">later on</a>, but for now we can add alt text easily to our data visuzliations using the <code>alt</code> argument. Place this <em>outside</em> of the <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> but inside the <code>()</code> of <code>renderPlot{()}</code>. For example, we can add alt text to our trout and penguin plots in <code>server.R</code>:
 </p>
@@ -4348,41 +4215,6 @@ Just a few quick steps before your updates are live at your URL from earlier:
 Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file-app/" class="uri">https://samanthacsik.shinyapps.io/two-file-app/</a>
 </p>
 </center>
-</section><section id="app2v2-recap" class="slide level2" data-menu-title="App 2v2 Recap"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Check" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
-<path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> So far, we’ve talked about:
-</div>
-<div class="fragment">
-<p class="body-text">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> how to deploy <em>and</em> redeploy shiny apps using the free <a href="https://www.shinyapps.io/">shinyapps.io</a> hosting service
-</p>
-</div>
-<div class="fragment">
-<p class="body-text">
-<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> how to improve UX by:
-</p>
-</div>
-<div class="fragment">
-<p class="small-text">
-<svg aria-label="Caret Right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Caret Right</title>
-<path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> (a) providing helpful messages to guide users in successfully interacting with your app
-</p>
-</div>
-<div class="fragment">
-<p class="small-text">
-<svg aria-label="Caret Right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Caret Right</title>
-<path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> (b) adding visual indicators that outputs are busy re-rendering
-</p>
-</div>
-<div class="fragment">
-<p class="small-text">
-<svg aria-label="Caret Right" role="img" viewbox="0 0 256 512" style="height:1em;width:0.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Caret Right</title>
-<path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"></path></svg> (c) adding alt text to data visualizations to assist those using screen readers in understanding visuals within our app
-</p>
-</div>
 </section><section id="building-dashboards" class="slide level2" data-menu-title="~~~ Building Dashboards ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
@@ -4393,10 +4225,10 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 <em><a href="https://shiny.rstudio.com/">shiny</a> alone is powerful and flexible, however it can take a lot of work to create a sleek/modern UI. <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a> provides a “template” for quickly building visually appealing dashboard apps.</em>
 </p>
 </div>
-</section><section id="LO-app3" class="slide level2" data-menu-title="Learning Objectives App #3"><h2></h2>
+</section><section id="LO-app3" class="slide level2" data-menu-title="Learning Objectives - App #3"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #3 (shinydashboard)
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - App #3 (shinydashboard)
 </div>
 <p class="medium-body-text bottombr">
 After this section, you should:
@@ -4689,20 +4521,20 @@ Draft <code>leaflet</code> map
 There are lots of ways to customize <code>leaflet</code> maps. We’ll be keeping ours relatively simple, but check out the <a href="https://rstudio.github.io/leaflet/">Leaflet for R</a> documentation for more ways to get creative with your maps.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-7-1">leaflet map</a></li>
-<li><a href="#tabset-7-2">code</a></li>
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-6-1">leaflet map</a></li>
+<li><a href="#tabset-6-2">code</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-6-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0f2e3fa0776664d525f2" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-0f2e3fa0776664d525f2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-224bd3eced3870465bb2" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-224bd3eced3870465bb2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-6-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
 <span id="cb63-2"><a href="#cb63-2"></a></span>
@@ -4741,20 +4573,20 @@ Practice filtering <code>leaflet</code> observations
 We’ll eventually build three <code>sliderInput</code>s to filter lake makers by <code>Elevation</code>, <code>AvgDepth</code>, and <code>AvgTemp</code>. Practice filtering here first (and be sure to update the data frame name in your leaflet code!):
 </p>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-8-1">leaflet map (filtered)</a></li>
-<li><a href="#tabset-8-2">code</a></li>
+<ul id="tabset-7" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-7-1">leaflet map (filtered)</a></li>
+<li><a href="#tabset-7-2">code</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-8-1">
+<div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c3cb4625ec825a32d5e9" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-c3cb4625ec825a32d5e9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-aae28b7054ef4c531769" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-aae28b7054ef4c531769">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
-<div id="tabset-8-2">
+<div id="tabset-7-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb64" data-code-line-numbers="5-10|26-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
 <span id="cb64-2"><a href="#cb64-2"></a></span>
@@ -4825,13 +4657,13 @@ Add the server function to <code>server.R</code> and the three main UI component
 Run your app to make sure it works – you should see a super basic dashboard. If it doesn’t look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).
 </p>
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-9-1"><code>ui.R</code></a></li>
-<li><a href="#tabset-9-2"><code>server.R</code></a></li>
-<li><a href="#tabset-9-3"><code>global.R</code></a></li>
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-8-1"><code>ui.R</code></a></li>
+<li><a href="#tabset-8-2"><code>server.R</code></a></li>
+<li><a href="#tabset-8-3"><code>global.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-9-1">
+<div id="tabset-8-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb65-2"><a href="#cb65-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>()</span>
@@ -4846,12 +4678,12 @@ Run your app to make sure it works – you should see a super basic dashboard. I
 <span id="cb65-11"><a href="#cb65-11"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-9-2">
+<div id="tabset-8-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-9-3">
+<div id="tabset-8-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb67-2"><a href="#cb67-2"></a><span class="fu">library</span>(shiny)</span>
@@ -5284,7 +5116,7 @@ Start by adding just one <code>sliderInput</code> (for selecting a range of lake
 </div>
 </section><section id="build-map-server" class="slide level2" data-menu-title="Build map in server.R"><h2></h2>
 <div class="slide-title-smaller">
-Assemble input &amp; output in <code>server.R</code>
+Assemble inputs &amp; outputs in <code>server.R</code>
 </div>
 <p class="small-text">
 Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs!
@@ -5367,12 +5199,12 @@ See next slide for a solution!
 <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 5: A solution
 </div>
 <div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-10-1"><code>ui.R</code></a></li>
-<li><a href="#tabset-10-2"><code>server.R</code></a></li>
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-9-1"><code>ui.R</code></a></li>
+<li><a href="#tabset-9-2"><code>server.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-10-1">
+<div id="tabset-9-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb75" data-code-line-numbers="91-97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb75-2"><a href="#cb75-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
@@ -5496,7 +5328,7 @@ See next slide for a solution!
 <span id="cb75-120"><a href="#cb75-120"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-10-2">
+<div id="tabset-9-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb76" data-code-line-numbers="8-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb76-2"><a href="#cb76-2"></a>  </span>
@@ -5553,7 +5385,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d2fc1daa" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_eab40c90" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -5579,25 +5411,25 @@ Mini Break
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Create a <code>/text</code> folder within your app’s directory and add three markdown (<code>.md</code>) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:
 </p>
 <div class="panel-tabset">
-<ul id="tabset-11" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-11-1"><code>intro.md</code></a></li>
-<li><a href="#tabset-11-2"><code>citation.md</code></a></li>
-<li><a href="#tabset-11-3"><code>disclaimer.md</code></a></li>
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-10-1"><code>intro.md</code></a></li>
+<li><a href="#tabset-10-2"><code>citation.md</code></a></li>
+<li><a href="#tabset-10-3"><code>disclaimer.md</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-11-1">
+<div id="tabset-10-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb77-1"><a href="#cb77-1"></a>The <span class="co">[</span><span class="ot">Fish Creek Watershed Observatory (FCWO)</span><span class="co">](http://www.fishcreekwatershed.org/)</span> is a focal watershed within the <span class="co">[</span><span class="ot">National Petroleum Reserve in Alaska (NPR-A)</span><span class="co">](https://www.blm.gov/programs/energy-and-minerals/oil-and-gas/about/alaska/NPR-A)</span>. Targeted lake and stream monitoring within the watershed provide site-specific data prior to and after the establishment of new petroleum development, as well as insight into dynamics related to climate change and variability. Eleven lakes of interest (Harry Potter, Hipbone, Iceshove, L9817, L9819, L9820, Little Alaska, Lower Snowman, M9925, Middle Snowman, and Serenity) are featured in this dashboard.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-11-2">
+<div id="tabset-10-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb78-1"><a href="#cb78-1"></a>Data presented in this dashboard were collected as part of the <span class="co">[</span><span class="ot">Fish Creek Watershed Observatory</span><span class="co">](http://www.fishcreekwatershed.org/)</span> are archived and publicly accessible on the NSF <span class="co">[</span><span class="ot">Arctic Data Center</span><span class="co">](https://arcticdata.io/)</span>. **Citation:** </span>
 <span id="cb78-2"><a href="#cb78-2"></a></span>
 <span id="cb78-3"><a href="#cb78-3"></a>*Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center [doi:10.18739/A2JH3D41P](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P).*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-11-3">
+<div id="tabset-10-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb79-1"><a href="#cb79-1"></a>This app is build for demonstration/teaching purposes only and is not paid for or endorsed by the Fish Creek Watershed Observatory or affiliates in any way. The data as presented here are not intended for publication nor scientific interpretation. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -6040,15 +5872,6 @@ Check out your finished dashboard!
 <p class="small-text">
 There’s a ton more to learn about building shinydashboards. Check out the <a href="">documentation</a> to find instructions on adding components like <a href="https://rstudio.github.io/shinydashboard/structure.html#infobox"><code>infoBox</code>es</a> and <a href="https://rstudio.github.io/shinydashboard/structure.html#valuebox"><code>valueBox</code>es</a>, building <a href="https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar">inputs in the sidebar</a>, easy ways to update the color theme using <a href="https://rstudio.github.io/shinydashboard/appearance.html#skins">skins</a>, and more.
 </p>
-</section><section id="recapp-app3" class="slide level2" data-menu-title="Recap: app #3"><h2></h2>
-<div class="slide-title-smaller">
-Recap: We created our first shiny dashboard….:
-</div>
-<div class="fragment">
-<p class="body-text">
-<strong>1.</strong> tbd
-</p>
-</div>
 </section><section id="3-beautifying-ui" class="slide level2" data-menu-title="!! (3) Beautifying your UI !!" data-background="#374F50"><h2></h2>
 <p class="slide-title-dark">
 <svg aria-label="Star" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#F7F7F7;overflow:visible;position:relative;"><title>Star</title>
@@ -6077,10 +5900,10 @@ Recap: We created our first shiny dashboard….:
 <em>We’ve built some really cool apps so far, but they all have a pretty standard and similar appearance. In this section, we’ll explore two packages for creating custom themes for your apps.</em>
 </p>
 </div>
-</section><section id="LO-themeing" class="slide level2" data-menu-title="Learning Objectives (Themeing)"><h2></h2>
+</section><section id="LO-themeing" class="slide level2" data-menu-title="Learning Objectives - Themeing/Styling"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - Themeing/Styling Apps
 </div>
 <p class="medium-body-text bottombr">
 By the end of this section, you should be equipped with:
@@ -6610,13 +6433,13 @@ There are a variety of CSS selectors – check out some of the basics that will 
 You can <strong>(1)</strong> add styling directly to <code>tags</code>, <strong>(2)</strong> add CSS rules to your <code>header</code>, and/or <strong>(3)</strong> build a stylesheet that is applied to your app. <strong>Creating a stylesheet is the preferred approach, and you should do this whenever possible.</strong>
 </p>
 <div class="panel-tabset">
-<ul id="tabset-12" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-12-1">tags</a></li>
-<li><a href="#tabset-12-2">header</a></li>
-<li><a href="#tabset-12-3">stylesheets</a></li>
+<ul id="tabset-11" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-11-1">tags</a></li>
+<li><a href="#tabset-11-2">header</a></li>
+<li><a href="#tabset-11-3">stylesheets</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-12-1">
+<div id="tabset-11-1">
 <p class="smaller-text">
 Add styling directly to tags. <strong>It’s best not to use a lot of these!</strong> It’s easy to lose track of your “in-line” styling in large projects, you can’t reuse rules easily, it’s hard to keep styling consistent, and it’s difficult to implement large stylistic changes.
 </p>
@@ -6661,7 +6484,7 @@ Add styling directly to tags. <strong>It’s best not to use a lot of these!</st
 </div>
 </div>
 </div>
-<div id="tabset-12-2">
+<div id="tabset-11-2">
 <p class="smaller-text">
 Add CSS rules to your app’s header (<code>tags$head</code>). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can’t be cached (i.e.&nbsp;saved for future usage when you reopen your app). <strong>Note:</strong> explore Google fonts <a href="https://fonts.google.com/">here</a> and check out <a href="https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts">this slide</a> for instructions on selecting a font.
 </p>
@@ -6714,7 +6537,7 @@ Add CSS rules to your app’s header (<code>tags$head</code>). This is a little 
 </div>
 </div>
 </div>
-<div id="tabset-12-3">
+<div id="tabset-11-3">
 <p class="smaller-text">
 Build a stylesheet (a <code>.css</code> file) inside your app’s <code>www/</code> directory and apply your styles to your app’s header (for shinydashboards, include your header inside <code>dashboardBody()</code>. <strong>This is the most ideal approach</strong> – it allows for style reuse, caching, and keeps styling contained in one spot. <strong>Tip:</strong> use <code>touch styles.css</code> in the terminal to create a new <code>.css</code> file.
 </p>
@@ -6815,18 +6638,18 @@ Now that we know that we can use the <code>box-body</code> class to customize th
 Remember to create a header and link your stylesheet within <code>dashboardBody()</code> to apply our styles.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-13" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-13-1">Our updated shinydashboard</a></li>
-<li><a href="#tabset-13-2"><code>styles.css</code></a></li>
-<li><a href="#tabset-13-3"><code>ui.R</code></a></li>
+<ul id="tabset-12" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-12-1">Our updated shinydashboard</a></li>
+<li><a href="#tabset-12-2"><code>styles.css</code></a></li>
+<li><a href="#tabset-12-3"><code>ui.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-13-1">
+<div id="tabset-12-1">
 <center>
 <img src="images/orange-boxes.png" alt="" width="550">
 </center>
 </div>
-<div id="tabset-13-2">
+<div id="tabset-12-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb94-1"><a href="#cb94-1"></a><span class="fu">.box-body</span> {</span>
 <span id="cb94-2"><a href="#cb94-2"></a>  <span class="kw">background-color</span>: <span class="cn">#FCAE82</span><span class="op">;</span> <span class="co">/* light orange */</span></span>
@@ -6834,7 +6657,7 @@ Remember to create a header and link your stylesheet within <code>dashboardBody(
 <span id="cb94-4"><a href="#cb94-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-13-3">
+<div id="tabset-12-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb95" data-code-line-numbers="24-27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb95-2"><a href="#cb95-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
@@ -7040,10 +6863,10 @@ Add Sass variables and CSS rules to <code>my_sass_styles.scss</code>:
 </div>
 </section><section id="convert-sass" class="slide level2" data-menu-title="Convert Sass to CSS"><h2></h2>
 <div class="slide-title-smaller">
-Next, compile Sass to CSS
+Then, compile Sass to CSS
 </div>
 <p class="small-text">
-Because web browsers can only interpret CSS (not Sass), we need to compile our Sass to CSS. To do this, we can use the <code>sass()</code> function from the <a href="https://rstudio.github.io/sass/index.html"><code>{sass} package</code></a>. We can do this in <code>global.R</code>. The <code>sass()</code> function requires two arguments: a sass file <code>input</code> and a file path + named <code>.css</code> file <code>output</code>.
+Because web browsers can only interpret CSS (not Sass), we need to compile our Sass to CSS. To do this, we can use the <code>sass()</code> function from the <a href="https://rstudio.github.io/sass/index.html"><code>{sass}</code> package</a>. We can do this in <code>global.R</code>. The <code>sass()</code> function requires two arguments: a sass file <code>input</code> and a file path + named <code>.css</code> file <code>output</code>.
 </p>
 <p class="small-text">
 We also need to apply our styles to our app by linking this newly-generated <code>.css</code> file in our app’s header.
@@ -7052,13 +6875,13 @@ We also need to apply our styles to our app by linking this newly-generated <cod
 <strong>Note:</strong> After running your app, you should see a <code>my_sass_styles.css</code> file appear in <code>www/</code> – it should look quite familiar, except all of our Sass variables have been converted to CSS.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-14" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-14-1"><code>global.R</code></a></li>
-<li><a href="#tabset-14-2"><code>ui.R</code></a></li>
-<li><a href="#tabset-14-3"><code>my_sass_styles.css</code></a></li>
+<ul id="tabset-13" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-13-1"><code>global.R</code></a></li>
+<li><a href="#tabset-13-2"><code>ui.R</code></a></li>
+<li><a href="#tabset-13-3"><code>my_sass_styles.css</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-14-1">
+<div id="tabset-13-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb98-2"><a href="#cb98-2"></a><span class="fu">library</span>(shiny)</span>
@@ -7074,7 +6897,7 @@ We also need to apply our styles to our app by linking this newly-generated <cod
 <span id="cb98-12"><a href="#cb98-12"></a><span class="co"># ~ additional global.R objects omitted for brevity ~</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-14-2">
+<div id="tabset-13-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1"></a><span class="co"># navbar page ----</span></span>
 <span id="cb99-2"><a href="#cb99-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
@@ -7088,7 +6911,7 @@ We also need to apply our styles to our app by linking this newly-generated <cod
 <span id="cb99-10"><a href="#cb99-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-14-3">
+<div id="tabset-13-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb100-1"><a href="#cb100-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">"https://fonts.googleapis.com/css2?family=Karma&amp;family=Prompt:wght@200&amp;display=swap"</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb100-2"><a href="#cb100-2"></a>body {</span>
@@ -7125,6 +6948,11 @@ We also need to apply our styles to our app by linking this newly-generated <cod
 </div>
 </div>
 </div>
+</section><section id="sassy-app" class="slide level2" data-menu-title="Sass/CSS-styled app"><h2></h2>
+<div class="slide-title-smaller">
+Once your stylesheet is applied, it should look like this:
+</div>
+<!-- <center><img src="images/tbd.png" alt="" width="550"/></center> -->
 </section><section id="4-improving-ux" class="slide level2" data-menu-title="!! (4) Improving UX !!" data-background="#374F50"><h2></h2>
 <p class="slide-title-dark">
 <svg aria-label="Star" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#F7F7F7;overflow:visible;position:relative;"><title>Star</title>
@@ -7147,6 +6975,26 @@ We also need to apply our styles to our app by linking this newly-generated <cod
 </p>
 <p class="caption-text">
 <em>When designing your app, it’s critically important that you consider your user’s needs and how they will interact with your app – it doesn’t matter how innovative you back-end computations are if people don’t understand how to use your app!</em>
+</p>
+</div>
+</section><section id="LO-ux-design" class="slide level2" data-menu-title="Learning Objectives - UX/UI Design"><h2></h2>
+<div class="slide-title">
+<svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - UX/UI Design
+</div>
+<p class="medium-body-text bottombr">
+After this section, you should:
+</p>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> have a checklist of considerations to reference each time you build an app
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> have a few additional resources to dive deeper into UX/UI design
 </p>
 </div>
 </section><section id="UX-UI-design-tips" class="slide level2" data-menu-title="Tips for UX/UI design"><h2></h2>
@@ -7182,7 +7030,7 @@ Tips for designing your Shiny apps
 </div>
 </section><section id="UX-UI-resources" class="slide level2" data-menu-title="UX/UI resources"><h2></h2>
 <div class="slide-title">
-Additional resources
+Additional UX/UI resources
 </div>
 <p class="body-text topbr">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
@@ -7206,10 +7054,10 @@ Additional resources
 <em>Consider web accessibilty guidelines to ensure that your app is usable by all</em>
 </p>
 </div>
-</section><section id="LO-something" class="slide level2" data-menu-title="Learning Objectives ?"><h2></h2>
+</section><section id="LO-accessibility" class="slide level2" data-menu-title="Learning Objectives - Accessibility"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives ???
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - Accessibility
 </div>
 <p class="medium-body-text bottombr">
 By the end of this section, you should:
@@ -7505,7 +7353,7 @@ Using Google Chrome’s vision deficiency emulator to view webpages as seen by t
 </section><section id="LO-debugging" class="slide level2" data-menu-title="Learning Objectives - Debugging"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for Debugging
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - Debugging
 </div>
 <p class="medium-body-text bottombr">
 After this section, you should:
@@ -7594,12 +7442,12 @@ Start by commenting out functioning code
 Even though this is a relatively small/simple app, there is still code that, for lack of a better term, gets in the way. After a quick assessment, my reactive scatterplot on Tab 2 appears to be working as expected. To help simplify the amount of code I need to look at, I’ll start by commenting out all UI elements (<code>sliderInput</code> &amp; <code>plotOutput</code>) and server logic for building that reactive plot.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-15" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-15-1"><code>app.R</code></a></li>
-<li><a href="#tabset-15-2">app preview</a></li>
+<ul id="tabset-14" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-14-1"><code>app.R</code></a></li>
+<li><a href="#tabset-14-2">app preview</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-15-1">
+<div id="tabset-14-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb104-2"><a href="#cb104-2"></a><span class="fu">library</span>(shiny)</span>
@@ -7715,7 +7563,7 @@ Even though this is a relatively small/simple app, there is still code that, for
 <span id="cb104-112"><a href="#cb104-112"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-15-2">
+<div id="tabset-14-2">
 <center>
 <img src="images/commented-out-code.gif" alt="" width="650">
 </center>
@@ -7730,12 +7578,12 @@ Next, add messages to your reactives
 You can insert diagnostic messages within your reactives using <code><a href="https://rdrr.io/r/base/message.html">message()</a></code> – here, I add a short message where each text and image output should be rendered. I can run my app and see messages successfully (or in the case of a broken app, unsuccessfully) print in my RStudio console as I interact with the app. You’ll notice that the each image message (e.g.&nbsp;<em>“Displaying all penguins image”</em>) prints, but those associated with the text outputs do not. This tells me that code is not being executed, beginning with first <code>if</code> statement inside <code>renderText</code>.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-16" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-16-1"><code>app.R</code></a></li>
-<li><a href="#tabset-16-2">app + RStudio console preview</a></li>
+<ul id="tabset-15" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-15-1"><code>app.R</code></a></li>
+<li><a href="#tabset-15-2">app + RStudio console preview</a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-16-1">
+<div id="tabset-15-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb105" data-code-line-numbers="51|55|59|63|73|77|81|85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb105-2"><a href="#cb105-2"></a><span class="fu">library</span>(shiny)</span>
@@ -7859,7 +7707,7 @@ You can insert diagnostic messages within your reactives using <code><a href="ht
 <span id="cb105-120"><a href="#cb105-120"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-16-2">
+<div id="tabset-15-2">
 <center>
 <img src="images/messages.gif" alt="" width="650">
 </center>
@@ -7887,7 +7735,19 @@ After this section, you should:
 <div class="fragment">
 <p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> tbd
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand some of the reasons why apps break and the benefit of having automated tests
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> have a basic understanding of how to use the <code>shinytest2</code> package to create regression tests
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know how to rerun past tests
 </p>
 </div>
 <div class="fragment">
@@ -7986,7 +7846,7 @@ Additional resources:
 Let’s test the following app
 </div>
 <p class="body-text">
-This small app accepts a text input for users to type their name. When the “Greet” button is pressed, the app returns a short greeting message that says, “Hello <em>name</em>!&gt;
+This small app accepts a text input for users to type their name. When the “Greet” button is pressed, the app returns a short greeting message that says, “Hello <em>name</em>!
 </p>
 <p class="body-text">
 To get started, create a subdirectory called <code>/testing_app</code>, add a file named <code>app.R</code> and drop this code in your file. Take a moment to try out the app.
@@ -8074,14 +7934,14 @@ Test files are generated automatically
 After recording your first test, a <code>/tests</code> folder is generated, containing a number of different files and subdirectories. Some important files to note:
 </p>
 <div class="panel-tabset">
-<ul id="tabset-17" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-17-1"><code>setup-shinytest2.R</code></a></li>
-<li><a href="#tabset-17-2"><code>test-shinytest2.R</code></a></li>
-<li><a href="#tabset-17-3"><code>*_.png</code></a></li>
-<li><a href="#tabset-17-4"><code>*.json</code></a></li>
+<ul id="tabset-16" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-16-1"><code>setup-shinytest2.R</code></a></li>
+<li><a href="#tabset-16-2"><code>test-shinytest2.R</code></a></li>
+<li><a href="#tabset-16-3"><code>*_.png</code></a></li>
+<li><a href="#tabset-16-4"><code>*.json</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-17-1">
+<div id="tabset-16-1">
 <p class="small-text">
 <strong>(located at <code>&lt;app-directory&gt;/tests/testthat/setup-shinytest2.R</code>)</strong>; For more complex apps, you’ll often have support files (e.g.&nbsp;those contained in <code>&lt;app-directory&gt;/R</code> and/or <code>global.R</code>) – content from those files will be stored here so that it is made accessible to your test(s). Since we don’t have any support files for our rather small/somewhat simple app, you should only see the following:
 </p>
@@ -8090,7 +7950,7 @@ After recording your first test, a <code>/tests</code> folder is generated, cont
 <span id="cb107-2"><a href="#cb107-2"></a>shinytest2<span class="sc">::</span><span class="fu">load_app_env</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-17-2">
+<div id="tabset-16-2">
 <p class="small-text">
 <strong>(located at <code>&lt;app-directory&gt;/tests/testthat/test-shinytest2.R</code>)</strong>; This test script contains your recorded test, and should automatically open when you finish recording and save your test. You can manually modify this test (e.g.&nbsp;add additional interactions and expectations), if you wish. Yours should look similar to this:
 </p>
@@ -8105,7 +7965,7 @@ After recording your first test, a <code>/tests</code> folder is generated, cont
 <span id="cb108-8"><a href="#cb108-8"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-17-3">
+<div id="tabset-16-3">
 <p class="small-text">
 <strong>(located at <code>&lt;app-directory&gt;/tests/testthat/_snaps/shinytest2/*_.png</code>)</strong>; This is a screenshot of your app from when <code>app$expect_values()</code> was called – this file should be tracked using git so that you know how your app visually changes over time. My <code>.png</code> file looks like this:
 </p>
@@ -8113,7 +7973,7 @@ After recording your first test, a <code>/tests</code> folder is generated, cont
 <img src="images/sam-test-001_.png" alt="A screenshot from my app, with the text 'Sam' printed in the text input box beneath the prompt, 'What is your name?'. Below the text box is a button that says 'Greet'. Below that, the text, 'Hello Sam!' is printed." width="450">
 </center>
 </div>
-<div id="tabset-17-4">
+<div id="tabset-16-4">
 <p class="small-text">
 <strong>(located at <code>&lt;app-directory&gt;/tests/testthat/_snaps/shinytest2/*.json</code></strong>); This is a <a href="https://www.json.org/json-en.html">JSON</a> representation of the state of the app when <code>app$expect_values()</code> was called – you’ll see the state of all input, output, and export values at the time of the snapshot (we don’t have any exports in our example app, but we do have a name input and a greeting output). This file should be tracked with git so that you have a record of your expected results. Your <code>.json</code> file should look something like this:
 </p>
@@ -8182,29 +8042,36 @@ This is only a brief intro to <code>shinytest2</code>! Dig into the <a href="htt
 <em>Writing functions can help to reduce code duplication &amp; make testing easier as your app(s) grows in complexity</em>
 </p>
 </div>
-</section><section id="LO-app4" class="slide level2" data-menu-title="Learning Objectives - App #4"><h2></h2>
+</section><section id="LO-functions" class="slide level2" data-menu-title="Learning Objectives - Functions"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives for App #4
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - Functions
 </div>
 <p class="medium-body-text bottombr">
-By the end of building out this app, you should understand:
+By the end of this section, you should:
 </p>
 <div class="fragment">
 <p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> tbd
-</p>
-</div>
-<div class="fragment">
-<p class="medium-body-text topbr">
-New packages used:
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand the benefits of writing UI functions
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Box Open" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Box Open</title>
-<path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="https://github.com/KillingVectorField/causal-inference-truncated-by-death">tbd</a>: tbd
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand the benefits of writing server functions
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know where to write/save your functions
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> successfully write a UI function
 </p>
 </div>
 </section><section id="function-types" class="slide level2" data-menu-title="Types of Functions"><h2></h2>
@@ -8244,19 +8111,19 @@ Create a small app for function practice
 Create a new subdirectory called <code>functions-app/</code> and add your <code>ui.R</code>, <code>server.R</code>, and <code>global.R</code> files with the following code. Run your app to see how it functions.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-18" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-18-1">App preview</a></li>
-<li><a href="#tabset-18-2"><code>ui.R</code></a></li>
-<li><a href="#tabset-18-3"><code>server.R</code></a></li>
-<li><a href="#tabset-18-4"><code>global.R</code></a></li>
+<ul id="tabset-17" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-17-1">App preview</a></li>
+<li><a href="#tabset-17-2"><code>ui.R</code></a></li>
+<li><a href="#tabset-17-3"><code>server.R</code></a></li>
+<li><a href="#tabset-17-4"><code>global.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-18-1">
+<div id="tabset-17-1">
 <center>
 <img src="images/functions_demo_app.gif" alt="" width="650">
 </center>
 </div>
-<div id="tabset-18-2">
+<div id="tabset-17-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb110-2"><a href="#cb110-2"></a>  </span>
@@ -8301,7 +8168,7 @@ Create a new subdirectory called <code>functions-app/</code> and add your <code>
 <span id="cb110-41"><a href="#cb110-41"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-18-3">
+<div id="tabset-17-3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb111-2"><a href="#cb111-2"></a>  </span>
@@ -8354,7 +8221,7 @@ Create a new subdirectory called <code>functions-app/</code> and add your <code>
 <span id="cb111-49"><a href="#cb111-49"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-18-4">
+<div id="tabset-17-4">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb112-2"><a href="#cb112-2"></a><span class="fu">library</span>(shiny)</span>
@@ -8435,12 +8302,12 @@ Since the only difference between our original two <code>pickerInput</code>s are
 Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></code> your function script into <code>global.R</code> (if necessary) to make your function available for use in your app.
 </p>
 <div class="panel-tabset">
-<ul id="tabset-19" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-19-1"><code>penguinSpp_pickerInput.R</code></a></li>
-<li><a href="#tabset-19-2"><code>global.R</code></a></li>
+<ul id="tabset-18" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-18-1"><code>penguinSpp_pickerInput.R</code></a></li>
+<li><a href="#tabset-18-2"><code>global.R</code></a></li>
 </ul>
 <div class="tab-content">
-<div id="tabset-19-1">
+<div id="tabset-18-1">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1"></a>penguinSpp_pickerInput <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId) {</span>
 <span id="cb114-2"><a href="#cb114-2"></a>  <span class="fu">pickerInput</span>(<span class="at">inputId =</span> inputId, <span class="at">label =</span> <span class="st">"Select a species:"</span>,</span>
@@ -8451,7 +8318,7 @@ Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></c
 <span id="cb114-7"><a href="#cb114-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-19-2">
+<div id="tabset-18-2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb115" data-code-line-numbers="7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb115-2"><a href="#cb115-2"></a><span class="fu">library</span>(shiny)</span>
@@ -8533,7 +8400,7 @@ As you build your UIs, consider where you can improve readability – even if re
 </section><section id="LO-modules" class="slide level2" data-menu-title="Learning Objectives - Modules"><h2></h2>
 <div class="slide-title">
 <svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - Modules (<code>module_app</code>)
+<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - Modules
 </div>
 <p class="medium-body-text bottombr">
 By the end of this section, you should have an intro-level understanding of:
@@ -8541,7 +8408,22 @@ By the end of this section, you should have an intro-level understanding of:
 <div class="fragment">
 <p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg></p>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> what is a shiny module and when it might make sense to build one
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> the structure of a shiny module
+</p>
+</div>
+<div class="fragment">
+<p class="small-text">
+<svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> how to use a module
+</p>
+</div>
+<div class="fragment">
 <p class="medium-body-text topbr">
 Packages used:
 </p>

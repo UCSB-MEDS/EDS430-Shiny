@@ -11,9 +11,9 @@ format: revealjs
 
 ---
 
-##  {#LO-app3 data-menu-title="Learning Objectives App #3"}
+##  {#LO-app3 data-menu-title="Learning Objectives - App #3"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #3 (shinydashboard)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - App #3 (shinydashboard)</div>
 
 <p class="medium-body-text bottombr">After this section, you should:</p>
 
@@ -998,7 +998,7 @@ dashboardPage(header, sidebar, body)
 
 ##  {#build-map-server data-menu-title="Build map in server.R"}
 
-<div class="slide-title-smaller">Assemble input & output in `server.R`</div>
+<div class="slide-title-smaller">Assemble inputs & outputs in `server.R`</div>
 
 <p class="small-text">Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs!</p>
 

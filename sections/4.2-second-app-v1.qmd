@@ -830,33 +830,3 @@ server <- function(input, output) {
 } # END server
 ```
 :::
-
----
-
-##  {#app2v1-recap data-menu-title="App 2v1 Recap"}
-
-<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` So far, we've talked about:</div>
-
-. . . 
-
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` structuring a two-file app (`ui.R` and `server.R`) and using a `global.R` file to help keep our code organized</p>
-
-. . . 
-
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` using (and combining) groups of layout functions to structure our UI</p>
-
-. . . 
-
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` placing inputs and outputs within the layout structure of our app's UI</p>
-
-. . .
-
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` extending widget options using the `{shinyWidgets}` package</p>
-
-. . . 
-
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` building more than one input that can be used to update the same output</p>
-
-. . . 
-
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` streamlining our UI by pulling out large bodies of text into separate markdown files, then adding them into our app using `includeMarkdown()`</p>

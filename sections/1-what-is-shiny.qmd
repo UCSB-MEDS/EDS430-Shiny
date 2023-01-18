@@ -138,26 +138,6 @@ sliderInput(inputId = "bins",
              value = 30)
 ```
 
----
+. . . 
 
-##  {#lets-build-our-own data-menu-title="Let's Build Our Own"}
-
-<div class="slide-title">Let's build our own!</div>
-
-<p class="body-text"> We're going to cover a lot over our two days. Below is a general **outline** of all the apps we'll build during our two days together. At any point, you may reference the [GitHub repository](https://github.com/samanthacsik/EDS430-shiny-app) with source code for each complete app.</p>
-
-::: {.panel-tabset}
-
-## Day 1
-
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a single-file Shiny app with two reactive outputs (a scatterplot & a DT data table) -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/one-file-app)</p>
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a two-file shiny app with two reactive plots (a scatterplot and a histogram) -- we'll also learn how to use layout functions to create a more visually-pleasing (and organized) UI, and creating multiple inputs that update the same output. -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>
-
-## Day 2
-
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a shiny dashboard
-with a reactive leaflet map -- [`r fontawesome::fa("github", fill = "#05859B", a11y = "sem")` source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard)</p>
-
-:::
-
-
+<center><p class="medium-body-text">Now let's build our own!</p></center>

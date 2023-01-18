@@ -11,9 +11,9 @@ format: revealjs
 
 ---
 
-##  {#LO-app2v1 data-menu-title="Learning Objectives App #2v1"}
+##  {#LO-app2v1 data-menu-title="Learning Objectives - App #2v1"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #2v1 (two-file app)</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - App #2v1 (two-file app)</div>
 
 <p class="medium-body-text bottombr">By the end of building out this second app, you should:</p>
 

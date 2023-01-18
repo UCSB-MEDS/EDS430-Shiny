@@ -11,6 +11,22 @@ format: revealjs
 
 ---
 
+##  {#LO-ux-design data-menu-title="Learning Objectives - UX/UI Design"}
+
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - UX/UI Design</div>
+
+<p class="medium-body-text bottombr">After this section, you should:</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a checklist of considerations to reference each time you build an app</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a few additional resources to dive deeper into UX/UI design</p>
+
+---
+
 ##  {#UX-UI-design-tips data-menu-title="Tips for UX/UI design"}
 
 <div class="slide-title">Tips for designing your Shiny apps</div>
@@ -37,7 +53,7 @@ format: revealjs
 
 ##  {#UX-UI-resources data-menu-title="UX/UI resources"}
 
-<div class="slide-title">Additional resources</div>
+<div class="slide-title">Additional UX/UI resources</div>
 
 <p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/index.html), by [David Granjon](https://divadnojnarg.github.io/)</p>
 

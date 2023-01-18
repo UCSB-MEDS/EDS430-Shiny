@@ -11,23 +11,28 @@ format: revealjs
 
 ---
 
-##  {#LO-app4 data-menu-title="Learning Objectives - App #4"}
+##  {#LO-functions data-menu-title="Learning Objectives - Functions"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for App #4</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Functions</div>
 
-<p class="medium-body-text bottombr">By the end of building out this app, you should understand:</p>
-
-. . . 
-
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` tbd</p>
+<p class="medium-body-text bottombr">By the end of this section, you should:</p>
 
 . . . 
 
-<p class="medium-body-text topbr">New packages used:</p> 
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the benefits of writing UI functions</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{tbd}`: tbd</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the benefits of writing server functions</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know where to write/save your functions</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully write a UI function</p>
+
 
 ---
 

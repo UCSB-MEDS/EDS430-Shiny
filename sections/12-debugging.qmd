@@ -13,7 +13,7 @@ format: revealjs
 
 ##  {#LO-debugging data-menu-title="Learning Objectives - Debugging"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives for Debugging</div>
+<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Debugging</div>
 
 <p class="medium-body-text bottombr">After this section, you should:</p>
 
