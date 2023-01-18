@@ -750,12 +750,12 @@ You can create a single-file app using RStudio’s built-in Shiny app template (
 </p>
 <div class="fragment">
 <p class="small-text topbr">
-<strong>1.</strong> In your project repo, create a subdirectory to house your app – I’m calling mine, <code>one-file-app</code>.
+<strong>1.</strong> In your project repo, create a subdirectory to house your app – I’m calling mine, <code>single-file-app</code>.
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<strong>2.</strong> Create a new R script inside <code>/one-file-app</code> and name it <code>app.R</code> – you <strong>must</strong> name your script <code>app.R</code>. Copy/type the following code into <code>app.R</code>, or use the <code>shinyapp</code> <a href="https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html">snippet</a> to automatically generate a shiny app template.
+<strong>2.</strong> Create a new R script inside <code>/single-file-app</code> and name it <code>app.R</code> – you <strong>must</strong> name your script <code>app.R</code>. Copy/type the following code into <code>app.R</code>, or use the <code>shinyapp</code> <a href="https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html">snippet</a> to automatically generate a shiny app template.
 </p>
 <p>
 </p>
@@ -781,7 +781,7 @@ You can create a single-file app using RStudio’s built-in Shiny app template (
 Run your app
 </div>
 <p class="small-text">
-Once you have saved your <code>app.R</code> file, the “Run” code button should turn into a “Run App” button that looks like: <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;">. Click that button to run your app (alternatively, run <code>runApp("directory-name")</code> in your console – for me, that looks like, <code>runApp("one-file-app")</code>)!
+Once you have saved your <code>app.R</code> file, the “Run” code button should turn into a “Run App” button that looks like: <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;">. Click that button to run your app (alternatively, run <code>runApp("directory-name")</code> in your console – for me, that looks like, <code>runApp("single-file-app")</code>)!
 </p>
 <div class="fragment">
 <p class="small-text topbr">
@@ -1998,7 +1998,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ae3818c2" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_12286fe5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3052,7 +3052,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c853d81b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_b409fd23" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3354,7 +3354,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d71d81c4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_85e39d5c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4697,8 +4697,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a5527c93281ed5e0edd8" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-a5527c93281ed5e0edd8">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0f2e3fa0776664d525f2" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0f2e3fa0776664d525f2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4749,8 +4749,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4107bae4a75e34363d2e" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4107bae4a75e34363d2e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c3cb4625ec825a32d5e9" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c3cb4625ec825a32d5e9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5147,7 +5147,6 @@ Lastly, add boxes to our <strong>welcome</strong> tab We’ll use <code>column</
 <div class="slide-title-smaller">
 Read data into <code>global.R</code> &amp; add necessary packages
 </div>
-<p>DON’T USE library(here) COME BACK TO THIS</p>
 <p class="body-text">
 Remember to load your <em>pre-processed</em> data, which should live in the <code>/data</code> folder within your app’s directory.
 </p>
@@ -5170,7 +5169,7 @@ Add a <code>sliderInput</code> &amp; <code>leafletOutput</code> to the UI
 Start by adding just one <code>sliderInput</code> (for selecting a range of lake <code>Elevation</code>s) to the left-hand box in the <strong>dashboard</strong> tab. Then, add a <code>leafletOutput</code> to create a placeholder space for our map, along with a Spinner animation (from the <a href="https://github.com/daattali/shinycssloaders">shinycssloaders</a> package). While we’re here, we can also add <code>title</code>s to each box.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73" data-code-line-numbers="74-89|96-99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
+<div class="sourceCode cell-code" id="cb73" data-code-line-numbers="84-89|96-99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb73-2"><a href="#cb73-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb73-3"><a href="#cb73-3"></a>  </span>
 <span id="cb73-4"><a href="#cb73-4"></a>  <span class="co"># add title ----</span></span>
@@ -5288,7 +5287,7 @@ Start by adding just one <code>sliderInput</code> (for selecting a range of lake
 Assemble input &amp; output in <code>server.R</code>
 </div>
 <p class="small-text">
-Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs (refer back to <a href="http://localhost:5238/#/app1-ex1-tips">slide 46</a> for a reminder)!
+Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs!
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb74" data-code-line-numbers="3-36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
@@ -5554,7 +5553,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c573d58a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_d2fc1daa" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -5751,7 +5750,7 @@ Press the right arrow key to advance through the newly added lines of code.
 Add a static image
 </div>
 <p class="small-text">
-As a final touch, let’s add an image to the Welcome page, inside the left-hand box beneath our intro text. First, <strong>create a <code>/www</code> folder inside your app’s directory</strong> (see <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure">slide 11</a> for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO’s website <a href="http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg">here</a> and save it to your <code>/www</code> directory.
+As a final touch, let’s add an image to the Welcome page, inside the left-hand box beneath our intro text. First, <strong>create a <code>/www</code> folder inside your app’s directory</strong> (refer back to <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure">this slide</a> for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO’s website <a href="http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg">here</a> and save it to your <code>/www</code> directory.
 </p>
 <p class="small-text">
 Next, use the <code>img</code> tag to add your image. Supply a file path, relative to your <code>/www</code> directory, using the <code>src</code> argument, and alt text using the <code>alt</code> argument.
