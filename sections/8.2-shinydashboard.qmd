@@ -187,7 +187,7 @@ dashboardPage(header, sidebar, body)
 
 <div class="slide-title-smaller">Add a static image</div>
 
-<p class="small-text">As a final touch, let's add an image to the Welcome page, inside the left-hand box beneath our intro text. First, **create a `/www` folder inside your app's directory** (see [slide 11](https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure) for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO's website [here](http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg) and save it to your `/www` directory.</p>
+<p class="small-text">As a final touch, let's add an image to the Welcome page, inside the left-hand box beneath our intro text. First, **create a `/www` folder inside your app's directory** (refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure) for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO's website [here](http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg) and save it to your `/www` directory.</p>
 
 <p class="small-text">Next, use the `img` tag to add your image. Supply a file path, relative to your `/www` directory, using the `src` argument, and alt text using the `alt` argument.</p>
 

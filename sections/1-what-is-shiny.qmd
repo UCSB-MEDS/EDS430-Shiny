@@ -85,7 +85,7 @@ format: revealjs
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("laptop-code", fill = "#d2e3f3", a11y = "sem")` Can I see an example please?</p>
-<p class="caption-text">*I'm glad you asked!*</p>
+<p class="caption-text">*I'm glad you asked! There are lots of great examples online, including those developed by Bren alumni, as well as built-in teaching examples.*</p>
 </div>
 
 ---
@@ -94,7 +94,7 @@ format: revealjs
 
 <div class="slide-title bottombr">Example shiny apps built by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
 
-<p class="body-text">`r fontawesome::fa("fish-fins", fill = "#05859B", a11y = "sem")` [Moorea Coral Reef LTER Shiny Application](https://shinyapps.bren.ucsb.edu/ShinyAppMooreaViz/) ([**source code**](hhttps://github.com/MCR-LTER/MEDSttps://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alumni, [Allie Cole](https://www.linkedin.com/in/allie-ingrid-cole-60351a1ba/), [Felicia Cruz](https://www.linkedin.com/in/cruz-felicia/), [Jake Eisaguirre](https://jake-eisaguirre.github.io/) & [Charles Henrickson](https://www.linkedin.com/in/charles-hendrickson-0001a0223/) as part of their MEDS capstone project* -- visualize spatial and temporal patterns of coral reef stressors surrounding Moorea, French Polyneisa</p>
+<p class="body-text">`r fontawesome::fa("fish-fins", fill = "#05859B", a11y = "sem")` [Moorea Coral Reef LTER Shiny Application](https://shinyapps.bren.ucsb.edu/ShinyAppMooreaViz/) ([**source code**](hhttps://github.com/MCR-LTER/MEDSttps://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alumni, [Allie Cole](https://www.linkedin.com/in/allie-ingrid-cole-60351a1ba/), [Felicia Cruz](https://www.linkedin.com/in/cruz-felicia/), [Jake Eisaguirre](https://jake-eisaguirre.github.io/) & [Charles Henrickson](https://www.linkedin.com/in/charles-hendrickson-0001a0223/) as part of their MEDS capstone project* -- visualize spatial and temporal patterns of coral reef stressors surrounding Moorea, French Polynesia</p>
 
 ---
 

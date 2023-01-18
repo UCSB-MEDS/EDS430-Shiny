@@ -852,9 +852,6 @@ dashboardPage(header, sidebar, body)
 
 <div class="slide-title-smaller">Read data into `global.R` & add necessary packages</div>
 
-DON'T USE library(here)
-COME BACK TO THIS 
-
 <p class="body-text">Remember to load your *pre-processed* data, which should live in the `/data` folder within your app's directory.</p>
 ```{r}
 #| eval: false
@@ -882,7 +879,7 @@ lake_data <- read_csv("data/lake_data_processed.csv")
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "74-89|96-99"
+#| code-line-numbers: "84-89|96-99"
 #........................dashboardHeader.........................
 header <- dashboardHeader(
   
@@ -1003,7 +1000,7 @@ dashboardPage(header, sidebar, body)
 
 <div class="slide-title-smaller">Assemble input & output in `server.R`</div>
 
-<p class="small-text">Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs (refer back to [slide 46](http://localhost:5238/#/app1-ex1-tips) for a reminder)!</p>
+<p class="small-text">Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs!</p>
 
 ```{r}
 #| eval: false
