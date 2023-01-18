@@ -31,7 +31,7 @@ format: revealjs
 
 ---
 
-##  {#why-test data-menu-title="Debugging is challenging"}
+##  {#debugging-challenges data-menu-title="Debugging is challenging"}
 
 <div class="slide-title">Debugging can be challenging</div>
 
