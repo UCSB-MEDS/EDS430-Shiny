@@ -185,7 +185,7 @@ shinyApp(ui, server)
 
 <p class="body-text">Following the steps on the previous slide, creating your test should look similar to this:</p>
 
-<center><img src="images/sam-test.gif" alt="" width="650"/></center>
+<center><img src="images/sam-test.gif" alt="A user begins recording a test by typing shinytest2::record_test('testing_app') in the RStudio console, which opens up the app in an iframe with the recorder in a pane to the right. The user types 'Sam' into the text box, clicks the 'Greet' button, then clicks 'Expect Shiny values' in the recorder. Finally, the user names and saves the test, which then runs automatically once the recorder is quit." width="650"/></center>
 
 <p class="body-text">**Note:** Your test is automatically run as soon as you save and exit the recorder. See the results of your test in your console (it should pass!).</p>
 
@@ -272,4 +272,4 @@ test_that("{shinytest2} recording: sam-test", {
 
 <br>
 
-<center><p class="body-text">This is only a brief intro to `shinytest2`! Dig into the [documentation](https://rstudio.github.io/shinytest2/index.html) to learn more.</p></center>
+<center><p class="medium-body-text">This is only a brief intro to `shinytest2`! Dig into the [documentation](https://rstudio.github.io/shinytest2/index.html) to learn more.</p></center>

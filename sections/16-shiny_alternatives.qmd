@@ -29,7 +29,7 @@ format: revealjs
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Embed reactive shiny components (e.g. inputs & outputs) in Quarto documents. By using some fun new code chunk options, you can instruct Quarto to spin up it's own self-contained shiny server to run your reactives. Read the [Quarto documentation](https://quarto.org/docs/interactive/shiny/) to learn more and check out some teaching examples [here](https://quarto.org/docs/interactive/shiny/#examples).</p>
 
-<center><img src="images/shiny_alts.png" alt="" width="450"/></center>
+<center><img src="images/shiny_alts.png" alt="Logos for htmlwidgets, flexdashboard, and quarto." width="450"/></center>
 
 ---
 

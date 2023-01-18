@@ -75,27 +75,9 @@ format: revealjs
 
 <p class="body-text bottombr">Posit/RStudio's great instructional resources, examples, and help documentation:</p>
 
-:::: {.columns} 
-
-::: {.column width="45%"}
-
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` A thoughtfully organized [Articles](https://shiny.rstudio.com/articles/) page</p>
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` The [Shiny User Showcase](https://shiny.rstudio.com/gallery/#user-showcase), a collection of Shiny apps and their source code developed by the Shiny developer community -- many of these featured apps are winners or honorable mentions of the [annual Shiny contest](https://www.rstudio.com/blog/winners-of-the-3rd-annual-shiny-contest/)!</p>
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny Demos](https://shiny.rstudio.com/gallery/#demos), a series of apps created by the Shiny developers to highlight specific features of the shiny package -- these are *excellent* resources to turn to when you are learning how to implement a new type of widget, working on the layout of your app, and more.</p>
-:::
 
-::: {.column width="5%"}
-:::
-
-::: {.column width="45%"}
-<!-- <iframe src="https://shiny.rstudio.com/articles/" title="Shiny Articles" height=400 width=450></iframe> -->
-```{r}
-#| echo: false
-#| out-width: 90%
-# knitr::include_url("https://shiny.rstudio.com/articles/")
-```
-:::
-
-::::

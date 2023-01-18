@@ -103,7 +103,7 @@ ui <- fluidPage(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/solar.png" alt="" width="550"/></center>
+<center><img src="images/solar.png" alt="A shiny app depicting a title, subtitle sliderInput, scatterplot, checkboxGroupInput, and DT datatable, all stacked vertically. The pre-build bootswatch 'solar' theme has been applied, turning the background color dark blue and changing widget colors to dark gray or yellow. The background of the scatterplot is still white." width="550"/></center>
 :::
 
 ::::
@@ -143,7 +143,7 @@ ui <- fluidPage(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/custom-bslib.png" alt="" width="550"/></center>
+<center><img src="images/custom-bslib.png" alt="A shiny app depicting a title, subtitle sliderInput, scatterplot, checkboxGroupInput, and DT datatable, all stacked vertically. A custom theme, created using bs_theme() has been applied, turning the background color pink, changing widget colors to a dark magenta, and applying a cursive white font styling to all text. The background of the scatterplot is still white." width="550"/></center>
 :::
 
 ::::
@@ -189,7 +189,7 @@ ui <- fluidPage(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/bslib-thematic.png" alt="" width="550"/></center>
+<center><img src="images/bslib-thematic.png" alt="A shiny app depicting a title, subtitle sliderInput, scatterplot, checkboxGroupInput, and DT datatable, all stacked vertically. A custom theme, created using bs_theme() has been applied, turning the background color pink, changing widget colors to a dark magenta, and applying a cursive white font styling to all text. The background of the scatterplot is now the same color (pink) as the background." width="550"/></center>
 :::
 
 ::::
@@ -328,7 +328,7 @@ ui <- navbarPage(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/fresh_app.gif" alt="" width="550"/></center>
+<center><img src="images/fresh_app.gif" alt="An app with a tan-colored background, lime green navbar, bright pink text, and blue links, showcasing how different components of a shiny app can be modified using the fresh packages." width="550"/></center>
 :::
 
 ::::
@@ -409,7 +409,7 @@ body <- dashboardBody(
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/fresh-dashboard.gif" alt="" width="550"/></center>
+<center><img src="images/fresh-dashboard.gif" alt="A shinydashboard with a dark blue dashboardHeader, pink dashboardBody, light blue dashboardSidebar, red sidebar text, and bright pink sidebar menuItem highlights, showcasing how shinydashboards can be customized using the fresh package." width="550"/></center>
 :::
 
 ::::
@@ -469,7 +469,7 @@ body <- dashboardBody(
 
 <br>
 
-<center><img src="images/w3.png" alt="" width="350"/></center>
+<center><img src="images/w3.png" alt="The W3Schools logo, which is a green 'W' with a green '3' to the right." width="350"/></center>
 
 ---
 
@@ -480,7 +480,7 @@ body <- dashboardBody(
 :::: {.columns}
 
 ::: {.column width="45%"}
-<center><img src="images/css3.png" alt="" height="400"/></center>
+<center><img src="images/css3.png" alt="The CSS 3 logo." height="400"/></center>
 <center><p class="smaller-text">**CSS** (**C**ascading **S**tyle **S**heets) is a programming language that allows you to control how HTML elements look (e.g. colors, font styles, etc.) on a webpage.</p></center>
 :::
 
@@ -491,7 +491,7 @@ body <- dashboardBody(
 
 <br>
 
-<center><img src="images/sass.png" alt="" width="550"/></center>
+<center><img src="images/sass.png" alt="The Sass logo" width="550"/></center>
 
 <center><p class="smaller-text topbr">**Sass** (**S**yntactically **A**wesome **S**tyle**s**heets) is a CSS extension language and CSS preprocessor -- meaning Sass needs to be converted (aka compiled) to CSS before it can be interpreted by your web browser.</p></center> 
 :::
@@ -511,7 +511,7 @@ body <- dashboardBody(
 :::: {.columns}
 
 ::: {.column width="45%"}
-<center><img src="images/css_syntax.png" alt="" width="550"/></center>
+<center><img src="images/CSS_syntax.png" alt="An example of a CSS rule that modifies all h1 elements so that the text is green and that there's a bit more space between each letter." width="550"/></center>
 :::
 
 ::: {.column width="5%"}
@@ -583,7 +583,7 @@ shinyApp(ui, server)
 
 
 ::: {.column width="45%"}
-<center><img src="images/in-line_styling.png" alt="" width="550"/></center>
+<center><img src="images/in-line_styling.png" alt="A basic app with a large purple level 1 header that reads, 'My App', a blue level 2 header that reads, 'Section 1' with a bit of extra space between letters, an un-styled level 2 header that reads, 'Section 2', and a button with a green border that reads, 'This is a button'." width="550"/></center>
 :::
 
 ::::
@@ -641,7 +641,7 @@ shinyApp(ui, server)
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/header_styling.png" alt="" width="550"/></center>
+<center><img src="images/header_styling.png" alt="A basic app with a large black level 1 header written in a cursive font that reads, 'My App', a blue level 2 header that reads, 'Section 1', a blue level 2 header that reads, 'Section 2' with a bit of extra space between letters, and an un-styled button that reads, 'This is a button'." width="550"/></center>
 :::
 ::::
 
@@ -716,7 +716,7 @@ button {
 :::
 
 ::: {.column width="33%"}
-<center><img src="images/stylesheet_styling.png" alt="" width="550"/></center>
+<center><img src="images/stylesheet_styling.png" alt="A basic app with a large green level 1 header that reads, 'My App' written in a sans-serif font, an orange level 2 header that reads, 'Section 1' with a bit of extra space between letters and written in a serif font, an orange level 2 header that reads, 'Section 2' written in a serf font, and a button with a yellow background that reads, 'This is a button'." width="550"/></center>
 :::
 
 ::::
@@ -731,7 +731,7 @@ button {
 
 <p class="small-text">Oftentimes, you'll have to do a bit of exploration to determine how to target specific elements for styling. In either your app viewer or web browser, right click on an element of interest and choose **Inspect** (or **Inspect Element**) to open up the underlying HTML and CSS. You can make temporary edits to your app (e.g. adding a background color, changing font sizes, etc.) to see how they look first, then copy the appropriate CSS rule into your stylesheet to apply to your app.</p>
 
-<center><img src="images/inspect_orientation.png" alt="" width="550"/></center>
+<center><img src="images/inspect_orientation.png" alt="A shiny dashboard, opened in the RStudio viewer, with the Inspect pane open to the right. The top half of the inspect pane shows the underlying HTML and the bottom half shows the underlying CSS styles." width="550"/></center>
 
 ---
 
@@ -757,7 +757,7 @@ button {
 
 ## Our updated shinydashboard
 
-<center><img src="images/orange-boxes.png" alt="" width="550"/></center>
+<center><img src="images/orange-boxes.png" alt="An example shinydashboard with default colors (light blue dashboardHeader, dark blue dashboardSidebar, gray/blue dashboardBody) and two boxes, one containing a checkboxGroupInput and the other containing a scatterplot -- the box colors are colored orange, rather than the default white." width="550"/></center>
 
 ## `styles.css`
 ```{css}
@@ -855,7 +855,7 @@ dashboardPage(header, sidebar, body)
 
 <p class="body-text">For example, let's say you're working on an app that uses three primary colors throughout:</p>
 
-<center><img src="images/meds_colors.png" alt="" width="400"/></center>
+<center><img src="images/meds_colors.png" alt="A color palette consisting of three colors: dark blue, teal, and dark gray." width="400"/></center>
 
 <p class="body-text topbr">You might imagine how often you’ll need to type those HEX codes out as you developing your stylesheet…it can get annoying rather quickly.</p>
 
@@ -906,7 +906,7 @@ h1 {
 
 <p class="small-text topbr">**3.** Apply your styles to your app by linking to to your `.css` file in your app's header.</p>
 
-<center><img src="images/sass_to_css_workflow.png" alt="" width="750"/></center>
+<center><img src="images/sass_to_css_workflow.png" alt="A chart showing the Sass to CSS workflow -- begin with writing Sass variables and CSS rule in a .scss file, then use the sass R package to compile sass to css, and finally use your compiled .css file to apply your styles to your app." width="750"/></center>
 
 ---
 

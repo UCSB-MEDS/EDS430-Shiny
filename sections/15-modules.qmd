@@ -31,7 +31,7 @@ format: revealjs
 
 . .  .
 
-<p class="medium-body-text topbr">Packages used:</p> 
+<p class="medium-body-text topbr">New packages used:</p> 
 
 . . . 
 
@@ -47,7 +47,7 @@ format: revealjs
 
 <p class="small-text">It uses the `gapminder` data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.</p> 
 
-<center><img src="images/gapminder-app.gif" alt="" width="550"/></center>
+<center><img src="images/gapminder-app.gif" alt="The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly." width="550"/></center>
 
 ---
 

@@ -329,7 +329,7 @@ countdown::countdown(
 
 <center><div class="slide-title bottombr">I'm excited to see what *Shiny* new apps you all create!</div></center>
 
-<center><img src="images/sparkle.gif" alt="" width="325"/></center>
+<center><img src="images/sparkle.gif" alt="A gif of sparkles that appear to be moving out of a dark background towards the viewer." width="325"/></center>
 
 ::: aside
 <center>This is a Quarto Presentation. To learn more, visit <https://quarto.org>.</center>

@@ -699,7 +699,7 @@ Shiny app repo structure
 Not much is <em>required</em> to make a functional app (which is awesome) – for a basic app, you really just need an <code>app.R</code> file where you’ll write the code for your UI and server. To stay organized, we’ll place <code>app.R</code> into a subdirectory (e.g.&nbsp;<code>/myapp</code>), which will also house any dependencies (e.g.&nbsp;other scripts/files/etc.) used by <code>app.R</code>.
 </p>
 <center>
-<img src="images/repo_structure_details.png" alt="" width="900">
+<img src="images/repo_structure_details.png" alt="A visual representation of a basic shiny app repository file/folder structure." width="900">
 </center>
 </section><section id="begin-the-same" class="slide level2" data-menu-title="All Apps Begin the Same"><h2></h2>
 <div class="slide-title">
@@ -709,7 +709,7 @@ All Shiny apps begin (in almost) the same way
 You have the option of creating either a <strong>single-file app</strong> or <strong>two-file app</strong>, and they look nearly the same (we’ll see both formats in the coming slides).
 </p>
 <center>
-<img src="images/one-vs-two.png" alt="" width="700">
+<img src="images/one-vs-two.png" alt="Shiny apps can be built using a single app.R file, or using ui.R plus server.R, and most often a global.R in conjunction." width="700">
 </center>
 <p class="small-text">
 Why two options? Before v0.10.2, Shiny apps needed to be split into <strong>two separate files</strong>, <code>ui.R</code> and <code>server.R</code>, that defined the UI and server components, respectively. With v0.10.2+, users can create a <strong>single-file app</strong>, <code>app.R</code>, which contains both the UI and server components together. While it largely comes down to personal preference, a <strong>single-file format is best for smaller apps or when creating a <a href="https://reprex.tidyverse.org/">reprex</a></strong>, while the <strong>two-file format is beneficial when writing large, complex apps</strong> where breaking apart code can make things a bit more navigable/maintainable.
@@ -766,11 +766,11 @@ You should also notice a red stop sign, <img src="images/stop.png" alt="A red he
 <div class="columns">
 <div class="column" style="width:50%;">
 <center>
-<img src="images/blank_app.png" alt="" width="400">
+<img src="images/blank_app.png" alt="The RStudio viewer showing a running app consisting of only a blank white screen since no elements have been added yet." width="400">
 </center>
 </div><div class="column" style="width:50%;">
 <center>
-<img src="images/run_app_RStudio.png" alt="" width="400">
+<img src="images/run_app_RStudio.png" alt="RStudio running our blank app. In the console, we see the text 'Listening on http://127.0.0.1:6341' and a red stop sign indicating that RStudio is busy." width="400">
 </center>
 </div>
 </div>
@@ -1906,7 +1906,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9c15d56c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_35a4f9c7" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2960,7 +2960,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5f6c6e71" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_18496363" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3262,7 +3262,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c288d858" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_52c2de01" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4529,8 +4529,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-6-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-224bd3eced3870465bb2" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-224bd3eced3870465bb2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-acf8237a2784da88a289" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-acf8237a2784da88a289">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4581,8 +4581,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-aae28b7054ef4c531769" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-aae28b7054ef4c531769">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f53de0cb4e5083d0c4e0" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-f53de0cb4e5083d0c4e0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4651,7 +4651,7 @@ Writing our dashboard UI code
 Now that we have a better sense of what our app will include, let’s start coding it up.
 </p>
 <p class="small-text">
-Add the server function to <code>server.R</code> and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on <a href="">slide 110</a>, but alternatively, you can split the UI into separate pieces, then combine them into a <code>dashboardPage</code> the end of <code>ui.R</code> (as shown below) – this can help with organization as you app grows in complexity.
+Add the server function to <code>server.R</code> and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/build-dashboard-ui">this slide</a>, but alternatively, you can split the UI into separate pieces, then combine them into a <code>dashboardPage</code> the end of <code>ui.R</code> (as shown below) – this can help with organization as you app grows in complexity.
 </p>
 <p class="small-text">
 Run your app to make sure it works – you should see a super basic dashboard. If it doesn’t look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).
@@ -5385,7 +5385,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_eab40c90" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_4109ca81" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -5870,7 +5870,7 @@ Check out your finished dashboard!
 <img src="images/final-dashboard.gif" alt="Our completed dashboard, with our image styled so that it fits within the background info box on the Welcome page, and three functional sliderInputs that update the leaflet map on the Dashboard page." width="750">
 </center>
 <p class="small-text">
-There’s a ton more to learn about building shinydashboards. Check out the <a href="">documentation</a> to find instructions on adding components like <a href="https://rstudio.github.io/shinydashboard/structure.html#infobox"><code>infoBox</code>es</a> and <a href="https://rstudio.github.io/shinydashboard/structure.html#valuebox"><code>valueBox</code>es</a>, building <a href="https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar">inputs in the sidebar</a>, easy ways to update the color theme using <a href="https://rstudio.github.io/shinydashboard/appearance.html#skins">skins</a>, and more.
+There’s a ton more to learn about building shinydashboards. Check out the <a href="https://rstudio.github.io/shinydashboard/">documentation</a> to find instructions on adding components like <a href="https://rstudio.github.io/shinydashboard/structure.html#infobox"><code>infoBox</code>es</a> and <a href="https://rstudio.github.io/shinydashboard/structure.html#valuebox"><code>valueBox</code>es</a>, building <a href="https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar">inputs in the sidebar</a>, easy ways to update the color theme using <a href="https://rstudio.github.io/shinydashboard/appearance.html#skins">skins</a>, and more.
 </p>
 </section><section id="3-beautifying-ui" class="slide level2" data-menu-title="!! (3) Beautifying your UI !!" data-background="#374F50"><h2></h2>
 <p class="slide-title-dark">
@@ -6011,7 +6011,7 @@ By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/solar.png" alt="" width="550">
+<img src="images/solar.png" alt="A shiny app depicting a title, subtitle sliderInput, scatterplot, checkboxGroupInput, and DT datatable, all stacked vertically. The pre-build bootswatch 'solar' theme has been applied, turning the background color dark blue and changing widget colors to dark gray or yellow. The background of the scatterplot is still white." width="550">
 </center>
 </div>
 </div>
@@ -6042,7 +6042,7 @@ Alternatively, you can fully customize your own theme. Explore the <a href="http
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/custom-bslib.png" alt="" width="550">
+<img src="images/custom-bslib.png" alt="A shiny app depicting a title, subtitle sliderInput, scatterplot, checkboxGroupInput, and DT datatable, all stacked vertically. A custom theme, created using bs_theme() has been applied, turning the background color pink, changing widget colors to a dark magenta, and applying a cursive white font styling to all text. The background of the scatterplot is still white." width="550">
 </center>
 </div>
 </div>
@@ -6078,7 +6078,7 @@ You probably noticed that our scatterplot looks a little silly against the darke
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/bslib-thematic.png" alt="" width="550">
+<img src="images/bslib-thematic.png" alt="A shiny app depicting a title, subtitle sliderInput, scatterplot, checkboxGroupInput, and DT datatable, all stacked vertically. A custom theme, created using bs_theme() has been applied, turning the background color pink, changing widget colors to a dark magenta, and applying a cursive white font styling to all text. The background of the scatterplot is now the same color (pink) as the background." width="550">
 </center>
 </div>
 </div>
@@ -6219,7 +6219,7 @@ To apply our theme, provide the <code>theme</code> argument of your <code>fluidP
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/fresh_app.gif" alt="" width="550">
+<img src="images/fresh_app.gif" alt="An app with a tan-colored background, lime green navbar, bright pink text, and blue links, showcasing how different components of a shiny app can be modified using the fresh packages." width="550">
 </center>
 </div>
 </div>
@@ -6286,7 +6286,7 @@ To apply our theme, use the <code><a href="https://rdrr.io/pkg/fresh/man/use_the
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/fresh-dashboard.gif" alt="" width="550">
+<img src="images/fresh-dashboard.gif" alt="A shinydashboard with a dark blue dashboardHeader, pink dashboardBody, light blue dashboardSidebar, red sidebar text, and bright pink sidebar menuItem highlights, showcasing how shinydashboards can be customized using the fresh package." width="550">
 </center>
 </div>
 </div>
@@ -6361,7 +6361,7 @@ We’ll be doing a rather high-level and quick overview of Sass &amp; CSS today,
 </p>
 <p><br></p>
 <center>
-<img src="images/w3.png" alt="" width="350">
+<img src="images/w3.png" alt="The W3Schools logo, which is a green 'W' with a green '3' to the right." width="350">
 </center>
 </div>
 </section><section id="what-are-sass-css" class="slide level2" data-menu-title="What are Sass &amp; CSS"><h2></h2>
@@ -6371,7 +6371,7 @@ What even is CSS? Sass?
 <div class="columns">
 <div class="column" style="width:45%;">
 <center>
-<img src="images/css3.png" alt="" height="400">
+<img src="images/css3.png" alt="The CSS 3 logo." height="400">
 </center>
 <center>
 <p class="smaller-text">
@@ -6383,7 +6383,7 @@ What even is CSS? Sass?
 </div><div class="column" style="width:45%;">
 <p><br></p>
 <center>
-<img src="images/sass.png" alt="" width="550">
+<img src="images/sass.png" alt="The Sass logo" width="550">
 </center>
 <center>
 <p class="smaller-text topbr">
@@ -6403,7 +6403,7 @@ CSS is a rule-based language, meaning that it allows you to define groups of sty
 <div class="columns">
 <div class="column" style="width:45%;">
 <center>
-<img src="images/css_syntax.png" alt="" width="550">
+<img src="images/CSS_syntax.png" alt="An example of a CSS rule that modifies all h1 elements so that the text is green and that there's a bit more space between each letter." width="550">
 </center>
 </div><div class="column" style="width:5%;">
 
@@ -6479,7 +6479,7 @@ Add styling directly to tags. <strong>It’s best not to use a lot of these!</st
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/in-line_styling.png" alt="" width="550">
+<img src="images/in-line_styling.png" alt="A basic app with a large purple level 1 header that reads, 'My App', a blue level 2 header that reads, 'Section 1' with a bit of extra space between letters, an un-styled level 2 header that reads, 'Section 2', and a button with a green border that reads, 'This is a button'." width="550">
 </center>
 </div>
 </div>
@@ -6532,7 +6532,7 @@ Add CSS rules to your app’s header (<code>tags$head</code>). This is a little 
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/header_styling.png" alt="" width="550">
+<img src="images/header_styling.png" alt="A basic app with a large black level 1 header written in a cursive font that reads, 'My App', a blue level 2 header that reads, 'Section 1', a blue level 2 header that reads, 'Section 2' with a bit of extra space between letters, and an un-styled button that reads, 'This is a button'." width="550">
 </center>
 </div>
 </div>
@@ -6600,7 +6600,7 @@ Build a stylesheet (a <code>.css</code> file) inside your app’s <code>www/</co
 </div>
 </div><div class="column" style="width:33%;">
 <center>
-<img src="images/stylesheet_styling.png" alt="" width="550">
+<img src="images/stylesheet_styling.png" alt="A basic app with a large green level 1 header that reads, 'My App' written in a sans-serif font, an orange level 2 header that reads, 'Section 1' with a bit of extra space between letters and written in a serif font, an orange level 2 header that reads, 'Section 2' written in a serf font, and a button with a yellow background that reads, 'This is a button'." width="550">
 </center>
 </div>
 </div>
@@ -6615,7 +6615,7 @@ What if I want to style an element, but don’t know how to target it?
 Oftentimes, you’ll have to do a bit of exploration to determine how to target specific elements for styling. In either your app viewer or web browser, right click on an element of interest and choose <strong>Inspect</strong> (or <strong>Inspect Element</strong>) to open up the underlying HTML and CSS. You can make temporary edits to your app (e.g.&nbsp;adding a background color, changing font sizes, etc.) to see how they look first, then copy the appropriate CSS rule into your stylesheet to apply to your app.
 </p>
 <center>
-<img src="images/inspect_orientation.png" alt="" width="550">
+<img src="images/inspect_orientation.png" alt="A shiny dashboard, opened in the RStudio viewer, with the Inspect pane open to the right. The top half of the inspect pane shows the underlying HTML and the bottom half shows the underlying CSS styles." width="550">
 </center>
 </section><section id="inspect-dashboard" class="slide level2" data-menu-title="Inspect dashboard box"><h2></h2>
 <div class="slide-title-smaller">
@@ -6646,7 +6646,7 @@ Remember to create a header and link your stylesheet within <code>dashboardBody(
 <div class="tab-content">
 <div id="tabset-12-1">
 <center>
-<img src="images/orange-boxes.png" alt="" width="550">
+<img src="images/orange-boxes.png" alt="An example shinydashboard with default colors (light blue dashboardHeader, dark blue dashboardSidebar, gray/blue dashboardBody) and two boxes, one containing a checkboxGroupInput and the other containing a scatterplot -- the box colors are colored orange, rather than the default white." width="550">
 </center>
 </div>
 <div id="tabset-12-2">
@@ -6741,7 +6741,7 @@ Okay, we wrote and applied some CSS styling to our apps, but what about Sass? Yo
 For example, let’s say you’re working on an app that uses three primary colors throughout:
 </p>
 <center>
-<img src="images/meds_colors.png" alt="" width="400">
+<img src="images/meds_colors.png" alt="A color palette consisting of three colors: dark blue, teal, and dark gray." width="400">
 </center>
 <p class="body-text topbr">
 You might imagine how often you’ll need to type those HEX codes out as you developing your stylesheet…it can get annoying rather quickly.
@@ -6792,7 +6792,7 @@ To style apps using both Sass <em>and</em> CSS, you’ll follow this general wor
 <strong>3.</strong> Apply your styles to your app by linking to to your <code>.css</code> file in your app’s header.
 </p>
 <center>
-<img src="images/sass_to_css_workflow.png" alt="" width="750">
+<img src="images/sass_to_css_workflow.png" alt="A chart showing the Sass to CSS workflow -- begin with writing Sass variables and CSS rule in a .scss file, then use the sass R package to compile sass to css, and finally use your compiled .css file to apply your styles to your app." width="750">
 </center>
 </section><section id="write-sass" class="slide level2" data-menu-title="Write Sass"><h2></h2>
 <div class="slide-title-smaller">
@@ -7289,7 +7289,7 @@ Ideally, actions required of your user can be done using a keyboard (e.g.&nbsp;p
 
 </div><div class="column" style="width:45%;">
 <center>
-<img src="images/keyboard_mouse.gif" alt="" width="350">
+<img src="images/keyboard_mouse.gif" alt="A computer mouse and keyboard that's animated to show the left mouse button clicking and the left-hand side shift button being pressed." width="350">
 </center>
 </div>
 </div>
@@ -7422,7 +7422,7 @@ I’m building an app that should look like this…
 In <strong>Tab 1</strong>, both the image and text should update whenever a new radio button is chosen. In <strong>Tab 2</strong>, the scatterplot should update so that only data points for penguins with body masses within our chosen range are displayed. <strong>Find the source code for this functioning app <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-working">here</a>.</strong>
 </p>
 <center>
-<img src="images/working-app.gif" alt="" width="650">
+<img src="images/working-app.gif" alt="A functioning shiny app with two tabs. The first tab has radioButtons that when selected, update the penguin image and description text. The second tab has a sliderInput and scatterplot." width="650">
 </center>
 </section><section id="buggy-app" class="slide level2" data-menu-title="A buggy app"><h2></h2>
 <div class="slide-title">
@@ -7432,7 +7432,7 @@ In <strong>Tab 1</strong>, both the image and text should update whenever a new 
 In <strong>Tab 1</strong>, only the image updates whenever a new radio button is chosen, and text is missing altogether. In <strong>Tab 2</strong>, the scatterplot updates as expected whenever the body mass range is changed. <strong>Find the source code for this buggy app <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken">here</a>.</strong>
 </p>
 <center>
-<img src="images/buggy-app.gif" alt="" width="650">
+<img src="images/buggy-app.gif" alt="The same shiny app as on the previous slide, but this time when the radioButtons are updated, only the image changes -- no text appears." width="650">
 </center>
 </section><section id="comment-out-code" class="slide level2" data-menu-title="Comment out code"><h2></h2>
 <div class="slide-title-smaller">
@@ -7565,7 +7565,7 @@ Even though this is a relatively small/simple app, there is still code that, for
 </div>
 <div id="tabset-14-2">
 <center>
-<img src="images/commented-out-code.gif" alt="" width="650">
+<img src="images/commented-out-code.gif" alt="The same app as on the previous slides, except the sliderInput and scatterplot code has been commented out so that those elements don't appear when the app is run." width="650">
 </center>
 </div>
 </div>
@@ -7709,7 +7709,7 @@ You can insert diagnostic messages within your reactives using <code><a href="ht
 </div>
 <div id="tabset-15-2">
 <center>
-<img src="images/messages.gif" alt="" width="650">
+<img src="images/messages.gif" alt="We see our app.R file with 'message()'s inserted throughout our reactive elements. When our app is run and the user updates the radioButtons, we see the associated messages appear in the console (or not appear, if code is broken)." width="650">
 </center>
 </div>
 </div>
@@ -7921,7 +7921,7 @@ Creating our first test
 Following the steps on the previous slide, creating your test should look similar to this:
 </p>
 <center>
-<img src="images/sam-test.gif" alt="" width="650">
+<img src="images/sam-test.gif" alt="A user begins recording a test by typing shinytest2::record_test('testing_app') in the RStudio console, which opens up the app in an iframe with the recorder in a pane to the right. The user types 'Sam' into the text box, clicks the 'Greet' button, then clicks 'Expect Shiny values' in the recorder. Finally, the user names and saves the test, which then runs automatically once the recorder is quit." width="650">
 </center>
 <p class="body-text">
 <strong>Note:</strong> Your test is automatically run as soon as you save and exit the recorder. See the results of your test in your console (it should pass!).
@@ -8013,7 +8013,7 @@ Tips for testing
 <div class="fragment">
 <p><br></p>
 <center>
-<p class="body-text">
+<p class="medium-body-text">
 This is only a brief intro to <code>shinytest2</code>! Dig into the <a href="https://rstudio.github.io/shinytest2/index.html">documentation</a> to learn more.
 </p>
 </center>
@@ -8120,7 +8120,7 @@ Create a new subdirectory called <code>functions-app/</code> and add your <code>
 <div class="tab-content">
 <div id="tabset-17-1">
 <center>
-<img src="images/functions_demo_app.gif" alt="" width="650">
+<img src="images/functions_demo_app.gif" alt="A shiny app with two tabs. The first tab contains a pickerInput that allows the user to select which penguin species they want to visualize data for, along with a scatterplot. The second tab also contains a pickerInput with the exact same penguin species options, along with a histogram." width="650">
 </center>
 </div>
 <div id="tabset-17-2">
@@ -8327,7 +8327,7 @@ Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></c
 <span id="cb115-5"><a href="#cb115-5"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb115-6"><a href="#cb115-6"></a></span>
 <span id="cb115-7"><a href="#cb115-7"></a><span class="co"># IMPORT FUNCTIONS ----</span></span>
-<span id="cb115-8"><a href="#cb115-8"></a><span class="fu">source</span>(<span class="st">"R/penguinSpp_pickerInput.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb115-8"><a href="#cb115-8"></a><span class="fu">source</span>(<span class="st">"R/penguinSpp_pickerInput.R"</span>) <span class="co"># will source automatically with Shiny v1.5.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -8338,7 +8338,7 @@ Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></c
 Apply your function in <code>ui.R</code>
 </div>
 <p class="small-text">
-Finally, replace your original UI code for building both <code>pickerInput</code>s with our <code>penguinSpp_pickerInput()</code> function:
+Finally, replace your original UI code for building both <code>pickerInput</code>s with our <code>penguinSpp_pickerInput()</code> function, save, and run your app. It should look exactly the same as before!
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb116" data-code-line-numbers="12|24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -8425,7 +8425,7 @@ By the end of this section, you should have an intro-level understanding of:
 </div>
 <div class="fragment">
 <p class="medium-body-text topbr">
-Packages used:
+New packages used:
 </p>
 </div>
 <div class="fragment">
@@ -8445,7 +8445,7 @@ This app, developed by <a href="https://github.com/garrettgman">Garrett Grolemun
 It uses the <code>gapminder</code> data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.
 </p>
 <center>
-<img src="images/gapminder-app.gif" alt="" width="550">
+<img src="images/gapminder-app.gif" alt="The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly." width="550">
 </center>
 </section><section id="gapminder-code" class="slide level2" data-menu-title="Gapminder code"><h2></h2>
 <div class="slide-title-smaller">
@@ -9227,7 +9227,7 @@ Shiny is awesome, but depending on your goals, vision, and end users, you may no
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Embed reactive shiny components (e.g.&nbsp;inputs &amp; outputs) in Quarto documents. By using some fun new code chunk options, you can instruct Quarto to spin up it’s own self-contained shiny server to run your reactives. Read the <a href="https://quarto.org/docs/interactive/shiny/">Quarto documentation</a> to learn more and check out some teaching examples <a href="https://quarto.org/docs/interactive/shiny/#examples">here</a>.
 </p>
 <center>
-<img src="images/shiny_alts.png" alt="" width="450">
+<img src="images/shiny_alts.png" alt="Logos for htmlwidgets, flexdashboard, and quarto." width="450">
 </center>
 </div>
 </section><section id="flexdashboard-examples" class="slide level2" data-menu-title="Examples of flexdashboards"><h2></h2>
@@ -9348,8 +9348,6 @@ And don’t forget about Posit’s own excellent resources
 <p class="body-text bottombr">
 Posit/RStudio’s great instructional resources, examples, and help documentation:
 </p>
-<div class="columns">
-<div class="column" style="width:45%;">
 <p class="small-text topbr">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> A thoughtfully organized <a href="https://shiny.rstudio.com/articles/">Articles</a> page
@@ -9362,15 +9360,6 @@ Posit/RStudio’s great instructional resources, examples, and help documentatio
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg><a href="https://shiny.rstudio.com/gallery/#demos">Shiny Demos</a>, a series of apps created by the Shiny developers to highlight specific features of the shiny package – these are <em>excellent</em> resources to turn to when you are learning how to implement a new type of widget, working on the layout of your app, and more.
 </p>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-<!-- <iframe src="https://shiny.rstudio.com/articles/" title="Shiny Articles" height=400 width=450></iframe> -->
-<div class="cell">
-
-</div>
-</div>
-</div>
 </section><section id="TheEnd" class="slide level2" data-menu-title="~End Slide~"><h2></h2>
 <center>
 <div class="slide-title bottombr">
@@ -9378,7 +9367,7 @@ I’m excited to see what <em>Shiny</em> new apps you all create!
 </div>
 </center>
 <center>
-<img src="images/sparkle.gif" alt="" width="325">
+<img src="images/sparkle.gif" alt="A gif of sparkles that appear to be moving out of a dark background towards the viewer." width="325">
 </center>
 
 <div class="footer footer-default">

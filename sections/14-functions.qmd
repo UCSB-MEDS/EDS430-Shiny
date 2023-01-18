@@ -66,7 +66,7 @@ format: revealjs
 
 ## App preview
 
-<center><img src="images/functions_demo_app.gif" alt="" width="650"/></center>
+<center><img src="images/functions_demo_app.gif" alt="A shiny app with two tabs. The first tab contains a pickerInput that allows the user to select which penguin species they want to visualize data for, along with a scatterplot. The second tab also contains a pickerInput with the exact same penguin species options, along with a histogram." width="650"/></center>
 
 ## `ui.R`
 ```{r}
@@ -283,7 +283,7 @@ library(palmerpenguins)
 library(tidyverse)
 
 # IMPORT FUNCTIONS ----
-source("R/penguinSpp_pickerInput.R")
+source("R/penguinSpp_pickerInput.R") # will source automatically with Shiny v1.5.0
 ```
 
 :::
@@ -294,7 +294,7 @@ source("R/penguinSpp_pickerInput.R")
 
 <div class="slide-title-smaller">Apply your function in `ui.R`</div>
 
-<p class="small-text">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function:</p>
+<p class="small-text">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function, save, and run your app. It should look exactly the same as before!</p>
 
 ```{r}
 #| eval: false  

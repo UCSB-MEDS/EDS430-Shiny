@@ -213,7 +213,7 @@ tags$img(src = "file/path/to/img",
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/keyboard_mouse.gif" alt="" width="350"/></center>
+<center><img src="images/keyboard_mouse.gif" alt="A computer mouse and keyboard that's animated to show the left mouse button clicking and the left-hand side shift button being pressed." width="350"/></center>
 :::
 
 ::::

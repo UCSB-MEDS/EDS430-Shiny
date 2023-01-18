@@ -502,7 +502,7 @@ leaflet() |>
 
 <p class="small-text">Now that we have a better sense of what our app will include, let's start coding it up.</p>
 
-<p class="small-text">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on [slide 110](), but alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) -- this can help with organization as you app grows in complexity.</p>
+<p class="small-text">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/build-dashboard-ui), but alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) -- this can help with organization as you app grows in complexity.</p>
 
 <p class="small-text">Run your app to make sure it works -- you should see a super basic dashboard. If it doesn't look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).</p>
 

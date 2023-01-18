@@ -67,7 +67,7 @@ format: revealjs
 
 <p class="small-text">In **Tab 1**, both the image and text should update whenever a new radio button is chosen. In **Tab 2**, the scatterplot should update so that only data points for penguins with body masses within our chosen range are displayed. **Find the source code for this functioning app [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-working).**</p>
 
-<center><img src="images/working-app.gif" alt="" width="650"/></center>
+<center><img src="images/working-app.gif" alt="A functioning shiny app with two tabs. The first tab has radioButtons that when selected, update the penguin image and description text. The second tab has a sliderInput and scatterplot." width="650"/></center>
 
 ---
 
@@ -77,7 +77,7 @@ format: revealjs
 
 <p class="small-text">In **Tab 1**, only the image updates whenever a new radio button is chosen, and text is missing altogether. In **Tab 2**, the scatterplot updates as expected whenever the body mass range is changed. **Find the source code for this buggy app [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken).**</p>
 
-<center><img src="images/buggy-app.gif" alt="" width="650"/></center>
+<center><img src="images/buggy-app.gif" alt="The same shiny app as on the previous slide, but this time when the radioButtons are updated, only the image changes -- no text appears." width="650"/></center>
 
 ---
 
@@ -209,7 +209,7 @@ shinyApp(ui = ui, server = server)
 
 ## app preview
 
-<center><img src="images/commented-out-code.gif" alt="" width="650"/></center>
+<center><img src="images/commented-out-code.gif" alt="The same app as on the previous slides, except the sliderInput and scatterplot code has been commented out so that those elements don't appear when the app is run." width="650"/></center>
 
 :::
 
@@ -353,6 +353,6 @@ shinyApp(ui = ui, server = server)
 
 ## app + RStudio console preview
 
-<center><img src="images/messages.gif" alt="" width="650"/></center>
+<center><img src="images/messages.gif" alt="We see our app.R file with 'message()'s inserted throughout our reactive elements. When our app is run and the user updates the radioButtons, we see the associated messages appear in the console (or not appear, if code is broken)." width="650"/></center>
 
 :::
