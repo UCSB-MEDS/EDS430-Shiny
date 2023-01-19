@@ -11,7 +11,7 @@ format:
 
 ## {#title-slide data-menu-title="~~~ Title Slide ~~~" background="images/title_background.png"} 
 
-[EDS 430 - Intro to <img src="images/shiny_text.png" alt="The word 'Shiny' in cursive lettering, which is the logo used by RStudio for their Shiny R package. The Shiny package is used to build interactive web applications." style="display: inline-block; margin: 0; position: relative; top: 25px; width:130px;height:90px;"/>]{.custom-title}
+[EDS 430 - Intro to <img src="images/shiny_text.png" alt="The word 'Shiny' in cursive lettering, which is the logo used by Posit for the shiny package." style="display: inline-block; margin: 0; position: relative; top: 25px; width:130px;height:90px;"/>]{.custom-title}
 
 [*Building reactive apps & dashboards*]{.custom-subtitle}
 
