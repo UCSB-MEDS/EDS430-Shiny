@@ -114,7 +114,7 @@ ui <- fluidPage(
 
 . . . 
 
-<p class="small-text">Recall that the UI is actually just an HTML document. We can style our text by adding static HTML elements using `tags` -- a list of functions that parallel common HTML tags (e.g. `<h1>` == `tags$h1()`) The most common tags also have wrapper functions (e.g. `h1()`).</p>
+<p class="small-text">Recall that the UI is actually just an HTML document. We can style our text by adding static HTML elements [using `tags`](https://shiny.rstudio.com/articles/tag-glossary.html) -- a list of functions that parallel common HTML tags (e.g. `<h1>` == `tags$h1()`) The most common tags also have wrapper functions (e.g. `h1()`).</p>
 
 ```{r}
 #| eval: false
@@ -412,8 +412,6 @@ server <- function(input, output) {
 :::
 
 ::::
-
-<p class="smaller-text">**I sometimes like to think to myself:** "First, I'm going to tell my server to create an output using the syntax `output$`. Then, I will tell my server to place that output in the placeholder named "bodyMass_scatterPlot" (created in my UI) using the syntax `output$bodyMass_scatterPlot`. </p>
 
 ---
 
@@ -837,7 +835,7 @@ server <- function(input, output) {
 
 <p class="body-text topbr">**Tips:**</p>
 <p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use `?checkboxGroupInput` to learn more about which arguments you need (remember, all inputs require an `inputId` and oftentimes a `label`, but there are others required to make this work as well)</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Both `{shiny}` and `{DT}` packages have functions named `dataTableOutput()` and `renderDataTable()`   (`DT::renderDataTable()` allows you to create both server-side and client-side DataTables and supports additional DataTables features while `shiny::renderDataTable()` only provides server-side DataTables). Be sure to use the one from the `{DT}` package using the syntax `packagename::functionname()`.</p>
+<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Both `{shiny}` and `{DT}` packages have functions named `dataTableOutput()` and `renderDataTable()` -- `DT::renderDataTable()` allows you to create both server-side and client-side DataTables and supports additional DataTables features while `shiny::renderDataTable()` only provides server-side DataTables. Be sure to use the one from the `{DT}` package using the syntax `packageName::functionName()`.</p>
 <p class="smaller-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` There are lots of ways to customize DT tables, but to create a basic one, all you need is to `DT::dataTable(your_dataframe)`<p>
 
 

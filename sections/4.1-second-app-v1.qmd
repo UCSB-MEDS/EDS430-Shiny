@@ -171,7 +171,7 @@ ggplot(trout_filtered_df, aes(x = length_mm, y = weight_g, color = channel_type,
 ::: {.column width="45%"}
 <center><img src="images/trout_plot.png" alt="A scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. Data points are colored and shaped by Channel Type, with data collected from pools represented with green diamonds and data collected from rapids represented by red stars." width="550"/></center> 
 
-<center><p class="small-text gray-text">We'll build 2 inputs: one to select `channel_type` and one to select `section`.</p></center>
+<center><p class="smaller-text gray-text">We'll use the `and_vertebrates` data set from `{lterdatasampler}` to create a scatter plot of trout weights by lengths. When we move to shiny, we'll build 2 inputs for filtering our data: one to select `channel_type` and one to select `section`.</p></center>
 :::
 
 ::::
@@ -207,7 +207,7 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 ::: {.column width="45%"}
 <center><img src="images/penguin_plot.png" alt="A histogram of penguin Flipper lengths (mm) with bars colored by species. Adelie are orange and Chinstrap are purple." width="550"/></center> 
-<center><p class="small-text gray-text">We'll build 2 inputs: one to select `island` and one to change the number of histogram bins.</p></center>
+<center><p class="small-text gray-text">We'll use the `penguins` data set from `{palmerpenguins}` to create a histogram of penguin flipper lengths. When we move to shiny, we'll build 2 inputs for filtering our data: one to select `island` and one to change the number of histogram bins.</p></center>
 :::
 
 ::::
