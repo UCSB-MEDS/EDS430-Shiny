@@ -63,11 +63,16 @@ format: revealjs
 
 <div class="slide-title-smaller">So how should *I* host my app?</div>
 
-<p class="body-text">While there's no one solution, we recommend the following options:</p>
+<p class="body-text">The Bren compute team will work with groups to deploy and maintain apps on in-house servers for 6 months after capstone/GP presentations *or until they break*.</p>
+
+. . . 
+
+<p class="body-text">If you and/or your client wish to continue using your app after this time, we recommend one of the following two options:</p>
+
+. . . 
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Preferred:** Stick with the **free** tier of [shinyapps.io](https://www.shinyapps.io/), if you can! This is by far the most straightforward option that requires no server maintenance for you or your client. If your app exceeds the limitations set by the free tier (e.g. requires more active hours, needs more RAM or instances to support high traffic usage, etc.), you/your client have the option to upgrade to a paid tier -- there are [5 paid plan types](https://docs.posit.co/shinyapps.io/billing-and-account-management.html#plan-types). Check out the [shinyapps.io user guide](https://docs.posit.co/shinyapps.io/index.html) for more information. **Consider setting aside your allocated capstone/GP funds to help support a paid shinyapps.io plan.**</p>
 
-. . . 
 
 <p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` If you have a server-savvy client, they may want to deploy/host your app using their own infrastructure. If your client plans to pursue this option, but does not yet have a their own server configured to do so, we recommend directing them to the [online instructions](https://posit.co/download/shiny-server/) for getting started with Shiny Server. **PLEASE NOTE that Bren staff (including the compute team) are unable to provide technical support for clients in server configuration and app deployment/maintenance.**</p>
 

@@ -128,11 +128,10 @@ format:
 
 ```{r}
 countdown::countdown(
-  minutes = 10,
+  minutes = 5,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
-  # Set timer theme to match solarized colors
   color_border              = "#FFFFFF",
   color_text                = "#7aa81e",
   color_running_background  = "#7aa81e",
@@ -149,10 +148,10 @@ countdown::countdown(
 
 ---
 
-##  {#mini-break1 data-menu-title="# Mini break 1 #" background="#047C90"}
+##  {#break2 data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">Mini Break</p>
+<p class="custom-subtitle bottombr">Break</p>
 <p class="caption-text">*Up next: your turn to add a reactive penguin plot to our "Penguin" tab!*</p>
 </div>
 
@@ -162,7 +161,6 @@ countdown::countdown(
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
-  # Set timer theme to match solarized colors
   color_border              = "#FFFFFF",
   color_text                = "#7aa81e",
   color_running_background  = "#7aa81e",
@@ -179,8 +177,7 @@ countdown::countdown(
 
 ---
 
-
-##  {#mini-break2 data-menu-title="# Mini break 2 #" background="#047C90"}
+##  {#break3 data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">Mini Break</p>
@@ -193,7 +190,6 @@ countdown::countdown(
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
-  # Set timer theme to match solarized colors
   color_border              = "#FFFFFF",
   color_text                = "#7aa81e",
   color_running_background  = "#7aa81e",
@@ -222,11 +218,36 @@ countdown::countdown(
 
 ---
 
+##  {#break4 data-menu-title="# Break #" background="#047C90"}
+
+<div class="page-center vertical-center">
+<p class="custom-subtitle bottombr">Mini Break</p>
+<p class="caption-text">*Next, we'll finish up v1 of our app by adding some intro text to the landing page*</p>
+</div>
+
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+---
+
 {{< include sections/8.1-shinydashboard.qmd >}}
 
 ---
 
-##  {#mini-break3 data-menu-title="Mini break 3" background="#047C90"}
+##  {#mini-break3 data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">Mini Break</p>
@@ -239,7 +260,6 @@ countdown::countdown(
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
-  # Set timer theme to match solarized colors
   color_border              = "#FFFFFF",
   color_text                = "#7aa81e",
   color_running_background  = "#7aa81e",

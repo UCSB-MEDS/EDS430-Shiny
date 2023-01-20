@@ -150,11 +150,43 @@ shinyApp(ui, server)
 
 ##  {#setup-dashboard-directory data-menu-title="Dashboard Setup"}
 
-<div class="slide-title-smaller">Setup begins the same as our previous apps</div>
+<div class="slide-title-smaller">Setup our shiny dashboard</div>
 
 <p class="body-text bottombr">First, create a subdirectory called `/shinydashboard` and add a `ui.R`,  `server.R`, and `global.R` file.</p>
 
-<p class="body-text bottombr">Load the following libraries at the top of your `global.R` file, to start (we'll continue adding to this as we build out our app):</p>
+<p class="small-text bottombr">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example [a few slides back](https://ucsb-meds.github.io/EDS430-Shiny/#/dashboardPage), or alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) – this can help with organization as you app grows in complexity.</p>
+
+<p class="small-text bottombr">We'll set our dashboard aside for now while we work on downloading and pre-processing our data, as well as practice creating our data visualization *outside* of our app.</p>
+
+::: {.panel-tabset}
+
+## `ui.R`
+
+```{r}
+#| eval: false
+#| echo: true
+#........................dashboardHeader.........................
+header <- dashboardHeader()
+
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar()
+
+#..........................dashboardBody.........................
+body <- dashboardBody()
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+## `server.R`
+
+```{r}
+#| eval: false
+#| echo: true
+server <- function(input, output) {}
+```
+
+## `global.R` 
 
 ```{r}
 #| eval: false
@@ -164,9 +196,7 @@ library(shiny)
 library(shinydashboard)
 ```
 
-. . . 
-
-<p class="body-text topbr">We'll put the app aside for a moment now while we work on downloading and pre-processing our data, as well as practice creating our data visualization *outside* of our app.</p>
+:::
 
 ---
 
@@ -177,7 +207,7 @@ library(shinydashboard)
 
 <p class="body-text bottombr">Building an app doesn't make much sense if we don't know what we're going to put in it. So, just like the last two apps, we'll start with some data wrangling and practice data visualization.</p>
 
-<p class="body-text bottombr">*Unlike* our last two apps, however, we'll be working with tabular data from the [Arctic Data Center](https://arcticdata.io/), which we'll download, process, save, then finally, read into our application. This process will likely be more similar to what you'll encounter when working on your own applications moving forward. **Take a few minutes to review the metadata record for the following data set, and download [FCWO_lakemonitoringdata_2011_2022_daily.csv](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3):**</p>
+<p class="body-text bottombr">*Unlike* our last two apps, however, we'll be working with tabular data from the [Arctic Data Center](https://arcticdata.io/), which we'll download, process, save, then finally, read into our application. This process will likely be more similar to what you'll encounter when working on your own applications moving forward. **Take a few minutes to review the [metadata record](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P) for the following data set, and download [FCWO_lakemonitoringdata_2011_2022_daily.csv](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3):**</p>
 
 :::: {.columns}
 
@@ -212,6 +242,9 @@ library(shinydashboard)
 :::: {.columns}
 
 ::: {.column width="35%"}
+
+<br>
+
 <p class="smaller-text topbr">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in a separate script saved to `R/` and save a cleaned/processed version of the data to our app's directory, `/shinydashboard/data/lake_data_processed.csv`. Your repository structure should look similar to example on the right:</p>
 :::
 
@@ -494,57 +527,6 @@ leaflet() |>
 :::
 
 ::::
----
-
-##  {#build-dashboard-ui data-menu-title="Build Dashboard UI"}
-
-<div class="slide-title-smaller">Writing our dashboard UI code</div>
-
-<p class="small-text">Now that we have a better sense of what our app will include, let's start coding it up.</p>
-
-<p class="small-text">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example on [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/build-dashboard-ui), but alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) -- this can help with organization as you app grows in complexity.</p>
-
-<p class="small-text">Run your app to make sure it works -- you should see a super basic dashboard. If it doesn't look quite right, try expanding your preview window (sometimes the sidebar collapses in small viewing windows).</p>
-
-::: {.panel-tabset}
-
-## `ui.R`
-
-```{r}
-#| eval: false
-#| echo: true
-#........................dashboardHeader.........................
-header <- dashboardHeader()
-
-#........................dashboardSidebar........................
-sidebar <- dashboardSidebar()
-
-#..........................dashboardBody.........................
-body <- dashboardBody()
-
-#..................combine all in dashboardPage..................
-dashboardPage(header, sidebar, body)
-```
-
-## `server.R`
-
-```{r}
-#| eval: false
-#| echo: true
-server <- function(input, output) {}
-```
-
-## `global.R` 
-
-```{r}
-#| eval: false
-#| echo: true
-# LOAD LIBRARIES ----
-library(shiny)
-library(shinydashboard)
-```
-
-:::
 
 ---
 

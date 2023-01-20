@@ -18,7 +18,7 @@ format: revealjs
 <p class="body-text bottombr">Just a few quick steps before your updates are live at your URL from earlier:</p>
 
 <p class="small-text">**1.** double check to make sure any required packages are being imported in `global.R`</p>
-<p class="small-text topbr">**2.** Rerun `rsconnect::deployApp("<app-directory-nam">` in your console and type `Y` when you see the prompt `Update application currently deployed at https://githubUserName.shinyapps.io/yourAppName? [Y/n]`</p>
+<p class="small-text topbr">**2.** Rerun `rsconnect::deployApp("<app-directory-nam")>` in your console and type `Y` when you see the prompt `Update application currently deployed at https://githubUserName.shinyapps.io/yourAppName? [Y/n]`</p>
 <p class="small-text topbr">**3.** Give it a minute (or few) to deploy. Your deployed app will open in a browser window once processed</p>
 <p class="small-text topbr">**4.** Push all your files (including the `/rsconnect` directory) to GitHub</p>
 

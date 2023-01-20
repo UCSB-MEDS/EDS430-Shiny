@@ -107,17 +107,14 @@ format: revealjs
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "6-12"
+#| code-line-numbers: "6-9"
 server <- function(input, output) {
   
   # filter for channel types ----
   trout_filtered_df <- reactive({
 
     validate(
-      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for.")
-    )
-
-    validate(
+      need(length(input$channel_type_input) > 0, "Please select at least one channel type to visualize data for."),
       need(length(input$section_input) > 0, "Please select at least one section (clear cut forest or old growth forest) to visualize data for.")
     )
 
@@ -232,7 +229,7 @@ server <- function(input, output) {
 
 <p class="small-text">Check out the [demo app](https://daattali.com/shiny/shinycssloaders-demo/) to start designing your own "spinner" (choose style, color, size).</p>
 
-<p class="small-text">We can pipe the `withSpinner()` function directly into our `plotOutput`s in `ui.R` -- here, we define the spinner color and style (there are 8 different spinner `type`s to choose from) and adjust the size of the penguin plot spinner.</p>
+<p class="small-text">We can pipe the `withSpinner()` function directly into our `plotOutput`s in `ui.R` (be sure to load the package in `global.R` first) -- here, we define the spinner color and style (there are 8 different spinner `type`s to choose from) and adjust the size of the penguin plot spinner.</p>
 
 :::: {.columns}
 
@@ -267,7 +264,7 @@ plotOutput(outputId = "flipperLength_histogram") |>
 
 <div class="slide-title-smaller">Include alt text for all data visualizations</div>
 
-<p class="small-text">Alt text are **written descriptions** added to images, and importantly, to data visualizations, to **help more users understand the content**. Assistive technologies (e.g. screen readers) read alt text out loud for users to hear. When alt text is successfully added, the `alt` tag (along your text) should appear in the HTML (right click on your app's data viz to **Inpsect** and ensure that it was added).</p>
+<p class="small-text">Alt text are **written descriptions** added to images, and importantly, to data visualizations, to **help more users understand the content**. Assistive technologies (e.g. screen readers) read alt text out loud for users to hear. When alt text is successfully added, the `alt` tag (along with your text) should appear in the HTML (right click on your app's data viz to **Inspect** and ensure that it was added).</p>
 
 :::: {.columns}
 
