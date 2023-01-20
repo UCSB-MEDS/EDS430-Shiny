@@ -1911,7 +1911,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e1a2c2f8" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_84bc09ea" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2964,7 +2964,7 @@ Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e39e2748" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_c66d303b" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3266,7 +3266,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_254acea5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_10ac50bb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4249,7 +4249,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d3813c30" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_847c7855" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4553,7 +4553,7 @@ Process lake data &amp; save new file
 <span id="cb64-5"><a href="#cb64-5"></a><span class="fu">library</span>(leaflet)</span>
 <span id="cb64-6"><a href="#cb64-6"></a></span>
 <span id="cb64-7"><a href="#cb64-7"></a><span class="co"># read in raw data ----</span></span>
-<span id="cb64-8"><a href="#cb64-8"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"raw_data"</span>, <span class="st">"FCWO_lakemonitoringdata_2011_2022_daily.csv"</span>))</span>
+<span id="cb64-8"><a href="#cb64-8"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"raw_data/FCWO_lakemonitoringdata_2011_2022_daily.csv"</span>)</span>
 <span id="cb64-9"><a href="#cb64-9"></a></span>
 <span id="cb64-10"><a href="#cb64-10"></a><span class="co"># calculate avg depth &amp; temp ----</span></span>
 <span id="cb64-11"><a href="#cb64-11"></a>avg_depth_temp <span class="ot">&lt;-</span> lake_monitoring_data <span class="sc">|&gt;</span> </span>
@@ -4563,28 +4563,32 @@ Process lake data &amp; save new file
 <span id="cb64-15"><a href="#cb64-15"></a>  <span class="fu">group_by</span>(Site) <span class="sc">|&gt;</span> </span>
 <span id="cb64-16"><a href="#cb64-16"></a>  <span class="fu">summarize</span>(</span>
 <span id="cb64-17"><a href="#cb64-17"></a>    <span class="at">AvgDepth =</span> <span class="fu">round</span>(<span class="fu">mean</span>(Depth), <span class="dv">1</span>),</span>
-<span id="cb64-18"><a href="#cb64-18"></a>    <span class="at">AvgTemp =</span> <span class="fu">round</span>(<span class="fu">mean</span>(BedTemperature), <span class="dv">1</span>)</span>
-<span id="cb64-19"><a href="#cb64-19"></a>  )</span>
-<span id="cb64-20"><a href="#cb64-20"></a></span>
-<span id="cb64-21"><a href="#cb64-21"></a><span class="co"># join avg depth &amp; temp to original data (match rows based on 'Site') ---</span></span>
-<span id="cb64-22"><a href="#cb64-22"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">full_join</span>(lake_monitoring_data, avg_depth_temp)</span>
-<span id="cb64-23"><a href="#cb64-23"></a></span>
-<span id="cb64-24"><a href="#cb64-24"></a><span class="co"># get unique lakes observations (with corresponding lat, lon, elev, avgDepth, avgTemp) for mapping ----</span></span>
-<span id="cb64-25"><a href="#cb64-25"></a>unique_lakes <span class="ot">&lt;-</span> lake_monitoring_data <span class="sc">|&gt;</span> </span>
-<span id="cb64-26"><a href="#cb64-26"></a>  <span class="fu">select</span>(Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) <span class="sc">|&gt;</span> </span>
-<span id="cb64-27"><a href="#cb64-27"></a>  <span class="fu">distinct</span>()</span>
-<span id="cb64-28"><a href="#cb64-28"></a></span>
-<span id="cb64-29"><a href="#cb64-29"></a><span class="co"># save processed data to your app's data directory ----</span></span>
-<span id="cb64-30"><a href="#cb64-30"></a><span class="fu">write_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"shinydashboard"</span>, <span class="st">"data"</span>, <span class="st">"lake_data_processed.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb64-18"><a href="#cb64-18"></a>    <span class="at">AvgTemp =</span> <span class="fu">round</span>(<span class="fu">mean</span>(BedTemperature), <span class="dv">1</span>))</span>
+<span id="cb64-19"><a href="#cb64-19"></a></span>
+<span id="cb64-20"><a href="#cb64-20"></a><span class="co"># join avg depth &amp; temp to original data (match rows based on 'Site') ---</span></span>
+<span id="cb64-21"><a href="#cb64-21"></a>lake_monitoring_data <span class="ot">&lt;-</span> <span class="fu">full_join</span>(lake_monitoring_data, avg_depth_temp)</span>
+<span id="cb64-22"><a href="#cb64-22"></a></span>
+<span id="cb64-23"><a href="#cb64-23"></a><span class="co"># get unique lakes observations (with corresponding lat, lon, elev, avgDepth, avgTemp) for mapping ----</span></span>
+<span id="cb64-24"><a href="#cb64-24"></a>unique_lakes <span class="ot">&lt;-</span> lake_monitoring_data <span class="sc">|&gt;</span> </span>
+<span id="cb64-25"><a href="#cb64-25"></a>  <span class="fu">select</span>(Site, Latitude, Longitude, Elevation, AvgDepth, AvgTemp) <span class="sc">|&gt;</span> </span>
+<span id="cb64-26"><a href="#cb64-26"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb64-27"><a href="#cb64-27"></a></span>
+<span id="cb64-28"><a href="#cb64-28"></a><span class="co"># save processed data to your app's data directory ----</span></span>
+<span id="cb64-29"><a href="#cb64-29"></a><span class="fu">write_csv</span>(unique_lakes, <span class="st">"shinydashboard/data/lake_data_processed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="file-types" class="slide level2" data-menu-title="File Types"><h2></h2>
-<div class="slide-title-smaller">
+<div class="slide-title">
 A note on file types
 </div>
 <p class="small-text">
-If you are working with tabular data (as we are in this example), you may choose to save your processed data frame as a <code>.rds</code> file (R’s own data file format which stores a single R object). Not only are <code>.rds</code> file are relatively small (and therefore take up little storage space), but they also preserve data types and classes (e.g.&nbsp;factors and dates), eliminating the need to redefine data types after loading the file.
+Oftentimes, you may choose to save your processed data frame as a <code>.rds</code> file (a data file format, native to R, which stores a single R object). <code>.rds</code> file are relatively small (and therefore take up little storage space), take less time to import/export, and preserve data types and classes (e.g.&nbsp;factors and dates), eliminating the need to redefine data types after loading the file. Bear in mind that this increased speed and space-saving may come at the cost of generality – you can’t open a <code>.rds</code> file outside of R or read it in with another programming language (e.g.&nbsp;Python).
 </p>
-<p>COME BACK TO THIS</p>
+<p class="small-text topbr">
+While we’ll be sticking to <code>.csv</code> files in this workshop, it’s worth experimenting with <code>.rds</code> when you begin working with your own (likely larger) data. You can read in (<code><a href="https://rdrr.io/r/base/readRDS.html">readRDS()</a></code>) and write out to (<code><a href="https://rdrr.io/r/base/readRDS.html">saveRDS()</a></code>) <code>.rds</code> files as easily as <code>.csv</code> files.
+</p>
+<center>
+<img src="images/rds.png" alt="The R language logo overlaid on top of a database stack -- often used to represent the rds data file format." width="200">
+</center>
 </section><section id="draft-leaflet" class="slide level2" data-menu-title="Draft Leaflet"><h2></h2>
 <div class="slide-title-smaller">
 Draft <code>leaflet</code> map
@@ -4601,8 +4605,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2a2115e3efb69abbf9c7" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2a2115e3efb69abbf9c7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-13b753bf9886845eab2f" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-13b753bf9886845eab2f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4653,8 +4657,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a794cd6ae9f9e63cdca4" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-a794cd6ae9f9e63cdca4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c4101416851bb62907f3" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c4101416851bb62907f3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5408,7 +5412,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4277fb88" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_ce4f62f8" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>

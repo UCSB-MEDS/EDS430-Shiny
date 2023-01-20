@@ -298,7 +298,7 @@ library(tidyverse)
 library(leaflet)
 
 # read in raw data ----
-lake_monitoring_data <- read_csv(here::here("raw_data", "FCWO_lakemonitoringdata_2011_2022_daily.csv"))
+lake_monitoring_data <- read_csv("raw_data/FCWO_lakemonitoringdata_2011_2022_daily.csv")
 
 # calculate avg depth & temp ----
 avg_depth_temp <- lake_monitoring_data |> 
@@ -308,8 +308,7 @@ avg_depth_temp <- lake_monitoring_data |>
   group_by(Site) |> 
   summarize(
     AvgDepth = round(mean(Depth), 1),
-    AvgTemp = round(mean(BedTemperature), 1)
-  )
+    AvgTemp = round(mean(BedTemperature), 1))
 
 # join avg depth & temp to original data (match rows based on 'Site') ---
 lake_monitoring_data <- full_join(lake_monitoring_data, avg_depth_temp)
@@ -320,18 +319,20 @@ unique_lakes <- lake_monitoring_data |>
   distinct()
 
 # save processed data to your app's data directory ----
-write_csv(here::here("shinydashboard", "data", "lake_data_processed.csv"))
+write_csv(unique_lakes, "shinydashboard/data/lake_data_processed.csv")
 ```
 
 ---
 
 ##  {#file-types data-menu-title="File Types"}
 
-<div class="slide-title-smaller">A note on file types</div>
+<div class="slide-title">A note on file types</div>
 
-<p class="small-text">If you are working with tabular data (as we are in this example), you may choose to save your processed data frame as a `.rds` file (R's own data file format which stores a single R object). Not only are `.rds` file are relatively small (and therefore take up little storage space), but they also preserve data types and classes (e.g. factors and dates), eliminating the need to redefine data types after loading the file.</p>
+<p class="small-text">Oftentimes, you may choose to save your processed data frame as a `.rds` file (a data file format, native to R, which stores a single R object). `.rds` file are relatively small (and therefore take up little storage space), take less time to import/export, and preserve data types and classes (e.g. factors and dates), eliminating the need to redefine data types after loading the file. Bear in mind that this increased speed and space-saving may come at the cost of generality -- you can't open a `.rds` file outside of R or read it in with another programming language (e.g. Python).</p>
 
-COME BACK TO THIS
+<p class="small-text topbr">While we'll be sticking to `.csv` files in this workshop, it's worth experimenting with `.rds` when you begin working with your own (likely larger) data. You can read in (`readRDS()`) and write out to (`saveRDS()`) `.rds` files as easily as `.csv` files.</p>
+
+<center><img src="images/rds.png" alt="The R language logo overlaid on top of a database stack -- often used to represent the rds data file format." width="200"/></center>
 
 ---
 
@@ -353,7 +354,7 @@ library(tidyverse)
 library(leaflet)
 
 # read in data ----
-filtered_lakes <- read_csv(here::here("data", "lake_data_processed.csv"))
+filtered_lakes <- read_csv("data/lake_data_processed.csv")
 
 # map it ----
 map <- leaflet() |> 
@@ -433,7 +434,7 @@ library(tidyverse)
 library(leaflet)
 
 # read in data ----
-lakes_cleaned <- read_csv(here::here("data", "lake_data_processed.csv"))
+lakes_cleaned <- read_csv("data/lake_data_processed.csv")
 
 #.......................PRACTICE FILTERING.......................
 filtered_lakes <- lakes_cleaned |> 
