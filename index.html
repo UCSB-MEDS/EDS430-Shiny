@@ -1140,9 +1140,9 @@ Input function syntax
 <strong>A couple examples:</strong>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>), ...)</span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>), ...)</span>
 <span id="cb11-2"><a href="#cb11-2"></a></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">"island"</span>, <span class="at">label =</span> <span class="st">"Choose and island:"</span>, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">selectInput</span>(<span class="at">inputId =</span> <span class="st">"island_input"</span>, <span class="at">label =</span> <span class="st">"Choose and island:"</span>, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p class="small-text topbr">
 Check out the interactive <a href="https://shiny.rstudio.com/gallery/widget-gallery.html">Shiny Widgets Gallery</a> to learn how to implement the most common widgets.
@@ -1161,7 +1161,7 @@ First let’s add a <code>sliderInput()</code> that will allow users to select a
 <span id="cb12-4"><a href="#cb12-4"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
 <span id="cb12-5"><a href="#cb12-5"></a>  </span>
 <span id="cb12-6"><a href="#cb12-6"></a>  <span class="co"># body mass slider input ----</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
 <span id="cb12-8"><a href="#cb12-8"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>))</span>
 <span id="cb12-9"><a href="#cb12-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1206,7 +1206,7 @@ Let’s now add a <code>plotOutput()</code>, which will be updated based on the 
 <span id="cb14-4"><a href="#cb14-4"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a>  </span>
 <span id="cb14-6"><a href="#cb14-6"></a>  <span class="co"># body mass slider input ----</span></span>
-<span id="cb14-7"><a href="#cb14-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
 <span id="cb14-8"><a href="#cb14-8"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb14-9"><a href="#cb14-9"></a>  </span>
 <span id="cb14-10"><a href="#cb14-10"></a>  <span class="co"># body mass plot ouput ----</span></span>
@@ -1311,7 +1311,7 @@ The <strong>server function</strong> is defined with two arguments, <code>input<
 <span id="cb15-7"><a href="#cb15-7"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
 <span id="cb15-8"><a href="#cb15-8"></a>  </span>
 <span id="cb15-9"><a href="#cb15-9"></a>  <span class="co"># body mass slider ----</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb15-10"><a href="#cb15-10"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
 <span id="cb15-11"><a href="#cb15-11"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb15-12"><a href="#cb15-12"></a>  </span>
 <span id="cb15-13"><a href="#cb15-13"></a>  <span class="co"># body mass plot output ----</span></span>
@@ -1358,7 +1358,7 @@ Within your <code>render*()</code>, write any code inside a set of curly braces,
 <span id="cb16-7"><a href="#cb16-7"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
 <span id="cb16-8"><a href="#cb16-8"></a>  </span>
 <span id="cb16-9"><a href="#cb16-9"></a>  <span class="co"># body mass slider ----</span></span>
-<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
 <span id="cb16-11"><a href="#cb16-11"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb16-12"><a href="#cb16-12"></a>  </span>
 <span id="cb16-13"><a href="#cb16-13"></a>  <span class="co"># body mass plot output ----</span></span>
@@ -1434,7 +1434,7 @@ Copy your code over to your app, placing it inside the <code><a href="https://rd
 <span id="cb18-9"><a href="#cb18-9"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
 <span id="cb18-10"><a href="#cb18-10"></a>  </span>
 <span id="cb18-11"><a href="#cb18-11"></a>  <span class="co"># body mass slider ----</span></span>
-<span id="cb18-12"><a href="#cb18-12"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
+<span id="cb18-12"><a href="#cb18-12"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>,</span>
 <span id="cb18-13"><a href="#cb18-13"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb18-14"><a href="#cb18-14"></a>  </span>
 <span id="cb18-15"><a href="#cb18-15"></a>  <span class="co"># body mass plot output ----</span></span>
@@ -1558,7 +1558,7 @@ Which part of our code needs to be updated when a user changes the slider range 
 <strong>Rule 3:</strong> Access input values with <code>input$&lt;id&gt;</code>
 </div>
 <p class="small-text">
-Recall that in our <strong>UI</strong>, we gave our <code>sliderInput()</code> an <code>inputId = "body_mass"</code>.
+Recall that in our <strong>UI</strong>, we gave our <code>sliderInput()</code> an <code>inputId = "body_mass_input"</code>.
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># load packages (omitted for brevity) ----</span></span>
@@ -1569,7 +1569,7 @@ Recall that in our <strong>UI</strong>, we gave our <code>sliderInput()</code> a
 <span id="cb24-6"><a href="#cb24-6"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
 <span id="cb24-7"><a href="#cb24-7"></a>  </span>
 <span id="cb24-8"><a href="#cb24-8"></a>  <span class="co"># body mass slider ----</span></span>
-<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, </span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, </span>
 <span id="cb24-10"><a href="#cb24-10"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb24-11"><a href="#cb24-11"></a>  </span>
 <span id="cb24-12"><a href="#cb24-12"></a>  <span class="co"># body mass plot output ----</span></span>
@@ -1592,7 +1592,7 @@ Recall that in our <strong>UI</strong>, we gave our <code>sliderInput()</code> a
 <strong>Rule 3:</strong> Access input values with <code>input$&lt;id&gt;</code>
 </div>
 <p class="smaller-text">
-In our server, we can access the values of that slider input using the syntax, <code>input$body_mass</code>. <em>If you want your output to change according to the input values, substitute hard-coded values (e.g.&nbsp;3725:5191) with the input values from the UI (e.g.&nbsp;<code>input$body_mass[1]:input$body_mass[2]</code>)</em>.
+In our server, we can access the values of that slider input using the syntax, <code>input$body_mass_input</code>. <em>If you want your output to change according to the input values, substitute hard-coded values (e.g.&nbsp;3725:5191) with the input values from the UI (e.g.&nbsp;<code>input$body_mass_input[1]:input$body_mass_input[2]</code>)</em>.
 </p>
 <p class="smaller-text important-text-bg">
 <strong>Importantly</strong>, we need to use <code>reactive()</code> to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, <strong>the data frame name must be followed by <code>()</code></strong>.
@@ -1606,7 +1606,7 @@ In our server, we can access the values of that slider input using the syntax, <
 <span id="cb25-6"><a href="#cb25-6"></a>  <span class="co"># ~ previous code omitted for brevity ~</span></span>
 <span id="cb25-7"><a href="#cb25-7"></a>  </span>
 <span id="cb25-8"><a href="#cb25-8"></a>  <span class="co"># body mass slider ----</span></span>
-<span id="cb25-9"><a href="#cb25-9"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, </span>
+<span id="cb25-9"><a href="#cb25-9"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g):"</span>, </span>
 <span id="cb25-10"><a href="#cb25-10"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb25-11"><a href="#cb25-11"></a>  </span>
 <span id="cb25-12"><a href="#cb25-12"></a>  <span class="co"># body mass plot output ----</span></span>
@@ -1620,7 +1620,7 @@ In our server, we can access the values of that slider input using the syntax, <
 <span id="cb25-20"><a href="#cb25-20"></a>  <span class="co"># filter body masses ----</span></span>
 <span id="cb25-21"><a href="#cb25-21"></a>  body_mass_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({ </span>
 <span id="cb25-22"><a href="#cb25-22"></a>    penguins <span class="sc">|&gt;</span> </span>
-<span id="cb25-23"><a href="#cb25-23"></a>      <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> input<span class="sc">$</span>body_mass[<span class="dv">1</span>]<span class="sc">:</span>input<span class="sc">$</span>body_mass[<span class="dv">2</span>]) </span>
+<span id="cb25-23"><a href="#cb25-23"></a>      <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> input<span class="sc">$</span>body_mass_input[<span class="dv">1</span>]<span class="sc">:</span>input<span class="sc">$</span>body_mass_input[<span class="dv">2</span>]) </span>
 <span id="cb25-24"><a href="#cb25-24"></a>  })</span>
 <span id="cb25-25"><a href="#cb25-25"></a>      </span>
 <span id="cb25-26"><a href="#cb25-26"></a>  <span class="co"># render the scatter plot ----</span></span>
@@ -1798,15 +1798,15 @@ Press the right arrow key to advance through the newly added lines of code.
 <span id="cb26-14"><a href="#cb26-14"></a>  <span class="fu">p</span>(<span class="fu">strong</span>(<span class="st">"Exploring Antarctic Penguin Data"</span>)),</span>
 <span id="cb26-15"><a href="#cb26-15"></a>  </span>
 <span id="cb26-16"><a href="#cb26-16"></a>  <span class="co"># body mass slider input ----</span></span>
-<span id="cb26-17"><a href="#cb26-17"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g)"</span>,</span>
+<span id="cb26-17"><a href="#cb26-17"></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"body_mass_input"</span>, <span class="at">label =</span> <span class="st">"Select a range of body masses (g)"</span>,</span>
 <span id="cb26-18"><a href="#cb26-18"></a>              <span class="at">min =</span> <span class="dv">2700</span>, <span class="at">max =</span> <span class="dv">6300</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">3000</span>, <span class="dv">4000</span>)),</span>
 <span id="cb26-19"><a href="#cb26-19"></a></span>
 <span id="cb26-20"><a href="#cb26-20"></a>  <span class="co"># body mass plot output ----</span></span>
 <span id="cb26-21"><a href="#cb26-21"></a>  <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"bodyMass_scatterPlot"</span>),</span>
 <span id="cb26-22"><a href="#cb26-22"></a>  </span>
 <span id="cb26-23"><a href="#cb26-23"></a>  <span class="co"># year input ----</span></span>
-<span id="cb26-24"><a href="#cb26-24"></a>  <span class="fu">checkboxGroupInput</span>(<span class="at">inputId =</span> <span class="st">"year"</span>, <span class="at">label =</span> <span class="st">"Select year(s):"</span>,</span>
-<span id="cb26-25"><a href="#cb26-25"></a>                     <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"2007"</span>, <span class="st">"2008"</span>, <span class="st">"2009"</span>), <span class="co"># or `unique(penguins$year)` | </span><span class="al">NOTE</span><span class="co">: update checkbox display name by using "New name" = "observation name" (e.g "The year 2007" = "2007")</span></span>
+<span id="cb26-24"><a href="#cb26-24"></a>  <span class="fu">checkboxGroupInput</span>(<span class="at">inputId =</span> <span class="st">"year_input"</span>, <span class="at">label =</span> <span class="st">"Select year(s):"</span>,</span>
+<span id="cb26-25"><a href="#cb26-25"></a>                     <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"2007"</span>, <span class="st">"2008"</span>, <span class="st">"2009"</span>), <span class="co"># or `unique(penguins$year_input)` | </span><span class="al">NOTE</span><span class="co">: update checkbox display name by using "New name" = "observation name" (e.g "The year 2007" = "2007")</span></span>
 <span id="cb26-26"><a href="#cb26-26"></a>                     <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"2007"</span>, <span class="st">"2008"</span>)),</span>
 <span id="cb26-27"><a href="#cb26-27"></a>  </span>
 <span id="cb26-28"><a href="#cb26-28"></a>  <span class="co"># DT output ----</span></span>
@@ -1820,7 +1820,7 @@ Press the right arrow key to advance through the newly added lines of code.
 <span id="cb26-36"><a href="#cb26-36"></a>  <span class="co"># filter body masses ----</span></span>
 <span id="cb26-37"><a href="#cb26-37"></a>  body_mass_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb26-38"><a href="#cb26-38"></a>    penguins <span class="sc">|&gt;</span></span>
-<span id="cb26-39"><a href="#cb26-39"></a>      <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> input<span class="sc">$</span>body_mass[<span class="dv">1</span>]<span class="sc">:</span>input<span class="sc">$</span>body_mass[<span class="dv">2</span>]) <span class="co"># return observations where body_mass_g is "in" the set of options provided by the user in the sliderInput</span></span>
+<span id="cb26-39"><a href="#cb26-39"></a>      <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> input<span class="sc">$</span>body_mass_input[<span class="dv">1</span>]<span class="sc">:</span>input<span class="sc">$</span>body_mass_input[<span class="dv">2</span>]) <span class="co"># return observations where body_mass_g is "in" the set of options provided by the user in the sliderInput</span></span>
 <span id="cb26-40"><a href="#cb26-40"></a>  })</span>
 <span id="cb26-41"><a href="#cb26-41"></a></span>
 <span id="cb26-42"><a href="#cb26-42"></a>  <span class="co"># render the scatterplot output ----</span></span>
@@ -1844,7 +1844,7 @@ Press the right arrow key to advance through the newly added lines of code.
 <span id="cb26-60"><a href="#cb26-60"></a>  <span class="co"># filter for years ----</span></span>
 <span id="cb26-61"><a href="#cb26-61"></a>  years_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb26-62"><a href="#cb26-62"></a>    penguins <span class="sc">|&gt;</span> </span>
-<span id="cb26-63"><a href="#cb26-63"></a>      <span class="fu">filter</span>(year <span class="sc">%in%</span> input<span class="sc">$</span>year) <span class="co"># return observations where year is "in" the set of options provided by the user via the checkboxGroupInput</span></span>
+<span id="cb26-63"><a href="#cb26-63"></a>      <span class="fu">filter</span>(year <span class="sc">%in%</span> input<span class="sc">$</span>year_input) <span class="co"># return observations where year is "in" the set of options provided by the user via the checkboxGroupInput</span></span>
 <span id="cb26-64"><a href="#cb26-64"></a>  })</span>
 <span id="cb26-65"><a href="#cb26-65"></a>  </span>
 <span id="cb26-66"><a href="#cb26-66"></a>  <span class="co"># render the DT::datatable ----</span></span>
@@ -1911,7 +1911,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4db4751a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_cb097eae" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2965,7 +2965,7 @@ Run your app and try out your <code>pickerInput</code> &amp; <code>checkboxGroup
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_7fbcc810" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_6c620248" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3268,7 +3268,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e31a1817" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f3b87c14" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4252,7 +4252,7 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2c39c71c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_956f8810" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4608,8 +4608,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fe0df1a027d52e1fa8d9" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-fe0df1a027d52e1fa8d9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ff19aacc390f9940c64a" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ff19aacc390f9940c64a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4659,8 +4659,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4b02fbb8fc4091618844" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4b02fbb8fc4091618844">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4b442941fcfea075f01f" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4b442941fcfea075f01f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5413,7 +5413,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a13ab831" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_5b043a05" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>

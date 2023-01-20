@@ -217,9 +217,9 @@ ui <- fluidPage(
 ```{r}
 #| eval: false
 #| echo: true
-sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):", value = c(3000, 4000), ...)
+sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):", value = c(3000, 4000), ...)
 
-selectInput(inputId = "island", label = "Choose and island:", ...)
+selectInput(inputId = "island_input", label = "Choose and island:", ...)
 ```
 
 <p class="small-text topbr">Check out the interactive [Shiny Widgets Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html) to learn how to implement the most common widgets.</p>
@@ -242,7 +242,7 @@ ui <- fluidPage(
   # ~ previous code omitted for brevity ~
   
   # body mass slider input ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):",
               min = 2700, max = 6300, value = c(3000, 4000))
   )
 ```
@@ -293,7 +293,7 @@ ui <- fluidPage(
   # ~ previous code omitted for brevity ~
   
   # body mass slider input ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):",
               min = 2700, max = 6300, value = c(3000, 4000)),
   
   # body mass plot ouput ----
@@ -383,7 +383,7 @@ ui <- fluidPage(
   # ~ previous code omitted for brevity ~
   
   # body mass slider ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):",
               min = 2700, max = 6300, value = c(3000, 4000)),
   
   # body mass plot output ----
@@ -437,7 +437,7 @@ ui <- fluidPage(
   # ~ previous code omitted for brevity ~
   
   # body mass slider ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):",
               min = 2700, max = 6300, value = c(3000, 4000)),
   
   # body mass plot output ----
@@ -526,7 +526,7 @@ ui <- fluidPage(
   # ~ previous code omitted for brevity ~
   
   # body mass slider ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):",
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):",
               min = 2700, max = 6300, value = c(3000, 4000)),
   
   # body mass plot output ----
@@ -676,7 +676,7 @@ body_mass_df <- penguins |>
 
 <div class="slide-title-smaller">**Rule 3:** Access input values with `input$<id>`</div>
 
-<p class="small-text">Recall that in our **UI**, we gave our `sliderInput()` an `inputId = "body_mass"`.</p>
+<p class="small-text">Recall that in our **UI**, we gave our `sliderInput()` an `inputId = "body_mass_input"`.</p>
 
 ```{r}
 #| eval: false
@@ -691,7 +691,7 @@ ui <- fluidPage(
   # ~ previous code omitted for brevity ~
   
   # body mass slider ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):", 
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):", 
               min = 2700, max = 6300, value = c(3000, 4000)),
   
   # body mass plot output ----
@@ -716,7 +716,7 @@ server <- function(input, output) {
 
 <div class="slide-title-smaller">**Rule 3:** Access input values with `input$<id>`</div>
 
-<p class="smaller-text">In our server, we can access the values of that slider input using the syntax, `input$body_mass`. *If you want your output to change according to the input values, substitute hard-coded values (e.g. 3725:5191) with the input values from the UI (e.g. `input$body_mass[1]:input$body_mass[2]`)*.</p>
+<p class="smaller-text">In our server, we can access the values of that slider input using the syntax, `input$body_mass_input`. *If you want your output to change according to the input values, substitute hard-coded values (e.g. 3725:5191) with the input values from the UI (e.g. `input$body_mass_input[1]:input$body_mass_input[2]`)*.</p>
 
 <p class="smaller-text important-text-bg">**Importantly**, we need to use `reactive()` to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, **the data frame name must be followed by `()`**.</p>
 
@@ -733,7 +733,7 @@ ui <- fluidPage(
   # ~ previous code omitted for brevity ~
   
   # body mass slider ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g):", 
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g):", 
               min = 2700, max = 6300, value = c(3000, 4000)),
   
   # body mass plot output ----
@@ -747,7 +747,7 @@ server <- function(input, output) {
   # filter body masses ----
   body_mass_df <- reactive({ 
     penguins |> 
-      filter(body_mass_g %in% input$body_mass[1]:input$body_mass[2]) 
+      filter(body_mass_g %in% input$body_mass_input[1]:input$body_mass_input[2]) 
   })
       
   # render the scatter plot ----
@@ -878,15 +878,15 @@ ui <- fluidPage(
   p(strong("Exploring Antarctic Penguin Data")),
   
   # body mass slider input ----
-  sliderInput(inputId = "body_mass", label = "Select a range of body masses (g)",
+  sliderInput(inputId = "body_mass_input", label = "Select a range of body masses (g)",
               min = 2700, max = 6300, value = c(3000, 4000)),
 
   # body mass plot output ----
   plotOutput(outputId = "bodyMass_scatterPlot"),
   
   # year input ----
-  checkboxGroupInput(inputId = "year", label = "Select year(s):",
-                     choices = c("2007", "2008", "2009"), # or `unique(penguins$year)` | NOTE: update checkbox display name by using "New name" = "observation name" (e.g "The year 2007" = "2007")
+  checkboxGroupInput(inputId = "year_input", label = "Select year(s):",
+                     choices = c("2007", "2008", "2009"), # or `unique(penguins$year_input)` | NOTE: update checkbox display name by using "New name" = "observation name" (e.g "The year 2007" = "2007")
                      selected = c("2007", "2008")),
   
   # DT output ----
@@ -900,7 +900,7 @@ server <- function(input, output) {
   # filter body masses ----
   body_mass_df <- reactive({
     penguins |>
-      filter(body_mass_g %in% input$body_mass[1]:input$body_mass[2]) # return observations where body_mass_g is "in" the set of options provided by the user in the sliderInput
+      filter(body_mass_g %in% input$body_mass_input[1]:input$body_mass_input[2]) # return observations where body_mass_g is "in" the set of options provided by the user in the sliderInput
   })
 
   # render the scatterplot output ----
@@ -924,7 +924,7 @@ server <- function(input, output) {
   # filter for years ----
   years_df <- reactive({
     penguins |> 
-      filter(year %in% input$year) # return observations where year is "in" the set of options provided by the user via the checkboxGroupInput
+      filter(year %in% input$year_input) # return observations where year is "in" the set of options provided by the user via the checkboxGroupInput
   })
   
   # render the DT::datatable ----
