@@ -94,7 +94,7 @@ body <- dashboardBody(
                    box(width = NULL,
                        
                        title = tagList(icon("water"), strong("Monitoring Fish Creek Watershed")),
-                       includeMarkdown("text/intro.md"),
+                       includeMarkdown("text/intro.md")
 
                    ) # END box
 
