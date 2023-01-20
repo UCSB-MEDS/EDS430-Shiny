@@ -64,7 +64,6 @@ format: revealjs
 <center><p class="medium-body-text">Cons:</p></center>
 <p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` does **not** work with `shinydashboard` (`{bslib}` is only intended for use with `shiny` *apps*)</p>
 <p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` styling is constrained by the arguments available to `bs_theme()`</p>
-<p class="small-text">`r fontawesome::fa("xmark", fill = "#05859B", a11y = "sem")` some `shinyWidgets` may break when a `bslib` theme is applied (e.g. `pickerInput`s in our `two-file-app`) (at the time of writing this, Jan 2023).</p>
 :::
 
 ::::
