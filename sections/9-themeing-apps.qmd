@@ -22,6 +22,10 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a number of different approaches for themeing and styling your shiny apps and dashboards</p>
 
+. . . 
+ 
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a basic understanding of how to apply CSS & Sass styling to your app</p>
+
 . . .
 
 <p class="medium-body-text topbr">Packages introduced:</p> 
