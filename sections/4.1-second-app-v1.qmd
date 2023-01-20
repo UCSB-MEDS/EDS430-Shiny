@@ -120,17 +120,17 @@ library(tidyverse)
 
 #............custom ggplot theme (apply to both plots)...........
 myCustomTheme <- theme_light() +
-  theme(axis.text = element_text(color = "black", size = 12),
+  theme(axis.text = element_text(size = 12),
     axis.title = element_text(size = 14, face = "bold"),
     legend.title = element_text(size = 14, face = "bold"),
     legend.text = element_text(size = 13),
     legend.position = "bottom",
-    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.7))
+    panel.border = element_rect(linewidth = 0.7))
 
 #.......................wrangle trout data.......................
 clean_trout <- and_vertebrates |>
-  filter(species == c("Cutthroat trout")) |>
-  select(year, sampledate, section, reach, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
+  filter(species == "Cutthroat trout") |>
+  select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
   mutate(channel_type = case_when(
     channel_type == "C" ~ "cascade",
     channel_type == "I" ~ "riffle",
@@ -219,24 +219,22 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 <div class="slide-title-smaller">A `global.R` file can help you keep code organized</div>
 
-<p class="small-text bottombr">While not a requirement of a shiny app, a `global.R` file will help reduce redundant code, increase your app's speed, and help keep code more clearly organized. It works by running once when your app is first launched, making any logic, objects, etc. contained in it available to both the `ui.R` and `server.R` files (or, in the case of a single-file shiny app, the `app.R` file). It's a great place for things like:</p>
+<p class="body-text bottombr">While not a requirement of a shiny app, a `global.R` file will help reduce redundant code, increase your app's speed, and help keep code more clearly organized. It works by running once when your app is first launched, making any logic, objects, etc. contained in it available to both the `ui.R` and `server.R` files (or, in the case of a single-file shiny app, the `app.R` file). It's a great place for things like:</p>
 
 . . . 
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` loading packages</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` importing data</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` sourcing scripts (particularly functions -- we'll talk more about functions later)</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` data wrangling (though you'll want to do any major data cleaning before bringing your data into your app)</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` building custom `ggplot` themes</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` etc.</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` loading packages</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` importing data</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` sourcing scripts (particularly functions -- we'll talk more about functions later)</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` data wrangling (though you'll want to do any major data cleaning before bringing your data into your app)</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` building custom `ggplot` themes</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` etc.</p>
+
+<br>
 
 . . . 
 
-<p class="small-text topbr bottombr">`global.R` *must* be saved to the same directory as your `ui.R` and `server.R` files.</p>
-
-. . . 
-
-<center><p class="medium-body-text">**Exercise:** Create a `global.R` file inside your `/two-file-app` directory and load the `{shiny}` package at the top -- we'll continue to add to this file as we work on our app.</p></center>
+<p class="body-text topbr bottombr">**Reminder:** `global.R` *must* be saved to the same directory as your `ui.R` and `server.R` files.</p>
 
 ---
 
@@ -476,7 +474,7 @@ ui <- navbarPage(
            
            "reactive plots will go here" # REPLACE THIS WITH CONTENT
            
-  ) # END (Page 2) data viz tabPanel
+  ) # END (Page 2) data viz tabsetPanel
   
 ) # END navbarPage
 ```
@@ -563,24 +561,24 @@ ui <- navbarPage(
              # trout tabPanel ----
              tabPanel(title = "Trout",
                       
-                      # trout plot sidebarLayout ----
+                      # trout sidebarLayout ----
                       sidebarLayout(
                         
-                        # trout plot sidebarPanel ----
+                        # trout sidebarPanel ----
                         sidebarPanel(
                           
                           "trout plot input(s) go here" # REPLACE THIS WITH CONTENT
                           
-                        ), # END trout plot sidebarPanel
+                        ), # END trout sidebarPanel
                         
-                        # trout plot mainPanel ----
+                        # trout mainPanel ----
                         mainPanel(
                           
                           "trout plot output goes here" # REPLACE THIS WITH CONTENT
                           
-                        ) # END trout plot mainPanel
+                        ) # END trout mainPanel
                         
-                      ) # END trout plot sidebarLayout
+                      ) # END trout sidebarLayout
                       
              ), # END trout tabPanel 
              
@@ -655,48 +653,48 @@ ui <- navbarPage(
              # trout tabPanel ----
              tabPanel(title = "Trout",
                       
-                      # trout plot sidebarLayout ----
+                      # trout sidebarLayout ----
                       sidebarLayout(
                         
-                        # trout plot sidebarPanel ----
+                        # trout sidebarPanel ----
                         sidebarPanel(
                           
                           "trout plot input(s) go here" # REPLACE THIS WITH CONTENT
                           
-                        ), # END trout plot sidebarPanel
+                        ), # END trout sidebarPanel
                         
-                        # trout plot mainPanel ----
+                        # trout mainPanel ----
                         mainPanel(
                           
                           "trout plot output goes here" # REPLACE THIS WITH CONTENT
                           
-                        ) # END trout plot mainPanel
+                        ) # END trout mainPanel
                         
-                      ) # END trout plot sidebarLayout
+                      ) # END trout sidebarLayout
                       
              ), # END trout tabPanel 
              
              # penguin tabPanel ----
              tabPanel(title = "Penguins",
                       
-                      # penguin plot sidebarLayout ----
+                      # penguin sidebarLayout ----
                       sidebarLayout(
                         
-                        # penguin plot sidebarPanel ----
+                        # penguin sidebarPanel ----
                         sidebarPanel(
                           
                           "penguin plot input(s) go here" # REPLACE THIS WITH CONTENT
                           
-                        ), # END penguin plot sidebarPanel
+                        ), # END penguin sidebarPanel
                         
-                        # penguin plot mainPanel ----
+                        # penguin mainPanel ----
                         mainPanel(
                           
                           "penguin plot output goes here" # REPLACE THIS WITH CONTENT
                           
-                        ) # END penguin plot mainPanel
+                        ) # END penguin mainPanel
                         
-                      ) # END penguin plot sidebarLayout
+                      ) # END penguin sidebarLayout
                       
              ) # END penguin tabPanel
              
@@ -719,7 +717,7 @@ ui <- navbarPage(
 
 . . . 
 
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` keeping **clean code is important** -- we haven't even any added any content yet and our UI is already 75 lines of code!</p>
+<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` keeping **clean code is important** -- we haven't even any added any content yet and our UI is already >70 lines of code!</p>
 
 . . . 
 
@@ -739,7 +737,7 @@ ui <- navbarPage(
 
 <p class="slide-title">Add data viz: First up, trout</p>
 
-<p class="small-text bottombr">We'll be using the [`and_vertebrates` dataset](https://lter.github.io/lterdatasampler/reference/and_vertebrates.html) from the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/) to create our first reactive plot. These data contain coastal cutthroat trout (*Oncorhynchus clarkii clarkii*) lengths and weights collected in Mack Creek, [Andrews Forest LTER](https://andrewsforest.oregonstate.edu/). Original data can be found on the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14).</p>
+<p class="small-text bottombr">We'll be using the [`and_vertebrates` dataset](https://lter.github.io/lterdatasampler/reference/and_vertebrates.html) from the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/) to create our first reactive plot. These data contain coastal cutthroat trout (*Oncorhynchus clarkii clarkii*) lengths and weights collected in Mack Creek, [Andrews Forest LTER](https://andrewsforest.oregonstate.edu/). Original data can be found on the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14). Refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to revisit our practice data wrangling & visualization script.</p>
 
 <br>
 
@@ -775,6 +773,7 @@ library(shinyWidgets)
 
 <p class="small-text">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too. Our new data object `clean_trout`, will now be available for us to call directly in our server.</p>
 
+<p class="small-text">We can easily copy our wrangling code over from our [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots).</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -786,7 +785,7 @@ library(shinyWidgets)
 
 # DATA WRANGLING ----
 clean_trout <- and_vertebrates |>
-  filter(species == c("Cutthroat trout")) |>
+  filter(species == "Cutthroat trout") |>
   select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
   mutate(channel_type = case_when(
     channel_type == "C" ~ "cascade",
@@ -831,7 +830,7 @@ pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
 
 <br>
 
-<p class="smaller-text gray-text topbr">A `shinyWidgets::pickerInput()` is functionally equivalent to `shiny::checkboxGroupInput()`, though it allows for greater customization and looks (in my opinion) a bit nicer.</p>
+<p class="smaller-text gray-text topbr">A `shinyWidgets::pickerInput()` is functionally equivalent to `shiny::selectInput()`, though it allows for greater customization and looks (in my opinion) a bit nicer.</p>
 
 ---
 
@@ -872,7 +871,7 @@ plotOutput(outputId = "trout_scatterplot")
 #| code-line-numbers: "3-25"
 server <- function(input, output) {
   
-  # filter for channel types ----
+  # filter trout data ----
   trout_filtered_df <- reactive({
     
     clean_trout |>
@@ -995,8 +994,8 @@ sidebarPanel(
               selected = c("cascade", "pool"),
               multiple = TRUE), # END channel type pickerInput
 
-  # section checkboxGroupInput ----
-  checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section:",
+  # section checkboxGroupButtons ----
+  checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section(s):",
                        choices = c("clear cut forest", "old growth forest"),
                        selected = c("clear cut forest", "old growth forest"),
                        individual = FALSE, justified = TRUE, size = "sm",
@@ -1017,7 +1016,7 @@ sidebarPanel(
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6"
-# filter for channel types ----
+# filter trout data ----
 trout_filtered_df <- reactive({
 
     clean_trout |>

@@ -1,0 +1,531 @@
+---
+format: revealjs
+---
+
+
+##  {#lastly-text data-menu-title="Lastly, text"}
+
+<div class="slide-title-smaller">Lastly: add background/other important information text</div>
+
+<p class="body-text">It's usually valuable (and important) to provide some background information/context for your app -- the landing page of your app can be a great place for this. We're going to add text to our app's landing page (i.e. the **About this App** page) so that it looks like the example below:</p>
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<center><img src="images/landing-text.png" alt="The landing page (i.e. the 'About this App' page) of ourapp, which includes a large h1 title that says 'Welcome to the LTER Animal Data Explorer!' followed by two subsections titled, 'Why did we build this app?' and 'Where's the data?'. A faint gray horizontal divider line separates these sections from the footer at the bottom of the page, which tells the user that the app is maintained by Samantha Csik, is updated as needed for teaching purposes, to report issues at a link, and that source code is found on GitHub." width="600"/></center>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<br>
+<p class="body-text bottombr">**Some important pieces for information to consider adding:**</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` motivation for building the app</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` brief instructions for exploring the data</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` who maintains the app, where the code lives, how to submit issues/suggestions</p>
+:::
+
+::::
+
+
+---
+
+##  {#unruly-text data-menu-title="Unruly text in the UI"}
+
+<div class="slide-title-smaller">Adding long text to the UI can get unruly</div>
+
+<p class="small-text">For example, I've added and formatted my landing page's text directly in the **UI** using lots of nested `tags` -- I've done this inside the `tabPanel` titled **About this App** (**Note:** I've formatted the layout of this page a bit using `fluidRow` and `column`s to create some white space around the edges. I've also created a faint gray horizontal line, using `hr()`, beneath which I added a footnote):</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "8-24"
+ui <- navbarPage(
+  
+  title = "LTER Animal Data Explorer",
+  
+  # (Page 1) intro tabPanel ----
+  tabPanel(title = "About this App",
+           
+           fluidRow(
+             column(1),
+             column(10,
+                    tags$h1("Welcome to the LTER Animal Data Explorer!"),
+                    tags$br(),
+                    tags$h4("Why did we build this app?"),
+                    tags$p("This shiny app was built, in part, to provide users a way of exploring morphological characteristics of the different animal species found within NSF's", tags$a(href = "https://lternet.edu/", "Long Term Ecological Research (LTER)"), "sites...but primarily, it was built as a teaching tool for", tags$a(href = "https://bren.ucsb.edu/courses/eds-430", "EDS 430 (Intro to Shiny)"), "-- this workshop, taught through the", tags$a(href = "https://ucsb-meds.github.io/", "Master of Environmental Data Science (MEDS) program"), "at the", tags$a(href = "https://bren.ucsb.edu/", "Bren School of Environmental Science and Management"), "is a two-day coding-intensive course meant to meant to provide a introductory foundation in shiny app development."),
+                    tags$br(),
+                    tags$h4("Where's the data?"),
+                    tags$p("Check out the", tags$strong("Explore the Data"), "page to find interactive data visualizations looking at Cutthroat trout of the", tags$a(href = "https://andrewsforest.oregonstate.edu/", "Andrews Forest LTER"), "and Adélie, Gentoo & Chinstrap penguins of the", tags$a(href = "https://pallter.marine.rutgers.edu/", "Palmer Station LTER."))
+             ),
+             column(1)
+           ), # END fluidRow
+           
+           hr(),
+           
+           em("This app is maintained by", tags$a(href = "https://samanthacsik.github.io/", "Samantha Csik"), "and is updated as needed for teaching purposes. Please report any issues", tags$a(href = "https://github.com/samanthacsik/EDS430-shiny-app/issues", "here."), "Source code can be found on", tags$a(href = "https://github.com/samanthacsik/EDS430-shiny-app", "GitHub."))
+           
+  ), # END (Page 1) intro tabPanel
+  
+  # (Page 2) data viz tabPanel ----
+  tabPanel(title = "Explore the Data",
+           
+           # tabsetPanel to contain tabs for data viz ----
+           tabsetPanel(
+             
+             # trout tabPanel ----
+             tabPanel(title = "Trout",
+                      
+                      # trout plot sidebarLayout ----
+                      sidebarLayout(
+                        
+                        # trout plot sidebarPanel ----
+                        sidebarPanel(
+                          
+                          # channel type pickerInput ----
+                          pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
+                                      choices = unique(clean_trout$channel_type),
+                                      options = pickerOptions(actionsBox = TRUE),
+                                      selected = c("cascade", "pool"),
+                                      multiple = TRUE), # END channel type pickerInput
+                          
+                          # # section checkboxGroupInput ----
+                          checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section:",
+                                               choices = c("clear cut forest", "old growth forest"),
+                                               selected = c("clear cut forest", "old growth forest"),
+                                               individual = FALSE, justified = TRUE, size = "sm",
+                                               checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon"))), # END section checkboxGroupInput
+                          
+                        ), # END trout plot sidebarPanel
+                        
+                        # trout plot mainPanel ----
+                        mainPanel(
+                          
+                          plotOutput(outputId = "trout_scatterplot") 
+                          
+                        ) # END trout plot mainPanel
+                        
+                      ) # END trout plot sidebarLayout
+                      
+             ), # END trout tabPanel 
+             
+             # penguin tabPanel ----
+             tabPanel(title = "Penguins",
+                      
+                      # penguin plot sidebarLayout ----
+                      sidebarLayout(
+                        
+                        # penguin plot sidebarPanel ----
+                        sidebarPanel(
+                          
+                          # island pickerInput ----
+                          pickerInput(inputId = "penguin_island", label = "Select an island:",
+                                      choices = c("Torgersen", "Dream", "Biscoe"),
+                                      options = pickerOptions(actionsBox = TRUE),
+                                      selected = c("Torgersen", "Dream", "Biscoe"),
+                                      multiple = T), # END island pickerInput
+                          
+                          # bin number sliderInput ----
+                          sliderInput(inputId = "bin_num", label = "Select number of bins:",
+                                      value = 25, max = 100, min = 1), # END bin number sliderInput
+                          
+                        ), # END penguin plot sidebarPanel
+                        
+                        # penguin plot mainPanel ----
+                        mainPanel(
+                          
+                          plotOutput(outputId = "flipperLength_histogram") 
+                          
+                        ) # END penguin plot mainPanel
+                        
+                      ) # END penguin plot sidebarLayout
+                      
+             ) # END penguin tabPanel
+             
+           ) # END tabsetPanel
+           
+  ) # END (Page 2) data viz tabPanel
+  
+) # END navbarPage
+```
+
+---
+
+##  {#includeMarkdown data-menu-title="includeMarkdown()"}
+
+<div class="slide-title-smaller">Instead, use `includeMarkdown()` to read in text from separate `.md` files</div>
+
+<p class="small-text">To maintain readability and an overall tidier-looking UI, you can write and style long bodies of text in separate markdown (`.md`) files that you then read into your UI using the `includeMarkdown()` function (**Important:** the `includeMarkdown()` function requires the `{markdown}` package -- be sure to add `library(markdown)` to your `global.R` file!).</p>
+
+<p class="small-text">I recommend saving those `.md` files in a subdirectory named `/text` within your app's directory (e.g. `~/two-file-app/text/mytext.md`). See how I simplified my UI by saving my long landing page text to two new files, `about.md` and `footer.md`, then imported them into my UI using `includeMarkdown()`.</p>
+
+::: {.panel-tabset}
+
+## `ui.R`
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "8-21"
+ui <- navbarPage(
+  
+  title = "LTER Animal Data Explorer",
+  
+  # (Page 1) intro tabPanel ----
+  tabPanel(title = "About this App",
+           
+           # intro text fluidRow ----
+           fluidRow(
+             
+             # use columns to create white space on sides
+             column(1),
+             column(10, includeMarkdown("text/about.md")),
+             column(1),
+             
+           ), # END intro text fluidRow
+           
+           hr(), # creates light gray horizontal line
+           
+           # footer text ----
+           includeMarkdown("text/footer.md")
+           
+  ), # END (Page 1) intro tabPanel
+  
+  # (Page 2) data viz tabPanel ----
+  tabPanel(title = "Explore the Data",
+           
+           # tabsetPanel to contain tabs for data viz ----
+           tabsetPanel(
+             
+             # trout tabPanel ----
+             tabPanel(title = "Trout",
+                      
+                      # trout plot sidebarLayout ----
+                      sidebarLayout(
+                        
+                        # trout plot sidebarPanel ----
+                        sidebarPanel(
+                          
+                          # channel type pickerInput ----
+                          pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
+                                      choices = unique(clean_trout$channel_type),
+                                      options = pickerOptions(actionsBox = TRUE),
+                                      selected = c("cascade", "pool"),
+                                      multiple = TRUE), # END channel type pickerInput
+                          
+                          # # section checkboxGroupInput ----
+                          checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section:",
+                                               choices = c("clear cut forest", "old growth forest"),
+                                               selected = c("clear cut forest", "old growth forest"),
+                                               individual = FALSE, justified = TRUE, size = "sm",
+                                               checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon"))), # END section checkboxGroupInput
+                          
+                        ), # END trout plot sidebarPanel
+                        
+                        # trout plot mainPanel ----
+                        mainPanel(
+                          
+                          plotOutput(outputId = "trout_scatterplot") 
+                          
+                        ) # END trout plot mainPanel
+                        
+                      ) # END trout plot sidebarLayout
+                      
+             ), # END trout tabPanel
+             
+             # penguin tabPanel ----
+             tabPanel(title = "Penguins",
+                      
+                      # penguin plot sidebarLayout ----
+                      sidebarLayout(
+                        
+                        # penguin plot sidebarPanel ----
+                        sidebarPanel(
+                          
+                          # island pickerInput ----
+                          pickerInput(inputId = "penguin_island", label = "Select an island:",
+                                      choices = c("Torgersen", "Dream", "Biscoe"),
+                                      options = pickerOptions(actionsBox = TRUE),
+                                      selected = c("Torgersen", "Dream", "Biscoe"),
+                                      multiple = T), # END island pickerInput
+                          
+                          # bin number sliderInput ----
+                          sliderInput(inputId = "bin_num_input", label = "Select number of bins:",
+                                      value = 25, max = 100, min = 1), # END bin number sliderInput
+                          
+                        ), # END penguin plot sidebarPanel
+                        
+                        # penguin plot mainPanel ----
+                        mainPanel(
+                          
+                          plotOutput(outputId = "flipperLength_histogram")
+                          
+                        ) # END penguin plot mainPanel
+                        
+                      ) # END penguin plot sidebarLayout
+                      
+             ) # END penguin tabPanel
+             
+           ) # END tabsetPanel
+           
+  ) # END (Page 2) data viz tabPanel
+  
+) # END navbarPage
+```
+
+## `text/about.md`
+```{markdown}
+#| eval: false
+#| echo: true
+## Welcome to the LTER Animal Data Explorer!
+
+<br>
+
+#### Why did we build this app?
+
+This shiny app was built, in part, to provide users a way of exploring morphological characteristics of the different animal species found within NSF's [Long Term Ecological Research (LTER)](https://lternet.edu/) sites...but primarily, it was built as a teaching tool for [EDS 430 (Intro to Shiny)](https://bren.ucsb.edu/courses/eds-430) -- this workshop, taught through the [Master of Environmental Data Science (MEDS) program](https://ucsb-meds.github.io/) at the [Bren School of Environmental Science and Management](https://bren.ucsb.edu/), is a two-day coding-intensive course meant to meant to provide a introductory foundation in shiny app development.
+
+<br>
+
+#### Where's the data? 
+
+Check out the **Explore the Data** page to find interactive data visualizations looking at Cutthroat trout of the [Andrews Forest LTER](https://andrewsforest.oregonstate.edu/) and Adelie, Gentoo & Chinstrap penguins of the [Palmer Station LTER](https://pallter.marine.rutgers.edu/).
+```
+
+## `text/footer.md`
+```{markdown}
+#| eval: false
+#| echo: true
+*This app is maintained by [Samantha Csik](https://samanthacsik.github.io/) and is updated as needed for teaching purposes. Please report any issues [here](https://github.com/samanthacsik/EDS430-shiny-app/issues). Source code can be found on [GitHub](https://github.com/samanthacsik/EDS430-shiny-app).*
+```
+
+:::
+
+---
+
+##  {#last-run data-menu-title="Check out your full app!"}
+
+<div class="slide-title-smaller">Run your app one more time to admire your beautiful creation!</div>
+
+<center><img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750"/></center>
+
+<p class="smaller-text">Again, we have some UX/UI quirks to fix (most notably, blank plots when all widget options are deselected), which we'll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!</p>
+
+---
+
+##  {#app2-code data-menu-title="App #2 code (so far)"}
+
+<div class="slide-title-smaller">Code recap for app #2v1, so far:</div>
+
+<p class="small-text">Additionally, you should have a `/text` folder within your app's directory (`/two-file-app`, if you named it as I did) that contains two markdown files, `about.md` and `footer.md`.</p>
+
+::: {.panel-tabset}
+
+## `global.R`
+```{r}
+#| eval: false
+#| echo: true
+# LOAD LIBRARIES ----
+library(shiny)
+library(lterdatasampler)
+library(palmerpenguins)
+library(tidyverse)
+library(shinyWidgets)
+library(markdown)
+
+# DATA WRANGLING ----
+clean_trout <- and_vertebrates |>
+  filter(species == c("Cutthroat trout")) |>
+  select(sampledate, section, species, length_mm = length_1_mm, weight_g, channel_type = unittype) |> 
+  mutate(channel_type = case_when(
+    channel_type == "C" ~ "cascade",
+    channel_type == "I" ~ "riffle",
+    channel_type =="IP" ~ "isolated pool",
+    channel_type =="P" ~ "pool",
+    channel_type =="R" ~ "rapid",
+    channel_type =="S" ~ "step (small falls)",
+    channel_type =="SC" ~ "side channel"
+  )) |> 
+  mutate(section = case_when(
+    section == "CC" ~ "clear cut forest",
+    section == "OG" ~ "old growth forest"
+  )) |> 
+  drop_na()
+
+# GGPLOT THEME ----
+myCustomTheme <- theme_light() +
+  theme(axis.text = element_text(color = "black", size = 12),
+    axis.title = element_text(size = 14, face = "bold"),
+    legend.title = element_text(size = 14, face = "bold"),
+    legend.text = element_text(size = 13),
+    legend.position = "bottom",
+    panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.7))
+```
+
+## `ui.R`
+```{r}
+#| eval: false
+#| echo: true
+ui <- navbarPage(
+  
+  title = "LTER Animal Data Explorer",
+  
+  # (Page 1) intro tabPanel ----
+  tabPanel(title = "About this App",
+           
+           # intro text fluidRow ----
+           fluidRow(
+             
+             # use columns to create white space on sides
+             column(1),
+             column(10, includeMarkdown("text/about.md")),
+             column(1),
+             
+           ), # END intro text fluidRow
+           
+           hr(), # creates light gray horizontal line
+           
+           # footer text ----
+           includeMarkdown("text/footer.md")
+           
+  ), # END (Page 1) intro tabPanel
+  
+  # (Page 2) data viz tabPanel ----
+  tabPanel(title = "Explore the Data",
+           
+           # tabsetPanel to contain tabs for data viz ----
+           tabsetPanel(
+             
+             # trout tabPanel ----
+             tabPanel(title = "Trout",
+                      
+                      # trout plot sidebarLayout ----
+                      sidebarLayout(
+                        
+                        # trout plot sidebarPanel ----
+                        sidebarPanel(
+                          
+                          # channel type pickerInput ----
+                          pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
+                                      choices = unique(clean_trout$channel_type),
+                                      options = pickerOptions(actionsBox = TRUE),
+                                      selected = c("cascade", "pool"),
+                                      multiple = TRUE), # END channel type pickerInput
+                          
+                          # # section checkboxGroupInput ----
+                          checkboxGroupButtons(inputId = "section_input", label = "Select a sampling section(s):",
+                                               choices = c("clear cut forest", "old growth forest"),
+                                               selected = c("clear cut forest", "old growth forest"),
+                                               individual = FALSE, justified = TRUE, size = "sm",
+                                               checkIcon = list(yes = icon("ok", lib = "glyphicon"), no = icon("remove", lib = "glyphicon"))), # END section checkboxGroupInput
+                          
+                        ), # END trout plot sidebarPanel
+                        
+                        # trout plot mainPanel ----
+                        mainPanel(
+                          
+                          plotOutput(outputId = "trout_scatterplot") 
+                          
+                        ) # END trout plot mainPanel
+                        
+                      ) # END trout plot sidebarLayout
+                      
+             ), # END trout tabPanel 
+             
+             # penguin tabPanel ----
+             tabPanel(title = "Penguins",
+                      
+                      # penguin plot sidebarLayout ----
+                      sidebarLayout(
+                        
+                        # penguin plot sidebarPanel ----
+                        sidebarPanel(
+                          
+                          # island pickerInput ----
+                          pickerInput(inputId = "penguin_island", label = "Select an island(s):",
+                                      choices = c("Torgersen", "Dream", "Biscoe"),
+                                      options = pickerOptions(actionsBox = TRUE),
+                                      selected = c("Torgersen", "Dream", "Biscoe"),
+                                      multiple = T), # END island pickerInput
+                          
+                          # bin number sliderInput ----
+                          sliderInput(inputId = "bin_num_input", label = "Select number of bins:",
+                                      value = 25, max = 100, min = 1), # END bin number sliderInput
+                          
+                        ), # END penguin plot sidebarPanel
+                        
+                        # penguin plot mainPanel ----
+                        mainPanel(
+                          
+                          plotOutput(outputId = "flipperLength_histogram") 
+                          
+                        ) # END penguin plot mainPanel
+                        
+                      ) # END penguin plot sidebarLayout
+                      
+             ) # END penguin tabPanel
+             
+           ) # END tabsetPanel
+           
+  ) # END (Page 2) data viz tabPanel
+  
+) # END navbarPage
+```
+
+## `server.R`
+```{r}
+#| eval: false
+#| echo: true
+server <- function(input, output) {
+  
+  # filter for channel types ----
+  trout_filtered_df <- reactive({
+
+      clean_trout |>
+        filter(channel_type %in% c(input$channel_type_input)) |>
+        filter(section %in% c(input$section_input))
+        
+    })
+
+  # trout scatterplot ----
+  output$trout_scatterplot <- renderPlot({
+
+    ggplot(trout_filtered_df(), aes(x = length_mm, y = weight_g, color = channel_type, shape = channel_type)) +
+      geom_point(alpha = 0.7, size = 5) +
+      scale_color_manual(values = c("cascade" = "#2E2585", "riffle" = "#337538", "isolated pool" = "#DCCD7D",
+                                    "pool" = "#5DA899", "rapid" = "#C16A77", "step (small falls)" = "#9F4A96",
+                                    "side channel" = "#94CBEC")) +
+      scale_shape_manual(values = c("cascade" = 15, "riffle" = 17, "isolated pool" = 19,
+                                    "pool" = 18, "rapid" = 8, "step (small falls)" = 23,
+                                    "side channel" = 25)) +
+      labs(x = "Trout Length (mm)", y = "Trout Weight (g)", color = "Channel Type", shape = "Channel Type") +
+      myCustomTheme
+
+  })
+  
+  # filter for island ----
+  island_df <- reactive({
+
+    penguins |> 
+      filter(island %in% input$penguin_island)
+
+  })
+
+  # render the flipper length histogram ----
+  output$flipperLength_histogram <- renderPlot({
+
+    ggplot(na.omit(island_df()), aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram(alpha = 0.6, bins = input$bin_num_input) +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species") +
+      myCustomTheme
+    
+  })
+  
+} # END server
+```
+:::

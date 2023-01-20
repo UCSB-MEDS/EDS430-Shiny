@@ -1911,7 +1911,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0bc547cc" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_836ad15c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2057,17 +2057,17 @@ Here’s what I’ve done in my <code>~R/practice_script_app2_lter.R</code> file
 <span id="cb27-4"><a href="#cb27-4"></a></span>
 <span id="cb27-5"><a href="#cb27-5"></a><span class="co">#............custom ggplot theme (apply to both plots)...........</span></span>
 <span id="cb27-6"><a href="#cb27-6"></a>myCustomTheme <span class="ot">&lt;-</span> <span class="fu">theme_light</span>() <span class="sc">+</span></span>
-<span id="cb27-7"><a href="#cb27-7"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb27-7"><a href="#cb27-7"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
 <span id="cb27-8"><a href="#cb27-8"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb27-9"><a href="#cb27-9"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb27-10"><a href="#cb27-10"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
 <span id="cb27-11"><a href="#cb27-11"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb27-12"><a href="#cb27-12"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span>
+<span id="cb27-12"><a href="#cb27-12"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">linewidth =</span> <span class="fl">0.7</span>))</span>
 <span id="cb27-13"><a href="#cb27-13"></a></span>
 <span id="cb27-14"><a href="#cb27-14"></a><span class="co">#.......................wrangle trout data.......................</span></span>
 <span id="cb27-15"><a href="#cb27-15"></a>clean_trout <span class="ot">&lt;-</span> and_vertebrates <span class="sc">|&gt;</span></span>
-<span id="cb27-16"><a href="#cb27-16"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"Cutthroat trout"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb27-17"><a href="#cb27-17"></a>  <span class="fu">select</span>(year, sampledate, section, reach, species, <span class="at">length_mm =</span> length_1_mm, weight_g, <span class="at">channel_type =</span> unittype) <span class="sc">|&gt;</span> </span>
+<span id="cb27-16"><a href="#cb27-16"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb27-17"><a href="#cb27-17"></a>  <span class="fu">select</span>(sampledate, section, species, <span class="at">length_mm =</span> length_1_mm, weight_g, <span class="at">channel_type =</span> unittype) <span class="sc">|&gt;</span> </span>
 <span id="cb27-18"><a href="#cb27-18"></a>  <span class="fu">mutate</span>(<span class="at">channel_type =</span> <span class="fu">case_when</span>(</span>
 <span id="cb27-19"><a href="#cb27-19"></a>    channel_type <span class="sc">==</span> <span class="st">"C"</span> <span class="sc">~</span> <span class="st">"cascade"</span>,</span>
 <span id="cb27-20"><a href="#cb27-20"></a>    channel_type <span class="sc">==</span> <span class="st">"I"</span> <span class="sc">~</span> <span class="st">"riffle"</span>,</span>
@@ -2154,46 +2154,40 @@ We’ll use the <code>penguins</code> data set from <a href="https://allisonhors
 <div class="slide-title-smaller">
 A <code>global.R</code> file can help you keep code organized
 </div>
-<p class="small-text bottombr">
+<p class="body-text bottombr">
 While not a requirement of a shiny app, a <code>global.R</code> file will help reduce redundant code, increase your app’s speed, and help keep code more clearly organized. It works by running once when your app is first launched, making any logic, objects, etc. contained in it available to both the <code>ui.R</code> and <code>server.R</code> files (or, in the case of a single-file shiny app, the <code>app.R</code> file). It’s a great place for things like:
 </p>
 <div class="fragment">
-<p class="smaller-text">
+<p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> loading packages
 </p>
-<p class="smaller-text">
+<p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> importing data
 </p>
-<p class="smaller-text">
+<p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> sourcing scripts (particularly functions – we’ll talk more about functions later)
 </p>
-<p class="smaller-text">
+<p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> data wrangling (though you’ll want to do any major data cleaning before bringing your data into your app)
 </p>
-<p class="smaller-text">
+<p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> building custom <code>ggplot</code> themes
 </p>
-<p class="smaller-text">
+<p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
 <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> etc.
 </p>
+<p><br></p>
 </div>
 <div class="fragment">
-<p class="small-text topbr bottombr">
-<code>global.R</code> <em>must</em> be saved to the same directory as your <code>ui.R</code> and <code>server.R</code> files.
+<p class="body-text topbr bottombr">
+<strong>Reminder:</strong> <code>global.R</code> <em>must</em> be saved to the same directory as your <code>ui.R</code> and <code>server.R</code> files.
 </p>
-</div>
-<div class="fragment">
-<center>
-<p class="medium-body-text">
-<strong>Exercise:</strong> Create a <code>global.R</code> file inside your <code>/two-file-app</code> directory and load the <a href="https://shiny.rstudio.com/">shiny</a> package at the top – we’ll continue to add to this file as we work on our app.
-</p>
-</center>
 </div>
 </section><section id="unstructured-app1" class="slide level2" data-menu-title="Unstructured first app"><h2></h2>
 <div class="slide-title-smaller">
@@ -2419,7 +2413,7 @@ First, let’s build a UI that has a navigation bar with two tabs – one for ba
 <span id="cb34-14"><a href="#cb34-14"></a>           </span>
 <span id="cb34-15"><a href="#cb34-15"></a>           <span class="st">"reactive plots will go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
 <span id="cb34-16"><a href="#cb34-16"></a>           </span>
-<span id="cb34-17"><a href="#cb34-17"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabPanel</span></span>
+<span id="cb34-17"><a href="#cb34-17"></a>  ) <span class="co"># </span><span class="re">END</span><span class="co"> (Page 2) data viz tabsetPanel</span></span>
 <span id="cb34-18"><a href="#cb34-18"></a>  </span>
 <span id="cb34-19"><a href="#cb34-19"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -2496,24 +2490,24 @@ We’ll eventually place our input in the sidebar and output in the main panel.
 <span id="cb36-18"><a href="#cb36-18"></a>             <span class="co"># trout tabPanel ----</span></span>
 <span id="cb36-19"><a href="#cb36-19"></a>             <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
 <span id="cb36-20"><a href="#cb36-20"></a>                      </span>
-<span id="cb36-21"><a href="#cb36-21"></a>                      <span class="co"># trout plot sidebarLayout ----</span></span>
+<span id="cb36-21"><a href="#cb36-21"></a>                      <span class="co"># trout sidebarLayout ----</span></span>
 <span id="cb36-22"><a href="#cb36-22"></a>                      <span class="fu">sidebarLayout</span>(</span>
 <span id="cb36-23"><a href="#cb36-23"></a>                        </span>
-<span id="cb36-24"><a href="#cb36-24"></a>                        <span class="co"># trout plot sidebarPanel ----</span></span>
+<span id="cb36-24"><a href="#cb36-24"></a>                        <span class="co"># trout sidebarPanel ----</span></span>
 <span id="cb36-25"><a href="#cb36-25"></a>                        <span class="fu">sidebarPanel</span>(</span>
 <span id="cb36-26"><a href="#cb36-26"></a>                          </span>
 <span id="cb36-27"><a href="#cb36-27"></a>                          <span class="st">"trout plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
 <span id="cb36-28"><a href="#cb36-28"></a>                          </span>
-<span id="cb36-29"><a href="#cb36-29"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarPanel</span></span>
+<span id="cb36-29"><a href="#cb36-29"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> trout sidebarPanel</span></span>
 <span id="cb36-30"><a href="#cb36-30"></a>                        </span>
-<span id="cb36-31"><a href="#cb36-31"></a>                        <span class="co"># trout plot mainPanel ----</span></span>
+<span id="cb36-31"><a href="#cb36-31"></a>                        <span class="co"># trout mainPanel ----</span></span>
 <span id="cb36-32"><a href="#cb36-32"></a>                        <span class="fu">mainPanel</span>(</span>
 <span id="cb36-33"><a href="#cb36-33"></a>                          </span>
 <span id="cb36-34"><a href="#cb36-34"></a>                          <span class="st">"trout plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
 <span id="cb36-35"><a href="#cb36-35"></a>                          </span>
-<span id="cb36-36"><a href="#cb36-36"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
+<span id="cb36-36"><a href="#cb36-36"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> trout mainPanel</span></span>
 <span id="cb36-37"><a href="#cb36-37"></a>                        </span>
-<span id="cb36-38"><a href="#cb36-38"></a>                      ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarLayout</span></span>
+<span id="cb36-38"><a href="#cb36-38"></a>                      ) <span class="co"># </span><span class="re">END</span><span class="co"> trout sidebarLayout</span></span>
 <span id="cb36-39"><a href="#cb36-39"></a>                      </span>
 <span id="cb36-40"><a href="#cb36-40"></a>             ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
 <span id="cb36-41"><a href="#cb36-41"></a>             </span>
@@ -2580,48 +2574,48 @@ See next slide for a solution!
 <span id="cb37-18"><a href="#cb37-18"></a>             <span class="co"># trout tabPanel ----</span></span>
 <span id="cb37-19"><a href="#cb37-19"></a>             <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Trout"</span>,</span>
 <span id="cb37-20"><a href="#cb37-20"></a>                      </span>
-<span id="cb37-21"><a href="#cb37-21"></a>                      <span class="co"># trout plot sidebarLayout ----</span></span>
+<span id="cb37-21"><a href="#cb37-21"></a>                      <span class="co"># trout sidebarLayout ----</span></span>
 <span id="cb37-22"><a href="#cb37-22"></a>                      <span class="fu">sidebarLayout</span>(</span>
 <span id="cb37-23"><a href="#cb37-23"></a>                        </span>
-<span id="cb37-24"><a href="#cb37-24"></a>                        <span class="co"># trout plot sidebarPanel ----</span></span>
+<span id="cb37-24"><a href="#cb37-24"></a>                        <span class="co"># trout sidebarPanel ----</span></span>
 <span id="cb37-25"><a href="#cb37-25"></a>                        <span class="fu">sidebarPanel</span>(</span>
 <span id="cb37-26"><a href="#cb37-26"></a>                          </span>
 <span id="cb37-27"><a href="#cb37-27"></a>                          <span class="st">"trout plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
 <span id="cb37-28"><a href="#cb37-28"></a>                          </span>
-<span id="cb37-29"><a href="#cb37-29"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarPanel</span></span>
+<span id="cb37-29"><a href="#cb37-29"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> trout sidebarPanel</span></span>
 <span id="cb37-30"><a href="#cb37-30"></a>                        </span>
-<span id="cb37-31"><a href="#cb37-31"></a>                        <span class="co"># trout plot mainPanel ----</span></span>
+<span id="cb37-31"><a href="#cb37-31"></a>                        <span class="co"># trout mainPanel ----</span></span>
 <span id="cb37-32"><a href="#cb37-32"></a>                        <span class="fu">mainPanel</span>(</span>
 <span id="cb37-33"><a href="#cb37-33"></a>                          </span>
 <span id="cb37-34"><a href="#cb37-34"></a>                          <span class="st">"trout plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
 <span id="cb37-35"><a href="#cb37-35"></a>                          </span>
-<span id="cb37-36"><a href="#cb37-36"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
+<span id="cb37-36"><a href="#cb37-36"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> trout mainPanel</span></span>
 <span id="cb37-37"><a href="#cb37-37"></a>                        </span>
-<span id="cb37-38"><a href="#cb37-38"></a>                      ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarLayout</span></span>
+<span id="cb37-38"><a href="#cb37-38"></a>                      ) <span class="co"># </span><span class="re">END</span><span class="co"> trout sidebarLayout</span></span>
 <span id="cb37-39"><a href="#cb37-39"></a>                      </span>
 <span id="cb37-40"><a href="#cb37-40"></a>             ), <span class="co"># </span><span class="re">END</span><span class="co"> trout tabPanel </span></span>
 <span id="cb37-41"><a href="#cb37-41"></a>             </span>
 <span id="cb37-42"><a href="#cb37-42"></a>             <span class="co"># penguin tabPanel ----</span></span>
 <span id="cb37-43"><a href="#cb37-43"></a>             <span class="fu">tabPanel</span>(<span class="at">title =</span> <span class="st">"Penguins"</span>,</span>
 <span id="cb37-44"><a href="#cb37-44"></a>                      </span>
-<span id="cb37-45"><a href="#cb37-45"></a>                      <span class="co"># penguin plot sidebarLayout ----</span></span>
+<span id="cb37-45"><a href="#cb37-45"></a>                      <span class="co"># penguin sidebarLayout ----</span></span>
 <span id="cb37-46"><a href="#cb37-46"></a>                      <span class="fu">sidebarLayout</span>(</span>
 <span id="cb37-47"><a href="#cb37-47"></a>                        </span>
-<span id="cb37-48"><a href="#cb37-48"></a>                        <span class="co"># penguin plot sidebarPanel ----</span></span>
+<span id="cb37-48"><a href="#cb37-48"></a>                        <span class="co"># penguin sidebarPanel ----</span></span>
 <span id="cb37-49"><a href="#cb37-49"></a>                        <span class="fu">sidebarPanel</span>(</span>
 <span id="cb37-50"><a href="#cb37-50"></a>                          </span>
 <span id="cb37-51"><a href="#cb37-51"></a>                          <span class="st">"penguin plot input(s) go here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
 <span id="cb37-52"><a href="#cb37-52"></a>                          </span>
-<span id="cb37-53"><a href="#cb37-53"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarPanel</span></span>
+<span id="cb37-53"><a href="#cb37-53"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> penguin sidebarPanel</span></span>
 <span id="cb37-54"><a href="#cb37-54"></a>                        </span>
-<span id="cb37-55"><a href="#cb37-55"></a>                        <span class="co"># penguin plot mainPanel ----</span></span>
+<span id="cb37-55"><a href="#cb37-55"></a>                        <span class="co"># penguin mainPanel ----</span></span>
 <span id="cb37-56"><a href="#cb37-56"></a>                        <span class="fu">mainPanel</span>(</span>
 <span id="cb37-57"><a href="#cb37-57"></a>                          </span>
 <span id="cb37-58"><a href="#cb37-58"></a>                          <span class="st">"penguin plot output goes here"</span> <span class="co"># REPLACE THIS WITH CONTENT</span></span>
 <span id="cb37-59"><a href="#cb37-59"></a>                          </span>
-<span id="cb37-60"><a href="#cb37-60"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot mainPanel</span></span>
+<span id="cb37-60"><a href="#cb37-60"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin mainPanel</span></span>
 <span id="cb37-61"><a href="#cb37-61"></a>                        </span>
-<span id="cb37-62"><a href="#cb37-62"></a>                      ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarLayout</span></span>
+<span id="cb37-62"><a href="#cb37-62"></a>                      ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin sidebarLayout</span></span>
 <span id="cb37-63"><a href="#cb37-63"></a>                      </span>
 <span id="cb37-64"><a href="#cb37-64"></a>             ) <span class="co"># </span><span class="re">END</span><span class="co"> penguin tabPanel</span></span>
 <span id="cb37-65"><a href="#cb37-65"></a>             </span>
@@ -2644,7 +2638,7 @@ Some important things to remember when building your UI’s layout:
 <div class="fragment">
 <p class="body-text topbr">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> keeping <strong>clean code is important</strong> – we haven’t even any added any content yet and our UI is already 75 lines of code!
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> keeping <strong>clean code is important</strong> – we haven’t even any added any content yet and our UI is already &gt;70 lines of code!
 </p>
 </div>
 <div class="fragment">
@@ -2670,7 +2664,7 @@ Some important things to remember when building your UI’s layout:
 Add data viz: First up, trout
 </p>
 <p class="small-text bottombr">
-We’ll be using the <a href="https://lter.github.io/lterdatasampler/reference/and_vertebrates.html"><code>and_vertebrates</code> dataset</a> from the <a href="https://lter.github.io/lterdatasampler/"><code>{lterdatasampler}</code> package</a> to create our first reactive plot. These data contain coastal cutthroat trout (<em>Oncorhynchus clarkii clarkii</em>) lengths and weights collected in Mack Creek, <a href="https://andrewsforest.oregonstate.edu/">Andrews Forest LTER</a>. Original data can be found on the <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">EDI Data Portal</a>.
+We’ll be using the <a href="https://lter.github.io/lterdatasampler/reference/and_vertebrates.html"><code>and_vertebrates</code> dataset</a> from the <a href="https://lter.github.io/lterdatasampler/"><code>{lterdatasampler}</code> package</a> to create our first reactive plot. These data contain coastal cutthroat trout (<em>Oncorhynchus clarkii clarkii</em>) lengths and weights collected in Mack Creek, <a href="https://andrewsforest.oregonstate.edu/">Andrews Forest LTER</a>. Original data can be found on the <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">EDI Data Portal</a>. Refer back to <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots">this slide</a> to revisit our practice data wrangling &amp; visualization script.
 </p>
 <p><br></p>
 <center>
@@ -2703,6 +2697,9 @@ Add packages &amp; wrangle data in <code>global.R</code>
 <p class="small-text">
 We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g.&nbsp;.csv), we would do that here too. Our new data object <code>clean_trout</code>, will now be available for us to call directly in our server.
 </p>
+<p class="small-text">
+We can easily copy our wrangling code over from our <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots">practice script</a>.
+</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39" data-code-line-numbers="6-23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="fu">library</span>(shiny)</span>
@@ -2711,7 +2708,7 @@ We can also do the bulk of our data wrangling here, rather than in the server (t
 <span id="cb39-5"><a href="#cb39-5"></a></span>
 <span id="cb39-6"><a href="#cb39-6"></a><span class="co"># DATA WRANGLING ----</span></span>
 <span id="cb39-7"><a href="#cb39-7"></a>clean_trout <span class="ot">&lt;-</span> and_vertebrates <span class="sc">|&gt;</span></span>
-<span id="cb39-8"><a href="#cb39-8"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"Cutthroat trout"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb39-8"><a href="#cb39-8"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb39-9"><a href="#cb39-9"></a>  <span class="fu">select</span>(sampledate, section, species, <span class="at">length_mm =</span> length_1_mm, weight_g, <span class="at">channel_type =</span> unittype) <span class="sc">|&gt;</span> </span>
 <span id="cb39-10"><a href="#cb39-10"></a>  <span class="fu">mutate</span>(<span class="at">channel_type =</span> <span class="fu">case_when</span>(</span>
 <span id="cb39-11"><a href="#cb39-11"></a>    channel_type <span class="sc">==</span> <span class="st">"C"</span> <span class="sc">~</span> <span class="st">"cascade"</span>,</span>
@@ -2733,7 +2730,7 @@ We can also do the bulk of our data wrangling here, rather than in the server (t
 Add a <code>pickerInput</code> for selecting <code>channel_type</code> to your UI
 </div>
 <p class="small-text">
-The <code>channel_type</code> variable (originally called <code>unittype</code> – we updated the name when wrangling data (see line 9 on <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/wrangle-data-global">previous slide</a>)) represents the type of water body (<em>cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel</em>) data were collected in. We’ll start by building a <code><a href="https://rdrr.io/pkg/shinyWidgets/man/pickerInput.html">shinyWidgets::pickerInput()</a></code> to allow users to filter data based on <code>channel_type</code>.
+The <code>channel_type</code> variable (originally called <code>unittype</code> – we updated the name when wrangling data (see line 9 on <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/wrangle-data-global">previous slide</a>)) represents the type of water body (<em>cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel</em>) data were collected in. We’ll start by building a <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput()</a></code> to allow users to filter data based on <code>channel_type</code>.
 </p>
 <div class="fragment">
 <p class="small-text topbr">
@@ -2752,7 +2749,7 @@ Save and run your app – a functional <code>pickerInput</code> should now appea
 </p>
 <p><br></p>
 <p class="smaller-text gray-text topbr">
-A <code><a href="https://rdrr.io/pkg/shinyWidgets/man/pickerInput.html">shinyWidgets::pickerInput()</a></code> is functionally equivalent to <code><a href="https://shiny.rstudio.com/reference/shiny/latest/checkboxGroupInput.html">shiny::checkboxGroupInput()</a></code>, though it allows for greater customization and looks (in my opinion) a bit nicer.
+A <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput()</a></code> is functionally equivalent to <code><a href="https://shiny.rstudio.com/reference/shiny/latest/selectInput.html">shiny::selectInput()</a></code>, though it allows for greater customization and looks (in my opinion) a bit nicer.
 </p>
 </div>
 </section><section id="trout-output" class="slide level2" data-menu-title="Add Trout output"><h2></h2>
@@ -2788,7 +2785,7 @@ Tell the server how to assemble <code>pickerInput</code> values into your <code>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42" data-code-line-numbers="3-25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb42-2"><a href="#cb42-2"></a>  </span>
-<span id="cb42-3"><a href="#cb42-3"></a>  <span class="co"># filter for channel types ----</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a>  <span class="co"># filter trout data ----</span></span>
 <span id="cb42-4"><a href="#cb42-4"></a>  trout_filtered_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb42-5"><a href="#cb42-5"></a>    </span>
 <span id="cb42-6"><a href="#cb42-6"></a>    clean_trout <span class="sc">|&gt;</span></span>
@@ -2905,8 +2902,8 @@ Be sure to add the widget to the same <code>sidebarPanel</code> as our <code>pic
 <span id="cb44-8"><a href="#cb44-8"></a>              <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"cascade"</span>, <span class="st">"pool"</span>),</span>
 <span id="cb44-9"><a href="#cb44-9"></a>              <span class="at">multiple =</span> <span class="cn">TRUE</span>), <span class="co"># </span><span class="re">END</span><span class="co"> channel type pickerInput</span></span>
 <span id="cb44-10"><a href="#cb44-10"></a></span>
-<span id="cb44-11"><a href="#cb44-11"></a>  <span class="co"># section checkboxGroupInput ----</span></span>
-<span id="cb44-12"><a href="#cb44-12"></a>  <span class="fu">checkboxGroupButtons</span>(<span class="at">inputId =</span> <span class="st">"section_input"</span>, <span class="at">label =</span> <span class="st">"Select a sampling section:"</span>,</span>
+<span id="cb44-11"><a href="#cb44-11"></a>  <span class="co"># section checkboxGroupButtons ----</span></span>
+<span id="cb44-12"><a href="#cb44-12"></a>  <span class="fu">checkboxGroupButtons</span>(<span class="at">inputId =</span> <span class="st">"section_input"</span>, <span class="at">label =</span> <span class="st">"Select a sampling section(s):"</span>,</span>
 <span id="cb44-13"><a href="#cb44-13"></a>                       <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"clear cut forest"</span>, <span class="st">"old growth forest"</span>),</span>
 <span id="cb44-14"><a href="#cb44-14"></a>                       <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"clear cut forest"</span>, <span class="st">"old growth forest"</span>),</span>
 <span id="cb44-15"><a href="#cb44-15"></a>                       <span class="at">individual =</span> <span class="cn">FALSE</span>, <span class="at">justified =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="st">"sm"</span>,</span>
@@ -2922,7 +2919,7 @@ Update your reactive df to <em>also</em> filter based on the new <code>checkboxG
 Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> – our data frame needs to be updated based on both the <code>pickerInput</code>, which selects for <code>channel_type</code>, <em>and</em> the <code>checkboxGrouptInput</code>, which selects for forest <code>section</code>:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># filter for channel types ----</span></span>
+<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># filter trout data ----</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>trout_filtered_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb45-3"><a href="#cb45-3"></a></span>
 <span id="cb45-4"><a href="#cb45-4"></a>    clean_trout <span class="sc">|&gt;</span></span>
@@ -2965,7 +2962,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_1eee5f3e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_93debbb1" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2978,7 +2975,7 @@ Mini Break
 Add data viz: Next up, penguins
 </p>
 <p class="small-text bottombr">
-We’ll be using the <code>penguins</code> dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/"><code>{palmerpenguins}</code> package</a> to create our second reactive plot. These data contain penguin (genus <em>Pygoscelis</em>) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the <a href="https://pallter.marine.rutgers.edu/">Palmer Station LTER</a>. Original data can be found on the EDI Data Portal (<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5">Adélie data</a>, <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5">Gentoo data</a>, and <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6">Chinstrap data</a>).
+We’ll be using the <code>penguins</code> dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/"><code>{palmerpenguins}</code> package</a> to create our second reactive plot. These data contain penguin (genus <em>Pygoscelis</em>) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the <a href="https://pallter.marine.rutgers.edu/">Palmer Station LTER</a>. Original data can be found on the EDI Data Portal (<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5">Adélie data</a>, <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5">Gentoo data</a>, and <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6">Chinstrap data</a>). Refer back to <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots">this slide</a> to revisit our practice data wrangling &amp; visualization script.
 </p>
 <p><br></p>
 <center>
@@ -3004,7 +3001,7 @@ Working alone or in groups, add a reactive histogram of penguin flipper lengths 
 </p>
 <p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a <code><a href="https://rdrr.io/pkg/shinyWidgets/man/pickerInput.html">shinyWidgets::pickerInput</a></code> that allows users to filter data based on <code>island</code>, and that includes buttons to <strong>Select All</strong> / <strong>Deselect All</strong> island options at once
+<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput</a></code> that allows users to filter data based on <code>island</code>, and that includes buttons to <strong>Select All</strong> / <strong>Deselect All</strong> island options at once
 </p>
 <p class="small-text">
 <svg aria-label="angle-right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>angle-right</title>
@@ -3143,7 +3140,7 @@ See next slide for a solution!
 <span id="cb47-30"><a href="#cb47-30"></a>                                      <span class="at">multiple =</span> <span class="cn">TRUE</span>), <span class="co"># </span><span class="re">END</span><span class="co"> channel type pickerInput</span></span>
 <span id="cb47-31"><a href="#cb47-31"></a>                          </span>
 <span id="cb47-32"><a href="#cb47-32"></a>                          <span class="co"># # section checkboxGroupInput ----</span></span>
-<span id="cb47-33"><a href="#cb47-33"></a>                          <span class="fu">checkboxGroupButtons</span>(<span class="at">inputId =</span> <span class="st">"section_input"</span>, <span class="at">label =</span> <span class="st">"Select a sampling section:"</span>,</span>
+<span id="cb47-33"><a href="#cb47-33"></a>                          <span class="fu">checkboxGroupButtons</span>(<span class="at">inputId =</span> <span class="st">"section_input"</span>, <span class="at">label =</span> <span class="st">"Select a sampling section(s):"</span>,</span>
 <span id="cb47-34"><a href="#cb47-34"></a>                                               <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"clear cut forest"</span>, <span class="st">"old growth forest"</span>),</span>
 <span id="cb47-35"><a href="#cb47-35"></a>                                               <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"clear cut forest"</span>, <span class="st">"old growth forest"</span>),</span>
 <span id="cb47-36"><a href="#cb47-36"></a>                                               <span class="at">individual =</span> <span class="cn">FALSE</span>, <span class="at">justified =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="st">"sm"</span>,</span>
@@ -3172,14 +3169,14 @@ See next slide for a solution!
 <span id="cb47-59"><a href="#cb47-59"></a>                        <span class="fu">sidebarPanel</span>(</span>
 <span id="cb47-60"><a href="#cb47-60"></a>                          </span>
 <span id="cb47-61"><a href="#cb47-61"></a>                          <span class="co"># island pickerInput ----</span></span>
-<span id="cb47-62"><a href="#cb47-62"></a>                          <span class="fu">pickerInput</span>(<span class="at">inputId =</span> <span class="st">"penguin_island"</span>, <span class="at">label =</span> <span class="st">"Select an island:"</span>,</span>
+<span id="cb47-62"><a href="#cb47-62"></a>                          <span class="fu">pickerInput</span>(<span class="at">inputId =</span> <span class="st">"penguin_island_input"</span>, <span class="at">label =</span> <span class="st">"Select an island(s):"</span>,</span>
 <span id="cb47-63"><a href="#cb47-63"></a>                                      <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"Torgersen"</span>, <span class="st">"Dream"</span>, <span class="st">"Biscoe"</span>),</span>
 <span id="cb47-64"><a href="#cb47-64"></a>                                      <span class="at">options =</span> <span class="fu">pickerOptions</span>(<span class="at">actionsBox =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb47-65"><a href="#cb47-65"></a>                                      <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"Torgersen"</span>, <span class="st">"Dream"</span>, <span class="st">"Biscoe"</span>),</span>
 <span id="cb47-66"><a href="#cb47-66"></a>                                      <span class="at">multiple =</span> T), <span class="co"># </span><span class="re">END</span><span class="co"> island pickerInput</span></span>
 <span id="cb47-67"><a href="#cb47-67"></a>                          </span>
 <span id="cb47-68"><a href="#cb47-68"></a>                          <span class="co"># bin number sliderInput ----</span></span>
-<span id="cb47-69"><a href="#cb47-69"></a>                          <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bin_num"</span>, <span class="at">label =</span> <span class="st">"Select number of bins:"</span>,</span>
+<span id="cb47-69"><a href="#cb47-69"></a>                          <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bin_num_input"</span>, <span class="at">label =</span> <span class="st">"Select number of bins:"</span>,</span>
 <span id="cb47-70"><a href="#cb47-70"></a>                                      <span class="at">value =</span> <span class="dv">25</span>, <span class="at">max =</span> <span class="dv">100</span>, <span class="at">min =</span> <span class="dv">1</span>), <span class="co"># </span><span class="re">END</span><span class="co"> bin number sliderInput</span></span>
 <span id="cb47-71"><a href="#cb47-71"></a>                          </span>
 <span id="cb47-72"><a href="#cb47-72"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarPanel</span></span>
@@ -3243,7 +3240,7 @@ See next slide for a solution!
 <span id="cb48-37"><a href="#cb48-37"></a>  output<span class="sc">$</span>flipperLength_histogram <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb48-38"><a href="#cb48-38"></a></span>
 <span id="cb48-39"><a href="#cb48-39"></a>    <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">island_df</span>()), <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb48-40"><a href="#cb48-40"></a>      <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> input<span class="sc">$</span>bin_num) <span class="sc">+</span></span>
+<span id="cb48-40"><a href="#cb48-40"></a>      <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> input<span class="sc">$</span>bin_num_input) <span class="sc">+</span></span>
 <span id="cb48-41"><a href="#cb48-41"></a>      <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
 <span id="cb48-42"><a href="#cb48-42"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
 <span id="cb48-43"><a href="#cb48-43"></a>           <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
@@ -3267,7 +3264,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4b621e1a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_5ab43ada" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3501,7 +3498,7 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb50-56"><a href="#cb50-56"></a>                        <span class="co"># trout plot mainPanel ----</span></span>
 <span id="cb50-57"><a href="#cb50-57"></a>                        <span class="fu">mainPanel</span>(</span>
 <span id="cb50-58"><a href="#cb50-58"></a>                          </span>
-<span id="cb50-59"><a href="#cb50-59"></a>                          <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>) <span class="co"># |&gt; withSpinner(color = "#006792", type = 1)</span></span>
+<span id="cb50-59"><a href="#cb50-59"></a>                          <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>) </span>
 <span id="cb50-60"><a href="#cb50-60"></a>                          </span>
 <span id="cb50-61"><a href="#cb50-61"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
 <span id="cb50-62"><a href="#cb50-62"></a>                        </span>
@@ -3526,7 +3523,7 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb50-81"><a href="#cb50-81"></a>                                      <span class="at">multiple =</span> T), <span class="co"># </span><span class="re">END</span><span class="co"> island pickerInput</span></span>
 <span id="cb50-82"><a href="#cb50-82"></a>                          </span>
 <span id="cb50-83"><a href="#cb50-83"></a>                          <span class="co"># bin number sliderInput ----</span></span>
-<span id="cb50-84"><a href="#cb50-84"></a>                          <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bin_num"</span>, <span class="at">label =</span> <span class="st">"Select number of bins:"</span>,</span>
+<span id="cb50-84"><a href="#cb50-84"></a>                          <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bin_num_input"</span>, <span class="at">label =</span> <span class="st">"Select number of bins:"</span>,</span>
 <span id="cb50-85"><a href="#cb50-85"></a>                                      <span class="at">value =</span> <span class="dv">25</span>, <span class="at">max =</span> <span class="dv">100</span>, <span class="at">min =</span> <span class="dv">1</span>), <span class="co"># </span><span class="re">END</span><span class="co"> bin number sliderInput</span></span>
 <span id="cb50-86"><a href="#cb50-86"></a>                          </span>
 <span id="cb50-87"><a href="#cb50-87"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarPanel</span></span>
@@ -3685,7 +3682,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb54-45"><a href="#cb54-45"></a>                                      <span class="at">multiple =</span> <span class="cn">TRUE</span>), <span class="co"># </span><span class="re">END</span><span class="co"> channel type pickerInput</span></span>
 <span id="cb54-46"><a href="#cb54-46"></a>                          </span>
 <span id="cb54-47"><a href="#cb54-47"></a>                          <span class="co"># # section checkboxGroupInput ----</span></span>
-<span id="cb54-48"><a href="#cb54-48"></a>                          <span class="fu">checkboxGroupButtons</span>(<span class="at">inputId =</span> <span class="st">"section_input"</span>, <span class="at">label =</span> <span class="st">"Select a sampling section:"</span>,</span>
+<span id="cb54-48"><a href="#cb54-48"></a>                          <span class="fu">checkboxGroupButtons</span>(<span class="at">inputId =</span> <span class="st">"section_input"</span>, <span class="at">label =</span> <span class="st">"Select a sampling section(s):"</span>,</span>
 <span id="cb54-49"><a href="#cb54-49"></a>                                               <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"clear cut forest"</span>, <span class="st">"old growth forest"</span>),</span>
 <span id="cb54-50"><a href="#cb54-50"></a>                                               <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"clear cut forest"</span>, <span class="st">"old growth forest"</span>),</span>
 <span id="cb54-51"><a href="#cb54-51"></a>                                               <span class="at">individual =</span> <span class="cn">FALSE</span>, <span class="at">justified =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="st">"sm"</span>,</span>
@@ -3696,7 +3693,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb54-56"><a href="#cb54-56"></a>                        <span class="co"># trout plot mainPanel ----</span></span>
 <span id="cb54-57"><a href="#cb54-57"></a>                        <span class="fu">mainPanel</span>(</span>
 <span id="cb54-58"><a href="#cb54-58"></a>                          </span>
-<span id="cb54-59"><a href="#cb54-59"></a>                          <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>) <span class="co"># |&gt; withSpinner(color = "#006792", type = 1)</span></span>
+<span id="cb54-59"><a href="#cb54-59"></a>                          <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>) </span>
 <span id="cb54-60"><a href="#cb54-60"></a>                          </span>
 <span id="cb54-61"><a href="#cb54-61"></a>                        ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot mainPanel</span></span>
 <span id="cb54-62"><a href="#cb54-62"></a>                        </span>
@@ -3714,14 +3711,14 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb54-74"><a href="#cb54-74"></a>                        <span class="fu">sidebarPanel</span>(</span>
 <span id="cb54-75"><a href="#cb54-75"></a>                          </span>
 <span id="cb54-76"><a href="#cb54-76"></a>                          <span class="co"># island pickerInput ----</span></span>
-<span id="cb54-77"><a href="#cb54-77"></a>                          <span class="fu">pickerInput</span>(<span class="at">inputId =</span> <span class="st">"penguin_island"</span>, <span class="at">label =</span> <span class="st">"Select an island:"</span>,</span>
+<span id="cb54-77"><a href="#cb54-77"></a>                          <span class="fu">pickerInput</span>(<span class="at">inputId =</span> <span class="st">"penguin_island"</span>, <span class="at">label =</span> <span class="st">"Select an island(s):"</span>,</span>
 <span id="cb54-78"><a href="#cb54-78"></a>                                      <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"Torgersen"</span>, <span class="st">"Dream"</span>, <span class="st">"Biscoe"</span>),</span>
 <span id="cb54-79"><a href="#cb54-79"></a>                                      <span class="at">options =</span> <span class="fu">pickerOptions</span>(<span class="at">actionsBox =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb54-80"><a href="#cb54-80"></a>                                      <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"Torgersen"</span>, <span class="st">"Dream"</span>, <span class="st">"Biscoe"</span>),</span>
 <span id="cb54-81"><a href="#cb54-81"></a>                                      <span class="at">multiple =</span> T), <span class="co"># </span><span class="re">END</span><span class="co"> island pickerInput</span></span>
 <span id="cb54-82"><a href="#cb54-82"></a>                          </span>
 <span id="cb54-83"><a href="#cb54-83"></a>                          <span class="co"># bin number sliderInput ----</span></span>
-<span id="cb54-84"><a href="#cb54-84"></a>                          <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bin_num"</span>, <span class="at">label =</span> <span class="st">"Select number of bins:"</span>,</span>
+<span id="cb54-84"><a href="#cb54-84"></a>                          <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bin_num_input"</span>, <span class="at">label =</span> <span class="st">"Select number of bins:"</span>,</span>
 <span id="cb54-85"><a href="#cb54-85"></a>                                      <span class="at">value =</span> <span class="dv">25</span>, <span class="at">max =</span> <span class="dv">100</span>, <span class="at">min =</span> <span class="dv">1</span>), <span class="co"># </span><span class="re">END</span><span class="co"> bin number sliderInput</span></span>
 <span id="cb54-86"><a href="#cb54-86"></a>                          </span>
 <span id="cb54-87"><a href="#cb54-87"></a>                        ), <span class="co"># </span><span class="re">END</span><span class="co"> penguin plot sidebarPanel</span></span>
@@ -3776,7 +3773,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb55-28"><a href="#cb55-28"></a>  <span class="co"># filter for island ----</span></span>
 <span id="cb55-29"><a href="#cb55-29"></a>  island_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb55-30"><a href="#cb55-30"></a></span>
-<span id="cb55-31"><a href="#cb55-31"></a>    penguins <span class="sc">%&gt;%</span></span>
+<span id="cb55-31"><a href="#cb55-31"></a>    penguins <span class="sc">|&gt;</span> </span>
 <span id="cb55-32"><a href="#cb55-32"></a>      <span class="fu">filter</span>(island <span class="sc">%in%</span> input<span class="sc">$</span>penguin_island)</span>
 <span id="cb55-33"><a href="#cb55-33"></a></span>
 <span id="cb55-34"><a href="#cb55-34"></a>  })</span>
@@ -3785,7 +3782,7 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <span id="cb55-37"><a href="#cb55-37"></a>  output<span class="sc">$</span>flipperLength_histogram <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
 <span id="cb55-38"><a href="#cb55-38"></a></span>
 <span id="cb55-39"><a href="#cb55-39"></a>    <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">island_df</span>()), <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb55-40"><a href="#cb55-40"></a>      <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> input<span class="sc">$</span>bin_num) <span class="sc">+</span></span>
+<span id="cb55-40"><a href="#cb55-40"></a>      <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> input<span class="sc">$</span>bin_num_input) <span class="sc">+</span></span>
 <span id="cb55-41"><a href="#cb55-41"></a>      <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
 <span id="cb55-42"><a href="#cb55-42"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
 <span id="cb55-43"><a href="#cb55-43"></a>           <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
@@ -4534,8 +4531,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-6-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-273961f0eae498955616" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-273961f0eae498955616">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-15b1f8044baee8bfeca3" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-15b1f8044baee8bfeca3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4586,8 +4583,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5a5839416ef3085b3ee6" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-5a5839416ef3085b3ee6">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3d9f527d0d43baf068f6" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-3d9f527d0d43baf068f6">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5390,7 +5387,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b64f0857" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_e9c65abc" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
