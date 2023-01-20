@@ -1911,7 +1911,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_836ad15c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_0e1cbc23" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2679,16 +2679,17 @@ Image Source: Joseph R. Tomelleri, as found on the <a href="https://westernnativ
 Add packages &amp; wrangle data in <code>global.R</code>
 </div>
 <p class="small-text">
-In addition to the <a href="https://lter.github.io/lterdatasampler/"><code>{lterdatasampler}</code> package</a>, we’ll also be using the <a href="https://github.com/dreamRs/shinyWidgets"><code>{shinyWidgets}</code> package</a> to add a <code>pickerInput</code> and a <code>checkboxGroupInput</code> to our app.
+In addition to the <a href="https://lter.github.io/lterdatasampler/"><code>{lterdatasampler}</code> package</a>, we’ll also be using the <a href="https://tidyverse.tidyverse.org">tidyverse</a> for data wrangling/visualization, and the <a href="https://github.com/dreamRs/shinyWidgets"><code>{shinyWidgets}</code> package</a> to add a <code>pickerInput</code> and a <code>checkboxGroupInput</code> to our app.
 </p>
 <p class="small-text">
-<strong>Import both packages at the top of your <code>global.R</code> file</strong>
+<strong>Import those three packages at the top of your <code>global.R</code> file</strong>
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
+<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb38-3"><a href="#cb38-3"></a><span class="fu">library</span>(lterdatasampler) </span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="fu">library</span>(shinyWidgets) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="fu">library</span>(shinyWidgets) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="wrangle-data-global" class="slide level2" data-menu-title="Wrangle data in global.R"><h2></h2>
 <div class="slide-title-smaller">
@@ -2701,29 +2702,30 @@ We can also do the bulk of our data wrangling here, rather than in the server (t
 We can easily copy our wrangling code over from our <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots">practice script</a>.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="6-23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="6-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb39-3"><a href="#cb39-3"></a><span class="fu">library</span>(lterdatasampler)</span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="fu">library</span>(shinyWidgets) </span>
-<span id="cb39-5"><a href="#cb39-5"></a></span>
-<span id="cb39-6"><a href="#cb39-6"></a><span class="co"># DATA WRANGLING ----</span></span>
-<span id="cb39-7"><a href="#cb39-7"></a>clean_trout <span class="ot">&lt;-</span> and_vertebrates <span class="sc">|&gt;</span></span>
-<span id="cb39-8"><a href="#cb39-8"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb39-9"><a href="#cb39-9"></a>  <span class="fu">select</span>(sampledate, section, species, <span class="at">length_mm =</span> length_1_mm, weight_g, <span class="at">channel_type =</span> unittype) <span class="sc">|&gt;</span> </span>
-<span id="cb39-10"><a href="#cb39-10"></a>  <span class="fu">mutate</span>(<span class="at">channel_type =</span> <span class="fu">case_when</span>(</span>
-<span id="cb39-11"><a href="#cb39-11"></a>    channel_type <span class="sc">==</span> <span class="st">"C"</span> <span class="sc">~</span> <span class="st">"cascade"</span>,</span>
-<span id="cb39-12"><a href="#cb39-12"></a>    channel_type <span class="sc">==</span> <span class="st">"I"</span> <span class="sc">~</span> <span class="st">"riffle"</span>,</span>
-<span id="cb39-13"><a href="#cb39-13"></a>    channel_type <span class="sc">==</span><span class="st">"IP"</span> <span class="sc">~</span> <span class="st">"isolated pool"</span>,</span>
-<span id="cb39-14"><a href="#cb39-14"></a>    channel_type <span class="sc">==</span><span class="st">"P"</span> <span class="sc">~</span> <span class="st">"pool"</span>,</span>
-<span id="cb39-15"><a href="#cb39-15"></a>    channel_type <span class="sc">==</span><span class="st">"R"</span> <span class="sc">~</span> <span class="st">"rapid"</span>,</span>
-<span id="cb39-16"><a href="#cb39-16"></a>    channel_type <span class="sc">==</span><span class="st">"S"</span> <span class="sc">~</span> <span class="st">"step (small falls)"</span>,</span>
-<span id="cb39-17"><a href="#cb39-17"></a>    channel_type <span class="sc">==</span><span class="st">"SC"</span> <span class="sc">~</span> <span class="st">"side channel"</span></span>
-<span id="cb39-18"><a href="#cb39-18"></a>  )) <span class="sc">|&gt;</span> </span>
-<span id="cb39-19"><a href="#cb39-19"></a>  <span class="fu">mutate</span>(<span class="at">section =</span> <span class="fu">case_when</span>(</span>
-<span id="cb39-20"><a href="#cb39-20"></a>    section <span class="sc">==</span> <span class="st">"CC"</span> <span class="sc">~</span> <span class="st">"clear cut forest"</span>,</span>
-<span id="cb39-21"><a href="#cb39-21"></a>    section <span class="sc">==</span> <span class="st">"OG"</span> <span class="sc">~</span> <span class="st">"old growth forest"</span></span>
-<span id="cb39-22"><a href="#cb39-22"></a>  )) <span class="sc">|&gt;</span> </span>
-<span id="cb39-23"><a href="#cb39-23"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="fu">library</span>(shinyWidgets) </span>
+<span id="cb39-6"><a href="#cb39-6"></a></span>
+<span id="cb39-7"><a href="#cb39-7"></a><span class="co"># DATA WRANGLING ----</span></span>
+<span id="cb39-8"><a href="#cb39-8"></a>clean_trout <span class="ot">&lt;-</span> and_vertebrates <span class="sc">|&gt;</span></span>
+<span id="cb39-9"><a href="#cb39-9"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"Cutthroat trout"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb39-10"><a href="#cb39-10"></a>  <span class="fu">select</span>(sampledate, section, species, <span class="at">length_mm =</span> length_1_mm, weight_g, <span class="at">channel_type =</span> unittype) <span class="sc">|&gt;</span> </span>
+<span id="cb39-11"><a href="#cb39-11"></a>  <span class="fu">mutate</span>(<span class="at">channel_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb39-12"><a href="#cb39-12"></a>    channel_type <span class="sc">==</span> <span class="st">"C"</span> <span class="sc">~</span> <span class="st">"cascade"</span>,</span>
+<span id="cb39-13"><a href="#cb39-13"></a>    channel_type <span class="sc">==</span> <span class="st">"I"</span> <span class="sc">~</span> <span class="st">"riffle"</span>,</span>
+<span id="cb39-14"><a href="#cb39-14"></a>    channel_type <span class="sc">==</span><span class="st">"IP"</span> <span class="sc">~</span> <span class="st">"isolated pool"</span>,</span>
+<span id="cb39-15"><a href="#cb39-15"></a>    channel_type <span class="sc">==</span><span class="st">"P"</span> <span class="sc">~</span> <span class="st">"pool"</span>,</span>
+<span id="cb39-16"><a href="#cb39-16"></a>    channel_type <span class="sc">==</span><span class="st">"R"</span> <span class="sc">~</span> <span class="st">"rapid"</span>,</span>
+<span id="cb39-17"><a href="#cb39-17"></a>    channel_type <span class="sc">==</span><span class="st">"S"</span> <span class="sc">~</span> <span class="st">"step (small falls)"</span>,</span>
+<span id="cb39-18"><a href="#cb39-18"></a>    channel_type <span class="sc">==</span><span class="st">"SC"</span> <span class="sc">~</span> <span class="st">"side channel"</span></span>
+<span id="cb39-19"><a href="#cb39-19"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb39-20"><a href="#cb39-20"></a>  <span class="fu">mutate</span>(<span class="at">section =</span> <span class="fu">case_when</span>(</span>
+<span id="cb39-21"><a href="#cb39-21"></a>    section <span class="sc">==</span> <span class="st">"CC"</span> <span class="sc">~</span> <span class="st">"clear cut forest"</span>,</span>
+<span id="cb39-22"><a href="#cb39-22"></a>    section <span class="sc">==</span> <span class="st">"OG"</span> <span class="sc">~</span> <span class="st">"old growth forest"</span></span>
+<span id="cb39-23"><a href="#cb39-23"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb39-24"><a href="#cb39-24"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="trout-pickerInput" class="slide level2" data-menu-title="Add Trout pickerInput()"><h2></h2>
 <div class="slide-title-smaller">
@@ -2962,7 +2964,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_93debbb1" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_cfa8db75" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3264,7 +3266,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5ab43ada" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_a53f678a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4531,8 +4533,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-6-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-15b1f8044baee8bfeca3" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-15b1f8044baee8bfeca3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-15090ab6471dc328c1a2" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-15090ab6471dc328c1a2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4583,8 +4585,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3d9f527d0d43baf068f6" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-3d9f527d0d43baf068f6">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9d883566a406de86e0a3" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-9d883566a406de86e0a3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false,"maxNativeZoom":19,"maxZoom":100}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5387,7 +5389,7 @@ Mini Break
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e9c65abc" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_17852647" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>

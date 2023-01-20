@@ -751,17 +751,18 @@ ui <- navbarPage(
 
 <div class="slide-title-smaller">Add packages & wrangle data in `global.R`</div>
 
-<p class="small-text">In addition to the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/), we'll also be using the [`{shinyWidgets}` package ](https://github.com/dreamRs/shinyWidgets) to add a `pickerInput` and a `checkboxGroupInput` to our app.</p>  
+<p class="small-text">In addition to the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/), we'll also be using the `{tidyverse}` for data wrangling/visualization, and the [`{shinyWidgets}` package ](https://github.com/dreamRs/shinyWidgets) to add a `pickerInput` and a `checkboxGroupInput` to our app.</p>  
 
-<p class="small-text">**Import both packages at the top of your `global.R` file**</p>
+<p class="small-text">**Import those three packages at the top of your `global.R` file**</p>
 
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "3-4"
+#| code-line-numbers: "3-5"
 # LOAD LIBRARIES ----
 library(shiny)
 library(lterdatasampler) 
+library(tidyverse)
 library(shinyWidgets) 
 ```
 
@@ -777,10 +778,11 @@ library(shinyWidgets)
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "6-23"
+#| code-line-numbers: "6-24"
 # LOAD LIBRARIES ----
 library(shiny)
 library(lterdatasampler)
+library(tidyverse)
 library(shinyWidgets) 
 
 # DATA WRANGLING ----
