@@ -63,7 +63,7 @@ format: revealjs
 
 <div class="slide-title-smaller">So how should *I* host my app?</div>
 
-<p class="body-text">The Bren compute team will work with groups to deploy and maintain apps on in-house servers for 6 months after capstone/GP presentations *or until they break*.</p>
+<p class="body-text">The Bren compute team will work with groups to deploy and maintain apps on in-house servers for up to 6 months after capstone/GP presentations *or until they break*.</p>
 
 . . . 
 
