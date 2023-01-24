@@ -448,6 +448,17 @@ navbarPage(
 
 ---
 
+
+##  {#layout-fxns-app2 data-menu-title="Overview of App #2 Layout"}
+
+<div class="slide-title-smaller">Overview of layout functions used in App #2</div>
+
+<br>
+
+<center><img src="images/app2-layout-fxns.png" alt="" width="900"/></center>
+
+---
+
 ##  {#build-navbar data-menu-title="Build navbar"}
 
 <div class="slide-title-smaller">Build a navbar with two pages</div>

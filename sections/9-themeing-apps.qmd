@@ -44,8 +44,6 @@ format: revealjs
 
 <p class="body-text">The [`{bslib}` package](https://rstudio.github.io/bslib/) provides tools for customizing [Bootstrap themes](https://getbootstrap.com/docs/4.6/getting-started/theming/) directly from R, making custom themeing for Shiny apps (and R Markdown docs!) quite easy.</p>
 
-<br>
-
 :::: {.columns}
 
 ::: {.column width="45%"}
@@ -53,6 +51,7 @@ format: revealjs
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` easy to use</p>
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` includes a [real-time themeing widget](https://testing-apps.shinyapps.io/themer-demo/) to try out themes before applying them to your own app</p>
 <p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` plays well with the `{thematic}` package for matching plot styling to app</p>
+<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` `{bslib}` does more than just themeing! Check out the [December 2022 announcement](https://shiny.rstudio.com/blog/announcing-new-r-shiny-ui-components.html) of new UI components made possible with the latest package release</p>
 :::
 
 ::: {.column width="4%"}
@@ -65,8 +64,6 @@ format: revealjs
 :::
 
 ::::
-
-<br>
 
 . . . 
 
