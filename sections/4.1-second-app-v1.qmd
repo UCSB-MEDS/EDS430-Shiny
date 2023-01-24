@@ -102,7 +102,7 @@ format: revealjs
 
 <div class="slide-title-smaller">Practice data wrangling, filtering & viz first!</div>
 
-<p class="small-text">Here's what I've done in my `~R/practice_script_app2_lter.R` file:</p>
+<p class="small-text">Here's what I've done in my `~scratch/practice_script_app2_lter.R` file:</p>
 
 ::: {.panel-tabset}
 

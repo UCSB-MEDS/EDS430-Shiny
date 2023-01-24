@@ -245,7 +245,7 @@ library(shinydashboard)
 
 <br>
 
-<p class="smaller-text topbr">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in a separate script saved to `R/` and save a cleaned/processed version of the data to our app's directory, `/shinydashboard/data/lake_data_processed.csv`. Your repository structure should look similar to example on the right:</p>
+<p class="smaller-text topbr">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in a separate script(s) saved to `scratch/` and save a cleaned/processed version of the data to our app's directory, `/shinydashboard/data/lake_data_processed.csv`. Your repository structure should look similar to example on the right:</p>
 :::
 
 ::: {.column width="5%"}

@@ -237,7 +237,7 @@ ui <- fluidPage(
 <p class="body-text topbr">Whether you're working on a shiny *app* or a shiny *dashboard*, you'll need the following:</p>
 
 <p class="small-text topbr">**1.** a `/www` folder within your app's directory -- this is where we'll save the stylesheet (a `.css` file) that `fresh` will generate for us</p>
-<p class="small-text topbr">**2.** a separate script for building our theme using the `create_theme()` function -- I recommend saving this to `~/R` (it seemed to cause issues when saved anywhere within my app directory)</p>
+<p class="small-text topbr">**2.** a separate script for building our theme using the `create_theme()` function -- I recommend saving this to `~/scratch` (it seemed to cause issues when saved anywhere within my app directory)</p>
 
 . . .
 

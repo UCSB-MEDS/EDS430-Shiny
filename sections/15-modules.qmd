@@ -84,45 +84,51 @@ ui <- fluidPage(
   tabsetPanel(id = "continent", 
               
               # All tab ----
-              tabPanel("All", 
-                       plotOutput("all_plot"),
-                       sliderInput("all_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "All", 
+                       plotOutput(outputId = "all_plot"),
+                       sliderInput(inputId = "all_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END All tab
               
               # Africa tab ----
-              tabPanel("Africa", 
-                       plotOutput("africa_plot"),
-                       sliderInput("africa_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Africa", 
+                       plotOutput(outputId = "africa_plot"),
+                       sliderInput(inputId = "africa_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END Africa tab 
               
               # Americas tab ----
-              tabPanel("Americas", 
-                       plotOutput("americas_plot"),
-                       sliderInput("americas_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Americas", 
+                       plotOutput(outputId = "americas_plot"),
+                       sliderInput(inputId = "americas_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END Americas tab
               
               # Asia tab ----
-              tabPanel("Asia", 
-                       plotOutput("asia_plot"),
-                       sliderInput("asia_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Asia", 
+                       plotOutput(outputId = "asia_plot"),
+                       sliderInput(inputId = "asia_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ), # END Asia tab
               
               # Europe tab ----
-              tabPanel("Europe", 
-                       plotOutput("europe_plot"),
-                       sliderInput("europe_year", "Select Year", value = 1952, min = 1952, 
+              tabPanel(title = "Europe", 
+                       plotOutput(outputId = "europe_plot"),
+                       sliderInput(inputId = "europe_year", label = "Select Year", 
+                                   value = 1952, min = 1952, 
                                    max = 2007, step = 5, animate = animationOptions(interval = 500))
               ), # END Europe
               
               # Oceania tab ----
-              tabPanel("Oceania", 
-                       plotOutput("oceania_plot"),
-                       sliderInput("oceania_year", "Select Year", value = 1952, min = 1952, 
-                                   max = 2007, step = 5, animate = animationOptions(interval = 500))
+              tabPanel(title = "Oceania", 
+                       plotOutput(outputId = "oceania_plot"),
+                       sliderInput(inputId = "oceania_year", label = "Select Year", 
+                                   value = 1952, min = 1952, max = 2007, step = 5, 
+                                   animate = animationOptions(interval = 500))
               ) # END Oceania tab
               
   ) # END continent tabsetPanel
@@ -191,6 +197,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(all_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_all)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -222,6 +229,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(africa_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_africa)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -253,6 +261,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(americas_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_americas)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -284,6 +293,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(asia_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_asia)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -315,6 +325,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(europe_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_europe)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -346,6 +357,7 @@ server <- function(input, output) {
          }
     )
     
+    # build legend
     legend("bottomright", legend = levels(oceania_data$continent), 
            cex = 1.3, inset = 0.01, text.width = diff(xrange_oceania)/5,
            fill = c("#E41A1C99", "#377EB899", "#4DAF4A99", "#984EA399", "#FF7F0099")
@@ -478,7 +490,7 @@ output$all_plot <- renderPlot({
 
 . . .
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules help to solve a *namespacing* problem** -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for oganizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function` e.g. `plyr::arrange` vs `dplyr::arrange`).</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules help to solve a *namespacing* problem** -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for oganizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function()` e.g. `plyr::arrange()` vs `dplyr::arrange()`).</p>
 
 ---
 
@@ -533,7 +545,7 @@ myModuleServer <- function(id, ...) { # where `...` includes any number of addit
 
 . . . 
 
-<p class="body-text topbr">**(2)** save your modularized code script inside the `/R` subdirectory of your application (e.g. `~/app-dir/R/myModule.R`)</p>
+<p class="body-text topbr">**(2)** save your modularized code script inside the `/R` subdirectory of your application (e.g. `~/app-directory/R/myModule.R`)</p>
 
 <p class="small-text">If you choose this option, your module will automatically be sourced (as of Shiny 1.5.0) when the application is loaded.</p>
 
@@ -550,7 +562,7 @@ myModuleServer <- function(id, ...) { # where `...` includes any number of addit
 ```{r}
 #| eval: false
 #| echo: true
-# step 1: a good function naming convention is a descriptive basename, suffixed by `UI`
+# step 1: a good function naming convention is a descriptive base name, suffixed by `UI`
 
 gapModuleUI <- function(id) { # step 2: the first argument to a UI function should always be `id` -- this is the namespace for the module 
   
@@ -584,13 +596,13 @@ gapModuleUI <- function(id) { # step 2: the first argument to a UI function shou
 ```{r}
 #| eval: false
 #| echo: true
-# step 1: a good function naming convention is a descriptive basename, suffixed by `Server`
+# step 1: a good function naming convention is a descriptive base name, suffixed by `Server`
 
-gapModuleServer <- function(id, data) { # step 2: the first argument to a server function should always be `id`, followed by any other necessary arguments
+gapModuleServer <- function(id, data) { # step 2: the first argument to a server function should always be `id`, followed by any other necessary arguments; here we include a 'data' parameter, since we need to be able to tell our server function which data subset to plot in each tab
   
   moduleServer(id, function(input, output, session) { # step 3: call `moduleServer()`, and pass it two things -- (a) a string id that corresponds with the id used to call the module's UI function, and (b) a module server function (this MUST use the three arguments: input, output, and session)
     
-    # step 4: copy server logic into the module function (only need to do this ONCE, not 6x)
+    # step 4: copy server logic into the module function (only need to do this ONCE, not 6x); update inputIds (now 'year', rather than 'all_year' etc.) & sub in 'data' parameter for hard-coded data subsets
     
     # creactive df to collect one year of data ----
     ydata <- reactive({
