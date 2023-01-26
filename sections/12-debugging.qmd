@@ -41,23 +41,73 @@ format: revealjs
 
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Shiny code runs behind a web server *and* the Shiny framework itself, which can obscure what's going on</p>
 
-<br>
+. . . 
+
+<p class="body-text topbr">While there are a number of different tools/strategies for debugging Shiny apps, I find myself turning to one (or more) of these approaches most often:</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` isolating pesky errors (typos, missing commas, unmatched parentheses) in the UI by commenting out code from the outside in</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reducing your app to *just* problematic code by commenting out as much correctly-functioning code as possible</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` adding diagnostic messages to my reactives</p>
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` using `reactlog` to visualize reactivity errors</p>
 
 . . . 
 
-<p class="body-text">While there are a number of different tools/strategies for debugging Shiny apps, I find myself turning to one (or more) of these approaches most often:</p>
+<p class="body-text topbr">We'll touch on each of these, briefly, but be sure to check out the Shiny article, [Debugging Shiny applications](https://shiny.rstudio.com/articles/debugging.html) and [Mastering Shiny Ch. 5.2](https://mastering-shiny.org/action-workflow.html#debugging), by Hadley Wickham for more approaches, details, and examples.</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` isolating problematic code by commenting out as much correctly-functioning code as possible</p>
+---
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` adding messages to my reactives</p>
+##  {#ui-errors data-menu-title="Tracking down UI errors"}
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` using `reactlog` to trace errors</p>
+<div class="slide-title-smaller">Track down pesky UI errors by commenting out code from the outside in</div>
 
-<br>
+<p class="smaller-text">Many of us experienced the frustrations of finding unmatched parentheses, typos, missing commas, etc. when building out our UI layout for App #2, and tracking down the issue can require some patience and persistence.</p>
+
+<p class="smaller-text topbr">My preferred approach for troubleshooting a situation like this is to comment out all code moving from the highest-level layout function (e.g. `navbarPage()`) inwards, re-running your app each time you un-comment the next little bit of code, until you find the place where your app breaks.</p>
 
 . . . 
 
-<p class="body-text">We'll touch on each of these, briefly, but be sure to check out the Shiny article, [Debugging Shiny applications](https://shiny.rstudio.com/articles/debugging.html) and [Mastering Shiny Ch. 5.2](https://mastering-shiny.org/action-workflow.html#debugging), by Hadley Wickham for more approaches, details, and examples.</p>
+:::: {.columns}
+
+::: {.column width="45%"}
+<p class="smaller-text topbr">For example, if I were to trouble shoot the UI for App #2, I'd comment out everything except `ui <- navbarPage(title = "LTER Animal Data Explorer"` and the ending `) # END navbarPage`, then run my app to make sure an empty app with a gray navbar and title at the top appears. It does? Great. Next, un-comment the two `tabPanel()`s that create the "About this App" and "Explore the Data" pages. Works? Add a little bit more back in now, and continue this process. I like to un-comment/re-run all layout function code *first*, then begin adding back the inputs and outputs one by one. See a short, but incomplete demo to the right:</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/debugging-ui.gif" alt="An example of commenting code from the outside in, demoed in RStudio as described above." width="650"/></center>
+:::
+
+::::
+
+
+<p class="small-text">**Ultimately, taking your time, adding *lots* of code comments to mark the ending parentheses of each function, and leaving space between lines of code so that you can more easily see what's going on will save you lots of headache!**</p>
+
+---
+
+##  {#next data-menu-title="next strategies"}
+
+<div class="slide-title-smaller">What about "larger" errors?</div>
+
+<p class="small-text">Oftentimes, you'll need to identify larger, more complex errors, like why an output isn't rendering correctly or appearing in your app at all.</p>
+
+<p class="small-text topbr">I often turn to two strategies:</p>
+
+<p class="small-text">**(1)** commenting out everything except the UI elements and server logic where I believe the issue is stemming from, and</p>
+
+<p class="small-text">**(2)** adding diagnostic messages to my reactives</p>
+
+. . . 
+
+<p class="small-text">**(3)** and rare occasions, I'll try using the [`{reactlog}` package](https://rstudio.github.io/reactlog/) to help visualize my app's reactivity in an attempt to identify the problem.</p>
+
+. . . 
+
+<p class="small-text topbr">To demo these approaches, we'll use two pre-constructed apps as examples: (1) [`reactlog-working`](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-working) (a small app that's functioning as intended) and (2) [`reactlog-broken`](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken) (the same small app that's *not* functioning as intended).</p>
 
 ---
 
@@ -85,7 +135,9 @@ format: revealjs
 
 <div class="slide-title-smaller">Start by commenting out functioning code</div>
 
-<p class="small-text">Even though this is a relatively small/simple app, there is still code that, for lack of a better term, gets in the way. After a quick assessment, my reactive scatterplot on Tab 2 appears to be working as expected. To help simplify the amount of code I need to look at, I'll start by commenting out all UI elements (`sliderInput` & `plotOutput`) and server logic for building that reactive plot.</p>
+<p class="smaller-text">Even though this is a relatively small/simple app, there is still code that, for lack of a better term, gets in the way. After a quick assessment, my reactive scatterplot on Tab 2 appears to be working as expected. To help simplify the amount of code I need to look at, I'll start by commenting out all UI elements (`sliderInput` & `plotOutput`) and server logic for building that reactive plot.</p>
+
+<p class="smaller-text">**Note:** As you begin building more complex apps, you may have reactives that depend on other reactives -- it's important to think about these dependencies when commenting out parts of your app for debugging purposes.</p>
 
 ::: {.panel-tabset}
 
@@ -219,7 +271,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title-smaller">Next, add messages to your reactives</div>
 
-<p class="small-text">You can insert diagnostic messages within your reactives using `message()` -- here, I add a short message where each text and image output should be rendered. I can run my app and see messages successfully (or in the case of a broken app, unsuccessfully) print in my RStudio console as I interact with the app. You'll notice that the each image message (e.g. *"Displaying all penguins image"*) prints, but those associated with the text outputs do not. This tells me that code is not being executed, beginning with first `if` statement inside `renderText`.</p>
+<p class="smaller-text">You can insert diagnostic messages within your reactives using `message()` -- here, I add a short message where each text and image output should be rendered. I can run my app and see messages successfully (or in the case of a broken app, unsuccessfully) print in my RStudio console as I interact with the app. You'll notice that the each image message (e.g. *"Displaying all penguins image"*) prints when a new radioButton is selected, but those associated with the text outputs do not. This tells me that code is not being executed, beginning with first `if` statement inside `renderText`.</p>
 
 ::: {.panel-tabset}
 
@@ -356,3 +408,53 @@ shinyApp(ui = ui, server = server)
 <center><img src="images/messages.gif" alt="We see our app.R file with 'message()'s inserted throughout our reactive elements. When our app is run and the user updates the radioButtons, we see the associated messages appear in the console (or not appear, if code is broken)." width="650"/></center>
 
 :::
+
+---
+
+##  {#reactlog data-menu-title="{reactlog}"}
+
+<div class="slide-title">`{reactlog}` may help visualize reactivity</div>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+<br>
+
+<p class="body-text bottombr">`reactlog` is a package/tool that provides:</p>
+
+<p class="small-text quote-text-bg">*"A snapshot of the history (**log**) of all **react**ive interactions within a shiny application"* **- Barret Schloerke in his 2019 RSTUDIO::CONF talk, [Reactlog 2.0: Debugging the state of Shiny](https://www.rstudio.com/resources/rstudioconf-2019/reactlog-2-0-debugging-the-state-of-shiny/)**</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/reactlog.png" alt="The reactlog hex sticker design." width="650"/></center>
+:::
+
+::::
+
+<p class="small-text">Reactivity can be confusing. I recommend watching Barret Schloerke's talk, linked above, and reading through the [Shiny Reactlog vignette](https://rstudio.github.io/reactlog/articles/reactlog.html) as you get started.</p>
+
+---
+
+##  {#using-reactlog data-menu-title="Using {reactlog}"}
+
+<div class="slide-title">Using `{reactlog}`</div>
+
+<p class="body-text">`reactlog` should already be installed as a dependency of `shiny` (but be sure to import the package at the top of your script using `library(reactlog)`). When enabled, it provides an interactive browser-based tool to visualize reactive dependencies and executions in your app.</p>
+
+<p class="body-text topbr">To use `reactlog`, follow these **steps:**</p>
+
+<p class="small-text">**1.** Call `reactlog_enable()` in your console</p>
+<p class="small-text">**2.** Run your app and interact with it</p>
+<p class="small-text">**3.** Use the keyboard shortcut `cmd`/`ctrl` + `F3` to launch `reactlog`</p>
+<p class="small-text">**4.** Use your `<-` and `->` arrow keys (or <img src="images/previous.png" alt="A gray, left-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> and <img src="images/forward.png" alt="A gray, right-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>) to move forward and backward through your app's reactive life cycle</p>
+
+<br>
+<br>
+
+<p class="small-text">Read about the components of the [status bar](https://rstudio.github.io/reactlog/articles/reactlog.html#status-bar) and the meaning of different [reactive states](https://rstudio.github.io/reactlog/articles/reactlog.html#reactive-states) in the `reactlog` vignette.</p>
+

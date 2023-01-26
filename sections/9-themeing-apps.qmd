@@ -82,7 +82,6 @@ format: revealjs
 ::: {.column width="45%"}
 
 <br>
-<br>
 
 ```{r}
 #| eval: false
@@ -95,6 +94,8 @@ ui <- fluidPage(
   
 )
 ```
+
+<p class="small-text">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
 :::
 
 ::: {.column width="5%"}
@@ -135,6 +136,8 @@ ui <- fluidPage(
   
 )
 ```
+
+<p class="small-text">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
 :::
 
 ::: {.column width="5%"}
@@ -180,6 +183,8 @@ ui <- fluidPage(
   
 )
 ```
+<p class="small-text">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
+
 :::
 
 
@@ -306,7 +311,6 @@ create_theme(
 ::: {.column width="45%"}
 
 <br>
-<br>
 
 ```{r}
 #| eval: false
@@ -320,6 +324,9 @@ ui <- navbarPage(
   
 ) # END navbarPage
 ```
+
+<p class="small-text">Check out the complete source code for App #2 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app) (NOTE: applied themes are commented out).</p>
+
 :::
 
 ::: {.column width="5%"}
@@ -401,6 +408,9 @@ body <- dashboardBody(
   
 )
 ```
+
+<p class="small-text">Check out the complete source code for the shinydashboard [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard) (NOTE: applied themes are commented out).</p>
+
 :::
 
 ::: {.column width="5%"}
@@ -938,7 +948,7 @@ h1 {
 
 . . . 
 
-<p class="small-text">Next, create your Sass file -- add a subdirectory called `R` within `two-file-app/`. Then, using your terminal, `cd` into `~/two-file-app/R` and use the `touch` command to create a `.scss` file (I'm calling mine `my_sass_styles.scss`).</p>
+<p class="small-text">Next, create your Sass file within `two-file-app/www/`. Then, using your terminal, `cd` into `~/two-file-app/www` and use the `touch` command to create a `.scss` file (I'm calling mine `my_sass_styles.scss`).</p>
 
 . . . 
 
@@ -1011,6 +1021,28 @@ a {
 
 ::: {.panel-tabset}
 
+## our updated app
+
+:::: {.columns}
+
+::: {.column width="45%"}
+
+<br>
+<br> 
+
+<p class="body-text">Check out the complete code for App #2 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app) (NOTE: applied themes are commented out).</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/app2_sass_css.png" alt="Our app, with our sass and css styling applied. The navbar is yellow, body is green, level 4 headings are blue, text is white, hyperlinks are orange, and header and body text font styles have been changed from the default." width="750"/></center>
+:::
+
+
+::::
+
 ## `global.R`
 ```{r}
 #| eval: false
@@ -1022,7 +1054,7 @@ library(sass)
 
 # COMPILE CSS ----
 sass(
-  input = sass_file("R/my_sass_styles.scss"),
+  input = sass_file("www/my_sass_styles.scss"),
   output = "www/my_sass_styles.css"
 )
 
