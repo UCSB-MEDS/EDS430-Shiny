@@ -93,7 +93,7 @@ format: revealjs
 
 <div class="slide-title-smaller">What about "larger" errors?</div>
 
-<p class="small-text">Oftentimes, you'll need to identify larger, more complex errors, like why an output isn't rendering correctly or appearing in your app at all.</p>
+<p class="small-text">Oftentimes, you'll need to identify larger, more complex errors, like why an output isn't rendering correctly or even appearing in your app at all.</p>
 
 <p class="small-text topbr">I often turn to two strategies:</p>
 
@@ -103,7 +103,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">**(3)** and rare occasions, I'll try using the [`{reactlog}` package](https://rstudio.github.io/reactlog/) to help visualize my app's reactivity in an attempt to identify the problem.</p>
+<p class="small-text">**(3)** ...*and* on rare occasions, I'll try using the [`{reactlog}` package](https://rstudio.github.io/reactlog/) to help visualize my app's reactivity in an attempt to identify the problem.</p>
 
 . . . 
 
@@ -413,7 +413,7 @@ shinyApp(ui = ui, server = server)
 
 ##  {#reactlog data-menu-title="{reactlog}"}
 
-<div class="slide-title">`{reactlog}` may help visualize reactivity</div>
+<div class="slide-title-smaller">If helpful, use `{reactlog}` to visualize reactivity</div>
 
 :::: {.columns}
 
@@ -431,7 +431,7 @@ shinyApp(ui = ui, server = server)
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/reactlog.png" alt="The reactlog hex sticker design." width="650"/></center>
+<center><img src="images/reactlog.png" alt="The reactlog hex sticker design." width="550"/></center>
 :::
 
 ::::
@@ -448,13 +448,27 @@ shinyApp(ui = ui, server = server)
 
 <p class="body-text topbr">To use `reactlog`, follow these **steps:**</p>
 
-<p class="small-text">**1.** Call `reactlog_enable()` in your console</p>
-<p class="small-text">**2.** Run your app and interact with it</p>
-<p class="small-text">**3.** Use the keyboard shortcut `cmd`/`ctrl` + `F3` to launch `reactlog`</p>
-<p class="small-text">**4.** Use your `<-` and `->` arrow keys (or <img src="images/previous.png" alt="A gray, left-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> and <img src="images/forward.png" alt="A gray, right-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>) to move forward and backward through your app's reactive life cycle</p>
+<p class="small-text">**1.** Load the reactlog library in you console (`library(reactlog)`)</p>
+<p class="small-text">**2.** Call `reactlog_enable()` in your console</p>
+<p class="small-text">**3.** Run your app, interact with it, then quit your app</p>
+<p class="small-text">**4.** Launch reactlog by running `shiny::reactlogShow()` in your console (or use the keyboard shortcut `cmd`/`ctrl` + `F3`)</p>
+<p class="small-text">**5.** Use your `<-` and `->` arrow keys (or <img src="images/previous.png" alt="A gray, left-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> and <img src="images/forward.png" alt="A gray, right-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>) to move forward and backward through your app's reactive life cycle</p>
 
 <br>
 <br>
 
 <p class="small-text">Read about the components of the [status bar](https://rstudio.github.io/reactlog/articles/reactlog.html#status-bar) and the meaning of different [reactive states](https://rstudio.github.io/reactlog/articles/reactlog.html#reactive-states) in the `reactlog` vignette.</p>
+
+---
+
+
+##  {#using-reactlog data-menu-title="Using {reactlog}"}
+
+<div class="slide-title-smaller">Using `{reactlog}` to visualize reactivity in our `reactlog-working` app</div>
+
+<p class="smaller-text">To visualize the reactive life cycle of this app, I'll first load the reactlog library, then call `reactlog_enable()` in my console. Next, I'll run my app and interact with it. By default, **All penguins** is selected. For demonstration purposes, I'll click down the list (**Sassy chinstrap**, **Staring gentoo**, and finally **Adorable adelie**). When done, I'll stop my app, then run `shiny::reactlogShow()` in the console to open the reactlog visualizer in a browser window.</p>
+
+<p class="smaller-text">**Note:** I've left the scatter plot on Tab 2 (and it's related UI elements) commented out (as we practiced in the earlier few slides) for this demo -- the `{reactlog}` package has many features that allow you to explore reactive dependencies across your whole app, but it can get complicated quickly. For demo purposes, we're going to work with this "smaller" version of our app, which contains just the problematic code.</p>
+
+<center><img src="images/reactlog-working.gif" alt="" width="650"/></center>
 
