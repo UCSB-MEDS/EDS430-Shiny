@@ -271,7 +271,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title-smaller">Next, add messages to your reactives</div>
 
-<p class="smaller-text">You can insert diagnostic messages within your reactives using `message()` -- here, I add a short message where each text and image output should be rendered. I can run my app and see messages successfully (or in the case of a broken app, unsuccessfully) print in my RStudio console as I interact with the app. You'll notice that the each image message (e.g. *"Displaying all penguins image"*) prints when a new radioButton is selected, but those associated with the text outputs do not. This tells me that code is not being executed, beginning with first `if` statement inside `renderText`.</p>
+<p class="smaller-text">You can insert diagnostic messages within your reactives using `message()` -- here, I add a short message where each text and image output should be rendered. I can run my app and see messages successfully (or in the case of a broken app, unsuccessfully) print in my RStudio console as I interact with the app. You'll notice that the each image message (e.g. *"Displaying all penguins image"*) prints when a new radioButton is selected, but those associated with the text outputs do not. This tells me that code is not being executed, beginning with first `if` statement inside `renderText` and that this is a good starting location for reviewing code (e.g. carefully crosschecking all `inputId`s and `outputId`s in that section).</p>
 
 ::: {.panel-tabset}
 
@@ -440,7 +440,7 @@ shinyApp(ui = ui, server = server)
 
 ---
 
-##  {#using-reactlog data-menu-title="Using {reactlog}"}
+##  {#reactlog-workflow data-menu-title="{reactlog} workflow"}
 
 <div class="slide-title">Using `{reactlog}`</div>
 
@@ -461,14 +461,104 @@ shinyApp(ui = ui, server = server)
 
 ---
 
+##  {#using-reactlog-working-app data-menu-title="Using {reactlog} - working app"}
 
-##  {#using-reactlog data-menu-title="Using {reactlog}"}
+<div class="slide-title-smaller">Using `{reactlog}` to visualize reactivity in a correctly-functioning app</div>
 
-<div class="slide-title-smaller">Using `{reactlog}` to visualize reactivity in our `reactlog-working` app</div>
-
-<p class="smaller-text">To visualize the reactive life cycle of this app, I'll first load the reactlog library, then call `reactlog_enable()` in my console. Next, I'll run my app and interact with it. By default, **All penguins** is selected. For demonstration purposes, I'll click down the list (**Sassy chinstrap**, **Staring gentoo**, and finally **Adorable adelie**). When done, I'll stop my app, then run `shiny::reactlogShow()` in the console to open the reactlog visualizer in a browser window.</p>
+<p class="smaller-text">To visualize the reactive life cycle of the `reactlog-working` app, I'll first load the reactlog library, then call `reactlog_enable()` in my console. Next, I'll run my app and interact with it. By default, **All penguins** is selected. For demonstration purposes, I'll click down the list (**Sassy chinstrap**, **Staring gentoo**, and finally **Adorable adelie**). When done, I'll stop my app, then run `shiny::reactlogShow()` in the console to open the reactlog visualizer in a browser window.</p>
 
 <p class="smaller-text">**Note:** I've left the scatter plot on Tab 2 (and it's related UI elements) commented out (as we practiced in the earlier few slides) for this demo -- the `{reactlog}` package has many features that allow you to explore reactive dependencies across your whole app, but it can get complicated quickly. For demo purposes, we're going to work with this "smaller" version of our app, which contains just the problematic code.</p>
 
 <center><img src="images/reactlog-working.gif" alt="" width="650"/></center>
 
+---
+
+##  {#interpreting-reactlog-working-app data-menu-title="Interpreting {reactlog}"}
+
+<div class="slide-title-smaller">Interpreting `{reactlog}` (used with our  correctly-functioning app)</div>
+
+<p class="body-text">There's a lot to take when looking at the reactlog viewer, so let's take it one step at a time:</p>
+
+<p class="small-text topbr">**(1)** The `radioButton` input defaults to show the **All penguins** image and associated text. When we launch reactlog, our input <img src="images/input.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, reactive expression <img src="images/expression.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, and outputs <img src="images/output.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> are **Ready**, meaning the calculated values are available (defaults in this case) and reactive elements have finished executing (i.e. the image and text is displayed). This **Ready** state is indicated by the green icons.</p>
+
+. . .
+
+<p class="small-text topbr">**(2)** I (the user) then updated the input by choosing **Sassy chinstrap**, invalidating (i.e. resetting) the input and thereby invalidating any dependencies -- in this case both the image and text outputs. This **Invalidating** state is indicated by the gray icons.</p> 
+
+. . . 
+
+<p class="small-text topbr">**(3)** Once all dependencies are invalidated, the reactive elements can begin **Calculating** (i.e. executing) based on the new input (**Sassy chinstrap**). Elements are colored yellow when they are being calculated, then green when calculations are complete and the reactive element has been updated. In this example, first the image and then the text are calculated and updated.</p>
+
+. . . 
+
+<p class="small-text topbr">**(4)** These same steps are repeated when I select the **Staring gentoo**, then **Adorable adelie** `radioButtons`</p> 
+
+---
+
+##  {#using-reactlog-broken-app data-menu-title="Using {reactlog} - broken app"}
+
+<div class="slide-title-smaller">Using `{reactlog}` to visualize reactivity in a broken app</div>
+
+<p class="small-text">Let's try out reactlog on an intentionally broken app (`reactlog-broken`). Here, our image changes when the radioButton user input is updated, but our text doesn't appear. As in our functioning app, the **All penguins** image is selected by default. For demonstration purposes, I'll select each option moving down the list (**Sassy chinstrap**, **Staring gentoo**, **Adorable adelie**) before launching reactlog.</p>
+
+:::: {.columns}
+
+::: {.column width="45%"}
+<p class="small-text">Similar to our functioning app, the default input, **All penguins**, and image output are **Ready** (green). However, in this example our text output is *not a dependency* of our application's input -- there's no linkage and the text output is **Invalidated** (gray).</p>
+
+<p class="small-text">As we click down the list of radioButtons, the image output is invalidated, then updated accordingly, but the text output remains disconnected from our input.</p>
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+<center><img src="images/reactlog-broken.gif" alt="" width="650"/></center>
+:::
+
+::::
+
+---
+
+##  {#id-bug data-menu-title="Identify the bug"}
+
+<div class="slide-title-smaller">So what's the issue with our app?</div>
+
+<p class="small-text">Evidence from our diagnostic messages *and* `reactlog` suggests that we should make sure that our UI and server are actually able to communicate about our desired text output. After careful inspection of our `textOutput()` and `renderText()` code, we find that a spelling error is to blame:</p>
+
+<p class="small-text">Our `outputId` in the **UI** is set to `penguin_text`:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "6"
+ui <- fluidPage(
+  
+  # ~ previous code excluded for brevity ~
+  
+  # text output ----
+  textOutput(outputId = "penguin_text")
+  
+)
+```
+
+<p class="small-text">But we call `penguins_text` when rendering our output in the **server**:</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "6"
+server <- function(input, output){
+  
+  # ~ previous code excluded for brevity ~
+  
+  # render penguin text ----
+  output$penguins_text <- renderText({
+    
+    # ~ code excluded for brevity ~
+    
+  })
+}
+```
+
+<p class="small-text">By updating our `outputId` to match in both the UI and the server, we fix our app.</p>
