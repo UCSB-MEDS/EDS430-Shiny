@@ -6,7 +6,7 @@ format: revealjs
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` Writing functions to improve readability and usability</p>
-<p class="caption-text">*Writing functions can help to reduce code duplication & make testing easier as your app(s) grows in complexity*</p>
+<p class="caption-text">*Writing functions can help to spread out code across multiple files, reduce code duplication, and make testing easier as your app(s) grows in complexity*</p>
 </div>
 
 ---
