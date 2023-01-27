@@ -52,6 +52,10 @@ This app is build for demonstration/teaching purposes only and is not paid for o
 
 <p class="small-text">Press the right arrow key to advance through the newly added lines of code.</p>
 
+::: {.panel-tabset}
+
+## `ui.R`
+
 ```{r}
 #| eval: false
 #| echo: true
@@ -181,6 +185,25 @@ body <- dashboardBody(
 dashboardPage(header, sidebar, body)
 ```
 
+## `global.R`
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "7"
+# LOAD LIBRARIES ----
+library(shiny)
+library(shinydashboard)
+library(tidyverse)
+library(leaflet)
+library(shinycssloaders)
+library(markdown)
+
+# READ IN DATA ----
+lake_data <- read_csv("data/lake_data_processed.csv")
+```
+
+:::
 ---
 
 ##  {#add-image data-menu-title="Add Static Image"}
@@ -485,3 +508,212 @@ dashboardPage(header, sidebar, body)
 <center><img src="images/final-dashboard.gif" alt="Our completed dashboard, with our image styled so that it fits within the background info box on the Welcome page, and three functional sliderInputs that update the leaflet map on the Dashboard page." width="750"/></center>
 
 <p class="small-text">There's a ton more to learn about building shinydashboards. Check out the [documentation](https://rstudio.github.io/shinydashboard/) to find instructions on adding components like [`infoBox`es](https://rstudio.github.io/shinydashboard/structure.html#infobox) and [`valueBox`es](https://rstudio.github.io/shinydashboard/structure.html#valuebox), building [inputs in the sidebar](https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar), easy ways to update the color theme using [skins](https://rstudio.github.io/shinydashboard/appearance.html#skins), and more.</p>
+
+##  {#final-dashboard-code data-menu-title="Complete dashboard code"}
+
+<div class="slide-title-smaller">Complete code for our dashboard thus far:</div>
+
+::: {.panel-tabset}
+
+## `ui.R`
+
+```{r}
+#| eval: false
+#| echo: true
+#........................dashboardHeader.........................
+header <- dashboardHeader(
+  
+  # add title ----
+  title = "Fish Creek Watershed Lake Monitoring",
+  titleWidth = 400
+  
+) # END dashboardHeader
+
+#........................dashboardSidebar........................
+sidebar <- dashboardSidebar(
+  
+  # sidebarMenu ----
+  sidebarMenu(
+
+    menuItem(text = "Welcome", tabName = "welcome", icon = icon("star")),
+    menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("gauge"))
+
+  ) # END sidebarMenu
+
+) # END dashboardSidebar
+
+#..........................dashboardBody.........................
+body <- dashboardBody(
+  
+  # ---- set theme using {fresh} ----
+  # fresh::use_theme("shinydashboard_fresh_theme.css"),
+  
+  # tabItems ----
+  tabItems(
+
+    # welcome tabItem ----
+    tabItem(tabName = "welcome",
+
+            # left-hand column ----
+            column(width = 6,
+
+                   # box ----
+                   box(width = NULL,
+                       
+                       title = tagList(icon("water"), strong("Monitoring Fish Creek Watershed")),
+                       includeMarkdown("text/intro.md"),
+                       tags$img(src = "FishCreekWatershedSiteMap_2020.jpeg", 
+                           alt = "A map of Northern Alaksa, showing Fish Creek Watershed located within the National Petroleum Reserve.",
+                       style = "max-width: 100%;"),
+                       tags$h6(tags$em("Map Source:", tags$a(href = "http://www.fishcreekwatershed.org/", "FCWO")),
+                               style = "text-align: center;")
+
+                   ) # END box
+
+            ), # END left-hand column
+
+            # right-hand column ----
+            column(width = 6,
+
+                   # first fluidRow ----
+                   fluidRow(
+
+                     # data source box ----
+                     box(width = NULL,
+                         
+                         title = tagList(icon("table"), strong("Data Source")),
+                         includeMarkdown("text/citation.md")
+
+                     ) # END data source box
+
+                   ), # END first fluidRow
+
+                   # second fluiRow ----
+                   fluidRow(
+
+                     # disclaimer box ----
+                     box(width = NULL,
+
+                         title = tagList(icon("triangle-exclamation"), strong("Disclaimer")),
+                         includeMarkdown("text/disclaimer.md")
+
+                     ) # END disclaimer box
+
+                   ) # END second fluidRow
+
+            ) # END right-hand column
+
+    ), # END welcome tabItem
+
+    # dashboard tabItem ----
+    tabItem(tabName = "dashboard",
+
+            # fluidRow ----
+            fluidRow(
+
+              # input box ----
+              box(width = 4,
+                  
+                  title = tags$strong("Adjust lake parameter ranges:"),
+
+                  # sliderInputs ----
+                  sliderInput(inputId = "elevation_slider_input", label = "Elevation (meters above SL):",
+                              min = min(lake_data$Elevation), max = max(lake_data$Elevation),
+                              value = c(min(lake_data$Elevation), max(lake_data$Elevation))),
+
+                  sliderInput(inputId = "depth_slider_input", label = "Average depth (meters):",
+                              min = min(lake_data$AvgDepth), max = max(lake_data$AvgDepth),
+                              value = c(min(lake_data$AvgDepth), max(lake_data$AvgDepth))),
+
+                  sliderInput(inputId = "temp_slider_input", label = "Average lake bed temperature (degrees C):",
+                              min = min(lake_data$AvgTemp), max = max(lake_data$AvgTemp),
+                              value = c(min(lake_data$AvgTemp), max(lake_data$AvgTemp)))
+
+              ), # END input box
+
+              # leaflet box ----
+              box(width = 8,
+
+                  title = tags$strong("Monitored lakes within Fish Creek Watershed:"),
+
+                  # leaflet output ----
+                  leafletOutput(outputId = "lake_map") |> withSpinner(type = 1, color = "#4287f5")
+
+              ) # END leaflet box
+
+            ) # END fluidRow
+
+    ) # END dashboard tabItem
+
+  ) # END tabItems
+  
+) # END dashboardBody
+
+#..................combine all in dashboardPage..................
+dashboardPage(header, sidebar, body)
+```
+
+## `server.R`
+
+```{r}
+#| eval: false
+#| echo: true
+server <- function(input, output) {
+  
+  # filter lake data ----
+  filtered_lakes <- reactive ({
+    
+    lake_data |>
+      filter(Elevation >= input$elevation_slider_input[1] & Elevation <= input$elevation_slider_input[2])  |>
+      filter(AvgDepth >= input$depth_slider_input[1] & AvgDepth <= input$depth_slider_input[2]) |>
+      filter(AvgTemp >= input$temp_slider_input[1] & AvgTemp <= input$temp_slider_input[2])
+    
+  })
+  
+  
+  
+  # build leaflet map ----
+  output$lake_map <- renderLeaflet({
+    
+    leaflet() |>
+      
+      # add tiles
+      addProviderTiles("Esri.WorldImagery") |>
+      
+      # set view over AK
+      setView(lng = -152.048442, lat = 70.249234, zoom = 6) |>
+      
+      # add mini map
+      addMiniMap(toggleDisplay = TRUE, minimized = TRUE) |>
+      
+      # add markers
+      addMarkers(data =  filtered_lakes(),
+                 lng = filtered_lakes()$Longitude, lat = filtered_lakes()$Latitude,
+                 popup = paste("Site Name:", filtered_lakes()$Site, "<br>",
+                               "Elevation:", filtered_lakes()$Elevation, "meters (above SL)", "<br>",
+                               "Avg Depth:", filtered_lakes()$AvgDepth, "meters", "<br>",
+                               "Avg Lake Bed Temperature:", filtered_lakes()$AvgTemp, "deg Celsius"))
+    
+  })
+  
+}
+```
+
+## `global.R`
+
+```{r}
+#| eval: false
+#| echo: true
+# LOAD LIBRARIES ----
+library(shiny)
+library(shinydashboard)
+library(tidyverse)
+library(shinycssloaders)
+library(leaflet)
+library(markdown)
+
+# READ IN DATA ----
+lake_data <- read_csv("data/lake_data_processed.csv")
+```
+
+:::
