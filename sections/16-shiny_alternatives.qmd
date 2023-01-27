@@ -19,7 +19,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets aren't only for Shiny! Embed interactive [htmlwidgets](https://www.htmlwidgets.org/) into your R Markdown documents that range from geo-spatial mapping with `{leaflet}` to generating network graph diagrams with `{DiagrammeR}`. Check out the [htmlwidgets for R](http://gallery.htmlwidgets.org/) - gallery for many more options.</p>
+<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets aren't only for Shiny! Embed interactive [htmlwidgets](https://www.htmlwidgets.org/) into your R Markdown documents that range from geo-spatial mapping with `{leaflet}` to generating network graph diagrams with `{DiagrammeR}`. Check out the [htmlwidgets for R - gallery](http://gallery.htmlwidgets.org/) for many more options.</p>
 
 . . . 
 

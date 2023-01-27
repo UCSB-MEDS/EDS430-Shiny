@@ -490,7 +490,7 @@ output$all_plot <- renderPlot({
 
 . . .
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules help to solve a *namespacing* problem** -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for oganizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function()` e.g. `plyr::arrange()` vs `dplyr::arrange()`).</p>
+<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules help to solve a *namespacing* problem** -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for organizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function()` e.g. `plyr::arrange()` vs `dplyr::arrange()`).</p>
 
 ---
 

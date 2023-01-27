@@ -503,7 +503,7 @@ shinyApp(ui = ui, server = server)
 
 <div class="slide-title-smaller">Using `{reactlog}` to visualize reactivity in a broken app</div>
 
-<p class="small-text">Let's try out reactlog on an intentionally broken app (`reactlog-broken`). Here, our image changes when the radioButton user input is updated, but our text doesn't appear. As in our functioning app, the **All penguins** image is selected by default. For demonstration purposes, I'll select each option moving down the list (**Sassy chinstrap**, **Staring gentoo**, **Adorable adelie**) before launching reactlog.</p>
+<p class="small-text">Let's try out reactlog on our intentionally broken app (`reactlog-broken`, where our image changes when a radioButton user input is updated, but our text doesn't appear). As in our functioning app, the **All penguins** image is selected by default. For demonstration purposes, I'll select each option moving down the list (**Sassy chinstrap**, **Staring gentoo**, **Adorable adelie**) before launching reactlog.</p>
 
 :::: {.columns}
 

@@ -5,8 +5,8 @@ format: revealjs
 ##  {#functions data-menu-title="~~~ Functions ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` Writing functions to improve readability and usability</p>
-<p class="caption-text">*Writing functions can help to spread out code across multiple files, reduce code duplication, and make testing easier as your app(s) grows in complexity*</p>
+<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` Writing functions</p>
+<p class="caption-text">*Functions have many benefits and can improve your code base, particularly as your app grows in complexity*</p>
 </div>
 
 ---
@@ -410,7 +410,7 @@ server <- function(input, output) {
 
 ##  {#build-penguin-scatterplot-fxn data-menu-title="build_penguin_scatterplot()"}
 
-<div class="slide-title-smaller">Create a function that builds our penguin scatterplot</div>
+<div class="slide-title-smaller">Create a function to builds our scatterplot</div>
 
 <p class="smaller-text">First, create a new file in `~/function-app/R` and name it `build_penguin_histogram.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
 
@@ -418,7 +418,7 @@ server <- function(input, output) {
 
 <p class="smaller-text">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
 
-<p class="smaller-text">**Note** that in R, functions return the executed line -- when we run `build_penguin_histogram()` in our server, it will return the object created by `renderPlot()`.</p>
+<p class="smaller-text">**Note** that in R, functions return the last executed line -- when we run `build_penguin_histogram()` in our server, it will return the object created by `renderPlot()`.</p>
 
 ```{r}
 #| eval: false
@@ -454,7 +454,7 @@ build_penguin_histogram <- function(input) {
 
 <div class="slide-title-smaller">Now use your function inside the server</div>
 
-<p class="small-text">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our scatterplot. This needs to be assigned to `output$penguin_scatterplot`. By doing so, we reduced 23 lines of code to 1 inside our server function.</p>
+<p class="small-text">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function's output to `output$penguin_scatterplot`. In doing so, we reduced 23 lines of code to 1 inside our server function.</p>
 ```{r}
 #| eval: false
 #| echo: true
