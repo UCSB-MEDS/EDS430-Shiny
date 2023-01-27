@@ -527,8 +527,8 @@ body <- dashboardBody(
 
 ::: {.column width="45%"}
 <p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Selectors** select the HTML element(s) you want to style (*e.g. level one headings, `<h1>`)*</p>
-<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` **Declarations** sit inside curly brackets, `{}`, and are made up of [**property**](https://www.w3schools.com/cssref/index.php) and **value** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*</p>
-<p class="small-text">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` A property and it's corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Declarations** sit inside curly brackets, `{}`, and are made up of [**property**](https://www.w3schools.com/cssref/index.php) and **value** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` A property and it's corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`</p>
 :::
 
 ::::
