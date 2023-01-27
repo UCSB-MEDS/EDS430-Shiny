@@ -19,11 +19,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the benefits of writing UI functions</p>
-
-. . . 
-
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the benefits of writing server functions</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the benefits of turning UI elements and server logic into functions</p>
 
 . . . 
 
@@ -31,19 +27,25 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully write a UI function</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully turn a repeated input into a function</p>
+
+. . . 
+
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully turn a piece of server logic into a function</p>
 
 
 ---
 
-##  {#function-types data-menu-title="Types of Functions"}
+##  {#why-functions data-menu-title="Why write functions"}
 
-<div class="slide-title">UI vs. Server functions</div>
+<div class="slide-title">Why write functions</div>
 
-<p class="body-text bottombr">We'll demonstrate two different flavors of functions: those written for the UI and those written for the server:</p>
+<p class="body-text bottombr">Functions are useful for a wide variety of reasons. Most notably:</p>
 
-<p class="small-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the main benefit to writing **UI functions** is **reducing duplication**</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the main benefit to writing **server functions** is **isolation and testing**</p>
+<p class="small-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reducing redundancy</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reducing complexity</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` increasing code comprehension</p>
+<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` increasing testability</p>
 
 . . . 
 
@@ -83,7 +85,7 @@ ui <- fluidPage(
     tabPanel("Scatterplot",
              
              # species (scatterplot) pickerInput ----
-             pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
+             pickerInput(inputId = "penguin_species_scatterplot_input", label = "Select a species:",
                          choices = c("Adelie", "Chinstrap", "Gentoo"),
                          options = pickerOptions(actionsBox = TRUE),
                          selected = c("Adelie", "Chinstrap", "Gentoo"),
@@ -99,7 +101,7 @@ ui <- fluidPage(
     tabPanel("Histogram",
              
              # species (histogram) pickerInput ----
-             pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
+             pickerInput(inputId = "penguin_species_histogram_input", label = "Select a species:",
                          choices = c("Adelie", "Chinstrap", "Gentoo"),
                          options = pickerOptions(actionsBox = TRUE),
                          selected = c("Adelie", "Chinstrap", "Gentoo"),
@@ -127,7 +129,7 @@ server <- function(input, output) {
   filtered_spp_scatterplot <- reactive ({
 
     penguins |>
-      filter(species %in% input$penguin_species_scatterplot)
+      filter(species %in% input$penguin_species_scatterplot_input)
 
   })
 
@@ -152,7 +154,7 @@ server <- function(input, output) {
   filtered_spp_histogram <- reactive ({
     
     penguins |>
-      filter(species %in% input$penguin_species_histogram)
+      filter(species %in% input$penguin_species_histogram_input)
     
   })
   
@@ -209,7 +211,7 @@ ui <- fluidPage(
     tabPanel("Scatterplot",
              
              # species (scatterplot) pickerInput ----
-             pickerInput(inputId = "penguin_species_scatterplot", label = "Select a species:",
+             pickerInput(inputId = "penguin_species_scatterplot_input", label = "Select a species:",
                          choices = c("Adelie", "Chinstrap", "Gentoo"),
                          options = pickerOptions(actionsBox = TRUE),
                          selected = c("Adelie", "Chinstrap", "Gentoo"),
@@ -225,7 +227,7 @@ ui <- fluidPage(
     tabPanel("Histogram",
              
              # species (histogram) pickerInput ----
-             pickerInput(inputId = "penguin_species_histogram", label = "Select a species:",
+             pickerInput(inputId = "penguin_species_histogram_input", label = "Select a species:",
                          choices = c("Adelie", "Chinstrap", "Gentoo"),
                          options = pickerOptions(actionsBox = TRUE),
                          selected = c("Adelie", "Chinstrap", "Gentoo"),
@@ -246,11 +248,11 @@ ui <- fluidPage(
 
 <div class="slide-title-smaller">Write a function for adding a `pickerInput` to select for penguin species</div>
 
-<p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInputs` is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
+<p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInput`s is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
 
 . . . 
 
-<p class="small-text topbr">First, create an `R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
+<p class="small-text topbr">First, create an `/R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
 
 <p class="small-text topbr">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
 
@@ -311,7 +313,7 @@ ui <- fluidPage(
     tabPanel("Scatterplot",
              
              # species (scatterplot) pickerInput ---- 
-             penguinSpp_pickerInput(inputId = "penguin_species_scatterplot"),
+             penguinSpp_pickerInput(inputId = "penguin_species_scatterplot_input"),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_scatterplot")
@@ -323,7 +325,7 @@ ui <- fluidPage(
     tabPanel("Histogram",
              
              # species (histogram) pickerInput ----
-             penguinSpp_pickerInput(inputId = "penguin_species_histogram"),
+             penguinSpp_pickerInput(inputId = "penguin_species_histogram_input"),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_histogram")
@@ -344,8 +346,205 @@ ui <- fluidPage(
 
 <p class="body-text">By turning our `pickerInput` code into a function, **we not only reduced *ten* lines of UI code into *two*, but we also made our UI code a bit easier to read** -- our function, `penguinSpp_pickerInput()` tells a reader/collaborator/future you *exactly* what that line of code is meant to do, which is create a `pickerInput` that allows users to select penguin species. Even without code comments or additional context, one may deduce what that line of code does.</p>
 
-. . . 
+---
 
-<p class="body-text">As you build your UIs, consider where you can improve readability -- even if reducing code redundancy isn't a priority (or a possibility), turning UI elements into functions may make navigating your app's code base a more enjoyable experience, particularly as it grows larger and more complex.</p>
+##  {#server-fxns data-menu-title="Server functions"}
+
+<div class="slide-title-smaller">Turn reactives & rendered outputs into functions</div>
+
+<p class="small-text">Next, let's see where we can streamline our server code using functions. We have two discrete sections of code -- **(1)** a reactive data frame and scatterplot output and **(2)** a reactive data frame and histogram output.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3-25|27-46"
+server <- function(input, output) {
+  
+  # filter penguin species (scatterplot) ----
+  filtered_spp_scatterplot <- reactive ({
+
+    penguins |>
+      filter(species %in% input$penguin_species_scatterplot)
+
+  })
+
+  # render the scatterplot output ----
+  output$penguin_scatterplot <- renderPlot({
+    
+    ggplot(na.omit(filtered_spp_scatterplot()),
+           aes(x = bill_length_mm, y = bill_depth_mm,
+               color = species, shape = species)) +
+      geom_point() +
+      geom_smooth(method = "lm", se = FALSE, aes(color = species)) + 
+      scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+      labs(x = "Flipper length (mm)", y = "Bill length (mm)",
+           color = "Penguin species", shape = "Penguin species")
+    
+  })
+  
+  # filter penguin species (histogram) ----
+  filtered_spp_histogram <- reactive ({
+    
+    penguins |>
+      filter(species %in% input$penguin_species_histogram)
+    
+  })
+  
+  # render the histogram output ----
+  output$penguin_histogram <- renderPlot({
+    
+    ggplot(na.omit(filtered_spp_histogram()),
+           aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram() +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species")
+    
+  })
+  
+} # END server
+```
+
+---
+
+##  {#build-penguin-scatterplot-fxn data-menu-title="build_penguin_scatterplot()"}
+
+<div class="slide-title-smaller">Create a function that builds our penguin scatterplot</div>
+
+<p class="smaller-text">First, create a new file in `~/function-app/R` and name it `build_penguin_histogram.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
+
+<p class="smaller-text">The goal of my function is to filter the `penguins` data based on the user input *and* render our ggplot scatterplot. To start, I'm going to cut/paste both the code to generate the reactive `filtered_spp_histogram` data frame and the `renderPlot()` code from `server.R` into our `build_penguin_histogram()` function.</p>
+
+<p class="smaller-text">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
+
+<p class="smaller-text">**Note** that in R, functions return the executed line -- when we run `build_penguin_histogram()` in our server, it will return the object created by `renderPlot()`.</p>
+
+```{r}
+#| eval: false
+#| echo: true
+build_penguin_histogram <- function(input) {
+  
+  # filter penguin spp ----
+  filtered_spp_histogram <- reactive ({
+    
+    penguins |>
+      filter(species %in% input$penguin_species_histogram_input)
+    
+  })
+  
+  # render histogram ----
+  renderPlot({
+   
+    ggplot(na.omit(filtered_spp_histogram()), 
+           aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram() +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species")
+    
+  })
+  
+}
+```
+
+---
+
+##  {#use-build-penguin-scatterplot-fxn data-menu-title="Use build_penguin_scatterplot()"}
+
+<div class="slide-title-smaller">Now use your function inside the server</div>
+
+<p class="small-text">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our scatterplot. This needs to be assigned to `output$penguin_scatterplot`. By doing so, we reduced 23 lines of code to 1 inside our server function.</p>
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "3-4"
+server <- function(input, output) {
+  
+  # filter data & create penguin scatterplot ----
+  output$penguin_scatterplot <- build_penguin_scatterplot(input)
+  
+  # filter penguin species (histogram) ----
+  filtered_spp_histogram <- reactive ({
+    
+    penguins |>
+      filter(species %in% input$penguin_species_histogram)
+    
+  })
+  
+  # render the histogram output ----
+  output$penguin_histogram <- renderPlot({
+    
+    ggplot(na.omit(filtered_spp_histogram()),
+           aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram() +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species")
+    
+  })
 
 
+} # END server
+
+```
+
+---
+
+##  {#create-build-penguin-histogram data-menu-title="Create & use build_penguin_histogram()"}
+
+<div class="slide-title-smaller">Build a function to create our histogram</div>
+
+<p class="small-text">We can repeat a similar process to create a function for building our histogram:</p>
+
+::: {.panel-tabset}
+
+## `build_penguin_histogram.R`
+
+```{r}
+#| eval: false
+#| echo: true
+build_penguin_histogram <- function(input) {
+  
+  # filter penguin spp ----
+  filtered_spp_histogram <- reactive ({
+    
+    penguins |>
+      filter(species %in% input$penguin_species_histogram_input)
+    
+  })
+  
+  # render histogram ----
+  renderPlot({
+   
+    ggplot(na.omit(filtered_spp_histogram()), 
+           aes(x = flipper_length_mm, fill = species)) +
+      geom_histogram() +
+      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      labs(x = "Flipper length (mm)", y = "Frequency",
+           fill = "Penguin species")
+    
+  })
+  
+}
+```
+
+## `server.R`
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "6-7"
+server <- function(input, output) {
+  
+  # filter data & create penguin scatterplot ----
+  output$penguin_scatterplot <- build_penguin_scatterplot(input)
+  
+  # filter data & create penguin histogram ----
+  output$penguin_histogram <- build_penguin_histogram(input)
+
+} # END server
+
+```
+
+:::
