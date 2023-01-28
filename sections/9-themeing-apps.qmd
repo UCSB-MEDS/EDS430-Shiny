@@ -1054,7 +1054,7 @@ h1 {
 
 <p class="body-text">To style apps using both Sass *and* CSS, you'll follow this general workflow:</p>
 
-<p class="small-text topbr">**1.** Create a `.scss` file inside `~/myapp/R` using the `touch` command in the terminal (e.g. `cd` into the appropriate directory, then `touch styles.scss`). Write both your Sass variables and CSS rules in your `.scss` file (**Note:** you can write both Sass & CSS in a `.scss` file, but *only* CSS in a `.css` file)</p> 
+<p class="small-text topbr">**1.** Create a `.scss` file inside `~/myapp/www` using the `touch` command in the terminal (e.g. `cd` into the appropriate directory, then `touch styles.scss`). Write both your Sass variables and CSS rules in your `.scss` file (**Note:** you can write both Sass & CSS in a `.scss` file, but *only* CSS in a `.css` file)</p> 
 
 <p class="small-text topbr">**2.** Compile (i.e. convert) Sass to CSS in `global.R` (or, if using a one-file app, at the top of your script before you define your UI) using the the `sass()` function from the [`{sass}` package](https://rstudio.github.io/sass/index.html) -- this will generate a `.css` file that our shiny app can actually use. Be sure to save your `.css` file to your app's `/www` directory.</p>
 
