@@ -8,7 +8,7 @@ In this workshop, students will learn how to build and deploy Shiny applications
 
 While the primary focus during in-person instruction time is learning the fundamentals of building shiny apps and gaining confidence in doing so, workshop slides (which are openly available for anyone to access [here](https://ucsb-meds.github.io/EDS430-Shiny/#/title-slide)) include detailed instruction and examples to get attendees started on the following:
 
-- **high-level overview of Shiny** (what is it, anantomy of an app, where to find examples)
+- **high-level overview of Shiny** (what is it, anatomy of an app, where to find examples)
 - **building shiny apps & dashboards** (setting up and organizing code repositories, writing apps/dashboards, deploying/redeploying apps using shinyapps.io (and other app deployment considerations)
 - **beautifying user interfaces** (creating custom themes using available packages, styling apps using Sass & CSS)
 - **improving your app's user experience** (important UX considerations, improving web accessibility)
