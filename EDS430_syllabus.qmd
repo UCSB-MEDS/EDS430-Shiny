@@ -1,0 +1,11 @@
+---
+title: "EDS 430 - Intro to Shiny Syllabus"
+format: html
+---
+
+## EDS 430 - Workshop in Environmental Data Science (Intro to Shiny) 
+
+In this 1-unit, 2-day, hands-on coding workshop taught by NCEAS Data Training Coordinator, [Samantha Csik](https://samanthacsik.github.io/), students will learn how to 
+
+[Course Listing](https://bren.ucsb.edu/courses/eds-430)
+[Slides](https://ucsb-meds.github.io/EDS430-Shiny/#/title-slide)
