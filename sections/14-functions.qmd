@@ -76,7 +76,7 @@ format: revealjs
 #| echo: true
 ui <- fluidPage(
   
-  tags$h1("Demoing UI Functions"),
+  tags$h1("Demoing Functions"),
   
   # tabsetPanel ----
   tabsetPanel(
@@ -105,7 +105,7 @@ ui <- fluidPage(
                          choices = c("Adelie", "Chinstrap", "Gentoo"),
                          options = pickerOptions(actionsBox = TRUE),
                          selected = c("Adelie", "Chinstrap", "Gentoo"),
-                         multiple = T),
+                         multiple = TRUE),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_histogram")
@@ -202,7 +202,7 @@ library(tidyverse)
 #| code-line-numbers: "11-16|27-32"
 ui <- fluidPage(
   
-  tags$h1("Demoing UI Functions"),
+  tags$h1("Demoing Functions"),
   
   # tabsetPanel ----
   tabsetPanel(
@@ -215,7 +215,7 @@ ui <- fluidPage(
                          choices = c("Adelie", "Chinstrap", "Gentoo"),
                          options = pickerOptions(actionsBox = TRUE),
                          selected = c("Adelie", "Chinstrap", "Gentoo"),
-                         multiple = T),
+                         multiple = TRUE),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_scatterplot")
@@ -231,7 +231,7 @@ ui <- fluidPage(
                          choices = c("Adelie", "Chinstrap", "Gentoo"),
                          options = pickerOptions(actionsBox = TRUE),
                          selected = c("Adelie", "Chinstrap", "Gentoo"),
-                         multiple = T),
+                         multiple = TRUE),
              
              # scatterplot output ----
              plotOutput(outputId = "penguin_histogram")
