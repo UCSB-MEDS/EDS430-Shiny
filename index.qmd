@@ -309,9 +309,9 @@ countdown::countdown(
 
 ##  {#4-improving-ux data-menu-title="!! (4) Improving UX !!" background="#374F50"}
 
-<p class="slide-title-dark">{{< fa star title="star" >}} Part 4: Improving your app's user experience (UX)</p>
+[{{< fa star title="star" >}} Part 4: Improving your app's user experience (UX)]{.slide-title-dark}
 
-<br>
+<hr class="hr-teal">
 
 <p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Important UX considerations</p>
 
@@ -329,9 +329,9 @@ countdown::countdown(
 
 ##  {#5-debugging-testing data-menu-title="!! (5) Debugging & Testing !!" background="#374F50"}
 
-<p class="slide-title-dark">{{< fa star title="star" >}} Part 5: Debugging & testing</p>
+[{{< fa star title="star" >}} Part 5: Debugging & testing]{.slide-title-dark}
 
-<br>
+<hr class="hr-teal">
 
 <p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Debugging approaches</p>
 
@@ -349,9 +349,9 @@ countdown::countdown(
 
 ##  {#6-streamlining-code data-menu-title="!! (6) Streamlining Code !!" background="#374F50"}
 
-<p class="slide-title-dark">{{< fa star title="star" >}} Part 6: Streamlining code</p>
+[{{< fa star title="star" >}} Part 6: Streamlining code]{.slide-title-dark}
 
-<br>
+<hr class="hr-teal">
 
 <p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Writing functions</p>
 
@@ -369,9 +369,9 @@ countdown::countdown(
 
 ##  {#7-wrap-up data-menu-title="!! (7) Wrap-up !!" background="#374F50"}
 
-<p class="slide-title-dark">{{< fa star title="star" >}} Part 7: Wrap-up</p>
+[{{< fa star title="star" >}} Part 7: Wrap-up]{.slide-title-dark}
 
-<br>
+<hr class="hr-teal">
 
 <p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Shiny alternatives</p>
 

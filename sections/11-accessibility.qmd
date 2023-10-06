@@ -5,7 +5,7 @@ format: revealjs
 ##  {#accessibility data-menu-title="~~~ Accessibility ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("universal-access", fill = "#d2e3f3", a11y = "sem")` Building accessible apps</p>
+<p class="custom-subtitle bottombr">{{< fa universal-access title="the symbol for universal access - a person standing with the arms widespread inside a circle" >}} Building accessible apps</p>
 <p class="caption-text">*Consider web accessibilty guidelines to ensure that your app is usable by all*</p>
 </div>
 
@@ -13,41 +13,45 @@ format: revealjs
 
 ##  {#LO-accessibility data-menu-title="Learning Objectives - Accessibility"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Accessibility</div>
+[{{< fa book-open title="an open book" >}} Learning Objectives - Accessibility]{.slide-title}
+
+<hr>
 
 <p class="medium-body-text bottombr">By the end of this section, you should:</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a general understanding of what web accessibility means and who it can benefit (spoiler alert: it benefits us all!)</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a general understanding of what web accessibility means and who it can benefit (spoiler alert: it benefits us all!)</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to make a few small tweaks/updates to your application to make it more accessible for all users</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to make a few small tweaks/updates to your application to make it more accessible for all users</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a few great resources to turn to to learn more</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a few great resources to turn to to learn more</p>
 
 ---
 
 ##  {#what-is-accessibility data-menu-title="What is web accessibility?"}
 
-<div class="slide-title">`r fontawesome::fa("universal-access", fill = "#05859B", a11y = "sem")` What is web accessibility and why is it important?</div>
+[{{< fa universal-access title="the symbol for universal access - a person standing with the arms widespread inside a circle" >}} What is web accessibility and why is it important?]{.slide-title}
+
+<hr>
 
 <p class="body-text">From the [World Wide Web Consortium (W3C)](https://www.w3.org/)'s [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/):</p>
 
 <div class="quote-text-bg">
 <p class="small-text">Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them. More specifically, people can:</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` perceive, understand, navigate, and interact with the Web</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` contribute to the Web</p> 
+<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} perceive, understand, navigate, and interact with the Web</p>
+<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} contribute to the Web</p> 
 <p class="small-text">Web accessibility encompasses all disabilities that affect access to the Web, including: auditory, cognitive, neurological, physical, speech, and visual</p>
 <p class="small-text">Web accessibility also benefits people without disabilities, for example:</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people using mobile phones, smart watches, smart TVs, and other devices with small screens, different input modes, etc.</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` older people with changing abilities due to ageing</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people with “temporary disabilities” such as a broken arm or lost glasses</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people with “situational limitations” such as in bright sunlight or in an environment where they cannot listen to audio</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people using a slow Internet connection, or who have limited or expensive bandwidth</p>
+<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people using mobile phones, smart watches, smart TVs, and other devices with small screens, different input modes, etc.</p>
+<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} older people with changing abilities due to ageing</p>
+<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people with “temporary disabilities” such as a broken arm or lost glasses</p>
+<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people with “situational limitations” such as in bright sunlight or in an environment where they cannot listen to audio</p>
+<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people using a slow Internet connection, or who have limited or expensive bandwidth</p>
 </div>
 
 <p class="body-text">Check out the [A11Y Project](https://www.a11yproject.com/) for lots of great tutorials and information about web accessibility.</p>
@@ -56,7 +60,9 @@ format: revealjs
 
 ##  {#small-steps data-menu-title="Small steps help!"}
 
-<div class="slide-title">Small changes can lead to tangible increases in functionality for all users</div>
+[Small changes can lead to tangible increases in functionality for all users]{.slide-title}
+
+<hr>
 
 <p class="body-text bottombr">Ensuring that your shiny apps are accessible can feel overwhelming -- but considering even a few small changes can have a large impact on user experience.</p>
 
@@ -66,10 +72,10 @@ format: revealjs
 
 ::: {.column width="45%"}
 <br>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use HTML elements appropriately (e.g. consider hierarchy)</p> 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Include alt text for graphical elements</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Consider navigation from a mobility perspective </p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use colorblind-friendly palettes</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Use HTML elements appropriately (e.g. consider hierarchy)</p> 
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Include alt text for graphical elements</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Consider navigation from a mobility perspective </p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Use colorblind-friendly palettes</p>
 :::
 
 ::: {.column width="5%"}
@@ -86,7 +92,9 @@ format: revealjs
 
 ##  {#hierarchy data-menu-title="Heirarchy"}
 
-<div class="slide-title-smaller">Use HTML elements appropriately</div>
+[Use HTML elements appropriately]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text bottombr">**Screen readers use HTML elements to understand web page organization.** Header elements create hierarchy within a webpage and are used by screen readers (i.e. devices used by those with visual impairments) to understand a page's organizational structure. An `<h1>` element is more important (hierarchically speaking) than an `<h2>`, which is more important than an `<h3>`, and so on.</p>
 
@@ -141,7 +149,9 @@ shinyApp(ui = ui, server = server)
 
 ##  {#alt-text data-menu-title="Alt text"}
 
-<div class="slide-title-smaller">Include alt text with all graphical elements</div>
+[Include alt text with all graphical elements]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text bottombr">All images and graphical elements should include **alternative (alt) text** that describe the image and/or information being represented. This text won't appear in the UI, but is detected and read by screen readers.</p>
 
@@ -180,7 +190,9 @@ tags$img(src = "file/path/to/img",
 
 ##  {#alt-text-tips data-menu-title="Alt text tips"}
 
-<div class="slide-title-smaller">Tips on writing alt text for data visualizations</div>
+[Tips on writing alt text for data visualizations]{.slide-title-smallest}
+
+<hr>
 
 <p class="body-text">A good rule of thumb for writing alt text for data visualizations is <em>alt="<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>"</em> (see [this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/) for more). One example:</p>
 
@@ -194,7 +206,9 @@ tags$img(src = "file/path/to/img",
 
 ##  {#mobility data-menu-title="Mobility"}
 
-<div class="slide-title">Consider UI navigation for those with mobility impairments</div>
+[Consider UI navigation for those with mobility impairments]{.slide-title}
+
+<hr>
 
 <p class="small-text">For users with mobility impairments, using a mouse to navigate a UI packed with widgets may be challenging -- some users may even be exclusively using a keyboard to navigate the web.</p>
 
@@ -224,7 +238,9 @@ tags$img(src = "file/path/to/img",
 
 ##  {#color-palettes data-menu-title="Color Palettes"}
 
-<div class="slide-title">Use colorblind-friendly palettes</div>
+[Use colorblind-friendly palettes]{.slide-title}
+
+<hr>
 
 <p class="small-text">About 1 in 12 males and 1 in 200 females have some form of colorblindness ([Wikipedia](https://en.wikipedia.org/wiki/Color_blindness)). Ensuring that your color choices are distinguishable from one another and/or providing an additional non-color-based way (e.g. patterns, shapes) of distinguishing between treatments/variables/etc. can greatly help with interpretation of data visualizations.</p>
 
