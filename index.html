@@ -1811,7 +1811,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d3805326" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_1acb1060" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -1876,7 +1876,7 @@ Packages introduced:
 </div>
 <div class="fragment">
 <p class="small-text">
-<i class="fa-solid fa-box-open" title="an open box" aria-label="box-open"></i>]{.teal-text} <a href="https://github.com/lter/lterdatasampler">lterdatasampler</a>: data
+<span class="teal-text"><i class="fa-solid fa-box-open" title="an open box" aria-label="box-open"></i></span> <a href="https://github.com/lter/lterdatasampler">lterdatasampler</a>: data
 </p>
 </div>
 </section><section id="roadmap-app2v1" class="slide level2" data-menu-title="Roadmap App #2v1"><h2></h2>
@@ -2590,7 +2590,7 @@ We can easily copy our wrangling code over from our <a href="https://ucsb-meds.g
 <span id="cb39-24"><a href="#cb39-24"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="trout-pickerInput" class="slide level2" data-menu-title="Add Trout pickerInput()"><h2></h2>
-<p><span class="slide-title-smaller">Add a <code>pickerInput</code> for selecting <code>channel_type</code> to your UI&lt;</span></p>
+<p><span class="slide-title-smaller">Add a <code>pickerInput</code> for selecting <code>channel_type</code> to your UI</span></p>
 <hr>
 <p class="small-text">
 The <code>channel_type</code> variable (originally called <code>unittype</code> – we updated the name when wrangling data (see line 9 on <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/wrangle-data-global">previous slide</a>)) represents the type of water body (<em>cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel</em>) data were collected in. We’ll start by building a <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput()</a></code> to allow users to filter data based on <code>channel_type</code>.
@@ -2815,7 +2815,7 @@ Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_7c3fe060" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_fe149f44" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2824,45 +2824,36 @@ Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> 
 </div>
 </div>
 </section><section id="second-penguins" class="slide level2" data-menu-title="Next up, penguins"><h2></h2>
-<p class="slide-title">
-Add data viz: Next up, penguins
-</p>
+<p><span class="slide-title-smaller">Add data viz: Next up, penguins</span></p>
+<hr>
 <p class="small-text bottombr">
 We’ll be using the <code>penguins</code> dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/"><code>{palmerpenguins}</code> package</a> to create our second reactive plot. These data contain penguin (genus <em>Pygoscelis</em>) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the <a href="https://pallter.marine.rutgers.edu/">Palmer Station LTER</a>. Original data can be found on the EDI Data Portal (<a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5">Adélie data</a>, <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5">Gentoo data</a>, and <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6">Chinstrap data</a>). Refer back to <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots">this slide</a> to revisit our practice data wrangling &amp; visualization script.
 </p>
 <p><br></p>
-<center>
-<img src="images/meet_the_penguins.png" alt="A cartoon drawing of Chinstrap (atop a purple background), Gentoo (atop a green background) and Adélie (atop an orange background) penguins." width="600">
-</center>
-<center>
+
+<img data-src="images/meet_the_penguins.png" style="width:80.0%" alt="A cartoon drawing of Chinstrap (atop a purple background), Gentoo (atop a green background) and Adélie (atop an orange background) penguins." class="r-stretch quarto-figure-center"><center>
 <p class="small-text gray-text">
 Artwork by <a href="https://allisonhorst.com/"><span class="citation" data-cites="allison_horst">@allison_horst</span></a>
 </p>
 </center></section><section id="exercise3-prompt" class="slide level2" data-menu-title="** Exercise 3 Prompt **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
-<path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg> Exercise 3: Add a reactive plot to the ‘Penguins’ tab
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-question" title="question mark" aria-label="question"></i> Exercise 3: Add a reactive plot to the ‘Penguins’ tab</span></p>
+<hr>
 <p class="small-text">
 Working alone or in groups, add a reactive histogram of penguin flipper lengths (using the <code>penguins</code> data set from the <a href="https://allisonhorst.github.io/palmerpenguins/"><code>{palmerpenguins}</code> package</a>) to the <strong>Penguins</strong> tab. Your plot should have the following features and look like the example below, when complete:
 </p>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> data colored by penguin <code>species</code>
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> data colored by penguin <code>species</code>
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput</a></code> that allows users to filter data based on <code>island</code>, and that includes buttons to <strong>Select All</strong> / <strong>Deselect All</strong> island options at once
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> a <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput</a></code> that allows users to filter data based on <code>island</code>, and that includes buttons to <strong>Select All</strong> / <strong>Deselect All</strong> island options at once
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> a <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">shiny::sliderInput</a></code> that allows users to change the number of histogram bins and that by default, displays a histogram with <strong>25</strong> bins
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> a <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">shiny::sliderInput</a></code> that allows users to change the number of histogram bins and that by default, displays a histogram with <strong>25</strong> bins
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> the two widgets should be placed in the <code>sidebarPanel</code> and the reactive histogram should be placed in the <code>mainPanel</code> of the <strong>Penguins</strong> tab
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> the two widgets should be placed in the <code>sidebarPanel</code> and the reactive histogram should be placed in the <code>mainPanel</code> of the <strong>Penguins</strong> tab
 </p>
 </div><div class="column" style="width:5%;">
 
@@ -2878,24 +2869,19 @@ See next slide for some tips on getting started!
 </p>
 </center>
 </section><section id="exercise3-tips" class="slide level2" data-menu-title="** Exercise 3 Tips **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
-<path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg> Exercise 3: Tips
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-lightbulb" title="a lightbulb" aria-label="lightbulb"></i> Exercise 3: Tips</span></p>
+<hr>
 <p class="body-text topbr">
 <strong>Tips:</strong>
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Remember to load the <code>palmerpenguins</code> package at the top of <code>global.R</code> so that your app can find the data
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Remember to load the <code>palmerpenguins</code> package at the top of <code>global.R</code> so that your app can find the data
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Add your widgets to the <code>sidebarPanel</code> and your plot output to the <code>mainPanel</code> of the <strong>Penguins</strong> tab – look for that placeholder text we added earlier to help place your new code in the correct spot within your UI!
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Add your widgets to the <code>sidebarPanel</code> and your plot output to the <code>mainPanel</code> of the <strong>Penguins</strong> tab – look for that placeholder text we added earlier to help place your new code in the correct spot within your UI!
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Try changing the histogram bin number in your practice code script first, before attempting to make it reactive
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Try changing the histogram bin number in your practice code script first, before attempting to make it reactive
 </p>
 <p class="body-text topbr">
 <strong>And remember</strong> to follow the our three steps for building reactive outputs (1. add input to UI, 2. add output to UI, 3. tell server how to assemble inputs into outputs)!
@@ -2907,10 +2893,8 @@ See next slide for a solution!
 </p>
 </center>
 </section><section id="exercise3-solution" class="slide level2" data-menu-title="** Exercise 3 Solution **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Check" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
-<path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 3: A solution
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-check" title="check mark" aria-label="check"></i> Exercise 3: A solution</span></p>
+<hr>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby">
 <li><a data-tabby-default="" href="#tabset-3-1"><code>global.R</code></a></li>
@@ -3117,7 +3101,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_486b7b4c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_ff15165c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3126,9 +3110,8 @@ See next slide for a solution!
 </div>
 </div>
 </section><section id="lastly-text" class="slide level2" data-menu-title="Lastly, text"><h2></h2>
-<div class="slide-title-smaller">
-Lastly: add background/other important information text
-</div>
+<p><span class="slide-title-smaller">Lastly: add background/other important information text</span></p>
+<hr>
 <p class="body-text">
 It’s usually valuable (and important) to provide some background information/context for your app – the landing page of your app can be a great place for this. We’re going to add text to our app’s landing page (i.e.&nbsp;the <strong>About this App</strong> page) so that it looks like the example below:
 </p>
@@ -3145,23 +3128,19 @@ It’s usually valuable (and important) to provide some background information/c
 <strong>Some important pieces for information to consider adding:</strong>
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> motivation for building the app
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> motivation for building the app
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> brief instructions for exploring the data
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> brief instructions for exploring the data
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> who maintains the app, where the code lives, how to submit issues/suggestions
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> who maintains the app, where the code lives, how to submit issues/suggestions
 </p>
 </div>
 </div>
 </section><section id="unruly-text" class="slide level2" data-menu-title="Unruly text in the UI"><h2></h2>
-<div class="slide-title-smaller">
-Adding long text to the UI can get unruly
-</div>
+<p><span class="slide-title-smaller">Adding long text to the UI can get unruly</span></p>
+<hr>
 <p class="small-text">
 For example, I’ve added and formatted my landing page’s text directly in the <strong>UI</strong> using lots of nested <code>tags</code> – I’ve done this inside the <code>tabPanel</code> titled <strong>About this App</strong> (<strong>Note:</strong> I’ve formatted the layout of this page a bit using <code>fluidRow</code> and <code>column</code>s to create some white space around the edges. I’ve also created a faint gray horizontal line, using <code>hr()</code>, beneath which I added a footnote):
 </p>
@@ -3275,9 +3254,8 @@ For example, I’ve added and formatted my landing page’s text directly in the
 <span id="cb49-107"><a href="#cb49-107"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="includeMarkdown" class="slide level2" data-menu-title="includeMarkdown()"><h2></h2>
-<div class="slide-title-smaller">
-Instead, use <code>includeMarkdown()</code> to read in text from separate <code>.md</code> files
-</div>
+<p><span class="slide-title-smaller">Instead, use <code>includeMarkdown()</code> to read in text from separate <code>.md</code> files</span></p>
+<hr>
 <p class="small-text">
 To maintain readability and an overall tidier-looking UI, you can write and style long bodies of text in separate markdown (<code>.md</code>) files that you then read into your UI using the <code>includeMarkdown()</code> function (<strong>Important:</strong> the <code>includeMarkdown()</code> function requires the <a href="https://github.com/rstudio/markdown">markdown</a> package – be sure to add <code><a href="https://github.com/rstudio/markdown">library(markdown)</a></code> to your <code>global.R</code> file!).
 </p>
@@ -3424,9 +3402,8 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 </div>
 </div>
 </section><section id="last-run" class="slide level2" data-menu-title="Check out your full app!"><h2></h2>
-<div class="slide-title-smaller">
-Run your app one more time to admire your beautiful creation!
-</div>
+<p><span class="slide-title-smallest">Run your app one more time to admire your beautiful creation!</span></p>
+<hr>
 <center>
 <img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750">
 </center>
@@ -3434,9 +3411,8 @@ Run your app one more time to admire your beautiful creation!
 Again, we have some UX/UI quirks to fix (most notably, blank plots when all widget options are deselected), which we’ll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!
 </p>
 </section><section id="app2-code" class="slide level2" data-menu-title="App #2 code (so far)"><h2></h2>
-<div class="slide-title-smaller">
-Code recap for app #2v1, so far:
-</div>
+<p><span class="slide-title-smaller">Code recap for app #2v1, so far:</span></p>
+<hr>
 <p class="small-text">
 Additionally, you should have a <code>/text</code> folder within your app’s directory (<code>/two-file-app</code>, if you named it as I did) that contains two markdown files, <code>about.md</code> and <code>footer.md</code>.
 </p>
@@ -3651,17 +3627,15 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 </section><section id="deploying-apps" class="slide level2" data-menu-title="Deploying apps with shinyapps.io" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
-<svg aria-label="Upload" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Upload</title>
-<path d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L288 109.3zM64 352H192c0 35.3 28.7 64 64 64s64-28.7 64-64H448c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V416c0-35.3 28.7-64 64-64zM432 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg> Deploying apps with <a href="https://www.shinyapps.io/">shinyapps.io</a>
+<i class="fa-solid fa-upload" title="a symbol for uploading files – a server with an upward facing arrow that originates at the server" aria-label="upload"></i> Deploying apps with <a href="https://www.shinyapps.io/">shinyapps.io</a>
 </p>
 <p class="caption-text">
 <em>Sharing your Shiny app with others isn’t so easy when it just lives on your computer (and your R session has to act as the server that powers it). We’ll now learn how to host your app using <a href="https://www.shinyapps.io/">shinyapps.io</a>, a free service for sharing your Shiny apps online.</em>
 </p>
 </div>
 </section><section id="shinyapps-account" class="slide level2" data-menu-title="Set up shinyapps.io account"><h2></h2>
-<div class="slide-title-smaller">
-Connect your shinyapps.io account to RStudio
-</div>
+<p><span class="slide-title-smallest">Connect your shinyapps.io account to RStudio</span></p>
+<hr>
 <p class="small-text">
 Go to <a href="https://www.shinyapps.io/">shinyapps.io</a> and login or create an account (if you don’t already have one) – I created my account and login with GitHub. To use shinyapps.io, you first need to link your account with RStudio on your computer. Follow the instructions on shinyapps.io when you first create your account to install the <a href="https://github.com/rstudio/rsconnect"><code>{rsconnect}</code> package</a> and authorize your account:
 </p>
@@ -3669,9 +3643,8 @@ Go to <a href="https://www.shinyapps.io/">shinyapps.io</a> and login or create a
 <img src="images/shinyapps_setup.png" alt="shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`." width="750">
 </center>
 </section><section id="deploy-app" class="slide level2" data-menu-title="~~~ Deploy your app ~~~"><h2></h2>
-<div class="slide-title-smaller">
-Deploy your app to shinyapps.io
-</div>
+<p><span class="slide-title-smallest">Deploy your app to shinyapps.io</span></p>
+<hr>
 <p class="small-text">
 Once your account has been authorized, run <code>rsconnect::deployApp("&lt;app_directory_name&gt;")</code> in your console to deploy your app to shinyapps.io. Here, we’ll run <code>rsconnect::deployApp("two-file-app")</code> to deploy the app we’ve been working on.
 </p>
@@ -3682,9 +3655,8 @@ Once deployed, a browser will open to your application. The URL will take the fo
 <img src="images/deployed_v1.gif" alt="Our shiny app, now hosted at the URL https://samanthacsik.shinyapps.io/two-file-app which functions the same as when it was hosted locally." width="650">
 </center>
 </section><section id="shinyapps-dashboard" class="slide level2" data-menu-title="shinyapps.io dashboard"><h2></h2>
-<div class="slide-title-smaller">
-The shinyapps.io dashboard
-</div>
+<p><span class="slide-title-smaller">The shinyapps.io dashboard</span></p>
+<hr>
 <p class="small-text">
 Your shinyapps.io dashboard provides tons of information about your application metrics, instance (the virtualized server that your app is hosted on) and worker (a special type of R process that an Application Instance runs to service requests to an application) settings, plan management, and more. The free plan (the plan we’re using here today) allows you to deploy <strong>five</strong> Shiny apps. You are able to archive and/or delete once-deployed apps to make space for new ones.
 </p>
@@ -3695,9 +3667,8 @@ Your shinyapps.io dashboard provides tons of information about your application 
 Check out the <a href="https://docs.posit.co/shinyapps.io/index.html">shinyapps.io user guide</a> for more information on hosting your apps on shinyapps.io.
 </p>
 </section><section id="other-hosting-options" class="slide level2" data-menu-title="Alternative ways to host apps"><h2></h2>
-<div class="slide-title-smaller">
-Other ways to host your Shiny apps
-</div>
+<p><span class="slide-title">Other ways to host your Shiny apps</span></p>
+<hr>
 <p class="small-text">
 <a href="https://www.shinyapps.io/">shinyapps.io</a> is not the only Shiny app hosting service (though it’s the easiest to get started with and the only one we’ll be covering in detail in this workshop).
 </p>
@@ -3705,17 +3676,14 @@ Other ways to host your Shiny apps
 <strong>Posit also offers the following:</strong>
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg><a href="https://posit.co/products/open-source/shinyserver/">Shiny server</a> is an open source server which you can deploy for free on your own hardware. It requires more setup and configuration, but can be used without a fee. The Bren and NCEAS servers are configured with Shiny Server for hosting for some in-house apps.
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> <a href="https://posit.co/products/open-source/shinyserver/">Shiny server</a> is an open source server which you can deploy for free on your own hardware. It requires more setup and configuration, but can be used without a fee. The Bren and NCEAS servers are configured with Shiny Server for hosting for some in-house apps.
 </p>
 <p class="small-text topbr">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg><a href="https://posit.co/products/enterprise/connect/">Posit connect</a> is a paid product that provides an advanced suite of services for hosting Shiny apps, Quarto and R Markdown reports, APIs, and more.
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> <a href="https://posit.co/products/enterprise/connect/">Posit connect</a> is a paid product that provides an advanced suite of services for hosting Shiny apps, Quarto and R Markdown reports, APIs, and more.
 </p>
 </section><section id="hosting-recommendations" class="slide level2" data-menu-title="App hosting recommendations"><h2></h2>
-<div class="slide-title-smaller">
-So how should <em>I</em> host my app?
-</div>
+<p><span class="slide-title-smaller">So how should <em>I</em> host my app?</span></p>
+<hr>
 <p class="body-text">
 The Bren compute team will work with groups to deploy and maintain apps on in-house servers for up to 6 months after capstone/GP presentations <em>or until they break</em>.
 </p>
@@ -3726,12 +3694,10 @@ If you and/or your client wish to continue using your app after this time, we re
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg><strong>Preferred:</strong> Stick with the <strong>free</strong> tier of <a href="https://www.shinyapps.io/">shinyapps.io</a>, if you can! This is by far the most straightforward option that requires no server maintenance for you or your client. If your app exceeds the limitations set by the free tier (e.g.&nbsp;requires more active hours, needs more RAM or instances to support high traffic usage, etc.), you/your client have the option to upgrade to a paid tier – there are <a href="https://docs.posit.co/shinyapps.io/billing-and-account-management.html#plan-types">5 paid plan types</a>. Check out the <a href="https://docs.posit.co/shinyapps.io/index.html">shinyapps.io user guide</a> for more information. <strong>Consider setting aside your allocated capstone/GP funds to help support a paid shinyapps.io plan.</strong>
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> <strong>Preferred:</strong> Stick with the <strong>free</strong> tier of <a href="https://www.shinyapps.io/">shinyapps.io</a>, if you can! This is by far the most straightforward option that requires no server maintenance for you or your client. If your app exceeds the limitations set by the free tier (e.g.&nbsp;requires more active hours, needs more RAM or instances to support high traffic usage, etc.), you/your client have the option to upgrade to a paid tier – there are <a href="https://docs.posit.co/shinyapps.io/billing-and-account-management.html#plan-types">5 paid plan types</a>. Check out the <a href="https://docs.posit.co/shinyapps.io/index.html">shinyapps.io user guide</a> for more information. <strong>Consider setting aside your allocated capstone/GP funds to help support a paid shinyapps.io plan.</strong>
 </p>
 <p class="small-text topbr">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> If you have a server-savvy client, they may want to deploy/host your app using their own infrastructure. If your client plans to pursue this option, but does not yet have a their own server configured to do so, we recommend directing them to the <a href="https://posit.co/download/shiny-server/">online instructions</a> for getting started with Shiny Server. <strong>PLEASE NOTE that Bren staff (including the compute team) are unable to provide technical support for clients in server configuration and app deployment/maintenance.</strong>
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> If you have a server-savvy client, they may want to deploy/host your app using their own infrastructure. If your client plans to pursue this option, but does not yet have a their own server configured to do so, we recommend directing them to the <a href="https://posit.co/download/shiny-server/">online instructions</a> for getting started with Shiny Server. <strong>PLEASE NOTE that Bren staff (including the compute team) are unable to provide technical support for clients in server configuration and app deployment/maintenance.</strong>
 </p>
 </div>
 <div class="fragment">
@@ -3742,43 +3708,36 @@ If you and/or your client wish to continue using your app after this time, we re
 </section><section id="improving-app2" class="slide level2" data-menu-title="~~~ Improving App #2 UX ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
-<svg aria-label="Users" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Users</title>
-<path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg> Improving user experience
+<i class="fa-solid fa-users" title="three people" aria-label="users"></i> Improving user experience
 </p>
 <p class="caption-text">
 <em>Our two-file-app is looking pretty good! It’s functional and deployed via shinyapps.io. Next, we’ll focus on making some minor tweaks that can help to improve usability</em>
 </p>
 </div>
 </section><section id="LO-app2v2" class="slide level2" data-menu-title="Learning Objectives - App #2v2"><h2></h2>
-<div class="slide-title">
-<svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - App #2v2 (two-file app)
-</div>
+<p><span class="slide-title"><i class="fa-solid fa-book-open" title="an open book" aria-label="book-open"></i> Learning Objectives - App #2v2 (two-file app)</span></p>
+<hr>
 <p class="medium-body-text bottombr">
 By the end of this section, you should:
 </p>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand how to provide users with helpful error messages using <code>validate()</code>
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> understand how to provide users with helpful error messages using <code>validate()</code>
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know how to add customizable loading animations to alert users when reactive objects are re-rendering
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> know how to add customizable loading animations to alert users when reactive objects are re-rendering
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> know how to add alternate (alt) text to rendered plots
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> know how to add alternate (alt) text to rendered plots
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand how to <em>republish</em> an app using <a href="https://www.shinyapps.io/">shinyapps.io</a>
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> understand how to <em>republish</em> an app using <a href="https://www.shinyapps.io/">shinyapps.io</a>
 </p>
 </div>
 <div class="fragment">
@@ -3793,9 +3752,8 @@ Packages introduced:
 </p>
 </div>
 </section><section id="roadmap-app2v2" class="slide level2" data-menu-title="Roadmap App #2v2"><h2></h2>
-<div class="slide-title-smaller">
-Roadmap for App #2v2
-</div>
+<p><span class="slide-title-smaller">Roadmap for App #2v2</span></p>
+<hr>
 <p class="body-text bottombr">
 We’ll be refining our <strong>two-file app</strong> with a focus on creating a more user-friendly experience. When finished with v2, we’ll have added:
 </p>
@@ -3820,9 +3778,8 @@ We’ll be refining our <strong>two-file app</strong> with a focus on creating a
 </div>
 </div>
 </section><section id="no-guesswork" class="slide level2" data-menu-title="No guesswork!"><h2></h2>
-<div class="slide-title">
-Take out any guesswork for your app’s users
-</div>
+<p><span class="slide-title">Take out any guesswork for your app’s users</span></p>
+<hr>
 <p class="body-text">
 <em>It’s important to remove any possible points of confusion for successfully using your app.</em>
 </p>
@@ -3843,9 +3800,8 @@ While this response is expected (and normal), we can generate a user-friendly <a
 </div>
 </div>
 </section><section id="using-validate" class="slide level2" data-menu-title="Using validate()"><h2></h2>
-<div class="slide-title">
-Writing validation tests
-</div>
+<p><span class="slide-title">Writing validation tests</span></p>
+<hr>
 <p class="small-text">
 <code>validate()</code> tests a condition and returns an error if that conditions fails. It’s used in conjunction with <code>need()</code>, which takes an expression that returns <code>TRUE</code> or <code>FALSE</code>, along with a character string to return if the condition is <code>FALSE</code>.
 </p>
@@ -3871,26 +3827,21 @@ Place your validation test(s) at the start of any <code>reactive()</code> or <co
 <span id="cb56-16"><a href="#cb56-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="exercise4-prompt-tips" class="slide level2" data-menu-title="** Exercise 4 Prompt &amp; Tips **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
-<path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg> &amp; <svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
-<path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg> Exercise 4: Add a validation test for your penguin histogram
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-question" title="question mark" aria-label="question"></i> &amp; <i class="fa-solid fa-lightbulb" title="a lightbulb" aria-label="lightbulb"></i> Exercise 4: Add a validation test for your penguin histogram</span></p>
+<hr>
 <p><br></p>
 <p class="body-text">
 <strong>To Do:</strong>
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Construct a validation test that displays a clear but succinct message when a user deselects all islands using the <code>pickerWidget</code>
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Construct a validation test that displays a clear but succinct message when a user deselects all islands using the <code>pickerWidget</code>
 </p>
 <p><br></p>
 <p class="body-text">
 <strong>Tips:</strong>
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Despite having <strong>two</strong> inputs, we only need <strong>one</strong> validation test for our Penguins plot. Why is this?
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Despite having <strong>two</strong> inputs, we only need <strong>one</strong> validation test for our Penguins plot. Why is this?
 </p>
 <p><br><br></p>
 <center>
@@ -3899,10 +3850,8 @@ See next slide for a solution!
 </p>
 </center>
 </section><section id="exercise4-solution" class="slide level2" data-menu-title="** Exercise 4 Solution **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Check" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
-<path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 4: A solution
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-check" title="check mark" aria-label="check"></i> Exercise 4: A solution</span></p>
+<hr>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb57" data-code-line-numbers="39-41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb57-2"><a href="#cb57-2"></a>  </span>
@@ -3966,9 +3915,8 @@ See next slide for a solution!
 <span id="cb57-60"><a href="#cb57-60"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="loading-animations" class="slide level2" data-menu-title="Add loading animations"><h2></h2>
-<div class="slide-title-smaller">
-Add loading animations to re-rendering outputs
-</div>
+<p><span class="slide-title-smaller">Add loading animations to re-rendering outputs</span></p>
+<hr>
 <p class="small-text">
 The <a href="https://github.com/daattali/shinycssloaders"><code>{shinycssloaders}</code> package</a> makes it easy to add visual indicators to outputs as they’re loading or re-rendering. This can be particularly helpful if you have outputs that take a few seconds to render – it alerts users that their updated inputs were recognized and that the app is working to re-render outputs.
 </p>
@@ -3998,9 +3946,8 @@ We can pipe the <code>withSpinner()</code> function directly into our <code>plot
 </div>
 </div>
 </section><section id="include-alt-text" class="slide level2" data-menu-title="Include alt text"><h2></h2>
-<div class="slide-title-smaller">
-Include alt text for all data visualizations
-</div>
+<p><span class="slide-title-smallest">Include alt text for all data visualizations</span></p>
+<hr>
 <p class="small-text">
 Alt text are <strong>written descriptions</strong> added to images, and importantly, to data visualizations, to <strong>help more users understand the content</strong>. Assistive technologies (e.g.&nbsp;screen readers) read alt text out loud for users to hear. When alt text is successfully added, the <code>alt</code> tag (along with your text) should appear in the HTML (right click on your app’s data viz to <strong>Inspect</strong> and ensure that it was added).
 </p>
@@ -4057,17 +4004,15 @@ We’ll talk a bit more about alt text <a href="https://ucsb-meds.github.io/EDS4
 </section><section id="redeploying-apps" class="slide level2" data-menu-title="~~~ Redeploying apps ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
-<svg aria-label="Upload" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Upload</title>
-<path d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L288 109.3zM64 352H192c0 35.3 28.7 64 64 64s64-28.7 64-64H448c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V416c0-35.3 28.7-64 64-64zM432 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"></path></svg> Redeploying apps with <a href="https://www.shinyapps.io/">shinyapps.io</a>
+<i class="fa-solid fa-upload" title="a symbol for uploading files – a server with an upward facing arrow that originates at the server" aria-label="upload"></i> Redeploying apps with <a href="https://www.shinyapps.io/">shinyapps.io</a>
 </p>
 <p class="caption-text">
 <em>Now that we’ve added some updates to our app, it’s time to redeploy our newest version.</em>
 </p>
 </div>
 </section><section id="howto-redeploy" class="slide level2" data-menu-title="How to Redeploy"><h2></h2>
-<div class="slide-title-smaller bottombr">
-Redeploying is similar to deploying for the first time
-</div>
+<p><span class="slide-title-smaller">Redeploying is similar to deploying for the first time</span></p>
+<hr>
 <p class="body-text bottombr">
 Just a few quick steps before your updates are live at your URL from earlier:
 </p>
@@ -4101,7 +4046,7 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2c4bd1df" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_a6f92799" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4112,43 +4057,36 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 </section><section id="building-dashboards" class="slide level2" data-menu-title="~~~ Building Dashboards ~~~" data-background="#053660"><h2></h2>
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">
-<svg aria-label="Gauge" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#d2e3f3;overflow:visible;position:relative;"><title>Gauge</title>
-<path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm320 96c0-26.9-16.5-49.9-40-59.3V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V292.7c-23.5 9.5-40 32.5-40 59.3c0 35.3 28.7 64 64 64s64-28.7 64-64zM144 176a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm-16 80a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM400 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg> Building dashboards with <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a>
+<i class="fa-solid fa-gauge" title="a gauge" aria-label="gauge"></i> Building dashboards with <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a>
 </p>
 <p class="caption-text">
 <em>Shiny alone is powerful and flexible, however it can take a lot of work to create a sleek/modern UI. <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a> provides a “template” for quickly building visually appealing dashboard apps.</em>
 </p>
 </div>
 </section><section id="LO-app3" class="slide level2" data-menu-title="Learning Objectives - App #3"><h2></h2>
-<div class="slide-title">
-<svg aria-label="Book Open" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Book Open</title>
-<path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg> Learning Objectives - App #3 (shinydashboard)
-</div>
+<p><span class="slide-title"><i class="fa-solid fa-book-open" title="an open book" aria-label="book-open"></i> Learning Objectives - App #3 (shinydashboard)</span></p>
+<hr>
 <p class="medium-body-text bottombr">
 After this section, you should:
 </p>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand the general workflow for pre-processing, saving &amp; reading data into an app
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> understand the general workflow for pre-processing, saving &amp; reading data into an app
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> be comfortable building out a dashboard UI using <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a> layout functions
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> be comfortable building out a dashboard UI using <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a> layout functions
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> understand how to add static images to your app
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> understand how to add static images to your app
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> feel comfortable creating a basic reactive <code>leaflet</code> map
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> feel comfortable creating a basic reactive <code>leaflet</code> map
 </p>
 </div>
 <div class="fragment">
@@ -4158,20 +4096,17 @@ Packages introduced:
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Box Open" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Box Open</title>
-<path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a>: provides an alternative UI framework for easily building dashboard-style shiny applications
+<span class="teal-text"><i class="fa-solid fa-box-open" title="an open box" aria-label="box-open"></i></span> <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a>: provides an alternative UI framework for easily building dashboard-style shiny applications
 </p>
 </div>
 <div class="fragment">
 <p class="small-text">
-<svg aria-label="Box Open" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Box Open</title>
-<path d="M58.9 42.1c3-6.1 9.6-9.6 16.3-8.7L320 64 564.8 33.4c6.7-.8 13.3 2.7 16.3 8.7l41.7 83.4c9 17.9-.6 39.6-19.8 45.1L439.6 217.3c-13.9 4-28.8-1.9-36.2-14.3L320 64 236.6 203c-7.4 12.4-22.3 18.3-36.2 14.3L37.1 170.6c-19.3-5.5-28.8-27.2-19.8-45.1L58.9 42.1zM321.1 128l54.9 91.4c14.9 24.8 44.6 36.6 72.5 28.6L576 211.6v167c0 22-15 41.2-36.4 46.6l-204.1 51c-10.2 2.6-20.9 2.6-31 0l-204.1-51C79 419.7 64 400.5 64 378.5v-167L191.6 248c27.8 8 57.6-3.8 72.5-28.6L318.9 128h2.2z"></path></svg><a href="https://rstudio.github.io/leaflet/">leaflet</a>: for building interactive maps
+<span class="teal-text"><i class="fa-solid fa-box-open" title="an open box" aria-label="box-open"></i></span> <a href="https://rstudio.github.io/leaflet/">leaflet</a>: for building interactive maps
 </p>
 </div>
 </section><section id="roadmap-dashboard" class="slide level2" data-menu-title="Roadmap App #3"><h2></h2>
-<div class="slide-title">
-Roadmap for App #3
-</div>
+<p><span class="slide-title">Roadmap for App #3</span></p>
+<hr>
 <p class="body-text">
 In this section, we’ll be building a <strong>shinydashboard</strong> using data downloaded from the <a href="https://arcticdata.io/">Arctic Data Center</a>. We’ll be building out the following features:
 </p>
@@ -4200,9 +4135,8 @@ In this section, we’ll be building a <strong>shinydashboard</strong> using dat
 </div>
 </div>
 </section><section id="what-is-a-dashboard" class="slide level2" data-menu-title="What is a dashboard?"><h2></h2>
-<div class="slide-title-smaller">
-But first, what do we mean by a shiny “dashboard”?
-</div>
+<p><span class="slide-title-smaller">But first, what do we mean by a shiny “dashboard”?</span></p>
+<hr>
 <p class="body-text">
 <a href="https://rstudio.github.io/shinydashboard/"><code>shinydashboard</code></a> is just an alternative framework for building shiny apps. In other words, shiny dashboards are just shiny apps, but with some different UI elements that make building apps with a classic “dashboard” feel to them a little bit easier.
 </p>
@@ -4210,9 +4144,8 @@ But first, what do we mean by a shiny “dashboard”?
 <img src="images/simple_dashboard.png" alt="A simple shinydashboard with two boxes (one containing a histogram and one containing a sliderInput) in the body. The header reads 'Basic tabs' and the sidebar has two menu items: Dashboard and Widgets." width="700">
 </center>
 </section><section id="dashboardPage" class="slide level2" data-menu-title="dashboardPage()"><h2></h2>
-<div class="slide-title-smaller">
-The most basic shinydashboard is made up of a header, a sidebar, and a body
-</div>
+<p><span class="slide-title-smaller">The most basic shinydashboard is made up of a header, a sidebar, and a body</span></p>
+<hr>
 <p class="small-text">
 The main difference between a <strong>shiny app</strong> and a <strong>shinydashboard</strong> are the UI elements. Rather than a <code>fluidPage()</code> (as used in our previous shiny apps), we’ll create a <code>dashboardPage()</code>, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a <a href="http://rstudio.github.io/shinydashboard/">shinydashboard</a> page (you can run this code in an <code>app.R</code> file, if you wish).
 </p>
@@ -4247,34 +4180,26 @@ The main difference between a <strong>shiny app</strong> and a <strong>shinydash
 </div>
 </div>
 </section><section id="shinydashboard-examples" class="slide level2" data-menu-title="Examples of shinydashboards"><h2></h2>
-<div class="slide-title bottombr">
-Example shiny dashboards built by some familiar folks <svg aria-label="Face Smile" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Face Smile</title>
-<path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg>
-</div>
+<p><span class="slide-title">Example shiny dashboards built by some familiar folks <i class="fa-solid fa-face-smile" title="a smiling face" aria-label="face-smile"></i></span></p>
+<hr>
 <p class="small-text">
-<svg aria-label="School" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>School</title>
-<path d="M337.8 5.4C327-1.8 313-1.8 302.2 5.4L166.3 96H48C21.5 96 0 117.5 0 144V464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V144c0-26.5-21.5-48-48-48H473.7L337.8 5.4zM256 416c0-35.3 28.7-64 64-64s64 28.7 64 64v96H256V416zM96 192h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V208zM96 320h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V336c0-8.8 7.2-16 16-16zm400 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H512c-8.8 0-16-7.2-16-16V336zM232 176a88 88 0 1 1 176 0 88 88 0 1 1 -176 0zm88-48c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H336V144c0-8.8-7.2-16-16-16z"></path></svg><a href="https://shinyapps.bren.ucsb.edu/student-data-explorer/">Bren Student Data Explorer</a> (<a href="https://github.com/UCSB-MEDS/shiny-dashboard">source code</a>), <em>by MEDS 2022 alum, <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a>, during her Bren Summer Fellowship (and continued by future MEDS students!)</em> – explore Bren school student demographics and career outcomes
+<span class="teal-text"><i class="fa-solid fa-school" title="a school house" aria-label="school"></i></span> <a href="https://shinyapps.bren.ucsb.edu/student-data-explorer/">Bren Student Data Explorer</a> (<a href="https://github.com/UCSB-MEDS/shiny-dashboard">source code</a>), <em>by MEDS 2022 alum, <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a>, during her Bren Summer Fellowship (and continued by future MEDS students!)</em> – explore Bren school student demographics and career outcomes
 </p>
 <p class="small-text topbr">
-<svg aria-label="Person Hiking" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Person Hiking</title>
-<path d="M192 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm51.3 182.7L224.2 307l49.7 49.7c9 9 14.1 21.2 14.1 33.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V397.3l-73.9-73.9c-15.8-15.8-22.2-38.6-16.9-60.3l20.4-84c8.3-34.1 42.7-54.9 76.7-46.4c19 4.8 35.6 16.4 46.4 32.7L305.1 208H336V184c0-13.3 10.7-24 24-24s24 10.7 24 24v55.8c0 .1 0 .2 0 .2s0 .2 0 .2V488c0 13.3-10.7 24-24 24s-24-10.7-24-24V272H296.6c-16 0-31-8-39.9-21.4l-13.3-20zM81.1 471.9L117.3 334c3 4.2 6.4 8.2 10.1 11.9l41.9 41.9L142.9 488.1c-4.5 17.1-22 27.3-39.1 22.8s-27.3-22-22.8-39.1zm55.5-346L101.4 266.5c-3 12.1-14.9 19.9-27.2 17.9l-47.9-8c-14-2.3-22.9-16.3-19.2-30L31.9 155c9.5-34.8 41.1-59 77.2-59h4.2c15.6 0 27.1 14.7 23.3 29.8z"></path></svg><a href="https://samanthacsik.shinyapps.io/strava_dashboard/">Sam’s Strava Stats</a> (<a href="https://github.com/samanthacsik/strava-dashboard">source code</a>), <em>by yours truly, <a href="https://samanthacsik.github.io/">Sam Csik</a></em> – a new and ongoing side project exploring my Strava hiking/biking/walking data
+<span class="teal-text"><i class="fa-solid fa-person-hiking" title="a person hiking with a backpack on" aria-label="person-hiking"></i></span> <a href="https://samanthacsik.shinyapps.io/strava_dashboard/">Sam’s Strava Stats</a> (<a href="https://github.com/samanthacsik/strava-dashboard">source code</a>), <em>by yours truly, <a href="https://samanthacsik.github.io/">Sam Csik</a></em> – a new and ongoing side project exploring my Strava hiking/biking/walking data
 </p>
 <p class="small-text topbr">
-<svg aria-label="Fish" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Fish</title>
-<path d="M180.5 141.5C219.7 108.5 272.6 80 336 80s116.3 28.5 155.5 61.5c39.1 33 66.9 72.4 81 99.8c4.7 9.2 4.7 20.1 0 29.3c-14.1 27.4-41.9 66.8-81 99.8C452.3 403.5 399.4 432 336 432s-116.3-28.5-155.5-61.5c-16.2-13.7-30.5-28.5-42.7-43.1L48.1 379.6c-12.5 7.3-28.4 5.3-38.7-4.9S-3 348.7 4.2 336.1L50 256 4.2 175.9c-7.2-12.6-5-28.4 5.3-38.6s26.1-12.2 38.7-4.9l89.7 52.3c12.2-14.6 26.5-29.4 42.7-43.1zM448 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg><a href="http://34.94.133.101/">Channel Islands National Park’s Kelp Forest Monitoring Program</a> (<a href="https://github.com/cullen-molitor/KFM_Shiny_App">source code</a>), <em>by MEDS 2022 alum, <a href="https://cullen-molitor.github.io/">Cullen Molitor</a></em> – explore subtidal monitoring data collected from our closest National Park
+<span class="teal-text"><i class="fa-solid fa-fish" title="a fish" aria-label="fish"></i></span> <a href="http://34.94.133.101/">Channel Islands National Park’s Kelp Forest Monitoring Program</a> (<a href="https://github.com/cullen-molitor/KFM_Shiny_App">source code</a>), <em>by MEDS 2022 alum, <a href="https://cullen-molitor.github.io/">Cullen Molitor</a></em> – explore subtidal monitoring data collected from our closest National Park
 </p>
 <p class="small-text topbr">
-<svg aria-label="Campground" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Campground</title>
-<path d="M377 52c11-13.8 8.8-33.9-5-45s-33.9-8.8-45 5L288 60.8 249 12c-11-13.8-31.2-16-45-5s-16 31.2-5 45l48 60L12.3 405.4C4.3 415.4 0 427.7 0 440.4V464c0 26.5 21.5 48 48 48H288 528c26.5 0 48-21.5 48-48V440.4c0-12.7-4.3-25.1-12.3-35L329 112l48-60zM288 448H168.5L288 291.7 407.5 448H288z"></path></svg><a href="https://shinyapps.bren.ucsb.edu/oe_app/">The Outdoor Equity App</a> (<a href="https://github.com/outdoor-equity/outdoor-equity">source code</a>), <em>developed by MEDS 2022 alumni <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a> &amp; <a href="https://cboyajian.github.io/">Clarissa Boyajian</a> as part of their MEDS capstone project</em> – analyze patterns in the access and demand of visitors at reservable overnight sites
+<span class="teal-text"><i class="fa-solid fa-campground" title="a camping tent" aria-label="campground"></i></span> <a href="https://shinyapps.bren.ucsb.edu/oe_app/">The Outdoor Equity App</a> (<a href="https://github.com/outdoor-equity/outdoor-equity">source code</a>), <em>developed by MEDS 2022 alumni <a href="https://www.linkedin.com/in/halinadolinh/">Halina Do-Linh</a> &amp; <a href="https://cboyajian.github.io/">Clarissa Boyajian</a> as part of their MEDS capstone project</em> – analyze patterns in the access and demand of visitors at reservable overnight sites
 </p>
 <p class="small-text topbr">
-<svg aria-label="Fish Fins" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Fish Fins</title>
-<path d="M275.2 38.4c-10.6-8-25-8.5-36.3-1.5S222 57.3 224.6 70.3l9.7 48.6c-19.4 9-36.9 19.9-52.4 31.5c-15.3 11.5-29 23.9-40.7 36.3L48.1 132.4c-12.5-7.3-28.4-5.3-38.7 4.9S-3 163.3 4.2 175.9L50 256 4.2 336.1c-7.2 12.6-5 28.4 5.3 38.6s26.1 12.2 38.7 4.9l93.1-54.3c11.8 12.3 25.4 24.8 40.7 36.3c15.5 11.6 33 22.5 52.4 31.5l-9.7 48.6c-2.6 13 3.1 26.3 14.3 33.3s25.6 6.5 36.3-1.5l77.6-58.2c54.9-4 101.5-27 137.2-53.8c39.2-29.4 67.2-64.7 81.6-89.5c5.8-9.9 5.8-22.2 0-32.1c-14.4-24.8-42.5-60.1-81.6-89.5c-35.8-26.8-82.3-49.8-137.2-53.8L275.2 38.4zM384 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg><a href="http://ohi-science.nceas.ucsb.edu/visualizing_human_impacts/">Visualizing human impacts on at-risk marine biodiversity</a> (<a href="https://github.com/BrennieDev/CHI_shiny_app">source code</a>, <em>developed by MESM 2022 alum, <a href="https://github.com/BrennieDev">Ian Brunjes</a> &amp; <a href="http://oharascience.com/index.html">Dr.&nbsp;Casey O’Hara</a>)</em> – explore how human activities and climate change impact marine biodiversity worldwide
+<span class="teal-text"><i class="fa-solid fa-fish-fins" title="a fish with fins" aria-label="fish-fins"></i></span> <a href="http://ohi-science.nceas.ucsb.edu/visualizing_human_impacts/">Visualizing human impacts on at-risk marine biodiversity</a> (<a href="https://github.com/BrennieDev/CHI_shiny_app">source code</a>, <em>developed by MESM 2022 alum, <a href="https://github.com/BrennieDev">Ian Brunjes</a> &amp; <a href="http://oharascience.com/index.html">Dr.&nbsp;Casey O’Hara</a>)</em> – explore how human activities and climate change impact marine biodiversity worldwide
 </p>
 </section><section id="setup-dashboard-directory" class="slide level2" data-menu-title="Dashboard Setup"><h2></h2>
-<div class="slide-title-smaller">
-Setup our shiny dashboard
-</div>
+<p><span class="slide-title-smaller">Setup our shiny dashboard</span></p>
+<hr>
 <p class="body-text bottombr">
 First, create a subdirectory called <code>/shinydashboard</code> and add a <code>ui.R</code>, <code>server.R</code>, and <code>global.R</code> file.
 </p>
@@ -4321,9 +4246,8 @@ We’ll set our dashboard aside for now while we work on downloading and pre-pro
 </div>
 </div>
 </section><section id="begin-with-data" class="slide level2" data-menu-title="Begin with Data"><h2></h2>
-<div class="slide-title">
-As always, let’s start with the data
-</div>
+<p><span class="slide-title">As always, let’s start with the data</span></p>
+<hr>
 <p class="body-text bottombr">
 Building an app doesn’t make much sense if we don’t know what we’re going to put in it. So, just like the last two apps, we’ll start with some data wrangling and practice data visualization.
 </p>
@@ -4347,9 +4271,8 @@ Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water d
 </div>
 </div>
 </section><section id="processing-storing-data" class="slide level2" data-menu-title="Processing &amp; Storing Data"><h2></h2>
-<div class="slide-title-smaller">
-Pre-processing data is critical
-</div>
+<p><span class="slide-title-smallest">Pre-processing data is critical</span></p>
+<hr>
 <p class="small-text">
 Where you choose to store the data used by your Shiny app will depend largely on the type and size of the file(s) and who “owns” those data. It is likely that you’ll be working with data stored in a database or on a server. This is outside the scope of this workshop, but I suggest reading Dean Attali’s article, <a href="https://shiny.rstudio.com/articles/persistent-data-storage.html">Persistent data storage in Shiny apps</a> to start. Because we are going to be working with a relatively small data set, we’ll be downloading and storing our data locally (i.e.&nbsp;on our machines and in our GitHub repo).
 </p>
@@ -4359,23 +4282,26 @@ Regardless of where you choose to store your data, you can help your application
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:35%;">
-<p><br></p>
 <p class="smaller-text topbr">
 <a href="https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3"><code>FCWO_lakemonitoringdata_2011_2022_daily.csv</code></a> contains <strong>8 attributes</strong> (variables) and <strong>18,894 observations</strong> collected from a set of <strong>11 lakes</strong> located in the Fish Creek Watershed in northern Alaska between 2011-2022. We’ll download and save the file to a <code>raw_data/</code> folder in the root directory of our repository. We’ll then pre-process the data in a separate script(s) saved to <code>scratch/</code> and save a cleaned/processed version of the data to our app’s directory, <code>/shinydashboard/data/lake_data_processed.csv</code>. Your repository structure should look similar to example on the right:
 </p>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:55%;">
-<center>
-<img src="images/shinydashboard-directory-structure.png" alt="A schematic of the repository structure, as described." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/shinydashboard-directory-structure.png" style="width:73.0%" alt="A schematic of the repository structure, as described."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section><section id="lake-data-goal" class="slide level2" data-menu-title="Lake Data End Goal"><h2></h2>
-<div class="slide-title">
-The Goal:
-</div>
+<p><span class="slide-title">The Goal:</span></p>
+<hr>
 <div class="columns">
 <div class="column" style="width:45%;">
 <center>
@@ -4391,9 +4317,8 @@ Our goal is to create a <code>leaflet</code> map with makers placed on each of t
 </div>
 </div>
 </section><section id="process-lake-data" class="slide level2" data-menu-title="Process Lake Data"><h2></h2>
-<div class="slide-title-smaller">
-Process lake data &amp; save new file
-</div>
+<p><span class="slide-title-smallest">Process lake data &amp; save new file</span></p>
+<hr>
 <p class="small-text important-text-bg">
 <strong>NOTE:</strong> In this example exercise, I’ve removed all rows with missing values (i.e.&nbsp;<code>NaN</code>s in the <code>Depth</code> column &amp; <code>NA</code>s in the <code>BedTemperature</code> column) before calculating averages. <em>This is NOT good practice – exploring and thinking critically about missing data is an important part of data analysis, and in a real-life scenario, you should consider the most appropriate method for handling them.</em>
 </p>
@@ -4429,9 +4354,8 @@ Process lake data &amp; save new file
 <span id="cb64-29"><a href="#cb64-29"></a><span class="fu">write_csv</span>(unique_lakes, <span class="st">"shinydashboard/data/lake_data_processed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="file-types" class="slide level2" data-menu-title="File Types"><h2></h2>
-<div class="slide-title">
-A note on file types
-</div>
+<p><span class="slide-title">A note on file types</span></p>
+<hr>
 <p class="small-text">
 Oftentimes, you may choose to save your processed data frame as a <code>.rds</code> file (a data file format, native to R, which stores a single R object). <code>.rds</code> file are relatively small (and therefore take up little storage space), take less time to import/export, and preserve data types and classes (e.g.&nbsp;factors and dates), eliminating the need to redefine data types after loading the file. Bear in mind that this increased speed and space-saving may come at the cost of generality – you can’t open a <code>.rds</code> file outside of R or read it in with another programming language (e.g.&nbsp;Python).
 </p>
@@ -4442,9 +4366,8 @@ While we’ll be sticking to <code>.csv</code> files in this workshop, it’s wo
 <img src="images/rds.png" alt="The R language logo overlaid on top of a database stack -- often used to represent the rds data file format." width="200">
 </center>
 </section><section id="draft-leaflet" class="slide level2" data-menu-title="Draft Leaflet"><h2></h2>
-<div class="slide-title-smaller">
-Draft <code>leaflet</code> map
-</div>
+<p><span class="slide-title-smaller">Draft <code>leaflet</code> map</span></p>
+<hr>
 <p class="small-text">
 There are lots of ways to customize <code>leaflet</code> maps. We’ll be keeping ours relatively simple, but check out the <a href="https://rstudio.github.io/leaflet/">Leaflet for R</a> documentation for more ways to get creative with your maps.
 </p>
@@ -4457,8 +4380,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4d6c57dcc5d56cd28e58" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4d6c57dcc5d56cd28e58">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-53856f7b031608bd783e" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-53856f7b031608bd783e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4493,9 +4416,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 </div>
 </div>
 </section><section id="filter-leaflet" class="slide level2" data-menu-title="Filter Leaflet"><h2></h2>
-<div class="slide-title-smaller">
-Practice filtering <code>leaflet</code> observations
-</div>
+<p><span class="slide-title-smaller">Practice filtering <code>leaflet</code> observations</span></p>
+<hr>
 <p class="small-text">
 We’ll eventually build three <code>sliderInput</code>s to filter lake makers by <code>Elevation</code>, <code>AvgDepth</code>, and <code>AvgTemp</code>. Practice filtering here first (and be sure to update the data frame name in your leaflet code!):
 </p>
@@ -4508,8 +4430,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2a2dac808310005a3f15" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2a2dac808310005a3f15">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a38d13f67f03ffbcdf53" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a38d13f67f03ffbcdf53">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4552,9 +4474,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 </div>
 </div>
 </section><section id="sketch-ui" class="slide level2" data-menu-title="Sketch the UI"><h2></h2>
-<div class="slide-title-smaller">
-Sketch out our dashboard UI
-</div>
+<p><span class="slide-title-smaller">Sketch out our dashboard UI</span></p>
+<hr>
 <p class="small-text">
 I want my dashboard to have two menu items: a welcome page with some background information, and a dashboard page with my reactive map. All elements will be placed inside <code>box</code>es, the primary building blocks of shinydashboards (more on that soon).
 </p>
@@ -4571,9 +4492,8 @@ I want my dashboard to have two menu items: a welcome page with some background 
 </div>
 </div>
 </section><section id="title-menuItems" class="slide level2" data-menu-title="Title &amp; menuItems"><h2></h2>
-<div class="slide-title-smaller">
-Add a <code>title</code> &amp; <code>menuItem</code>s
-</div>
+<p><span class="slide-title-smaller">Add a <code>title</code> &amp; <code>menuItem</code>s</span></p>
+<hr>
 <p class="small-text">
 First, add a title to <code>dashboardHeader()</code> and make more space using <code>titleWidth</code>, if necessary.
 </p>
@@ -4610,9 +4530,8 @@ Next, we’ll build our <code>dashboardSidebar()</code>. Add a <code>sidebarMenu
 <span id="cb67-27"><a href="#cb67-27"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="tabItems" class="slide level2" data-menu-title="tabItems"><h2></h2>
-<div class="slide-title-smaller">
-Add <code>tabItems</code> to your <code>dashboardBody</code>
-</div>
+<p><span class="slide-title-smaller">Add <code>tabItems</code> to your <code>dashboardBody</code></span></p>
+<hr>
 <p class="small-text">
 Next, we’ll create <code>tabItems</code> in our <code>dashboardBody</code> – we’ll make a <code>tabItem</code> (singular) for each <code>menuItem</code> in our <code>dashboardSidebar</code>. In order to match a <code>menuItem</code> and a <code>tabItem</code>, ensure that they have matching a <code>tabName</code> (e.g.&nbsp;any content added to the <strong>dashboard</strong> <code>tabItem</code> will appear under the <strong>dashboard</strong> <code>menuItem</code>).
 </p>
@@ -4667,9 +4586,8 @@ Next, we’ll create <code>tabItems</code> in our <code>dashboardBody</code> –
 <span id="cb68-48"><a href="#cb68-48"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="boxes" class="slide level2" data-menu-title="boxes"><h2></h2>
-<div class="slide-title-smaller">
-Add <code>box</code>es to contain UI content (part 1)
-</div>
+<p><span class="slide-title-smaller">Add <code>box</code>es to contain UI content (part 1)</span></p>
+<hr>
 <p class="small-text">
 <a href="https://rstudio.github.io/shinydashboard/structure.html#boxes">Boxes</a> are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g.&nbsp;text, inputs, outputs). Start by adding two side-by-side boxes to our <strong>dashboard</strong> tab inside a <code>fluidRow()</code>. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our <code>sliderInput</code>s and our <code>leafletOutput</code>.
 </p>
@@ -4741,9 +4659,8 @@ Add <code>box</code>es to contain UI content (part 1)
 <span id="cb69-65"><a href="#cb69-65"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="columns" class="slide level2" data-menu-title="Columns"><h2></h2>
-<div class="slide-title-smaller">
-Add <code>box</code>es to contain UI content (part 2)
-</div>
+<p><span class="slide-title-smaller">Add <code>box</code>es to contain UI content (part 2)</span></p>
+<hr>
 <p class="small-text">
 Lastly, add boxes to our <strong>welcome</strong> tab We’ll use <code>column</code>s to place one box on the left-hand side of our page, and two stacked boxes on the right-hand side. Each <code>column</code> will take up half the page (<strong>Note:</strong> <em>For column-based layouts, use <code>NULL</code> for the box width, as the width is set by the column that contains the box</em>). We can create two <code>fluidRow</code>s within the right-hand column to stack two boxes vertically.
 </p>
@@ -4854,9 +4771,8 @@ Lastly, add boxes to our <strong>welcome</strong> tab We’ll use <code>column</
 <span id="cb70-104"><a href="#cb70-104"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="import-data" class="slide level2" data-menu-title="Read in data"><h2></h2>
-<div class="slide-title-smaller">
-Read data into <code>global.R</code> &amp; add necessary packages
-</div>
+<p><span class="slide-title-smaller">Read data into <code>global.R</code> &amp; add necessary packages</span></p>
+<hr>
 <p class="body-text">
 Remember to load your <em>pre-processed</em> data, which should live in the <code>/data</code> folder within your app’s directory.
 </p>
@@ -4872,9 +4788,8 @@ Remember to load your <em>pre-processed</em> data, which should live in the <cod
 <span id="cb71-9"><a href="#cb71-9"></a>lake_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/lake_data_processed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="add-sliderInput-leafletMap" class="slide level2" data-menu-title="Add Widget &amp; Leaflet Map"><h2></h2>
-<div class="slide-title-smaller">
-Add a <code>sliderInput</code> &amp; <code>leafletOutput</code> to the UI
-</div>
+<p><span class="slide-title-smaller">Add a <code>sliderInput</code> &amp; <code>leafletOutput</code> to the UI</span></p>
+<hr>
 <p class="small-text">
 Start by adding just one <code>sliderInput</code> (for selecting a range of lake <code>Elevation</code>s) to the left-hand box in the <strong>dashboard</strong> tab. Then, add a <code>leafletOutput</code> to create a placeholder space for our map, along with a Spinner animation (from the <a href="https://github.com/daattali/shinycssloaders">shinycssloaders</a> package). While we’re here, we can also add <code>title</code>s to each box.
 </p>
@@ -4993,9 +4908,8 @@ Start by adding just one <code>sliderInput</code> (for selecting a range of lake
 <span id="cb72-112"><a href="#cb72-112"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="build-map-server" class="slide level2" data-menu-title="Build map in server.R"><h2></h2>
-<div class="slide-title-smaller">
-Assemble inputs &amp; outputs in <code>server.R</code>
-</div>
+<p><span class="slide-title-smaller">Assemble inputs &amp; outputs in <code>server.R</code></span></p>
+<hr>
 <p class="small-text">
 Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs. And don’t forget to add <code>()</code> following each reactive data frame called in your leaflet map!
 </p>
@@ -5039,9 +4953,8 @@ Remember to reference your practice data viz script and to follow our three step
 <span id="cb73-37"><a href="#cb73-37"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="working-elev-widget" class="slide level2" data-menu-title="Test Elevation Widget"><h2></h2>
-<div class="slide-title-smaller">
-Run your app &amp; test out your first widget
-</div>
+<p><span class="slide-title-smaller">Run your app &amp; test out your first widget</span></p>
+<hr>
 <p class="body-text">
 If all is good, you should see something similar to this:
 </p>
@@ -5049,20 +4962,16 @@ If all is good, you should see something similar to this:
 <img src="images/elev_widget.gif" alt="Our Fish Creek Watershed Lake Monitoring dashboard. The 'Welcome' page has a box on the left for background info, and two stacked boxes on the right for data citation and disclaimer info. The 'Dashboard' tab has a sliderInput in the left-hand box, where users can select a range of elevations. When a range is selected, the blue markers on the leaflet map in the right-hand box are filtered accordingly. Clicking on the markers reveals more information about the specific site, including Site Name, Elevation, Avg Depth, and AvgTemp." width="750">
 </center>
 </section><section id="exercise5-prompt" class="slide level2" data-menu-title="** Exercise 5 Prompt **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
-<path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg> Exercise 5: Add two more <code>sliderInput</code>s to filter for <code>AvgDepth</code> &amp; <code>AvgTemp</code>
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-question" title="question mark" aria-label="question"></i> Exercise 5: Add two more <code>sliderInput</code>s to filter for <code>AvgDepth</code> &amp; <code>AvgTemp</code></span></p>
+<hr>
 <p class="body-text">
 </p>
 <p><strong>To Do:</strong></p>
 <p class="small-text topbr">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Add two more <code>sliderInput</code>s, one for <code>AvgDepth</code> and one for <code>AvgTemp</code> beneath our first Elevation <code>sliderInput</code> in the UI
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Add two more <code>sliderInput</code>s, one for <code>AvgDepth</code> and one for <code>AvgTemp</code> beneath our first Elevation <code>sliderInput</code> in the UI
 </p>
 <p class="small-text topbr">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Update our reactive data frame so that all three widgets filter the leaflet map
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Update our reactive data frame so that all three widgets filter the leaflet map
 </p>
 <p><br><br><br><br></p>
 <center>
@@ -5071,10 +4980,8 @@ See next slide for a solution!
 </p>
 </center>
 </section><section id="exercise5-solution" class="slide level2" data-menu-title="** Exercise 5 Solution **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Check" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
-<path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 5: A solution
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-check" title="check mark" aria-label="check"></i> Exercise 5: A solution</span></p>
+<hr>
 <div class="panel-tabset">
 <ul id="tabset-9" class="panel-tabset-tabby">
 <li><a data-tabby-default="" href="#tabset-9-1"><code>ui.R</code></a></li>
@@ -5261,7 +5168,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ee169d71" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_17dbf05e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -5270,21 +5177,16 @@ See next slide for a solution!
 </div>
 </div>
 </section><section id="exercise6-prompt-tips" class="slide level2" data-menu-title="** Exercise 6 Prompt &amp; Tips **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Question" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Question</title>
-<path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg> &amp; <svg aria-label="Lightbulb" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Lightbulb</title>
-<path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg> Exercise 6: Add titles &amp; text to Welcome page boxes
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-question" title="question mark" aria-label="question"></i> &amp; <i class="fa-solid fa-lightbulb" title="a lightbulb" aria-label="lightbulb"></i> Exercise 6: Add titles &amp; text to Welcome page boxes</span></p>
+<hr>
 <p class="body-text">
 <strong>To Do:</strong>
 </p>
 <p class="small-text">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Add titles to each box
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Add titles to each box
 </p>
 <p class="small-text topbr">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg> Create a <code>/text</code> folder within your app’s directory and add three markdown (<code>.md</code>) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Create a <code>/text</code> folder within your app’s directory and add three markdown (<code>.md</code>) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:
 </p>
 <div class="panel-tabset">
 <ul id="tabset-10" class="panel-tabset-tabby">
@@ -5317,14 +5219,11 @@ See next slide for a solution!
 <strong>Tips:</strong>
 </p>
 <p class="small-text topbr">
-<svg aria-label="Angle Right" role="img" viewbox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Angle Right</title>
-<path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg>Titles can include icons! For example: <code>title = tagList(icon("icon-name"), strong("title text here"))</code>
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Titles can include icons! For example: <code>title = tagList(icon("icon-name"), strong("title text here"))</code>
 </p>
 </section><section id="exercise6-solution" class="slide level2" data-menu-title="** Exercise 6 Solution **"><h2></h2>
-<div class="slide-title-smaller">
-<svg aria-label="Check" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#05859B;overflow:visible;position:relative;"><title>Check</title>
-<path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg> Exercise 6: A solution
-</div>
+<p><span class="slide-title-smaller"><i class="fa-solid fa-check" title="check mark" aria-label="check"></i> Exercise 6: A solution</span></p>
+<hr>
 <p class="small-text">
 Press the right arrow key to advance through the newly added lines of code.
 </p>
@@ -5478,9 +5377,8 @@ Press the right arrow key to advance through the newly added lines of code.
 </div>
 </div>
 </section><section id="add-image" class="slide level2" data-menu-title="Add Static Image"><h2></h2>
-<div class="slide-title-smaller">
-Add a static image
-</div>
+<p><span class="slide-title-smaller">Add a static image</span></p>
+<hr>
 <p class="small-text">
 As a final touch, let’s add an image to the Welcome page, inside the left-hand box beneath our intro text. First, <strong>create a <code>/www</code> folder inside your app’s directory</strong> (refer back to <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure">this slide</a> for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO’s website <a href="http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg">here</a> and save it to your <code>/www</code> directory.
 </p>
@@ -5615,17 +5513,14 @@ Next, use the <code>img</code> tag to add your image. Supply a file path, relati
 <span id="cb81-125"><a href="#cb81-125"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="large-image" class="slide level2" data-menu-title="Image is too large"><h2></h2>
-<div class="slide-title-smaller">
-Unfortunately, our image doesn’t look so great as-is…
-</div>
-<p><br></p>
+<p><span class="slide-title-smaller">Unfortunately, our image doesn’t look so great as-is…</span></p>
+<hr>
 <center>
 <img src="images/large-img.png" alt="Our Welcome page, with a map of Fish Creek Watershed beneath the intro text. The image is extremely large, spilling out of the box and across the page." width="750">
 </center>
 </section><section id="adjust-image-size" class="slide level2" data-menu-title="Adjust Image Size"><h2></h2>
-<div class="slide-title-smaller">
-Use in-line CSS to adjust the image size
-</div>
+<p><span class="slide-title-smaller">Use in-line CSS to adjust the image size</span></p>
+<hr>
 <p class="small-text">
 We can use in-line CSS to style our image element, as shown below (see <code>style</code> argument). It’s okay if you don’t fully understand what’s going on here for now – we’ll talk in greater detail about how CSS (and Sass) can be used to customize the appearance of your apps in just a bit.
 </p>
@@ -5763,9 +5658,8 @@ I’ve also added a caption below our image that links to the image source, and 
 <span id="cb82-128"><a href="#cb82-128"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="final-dashboard" class="slide level2" data-menu-title="Final Dashboard"><h2></h2>
-<div class="slide-title-smaller">
-Check out your finished dashboard!
-</div>
+<p><span class="slide-title-smaller">Check out your finished dashboard!</span></p>
+<hr>
 <center>
 <img src="images/final-dashboard.gif" alt="Our completed dashboard, with our image styled so that it fits within the background info box on the Welcome page, and three functional sliderInputs that update the leaflet map on the Dashboard page." width="750">
 </center>
@@ -5773,9 +5667,8 @@ Check out your finished dashboard!
 There’s a ton more to learn about building shinydashboards. Check out the <a href="https://rstudio.github.io/shinydashboard/">documentation</a> to find instructions on adding components like <a href="https://rstudio.github.io/shinydashboard/structure.html#infobox"><code>infoBox</code>es</a> and <a href="https://rstudio.github.io/shinydashboard/structure.html#valuebox"><code>valueBox</code>es</a>, building <a href="https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar">inputs in the sidebar</a>, easy ways to update the color theme using <a href="https://rstudio.github.io/shinydashboard/appearance.html#skins">skins</a>, and more.
 </p>
 </section><section id="final-dashboard-code" class="slide level2" data-menu-title="Complete dashboard code"><h2></h2>
-<div class="slide-title-smaller">
-Complete code for our dashboard thus far:
-</div>
+<p><span class="slide-title-smaller">Complete code for our dashboard thus far:</span></p>
+<hr>
 <div class="panel-tabset">
 <ul id="tabset-12" class="panel-tabset-tabby">
 <li><a data-tabby-default="" href="#tabset-12-1"><code>ui.R</code></a></li>

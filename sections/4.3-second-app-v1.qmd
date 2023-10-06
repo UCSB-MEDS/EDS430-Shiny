@@ -5,7 +5,9 @@ format: revealjs
 
 ##  {#lastly-text data-menu-title="Lastly, text"}
 
-<div class="slide-title-smaller">Lastly: add background/other important information text</div>
+[Lastly: add background/other important information text]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text">It's usually valuable (and important) to provide some background information/context for your app -- the landing page of your app can be a great place for this. We're going to add text to our app's landing page (i.e. the **About this App** page) so that it looks like the example below:</p>
 
@@ -24,9 +26,9 @@ format: revealjs
 <br>
 <p class="body-text bottombr">**Some important pieces for information to consider adding:**</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` motivation for building the app</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` brief instructions for exploring the data</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` who maintains the app, where the code lives, how to submit issues/suggestions</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} motivation for building the app</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} brief instructions for exploring the data</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} who maintains the app, where the code lives, how to submit issues/suggestions</p>
 :::
 
 ::::
@@ -36,7 +38,9 @@ format: revealjs
 
 ##  {#unruly-text data-menu-title="Unruly text in the UI"}
 
-<div class="slide-title-smaller">Adding long text to the UI can get unruly</div>
+[Adding long text to the UI can get unruly]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">For example, I've added and formatted my landing page's text directly in the **UI** using lots of nested `tags` -- I've done this inside the `tabPanel` titled **About this App** (**Note:** I've formatted the layout of this page a bit using `fluidRow` and `column`s to create some white space around the edges. I've also created a faint gray horizontal line, using `hr()`, beneath which I added a footnote):</p>
 
@@ -157,7 +161,9 @@ ui <- navbarPage(
 
 ##  {#includeMarkdown data-menu-title="includeMarkdown()"}
 
-<div class="slide-title-smaller">Instead, use `includeMarkdown()` to read in text from separate `.md` files</div>
+[Instead, use `includeMarkdown()` to read in text from separate `.md` files]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">To maintain readability and an overall tidier-looking UI, you can write and style long bodies of text in separate markdown (`.md`) files that you then read into your UI using the `includeMarkdown()` function (**Important:** the `includeMarkdown()` function requires the `{markdown}` package -- be sure to add `library(markdown)` to your `global.R` file!).</p>
 
@@ -308,7 +314,9 @@ Check out the **Explore the Data** page to find interactive data visualizations 
 
 ##  {#last-run data-menu-title="Check out your full app!"}
 
-<div class="slide-title-smaller">Run your app one more time to admire your beautiful creation!</div>
+[Run your app one more time to admire your beautiful creation!]{.slide-title-smallest}
+
+<hr>
 
 <center><img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750"/></center>
 
@@ -318,7 +326,9 @@ Check out the **Explore the Data** page to find interactive data visualizations 
 
 ##  {#app2-code data-menu-title="App #2 code (so far)"}
 
-<div class="slide-title-smaller">Code recap for app #2v1, so far:</div>
+[Code recap for app #2v1, so far:]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">Additionally, you should have a `/text` folder within your app's directory (`/two-file-app`, if you named it as I did) that contains two markdown files, `about.md` and `footer.md`.</p>
 

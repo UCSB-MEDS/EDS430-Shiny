@@ -4,12 +4,14 @@ format: revealjs
 
 ##  {#exercise6-prompt-tips data-menu-title="** Exercise 6 Prompt & Tips **"}
 
-<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` & `r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 6: Add titles & text to Welcome page boxes</div>
+[{{< fa question title="question mark" >}} & {{< fa lightbulb title="a lightbulb" >}} Exercise 6: Add titles & text to Welcome page boxes]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text">**To Do:**</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Add titles to each box</p>
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Create a `/text` folder within your app's directory and add three markdown (`.md`) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Add titles to each box</p>
+<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Create a `/text` folder within your app's directory and add three markdown (`.md`) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:</p>
 
 ::: {.panel-tabset}
 
@@ -42,13 +44,15 @@ This app is build for demonstration/teaching purposes only and is not paid for o
 
 <p class="body-text">**Tips:**</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`Titles can include icons! For example: `title = tagList(icon("icon-name"), strong("title text here"))`</p>
+<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Titles can include icons! For example: `title = tagList(icon("icon-name"), strong("title text here"))`</p>
 
 ---
 
 ##  {#exercise6-solution data-menu-title="** Exercise 6 Solution **"}
 
-<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 6: A solution</div>
+[{{< fa check title="check mark" >}} Exercise 6: A solution]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">Press the right arrow key to advance through the newly added lines of code.</p>
 
@@ -208,7 +212,9 @@ lake_data <- read_csv("data/lake_data_processed.csv")
 
 ##  {#add-image data-menu-title="Add Static Image"}
 
-<div class="slide-title-smaller">Add a static image</div>
+[Add a static image]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">As a final touch, let's add an image to the Welcome page, inside the left-hand box beneath our intro text. First, **create a `/www` folder inside your app's directory** (refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure) for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO's website [here](http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg) and save it to your `/www` directory.</p>
 
@@ -349,9 +355,9 @@ dashboardPage(header, sidebar, body)
 
 ##  {#large-image data-menu-title="Image is too large"}
 
-<div class="slide-title-smaller">Unfortunately, our image doesn't look so great as-is...</div>
+[Unfortunately, our image doesn't look so great as-is...]{.slide-title-smaller}
 
-<br>
+<hr>
 
 <center><img src="images/large-img.png" alt="Our Welcome page, with a map of Fish Creek Watershed beneath the intro text. The image is extremely large, spilling out of the box and across the page." width="750"/></center>
 
@@ -359,7 +365,9 @@ dashboardPage(header, sidebar, body)
 
 ##  {#adjust-image-size data-menu-title="Adjust Image Size"}
 
-<div class="slide-title-smaller">Use in-line CSS to adjust the image size</div>
+[Use in-line CSS to adjust the image size]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">We can use in-line CSS to style our image element, as shown below  (see `style` argument). It's okay if you don't fully understand what's going on here for now -- we'll talk in greater detail about how CSS (and Sass) can be used to customize the appearance of your apps in just a bit.</p>
 
@@ -503,7 +511,9 @@ dashboardPage(header, sidebar, body)
 
 ##  {#final-dashboard data-menu-title="Final Dashboard"}
 
-<div class="slide-title-smaller">Check out your finished dashboard!</div>
+[Check out your finished dashboard!]{.slide-title-smaller}
+
+<hr>
 
 <center><img src="images/final-dashboard.gif" alt="Our completed dashboard, with our image styled so that it fits within the background info box on the Welcome page, and three functional sliderInputs that update the leaflet map on the Dashboard page." width="750"/></center>
 
@@ -511,7 +521,9 @@ dashboardPage(header, sidebar, body)
 
 ##  {#final-dashboard-code data-menu-title="Complete dashboard code"}
 
-<div class="slide-title-smaller">Complete code for our dashboard thus far:</div>
+[Complete code for our dashboard thus far:]{.slide-title-smaller}
+
+<hr>
 
 ::: {.panel-tabset}
 

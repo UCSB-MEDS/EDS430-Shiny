@@ -5,7 +5,7 @@ format: revealjs
 ##  {#redeploying-apps data-menu-title="~~~ Redeploying apps ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("upload", fill = "#d2e3f3", a11y = "sem")` Redeploying apps with [shinyapps.io](https://www.shinyapps.io/)</p>
+<p class="custom-subtitle bottombr">{{< fa upload title="a symbol for uploading files -- a server with an upward facing arrow that originates at the server" >}} Redeploying apps with [shinyapps.io](https://www.shinyapps.io/)</p>
 <p class="caption-text">*Now that we've added some updates to our app, it's time to redeploy our newest version.*</p>
 </div>
 
@@ -13,7 +13,9 @@ format: revealjs
 
 ##  {#howto-redeploy data-menu-title="How to Redeploy"}
 
-<div class="slide-title-smaller bottombr">Redeploying is similar to deploying for the first time</div>
+[Redeploying is similar to deploying for the first time]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text bottombr">Just a few quick steps before your updates are live at your URL from earlier:</p>
 
