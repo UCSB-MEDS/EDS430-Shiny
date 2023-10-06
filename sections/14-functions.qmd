@@ -5,7 +5,7 @@ format: revealjs
 ##  {#functions data-menu-title="~~~ Functions ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` Writing functions</p>
+<p class="custom-subtitle bottombr">{{< fa code title="the symbol for code, </>" >}} Writing functions</p>
 <p class="caption-text">*Functions have many benefits and can improve your code base, particularly as your app grows in complexity*</p>
 </div>
 
@@ -13,39 +13,43 @@ format: revealjs
 
 ##  {#LO-functions data-menu-title="Learning Objectives - Functions"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Functions</div>
+[{{< fa book-open title="an open book" >}} Learning Objectives - Functions]{.slide-title}
+
+<hr>
 
 <p class="medium-body-text bottombr">By the end of this section, you should:</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the benefits of turning UI elements and server logic into functions</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand the benefits of turning UI elements and server logic into functions</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know where to write/save your functions</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know where to write/save your functions</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully turn a repeated input into a function</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a repeated input into a function</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully turn a piece of server logic into a function</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a piece of server logic into a function</p>
 
 
 ---
 
 ##  {#why-functions data-menu-title="Why write functions"}
 
-<div class="slide-title">Why write functions</div>
+[Why write functions]{.slide-title}
+
+<hr>
 
 <p class="body-text bottombr">Functions are useful for a wide variety of reasons. Most notably:</p>
 
-<p class="small-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reducing redundancy</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reducing complexity</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` increasing code comprehension</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` increasing testability</p>
+<p class="small-text bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing redundancy</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing complexity</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing code comprehension</p>
+<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing testability</p>
 
 . . . 
 
@@ -60,7 +64,9 @@ format: revealjs
 
 ##  {#app-for-practicing-fxns data-menu-title="Example App for Fxn Practice"}
 
-<div class="slide-title-smaller">Create a small app for function practice</div>
+[Create a small app for function practice]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">Create a new subdirectory called `functions-app/` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
 
@@ -190,7 +196,9 @@ library(tidyverse)
 
 ##  {#id-ui-duplication data-menu-title="Identify code duplication in UI"}
 
-<div class="slide-title-smaller">Identify code duplication in `ui.R`</div>
+[Identify code duplication in `ui.R`]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text">Let's first focus on the UI -- where do we have nearly identically duplicated code?</p>
 
@@ -246,7 +254,9 @@ ui <- fluidPage(
 
 ##  {#write-ui-function data-menu-title="Write a UI function"}
 
-<div class="slide-title-smaller">Write a function for adding a `pickerInput` to select for penguin species</div>
+[Write a function for adding a `pickerInput` to select for penguin species]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInput`s is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
 
@@ -294,7 +304,9 @@ source("R/penguinSpp_pickerInput.R") # will source automatically with Shiny v1.5
 
 ##  {#apply-ui-fxn data-menu-title="Apply UI function"}
 
-<div class="slide-title-smaller">Apply your function in `ui.R`</div>
+[Apply your function in `ui.R`]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function, save, and run your app. It should look exactly the same as before!</p>
 
@@ -342,7 +354,9 @@ ui <- fluidPage(
 
 ##  {#ui-fxn-benefits data-menu-title="Benefits of our UI function"}
 
-<div class="slide-title bottombr">We reduced code redundancy and increased readability!</div>
+[We reduced code redundancy and increased readability!]{.slide-title}
+
+<hr>
 
 <p class="body-text">By turning our `pickerInput` code into a function, **we not only reduced *ten* lines of UI code into *two*, but we also made our UI code a bit easier to read** -- our function, `penguinSpp_pickerInput()` tells a reader/collaborator/future you *exactly* what that line of code is meant to do, which is create a `pickerInput` that allows users to select penguin species. Even without code comments or additional context, one may deduce what that line of code does.</p>
 
@@ -350,7 +364,9 @@ ui <- fluidPage(
 
 ##  {#server-fxns data-menu-title="Server functions"}
 
-<div class="slide-title-smaller">Turn reactives & rendered outputs into functions</div>
+[Turn reactives & rendered outputs into functions]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">Next, let's see where we can streamline our server code using functions. We have two discrete sections of code -- **(1)** a reactive data frame and scatterplot output and **(2)** a reactive data frame and histogram output.</p>
 
@@ -410,7 +426,9 @@ server <- function(input, output) {
 
 ##  {#build-penguin-scatterplot-fxn data-menu-title="build_penguin_scatterplot()"}
 
-<div class="slide-title-smaller">Create a function to builds our scatterplot</div>
+[Create a function to builds our scatterplot]{.slide-title-smaller}
+
+<hr>
 
 <p class="smaller-text">First, create a new file in `~/function-app/R` and name it `build_penguin_histogram.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
 
@@ -452,7 +470,9 @@ build_penguin_histogram <- function(input) {
 
 ##  {#use-build-penguin-scatterplot-fxn data-menu-title="Use build_penguin_scatterplot()"}
 
-<div class="slide-title-smaller">Now use your function inside the server</div>
+[Now use your function inside the server]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function's output to `output$penguin_scatterplot`. In doing so, we reduced 23 lines of code to 1 inside our server function.</p>
 ```{r}
@@ -493,7 +513,9 @@ server <- function(input, output) {
 
 ##  {#create-build-penguin-histogram data-menu-title="Create & use build_penguin_histogram()"}
 
-<div class="slide-title-smaller">Build a function to create our histogram</div>
+[Build a function to create our histogram]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">We can repeat a similar process to create a function for building our histogram:</p>
 
