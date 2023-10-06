@@ -9,14 +9,25 @@ format:
       - meds_styles.scss
 ---
 
-## {#title-slide data-menu-title="~~~ Title Slide ~~~" background="images/title_background.png"} 
+## {#title-slide data-menu-title="~~~ Title Slide ~~~" background="#053660"} 
 
 [EDS 430 - Intro to <img src="images/shiny_text.png" alt="The word 'Shiny' in cursive lettering, which is the logo used by Posit for the shiny package." style="display: inline-block; margin: 0; position: relative; top: 25px; width:130px;height:90px;"/>]{.custom-title}
 
 [*Building reactive apps & dashboards*]{.custom-subtitle}
 
-<br> 
-<br>
+:::: {.columns}
+
+::: {.column width="50%"}
+[**Published:** Oct 10, 2022]{.body-text .baby-blue-text}
+:::
+
+::: {.column width="50%"}
+[**Last updated:** `r format(Sys.time(), '%b %d, %Y')`]{.body-text .baby-blue-text}
+:::
+
+::::
+
+<hr class="hr-teal">
 
 :::: {.columns} 
 
@@ -28,7 +39,7 @@ format:
 
 ::: {.column width="50%"}
 [Master of Environmental Data Science |]{.custom-subtitle2}<br>
-[Winter 2023]{.custom-subtitle2}<br>
+<!-- [Winter 2023]{.custom-subtitle2}<br> -->
 [*Bren School of Environmental Science & Management*]{.custom-subtitle3}
 :::
 
@@ -46,7 +57,9 @@ format:
 
 ##  {#toc data-menu-title="Table of Contents"}
 
-<div class="slide-title">`r fontawesome::fa("star", fill = "#05859B", a11y = "sem")` Table of Contents `r fontawesome::fa("star", fill = "#05859B", a11y = "sem")`</div>
+[{{< fa star title="star" >}} Table of Contents {{< fa star title="star" >}}]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text">We're going to pack a lot into two days. Here's what to expect:</p>
 
@@ -77,15 +90,15 @@ format:
 
 ##  {#1-shiny-overview data-menu-title="!! (1) High-level overview of Shiny !!" background="#374F50"}
 
-<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 1: High-level overview of Shiny</p>
+[{{< fa star title="star" >}} Part 1: High-level overview of Shiny]{.slide-title-dark}
 
-<br>
+<hr class="hr-teal">
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` What is Shiny?</p> 
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} What is Shiny?</p> 
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Anatomy of a shiny app</p>  
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Anatomy of a shiny app</p>  
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Where to find examples</p>  
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Where to find examples</p>  
 
 ---
 
@@ -99,19 +112,19 @@ format:
 
 ##  {#2-building-apps data-menu-title="!! (2) Building shiny apps & dashboards !!" background="#374F50"}
 
-<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 2: Building shiny apps & dashboards</p>
+[{{< fa star title="star" >}} Part 2: Building shiny apps & dashboards]{.slide-title-dark}
 
-<br>
+<hr class="hr-teal">
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Setting up your repo & files</p>  
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Setting up your repo & files</p>  
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #1 (single-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app)</p>  
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} App #1 (single-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app)</p>  
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #2 (two-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>  
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} App #2 (two-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>  
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` App #3 (shinydashboard) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard)</p>  
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} App #3 (shinydashboard) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard)</p>  
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Deploying (& redeploying) apps</p>  
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Deploying (& redeploying) apps</p>  
 
 ---
 
@@ -122,7 +135,7 @@ format:
 ##  {#break1 data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("mug-hot", fill = "#d2e3f3", a11y = "sem")` Break</p>
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a steaming coffee mug" >}} Break</p>
 <p class="caption-text">*Give your eyes a break from the computer screen!*</p>
 </div>
 
@@ -151,7 +164,7 @@ countdown::countdown(
 ##  {#break2 data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("mug-hot", fill = "#d2e3f3", a11y = "sem")` Break</p>
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a steaming coffee mug" >}} Break</p>
 <p class="caption-text">*Up next: your turn to add a reactive penguin plot to our "Penguin" tab!*</p>
 </div>
 
@@ -180,7 +193,7 @@ countdown::countdown(
 ##  {#break3 data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("mug-hot", fill = "#d2e3f3", a11y = "sem")` Break</p>
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a steaming coffee mug" >}} Break</p>
 <p class="caption-text">*Next, we'll finish up v1 of our app by adding some intro text to the landing page*</p>
 </div>
 
@@ -250,7 +263,7 @@ countdown::countdown(
 ##  {#mini-break3 data-menu-title="# Break #" background="#047C90"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("mug-hot", fill = "#d2e3f3", a11y = "sem")` Break</p>
+<p class="custom-subtitle bottombr">{{< fa mug-hot title="a steaming coffee mug" >}} Break</p>
 <p class="caption-text">*Up next: Adding background information and an image to our Welcome tab*</p>
 </div>
 
@@ -278,15 +291,15 @@ countdown::countdown(
 
 ##  {#3-beautifying-ui data-menu-title="!! (3) Beautifying your UI !!" background="#374F50"}
 
-<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 3: Beautifying your user interface (UI)</p>
+[{{< fa star title="star" >}} Part 3: Beautifying your user interface (UI)]{.slide-title-dark}
 
-<br>
+<hr class="hr-teal">
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Custom themes with `bslib`</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Custom themes with `bslib`</p>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Custom themes with `fresh`</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Custom themes with `fresh`</p>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Styling with CSS & Sass</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Styling with CSS & Sass</p>
 
 ---
 
@@ -296,13 +309,13 @@ countdown::countdown(
 
 ##  {#4-improving-ux data-menu-title="!! (4) Improving UX !!" background="#374F50"}
 
-<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 4: Improving your app's user experience (UX)</p>
+<p class="slide-title-dark">{{< fa star title="star" >}} Part 4: Improving your app's user experience (UX)</p>
 
 <br>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Important UX considerations</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Important UX considerations</p>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Web accessibility</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Web accessibility</p>
 
 ---
 
@@ -316,13 +329,13 @@ countdown::countdown(
 
 ##  {#5-debugging-testing data-menu-title="!! (5) Debugging & Testing !!" background="#374F50"}
 
-<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 5: Debugging & testing</p>
+<p class="slide-title-dark">{{< fa star title="star" >}} Part 5: Debugging & testing</p>
 
 <br>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Debugging approaches</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Debugging approaches</p>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Testing apps</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Testing apps</p>
 
 ---
 
@@ -336,13 +349,13 @@ countdown::countdown(
 
 ##  {#6-streamlining-code data-menu-title="!! (6) Streamlining Code !!" background="#374F50"}
 
-<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 6: Streamlining code</p>
+<p class="slide-title-dark">{{< fa star title="star" >}} Part 6: Streamlining code</p>
 
 <br>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Writing functions</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Writing functions</p>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Shiny modules</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Shiny modules</p>
 
 ---
 
@@ -356,15 +369,15 @@ countdown::countdown(
 
 ##  {#7-wrap-up data-menu-title="!! (7) Wrap-up !!" background="#374F50"}
 
-<p class="slide-title-dark">`r fontawesome::fa("star", fill = "#F7F7F7", a11y = "sem")` Part 7: Wrap-up</p>
+<p class="slide-title-dark">{{< fa star title="star" >}} Part 7: Wrap-up</p>
 
 <br>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Shiny alternatives</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Shiny alternatives</p>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` Words of wisdom</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Words of wisdom</p>
 
-<p class="medium-body-text-white">`r fontawesome::fa("angle-right", fill = "#F7F7F7", a11y = "sem")` More resources</p>
+<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} More resources</p>
 
 ---
 

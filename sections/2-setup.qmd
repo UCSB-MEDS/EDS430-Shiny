@@ -13,7 +13,9 @@ format: revealjs
 
 ##  {#github-repo data-menu-title="Create GitHub Repo"}
 
-<div class="slide-title">Create your GitHub repo</div>
+[Create your GitHub repo]{.slide-title}
+
+<hr>
 
 <p class="body-text">Let's start by creating a GitHub repo to house our soon-to-be app(s), then we'll clone our repo to our computer. I'm using RStudio to clone my repo in the example below, but you can also do this via the command line using `git clone <repo-url>`.</p>
 
@@ -23,7 +25,9 @@ format: revealjs
 
 ##  {#repo-structure data-menu-title="Repo Structure"}
 
-<div class="slide-title">Shiny app repo structure</div>
+[Shiny app repo structure]{.slide-title}
+
+<hr>
 
 <p class="small-text">Not much is *required* to make a functional app (which is awesome) -- for a basic app, you really just need an `app.R` file where you'll write the code for your UI and server. To stay organized, we'll place `app.R` into a subdirectory (e.g. `/myapp`), which will also house any dependencies (e.g. other scripts/files/etc.) used by `app.R`.</p>
 
@@ -33,7 +37,9 @@ format: revealjs
 
 ##  {#begin-the-same data-menu-title="All Apps Begin the Same"}
 
-<div class="slide-title">All Shiny apps begin (in almost) the same way</div>
+[All Shiny apps begin (in almost) the same way]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text bottombr">You have the option of creating either a **single-file app** or **two-file app**, and they look nearly the same (we'll see both formats in the coming slides).</p>
 
@@ -45,7 +51,9 @@ format: revealjs
 
 ##  {#single-file data-menu-title="Single-file App"}
 
-<div class="slide-title">Create a single-file Shiny app</div>
+[Create a single-file Shiny app]{.slide-title}
+
+<hr>
 
 <p class="body-text">You can create a single-file app using RStudio's built-in Shiny app template (e.g. File > New Project... > New Directory > Shiny Application), but it's just as easy to create it from scratch (and you'll memorize the structure faster!). Let's do that now.</p>
 
@@ -79,7 +87,9 @@ shinyApp(ui = ui, server = server)
 
 ##  {#run-app data-menu-title="Run Your App"}
 
-<div class="slide-title">Run your app</div>
+[Run your app]{.slide-title-smaller}
+
+<hr>
 
 <p class="small-text">Once you have saved your `app.R` file, the "Run" code button should turn into a "Run App" button that looks like: <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/>. Click that button to run your app (alternatively, run `runApp("directory-name")` in your console -- for me, that looks like, `runApp("single-file-app")`)!</p>
 
@@ -105,7 +115,9 @@ shinyApp(ui = ui, server = server)
 
 ##  {#two-file data-menu-title="Two-file App"}
 
-<div class="slide-title">Create a two-file Shiny app</div>
+[Create a two-file Shiny app]{.slide-title-smaller}
+
+<hr>
 
 <p class="body-text">In practice, you will likely find yourself opting for the the two-file format -- code expands quickly, even when building relatively small apps. This two-file approach (well, three if you use a `global.R` file, which is encouraged) will help to keep your code a bit more manageable.</p>
 

@@ -2,7 +2,8 @@
 
 // fonts
 //@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Roboto+Mono:wght@300&family=Sanchez&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Nunito+Sans:wght@200&family=Roboto+Mono:wght@300&family=Sanchez&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Nunito+Sans:wght@200&family=Roboto+Mono:wght@300&family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Nunito:wght@400;700&family=Roboto+Mono:wght@300;400&family=Sanchez&display=swap');
 
 // Fonts (CSS rules)
 //$font-family-sans-serif: 'Nunito Sans', sans-serif;
@@ -49,6 +50,17 @@ td {
   font-size: 20px;
 }
 
+hr { // horizontal line
+  border: 4px solid $dark-blue;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+
+.hr-teal { // horizontal line
+  border: 4px solid $teal;
+}
+
 /* h3 {
   font-family: $font-family-serif;
   color: $teal;
@@ -87,7 +99,7 @@ td {
 .custom-subtitle2 {
   font-family: $font-family-sans-serif;
   color: $baby-blue;
-  font-size: 1em;
+  font-size: 0.9em;
   //position: absolute;
   left: 20px;
 }
@@ -138,6 +150,13 @@ td {
   margin-bottom: 0.5em;
 }
 
+.slide-title-smallest {
+  font-family: $font-family-serif;
+  color: $teal;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
 .large-body-text {
   font-family: $font-family-sans-serif;
   color: $teal;
@@ -183,6 +202,10 @@ td {
 
 .white-text {
   color: $off-white;
+}
+
+.teal-text {
+  color: $teal;
 }
 
 .important-text-bg {
