@@ -8,27 +8,27 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">By the end of this section, you should be equipped with:</p>
+<p class="body-text-l teal-text bottombr">By the end of this section, you should be equipped with:</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} a number of different approaches for themeing and styling your shiny apps and dashboards</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} a number of different approaches for themeing and styling your shiny apps and dashboards</p>
 
 . . . 
  
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} a basic understanding of how to apply CSS & Sass styling to your app</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} a basic understanding of how to apply CSS & Sass styling to your app</p>
 
 . . .
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{bslib}`: provides tools for customizing Bootstrap themes directly from R for shiny apps and RMarkdowns</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{bslib}`: provides tools for customizing Bootstrap themes directly from R for shiny apps and RMarkdowns</p>
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{fresh}`: provides tools for creating custom themes for use with shiny, `shinydashboard`, and `bs4Dash` apps</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{fresh}`: provides tools for creating custom themes for use with shiny, `shinydashboard`, and `bs4Dash` apps</p>
 
 ##  {#themeing-pkgs data-menu-title="~~~ Themeing Shiny Apps (with pkgs) ~~~" background="#053660"}
 
@@ -50,20 +50,20 @@ format: revealjs
 :::: {.columns}
 
 ::: {.column width="45%"}
-<center><p class="medium-body-text">Pros:</p></center>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} easy to use</p>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} includes a [real-time themeing widget](https://testing-apps.shinyapps.io/themer-demo/) to try out themes before applying them to your own app</p>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} plays well with the `{thematic}` package for matching plot styling to app</p>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} `{bslib}` does more than just themeing! Check out the [December 2022 announcement](https://shiny.rstudio.com/blog/announcing-new-r-shiny-ui-components.html) of new UI components made possible with the latest package release</p>
+<center><p class="body-text-l teal-text">Pros:</p></center>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} easy to use</p>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} includes a [real-time themeing widget](https://testing-apps.shinyapps.io/themer-demo/) to try out themes before applying them to your own app</p>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} plays well with the `{thematic}` package for matching plot styling to app</p>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} `{bslib}` does more than just themeing! Check out the [December 2022 announcement](https://shiny.rstudio.com/blog/announcing-new-r-shiny-ui-components.html) of new UI components made possible with the latest package release</p>
 :::
 
 ::: {.column width="4%"}
 :::
 
 ::: {.column width="45%"}
-<center><p class="medium-body-text">Cons:</p></center>
-<p class="small-text">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} does **not** work with `shinydashboard` (`{bslib}` is only intended for use with `shiny` *apps*)</p>
-<p class="small-text">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} styling is constrained by the arguments available to `bs_theme()`</p>
+<center><p class="body-text-l teal-text">Cons:</p></center>
+<p class="body-text-s">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} does **not** work with `shinydashboard` (`{bslib}` is only intended for use with `shiny` *apps*)</p>
+<p class="body-text-s">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} styling is constrained by the arguments available to `bs_theme()`</p>
 :::
 
 ::::
@@ -80,7 +80,7 @@ format: revealjs
 
 <hr>
 
-<p class="small-text topbr">By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change the theme to a slightly more modern Bootstrap v5 theme by setting the `theme` argument of `fluidPage()` to `bslib::bs_theme(version = 5)`, *or* supply `bs_theme()` with a pre-built bootswatch theme, as shown below (for a list of theme names, run `bootswatch_themes()` in your console):</p>
+<p class="body-text-s topbr">By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change the theme to a slightly more modern Bootstrap v5 theme by setting the `theme` argument of `fluidPage()` to `bslib::bs_theme(version = 5)`, *or* supply `bs_theme()` with a pre-built bootswatch theme, as shown below (for a list of theme names, run `bootswatch_themes()` in your console):</p>
 
 :::: {.columns}
 
@@ -100,7 +100,7 @@ ui <- fluidPage(
 )
 ```
 
-<p class="small-text">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
+<p class="body-text-s">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
 :::
 
 ::: {.column width="5%"}
@@ -120,7 +120,7 @@ ui <- fluidPage(
 
 <hr>
 
-<p class="small-text">Alternatively, you can fully customize your own theme. Explore the [`bslib` vignette](https://rstudio.github.io/bslib/articles/bslib.html) for detailed instructions. A small example here:</p>
+<p class="body-text-s">Alternatively, you can fully customize your own theme. Explore the [`bslib` vignette](https://rstudio.github.io/bslib/articles/bslib.html) for detailed instructions. A small example here:</p>
 
 :::: {.columns}
 
@@ -144,7 +144,7 @@ ui <- fluidPage(
 )
 ```
 
-<p class="small-text">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
+<p class="body-text-s">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
 :::
 
 ::: {.column width="5%"}
@@ -156,17 +156,17 @@ ui <- fluidPage(
 
 ::::
 
-<p class="small-text">Be sure to check out the interactive themeing widget to test custom color/font/etc. combos by running `bs_theme_preview()` in your console, or visit the hosted version [here](https://testing-apps.shinyapps.io/themer-demo/). You can also call `bs_themer()` within your `server` function to open the theme customization UI alongside your own app.</p>
+<p class="body-text-s">Be sure to check out the interactive themeing widget to test custom color/font/etc. combos by running `bs_theme_preview()` in your console, or visit the hosted version [here](https://testing-apps.shinyapps.io/themer-demo/). You can also call `bs_themer()` within your `server` function to open the theme customization UI alongside your own app.</p>
 
 ----
 
 ##  {#thematic data-menu-title="{thematic} for plot themeing"}
 
-[Use {thematic} to extend your theme to plots]{.slide-title-smaller}
+[Use {thematic} to extend your theme to plots]{.slide-title2}
 
 <hr>
 
-<p class="small-text">You probably noticed that our scatterplot looks a little silly against the darker background of our themed app. Enter the [`{thematic}` package](https://rstudio.github.io/thematic/index.html), which is built to help simplify plot themeing. Call `thematic_shiny()` before launching your app to generate plots that reflect your application's `bs_theme()`. For example:</p>
+<p class="body-text-s">You probably noticed that our scatterplot looks a little silly against the darker background of our themed app. Enter the [`{thematic}` package](https://rstudio.github.io/thematic/index.html), which is built to help simplify plot themeing. Call `thematic_shiny()` before launching your app to generate plots that reflect your application's `bs_theme()`. For example:</p>
 
 :::: {.columns}
 
@@ -192,7 +192,7 @@ ui <- fluidPage(
   
 )
 ```
-<p class="small-text">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
+<p class="body-text-s">Check out the complete source code for App #1 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app) (NOTE: applied themes are commented out).</p>
 
 :::
 
@@ -206,13 +206,13 @@ ui <- fluidPage(
 
 ::::
 
-<p class="small-text">Read the [vignette](https://rstudio.github.io/thematic/index.html) to learn more about using the `thematic` package to help match plot fonts to the fonts applied across your app.</p>
+<p class="body-text-s">Read the [vignette](https://rstudio.github.io/thematic/index.html) to learn more about using the `thematic` package to help match plot fonts to the fonts applied across your app.</p>
 
 ---
 
 ##  {#fresh data-menu-title="{fresh}"}
 
-[Using the [`{fresh}` package](https://dreamrs.github.io/fresh/) to theme Shiny apps & dashboards]{.slide-title-smaller}
+[Using the [`{fresh}` package](https://dreamrs.github.io/fresh/) to theme Shiny apps & dashboards]{.slide-title2}
 
 <hr>
 
@@ -223,17 +223,17 @@ ui <- fluidPage(
 :::: {.columns}
 
 ::: {.column width="45%"}
-<center><p class="medium-body-text">Pros:</p></center>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} easy to use</p>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} supports theme creation for *both* shiny apps and dashboards (and also `{flexdashboard}`s and [`{b4dash}` applications](https://rinterface.github.io/bs4Dash/index.html)) </p>
+<center><p class="body-text-l teal-text">Pros:</p></center>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} easy to use</p>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} supports theme creation for *both* shiny apps and dashboards (and also `{flexdashboard}`s and [`{b4dash}` applications](https://rinterface.github.io/bs4Dash/index.html)) </p>
 :::
 
 ::: {.column width="4%"}
 :::
 
 ::: {.column width="45%"}
-<center><p class="medium-body-text">Cons:</p></center>
-<p class="small-text">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} styling is constrained by the variables available to `create_theme()`</p>
+<center><p class="body-text-l teal-text">Cons:</p></center>
+<p class="body-text-s">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} styling is constrained by the variables available to `create_theme()`</p>
 :::
 
 ::::
@@ -248,14 +248,14 @@ ui <- fluidPage(
 
 ##  {#fresh-workflow data-menu-title="{fresh} workflow"}
 
-[A general workflow for using `fresh` themes]{.slide-title-smaller}
+[A general workflow for using `fresh` themes]{.slide-title2}
 
 <hr>
 
 <p class="body-text topbr">Whether you're working on a shiny *app* or a shiny *dashboard*, you'll need the following:</p>
 
-<p class="small-text topbr">**1.** a `/www` folder within your app's directory -- this is where we'll save the stylesheet (a `.css` file) that `fresh` will generate for us</p>
-<p class="small-text topbr">**2.** a separate script for building our theme using the `create_theme()` function -- I recommend saving this to `~/scratch` (it seemed to cause issues when saved anywhere within my app directory)</p>
+<p class="body-text-s topbr">**1.** a `/www` folder within your app's directory -- this is where we'll save the stylesheet (a `.css` file) that `fresh` will generate for us</p>
+<p class="body-text-s topbr">**2.** a separate script for building our theme using the `create_theme()` function -- I recommend saving this to `~/scratch` (it seemed to cause issues when saved anywhere within my app directory)</p>
 
 . . .
 
@@ -267,13 +267,13 @@ ui <- fluidPage(
 
 ##  {#create-fresh-app-theme data-menu-title="Create {fresh} app theme"}
 
-[Creating a `fresh` theme for `two-file-app`]{.slide-title-smallest}
+[Creating a `fresh` theme for `two-file-app`]{.slide-title3}
 
 <hr>
 
-<p class="small-text">In this example, we update the colors of our app's body, navbar, and tabPanels using the appropriate `fresh` [variables for shiny *apps*](https://dreamrs.github.io/fresh/articles/vars-shiny.html). We specify a file path, `two-file-app/www` (you'll need to create the `/www` directory, since we don't have one yet), where our stylesheet (e.g. `shiny_fresh_themes.css`, as shown here) file will be saved to.</p>
+<p class="body-text-s">In this example, we update the colors of our app's body, navbar, and tabPanels using the appropriate `fresh` [variables for shiny *apps*](https://dreamrs.github.io/fresh/articles/vars-shiny.html). We specify a file path, `two-file-app/www` (you'll need to create the `/www` directory, since we don't have one yet), where our stylesheet (e.g. `shiny_fresh_themes.css`, as shown here) file will be saved to.</p>
 
-<p class="small-text">Of course, these color combos are *not* recommended, but chosen purely for demonstration purposes {{< fa face-smile title="a smiling face" >}}.</p>
+<p class="body-text-s">Of course, these color combos are *not* recommended, but chosen purely for demonstration purposes {{< fa face-smile title="a smiling face" >}}.</p>
 
 ```{r}
 #| eval: false
@@ -315,7 +315,7 @@ create_theme(
 
 ##  {#apply-fresh-apps-theme data-menu-title="Apply {fresh} app theme"}
 
-[Apply a `fresh` theme to our app]{.slide-title-smaller}
+[Apply a `fresh` theme to our app]{.slide-title2}
 
 <hr>
 
@@ -342,7 +342,7 @@ ui <- navbarPage(
 ) # END navbarPage
 ```
 
-<p class="small-text">Check out the complete source code for App #2 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app) (NOTE: applied themes are commented out).</p>
+<p class="body-text-s">Check out the complete source code for App #2 [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app) (NOTE: applied themes are commented out).</p>
 
 :::
 
@@ -359,11 +359,11 @@ ui <- navbarPage(
 
 ##  {#fresh-shinydashboard data-menu-title="{fresh} shiny dashboard"}
 
-[Creating a `fresh` theme for our `shinydashboard`]{.slide-title-smallest}
+[Creating a `fresh` theme for our `shinydashboard`]{.slide-title3}
 
 <hr>
 
-<p class="smaller-text">In this example, we update the colors of our app's header, body, and sidebar using the appropriate `fresh` [variables for shiny *dashboards*](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html). We specify a file path, `shinydashboard/www` where our stylesheet (e.g. `shinydashboard_fresh_themes.css`, as shown here) file will be saved to. Again, these color combos are *not* recommended, but chosen purely for demonstration purposes.</p>
+<p class="body-text-s">In this example, we update the colors of our app's header, body, and sidebar using the appropriate `fresh` [variables for shiny *dashboards*](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html). We specify a file path, `shinydashboard/www` where our stylesheet (e.g. `shinydashboard_fresh_themes.css`, as shown here) file will be saved to. Again, these color combos are *not* recommended, but chosen purely for demonstration purposes.</p>
 
 ```{r}
 #| eval: false
@@ -403,7 +403,7 @@ create_theme(
 
 ##  {#apply-fresh-dashboard-theme data-menu-title="Apply {fresh} dashboard theme"}
 
-[Apply a `fresh` theme to our dashboard]{.slide-title-smaller}
+[Apply a `fresh` theme to our dashboard]{.slide-title2}
 
 <hr>
 
@@ -430,7 +430,7 @@ body <- dashboardBody(
 )
 ```
 
-<p class="small-text">Check out the complete source code for the shinydashboard [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard) (NOTE: applied themes are commented out).</p>
+<p class="body-text-s">Check out the complete source code for the shinydashboard [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard) (NOTE: applied themes are commented out).</p>
 
 :::
 
@@ -456,7 +456,7 @@ body <- dashboardBody(
 
 ##  {#sass-css data-menu-title="Sass & CSS"}
 
-[Using Sass & CSS to style Shiny apps & dashboards]{.slide-title-smaller}
+[Using Sass & CSS to style Shiny apps & dashboards]{.slide-title2}
 
 <hr>
 
@@ -467,17 +467,17 @@ body <- dashboardBody(
 :::: {.columns}
 
 ::: {.column width="45%"}
-<center><p class="medium-body-text">Pros:</p></center>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} applies to any web page (not just shiny apps)</p>
-<p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} allows you to customize pretty much any aspect of your app</p> <p class="small-text">[{{< fa check title="check mark" >}}]{.teal-text} can be combined with themes generated using `bslib` or `fresh` to fine-tune your app's styling</p>
+<center><p class="body-text-l teal-text">Pros:</p></center>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} applies to any web page (not just shiny apps)</p>
+<p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} allows you to customize pretty much any aspect of your app</p> <p class="body-text-s">[{{< fa check title="check mark" >}}]{.teal-text} can be combined with themes generated using `bslib` or `fresh` to fine-tune your app's styling</p>
 :::
 
 ::: {.column width="4%"}
 :::
 
 ::: {.column width="45%"}
-<center><p class="medium-body-text">Cons:</p></center>
-<p class="small-text">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} a steeper learning curve/generally more complex than packages like `bslib` and `fresh`</p>
+<center><p class="body-text-l teal-text">Cons:</p></center>
+<p class="body-text-s">[{{< fa xmark title="an 'x' mark" >}}]{.teal-text} a steeper learning curve/generally more complex than packages like `bslib` and `fresh`</p>
 :::
 
 ::::
@@ -490,7 +490,7 @@ body <- dashboardBody(
 
 ##  {#css-review data-menu-title="CSS Review/Resources"}
 
-[Resources for a deeper dive]{.slide-title-smaller}
+[Resources for a deeper dive]{.slide-title2}
 
 <hr>
 
@@ -508,7 +508,7 @@ body <- dashboardBody(
 
 ##  {#what-are-sass-css data-menu-title="What are Sass & CSS"}
 
-[What even is CSS? Sass?]{.slide-title-smaller}
+[What even is CSS? Sass?]{.slide-title2}
 
 <hr>
 
@@ -516,7 +516,7 @@ body <- dashboardBody(
 
 ::: {.column width="45%"}
 <center><img src="images/css3.png" alt="The CSS 3 logo." height="400"/></center>
-<center><p class="smaller-text">**CSS** (**C**ascading **S**tyle **S**heets) is a programming language that allows you to control how HTML elements look (e.g. colors, font styles, etc.) on a webpage.</p></center>
+<center><p class="body-text-s">**CSS** (**C**ascading **S**tyle **S**heets) is a programming language that allows you to control how HTML elements look (e.g. colors, font styles, etc.) on a webpage.</p></center>
 :::
 
 ::: {.column width="5%"}
@@ -528,7 +528,7 @@ body <- dashboardBody(
 
 <center><img src="images/sass.png" alt="The Sass logo" width="550"/></center>
 
-<center><p class="smaller-text topbr">**Sass** (**S**yntactically **A**wesome **S**tyle**s**heets) is a CSS extension language and CSS preprocessor -- meaning Sass needs to be converted (aka compiled) to CSS before it can be interpreted by your web browser.</p></center> 
+<center><p class="body-text-s topbr">**Sass** (**S**yntactically **A**wesome **S**tyle**s**heets) is a CSS extension language and CSS preprocessor -- meaning Sass needs to be converted (aka compiled) to CSS before it can be interpreted by your web browser.</p></center> 
 :::
 
 ::::
@@ -537,7 +537,7 @@ body <- dashboardBody(
 
 ##  {#css-rule-based data-menu-title="CSS is rule-based"}
 
-[CSS is a rule-based language]{.slide-title-smaller}
+[CSS is a rule-based language]{.slide-title2}
 
 <hr>
 
@@ -555,9 +555,9 @@ body <- dashboardBody(
 :::
 
 ::: {.column width="45%"}
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Selectors** select the HTML element(s) you want to style (*e.g. level one headings, `<h1>`)*</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Declarations** sit inside curly brackets, `{}`, and are made up of [**property**](https://www.w3schools.com/cssref/index.php) and **value** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} A property and it's corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Selectors** select the HTML element(s) you want to style (*e.g. level one headings, `<h1>`)*</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Declarations** sit inside curly brackets, `{}`, and are made up of [**property**](https://www.w3schools.com/cssref/index.php) and **value** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} A property and it's corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`</p>
 :::
 
 ::::
@@ -568,17 +568,17 @@ body <- dashboardBody(
 
 ##  {#css-3ways data-menu-title="3 ways to add CSS styling"}
 
-[3 ways to add CSS styling to your apps]{.slide-title-smallest}
+[3 ways to add CSS styling to your apps]{.slide-title3}
 
 <hr>
 
-<p class="small-text">You can **(1)** add styling directly to `tags`, **(2)** add CSS rules to your `header`, and/or **(3)** build a stylesheet that is applied to your app. **Creating a stylesheet is the preferred approach, and you should do this whenever possible.**</p>
+<p class="body-text-s">You can **(1)** add styling directly to `tags`, **(2)** add CSS rules to your `header`, and/or **(3)** build a stylesheet that is applied to your app. **Creating a stylesheet is the preferred approach, and you should do this whenever possible.**</p>
 
 ::: {.panel-tabset}
 
 ## tags
 
-<p class="smaller-text">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
+<p class="body-text-s">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
 
 :::: {.columns}
 
@@ -629,7 +629,7 @@ shinyApp(ui, server)
 
 ## header
 
-<p class="smaller-text">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app). **Note:** explore Google fonts [here](https://fonts.google.com/) and check out [this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts) for instructions on selecting a font.</p>
+<p class="body-text-s">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app). **Note:** explore Google fonts [here](https://fonts.google.com/) and check out [this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts) for instructions on selecting a font.</p>
 
 :::: {.columns}
 
@@ -686,7 +686,7 @@ shinyApp(ui, server)
 
 ## stylesheets
 
-<p class="smaller-text">Build a stylesheet (a `.css` file) inside your app's `www/` directory and apply your styles to your app's header (for shinydashboards, include your header inside `dashboardBody()`. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot. **Tip:** use `touch styles.css` in the terminal to create a new `.css` file.</p>
+<p class="body-text-s">Build a stylesheet (a `.css` file) inside your app's `www/` directory and apply your styles to your app's header (for shinydashboards, include your header inside `dashboardBody()`. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot. **Tip:** use `touch styles.css` in the terminal to create a new `.css` file.</p>
 
 :::: {.columns}
 
@@ -766,7 +766,7 @@ button {
 
 ##  {#dashboard-practice-css data-menu-title="Dashboard for practicing CSS"}
 
-[Let's practice on a small dashboard first:]{.slide-title-smaller}
+[Let's practice on a small dashboard first:]{.slide-title2}
 
 <hr>
 
@@ -892,11 +892,11 @@ library(palmerpenguins)
 
 ##  {#inspect-webpages data-menu-title="Inspecting"}
 
-[What if I want to style an element, but don't know how to target it?]{.slide-title-smaller}
+[What if I want to style an element, but don't know how to target it?]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Oftentimes, you'll have to do a bit of exploration to determine how to target specific elements for styling. In either your app viewer or web browser, right click on an element of interest and choose **Inspect** (or **Inspect Element**) to open up the underlying HTML and CSS. You can make temporary edits to your app (e.g. adding a background color, changing font sizes, etc.) to see how they look first, then copy the appropriate CSS rule into your stylesheet to apply to your app.</p>
+<p class="body-text-s">Oftentimes, you'll have to do a bit of exploration to determine how to target specific elements for styling. In either your app viewer or web browser, right click on an element of interest and choose **Inspect** (or **Inspect Element**) to open up the underlying HTML and CSS. You can make temporary edits to your app (e.g. adding a background color, changing font sizes, etc.) to see how they look first, then copy the appropriate CSS rule into your stylesheet to apply to your app.</p>
 
 <center><img src="images/inspect_orientation.png" alt="A shiny dashboard, opened in the RStudio viewer, with the Inspect pane open to the right. The top half of the inspect pane shows the underlying HTML and the bottom half shows the underlying CSS styles." width="550"/></center>
 
@@ -904,15 +904,15 @@ library(palmerpenguins)
 
 ##  {#inspect-dashboard data-menu-title="Inspect dashboard box"}
 
-[Inspect & identify how to update box styling]{.slide-title-smallest}
+[Inspect & identify how to update box styling]{.slide-title3}
 
 <hr>
 
-<p class="smaller-text">For example, let's say I want to change the color of this shinydashboard's boxes and the color of the box text.</p> 
+<p class="body-text-s">For example, let's say I want to change the color of this shinydashboard's boxes and the color of the box text.</p> 
 
-<p class="smaller-text">**First, we need to determine which type of HTML element creates our box.** Right clicking on a box and choosing **Inspect Element** pulls up the HTML and CSS files underlying the app. Hovering over different parts of the HTML highlights different elements in the UI. The box is highlighted when I hover over `<div class="box-body">` -- this tells me that boxes are formed using the `<div>` HTML element and they're assigned a class called `box-body`.</p> 
+<p class="body-text-s">**First, we need to determine which type of HTML element creates our box.** Right clicking on a box and choosing **Inspect Element** pulls up the HTML and CSS files underlying the app. Hovering over different parts of the HTML highlights different elements in the UI. The box is highlighted when I hover over `<div class="box-body">` -- this tells me that boxes are formed using the `<div>` HTML element and they're assigned a class called `box-body`.</p> 
 
-<p class="smaller-text">**Next, we can (temporarily) adjust the CSS rules that style these boxes to see how they work.** I can hop down to the CSS file (here, that's located in the bottom half of my sidebar, but depending on the size of your window/layout, the HTML and CSS might be side-by-side) and find the `.box-body` class selector. You can add property/value pairs and/or update existing property values to adjust the appearance of our box. Notice that changing the `.box-body` class selector updates **both** boxes -- upon inspecting the box containing our plot, you'll notice that it is also of class, `box-body`. Therefore changes to this class selector will apply to both boxes. *This process is purely for testing purposes -- refreshing your app will remove any of these changes.*</p>
+<p class="body-text-s">**Next, we can (temporarily) adjust the CSS rules that style these boxes to see how they work.** I can hop down to the CSS file (here, that's located in the bottom half of my sidebar, but depending on the size of your window/layout, the HTML and CSS might be side-by-side) and find the `.box-body` class selector. You can add property/value pairs and/or update existing property values to adjust the appearance of our box. Notice that changing the `.box-body` class selector updates **both** boxes -- upon inspecting the box containing our plot, you'll notice that it is also of class, `box-body`. Therefore changes to this class selector will apply to both boxes. *This process is purely for testing purposes -- refreshing your app will remove any of these changes.*</p>
 
 <center><img src="images/inspecting.gif" alt="" width="550"/></center>
 
@@ -920,13 +920,13 @@ library(palmerpenguins)
 
 ##  {#write-box-css data-menu-title="Write CSS for box styling"}
 
-[Finally, apply box styling to our dashboard]{.slide-title-smaller}
+[Finally, apply box styling to our dashboard]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Now that we know that we can use the `box-body` class to customize the appearance of our boxes, let's create a stylesheet and add our new rules. The `shinydashboard` framework already provides the "standard" styling for boxes, contained in the `box-body` class. Anything we specify in our own stylesheet will build upon or modify existing styling.</p>
+<p class="body-text-s">Now that we know that we can use the `box-body` class to customize the appearance of our boxes, let's create a stylesheet and add our new rules. The `shinydashboard` framework already provides the "standard" styling for boxes, contained in the `box-body` class. Anything we specify in our own stylesheet will build upon or modify existing styling.</p>
 
-<p class="small-text">Remember to create a header and link your stylesheet within `dashboardBody()` to apply our styles.</p>
+<p class="body-text-s">Remember to create a header and link your stylesheet within `dashboardBody()` to apply our styles.</p>
 
 ::: {.panel-tabset}
 
@@ -1042,7 +1042,7 @@ dashboardPage(header, sidebar, body)
 
 ##  {#what-about-sass data-menu-title="What about Sass?"}
 
-[What about Sass?]{.slide-title-smaller}
+[What about Sass?]{.slide-title2}
 
 <hr>
 
@@ -1058,11 +1058,11 @@ dashboardPage(header, sidebar, body)
 
 ##  {#sass-vars data-menu-title="Sass variables"}
 
-[We can define and reference Sass variables throughout our stylesheet]{.slide-title-smaller}
+[We can define and reference Sass variables throughout our stylesheet]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Sass allows us to define variables (in the form `$var-name: value;`) for our colors to reference instead of writing out their HEX codes each time:</p>
+<p class="body-text-s">Sass allows us to define variables (in the form `$var-name: value;`) for our colors to reference instead of writing out their HEX codes each time:</p>
 
 ```{css}
 #| eval: false
@@ -1087,23 +1087,23 @@ h1 {
 
 ```
 
-<p class="small-text">If you decide that you actually like a *different* shade of teal better, you’ll only need to update the hex code where you first define the `$teal` Sass variable, saving lots of time.</p>
+<p class="body-text-s">If you decide that you actually like a *different* shade of teal better, you’ll only need to update the hex code where you first define the `$teal` Sass variable, saving lots of time.</p>
 
 ---
 
 ##  {#sass-workflow data-menu-title="Sass workflow"}
 
-[Sass for Shiny workflow]{.slide-title-smaller}
+[Sass for Shiny workflow]{.slide-title2}
 
 <hr>
 
 <p class="body-text">To style apps using both Sass *and* CSS, you'll follow this general workflow:</p>
 
-<p class="small-text topbr">**1.** Create a `.scss` file inside `~/myapp/www` using the `touch` command in the terminal (e.g. `cd` into the appropriate directory, then `touch styles.scss`). Write both your Sass variables and CSS rules in your `.scss` file (**Note:** you can write both Sass & CSS in a `.scss` file, but *only* CSS in a `.css` file)</p> 
+<p class="body-text-s topbr">**1.** Create a `.scss` file inside `~/myapp/www` using the `touch` command in the terminal (e.g. `cd` into the appropriate directory, then `touch styles.scss`). Write both your Sass variables and CSS rules in your `.scss` file (**Note:** you can write both Sass & CSS in a `.scss` file, but *only* CSS in a `.css` file)</p> 
 
-<p class="small-text topbr">**2.** Compile (i.e. convert) Sass to CSS in `global.R` (or, if using a one-file app, at the top of your script before you define your UI) using the the `sass()` function from the [`{sass}` package](https://rstudio.github.io/sass/index.html) -- this will generate a `.css` file that our shiny app can actually use. Be sure to save your `.css` file to your app's `/www` directory.</p>
+<p class="body-text-s topbr">**2.** Compile (i.e. convert) Sass to CSS in `global.R` (or, if using a one-file app, at the top of your script before you define your UI) using the the `sass()` function from the [`{sass}` package](https://rstudio.github.io/sass/index.html) -- this will generate a `.css` file that our shiny app can actually use. Be sure to save your `.css` file to your app's `/www` directory.</p>
 
-<p class="small-text topbr">**3.** Apply your styles to your app by linking to to your `.css` file in your app's header.</p>
+<p class="body-text-s topbr">**3.** Apply your styles to your app by linking to to your `.css` file in your app's header.</p>
 
 <center><img src="images/sass_to_css_workflow.png" alt="A chart showing the Sass to CSS workflow -- begin with writing Sass variables and CSS rule in a .scss file, then use the sass R package to compile sass to css, and finally use your compiled .css file to apply your styles to your app." width="750"/></center>
 
@@ -1111,19 +1111,19 @@ h1 {
 
 ##  {#write-sass data-menu-title="Write Sass"}
 
-[Let's build our Sass file]{.slide-title-smaller}
+[Let's build our Sass file]{.slide-title2}
 
 <hr>
 
-<p class="small-text">We'll practice on our `two-file-app` -- first, remove any reference to your `bslib` or `fresh` themes that we practiced applying earlier so that we're starting off with just the default shiny styling.</p>
+<p class="body-text-s">We'll practice on our `two-file-app` -- first, remove any reference to your `bslib` or `fresh` themes that we practiced applying earlier so that we're starting off with just the default shiny styling.</p>
 
 . . . 
 
-<p class="small-text">Next, create your Sass file within `two-file-app/www/`. Then, using your terminal, `cd` into `~/two-file-app/www` and use the `touch` command to create a `.scss` file (I'm calling mine `my_sass_styles.scss`).</p>
+<p class="body-text-s">Next, create your Sass file within `two-file-app/www/`. Then, using your terminal, `cd` into `~/two-file-app/www` and use the `touch` command to create a `.scss` file (I'm calling mine `my_sass_styles.scss`).</p>
 
 . . . 
 
-<p class="small-text">Add Sass variables and CSS rules to `my_sass_styles.scss`:</p>
+<p class="body-text-s">Add Sass variables and CSS rules to `my_sass_styles.scss`:</p>
 
 ```{css}
 #| eval: false
@@ -1182,15 +1182,15 @@ a {
 
 ##  {#convert-sass data-menu-title="Convert Sass to CSS"}
 
-[Then, compile Sass to CSS]{.slide-title-smaller}
+[Then, compile Sass to CSS]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Because web browsers can only interpret CSS (not Sass), we need to compile our Sass to CSS. To do this, we can use the `sass()` function from the [`{sass}` package](https://rstudio.github.io/sass/index.html). We can do this in `global.R`. The `sass()` function requires two arguments: a sass file `input` and a file path + named `.css` file `output`.</p>
+<p class="body-text-s">Because web browsers can only interpret CSS (not Sass), we need to compile our Sass to CSS. To do this, we can use the `sass()` function from the [`{sass}` package](https://rstudio.github.io/sass/index.html). We can do this in `global.R`. The `sass()` function requires two arguments: a sass file `input` and a file path + named `.css` file `output`.</p>
 
-<p class="small-text">We also need to apply our styles to our app by linking this newly-generated `.css` file in our app's header.</p>
+<p class="body-text-s">We also need to apply our styles to our app by linking this newly-generated `.css` file in our app's header.</p>
 
-<p class="smaller-text">**Note:** After running your app, you should see a `my_sass_styles.css` file appear in `www/` -- it should look quite familiar, except all of our Sass variables have been converted to CSS.</p>
+<p class="body-text-s">**Note:** After running your app, you should see a `my_sass_styles.css` file appear in `www/` -- it should look quite familiar, except all of our Sass variables have been converted to CSS.</p>
 
 ::: {.panel-tabset}
 

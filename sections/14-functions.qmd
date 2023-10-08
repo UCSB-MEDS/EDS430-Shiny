@@ -17,23 +17,23 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">By the end of this section, you should:</p>
+<p class="body-text-l teal-text bottombr">By the end of this section, you should:</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand the benefits of turning UI elements and server logic into functions</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand the benefits of turning UI elements and server logic into functions</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know where to write/save your functions</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know where to write/save your functions</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a repeated input into a function</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a repeated input into a function</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a piece of server logic into a function</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a piece of server logic into a function</p>
 
 
 ---
@@ -46,17 +46,17 @@ format: revealjs
 
 <p class="body-text bottombr">Functions are useful for a wide variety of reasons. Most notably:</p>
 
-<p class="small-text bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing redundancy</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing complexity</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing code comprehension</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing testability</p>
+<p class="body-text-s bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing redundancy</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing complexity</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing code comprehension</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing testability</p>
 
 . . . 
 
 <p class="body-text topbr">Importantly, functions can live outside of your app file(s) (i.e. `app.R` or `ui.R`, `server.R` and `global.R`), helping you to break up/streamline your code. Hadley Wickham [recommends](https://mastering-shiny.org/scaling-functions.html#file-organisation) creating a folder called `/R` **inside** your app's directory (e.g. `~/app-directory/R/...`) and:</p>
 
-<p class="small-text bottombr">**(a)** storing larger functions in their own files (e.g. `~/app-directory/R/{function-name}.R`) and/or</p> 
-<p class="small-text bottombr">**(b)** creating a `utils.R` file (e.g `~/app-directory/R/utils.R`) to store smaller, simpler functions all in one script.</p> 
+<p class="body-text-s bottombr">**(a)** storing larger functions in their own files (e.g. `~/app-directory/R/{function-name}.R`) and/or</p> 
+<p class="body-text-s bottombr">**(b)** creating a `utils.R` file (e.g `~/app-directory/R/utils.R`) to store smaller, simpler functions all in one script.</p> 
 
 <p class="body-text topbr">You can **source your function files into `global.R`** so that your functions are made available for use throughout your app. **NOTE:** As of Shiny version 1.5.0, any scripts stored in `~/app-directory/R/` will be automatically sourced when your application is loaded (meaning you don't *need* to `source()` them into `global.R`, if you're running at least Shiny v1.5.0).</p>
 
@@ -64,11 +64,11 @@ format: revealjs
 
 ##  {#app-for-practicing-fxns data-menu-title="Example App for Fxn Practice"}
 
-[Create a small app for function practice]{.slide-title-smaller}
+[Create a small app for function practice]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Create a new subdirectory called `functions-app/` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
+<p class="body-text-s">Create a new subdirectory called `functions-app/` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
 
 ::: {.panel-tabset}
 
@@ -196,7 +196,7 @@ library(tidyverse)
 
 ##  {#id-ui-duplication data-menu-title="Identify code duplication in UI"}
 
-[Identify code duplication in `ui.R`]{.slide-title-smaller}
+[Identify code duplication in `ui.R`]{.slide-title2}
 
 <hr>
 
@@ -254,19 +254,19 @@ ui <- fluidPage(
 
 ##  {#write-ui-function data-menu-title="Write a UI function"}
 
-[Write a function for adding a `pickerInput` to select for penguin species]{.slide-title-smaller}
+[Write a function for adding a `pickerInput` to select for penguin species]{.slide-title2}
 
 <hr>
 
-<p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInput`s is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
+<p class="body-text-s">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInput`s is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
 
 . . . 
 
-<p class="small-text topbr">First, create an `/R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
+<p class="body-text-s topbr">First, create an `/R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
 
-<p class="small-text topbr">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
+<p class="body-text-s topbr">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
 
-<p class="small-text topbr">Once written, `source()` your function script into `global.R` (if necessary) to make your function available for use in your app.</p>
+<p class="body-text-s topbr">Once written, `source()` your function script into `global.R` (if necessary) to make your function available for use in your app.</p>
 
 ::: {.panel-tabset}
 
@@ -304,11 +304,11 @@ source("R/penguinSpp_pickerInput.R") # will source automatically with Shiny v1.5
 
 ##  {#apply-ui-fxn data-menu-title="Apply UI function"}
 
-[Apply your function in `ui.R`]{.slide-title-smaller}
+[Apply your function in `ui.R`]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function, save, and run your app. It should look exactly the same as before!</p>
+<p class="body-text-s">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function, save, and run your app. It should look exactly the same as before!</p>
 
 ```{r}
 #| eval: false  
@@ -364,11 +364,11 @@ ui <- fluidPage(
 
 ##  {#server-fxns data-menu-title="Server functions"}
 
-[Turn reactives & rendered outputs into functions]{.slide-title-smaller}
+[Turn reactives & rendered outputs into functions]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Next, let's see where we can streamline our server code using functions. We have two discrete sections of code -- **(1)** a reactive data frame and scatterplot output and **(2)** a reactive data frame and histogram output.</p>
+<p class="body-text-s">Next, let's see where we can streamline our server code using functions. We have two discrete sections of code -- **(1)** a reactive data frame and scatterplot output and **(2)** a reactive data frame and histogram output.</p>
 
 ```{r}
 #| eval: false
@@ -426,17 +426,17 @@ server <- function(input, output) {
 
 ##  {#build-penguin-scatterplot-fxn data-menu-title="build_penguin_scatterplot()"}
 
-[Create a function to builds our scatterplot]{.slide-title-smaller}
+[Create a function to builds our scatterplot]{.slide-title2}
 
 <hr>
 
-<p class="smaller-text">First, create a new file in `~/function-app/R` and name it `build_penguin_histogram.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
+<p class="body-text-s">First, create a new file in `~/function-app/R` and name it `build_penguin_histogram.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
 
-<p class="smaller-text">The goal of my function is to filter the `penguins` data based on the user input *and* render our ggplot scatterplot. To start, I'm going to cut/paste both the code to generate the reactive `filtered_spp_histogram` data frame and the `renderPlot()` code from `server.R` into our `build_penguin_histogram()` function.</p>
+<p class="body-text-s">The goal of my function is to filter the `penguins` data based on the user input *and* render our ggplot scatterplot. To start, I'm going to cut/paste both the code to generate the reactive `filtered_spp_histogram` data frame and the `renderPlot()` code from `server.R` into our `build_penguin_histogram()` function.</p>
 
-<p class="smaller-text">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
+<p class="body-text-s">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
 
-<p class="smaller-text">**Note** that in R, functions return the last executed line -- when we run `build_penguin_histogram()` in our server, it will return the object created by `renderPlot()`.</p>
+<p class="body-text-s">**Note** that in R, functions return the last executed line -- when we run `build_penguin_histogram()` in our server, it will return the object created by `renderPlot()`.</p>
 
 ```{r}
 #| eval: false
@@ -470,11 +470,11 @@ build_penguin_histogram <- function(input) {
 
 ##  {#use-build-penguin-scatterplot-fxn data-menu-title="Use build_penguin_scatterplot()"}
 
-[Now use your function inside the server]{.slide-title-smaller}
+[Now use your function inside the server]{.slide-title2}
 
 <hr>
 
-<p class="small-text">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function's output to `output$penguin_scatterplot`. In doing so, we reduced 23 lines of code to 1 inside our server function.</p>
+<p class="body-text-s">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function's output to `output$penguin_scatterplot`. In doing so, we reduced 23 lines of code to 1 inside our server function.</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -513,11 +513,11 @@ server <- function(input, output) {
 
 ##  {#create-build-penguin-histogram data-menu-title="Create & use build_penguin_histogram()"}
 
-[Build a function to create our histogram]{.slide-title-smaller}
+[Build a function to create our histogram]{.slide-title2}
 
 <hr>
 
-<p class="small-text">We can repeat a similar process to create a function for building our histogram:</p>
+<p class="body-text-s">We can repeat a similar process to create a function for building our histogram:</p>
 
 ::: {.panel-tabset}
 

@@ -17,23 +17,23 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">After this section, you should:</p>
+<p class="body-text-l teal-text bottombr">After this section, you should:</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand some of the challenges associated with debugging shiny applications</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand some of the challenges associated with debugging shiny applications</p>
 
 . . .
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} be introduced to a few approaches and tools for debugging shiny applications, including using diagnostic messages and the `reactlog` package.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} be introduced to a few approaches and tools for debugging shiny applications, including using diagnostic messages and the `reactlog` package.</p>
 
 . . . 
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . . 
 
-<p class="small-text">[{{< fa book-open title="an open book" >}}]{.teal-text} `{reactlog}`:  a reactivity visualizer for shiny</p>
+<p class="body-text-s">[{{< fa book-open title="an open book" >}}]{.teal-text} `{reactlog}`:  a reactivity visualizer for shiny</p>
 
 ---
 
@@ -45,21 +45,21 @@ format: revealjs
 
 <p class="body-text">Shiny apps can be particularly challenging to debug for a few reasons:</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Shiny is **reactive**, so code execution isn't as linear as other code that you're likely more familiar with (e.g. analytical pipelines written in "normal" R scripts, where each line of code is executed in succession)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Shiny is **reactive**, so code execution isn't as linear as other code that you're likely more familiar with (e.g. analytical pipelines written in "normal" R scripts, where each line of code is executed in succession)</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Shiny code runs behind a web server *and* the Shiny framework itself, which can obscure what's going on</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Shiny code runs behind a web server *and* the Shiny framework itself, which can obscure what's going on</p>
 
 . . . 
 
 <p class="body-text topbr">While there are a number of different tools/strategies for debugging Shiny apps, I find myself turning to one (or more) of these approaches most often:</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} isolating pesky errors (typos, missing commas, unmatched parentheses) in the UI by commenting out code from the outside in</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} isolating pesky errors (typos, missing commas, unmatched parentheses) in the UI by commenting out code from the outside in</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing your app to *just* problematic code by commenting out as much correctly-functioning code as possible</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing your app to *just* problematic code by commenting out as much correctly-functioning code as possible</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} adding diagnostic messages to my reactives</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} adding diagnostic messages to my reactives</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} using `reactlog` to visualize reactivity errors</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} using `reactlog` to visualize reactivity errors</p>
 
 . . . 
 
@@ -69,20 +69,20 @@ format: revealjs
 
 ##  {#ui-errors data-menu-title="Tracking down UI errors"}
 
-[Track down pesky UI errors by commenting out code from the outside in]{.slide-title-smaller}
+[Track down pesky UI errors by commenting out code from the outside in]{.slide-title2}
 
 <hr>
 
-<p class="smaller-text">Many of us experienced the frustrations of finding unmatched parentheses, typos, missing commas, etc. when building out our UI layout for App #2, and tracking down the issue can require some patience and persistence.</p>
+<p class="body-text-s">Many of us experienced the frustrations of finding unmatched parentheses, typos, missing commas, etc. when building out our UI layout for App #2, and tracking down the issue can require some patience and persistence.</p>
 
-<p class="smaller-text topbr">My preferred approach for troubleshooting a situation like this is to comment out all code moving from the highest-level layout function (e.g. `navbarPage()`) inwards, re-running your app each time you un-comment the next little bit of code, until you find the place where your app breaks.</p>
+<p class="body-text-s topbr">My preferred approach for troubleshooting a situation like this is to comment out all code moving from the highest-level layout function (e.g. `navbarPage()`) inwards, re-running your app each time you un-comment the next little bit of code, until you find the place where your app breaks.</p>
 
 . . . 
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="smaller-text topbr">For example, if I were to trouble shoot the UI for App #2, I'd comment out everything except `ui <- navbarPage(title = "LTER Animal Data Explorer"` and the ending `) # END navbarPage`, then run my app to make sure an empty app with a gray navbar and title at the top appears. It does? Great. Next, un-comment the two `tabPanel()`s that create the "About this App" and "Explore the Data" pages. Works? Add a little bit more back in now, and continue this process. I like to un-comment/re-run all layout function code *first*, then begin adding back the inputs and outputs one by one. See a short, but incomplete demo to the right:</p>
+<p class="body-text-s topbr">For example, if I were to trouble shoot the UI for App #2, I'd comment out everything except `ui <- navbarPage(title = "LTER Animal Data Explorer"` and the ending `) # END navbarPage`, then run my app to make sure an empty app with a gray navbar and title at the top appears. It does? Great. Next, un-comment the two `tabPanel()`s that create the "About this App" and "Explore the Data" pages. Works? Add a little bit more back in now, and continue this process. I like to un-comment/re-run all layout function code *first*, then begin adding back the inputs and outputs one by one. See a short, but incomplete demo to the right:</p>
 :::
 
 ::: {.column width="5%"}
@@ -95,41 +95,41 @@ format: revealjs
 ::::
 
 
-<p class="small-text">**Ultimately, taking your time, adding *lots* of code comments to mark the ending parentheses of each function, and leaving space between lines of code so that you can more easily see what's going on will save you lots of headache!**</p>
+<p class="body-text-s">**Ultimately, taking your time, adding *lots* of code comments to mark the ending parentheses of each function, and leaving space between lines of code so that you can more easily see what's going on will save you lots of headache!**</p>
 
 ---
 
 ##  {#next data-menu-title="next strategies"}
 
-[What about "larger" errors?]{.slide-title-smaller}
+[What about "larger" errors?]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Oftentimes, you'll need to identify larger, more complex errors, like why an output isn't rendering correctly or even appearing in your app at all.</p>
+<p class="body-text-s">Oftentimes, you'll need to identify larger, more complex errors, like why an output isn't rendering correctly or even appearing in your app at all.</p>
 
-<p class="small-text topbr">I often turn to two strategies:</p>
+<p class="body-text-s topbr">I often turn to two strategies:</p>
 
-<p class="small-text">**(1)** commenting out everything except the UI elements and server logic where I believe the issue is stemming from, and</p>
+<p class="body-text-s">**(1)** commenting out everything except the UI elements and server logic where I believe the issue is stemming from, and</p>
 
-<p class="small-text">**(2)** adding diagnostic messages to my reactives</p>
-
-. . . 
-
-<p class="small-text">**(3)** ...*and* on rare occasions, I'll try using the [`{reactlog}` package](https://rstudio.github.io/reactlog/) to help visualize my app's reactivity in an attempt to identify the problem.</p>
+<p class="body-text-s">**(2)** adding diagnostic messages to my reactives</p>
 
 . . . 
 
-<p class="small-text topbr">To demo these approaches, we'll use two pre-constructed apps as examples: (1) [`reactlog-working`](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-working) (a small app that's functioning as intended) and (2) [`reactlog-broken`](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken) (the same small app that's *not* functioning as intended).</p>
+<p class="body-text-s">**(3)** ...*and* on rare occasions, I'll try using the [`{reactlog}` package](https://rstudio.github.io/reactlog/) to help visualize my app's reactivity in an attempt to identify the problem.</p>
+
+. . . 
+
+<p class="body-text-s topbr">To demo these approaches, we'll use two pre-constructed apps as examples: (1) [`reactlog-working`](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-working) (a small app that's functioning as intended) and (2) [`reactlog-broken`](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken) (the same small app that's *not* functioning as intended).</p>
 
 ---
 
 ##  {#non-buggy-app data-menu-title="A correctly functioning app"}
 
-[I'm building an app that should look like this...]{.slide-title-smaller}
+[I'm building an app that should look like this...]{.slide-title2}
 
 <hr>
 
-<p class="small-text">In **Tab 1**, both the image and text should update whenever a new radio button is chosen. In **Tab 2**, the scatterplot should update so that only data points for penguins with body masses within our chosen range are displayed. **Find the source code for this functioning app [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-working).**</p>
+<p class="body-text-s">In **Tab 1**, both the image and text should update whenever a new radio button is chosen. In **Tab 2**, the scatterplot should update so that only data points for penguins with body masses within our chosen range are displayed. **Find the source code for this functioning app [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-working).**</p>
 
 <center><img src="images/working-app.gif" alt="A functioning shiny app with two tabs. The first tab has radioButtons that when selected, update the penguin image and description text. The second tab has a sliderInput and scatterplot." width="650"/></center>
 
@@ -137,11 +137,11 @@ format: revealjs
 
 ##  {#buggy-app data-menu-title="A buggy app"}
 
-[...but let's say it actually looks like this:]{.slide-title-smaller}
+[...but let's say it actually looks like this:]{.slide-title2}
 
 <hr>
 
-<p class="small-text">In **Tab 1**, only the image updates whenever a new radio button is chosen, and text is missing altogether. In **Tab 2**, the scatterplot updates as expected whenever the body mass range is changed. **Find the source code for this buggy app [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken).**</p>
+<p class="body-text-s">In **Tab 1**, only the image updates whenever a new radio button is chosen, and text is missing altogether. In **Tab 2**, the scatterplot updates as expected whenever the body mass range is changed. **Find the source code for this buggy app [here](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/reactlog-broken).**</p>
 
 <center><img src="images/buggy-app.gif" alt="The same shiny app as on the previous slide, but this time when the radioButtons are updated, only the image changes -- no text appears." width="650"/></center>
 
@@ -149,13 +149,13 @@ format: revealjs
 
 ##  {#comment-out-code data-menu-title="Comment out code"}
 
-[Start by commenting out functioning code]{.slide-title-smallest}
+[Start by commenting out functioning code]{.slide-title3}
 
 <hr>
 
-<p class="smaller-text">Even though this is a relatively small/simple app, there is still code that, for lack of a better term, gets in the way. After a quick assessment, my reactive scatterplot on Tab 2 appears to be working as expected. To help simplify the amount of code I need to look at, I'll start by commenting out all UI elements (`sliderInput` & `plotOutput`) and server logic for building that reactive plot.</p>
+<p class="body-text-s">Even though this is a relatively small/simple app, there is still code that, for lack of a better term, gets in the way. After a quick assessment, my reactive scatterplot on Tab 2 appears to be working as expected. To help simplify the amount of code I need to look at, I'll start by commenting out all UI elements (`sliderInput` & `plotOutput`) and server logic for building that reactive plot.</p>
 
-<p class="smaller-text">**Note:** As you begin building more complex apps, you may have reactives that depend on other reactives -- it's important to think about these dependencies when commenting out parts of your app for debugging purposes.</p>
+<p class="body-text-s">**Note:** As you begin building more complex apps, you may have reactives that depend on other reactives -- it's important to think about these dependencies when commenting out parts of your app for debugging purposes.</p>
 
 ::: {.panel-tabset}
 
@@ -287,11 +287,11 @@ shinyApp(ui = ui, server = server)
 
 ##  {#add-messages data-menu-title="Add messages to reactives"}
 
-[Next, add messages to your reactives]{.slide-title-smallest}
+[Next, add messages to your reactives]{.slide-title3}
 
 <hr>
 
-<p class="smaller-text">You can insert diagnostic messages within your reactives using `message()` -- here, I add a short message where each text and image output should be rendered. I can run my app and see messages successfully (or in the case of a broken app, unsuccessfully) print in my RStudio console as I interact with the app. You'll notice that the each image message (e.g. *"Displaying all penguins image"*) prints when a new radioButton is selected, but those associated with the text outputs do not. This tells me that code is not being executed, beginning with first `if` statement inside `renderText` and that this is a good starting location for reviewing code (e.g. carefully crosschecking all `inputId`s and `outputId`s in that section).</p>
+<p class="body-text-s">You can insert diagnostic messages within your reactives using `message()` -- here, I add a short message where each text and image output should be rendered. I can run my app and see messages successfully (or in the case of a broken app, unsuccessfully) print in my RStudio console as I interact with the app. You'll notice that the each image message (e.g. *"Displaying all penguins image"*) prints when a new radioButton is selected, but those associated with the text outputs do not. This tells me that code is not being executed, beginning with first `if` statement inside `renderText` and that this is a good starting location for reviewing code (e.g. carefully crosschecking all `inputId`s and `outputId`s in that section).</p>
 
 ::: {.panel-tabset}
 
@@ -433,7 +433,7 @@ shinyApp(ui = ui, server = server)
 
 ##  {#reactlog data-menu-title="{reactlog}"}
 
-[If helpful, use `{reactlog}` to visualize reactivity]{.slide-title-smallest}
+[If helpful, use `{reactlog}` to visualize reactivity]{.slide-title3}
 
 <hr>
 
@@ -446,7 +446,7 @@ shinyApp(ui = ui, server = server)
 
 <p class="body-text bottombr">`reactlog` is a package/tool that provides:</p>
 
-<p class="small-text quote-text-bg">*"A snapshot of the history (**log**) of all **react**ive interactions within a shiny application"* **- Barret Schloerke in his 2019 RSTUDIO::CONF talk, [Reactlog 2.0: Debugging the state of Shiny](https://www.rstudio.com/resources/rstudioconf-2019/reactlog-2-0-debugging-the-state-of-shiny/)**</p>
+<p class="body-text-s quote-text-bg">*"A snapshot of the history (**log**) of all **react**ive interactions within a shiny application"* **- Barret Schloerke in his 2019 RSTUDIO::CONF talk, [Reactlog 2.0: Debugging the state of Shiny](https://www.rstudio.com/resources/rstudioconf-2019/reactlog-2-0-debugging-the-state-of-shiny/)**</p>
 :::
 
 ::: {.column width="5%"}
@@ -458,13 +458,13 @@ shinyApp(ui = ui, server = server)
 
 ::::
 
-<p class="small-text">Reactivity can be confusing. I recommend watching Barret Schloerke's talk, linked above, and reading through the [Shiny Reactlog vignette](https://rstudio.github.io/reactlog/articles/reactlog.html) as you get started.</p>
+<p class="body-text-s">Reactivity can be confusing. I recommend watching Barret Schloerke's talk, linked above, and reading through the [Shiny Reactlog vignette](https://rstudio.github.io/reactlog/articles/reactlog.html) as you get started.</p>
 
 ---
 
 ##  {#reactlog-workflow data-menu-title="{reactlog} workflow"}
 
-[Using `{reactlog}`]{.slide-title-smaller}
+[Using `{reactlog}`]{.slide-title2}
 
 <hr>
 
@@ -472,28 +472,28 @@ shinyApp(ui = ui, server = server)
 
 <p class="body-text topbr">To use `reactlog`, follow these **steps:**</p>
 
-<p class="small-text">**1.** Load the reactlog library in you console (`library(reactlog)`)</p>
-<p class="small-text">**2.** Call `reactlog_enable()` in your console</p>
-<p class="small-text">**3.** Run your app, interact with it, then quit your app</p>
-<p class="small-text">**4.** Launch reactlog by running `shiny::reactlogShow()` in your console (or use the keyboard shortcut `cmd`/`ctrl` + `F3`)</p>
-<p class="small-text">**5.** Use your `<-` and `->` arrow keys (or <img src="images/previous.png" alt="A gray, left-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> and <img src="images/forward.png" alt="A gray, right-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>) to move forward and backward through your app's reactive life cycle</p>
+<p class="body-text-s">**1.** Load the reactlog library in you console (`library(reactlog)`)</p>
+<p class="body-text-s">**2.** Call `reactlog_enable()` in your console</p>
+<p class="body-text-s">**3.** Run your app, interact with it, then quit your app</p>
+<p class="body-text-s">**4.** Launch reactlog by running `shiny::reactlogShow()` in your console (or use the keyboard shortcut `cmd`/`ctrl` + `F3`)</p>
+<p class="body-text-s">**5.** Use your `<-` and `->` arrow keys (or <img src="images/previous.png" alt="A gray, left-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> and <img src="images/forward.png" alt="A gray, right-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>) to move forward and backward through your app's reactive life cycle</p>
 
 <br>
 <br>
 
-<p class="small-text">Read about the components of the [status bar](https://rstudio.github.io/reactlog/articles/reactlog.html#status-bar) and the meaning of different [reactive states](https://rstudio.github.io/reactlog/articles/reactlog.html#reactive-states) in the `reactlog` vignette.</p>
+<p class="body-text-s">Read about the components of the [status bar](https://rstudio.github.io/reactlog/articles/reactlog.html#status-bar) and the meaning of different [reactive states](https://rstudio.github.io/reactlog/articles/reactlog.html#reactive-states) in the `reactlog` vignette.</p>
 
 ---
 
 ##  {#using-reactlog-working-app data-menu-title="Using {reactlog} - working app"}
 
-[Using `{reactlog}` to visualize reactivity in a correctly-functioning app]{.slide-title-smallest}
+[Using `{reactlog}` to visualize reactivity in a correctly-functioning app]{.slide-title3}
 
 <hr>
 
-<p class="smaller-text">To visualize the reactive life cycle of the `reactlog-working` app, I'll first load the reactlog library, then call `reactlog_enable()` in my console. Next, I'll run my app and interact with it. By default, **All penguins** is selected. For demonstration purposes, I'll click down the list (**Sassy chinstrap**, **Staring gentoo**, and finally **Adorable adelie**). When done, I'll stop my app, then run `shiny::reactlogShow()` in the console to open the reactlog visualizer in a browser window.</p>
+<p class="body-text-s">To visualize the reactive life cycle of the `reactlog-working` app, I'll first load the reactlog library, then call `reactlog_enable()` in my console. Next, I'll run my app and interact with it. By default, **All penguins** is selected. For demonstration purposes, I'll click down the list (**Sassy chinstrap**, **Staring gentoo**, and finally **Adorable adelie**). When done, I'll stop my app, then run `shiny::reactlogShow()` in the console to open the reactlog visualizer in a browser window.</p>
 
-<p class="smaller-text">**Note:** I've left the scatter plot on Tab 2 (and it's related UI elements) commented out (as we practiced in the earlier few slides) for this demo -- the `{reactlog}` package has many features that allow you to explore reactive dependencies across your whole app, but it can get complicated quickly. For demo purposes, we're going to work with this "smaller" version of our app, which contains just the problematic code.</p>
+<p class="body-text-s">**Note:** I've left the scatter plot on Tab 2 (and it's related UI elements) commented out (as we practiced in the earlier few slides) for this demo -- the `{reactlog}` package has many features that allow you to explore reactive dependencies across your whole app, but it can get complicated quickly. For demo purposes, we're going to work with this "smaller" version of our app, which contains just the problematic code.</p>
 
 <center><img src="images/reactlog-working.gif" alt="" width="650"/></center>
 
@@ -501,42 +501,42 @@ shinyApp(ui = ui, server = server)
 
 ##  {#interpreting-reactlog-working-app data-menu-title="Interpreting {reactlog}"}
 
-[Interpreting `{reactlog}` (used with our correctly-functioning app)]{.slide-title-smaller}
+[Interpreting `{reactlog}` (used with our correctly-functioning app)]{.slide-title2}
 
 <hr>
 
 <p class="body-text">There's a lot to take when looking at the reactlog viewer, so let's take it one step at a time:</p>
 
-<p class="small-text topbr">**(1)** The `radioButton` input defaults to show the **All penguins** image and associated text. When we launch reactlog, our input <img src="images/input.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, reactive expression <img src="images/expression.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, and outputs <img src="images/output.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> are **Ready**, meaning the calculated values are available (defaults in this case) and reactive elements have finished executing (i.e. the image and text is displayed). This **Ready** state is indicated by the green icons.</p>
+<p class="body-text-s topbr">**(1)** The `radioButton` input defaults to show the **All penguins** image and associated text. When we launch reactlog, our input <img src="images/input.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, reactive expression <img src="images/expression.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, and outputs <img src="images/output.png" alt="" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> are **Ready**, meaning the calculated values are available (defaults in this case) and reactive elements have finished executing (i.e. the image and text is displayed). This **Ready** state is indicated by the green icons.</p>
 
 . . .
 
-<p class="small-text topbr">**(2)** I (the user) then updated the input by choosing **Sassy chinstrap**, invalidating (i.e. resetting) the input and thereby invalidating any dependencies -- in this case both the image and text outputs. This **Invalidating** state is indicated by the gray icons.</p> 
+<p class="body-text-s topbr">**(2)** I (the user) then updated the input by choosing **Sassy chinstrap**, invalidating (i.e. resetting) the input and thereby invalidating any dependencies -- in this case both the image and text outputs. This **Invalidating** state is indicated by the gray icons.</p> 
 
 . . . 
 
-<p class="small-text topbr">**(3)** Once all dependencies are invalidated, the reactive elements can begin **Calculating** (i.e. executing) based on the new input (**Sassy chinstrap**). Elements are colored yellow when they are being calculated, then green when calculations are complete and the reactive element has been updated. In this example, first the image and then the text are calculated and updated.</p>
+<p class="body-text-s topbr">**(3)** Once all dependencies are invalidated, the reactive elements can begin **Calculating** (i.e. executing) based on the new input (**Sassy chinstrap**). Elements are colored yellow when they are being calculated, then green when calculations are complete and the reactive element has been updated. In this example, first the image and then the text are calculated and updated.</p>
 
 . . . 
 
-<p class="small-text topbr">**(4)** These same steps are repeated when I select the **Staring gentoo**, then **Adorable adelie** `radioButtons`</p> 
+<p class="body-text-s topbr">**(4)** These same steps are repeated when I select the **Staring gentoo**, then **Adorable adelie** `radioButtons`</p> 
 
 ---
 
 ##  {#using-reactlog-broken-app data-menu-title="Using {reactlog} - broken app"}
 
-[Using `{reactlog}` to visualize reactivity in a broken app]{.slide-title-smaller}
+[Using `{reactlog}` to visualize reactivity in a broken app]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Let's try out reactlog on our intentionally broken app (`reactlog-broken`, where our image changes when a radioButton user input is updated, but our text doesn't appear). As in our functioning app, the **All penguins** image is selected by default. For demonstration purposes, I'll select each option moving down the list (**Sassy chinstrap**, **Staring gentoo**, **Adorable adelie**) before launching reactlog.</p>
+<p class="body-text-s">Let's try out reactlog on our intentionally broken app (`reactlog-broken`, where our image changes when a radioButton user input is updated, but our text doesn't appear). As in our functioning app, the **All penguins** image is selected by default. For demonstration purposes, I'll select each option moving down the list (**Sassy chinstrap**, **Staring gentoo**, **Adorable adelie**) before launching reactlog.</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="small-text">Similar to our functioning app, the default input, **All penguins**, and image output are **Ready** (green). However, in this example our text output is *not a dependency* of our application's input -- there's no linkage and the text output is **Invalidated** (gray).</p>
+<p class="body-text-s">Similar to our functioning app, the default input, **All penguins**, and image output are **Ready** (green). However, in this example our text output is *not a dependency* of our application's input -- there's no linkage and the text output is **Invalidated** (gray).</p>
 
-<p class="small-text">As we click down the list of radioButtons, the image output is invalidated, then updated accordingly, but the text output remains disconnected from our input.</p>
+<p class="body-text-s">As we click down the list of radioButtons, the image output is invalidated, then updated accordingly, but the text output remains disconnected from our input.</p>
 :::
 
 ::: {.column width="5%"}
@@ -552,13 +552,13 @@ shinyApp(ui = ui, server = server)
 
 ##  {#id-bug data-menu-title="Identify the bug"}
 
-[So what's the issue with our app?]{.slide-title-smallest}
+[So what's the issue with our app?]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Evidence from our diagnostic messages *and* `reactlog` suggests that we should make sure that our UI and server are actually able to communicate about our desired text output. After careful inspection of our `textOutput()` and `renderText()` code, we find that a spelling error is to blame:</p>
+<p class="body-text-s">Evidence from our diagnostic messages *and* `reactlog` suggests that we should make sure that our UI and server are actually able to communicate about our desired text output. After careful inspection of our `textOutput()` and `renderText()` code, we find that a spelling error is to blame:</p>
 
-<p class="small-text">Our `outputId` in the **UI** is set to `penguin_text`:</p>
+<p class="body-text-s">Our `outputId` in the **UI** is set to `penguin_text`:</p>
 
 ```{r}
 #| eval: false
@@ -574,7 +574,7 @@ ui <- fluidPage(
 )
 ```
 
-<p class="small-text">But we call `penguins_text` when rendering our output in the **server**:</p>
+<p class="body-text-s">But we call `penguins_text` when rendering our output in the **server**:</p>
 
 ```{r}
 #| eval: false
@@ -593,4 +593,4 @@ server <- function(input, output){
 }
 ```
 
-<p class="small-text">By updating our `outputId` to match in both the UI and the server, we fix our app.</p>
+<p class="body-text-s">By updating our `outputId` to match in both the UI and the server, we fix our app.</p>

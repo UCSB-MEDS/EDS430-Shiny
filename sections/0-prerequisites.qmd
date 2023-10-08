@@ -34,5 +34,5 @@ install.packages(pkgs = c("shiny", "shinydashboard", "shinyWidgets", "DT", "leaf
 
 <br>
 
-<center><div class="large-body-text">No prior Shiny experience necessary!</div></center>
+<center><div class="body-text-xl teal-text">No prior Shiny experience necessary!</div></center>
 

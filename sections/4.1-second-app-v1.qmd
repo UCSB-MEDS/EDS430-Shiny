@@ -17,49 +17,49 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">By the end of building out this second app, you should:</p>
+<p class="body-text-l teal-text bottombr">By the end of building out this second app, you should:</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}` be comfortable creating a shiny app using the two-file (`ui.R` & `server.R`) format along with a `global.R` file</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}` be comfortable creating a shiny app using the two-file (`ui.R` & `server.R`) format along with a `global.R` file</p>
 
 . . .
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to use layout functions to customize the visual structure of your app's UI</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to use layout functions to customize the visual structure of your app's UI</p>
 
 . .  .
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have more practice building reactive outputs -- and placing them within the layout structure of your app</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have more practice building reactive outputs -- and placing them within the layout structure of your app</p>
 
 . .  .
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} be able to create multiple inputs that control a given output</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} be able to create multiple inputs that control a given output</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to import larger bodies of text using `includeMarkdown()` (rather than writing & styling text within your UI)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to import larger bodies of text using `includeMarkdown()` (rather than writing & styling text within your UI)</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully publish an app using [shinyapps.io](https://www.shinyapps.io/)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully publish an app using [shinyapps.io](https://www.shinyapps.io/)</p>
 
 . . .
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . .
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shinyWidgets}`: extend shiny widgets with some different, fun options</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shinyWidgets}`: extend shiny widgets with some different, fun options</p>
 
 . . .
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{lterdatasampler}`: data</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{lterdatasampler}`: data</p>
 
 ---
 
 ##  {#roadmap-app2v1 data-menu-title="Roadmap App #2v1"}
 
-[Roadmap for App #2v1]{.slide-title-smaller}
+[Roadmap for App #2v1]{.slide-title2}
 
 <hr>
 
@@ -69,9 +69,9 @@ format: revealjs
 
 ::: {.column width="45%"}
 <br>
-<p class="small-text">**(a)** A navigation bar with two pages, one of which will contain two tabs (one tab for each plot)</p>
-<p class="small-text">**(b)** A `pickerInput` *and* `checkboxGroupButtons` for users to filter cutthroat trout data in a reactive scatterplot</p>
-<p class="small-text">**(c)** A `pickerInput` for users to filter penguin data *and* a `sliderInput` to adjust the number of bins in a reactive histogram</p>
+<p class="body-text-s">**(a)** A navigation bar with two pages, one of which will contain two tabs (one tab for each plot)</p>
+<p class="body-text-s">**(b)** A `pickerInput` *and* `checkboxGroupButtons` for users to filter cutthroat trout data in a reactive scatterplot</p>
+<p class="body-text-s">**(c)** A `pickerInput` for users to filter penguin data *and* a `sliderInput` to adjust the number of bins in a reactive histogram</p>
 :::
 
 ::: {.column width="5%"}
@@ -86,7 +86,7 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">You'll notice that there are some UI quirks (most notably, blank plots that appear when no data is selected) that can make the user experience less than ideal (and even confusing) -- we'll learn about ways to improve this in v2 of our app.</p>
+<p class="body-text-s">You'll notice that there are some UI quirks (most notably, blank plots that appear when no data is selected) that can make the user experience less than ideal (and even confusing) -- we'll learn about ways to improve this in v2 of our app.</p>
 
 ---
 
@@ -106,11 +106,11 @@ format: revealjs
 
 ##  {#app2-plots data-menu-title="Draft Plots (app#2)"}
 
-[Practice data wrangling, filtering & viz first!]{.slide-title-smallest}
+[Practice data wrangling, filtering & viz first!]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Here's what I've done in my `~scratch/practice_script_app2_lter.R` file:</p>
+<p class="body-text-s">Here's what I've done in my `~scratch/practice_script_app2_lter.R` file:</p>
 
 ::: {.panel-tabset}
 
@@ -179,7 +179,7 @@ ggplot(trout_filtered_df, aes(x = length_mm, y = weight_g, color = channel_type,
 ::: {.column width="45%"}
 <center><img src="images/trout_plot.png" alt="A scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. Data points are colored and shaped by Channel Type, with data collected from pools represented with green diamonds and data collected from rapids represented by red stars." width="550"/></center> 
 
-<center><p class="smaller-text gray-text">We'll use the `and_vertebrates` data set from `{lterdatasampler}` to create a scatter plot of trout weights by lengths. When we move to shiny, we'll build 2 inputs for filtering our data: one to select `channel_type` and one to select `section`.</p></center>
+<center><p class="body-text-s gray-text">We'll use the `and_vertebrates` data set from `{lterdatasampler}` to create a scatter plot of trout weights by lengths. When we move to shiny, we'll build 2 inputs for filtering our data: one to select `channel_type` and one to select `section`.</p></center>
 :::
 
 ::::
@@ -215,7 +215,7 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 ::: {.column width="45%"}
 <center><img src="images/penguin_plot.png" alt="A histogram of penguin Flipper lengths (mm) with bars colored by species. Adelie are orange and Chinstrap are purple." width="550"/></center> 
-<center><p class="small-text gray-text">We'll use the `penguins` data set from `{palmerpenguins}` to create a histogram of penguin flipper lengths. When we move to shiny, we'll build 2 inputs for filtering our data: one to select `island` and one to change the number of histogram bins.</p></center>
+<center><p class="body-text-s gray-text">We'll use the `penguins` data set from `{palmerpenguins}` to create a histogram of penguin flipper lengths. When we move to shiny, we'll build 2 inputs for filtering our data: one to select `island` and one to change the number of histogram bins.</p></center>
 :::
 
 ::::
@@ -225,7 +225,7 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 ##  {#global.R data-menu-title="global.R"}
 
-[A `global.R` file can help you keep code organized]{.slide-title-smaller}
+[A `global.R` file can help you keep code organized]{.slide-title2}
 
 <hr>
 
@@ -233,12 +233,12 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} loading packages</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} importing data</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} sourcing scripts (particularly functions -- we'll talk more about functions later)</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} data wrangling (though you'll want to do any major data cleaning before bringing your data into your app)</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} building custom `ggplot` themes</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} etc.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} loading packages</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} importing data</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} sourcing scripts (particularly functions -- we'll talk more about functions later)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} data wrangling (though you'll want to do any major data cleaning before bringing your data into your app)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} building custom `ggplot` themes</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} etc.</p>
 
 <br>
 
@@ -250,7 +250,7 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 ##  {#unstructured-app1 data-menu-title="Unstructured first app"}
 
-[We created a perfectly functional first app, but it's not so visually pleasing]{.slide-title-smaller}
+[We created a perfectly functional first app, but it's not so visually pleasing]{.slide-title2}
 
 <hr>
 
@@ -259,9 +259,9 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 ::: {.column width="45%"}
 <br>
 <br>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} nothing really grabs your eye</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} inputs & outputs are stacked vertically on top of one another (which requires a lot of vertical scrolling)</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} widget label text is difficult to distinguish from other text</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} nothing really grabs your eye</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} inputs & outputs are stacked vertically on top of one another (which requires a lot of vertical scrolling)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} widget label text is difficult to distinguish from other text</p>
 :::
 
 ::: {.column width="5%"}
@@ -281,13 +281,13 @@ ggplot(na.omit(island_df), aes(x = flipper_length_mm, fill = species)) +
 
 ##  {#layout-functions data-menu-title="Layout functions"}
 
-[Layout functions provide the high-level visual structure of your app]{.slide-title-smaller}
+[Layout functions provide the high-level visual structure of your app]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Layouts are created using a **hierarchy** of function calls (typically) *inside* `fluidPage()`. Layouts often require a series functions -- **container** functions establish the larger area within which other layout elements are placed. See a few minimal examples of layout functions on the following slides (though [more exist](https://shiny.rstudio.com/articles/layout-guide.html)!).</p>
+<p class="body-text-s">Layouts are created using a **hierarchy** of function calls (typically) *inside* `fluidPage()`. Layouts often require a series functions -- **container** functions establish the larger area within which other layout elements are placed. See a few minimal examples of layout functions on the following slides (though [more exist](https://shiny.rstudio.com/articles/layout-guide.html)!).</p>
 
-<p class="small-text">**Some useful layout function pairings:**</p>
+<p class="body-text-s">**Some useful layout function pairings:**</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -319,7 +319,7 @@ navbarPage(
 
 <hr>
 
-<p class="small-text">**Note:** You can combine multiple layout function groups to really customize your UI -- for example, you can create a navbar, include tabs, and also establish sidebar and main panel areas for inputs and outputs.</p>
+<p class="body-text-s">**Note:** You can combine multiple layout function groups to really customize your UI -- for example, you can create a navbar, include tabs, and also establish sidebar and main panel areas for inputs and outputs.</p>
 
 ::: {.panel-tabset}
 
@@ -460,14 +460,14 @@ navbarPage(
 
 :::
 
-<center><p class="small-text">Examples adapted from [Mastering Shiny, Ch. 6](https://mastering-shiny.org/action-layout.html#action-layout), by Hadley Wickham:</p></center>
+<center><p class="body-text-s">Examples adapted from [Mastering Shiny, Ch. 6](https://mastering-shiny.org/action-layout.html#action-layout), by Hadley Wickham:</p></center>
 
 ---
 
 
 ##  {#layout-fxns-app2 data-menu-title="Overview of App #2 Layout"}
 
-[Overview of layout functions used in App #2]{.slide-title-smaller}
+[Overview of layout functions used in App #2]{.slide-title2}
 
 <hr>
 
@@ -477,13 +477,13 @@ navbarPage(
 
 ##  {#build-navbar data-menu-title="Build navbar"}
 
-[Build a navbar with two pages]{.slide-title-smaller}
+[Build a navbar with two pages]{.slide-title2}
 
 <hr>
 
-<p class="small-text">First, let's build a UI that has a navigation bar with two tabs -- one for background information and one to contain our data visualizations. To do this, we'll use `navbarPage()` instead of `fluidPage()` to create our webpage.</p>
+<p class="body-text-s">First, let's build a UI that has a navigation bar with two tabs -- one for background information and one to contain our data visualizations. To do this, we'll use `navbarPage()` instead of `fluidPage()` to create our webpage.</p>
 
-<p class="smaller-text">**Tip:** It can be *super* helpful add code comments at the start and end of each UI element -- for example, see `# data viz tabPanel---` and `# END data viz tabPanel`, below. Adding text that you will eventually replace with content (e.g. plots, tables, images, longer text) may help to visualize what you're working towards as well.</p>
+<p class="body-text-s">**Tip:** It can be *super* helpful add code comments at the start and end of each UI element -- for example, see `# data viz tabPanel---` and `# END data viz tabPanel`, below. Adding text that you will eventually replace with content (e.g. plots, tables, images, longer text) may help to visualize what you're working towards as well.</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -512,11 +512,11 @@ ui <- navbarPage(
 
 ##  {#add-tabs data-menu-title="Add tabs"}
 
-[Add two tabs to the "Explore the Data" page]{.slide-title-smaller}
+[Add two tabs to the "Explore the Data" page]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Give your tabs the following titles: `Trout` and `Penguins`.</p>
+<p class="body-text-s">Give your tabs the following titles: `Trout` and `Penguins`.</p>
 
 ```{r}
 #| eval: false
@@ -564,11 +564,11 @@ ui <- navbarPage(
 
 ##  {#sidebar-main-panels data-menu-title="Create sidebar & main panels"}
 
-[Add sidebar & main panels to the `Trout` tab]{.slide-title-smaller}
+[Add sidebar & main panels to the `Trout` tab]{.slide-title2}
 
 <hr>
 
-<p class="small-text">We'll eventually place our input in the sidebar and output in the main panel.</p>
+<p class="body-text-s">We'll eventually place our input in the sidebar and output in the main panel.</p>
 
 ```{r}
 #| eval: false
@@ -633,7 +633,7 @@ ui <- navbarPage(
 
 ##  {#exercise2-prompt data-menu-title="** Exercise 2 Prompt **"}
 
-[{{< fa question title="question mark" >}} Exercise 2: Add sidebar and main panels to the `Penguins` tab]{.slide-title-smaller}
+[{{< fa question title="question mark" >}} Exercise 2: Add sidebar and main panels to the `Penguins` tab]{.slide-title2}
 
 <hr>
 
@@ -656,13 +656,13 @@ ui <- navbarPage(
 
 <br>
 
-<center><p class="large-body-text">See next slide for a solution!</p></center>
+<center><p class="body-text-xl teal-text">See next slide for a solution!</p></center>
 
 ---
 
 ##  {#exercise2-solution data-menu-title="** Exercise 2 Solution **"}
 
-[{{< fa check title="a check mark" >}} Exercise 2: A solution]{.slide-title-smaller}
+[{{< fa check title="a check mark" >}} Exercise 2: A solution]{.slide-title2}
 
 ```{r}
 #| eval: false
@@ -776,25 +776,25 @@ ui <- navbarPage(
 
 <hr>
 
-<p class="small-text bottombr">We'll be using the [`and_vertebrates` dataset](https://lter.github.io/lterdatasampler/reference/and_vertebrates.html) from the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/) to create our first reactive plot. These data contain coastal cutthroat trout (*Oncorhynchus clarkii clarkii*) lengths and weights collected in Mack Creek, [Andrews Forest LTER](https://andrewsforest.oregonstate.edu/). Original data can be found on the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14). Refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to revisit our practice data wrangling & visualization script.</p>
+<p class="body-text-s bottombr">We'll be using the [`and_vertebrates` dataset](https://lter.github.io/lterdatasampler/reference/and_vertebrates.html) from the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/) to create our first reactive plot. These data contain coastal cutthroat trout (*Oncorhynchus clarkii clarkii*) lengths and weights collected in Mack Creek, [Andrews Forest LTER](https://andrewsforest.oregonstate.edu/). Original data can be found on the [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14). Refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to revisit our practice data wrangling & visualization script.</p>
 
 <br>
 
 <center><img src="images/trout.png" alt="A drawing of the right-side profile of a coastal cutthroat trout." width="600"/></center>
 
-<center><p class="small-text gray-text">Image Source: Joseph R. Tomelleri, as found on the [Western Native Trout Initiative](https://westernnativetrout.org/coastal-cutthroat-trout/)</p>
+<center><p class="body-text-s gray-text">Image Source: Joseph R. Tomelleri, as found on the [Western Native Trout Initiative](https://westernnativetrout.org/coastal-cutthroat-trout/)</p>
 
 ---
 
 ##  {#import-packages-global data-menu-title="Import packages in global.R"}
 
-[Add packages & wrangle data in `global.R`]{.slide-title-smallest}
+[Add packages & wrangle data in `global.R`]{.slide-title3}
 
 <hr>
 
-<p class="small-text">In addition to the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/), we'll also be using the `{tidyverse}` for data wrangling/visualization, and the [`{shinyWidgets}` package ](https://github.com/dreamRs/shinyWidgets) to add a `pickerInput` and a `checkboxGroupInput` to our app.</p>  
+<p class="body-text-s">In addition to the [`{lterdatasampler}` package](https://lter.github.io/lterdatasampler/), we'll also be using the `{tidyverse}` for data wrangling/visualization, and the [`{shinyWidgets}` package ](https://github.com/dreamRs/shinyWidgets) to add a `pickerInput` and a `checkboxGroupInput` to our app.</p>  
 
-<p class="small-text">**Import those three packages at the top of your `global.R` file**</p>
+<p class="body-text-s">**Import those three packages at the top of your `global.R` file**</p>
 
 ```{r}
 #| eval: false
@@ -811,13 +811,13 @@ library(shinyWidgets)
 
 ##  {#wrangle-data-global data-menu-title="Wrangle data in global.R"}
 
-[Add packages & wrangle data in `global.R`]{.slide-title-smallest}
+[Add packages & wrangle data in `global.R`]{.slide-title3}
 
 <hr>
 
-<p class="small-text">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too. Our new data object `clean_trout`, will now be available for us to call directly in our server.</p>
+<p class="body-text-s">We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g. .csv), we would do that here too. Our new data object `clean_trout`, will now be available for us to call directly in our server.</p>
 
-<p class="small-text">We can easily copy our wrangling code over from our [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots).</p>
+<p class="body-text-s">We can easily copy our wrangling code over from our [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots).</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -852,15 +852,15 @@ clean_trout <- and_vertebrates |>
 
 ##  {#trout-pickerInput data-menu-title="Add Trout pickerInput()"}
 
-[Add a `pickerInput` for selecting `channel_type` to your UI]{.slide-title-smaller}
+[Add a `pickerInput` for selecting `channel_type` to your UI]{.slide-title2}
 
 <hr>
 
-<p class="small-text">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see line 9 on [previous slide](https://ucsb-meds.github.io/EDS430-Shiny/#/wrangle-data-global))) represents the type of water body (*cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel*) data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
+<p class="body-text-s">The `channel_type` variable (originally called `unittype` -- we updated the name when wrangling data (see line 9 on [previous slide](https://ucsb-meds.github.io/EDS430-Shiny/#/wrangle-data-global))) represents the type of water body (*cascade, riffle, isolated pool, pool, rapid, step (small falls), or side channel*) data were collected in. We'll start by building a `shinyWidgets::pickerInput()` to allow users to filter data based on `channel_type`.</p>
 
 . . . 
 
-<p class="small-text topbr">**Reminder:** When we we designed our UI layout, we added a `sidebarPanel` to our **Trout** tab with the placeholder text `"trout plot input(s) go here"`. Replace that text with the code for your `pickerInput`:</p>
+<p class="body-text-s topbr">**Reminder:** When we we designed our UI layout, we added a `sidebarPanel` to our **Trout** tab with the placeholder text `"trout plot input(s) go here"`. Replace that text with the code for your `pickerInput`:</p>
 
 ```{r}
 #| eval: false
@@ -873,11 +873,11 @@ pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
             multiple = TRUE) # END channel type pickerInput
 ```
 
-<p class="small-text topbr">Save and run your app -- a functional `pickerInput` should now appear in your UI.</p>
+<p class="body-text-s topbr">Save and run your app -- a functional `pickerInput` should now appear in your UI.</p>
 
 <br>
 
-<p class="smaller-text gray-text topbr">A `shinyWidgets::pickerInput()` is functionally equivalent to `shiny::selectInput()`, though it allows for greater customization and looks (in my opinion) a bit nicer.</p>
+<p class="body-text-s gray-text topbr">A `shinyWidgets::pickerInput()` is functionally equivalent to `shiny::selectInput()`, though it allows for greater customization and looks (in my opinion) a bit nicer.</p>
 
 ---
 
@@ -887,11 +887,11 @@ pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
 
 <hr>
 
-<p class="small-text">Next, we need to create a placeholder in our UI for our trout scatterplot to live. Because we'll be creating a reactive plot, we can use the `plotOutput()` function to do so.</p>
+<p class="body-text-s">Next, we need to create a placeholder in our UI for our trout scatterplot to live. Because we'll be creating a reactive plot, we can use the `plotOutput()` function to do so.</p>
 
 . . . 
 
-<p class="small-text topbr">**Reminder:** When we we designed our UI layout, we added a `mainPanel` to our **Trout** tab with the placeholder text `"trout plot output goes here"`. Replace that text with the code for your `plotOuput()`:</p>
+<p class="body-text-s topbr">**Reminder:** When we we designed our UI layout, we added a `mainPanel` to our **Trout** tab with the placeholder text `"trout plot output goes here"`. Replace that text with the code for your `plotOuput()`:</p>
 
 ```{r}
 #| eval: false
@@ -899,7 +899,7 @@ pickerInput(inputId = "channel_type_input", label = "Select channel type(s):",
 plotOutput(outputId = "trout_scatterplot")
 ```
 
-<p class="small-text topbr">Save and run your app -- it won't look different at first glance, but inspecting your app in a browser window (using Chrome, right click > Inspect) will reveal a placeholder box for your plot output to eventually live:</p>
+<p class="body-text-s topbr">Save and run your app -- it won't look different at first glance, but inspecting your app in a browser window (using Chrome, right click > Inspect) will reveal a placeholder box for your plot output to eventually live:</p>
 
 <center><img src="images/trout_plotOutput.png" alt="The Trout tab of our app, which contains only a pickerInput with the variables, cascade and pool, selected. There is no visible plot yet, however using Google Chrome's developer tools shows a div (i.e. a box) placeholder where our plot will eventually appear." width="600"/></center>
 
@@ -907,11 +907,11 @@ plotOutput(outputId = "trout_scatterplot")
 
 ##  {#trout-plot data-menu-title="Trout Reactive Plot"}
 
-[Tell the server how to assemble `pickerInput` values into your `plotOutput`]{.slide-title-smallest}
+[Tell the server how to assemble `pickerInput` values into your `plotOutput`]{.slide-title3}
 
 <hr>
 
-<p class="small-text">**Remember the three rules for building reactive outputs:** **(1)** save objects you want to display to `output$<id>`, **(2)** build reactive objects using a `render*()` function, and **(3)** access input values with `input$<id>`. When complete, your server should contain the following code:</p>
+<p class="body-text-s">**Remember the three rules for building reactive outputs:** **(1)** save objects you want to display to `output$<id>`, **(2)** build reactive objects using a `render*()` function, and **(3)** access input values with `input$<id>`. When complete, your server should contain the following code:</p>
 
 :::: {.columns}
 
@@ -956,11 +956,11 @@ server <- function(input, output) {
 ::: {.column width="35%"}
 <p class="body-text">**A couple notes/reminders:**</p>
 
-<p class="smaller-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}  If needed, reference your [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to remind yourself how you planned to filter and plot your data</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}  If needed, reference your [practice script](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to remind yourself how you planned to filter and plot your data</p>
 
-<p class="smaller-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}  Reactive data frames need a set of parentheses, `()`, following the name of the df (see `ggplot(trout_filtered_df() ...)`)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}  Reactive data frames need a set of parentheses, `()`, following the name of the df (see `ggplot(trout_filtered_df() ...)`)</p>
 
-<p class="smaller-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} For a cohesive appearance, save your ggplot theme parameters to a named object in `global.R` (here, `myCustomTheme`), then apply to all plots in your app. See the [following slide](https://ucsb-meds.github.io/EDS430-Shiny/#/ggplot-theme) for code.</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} For a cohesive appearance, save your ggplot theme parameters to a named object in `global.R` (here, `myCustomTheme`), then apply to all plots in your app. See the [following slide](https://ucsb-meds.github.io/EDS430-Shiny/#/ggplot-theme) for code.</p>
 :::
 
 ::::
@@ -969,11 +969,11 @@ server <- function(input, output) {
 
 ##  {#ggplot-theme data-menu-title="Save theme to global.R"}
 
-[Save a custom `ggplot` theme to `global.R`]{.slide-title-smaller}
+[Save a custom `ggplot` theme to `global.R`]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Rather than re-typing your ggplot theme parameters out for every plot in your app, do so once in `global.R`, and save to an object name. You can then easily add your custom theme as a layer to each of your ggplots. **Bonus:** If you decide to modify your plot theme, you only have to do so in one place!</p>
+<p class="body-text-s">Rather than re-typing your ggplot theme parameters out for every plot in your app, do so once in `global.R`, and save to an object name. You can then easily add your custom theme as a layer to each of your ggplots. **Bonus:** If you decide to modify your plot theme, you only have to do so in one place!</p>
 
 ```{r}
 #| eval: false
@@ -1033,9 +1033,9 @@ myCustomTheme <- theme_light() +
 
 <hr>
 
-<p class="small-text">You can have more than one input control the same output. Let's now add a `checkboxGroupButtons` widget to our **UI** for selecting forest `section` (either clear cut forest or old growth forest). Check out the [function documentation](https://dreamrs.github.io/shinyWidgets/reference/checkboxGroupButtons.html) for more information on how to customize the appearance of your buttons.</p>
+<p class="body-text-s">You can have more than one input control the same output. Let's now add a `checkboxGroupButtons` widget to our **UI** for selecting forest `section` (either clear cut forest or old growth forest). Check out the [function documentation](https://dreamrs.github.io/shinyWidgets/reference/checkboxGroupButtons.html) for more information on how to customize the appearance of your buttons.</p>
 
-<p class="small-text">Be sure to add the widget to the same `sidebarPanel` as our `pickerInput` (and separate them with a comma, `,`!:</p>
+<p class="body-text-s">Be sure to add the widget to the same `sidebarPanel` as our `pickerInput` (and separate them with a comma, `,`!:</p>
 
 ```{r}
 #| eval: false
@@ -1065,11 +1065,11 @@ sidebarPanel(
 
 ##  {#second-input-server data-menu-title="Update reactive trout df"}
 
-[Update your reactive df to *also* filter based on the new `checkboxGroupInput`]{.slide-title-smaller}
+[Update your reactive df to *also* filter based on the new `checkboxGroupInput`]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Return to your **server** to modify `trout_filtered_df` -- our data frame needs to be updated based on both the `pickerInput`, which selects for `channel_type`, *and* the `checkboxGrouptInput`, which selects for forest `section`:</p>
+<p class="body-text-s">Return to your **server** to modify `trout_filtered_df` -- our data frame needs to be updated based on both the `pickerInput`, which selects for `channel_type`, *and* the `checkboxGrouptInput`, which selects for forest `section`:</p>
 
 ```{r}
 #| eval: false
@@ -1105,7 +1105,7 @@ output$trout_scatterplot <- renderPlot({
 
 ##  {#run-app2v1-second-widget data-menu-title="Run the App"}
 
-[Run your app and try out your `pickerInput` & `checkboxGrouptInput` widgets!]{.slide-title-smaller}
+[Run your app and try out your `pickerInput` & `checkboxGrouptInput` widgets!]{.slide-title2}
 
 <hr>
 

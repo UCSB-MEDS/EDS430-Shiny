@@ -17,37 +17,37 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">By the end of this section, you should:</p>
+<p class="body-text-l teal-text bottombr">By the end of this section, you should:</p>
 
 . . .
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to provide users with helpful error messages using `validate()`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to provide users with helpful error messages using `validate()`</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to add customizable loading animations to alert users when reactive objects are re-rendering</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to add customizable loading animations to alert users when reactive objects are re-rendering</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to add alternate (alt) text to rendered plots</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to add alternate (alt) text to rendered plots</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to *republish* an app using [shinyapps.io](https://www.shinyapps.io/)</p>
 
 . . .
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinycssloaders}`: add loading animations to shiny outputs</p>
+<p class="body-text-s">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{shinycssloaders}`: add loading animations to shiny outputs</p>
 
 ---
 
 ##  {#roadmap-app2v2 data-menu-title="Roadmap App #2v2"}
 
-[Roadmap for App #2v2]{.slide-title-smaller}
+[Roadmap for App #2v2]{.slide-title2}
 
 <hr>
 
@@ -59,9 +59,9 @@ format: revealjs
 
 <br>
 
-<p class="small-text">**(a)** user-friendly validation error messages that appear when widgets are used to deselect all data</p>
-<p class="small-text">**(b)** loading animations for both two reactive plots </p>
-<p class="small-text">**(c)** alternate (alt) text for all data visualizations</p>
+<p class="body-text-s">**(a)** user-friendly validation error messages that appear when widgets are used to deselect all data</p>
+<p class="body-text-s">**(b)** loading animations for both two reactive plots </p>
+<p class="body-text-s">**(c)** alternate (alt) text for all data visualizations</p>
 :::
 
 ::: {.column width="5%"}
@@ -83,12 +83,12 @@ format: revealjs
 
 <p class="body-text">*It's important to remove any possible points of confusion for successfully using your app.*</p>
 
-<p class="small-text topbr">In version 1 of our published app, you'll notice that users are able to **(1) Deselect All** data using the `pickerInput`s for both the trout and penguin plots, and **(2) "uncheck" both** clear cut forest and old growth forest sampling section buttons using the `checkboxGroupInput`. When any of these actions are taken by the user, all data are removed from the plot, leaving a completely blank box behind.</p>
+<p class="body-text-s topbr">In version 1 of our published app, you'll notice that users are able to **(1) Deselect All** data using the `pickerInput`s for both the trout and penguin plots, and **(2) "uncheck" both** clear cut forest and old growth forest sampling section buttons using the `checkboxGroupInput`. When any of these actions are taken by the user, all data are removed from the plot, leaving a completely blank box behind.</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="small-text topbr">While this response is expected (and normal), we can generate a user-friendly [validation error](https://shiny.rstudio.com/articles/validation.html) message to provide clear guidance to our users on what is expected by the app in order to display data.</p>
+<p class="body-text-s topbr">While this response is expected (and normal), we can generate a user-friendly [validation error](https://shiny.rstudio.com/articles/validation.html) message to provide clear guidance to our users on what is expected by the app in order to display data.</p>
 :::
 
 ::: {.column width="5%"}
@@ -108,9 +108,9 @@ format: revealjs
 
 <hr>
 
-<p class="small-text">`validate()` tests a condition and returns an error if that conditions fails. It's used in conjunction with `need()`, which takes an expression that returns `TRUE` or `FALSE`, along with a character string to return if the condition is `FALSE`.</p>
+<p class="body-text-s">`validate()` tests a condition and returns an error if that conditions fails. It's used in conjunction with `need()`, which takes an expression that returns `TRUE` or `FALSE`, along with a character string to return if the condition is `FALSE`.</p>
 
-<p class="small-text">Place your validation test(s) at the start of any `reactive()` or `render*()` expression that calls `input$data`. For example, we can add two validation tests inside the reactive that generates our `trout_filtered_df` -- we'll need two separate validation tests, one for each of our inputs where users can deselect all data.</p>
+<p class="body-text-s">Place your validation test(s) at the start of any `reactive()` or `render*()` expression that calls `input$data`. For example, we can add two validation tests inside the reactive that generates our `trout_filtered_df` -- we'll need two separate validation tests, one for each of our inputs where users can deselect all data.</p>
 
 ```{r}
 #| eval: false
@@ -138,7 +138,7 @@ server <- function(input, output) {
 
 ##  {#exercise4-prompt-tips data-menu-title="** Exercise 4 Prompt & Tips **"}
 
-[{{< fa question title="question mark" >}} & {{< fa lightbulb title="a lightbulb" >}} Exercise 4: Add a validation test for your penguin histogram]{.slide-title-smaller}
+[{{< fa question title="question mark" >}} & {{< fa lightbulb title="a lightbulb" >}} Exercise 4: Add a validation test for your penguin histogram]{.slide-title2}
 
 <hr>
 
@@ -146,24 +146,24 @@ server <- function(input, output) {
 
 <p class="body-text">**To Do:**</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Construct a validation test that displays a clear but succinct message when a user deselects all islands using the `pickerWidget`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Construct a validation test that displays a clear but succinct message when a user deselects all islands using the `pickerWidget`</p>
 
 <br>
 
 <p class="body-text">**Tips:**</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Despite having **two** inputs, we only need **one** validation test for our Penguins plot. Why is this?</p> 
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Despite having **two** inputs, we only need **one** validation test for our Penguins plot. Why is this?</p> 
 
 <br>
 <br>
 
-<center><p class="medium-body-text">See next slide for a solution!</p></center>
+<center><p class="body-text-l teal-text">See next slide for a solution!</p></center>
 
 ---
 
 ##  {#exercise4-solution data-menu-title="** Exercise 4 Solution **"}
 
-[{{< fa check title="check mark" >}} Exercise 4: A solution]{.slide-title-smaller}
+[{{< fa check title="check mark" >}} Exercise 4: A solution]{.slide-title2}
 
 <hr>
 
@@ -235,15 +235,15 @@ server <- function(input, output) {
 
 ##  {#loading-animations data-menu-title="Add loading animations"}
 
-[Add loading animations to re-rendering outputs]{.slide-title-smaller}
+[Add loading animations to re-rendering outputs]{.slide-title2}
 
 <hr>
 
-<p class="small-text">The [`{shinycssloaders}` package](https://github.com/daattali/shinycssloaders) makes it easy to add visual indicators to outputs as they're loading or re-rendering. This can be particularly helpful if you have outputs that take a few seconds to render -- it alerts users that their updated inputs were recognized and that the app is working to re-render outputs.</p>
+<p class="body-text-s">The [`{shinycssloaders}` package](https://github.com/daattali/shinycssloaders) makes it easy to add visual indicators to outputs as they're loading or re-rendering. This can be particularly helpful if you have outputs that take a few seconds to render -- it alerts users that their updated inputs were recognized and that the app is working to re-render outputs.</p>
 
-<p class="small-text">Check out the [demo app](https://daattali.com/shiny/shinycssloaders-demo/) to start designing your own "spinner" (choose style, color, size).</p>
+<p class="body-text-s">Check out the [demo app](https://daattali.com/shiny/shinycssloaders-demo/) to start designing your own "spinner" (choose style, color, size).</p>
 
-<p class="small-text">We can pipe the `withSpinner()` function directly into our `plotOutput`s in `ui.R` (be sure to load the package in `global.R` first) -- here, we define the spinner color and style (there are 8 different spinner `type`s to choose from) and adjust the size of the penguin plot spinner.</p>
+<p class="body-text-s">We can pipe the `withSpinner()` function directly into our `plotOutput`s in `ui.R` (be sure to load the package in `global.R` first) -- here, we define the spinner color and style (there are 8 different spinner `type`s to choose from) and adjust the size of the penguin plot spinner.</p>
 
 :::: {.columns}
 
@@ -276,11 +276,11 @@ plotOutput(outputId = "flipperLength_histogram") |>
 
 ##  {#include-alt-text data-menu-title="Include alt text"}
 
-[Include alt text for all data visualizations]{.slide-title-smallest}
+[Include alt text for all data visualizations]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Alt text are **written descriptions** added to images, and importantly, to data visualizations, to **help more users understand the content**. Assistive technologies (e.g. screen readers) read alt text out loud for users to hear. When alt text is successfully added, the `alt` tag (along with your text) should appear in the HTML (right click on your app's data viz to **Inspect** and ensure that it was added).</p>
+<p class="body-text-s">Alt text are **written descriptions** added to images, and importantly, to data visualizations, to **help more users understand the content**. Assistive technologies (e.g. screen readers) read alt text out loud for users to hear. When alt text is successfully added, the `alt` tag (along with your text) should appear in the HTML (right click on your app's data viz to **Inspect** and ensure that it was added).</p>
 
 :::: {.columns}
 
@@ -289,7 +289,7 @@ plotOutput(outputId = "flipperLength_histogram") |>
 <br>
 <br>
 
-<p class="small-text">We'll talk a bit more about alt text [later on](https://ucsb-meds.github.io/EDS430-Shiny/#/alt-text), but for now we can add alt text easily to our data visuzliations using the `alt` argument. Place this *outside* of the `{}` but inside the `()` of `renderPlot{()}`. For example, we can add alt text to our trout and penguin plots in `server.R`:</p>
+<p class="body-text-s">We'll talk a bit more about alt text [later on](https://ucsb-meds.github.io/EDS430-Shiny/#/alt-text), but for now we can add alt text easily to our data visuzliations using the `alt` argument. Place this *outside* of the `{}` but inside the `()` of `renderPlot{()}`. For example, we can add alt text to our trout and penguin plots in `server.R`:</p>
 :::
 
 ::: {.column width="5%"}

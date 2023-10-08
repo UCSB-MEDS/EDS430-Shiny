@@ -15,51 +15,51 @@ editor_options:
 
 ##  {#LO-app1 data-menu-title="Learning Objectives - App #1"}
 
-[{{< fa book-open title="an open book" >}} Learning Objectives - App #1 (single-file app)]{.slide-title-smaller}
+[{{< fa book-open title="an open book" >}} Learning Objectives - App #1 (single-file app)]{.slide-title2}
 
 <hr>
 
-<p class="medium-body-text bottombr">By the end of building out this first app, you should be a bit more familiar with:</p>
+<p class="body-text-l teal-text bottombr">By the end of building out this first app, you should be a bit more familiar with:</p>
 
 . .  .
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} writing a single-file (`app.R`) shiny app</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} writing a single-file (`app.R`) shiny app</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} adding and styling text in the UI using `tags`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} adding and styling text in the UI using `tags`</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} practicing data wrangling and visualization *outside* of your shiny app</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} practicing data wrangling and visualization *outside* of your shiny app</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} following a general workflow for building reactive apps, which includes adding **inputs** and **outputs** to the **UI**, then writing the **server instructions** on how to assemble user input values into outputs</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} following a general workflow for building reactive apps, which includes adding **inputs** and **outputs** to the **UI**, then writing the **server instructions** on how to assemble user input values into outputs</p>
 
 . .  .
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} running and quitting apps in RStudio</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} running and quitting apps in RStudio</p>
 
 . . . 
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shiny}`: framework for building our reactive app + standard widgets</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shiny}`: framework for building our reactive app + standard widgets</p>
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{DT}`: interactive datatable widgets (that can be made reactive using shiny!)</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{DT}`: interactive datatable widgets (that can be made reactive using shiny!)</p>
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{tidyverse}`: collection of packages for wrangling & visualizing data</p>   
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{tidyverse}`: collection of packages for wrangling & visualizing data</p>   
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{palmerpenguins}`: data</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{palmerpenguins}`: data</p>
 
 ---
 
@@ -97,13 +97,13 @@ editor_options:
 
 ##  {#adding-text data-menu-title="Adding text"}
 
-[Add text in the UI]{.slide-title-smaller}
+[Add text in the UI]{.slide-title2}
 
 <hr>
 
-<p class="small-text">We'll do this in the **UI** within `fluidPage()`, a layout function that sets up the basic visual structure of the page and scales components in real time to fill all available browser width. Add a title and subtitle to your app (be sure to separate each with a comma, `,`), save, and run:</p>
+<p class="body-text-xs">We'll do this in the **UI** within `fluidPage()`, a layout function that sets up the basic visual structure of the page and scales components in real time to fill all available browser width. Add a title and subtitle to your app (be sure to separate each with a comma, `,`), save, and run:</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 # user interface ----
@@ -120,9 +120,9 @@ ui <- fluidPage(
 
 . . . 
 
-<p class="small-text">Recall that the UI is actually just an HTML document. We can style our text by adding static HTML elements [using `tags`](https://shiny.rstudio.com/articles/tag-glossary.html) -- a list of functions that parallel common HTML tags (e.g. `<h1>` == `tags$h1()`) The most common tags also have wrapper functions (e.g. `h1()`).</p>
+<p class="body-text-xs">Recall that the UI is actually just an HTML document. We can style our text by adding static HTML elements [using `tags`](https://shiny.rstudio.com/articles/tag-glossary.html) -- a list of functions that parallel common HTML tags (e.g. `<h1>` == `tags$h1()`) The most common tags also have wrapper functions (e.g. `h1()`).</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 # user interface ----
@@ -141,30 +141,30 @@ ui <- fluidPage(
 
 ##  {#inputs-outputs data-menu-title="Inputs & Outputs"}
 
-[What are inputs and outputs?]{.slide-title}
+[What are inputs and outputs?]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Next, we will begin to add some inputs and outputs to our UI inside `fluidPage()` (anything that you put into `fluidPage()` will appear in our app's user interface...and we want inputs and outputs to show up there!).</p>
+<p class="body-text-s">Next, we will begin to add some inputs and outputs to our UI inside `fluidPage()` (anything that you put into `fluidPage()` will appear in our app's user interface...and we want inputs and outputs to show up there!).</p>
 
-<p class="small-text">**Inputs** (or widgets) are the things that users can interact with (e.g. toggle, slide) and provide values to your app. The input functions below correspond to the widgets you see on [slide #9](https://ucsb-meds.github.io/EDS430-Shiny/#/widgets). **Outputs** are the R objects that your user sees (e.g. tables, plots) and are what respond when a user interacts with/changes an input value.</p>
+<p class="body-text-s">**Inputs** (or widgets) are the things that users can interact with (e.g. toggle, slide) and provide values to your app. The input functions below correspond to the widgets you see on [slide #9](https://ucsb-meds.github.io/EDS430-Shiny/#/widgets). **Outputs** are the R objects that your user sees (e.g. tables, plots) and are what respond when a user interacts with/changes an input value.</p>
 
-<p class="small-text">The `shiny` package comes with a number of input and output functions, but you can extend these with additional packages (e.g. `shinyWidgets`, `plotly`, `DT`, etc.; more on those later).</p>
+<p class="body-text-s">The `shiny` package comes with a number of input and output functions, but you can extend these with additional packages (e.g. `shinyWidgets`, `plotly`, `DT`, etc.; more on those later).</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
 <p class="body-text">**Examples of Input Functions:**</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `actionButton()`</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `checkboxInput()`</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `checkboxGroupInput()`</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `dateInput()`</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `dateRangeInput()`</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `radioButtons()`</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `selectInput()`</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `sliderInput()`</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `textInput()`</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} See full list of `shiny` input functions [here](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/)</p>
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `actionButton()`</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `checkboxInput()`</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `checkboxGroupInput()`</p>
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `dateInput()`</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `dateRangeInput()`</p>
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `radioButtons()`</p>
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `selectInput()`</p>
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `sliderInput()`</p>
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `textInput()`</p>
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} See a [full list](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) of `shiny` input functions</p>
 :::
 
 ::: {.column width="5%"}
@@ -172,12 +172,12 @@ ui <- fluidPage(
 
 ::: {.column width="45%"}
 <p class="body-text">**Examples of Output Functions:**</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `dataTableOutput()` (inserts an interactive table)</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `imageOutput()` (inserts an image)</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `plotOutput()` (inserts a plot)</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `tableOutput()` (inserts a table)</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `textOutput()` (inserts text)</p>  
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} See full list of `shiny` output functions [here](https://shiny.rstudio.com/tutorial/written-tutorial/lesson4/)</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `dataTableOutput()` (inserts an interactive table)</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `imageOutput()` (inserts an image)</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `plotOutput()` (inserts a plot)</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `tableOutput()` (inserts a table)</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `textOutput()` (inserts text)</p>  
+<p class="body-text-xs">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} See a [full list](https://shiny.rstudio.com/tutorial/written-tutorial/lesson4/) of `shiny` output functions</p>  
 :::
 
 ::::
@@ -190,16 +190,16 @@ ui <- fluidPage(
 
 <hr>
 
-<p class="small-text">Next, we'll create a **scatterplot of penguin bill lengths vs. penguin flipper lengths** using the `penguins` data set from the `{palmerpengiuns}` package. We will make this scatterplot *reactive* by adding a `sliderInput` that allows users to filter the displayed data points by **selecting a range of penguin body masses** (e.g. only plot bill and flipper lengths for penguins with body masses ranging from 4,500 grams to 6,000 grams).</p>
+<p class="body-text-s">Next, we'll create a **scatterplot of penguin bill lengths vs. penguin flipper lengths** using the `penguins` data set from the `{palmerpengiuns}` package. We will make this scatterplot *reactive* by adding a `sliderInput` that allows users to filter the displayed data points by **selecting a range of penguin body masses** (e.g. only plot bill and flipper lengths for penguins with body masses ranging from 4,500 grams to 6,000 grams).</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
 <br>
-<p class="small-text">**To create a reactive plot, we will follow these steps:**</p>
-<p class="small-text topbr">**1.** Add an input (e.g. `sliderInput`) to the **UI** that users can interact with</p>
-<p class="small-text">**2.** Add an output (e.g. `plotOutput`) to the **UI** that creates a *placeholder space* to fill with our eventual reactive output</p>
-<p class="small-text">**3.** Tell the **server** how to assemble inputs into outputs</p>
+<p class="body-text-s">**To create a reactive plot, we will follow these steps:**</p>
+<p class="body-text-s topbr">**1.** Add an input (e.g. `sliderInput`) to the **UI** that users can interact with</p>
+<p class="body-text-s">**2.** Add an output (e.g. `plotOutput`) to the **UI** that creates a *placeholder space* to fill with our eventual reactive output</p>
+<p class="body-text-s">**3.** Tell the **server** how to assemble inputs into outputs</p>
 :::
 
 ::: {.column width="5%"}
@@ -219,11 +219,11 @@ ui <- fluidPage(
 
 <hr>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **All input functions have the same first argument, `inputId`** (**NOTE:** `Id` *not* `ID`), **which is used to connect the front end of your app (the UI) with the back end (the server).** For example, if your UI has an `inputId = "name"`, the server function will access that input value using the syntax `input$name`. The `inputId` has two constraints: **(1)** it must be a simple string containing only letters, numbers, and underscores, **(2)** it must be unique within your app.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **All input functions have the same first argument, `inputId`** (**NOTE:** `Id` *not* `ID`), **which is used to connect the front end of your app (the UI) with the back end (the server).** For example, if your UI has an `inputId = "name"`, the server function will access that input value using the syntax `input$name`. The `inputId` has two constraints: **(1)** it must be a simple string containing only letters, numbers, and underscores, **(2)** it must be unique within your app.</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Most input functions have a second parameter called `label`, which is used to create a human-readable label for the control, which will appear in the UI.</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Most input functions have a second parameter called `label`, which is used to create a human-readable label for the control, which will appear in the UI.</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} The remaining arguments are unique to each input function. Oftentimes, these include a `value` parameter, which lets you set the default value of your widget, where applicable.</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} The remaining arguments are unique to each input function. Oftentimes, these include a `value` parameter, which lets you set the default value of your widget, where applicable.</p>
 
 <p class="body-text topbr">**A couple examples:**</p>
 ```{r}
@@ -234,19 +234,19 @@ sliderInput(inputId = "body_mass_input", label = "Select a range of body masses 
 selectInput(inputId = "island_input", label = "Choose and island:", ...)
 ```
 
-<p class="small-text topbr">Check out the interactive [Shiny Widgets Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html) to learn how to implement the most common widgets.</p>
+<p class="body-text-s topbr">Check out the interactive [Shiny Widgets Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html) to learn how to implement the most common widgets.</p>
 
 ---
 
 ##  {#add-input data-menu-title="Add an Input"}
 
-[**Step 1:** Add an input to your app]{.slide-title-smaller}
+[**Step 1:** Add an input to your app]{.slide-title2}
 
 <hr>
 
 <p class="body-text">First let's add a `sliderInput()` that will allow users to select a range of penguin body masses (g).</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6-8"
@@ -294,13 +294,13 @@ dataTableOutput(outputId = "penguin_data")
 
 ##  {#add-output data-menu-title="Add Output"}
 
-[**Step 2:** Add an output to your app]{.slide-title-smaller}
+[**Step 2:** Add an output to your app]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Let's now add a `plotOutput()`, which will be updated based on the user inputs via the `sliderInput()`, then run the app.</p>
+<p class="body-text-s">Let's now add a `plotOutput()`, which will be updated based on the user inputs via the `sliderInput()`, then run the app.</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "10-11"
@@ -325,8 +325,7 @@ ui <- fluidPage(
 :::: {.columns}
 
 :::{.column width="45%"}
-<br>
-<p class="small-text">Okay, it looks like nothing changed?? **Remember, `*Output()` functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders.** We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named "*bodyMass_scatterPlot*":</p>
+<p class="body-text-s">Okay, it looks like nothing changed?? **Remember, `*Output()` functions create placeholders, but we have not yet written the server instructions on how to fill and update those placeholders.** We can inspect the HTML and see that there is, in fact, a placeholder area awaiting our eventual output, which will be a plot named "*bodyMass_scatterPlot*":</p>
 :::
 
 :::{.column width="5%"}
@@ -348,9 +347,7 @@ ui <- fluidPage(
 
 <p class="body-text">Each `*Output()` function in the UI is coupled with a `render*()` function in the server, which contains the "instructions" for creating the output based on user inputs (or in other words, the instructions for making your output *reactive*).</p>
 
-<br>
-
-<center><p class="body-text topbr">**Examples of `*Output()` functions and their corresponding `render*()` functions:**</p></center>
+<p class="body-text-l teal-text center-text topbr">Examples of `*Output()` functions and their corresponding `render*()` functions:</p>
 
 | Output function     | Render function      |
 |---------------------|----------------------|
@@ -368,13 +365,13 @@ ui <- fluidPage(
 
 <hr>
 
-<p class="small-text">Now that we've designed our input/output in the UI, we need to write the server instructions (i.e. write the server function) on how to use the input value(s) (i.e. penguin body mass range via a slider input) to update the output (scatter plot).</p>
+<p class="body-text-s">Now that we've designed our input/output in the UI, we need to write the server instructions (i.e. write the server function) on how to use the input value(s) (i.e. penguin body mass range via a slider input) to update the output (scatter plot).</p>
 
-<p class="small-text">The **server function** is defined with two arguments, `input` and `output`, both of which are list-like objects. You *must* define both of these arguments within the server function. `input` contains the values of all the different inputs at any given time, while `output` is where you'll save output objects to display in the app.</p>
+<p class="body-text-s">The **server function** is defined with two arguments, `input` and `output`, both of which are list-like objects. You *must* define both of these arguments within the server function. `input` contains the values of all the different inputs at any given time, while `output` is where you'll save output objects to display in the app.</p>
 
-<p class="small-text">***This part can be intimidating, but if you follow these three rules, you will successfully create reactivity within your shiny app!***</p>
+<p class="body-text-s">***This part can be intimidating, but if you follow these three rules, you will successfully create reactivity within your shiny app!***</p>
 
-<p class="large-body-text">**Rules:**</p>
+<p class="body-text-xl teal-text">**Rules:**</p>
 
 . . . 
 
@@ -388,14 +385,14 @@ ui <- fluidPage(
 
 ##  {#rule1 data-menu-title="Rule #1"}
 
-[**Rule 1:** Save objects you want to display to `output$<id>`]{.slide-title-smaller}
+[**Rule 1:** Save objects you want to display to `output$<id>`]{.slide-title2}
 
 <hr>
 
 :::: {.columns}
 
 ::: {.column width="65%"}
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "21-22"
@@ -432,9 +429,9 @@ server <- function(input, output) {
 
 ::: {.column width="30%"}
 <br>
-<p class="small-text bottombr">In our **UI**, we created a placeholder for our plot using the `plotOutput()` function and gave it the Id `"bodyMass_scatterplot"`. In our server, we will save our plot to the output argument by its `outputId`.</p>
+<p class="body-text-s bottombr">In our **UI**, we created a placeholder for our plot using the `plotOutput()` function and gave it the Id `"bodyMass_scatterplot"`. In our server, we will save our plot to the output argument by its `outputId`.</p>
 
-<p class="small-text important-text-bg topbr">**Note:** In the **UI**, our `outputId` is quoted (`"bodyMass_scatterPlot"`), but not in the **server** (`bodyMass_scatterPlot`).</p>
+<p class="body-text-s important-text-bg topbr">**Note:** In the **UI**, our `outputId` is quoted (`"bodyMass_scatterPlot"`), but not in the **server** (`bodyMass_scatterPlot`).</p>
 :::
 
 ::::
@@ -443,15 +440,13 @@ server <- function(input, output) {
 
 ##  {#rule2.1 data-menu-title="Rule #2a"}
 
-[**Rule 2:** Build reactive objects with `render*()`]{.slide-title-smallest}
+[**Rule 2:** Build reactive objects with `render*()`]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Use the appropriate `render*()` function to make your output reactive (e.g. if you have a     `plotOutput` in your UI, you will need to use `renderPlot()` in your server).</p>
+<p class="body-text-s">Use the appropriate `render*()` function to make your output reactive (e.g. if you have a `plotOutput` in your UI, you will need to use `renderPlot()` in your server). Within your `render*()`, write any code inside a set of curly braces, `{}`. This allows you to include as many lines of code as it takes to build your object.</p>
 
-<p class="small-text">Within your `render*()`, write any code inside a set of curly braces, `{}`. This allows you to include as many lines of code as it takes to build your object.</p>
-
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "22-26"
@@ -489,7 +484,7 @@ server <- function(input, output) {
 
 ##  {#rule2.2 data-menu-title="Practice in seperate script"}
 
-[**An Aside:** Draft objects (e.g. plots) in a separate script first]{.slide-title-smaller}
+[**An Aside:** Draft objects (e.g. plots) in a separate script first]{.slide-title2}
 
 <hr>
 
@@ -498,7 +493,7 @@ server <- function(input, output) {
 :::: {.columns}
 
 ::: {.column width="45%"}
-```{r}
+```{r filename="practice-script.R"}
 #| eval: false
 #| echo: true
 
@@ -530,19 +525,19 @@ ggplot(na.omit(penguins),
 
 ::::
 
-<p class="small-text important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to something like `~/scratch/practice_script.R`.</p>
+<p class="body-text-s important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to something like `~/scratch/practice_script.R`.</p>
 
 ---
 
 ##  {#rule2.3 data-menu-title="Copy code into server"}
 
-[Copy your plot code into the server]{.slide-title-smaller}
+[Copy your plot code into the server]{.slide-title2}
 
 <hr>
 
-<p class="body-text">Copy your code over to your app, placing it inside the `{}` (and make sure to add any additional required packages to the top of your `app.R` script). Run your app. What do you notice?</p>
+<p class="body-text-s">Copy your code over to your app, placing it inside the `{}` (and make sure to add any additional required packages to the top of your `app.R` script). Run your app. What do you notice?</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "25-35" 
@@ -589,7 +584,7 @@ server <- function(input, output) {
 
 ##  {#non-reactive-plot data-menu-title="Non-reactive plot appears"}
 
-[A non-reactive plot now lives in our `plotOutput()` placeholder]{.slide-title-smaller}
+[A non-reactive plot now lives in our `plotOutput()` placeholder]{.slide-title2}
 
 <hr>
 
@@ -601,15 +596,15 @@ server <- function(input, output) {
 
 ##  {#practice-filtering data-menu-title="Practice filtering data"}
 
-[Practice filtering data in our separate script]{.slide-title-smaller}
+[Practice filtering data in our separate script]{.slide-title2}
 
 <hr>
 
-<p class="small-text">First, create a new data frame where we filter the `body_mass_g` column for observations within a specific range of values (in this example, values ranging from 3000 - 4000):</p>
+<p class="body-text-s">First, create a new data frame where we filter the `body_mass_g` column for observations within a specific range of values (in this example, values ranging from 3000 - 4000):</p>
 
 . . . 
 
-```{r}
+```{r filename="practice-script.R"}
 #| eval: true
 #| echo: true
 # load packages
@@ -623,12 +618,12 @@ body_mass_df <- penguins |>
 
 . . .
 
-<p class="small-text">Then, plot the new filtered data frame:</p>
+<p class="body-text-s">Then, plot the new filtered data frame:</p>
 
 :::: {.columns}
 
 :::{.column width="55%"}
-```{r}
+```{r filename="practice-script.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "2"
@@ -661,7 +656,7 @@ ggplot(na.omit(body_mass_df), # plot 'body_mass_df' rather than 'penguins' df
 
 ##  {#what-needs-updating data-menu-title="What needs to be reactive?"}
 
-[Which part of our code needs to be updated when a user changes the slider range input?]{.slide-title-smaller}
+[Which part of our code needs to be updated when a user changes the slider range input?]{.slide-title2}
 
 <hr>
 
@@ -712,13 +707,13 @@ body_mass_df <- penguins |>
 
 ##  {#rule3.1 data-menu-title="Rule #3a"}
 
-[**Rule 3:** Access input values with `input$<id>`]{.slide-title-smaller}
+[**Rule 3:** Access input values with `input$<id>`]{.slide-title}
 
 <hr>
 
-<p class="small-text">Recall that in our **UI**, we gave our `sliderInput()` an `inputId = "body_mass_input"`.</p>
+<p class="body-text-s">Recall that in our **UI**, we gave our `sliderInput()` an `inputId = "body_mass_input"`.</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "9"
@@ -754,15 +749,15 @@ server <- function(input, output) {
 
 ##  {#rule3.2 data-menu-title="Rule #3b"}
 
-[**Rule 3:** Access input values with `input$<id>`]{.slide-title-smallest}
+[**Rule 3:** Access input values with `input$<id>`]{.slide-title3}
 
 <hr>
 
-<p class="smaller-text">In our server, we can access the values of that slider input using the syntax, `input$body_mass_input`. *If you want your output to change according to the input values, substitute hard-coded values (e.g. 3725:5191) with the input values from the UI (e.g. `input$body_mass_input[1]:input$body_mass_input[2]`)*.</p>
+<p class="body-text-xs">In our server, we can access the values of that slider input using the syntax, `input$body_mass_input`. *If you want your output to change according to the input values, substitute hard-coded values (e.g. 3725:5191) with the input values from the UI (e.g. `input$body_mass_input[1]:input$body_mass_input[2]`)*.</p>
 
-<p class="smaller-text important-text-bg">**Importantly**, we need to use `reactive()` to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, **the data frame name must be followed by `()`**.</p>
+<p class="body-text-xs important-text-bg">**Importantly**, we need to use `reactive()` to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, **the data frame name must be followed by `()`**.</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "20-24|28"
@@ -816,7 +811,7 @@ server <- function(input, output) {
 
 ##  {#recapp-app1 data-menu-title="Recap: app #1"}
 
-[Recap: We created our first *reactive* Shiny app following these steps:]{.slide-title-smallest}
+[Recap: We created our first *reactive* Shiny app following these steps:]{.slide-title3}
 
 <hr>
 
@@ -836,9 +831,9 @@ server <- function(input, output) {
 
 <p class="body-text topbr">**4.** We wrote the **server** instructions for how to assemble inputs into outputs, following these rules:</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} save objects that you want to display to `output$<id>`</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} build reactive objects using a `render*()` function (and similarly, build reactive data frames using `reactive()`</p>
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} access input values with `input$<id>`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} save objects that you want to display to `output$<id>`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} build reactive objects using a `render*()` function (and similarly, build reactive data frames using `reactive()`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} access input values with `input$<id>`</p>
 
 . . . 
 
@@ -848,18 +843,18 @@ server <- function(input, output) {
 
 ##  {#app1-ex1 data-menu-title="** Exercise 1 Prompt **"}
 
-[`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 1: Add another reactive widget]{.slide-title-smaller}
+[`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 1: Add another reactive widget]{.slide-title2}
 
 <hr>
 
-<p class="small-text bottombr"> The [`{DT}` package](https://rstudio.github.io/DT/) provides an R interface to the JavaScript library [DataTables](https://datatables.net/) (you may have already used the DT package in your knitted RMarkdown/Quarto HTML documents). DT datatables allow for filtering, pagination, sorting, and lots of other neat features for tables on your HTML pages.</p>
+<p class="body-text-s bottombr"> The [`{DT}` package](https://rstudio.github.io/DT/) provides an R interface to the JavaScript library [DataTables](https://datatables.net/) (you may have already used the DT package in your knitted RMarkdown/Quarto HTML documents). DT datatables allow for filtering, pagination, sorting, and lots of other neat features for tables on your HTML pages.</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
 <br>
-<p class="small-text topbr">**Working alone or in groups, add a reactive `DT` datatable to your app with a `checkboxGroupInput` that allows users to select which year(s) to include in the table. Configure your `checkboxGroupInput` so that the years 2007 and 2008 are pre-selected.**</p>
-<p class="small-text topbr">In the end, your app should look something like the example to the right.</p>
+<p class="body-text-s topbr">**Working alone or in groups, add a reactive `DT` datatable to your app with a `checkboxGroupInput` that allows users to select which year(s) to include in the table. Configure your `checkboxGroupInput` so that the years 2007 and 2008 are pre-selected.**</p>
+<p class="body-text-s topbr">In the end, your app should look something like the example to the right.</p>
 :::
 
 ::: {.column width="5%"}
@@ -873,44 +868,44 @@ server <- function(input, output) {
 
 <br>
 
-<center><p class="large-body-text">See next slide for some tips on getting started!</p></center>
+<center><p class="body-text-xl teal-text">See next slide for some tips on getting started!</p></center>
 
 ---
 
 ##  {#app1-ex1-tips data-menu-title="** Exercise 1 Tips **"}
 
-[`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 1: Tips]{.slide-title-smallest}
+[`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 1: Tips]{.slide-title3}
 
 <hr>
 
-<p class="body-text topbr">**Tips:**</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Use `?checkboxGroupInput` to learn more about which arguments you need (remember, all inputs require an `inputId` and oftentimes a `label`, but there are others required to make this work as well)</p>
-<p class="smaller-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Both `{shiny}` and `{DT}` packages have functions named `dataTableOutput()` and `renderDataTable()` -- `DT::renderDataTable()` allows you to create both server-side and client-side DataTables and supports additional DataTables features while `shiny::renderDataTable()` only provides server-side DataTables. Be sure to use the one from the `{DT}` package using the syntax `packageName::functionName()`.</p>
-<p class="smaller-text bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} There are lots of ways to customize DT tables, but to create a basic one, all you need is to `DT::dataTable(your_dataframe)`<p>
+<p class="body-text">**Tips:**</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Use `?checkboxGroupInput` to learn more about which arguments you need (remember, all inputs require an `inputId` and oftentimes a `label`, but there are others required to make this work as well)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Both `{shiny}` and `{DT}` packages have functions named `dataTableOutput()` and `renderDataTable()` -- `DT::renderDataTable()` allows you to create both server-side and client-side DataTables and supports additional DataTables features while `shiny::renderDataTable()` only provides server-side DataTables. Be sure to use the one from the `{DT}` package using the syntax `packageName::functionName()`.</p>
+<p class="body-text-s bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} There are lots of ways to customize DT tables, but to create a basic one, all you need is to `DT::dataTable(your_dataframe)`<p>
 
 
-<p class="body-text topbr">**And remember** to follow the steps outlined on the previous slides (jump back to [slide 27](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1)):</p>
+<p class="body-text">**And remember** to follow the steps outlined on the previous slides (jump back to [slide 27](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1)):</p>
 
-<p class="small-text">**1.** Add an input (e.g. `checkboxGroupInput`) to the **UI** that users can interact with<p>
-<p class="small-text">**2.** Add an output (e.g. `DT::datatableOutput`) to the **UI** that creates a placeholder space to fill with our eventual reactive output<p>
-<p class="small-text">**3.** Tell the **server** how to assemble inputs into outputs following 3 rules:<p>
-<p class="smaller-text">**3.1** Save objects you want to display to `output$<id>`<p>
-<p class="smaller-text">**3.2** Build reactive objects using a `render*()` function<p>
-<p class="smaller-text">**3.3** Access input values with `input$<id>`<p>
+<p class="body-text-s">**1.** Add an input (e.g. `checkboxGroupInput`) to the **UI** that users can interact with<p>
+<p class="body-text-s">**2.** Add an output (e.g. `DT::datatableOutput`) to the **UI** that creates a placeholder space to fill with our eventual reactive output<p>
+<p class="body-text-s">**3.** Tell the **server** how to assemble inputs into outputs following 3 rules:<p>
+<p class="body-text-s">**3.1** Save objects you want to display to `output$<id>`<p>
+<p class="body-text-s">**3.2** Build reactive objects using a `render*()` function<p>
+<p class="body-text-s">**3.3** Access input values with `input$<id>`<p>
 
-<center><p class="large-body-text topbr">See next slide for a solution!</p></center>
+<center><p class="body-text-xl teal-text topbr">See next slide for a solution!</p></center>
 
 ---
 
 ##  {#app1-ex1-solution data-menu-title="** Exercise 1 Solution **"}
 
-[{{< fa check title="check mark" >}} Exercise 1: A solution]{.slide-title-smaller}
+[{{< fa check title="check mark" >}} Exercise 1: A solution]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Press the right arrow key to advance through the newly added lines of code.</p>
+<p class="body-text-s">Press the right arrow key to advance through the newly added lines of code.</p>
 
-```{r}
+```{r filename="app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "5|23-29|60-73"
@@ -998,7 +993,7 @@ shinyApp(ui = ui, server = server)
 
 ##  {#common-mistakes data-menu-title="Common Mistakes"}
 
-[Common mistakes to look out for]{.slide-title-smaller}
+[Common mistakes to look out for]{.slide-title2}
 
 <hr>
 
@@ -1009,16 +1004,16 @@ shinyApp(ui = ui, server = server)
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} misspelling `inputId` as `inputID` (or `outputId` as `outputID`)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} misspelling `inputId` as `inputID` (or `outputId` as `outputID`)</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} misspelling your inputId (or outputId) name in the server (e.g. UI: `inputId = "myInputID"`, server: `input$my_Input_ID`)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} misspelling your inputId (or outputId) name in the server (e.g. UI: `inputId = "myInputID"`, server: `input$my_Input_ID`)</p>
 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} repeating `inputId`s (each *must* be unique)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} repeating `inputId`s (each *must* be unique)</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} forgetting to separate UI elements with a comma, `,`</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} forgetting to separate UI elements with a comma, `,`</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} forgetting the set of parentheses when calling the name of a reactive data frame in a plot (e.g. `ggplot(my_reactive_df(), aes(...))`)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} forgetting the set of parentheses when calling the name of a reactive data frame in a plot (e.g. `ggplot(my_reactive_df(), aes(...))`)</p>
 :::
 
 ::: {.column width="5%"}

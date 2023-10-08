@@ -17,27 +17,27 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">After this section, you should:</p>
+<p class="body-text-l teal-text bottombr">After this section, you should:</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand some of the reasons why apps break and the benefit of having automated tests</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand some of the reasons why apps break and the benefit of having automated tests</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a basic understanding of how to use the `shinytest2` package to create regression tests</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a basic understanding of how to use the `shinytest2` package to create regression tests</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to rerun tests</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to rerun tests</p>
 
 . . . 
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shinytest2}`:  provides tools for creating and running automated tests on Shiny applications</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shinytest2}`:  provides tools for creating and running automated tests on Shiny applications</p>
 
 ---
 
@@ -49,15 +49,15 @@ format: revealjs
 
 . . . 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} an upgraded R package(s) has a different behavior (this includes `shiny`) -- this is especially relevant for those apps hosted on servers, where server software (including packages) may be updated by system administrators</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} an upgraded R package(s) has a different behavior (this includes `shiny`) -- this is especially relevant for those apps hosted on servers, where server software (including packages) may be updated by system administrators</p>
 
 . . . 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} you make changes to your app</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} you make changes to your app</p>
 
 . . . 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} an external data source stops working or returns data in a different format than expected by your app</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} an external data source stops working or returns data in a different format than expected by your app</p>
 
 . . . 
 
@@ -81,7 +81,7 @@ format: revealjs
 
 <p class="body-text">From the `shinytest2` documentation:</p>
 
-<p class="small-text quote-text-bg">"*`shinytest2` uses `testthat`’s snapshot-based testing strategy. The first time it runs a set of tests for an application, it performs some scripted interactions with the app and takes one or more snapshots of the application’s state. These snapshots are saved to disk so that future runs of the tests can compare their results to them.*"</p> 
+<p class="body-text-s quote-text-bg">"*`shinytest2` uses `testthat`’s snapshot-based testing strategy. The first time it runs a set of tests for an application, it performs some scripted interactions with the app and takes one or more snapshots of the application’s state. These snapshots are saved to disk so that future runs of the tests can compare their results to them.*"</p> 
 :::
 
 ::: {.column width="5%"}
@@ -93,7 +93,7 @@ format: revealjs
 
 ::::
 
-<p class="small-text">Rather than having to write tests by hand, you can interact with your app via the "app recorder" and `shinytest2` will record the test code automatically for you. Simply rerun tests to check for consistency.</p>
+<p class="body-text-s">Rather than having to write tests by hand, you can interact with your app via the "app recorder" and `shinytest2` will record the test code automatically for you. Simply rerun tests to check for consistency.</p>
 
 ---
 
@@ -109,11 +109,11 @@ format: revealjs
 
 <p class="body-text">Additional resources:</p> 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Barret Schloerke's rstudio::conf(2022) talk, *{shinytest2}: Unit testing for Shiny applications* ([recording](https://www.youtube.com/watch?v=DMgAW4m5aTI))</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Barret Schloerke's rstudio::conf(2022) talk, *{shinytest2}: Unit testing for Shiny applications* ([recording](https://www.youtube.com/watch?v=DMgAW4m5aTI))</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Barret Schloerke's 2022 Appsilon Shiny Confernce talk, *{shinytest2} Testing Shiny with {testthat}* ([recording](https://www.youtube.com/watch?v=EOVPBN5o8F8) & [GitHub repo](https://github.com/schloerke/presentation-2022-04-27-appsilon-shinytest2))</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Barret Schloerke's 2022 Appsilon Shiny Confernce talk, *{shinytest2} Testing Shiny with {testthat}* ([recording](https://www.youtube.com/watch?v=EOVPBN5o8F8) & [GitHub repo](https://github.com/schloerke/presentation-2022-04-27-appsilon-shinytest2))</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny testing overview](https://shiny.rstudio.com/articles/testing-overview.html), by Winston Chang -- this article discussed the `shinytest2` predecessor, `shinytest` (which is now entering maintenance mode), but provides some helpful context and is worth a read</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny testing overview](https://shiny.rstudio.com/articles/testing-overview.html), by Winston Chang -- this article discussed the `shinytest2` predecessor, `shinytest` (which is now entering maintenance mode), but provides some helpful context and is worth a read</p>
 
 ---
 
@@ -165,27 +165,27 @@ shinyApp(ui, server)
 
 . . . 
 
-<p class="small-text topbr">**(1)** Run `record_test(<app-directory>)` to launch the app recorder in browser window</p>
+<p class="body-text-s topbr">**(1)** Run `record_test(<app-directory>)` to launch the app recorder in browser window</p>
 
 . . . 
 
-<p class="small-text topbr">**(2)** Interact with your application and tell the recorder to make an expectation (e.g. an expected value when inputX is updated) on the state at various points</p>
+<p class="body-text-s topbr">**(2)** Interact with your application and tell the recorder to make an expectation (e.g. an expected value when inputX is updated) on the state at various points</p>
 
 . . . 
 
-<p class="small-text topbr">**(3)** Quit the recorder to save and execute your tests</p>
+<p class="body-text-s topbr">**(3)** Quit the recorder to save and execute your tests</p>
 
 . . . 
 
 <p class="body-text">To test our app specifically, we'll do the following:</p>
 
-<p class="small-text topbr">**(1)** run `shinytest2::record_test("testing_app")` in the console to launch the recorder in a browser window</p>
+<p class="body-text-s topbr">**(1)** run `shinytest2::record_test("testing_app")` in the console to launch the recorder in a browser window</p>
 
-<p class="small-text topbr">**(2)** interact with your app by first typing a name (e.g. Sam), then pressing the "Greet" button to display the output text</p>
+<p class="body-text-s topbr">**(2)** interact with your app by first typing a name (e.g. Sam), then pressing the "Greet" button to display the output text</p>
 
-<p class="small-text topbr">**(3)** click the "Expect Shiny values" button in the recorder app sidebar to set an expectation (this will record inputs, outputs, and exported values)</p>
+<p class="body-text-s topbr">**(3)** click the "Expect Shiny values" button in the recorder app sidebar to set an expectation (this will record inputs, outputs, and exported values)</p>
 
-<p class="small-text topbr">**(4)** give your test a name in the recorder app sidebar, then click "Save test and exit" - this will save the recorded test and setup the testing infrastructure, if it doesn't exit already</p>
+<p class="body-text-s topbr">**(4)** give your test a name in the recorder app sidebar, then click "Save test and exit" - this will save the recorded test and setup the testing infrastructure, if it doesn't exit already</p>
 
 ---
 
@@ -215,7 +215,7 @@ shinyApp(ui, server)
 
 ## `setup-shinytest2.R`
 
-<p class="small-text">**(located at `<app-directory>/tests/testthat/setup-shinytest2.R`)**; For more complex apps, you'll often have support files (e.g. those contained in `<app-directory>/R` and/or `global.R`) -- content from those files will be stored here so that it is made accessible to your test(s). Since we don't have any support files for our rather small/somewhat simple app, you should only see the following:</p>
+<p class="body-text-s">**(located at `<app-directory>/tests/testthat/setup-shinytest2.R`)**; For more complex apps, you'll often have support files (e.g. those contained in `<app-directory>/R` and/or `global.R`) -- content from those files will be stored here so that it is made accessible to your test(s). Since we don't have any support files for our rather small/somewhat simple app, you should only see the following:</p>
 
 ```{r}
 #| eval: false
@@ -226,7 +226,7 @@ shinytest2::load_app_env()
 
 ## `test-shinytest2.R`
 
-<p class="small-text">**(located at `<app-directory>/tests/testthat/test-shinytest2.R`)**; This test script contains your recorded test, and should automatically open when you finish recording and save your test. You can manually modify this test (e.g. add additional interactions and expectations), if you wish. Yours should look similar to this:</p>
+<p class="body-text-s">**(located at `<app-directory>/tests/testthat/test-shinytest2.R`)**; This test script contains your recorded test, and should automatically open when you finish recording and save your test. You can manually modify this test (e.g. add additional interactions and expectations), if you wish. Yours should look similar to this:</p>
 
 ```{r}
 #| eval: false
@@ -243,13 +243,13 @@ test_that("{shinytest2} recording: sam-test", {
 
 ## `*_.png`
 
-<p class="small-text">**(located at `<app-directory>/tests/testthat/_snaps/shinytest2/*_.png`)**; This is a screenshot of your app from when `app$expect_values()` was called -- this file should be tracked using git so that you know how your app visually changes over time. My `.png` file looks like this:</p>
+<p class="body-text-s">**(located at `<app-directory>/tests/testthat/_snaps/shinytest2/*_.png`)**; This is a screenshot of your app from when `app$expect_values()` was called -- this file should be tracked using git so that you know how your app visually changes over time. My `.png` file looks like this:</p>
 
 <center><img src="images/sam-test-001_.png" alt="A screenshot from my app, with the text 'Sam' printed in the text input box beneath the prompt, 'What is your name?'. Below the text box is a button that says 'Greet'. Below that, the text, 'Hello Sam!' is printed." width="450"/></center>
 
 ## `*.json`
 
-<p class="small-text">**(located at `<app-directory>/tests/testthat/_snaps/shinytest2/*.json`**); This is a [JSON](https://www.json.org/json-en.html) representation of the state of the app when `app$expect_values()` was called -- you'll see the state of all input, output, and export values at the time of the snapshot (we don't have any exports in our example app, but we do have a name input and a greeting output). This file should be tracked with git so that you have a record of your expected results. Your `.json` file should look something like this:</p>
+<p class="body-text-s">**(located at `<app-directory>/tests/testthat/_snaps/shinytest2/*.json`**); This is a [JSON](https://www.json.org/json-en.html) representation of the state of the app when `app$expect_values()` was called -- you'll see the state of all input, output, and export values at the time of the snapshot (we don't have any exports in our example app, but we do have a name input and a greeting output). This file should be tracked with git so that you have a record of your expected results. Your `.json` file should look something like this:</p>
 
 ```{json}
 #| eval: false
@@ -288,4 +288,4 @@ test_that("{shinytest2} recording: sam-test", {
 
 <br>
 
-<center><p class="medium-body-text">This is only a brief intro to `shinytest2`! Dig into the [documentation](https://rstudio.github.io/shinytest2/index.html) to learn more.</p></center>
+<center><p class="body-text-l teal-text">This is only a brief intro to `shinytest2`! Dig into the [documentation](https://rstudio.github.io/shinytest2/index.html) to learn more.</p></center>

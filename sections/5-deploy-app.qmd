@@ -13,11 +13,11 @@ format: revealjs
 
 ##  {#shinyapps-account data-menu-title="Set up shinyapps.io account"}
 
-[Connect your shinyapps.io account to RStudio]{.slide-title-smallest}
+[Connect your shinyapps.io account to RStudio]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Go to [shinyapps.io](https://www.shinyapps.io/) and login or create an account (if you don't already have one) -- I created my account and login with GitHub. To use shinyapps.io, you first need to link your account with RStudio on your computer. Follow the instructions on shinyapps.io when you first create your account to install the [`{rsconnect}` package](https://github.com/rstudio/rsconnect) and authorize your account:</p>
+<p class="body-text-s">Go to [shinyapps.io](https://www.shinyapps.io/) and login or create an account (if you don't already have one) -- I created my account and login with GitHub. To use shinyapps.io, you first need to link your account with RStudio on your computer. Follow the instructions on shinyapps.io when you first create your account to install the [`{rsconnect}` package](https://github.com/rstudio/rsconnect) and authorize your account:</p>
 
 <center><img src="images/shinyapps_setup.png" alt="shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`." width="750"/></center>
 
@@ -25,13 +25,13 @@ format: revealjs
 
 ##  {#deploy-app data-menu-title="~~~ Deploy your app ~~~"}
 
-[Deploy your app to shinyapps.io]{.slide-title-smallest}
+[Deploy your app to shinyapps.io]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Once your account has been authorized, run `rsconnect::deployApp("<app_directory_name>")` in your console to deploy your app to shinyapps.io. Here, we'll run `rsconnect::deployApp("two-file-app")` to deploy the app we've been working on.</p>
+<p class="body-text-s">Once your account has been authorized, run `rsconnect::deployApp("<app_directory_name>")` in your console to deploy your app to shinyapps.io. Here, we'll run `rsconnect::deployApp("two-file-app")` to deploy the app we've been working on.</p>
 
-<p class="small-text">Once deployed, a browser will open to your application. The URL will take the form: **https://username.shinyapps.io/your_app_directory_name**. You should also now see an `/rsconnect` folder within your app's directory -- this is generated when an application bundle is successfully deployed and contains a DCF file with information on the deployed content (i.e. the name, title, server address, account, URL, and time). **This `/rsconnect` folder should be added and committed into version control (i.e. push it to GitHub!)** so that future re-deployments target the same endpoint (i.e. your app's URL).</p>
+<p class="body-text-s">Once deployed, a browser will open to your application. The URL will take the form: **https://username.shinyapps.io/your_app_directory_name**. You should also now see an `/rsconnect` folder within your app's directory -- this is generated when an application bundle is successfully deployed and contains a DCF file with information on the deployed content (i.e. the name, title, server address, account, URL, and time). **This `/rsconnect` folder should be added and committed into version control (i.e. push it to GitHub!)** so that future re-deployments target the same endpoint (i.e. your app's URL).</p>
 
 <center><img src="images/deployed_v1.gif" alt="Our shiny app, now hosted at the URL https://samanthacsik.shinyapps.io/two-file-app which functions the same as when it was hosted locally." width="650"/></center>
 
@@ -39,15 +39,15 @@ format: revealjs
 
 ##  {#shinyapps-dashboard data-menu-title="shinyapps.io dashboard"}
 
-[The shinyapps.io dashboard]{.slide-title-smaller}
+[The shinyapps.io dashboard]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Your shinyapps.io dashboard provides tons of information about your application metrics, instance (the virtualized server that your app is hosted on) and worker (a special type of R process that an Application Instance runs to service requests to an application) settings, plan management, and more. The free plan (the plan we're using here today) allows you to deploy **five** Shiny apps. You are able to archive and/or delete once-deployed apps to make space for new ones.</p>
+<p class="body-text-s">Your shinyapps.io dashboard provides tons of information about your application metrics, instance (the virtualized server that your app is hosted on) and worker (a special type of R process that an Application Instance runs to service requests to an application) settings, plan management, and more. The free plan (the plan we're using here today) allows you to deploy **five** Shiny apps. You are able to archive and/or delete once-deployed apps to make space for new ones.</p>
 
 <center><img src="images/shinapps_dashboard.png" alt="The shinyapps.io dashboard displaying information about our two-file-app, now hosted at https://samanthacsik.shinyapps.io/two-file-app/. You can select different menu items from the navbar at the top of the page, including Overview, Metrics, URLs, Settings, Users, Logs, Restart, Archive, and Trash." width="750"/></center>
 
-<p class="small-text">Check out the [shinyapps.io user guide](https://docs.posit.co/shinyapps.io/index.html) for more information on hosting your apps on shinyapps.io.</p>
+<p class="body-text-s">Check out the [shinyapps.io user guide](https://docs.posit.co/shinyapps.io/index.html) for more information on hosting your apps on shinyapps.io.</p>
 
 ---
 
@@ -57,19 +57,19 @@ format: revealjs
 
 <hr>
 
-<p class="small-text">[shinyapps.io](https://www.shinyapps.io/) is not the only Shiny app hosting service (though it's the easiest to get started with and the only one we'll be covering in detail in this workshop).</p>
+<p class="body-text-s">[shinyapps.io](https://www.shinyapps.io/) is not the only Shiny app hosting service (though it's the easiest to get started with and the only one we'll be covering in detail in this workshop).</p>
 
 <p class="body-text topbr">**Posit also offers the following:**</p>
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny server](https://posit.co/products/open-source/shinyserver/) is an open source server which you can deploy for free on your own hardware. It requires more setup and configuration, but can be used without a fee. The Bren and NCEAS servers are configured with Shiny Server for hosting for some in-house apps.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny server](https://posit.co/products/open-source/shinyserver/) is an open source server which you can deploy for free on your own hardware. It requires more setup and configuration, but can be used without a fee. The Bren and NCEAS servers are configured with Shiny Server for hosting for some in-house apps.</p>
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Posit connect](https://posit.co/products/enterprise/connect/) is a paid product that provides an advanced suite of services for hosting Shiny apps, Quarto and R Markdown reports, APIs, and more.</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Posit connect](https://posit.co/products/enterprise/connect/) is a paid product that provides an advanced suite of services for hosting Shiny apps, Quarto and R Markdown reports, APIs, and more.</p>
 
 ---
 
 ##  {#hosting-recommendations data-menu-title="App hosting recommendations"}
 
-[So how should *I* host my app?]{.slide-title-smaller}
+[So how should *I* host my app?]{.slide-title2}
 
 <hr>
 
@@ -81,14 +81,14 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Preferred:** Stick with the **free** tier of [shinyapps.io](https://www.shinyapps.io/), if you can! This is by far the most straightforward option that requires no server maintenance for you or your client. If your app exceeds the limitations set by the free tier (e.g. requires more active hours, needs more RAM or instances to support high traffic usage, etc.), you/your client have the option to upgrade to a paid tier -- there are [5 paid plan types](https://docs.posit.co/shinyapps.io/billing-and-account-management.html#plan-types). Check out the [shinyapps.io user guide](https://docs.posit.co/shinyapps.io/index.html) for more information. **Consider setting aside your allocated capstone/GP funds to help support a paid shinyapps.io plan.**</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Preferred:** Stick with the **free** tier of [shinyapps.io](https://www.shinyapps.io/), if you can! This is by far the most straightforward option that requires no server maintenance for you or your client. If your app exceeds the limitations set by the free tier (e.g. requires more active hours, needs more RAM or instances to support high traffic usage, etc.), you/your client have the option to upgrade to a paid tier -- there are [5 paid plan types](https://docs.posit.co/shinyapps.io/billing-and-account-management.html#plan-types). Check out the [shinyapps.io user guide](https://docs.posit.co/shinyapps.io/index.html) for more information. **Consider setting aside your allocated capstone/GP funds to help support a paid shinyapps.io plan.**</p>
 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} If you have a server-savvy client, they may want to deploy/host your app using their own infrastructure. If your client plans to pursue this option, but does not yet have a their own server configured to do so, we recommend directing them to the [online instructions](https://posit.co/download/shiny-server/) for getting started with Shiny Server. **PLEASE NOTE that Bren staff (including the compute team) are unable to provide technical support for clients in server configuration and app deployment/maintenance.**</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} If you have a server-savvy client, they may want to deploy/host your app using their own infrastructure. If your client plans to pursue this option, but does not yet have a their own server configured to do so, we recommend directing them to the [online instructions](https://posit.co/download/shiny-server/) for getting started with Shiny Server. **PLEASE NOTE that Bren staff (including the compute team) are unable to provide technical support for clients in server configuration and app deployment/maintenance.**</p>
 
 . . . 
 
-<p class="small-text important-text-bg topbr">**IMPORTANT:** Hosting on a server means that shiny applications will be prone to breaking as updates to server software are made. It is important to have an **application maintenance plan** in place. This may mean identifying who is responsible for maintaining code, or even deciding to decommission applications and archive the code repository when appropriate.</p>
+<p class="body-text-s important-text-bg topbr">**IMPORTANT:** Hosting on a server means that shiny applications will be prone to breaking as updates to server software are made. It is important to have an **application maintenance plan** in place. This may mean identifying who is responsible for maintaining code, or even deciding to decommission applications and archive the code repository when appropriate.</p>
 
 . . . 
 

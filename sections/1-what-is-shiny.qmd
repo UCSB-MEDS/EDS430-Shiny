@@ -21,7 +21,7 @@ format: revealjs
 
 <center><img src="images/worldbank-shiny.gif" alt="A gif of Andre Duarte's 'Worldbank-Shiny' app. On the lefthand side of the app, the title 'Gapminder Interactive Plot' sits above a series of three widgets. The first is a dropdown menu where the user can select a region (e.g. Europe & Central Asia) or view all regions at the same time. The next two widgets are slider inputs -- the first allows the user to select a year between 1960 and 2014, and the second allows the user to select a population size between 500 and 5000. On the right hand side of the app is a bubble plot of Fertility Rate vs. Life Expectancy, which updates as inputs are changed by the user. Hovering a bubble displays thge corresponding Country, Region, Population, Life Expectancy, and Fertility Rate." width="700"/></center>
 
-<center><p class="small-text gray-text topbr">[Worldbank-Shiny](https://github.com/aguimaraesduarte/WorldBank-Shiny) app to visualize fertility rate vs. life expectancy from 1960 to 2015, by [Andre Duarte](https://github.com/aguimaraesduarte)</p></center>
+<center><p class="body-text-s gray-text topbr">[Worldbank-Shiny](https://github.com/aguimaraesduarte/WorldBank-Shiny) app to visualize fertility rate vs. life expectancy from 1960 to 2015, by [Andre Duarte](https://github.com/aguimaraesduarte)</p></center>
 
 ---
 
@@ -50,7 +50,7 @@ format: revealjs
 
 ##  {#widgets data-menu-title="Widgets"}
 
-[Widgets are web elements that users can interact with via the UI]{.slide-title-smaller}
+[Widgets are web elements that users can interact with via the UI]{.slide-title2}
 
 <hr>
 
@@ -64,11 +64,9 @@ format: revealjs
 :::
 
 ::: {.column width="35%"}
-<br>
+<p class="body-text bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Widgets collect information from the user which is then used to update outputs created in the server.</p>
 
-<p class="body-text bottombr">{{< fa angle-right title="a bullet point" >}} Widgets collect information from the user which is then used to update outputs created in the server.</p>
-
-<p class="body-text topbr">{{< fa angle-right title="a bullet point" >}} Shiny comes with a set of of [standard widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) (see left), but you can also explore widget extensions using a variety of other packages (e.g. [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets), [`{DT}`](https://rstudio.github.io/DT/), [`{plotly}`](https://plotly.com/r/))</p>
+<p class="body-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Shiny comes with a set of of [standard widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) (see left), but you can also explore widget extensions using a variety of other packages (e.g. [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets), [`{DT}`](https://rstudio.github.io/DT/), [`{plotly}`](https://plotly.com/r/))</p>
 :::
 
 ::::
@@ -116,11 +114,11 @@ format: revealjs
 
 ##  {#built-in-examples data-menu-title="Built-in Examples"}
 
-[The Shiny packages comes with 11 built-in examples]{.slide-title-smaller}
+[The Shiny packages comes with 11 built-in examples]{.slide-title2}
 
 <hr>
 
-<p class="small-text bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Check out the available Shiny app examples by running this code in your console:</p>
+<p class="body-text-s bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Check out the available Shiny app examples by running this code in your console:</p>
 
 ```{r}
 #| eval: false
@@ -131,7 +129,7 @@ runExample(example = NA)
 
 . . .
 
-<p class="small-text topbr bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Run the first example, which plots R’s built-in `faithful` data set with a configurable number of bins:</p>
+<p class="body-text-s topbr bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Run the first example, which plots R’s built-in `faithful` data set with a configurable number of bins:</p>
 
 ```{r}
 #| eval: false
@@ -139,11 +137,11 @@ runExample(example = NA)
 runExample("01_hello")
 ```
 
-<p class="small-text topbr bottombr">Change the number of bins using the `sliderInput` widget and watch the histogram re-render.</p>
+<p class="body-text-s topbr bottombr">Change the number of bins using the `sliderInput` widget and watch the histogram re-render.</p>
 
 . . . 
 
-<p class="small-text topbr bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} These working examples also come paired with source code for you to see how the app is built. For example, the `sliderInput` is built with the following code:</p>
+<p class="body-text-s topbr bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} These working examples also come paired with source code for you to see how the app is built. For example, the `sliderInput` is built with the following code:</p>
 
 ```{r}
 #| eval: false
@@ -158,4 +156,4 @@ sliderInput(inputId = "bins",
 
 . . . 
 
-<center><p class="medium-body-text">Now let's build our own!</p></center>
+<center><p class="body-text-l teal-text">Now let's build our own!</p></center>

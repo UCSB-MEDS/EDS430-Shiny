@@ -17,35 +17,35 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">After this section, you should:</p>
+<p class="body-text-l teal-text bottombr">After this section, you should:</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand the general workflow for pre-processing, saving & reading data into an app</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand the general workflow for pre-processing, saving & reading data into an app</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} be comfortable building out a dashboard UI using `{shinydashboard}` layout functions</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} be comfortable building out a dashboard UI using `{shinydashboard}` layout functions</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to add static images to your app</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand how to add static images to your app</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} feel comfortable creating a basic reactive `leaflet` map</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} feel comfortable creating a basic reactive `leaflet` map</p>
 
 . . . 
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . .
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shinydashboard}`: provides an alternative UI framework for easily building dashboard-style shiny applications</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{shinydashboard}`: provides an alternative UI framework for easily building dashboard-style shiny applications</p>
 
 . . . 
 
-<p class="small-text">[{{< fa box-open title="an open box" >}}]{.teal-text} `{leaflet}`: for building interactive maps</p>
+<p class="body-text-s">[{{< fa box-open title="an open box" >}}]{.teal-text} `{leaflet}`: for building interactive maps</p>
 
 ---
 
@@ -65,10 +65,10 @@ format: revealjs
 
 <br>
 
-<p class="small-text">**(a)** a `dashboardHeader` with the name of your app</p>
-<p class="small-text">**(b)** a `dashboardSidebar` with two `menuItem`s</p>
-<p class="small-text">**(c)** a landing page with background information about your app</p>
-<p class="small-text">**(d)** an interactive *and* reactive `leaflet` map</p>
+<p class="body-text-s">**(a)** a `dashboardHeader` with the name of your app</p>
+<p class="body-text-s">**(b)** a `dashboardSidebar` with two `menuItem`s</p>
+<p class="body-text-s">**(c)** a landing page with background information about your app</p>
+<p class="body-text-s">**(d)** an interactive *and* reactive `leaflet` map</p>
 :::
 
 ::: {.column width="5%"}
@@ -84,7 +84,7 @@ format: revealjs
 
 ##  {#what-is-a-dashboard data-menu-title="What is a dashboard?"}
 
-[But first, what do we mean by a shiny "dashboard"?]{.slide-title-smaller}
+[But first, what do we mean by a shiny "dashboard"?]{.slide-title2}
 
 <hr>
 
@@ -96,11 +96,11 @@ format: revealjs
 
 ##  {#dashboardPage data-menu-title="dashboardPage()"}
 
-[The most basic shinydashboard is made up of a header, a sidebar, and a body]{.slide-title-smaller}
+[The most basic shinydashboard is made up of a header, a sidebar, and a body]{.slide-title2}
 
 <hr>
 
-<p class="small-text">The main difference between a **shiny app** and a **shinydashboard** are the UI elements. Rather than a `fluidPage()` (as used in our previous shiny apps), we'll create a `dashboardPage()`, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a `{shinydashboard}` page (you can run this code in an `app.R` file, if you wish).</p>
+<p class="body-text-s">The main difference between a **shiny app** and a **shinydashboard** are the UI elements. Rather than a `fluidPage()` (as used in our previous shiny apps), we'll create a `dashboardPage()`, which expects three main parts: a header, a sidebar, and a body. Below is the most minimal possible UI for a `{shinydashboard}` page (you can run this code in an `app.R` file, if you wish).</p>
 
 :::: {.columns}
 
@@ -146,29 +146,29 @@ shinyApp(ui, server)
 
 <hr>
 
-<p class="small-text">[{{< fa school title="a school house" >}}]{.teal-text} [Bren Student Data Explorer](https://shinyapps.bren.ucsb.edu/student-data-explorer/) ([source code](https://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alum, [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/), during her Bren Summer Fellowship (and continued by future MEDS students!)* -- explore Bren school student demographics and career outcomes</p>
+<p class="body-text-s">[{{< fa school title="a school house" >}}]{.teal-text} [Bren Student Data Explorer](https://shinyapps.bren.ucsb.edu/student-data-explorer/) ([source code](https://github.com/UCSB-MEDS/shiny-dashboard)), *by MEDS 2022 alum, [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/), during her Bren Summer Fellowship (and continued by future MEDS students!)* -- explore Bren school student demographics and career outcomes</p>
 
-<p class="small-text topbr">[{{< fa person-hiking title="a person hiking with a backpack on" >}}]{.teal-text} [Sam's Strava Stats](https://samanthacsik.shinyapps.io/strava_dashboard/) ([source code](https://github.com/samanthacsik/strava-dashboard)), *by yours truly, [Sam Csik](https://samanthacsik.github.io/)* -- a new and ongoing side project exploring my Strava hiking/biking/walking data</p>
+<p class="body-text-s topbr">[{{< fa person-hiking title="a person hiking with a backpack on" >}}]{.teal-text} [Sam's Strava Stats](https://samanthacsik.shinyapps.io/strava_dashboard/) ([source code](https://github.com/samanthacsik/strava-dashboard)), *by yours truly, [Sam Csik](https://samanthacsik.github.io/)* -- a new and ongoing side project exploring my Strava hiking/biking/walking data</p>
 
-<p class="small-text topbr">[{{< fa fish title="a fish" >}}]{.teal-text} [Channel Islands National Park's Kelp Forest Monitoring Program](http://34.94.133.101/) ([source code](https://github.com/cullen-molitor/KFM_Shiny_App)), *by MEDS 2022 alum, [Cullen Molitor](https://cullen-molitor.github.io/)* -- explore subtidal monitoring data collected from our closest National Park</p>
+<p class="body-text-s topbr">[{{< fa fish title="a fish" >}}]{.teal-text} [Channel Islands National Park's Kelp Forest Monitoring Program](http://34.94.133.101/) ([source code](https://github.com/cullen-molitor/KFM_Shiny_App)), *by MEDS 2022 alum, [Cullen Molitor](https://cullen-molitor.github.io/)* -- explore subtidal monitoring data collected from our closest National Park</p>
 
-<p class="small-text topbr">[{{< fa campground title="a camping tent" >}}]{.teal-text} [The Outdoor Equity App](https://shinyapps.bren.ucsb.edu/oe_app/) ([source code](https://github.com/outdoor-equity/outdoor-equity)), *developed by MEDS 2022 alumni [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/) & [Clarissa Boyajian](https://cboyajian.github.io/) as part of their MEDS capstone project* -- analyze patterns in the access and demand of visitors at reservable overnight sites</p>
+<p class="body-text-s topbr">[{{< fa campground title="a camping tent" >}}]{.teal-text} [The Outdoor Equity App](https://shinyapps.bren.ucsb.edu/oe_app/) ([source code](https://github.com/outdoor-equity/outdoor-equity)), *developed by MEDS 2022 alumni [Halina Do-Linh](https://www.linkedin.com/in/halinadolinh/) & [Clarissa Boyajian](https://cboyajian.github.io/) as part of their MEDS capstone project* -- analyze patterns in the access and demand of visitors at reservable overnight sites</p>
 
-<p class="small-text topbr">[{{< fa fish-fins title="a fish with fins" >}}]{.teal-text} [Visualizing human impacts on at-risk marine biodiversity](http://ohi-science.nceas.ucsb.edu/visualizing_human_impacts/) ([source code](https://github.com/BrennieDev/CHI_shiny_app), *developed by MESM 2022 alum, [Ian Brunjes](https://github.com/BrennieDev) & [Dr. Casey O'Hara](http://oharascience.com/index.html))* -- explore how human activities and climate change impact marine biodiversity worldwide</p>
+<p class="body-text-s topbr">[{{< fa fish-fins title="a fish with fins" >}}]{.teal-text} [Visualizing human impacts on at-risk marine biodiversity](http://ohi-science.nceas.ucsb.edu/visualizing_human_impacts/) ([source code](https://github.com/BrennieDev/CHI_shiny_app), *developed by MESM 2022 alum, [Ian Brunjes](https://github.com/BrennieDev) & [Dr. Casey O'Hara](http://oharascience.com/index.html))* -- explore how human activities and climate change impact marine biodiversity worldwide</p>
 
 ---
 
 ##  {#setup-dashboard-directory data-menu-title="Dashboard Setup"}
 
-[Setup our shiny dashboard]{.slide-title-smaller}
+[Setup our shiny dashboard]{.slide-title2}
 
 <hr>
 
 <p class="body-text bottombr">First, create a subdirectory called `/shinydashboard` and add a `ui.R`,  `server.R`, and `global.R` file.</p>
 
-<p class="small-text bottombr">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example [a few slides back](https://ucsb-meds.github.io/EDS430-Shiny/#/dashboardPage), or alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) – this can help with organization as you app grows in complexity.</p>
+<p class="body-text-s bottombr">Add the server function to `server.R` and the three main UI components (header, sidebar, and body) to our dashboard page. You can do so just as the example [a few slides back](https://ucsb-meds.github.io/EDS430-Shiny/#/dashboardPage), or alternatively, you can split the UI into separate pieces, then combine them into a `dashboardPage` the end of `ui.R` (as shown below) – this can help with organization as you app grows in complexity.</p>
 
-<p class="small-text bottombr">We'll set our dashboard aside for now while we work on downloading and pre-processing our data, as well as practice creating our data visualization *outside* of our app.</p>
+<p class="body-text-s bottombr">We'll set our dashboard aside for now while we work on downloading and pre-processing our data, as well as practice creating our data visualization *outside* of our app.</p>
 
 ::: {.panel-tabset}
 
@@ -229,7 +229,7 @@ library(shinydashboard)
 
 <br> 
 
-<center><p class="small-text bottombr">Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center. [doi:10.18739/A2JH3D41P](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P).</p></center>
+<center><p class="body-text-s bottombr">Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center. [doi:10.18739/A2JH3D41P](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P).</p></center>
 :::
 
 ::: {.column width="5%"}
@@ -245,20 +245,20 @@ library(shinydashboard)
 
 ##  {#processing-storing-data data-menu-title="Processing & Storing Data"}
 
-[Pre-processing data is critical]{.slide-title-smallest}
+[Pre-processing data is critical]{.slide-title3}
 
 <hr>
 
-<p class="small-text">Where you choose to store the data used by your Shiny app will depend largely on the type and size of the file(s) and who "owns" those data. It is likely that you'll be working with data stored in a database or on a server. This is outside the scope of this workshop, but I suggest reading Dean Attali's article, [Persistent data storage in Shiny apps](https://shiny.rstudio.com/articles/persistent-data-storage.html) to start. Because we are going to be working with a relatively small data set, we'll be downloading and storing our data locally (i.e. on our machines and in our GitHub repo).</p>
+<p class="body-text-s">Where you choose to store the data used by your Shiny app will depend largely on the type and size of the file(s) and who "owns" those data. It is likely that you'll be working with data stored in a database or on a server. This is outside the scope of this workshop, but I suggest reading Dean Attali's article, [Persistent data storage in Shiny apps](https://shiny.rstudio.com/articles/persistent-data-storage.html) to start. Because we are going to be working with a relatively small data set, we'll be downloading and storing our data locally (i.e. on our machines and in our GitHub repo).</p>
 
-<p class="small-text topbr">Regardless of where you choose to store your data, you can help your application more quickly process inputs/outputs by providing it *only as much data as needed to run*. This means **pre-processing** your data.</p>
+<p class="body-text-s topbr">Regardless of where you choose to store your data, you can help your application more quickly process inputs/outputs by providing it *only as much data as needed to run*. This means **pre-processing** your data.</p>
 
 . . . 
 
 :::: {.columns}
 
 ::: {.column width="35%"}
-<p class="smaller-text topbr">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in a separate script(s) saved to `scratch/` and save a cleaned/processed version of the data to our app's directory, `/shinydashboard/data/lake_data_processed.csv`. Your repository structure should look similar to example on the right:</p>
+<p class="body-text-s topbr">[`FCWO_lakemonitoringdata_2011_2022_daily.csv`](https://arcticdata.io/metacat/d1/mn/v2/object/urn%3Auuid%3A73800a2e-7617-470a-83aa-b530a01f32e3) contains **8 attributes** (variables) and **18,894 observations** collected from a set of **11 lakes** located in the Fish Creek Watershed in northern Alaska between 2011-2022. We'll download and save the file to a `raw_data/` folder in the root directory of our repository. We'll then pre-process the data in a separate script(s) saved to `scratch/` and save a cleaned/processed version of the data to our app's directory, `/shinydashboard/data/lake_data_processed.csv`. Your repository structure should look similar to example on the right:</p>
 :::
 
 ::: {.column width="5%"}
@@ -306,11 +306,11 @@ knitr::include_graphics("images/shinydashboard-directory-structure.png")
 
 ##  {#process-lake-data data-menu-title="Process Lake Data"}
 
-[Process lake data & save new file]{.slide-title-smallest}
+[Process lake data & save new file]{.slide-title3}
 
 <hr>
 
-<p class="small-text important-text-bg">**NOTE:** In this example exercise, I've removed all rows with missing values (i.e. `NaN`s in the `Depth` column & `NA`s in the `BedTemperature` column) before calculating averages. *This is NOT good practice -- exploring and thinking critically about missing data is an important part of data analysis, and in a real-life scenario, you should consider the most appropriate method for handling them.*</p>
+<p class="body-text-s important-text-bg">**NOTE:** In this example exercise, I've removed all rows with missing values (i.e. `NaN`s in the `Depth` column & `NA`s in the `BedTemperature` column) before calculating averages. *This is NOT good practice -- exploring and thinking critically about missing data is an important part of data analysis, and in a real-life scenario, you should consider the most appropriate method for handling them.*</p>
 
 ```{r}
 #| eval: false
@@ -354,9 +354,9 @@ write_csv(unique_lakes, "shinydashboard/data/lake_data_processed.csv")
 
 <hr>
 
-<p class="small-text">Oftentimes, you may choose to save your processed data frame as a `.rds` file (a data file format, native to R, which stores a single R object). `.rds` file are relatively small (and therefore take up little storage space), take less time to import/export, and preserve data types and classes (e.g. factors and dates), eliminating the need to redefine data types after loading the file. Bear in mind that this increased speed and space-saving may come at the cost of generality -- you can't open a `.rds` file outside of R or read it in with another programming language (e.g. Python).</p>
+<p class="body-text-s">Oftentimes, you may choose to save your processed data frame as a `.rds` file (a data file format, native to R, which stores a single R object). `.rds` file are relatively small (and therefore take up little storage space), take less time to import/export, and preserve data types and classes (e.g. factors and dates), eliminating the need to redefine data types after loading the file. Bear in mind that this increased speed and space-saving may come at the cost of generality -- you can't open a `.rds` file outside of R or read it in with another programming language (e.g. Python).</p>
 
-<p class="small-text topbr">While we'll be sticking to `.csv` files in this workshop, it's worth experimenting with `.rds` when you begin working with your own (likely larger) data. You can read in (`readRDS()`) and write out to (`saveRDS()`) `.rds` files as easily as `.csv` files.</p>
+<p class="body-text-s topbr">While we'll be sticking to `.csv` files in this workshop, it's worth experimenting with `.rds` when you begin working with your own (likely larger) data. You can read in (`readRDS()`) and write out to (`saveRDS()`) `.rds` files as easily as `.csv` files.</p>
 
 <center><img src="images/rds.png" alt="The R language logo overlaid on top of a database stack -- often used to represent the rds data file format." width="200"/></center>
 
@@ -364,11 +364,11 @@ write_csv(unique_lakes, "shinydashboard/data/lake_data_processed.csv")
 
 ##  {#draft-leaflet data-menu-title="Draft Leaflet"}
 
-[Draft `leaflet` map]{.slide-title-smaller}
+[Draft `leaflet` map]{.slide-title2}
 
 <hr>
 
-<p class="small-text">There are lots of ways to customize `leaflet` maps. We'll be keeping ours relatively simple, but check out the [Leaflet for R](https://rstudio.github.io/leaflet/) documentation for more ways to get creative with your maps.</p>
+<p class="body-text-s">There are lots of ways to customize `leaflet` maps. We'll be keeping ours relatively simple, but check out the [Leaflet for R](https://rstudio.github.io/leaflet/) documentation for more ways to get creative with your maps.</p>
 
 ::: {.panel-tabset}
 
@@ -443,11 +443,11 @@ leaflet() |>
 
 ##  {#filter-leaflet data-menu-title="Filter Leaflet"}
 
-[Practice filtering `leaflet` observations]{.slide-title-smaller}
+[Practice filtering `leaflet` observations]{.slide-title2}
 
 <hr>
 
-<p class="small-text">We'll eventually build three `sliderInput`s to filter lake makers by `Elevation`, `AvgDepth`, and `AvgTemp`. Practice filtering here first (and be sure to update the data frame name in your leaflet code!):</p>
+<p class="body-text-s">We'll eventually build three `sliderInput`s to filter lake makers by `Elevation`, `AvgDepth`, and `AvgTemp`. Practice filtering here first (and be sure to update the data frame name in your leaflet code!):</p>
 
 ::: {.panel-tabset}
 
@@ -538,11 +538,11 @@ leaflet() |>
 
 ##  {#sketch-ui data-menu-title="Sketch the UI"}
 
-[Sketch out our dashboard UI]{.slide-title-smaller}
+[Sketch out our dashboard UI]{.slide-title2}
 
 <hr>
 
-<p class="small-text">I want my dashboard to have two menu items: a welcome page with some background information, and a dashboard page with my reactive map. All elements will be placed inside `box`es, the primary building blocks of shinydashboards (more on that soon).</p> 
+<p class="body-text-s">I want my dashboard to have two menu items: a welcome page with some background information, and a dashboard page with my reactive map. All elements will be placed inside `box`es, the primary building blocks of shinydashboards (more on that soon).</p> 
 
 <br>
 
@@ -562,13 +562,13 @@ leaflet() |>
 
 ##  {#title-menuItems data-menu-title="Title & menuItems"}
 
-[Add a `title` & `menuItem`s]{.slide-title-smaller}
+[Add a `title` & `menuItem`s]{.slide-title2}
 
 <hr>
 
-<p class="small-text">First, add a title to `dashboardHeader()` and make more space using `titleWidth`, if necessary.</p>
+<p class="body-text-s">First, add a title to `dashboardHeader()` and make more space using `titleWidth`, if necessary.</p>
 
-<p class="small-text">Next, we'll build our `dashboardSidebar()`. Add a `sidebarMenu()` that contains two `menuItem`s. Be sure to provide each `menuItem()` with `text` as you'd like it to appear in your app (for me, that's **Welcome** and **Dashboard**), and a `tabName` which will be used to place `dashboardBody()` content in the appropriate `menuItem()`. Optionally, you can provide an icon. By default, `icon()` uses icons from [FontAwesome](https://fontawesome.com/).</p>
+<p class="body-text-s">Next, we'll build our `dashboardSidebar()`. Add a `sidebarMenu()` that contains two `menuItem`s. Be sure to provide each `menuItem()` with `text` as you'd like it to appear in your app (for me, that's **Welcome** and **Dashboard**), and a `tabName` which will be used to place `dashboardBody()` content in the appropriate `menuItem()`. Optionally, you can provide an icon. By default, `icon()` uses icons from [FontAwesome](https://fontawesome.com/).</p>
 
 ```{r}
 #| eval: false
@@ -607,11 +607,11 @@ dashboardPage(header, sidebar, body)
 
 ##  {#tabItems data-menu-title="tabItems"}
 
-[Add `tabItems` to your `dashboardBody`]{.slide-title-smaller}
+[Add `tabItems` to your `dashboardBody`]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Next, we'll create `tabItems` in our `dashboardBody` -- we'll make a `tabItem` (singular) for each `menuItem` in our `dashboardSidebar`. In order to match a `menuItem` and a `tabItem`, ensure that they have matching a `tabName` (e.g. any content added to the **dashboard** `tabItem` will appear under the **dashboard** `menuItem`).</p>
+<p class="body-text-s">Next, we'll create `tabItems` in our `dashboardBody` -- we'll make a `tabItem` (singular) for each `menuItem` in our `dashboardSidebar`. In order to match a `menuItem` and a `tabItem`, ensure that they have matching a `tabName` (e.g. any content added to the **dashboard** `tabItem` will appear under the **dashboard** `menuItem`).</p>
 
 ```{r}
 #| eval: false
@@ -671,11 +671,11 @@ dashboardPage(header, sidebar, body)
 
 ##  {#boxes data-menu-title="boxes"}
 
-[Add `box`es to contain UI content (part 1)]{.slide-title-smaller}
+[Add `box`es to contain UI content (part 1)]{.slide-title2}
 
 <hr>
 
-<p class="small-text">[Boxes](https://rstudio.github.io/shinydashboard/structure.html#boxes) are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g. text, inputs, outputs). Start by adding two side-by-side boxes to our **dashboard** tab inside a `fluidRow()`. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our `sliderInput`s and our `leafletOutput`.</p>
+<p class="body-text-s">[Boxes](https://rstudio.github.io/shinydashboard/structure.html#boxes) are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g. text, inputs, outputs). Start by adding two side-by-side boxes to our **dashboard** tab inside a `fluidRow()`. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our `sliderInput`s and our `leafletOutput`.</p>
 
 ```{r} 
 #| eval: false
@@ -750,11 +750,11 @@ dashboardPage(header, sidebar, body)
 
 ##  {#columns data-menu-title="Columns"}
 
-[Add `box`es to contain UI content (part 2)]{.slide-title-smaller}
+[Add `box`es to contain UI content (part 2)]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Lastly, add boxes to our **welcome** tab We'll use `column`s to place one box on the left-hand side of our page, and two stacked boxes on the right-hand side. Each `column` will take up half the page (**Note:** *For column-based layouts, use `NULL` for the box width, as the width is set by the column that contains the box*). We can create two `fluidRow`s within the right-hand column to stack two boxes vertically.</p>
+<p class="body-text-s">Lastly, add boxes to our **welcome** tab We'll use `column`s to place one box on the left-hand side of our page, and two stacked boxes on the right-hand side. Each `column` will take up half the page (**Note:** *For column-based layouts, use `NULL` for the box width, as the width is set by the column that contains the box*). We can create two `fluidRow`s within the right-hand column to stack two boxes vertically.</p>
 
 ```{r}
 #| eval: false
@@ -870,7 +870,7 @@ dashboardPage(header, sidebar, body)
 
 ##  {#import-data data-menu-title="Read in data"}
 
-[Read data into `global.R` & add necessary packages]{.slide-title-smaller}
+[Read data into `global.R` & add necessary packages]{.slide-title2}
 
 <hr>
 
@@ -894,11 +894,11 @@ lake_data <- read_csv("data/lake_data_processed.csv")
 
 ##  {#add-sliderInput-leafletMap data-menu-title="Add Widget & Leaflet Map"}
 
-[Add a `sliderInput` & `leafletOutput` to the UI]{.slide-title-smaller}
+[Add a `sliderInput` & `leafletOutput` to the UI]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Start by adding just one `sliderInput` (for selecting a range of lake `Elevation`s) to the left-hand box in the **dashboard** tab. Then, add a `leafletOutput` to create a placeholder space for our map, along with a Spinner animation (from the `{shinycssloaders}` package). While we're here, we can also add `title`s to each box.</p>
+<p class="body-text-s">Start by adding just one `sliderInput` (for selecting a range of lake `Elevation`s) to the left-hand box in the **dashboard** tab. Then, add a `leafletOutput` to create a placeholder space for our map, along with a Spinner animation (from the `{shinycssloaders}` package). While we're here, we can also add `title`s to each box.</p>
 
 ```{r}
 #| eval: false
@@ -1022,11 +1022,11 @@ dashboardPage(header, sidebar, body)
 
 ##  {#build-map-server data-menu-title="Build map in server.R"}
 
-[Assemble inputs & outputs in `server.R`]{.slide-title-smaller}
+[Assemble inputs & outputs in `server.R`]{.slide-title2}
 
 <hr>
 
-<p class="small-text">Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs. And don't forget to add `()` following each reactive data frame called in your leaflet map!</p>
+<p class="body-text-s">Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs. And don't forget to add `()` following each reactive data frame called in your leaflet map!</p>
 
 ```{r}
 #| eval: false
@@ -1075,7 +1075,7 @@ server <- function(input, output) {
 
 ##  {#working-elev-widget data-menu-title="Test Elevation Widget"}
 
-[Run your app & test out your first widget]{.slide-title-smaller}
+[Run your app & test out your first widget]{.slide-title2}
 
 <hr>
 
@@ -1087,27 +1087,27 @@ server <- function(input, output) {
 
 ##  {#exercise5-prompt data-menu-title="** Exercise 5 Prompt **"}
 
-[{{< fa question title="question mark" >}} Exercise 5: Add two more `sliderInput`s to filter for `AvgDepth` & `AvgTemp`]{.slide-title-smaller}
+[{{< fa question title="question mark" >}} Exercise 5: Add two more `sliderInput`s to filter for `AvgDepth` & `AvgTemp`]{.slide-title2}
 
 <hr>
 
 <p class="body-text">**To Do:**
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Add two more `sliderInput`s, one for `AvgDepth` and one for `AvgTemp` beneath our first Elevation `sliderInput` in the UI</p>
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Update our reactive data frame so that all three widgets filter the leaflet map</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Add two more `sliderInput`s, one for `AvgDepth` and one for `AvgTemp` beneath our first Elevation `sliderInput` in the UI</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Update our reactive data frame so that all three widgets filter the leaflet map</p>
 
 <br>
 <br>
 <br>
 <br>
 
-<center><p class="medium-body-text">See next slide for a solution!</p></center>
+<center><p class="body-text-l teal-text">See next slide for a solution!</p></center>
 
 ---
 
 ##  {#exercise5-solution data-menu-title="** Exercise 5 Solution **"}
 
-[{{< fa check title="check mark" >}} Exercise 5: A solution]{.slide-title-smaller}
+[{{< fa check title="check mark" >}} Exercise 5: A solution]{.slide-title2}
 
 <hr>
 

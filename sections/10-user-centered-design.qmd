@@ -17,15 +17,15 @@ format: revealjs
 
 <hr>
 
-<p class="medium-body-text bottombr">After this section, you should:</p>
+<p class="body-text-l teal-text bottombr">After this section, you should:</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a checklist of considerations to reference each time you build an app</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a checklist of considerations to reference each time you build an app</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a few additional resources to dive deeper into UX/UI design</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a few additional resources to dive deeper into UX/UI design</p>
 
 ---
 
@@ -39,19 +39,19 @@ format: revealjs
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Simplicity is gold:** using the application shouldn't require reading a manual, and interfaces should be as self-explanatory as possible.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Simplicity is gold:** using the application shouldn't require reading a manual, and interfaces should be as self-explanatory as possible.</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Adapt a defensive programming mindset:** your app should always fail gracefully and informatively (e.g. provide users with a helpful error message)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Adapt a defensive programming mindset:** your app should always fail gracefully and informatively (e.g. provide users with a helpful error message)</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Build a self-explanatory app:** consider the following three suggestions for doing so -- **(a)** remember the rule of least surprise (in UI design, always do the least surprising thing e.g. we often assume that underlined text is clickable, so if you include underlined text in your UI, there's a good chance a user will try clicking on it). **(b)** think about progression (design a clear pattern of moving forward for your user), and **(c)** related to **b**, make sure that if an input is necessary, it is made clear to your user. Check out the [`{shinyjs}` package](https://deanattali.com/shinyjs/) for implementing nifty ways to improve the user experience of your shiny apps.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Build a self-explanatory app:** consider the following three suggestions for doing so -- **(a)** remember the rule of least surprise (in UI design, always do the least surprising thing e.g. we often assume that underlined text is clickable, so if you include underlined text in your UI, there's a good chance a user will try clicking on it). **(b)** think about progression (design a clear pattern of moving forward for your user), and **(c)** related to **b**, make sure that if an input is necessary, it is made clear to your user. Check out the [`{shinyjs}` package](https://deanattali.com/shinyjs/) for implementing nifty ways to improve the user experience of your shiny apps.</p>
 
 . . . 
 
-<p class="small-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Avoid feature-creep:** feature-creep is the process of adding features to an app that complicates its usage and maintenance -- this includes adding too much *reactivity* and too much *interactivity* (e.g. `plotly`) -- interactivity adds visual noise, so it's best to not make elements interactive if there is no value is gained.</p> 
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Avoid feature-creep:** feature-creep is the process of adding features to an app that complicates its usage and maintenance -- this includes adding too much *reactivity* and too much *interactivity* (e.g. `plotly`) -- interactivity adds visual noise, so it's best to not make elements interactive if there is no value is gained.</p> 
 
 ---
 

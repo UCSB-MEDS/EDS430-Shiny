@@ -57,34 +57,45 @@ format:
 
 ##  {#toc data-menu-title="Table of Contents"}
 
-[{{< fa star title="star" >}} Table of Contents {{< fa star title="star" >}}]{.slide-title-smaller}
+[{{< fa star title="star" >}} Table of Contents {{< fa star title="star" >}}]{.slide-title2}
 
 <hr>
 
 <p class="body-text">We're going to pack a lot into two days. Here's what to expect:</p>
 
-<p class="small-text">**(1)** [High-level overview of Shiny](https://ucsb-meds.github.io/EDS430-Shiny/#/1-shiny-overview)</p>
-<p class="smaller-text">What is Shiny? ~ Anatomy of a shiny app ~ Where to find examples</p>
+<p class="body-text-s">**(1)** [High-level overview of Shiny](https://ucsb-meds.github.io/EDS430-Shiny/#/1-shiny-overview)</p>
+<p class="body-text-s">What is Shiny? ~ Anatomy of a shiny app ~ Where to find examples</p>
 
-<p class="small-text">**(2)** [Building shiny apps & dashboards](https://ucsb-meds.github.io/EDS430-Shiny/#/2-building-apps)</p>
-<p class="smaller-text">Setting up your repo & files ~ App #1 (single-file app) ~ App #2 (two-file app) ~ App #3 (shinydashboard) ~ Deploying apps</p>
+<p class="body-text-s">**(2)** [Building shiny apps & dashboards](https://ucsb-meds.github.io/EDS430-Shiny/#/2-building-apps)</p>
+<p class="body-text-s">Setting up your repo & files ~ App #1 (single-file app) ~ App #2 (two-file app) ~ App #3 (shinydashboard) ~ Deploying apps</p>
 
-<p class="small-text">**(3)** [Beautifying your user interface (UI)](https://ucsb-meds.github.io/EDS430-Shiny/#/3-beautifying-ui)</p>
-<p class="smaller-text">Custom themes with `bslib` ~ Custom themes with `fresh` ~ Styling with CSS & Sass</p>
+<p class="body-text-s">**(3)** [Beautifying your user interface (UI)](https://ucsb-meds.github.io/EDS430-Shiny/#/3-beautifying-ui)</p>
+<p class="body-text-s">Custom themes with `bslib` ~ Custom themes with `fresh` ~ Styling with CSS & Sass</p>
 
-<p class="small-text">**(4)** [Improving your app's user experience (UX)](https://ucsb-meds.github.io/EDS430-Shiny/#/4-improving-ux)</p>
-<p class="smaller-text">Important UX considerations ~ Web accessibility</p>
+<p class="body-text-s">**(4)** [Improving your app's user experience (UX)](https://ucsb-meds.github.io/EDS430-Shiny/#/4-improving-ux)</p>
+<p class="body-text-s">Important UX considerations ~ Web accessibility</p>
 
-<p class="small-text">**(5)** [Debugging & Testing](https://ucsb-meds.github.io/EDS430-Shiny/#/5-debugging-testing)</p>
-<p class="smaller-text">Debugging approaches ~ Testing apps</p>
+<p class="body-text-s">**(5)** [Debugging & Testing](https://ucsb-meds.github.io/EDS430-Shiny/#/5-debugging-testing)</p>
+<p class="body-text-s">Debugging approaches ~ Testing apps</p>
 
-<p class="small-text">**(6)** [Streamlining code](https://ucsb-meds.github.io/EDS430-Shiny/#/6-streamlining-code)</p>
-<p class="smaller-text">Writing functions ~ Shiny modules</p>
+<p class="body-text-s">**(6)** [Streamlining code](https://ucsb-meds.github.io/EDS430-Shiny/#/6-streamlining-code)</p>
+<p class="body-text-s">Writing functions ~ Shiny modules</p>
 
-<p class="small-text">**(7)** [Wrap-up](https://ucsb-meds.github.io/EDS430-Shiny/#/7-wrap-up)</p>
-<p class="smaller-text">Shiny alternatives ~ Words of wisdom ~ More resources</p>
+<p class="body-text-s">**(7)** [Wrap-up](https://ucsb-meds.github.io/EDS430-Shiny/#/7-wrap-up)</p>
+<p class="body-text-s">Shiny alternatives ~ Words of wisdom ~ More resources</p>
 
-<center><p class="body-text quote-text-bg">You can reference the source code of all the apps we'll be building/playing with throughout this workshop on [`r fontawesome::fa("github", fill = "#78A540", a11y = "sem")` GitHub](https://github.com/samanthacsik/EDS430-shiny-app).</p></center>
+---
+
+##  {#toc data-menu-title="Table of Contents"}
+
+[{{< fa code title="the symbol for code, </>" >}} See the source code {{< fa code title="the symbol for code, </>" >}}]{.slide-title}
+
+<hr>
+
+<br>
+<br>
+
+<p class="body-text-xl center-text">You can reference the source code of all the apps we'll be building/playing with throughout this workshop on [`r fontawesome::fa("github", fill = "#78A540", a11y = "sem")` GitHub](https://github.com/samanthacsik/EDS430-shiny-app).</p>
 
 ---
 
@@ -94,11 +105,11 @@ format:
 
 <hr class="hr-teal">
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} What is Shiny?</p> 
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} What is Shiny?</p> 
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Anatomy of a shiny app</p>  
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Anatomy of a shiny app</p>  
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Where to find examples</p>  
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Where to find examples</p>  
 
 ---
 
@@ -116,15 +127,15 @@ format:
 
 <hr class="hr-teal">
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Setting up your repo & files</p>  
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Setting up your repo & files</p>  
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} App #1 (single-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app)</p>  
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} App #1 (single-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app)</p>  
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} App #2 (two-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>  
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} App #2 (two-file app) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app)</p>  
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} App #3 (shinydashboard) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard)</p>  
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} App #3 (shinydashboard) - [source code](https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard)</p>  
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Deploying (& redeploying) apps</p>  
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Deploying (& redeploying) apps</p>  
 
 ---
 
@@ -295,11 +306,11 @@ countdown::countdown(
 
 <hr class="hr-teal">
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Custom themes with `bslib`</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Custom themes with `bslib`</p>
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Custom themes with `fresh`</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Custom themes with `fresh`</p>
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Styling with CSS & Sass</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Styling with CSS & Sass</p>
 
 ---
 
@@ -313,9 +324,9 @@ countdown::countdown(
 
 <hr class="hr-teal">
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Important UX considerations</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Important UX considerations</p>
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Web accessibility</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Web accessibility</p>
 
 ---
 
@@ -333,9 +344,9 @@ countdown::countdown(
 
 <hr class="hr-teal">
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Debugging approaches</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Debugging approaches</p>
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Testing apps</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Testing apps</p>
 
 ---
 
@@ -353,9 +364,9 @@ countdown::countdown(
 
 <hr class="hr-teal">
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Writing functions</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Writing functions</p>
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Shiny modules</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Shiny modules</p>
 
 ---
 
@@ -373,11 +384,11 @@ countdown::countdown(
 
 <hr class="hr-teal">
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Shiny alternatives</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Shiny alternatives</p>
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} Words of wisdom</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} Words of wisdom</p>
 
-<p class="medium-body-text-white">{{< fa angle-right title="a bullet point" >}} More resources</p>
+<p class="body-text-l-white">{{< fa angle-right title="a bullet point" >}} More resources</p>
 
 ---
 

@@ -17,19 +17,19 @@ format: revealjs
 
 <hr>
 
-<p class="small-text">Shiny is awesome, but depending on your goals, vision, and end users, you may not need the full functionality that shiny provides. You can potentially save yourself (and your clients) the stress of deploying and maintaining apps by first considering other options:</p>
+<p class="body-text-s">Shiny is awesome, but depending on your goals, vision, and end users, you may not need the full functionality that shiny provides. You can potentially save yourself (and your clients) the stress of deploying and maintaining apps by first considering other options:</p>
 
 . . . 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Widgets aren't only for Shiny! Embed interactive [htmlwidgets](https://www.htmlwidgets.org/) into your R Markdown documents that range from geo-spatial mapping with `{leaflet}` to generating network graph diagrams with `{DiagrammeR}`. Check out the [htmlwidgets for R - gallery](http://gallery.htmlwidgets.org/) for many more options.</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Widgets aren't only for Shiny! Embed interactive [htmlwidgets](https://www.htmlwidgets.org/) into your R Markdown documents that range from geo-spatial mapping with `{leaflet}` to generating network graph diagrams with `{DiagrammeR}`. Check out the [htmlwidgets for R - gallery](http://gallery.htmlwidgets.org/) for many more options.</p>
 
 . . . 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Compose multiple widgets into a dashboard using `{flexdashboard}`. Based in R Markdown, this framework allows you to produce dynamic dashboards using tools you are already familiar with. Find example projects and their source code [here](https://pkgs.rstudio.com/flexdashboard/articles/examples.html).</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Compose multiple widgets into a dashboard using `{flexdashboard}`. Based in R Markdown, this framework allows you to produce dynamic dashboards using tools you are already familiar with. Find example projects and their source code [here](https://pkgs.rstudio.com/flexdashboard/articles/examples.html).</p>
 
 . . . 
 
-<p class="small-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Embed reactive shiny components (e.g. inputs & outputs) in Quarto documents. By using some fun new code chunk options, you can instruct Quarto to spin up it's own self-contained shiny server to run your reactives. Read the [Quarto documentation](https://quarto.org/docs/interactive/shiny/) to learn more and check out some teaching examples [here](https://quarto.org/docs/interactive/shiny/#examples).</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Embed reactive shiny components (e.g. inputs & outputs) in Quarto documents. By using some fun new code chunk options, you can instruct Quarto to spin up it's own self-contained shiny server to run your reactives. Read the [Quarto documentation](https://quarto.org/docs/interactive/shiny/) to learn more and check out some teaching examples [here](https://quarto.org/docs/interactive/shiny/#examples).</p>
 
 <center><img src="images/shiny_alts.png" alt="Logos for htmlwidgets, flexdashboard, and quarto." width="450"/></center>
 
@@ -41,7 +41,7 @@ format: revealjs
 
 <hr>
 
-<p class="small-text topbr">[{{< fa sun title="a sun" >}}]{.teal-text} [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([source code](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
+<p class="body-text-s topbr">[{{< fa sun title="a sun" >}}]{.teal-text} [Energy Siting Dashboard](https://energysiting.github.io/energysiting-dashboard/) ([source code](https://github.com/energysiting/energysiting-dashboard)), *developed by MEDS 2022 alumni [Paloma Cartwright](https://palomacartwright.github.io/), [Joe DeCesaro](https://joedecesaro.github.io/), [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/) & [Desik Somasundaram](https://www.linkedin.com/in/desik-somasundaram-902a8a120/) as part of their MEDS capstone project* -- explore predictions of the most suitable locations for large, utility-scale wind and solar projects across the United States</p>
 
-<p class="small-text topbr">[{{< fa handshake title="two hands shaking" >}}]{.teal-text} [@ADELPHIRESEARCH TWEETS Dashboard](https://spileggi.shinyapps.io/Pileggi_presentation_shiny/) ([source code](https://github.com/shannonpileggi/Adelphi-tweets)), *developed by R-Lady [Shannon Pileggi](https://www.pipinghotdata.com/index.html) as part of a job interview* -- read about this clever approach to showcasing your skills to a potential employer in Shannon's blogpost, [A job interview presentation inspired by the R community](https://www.pipinghotdata.com/posts/2020-08-30-a-job-interview-presentation-inspired-by-the-r-community/).</p>
+<p class="body-text-s topbr">[{{< fa handshake title="two hands shaking" >}}]{.teal-text} [@ADELPHIRESEARCH TWEETS Dashboard](https://spileggi.shinyapps.io/Pileggi_presentation_shiny/) ([source code](https://github.com/shannonpileggi/Adelphi-tweets)), *developed by R-Lady [Shannon Pileggi](https://www.pipinghotdata.com/index.html) as part of a job interview* -- read about this clever approach to showcasing your skills to a potential employer in Shannon's blogpost, [A job interview presentation inspired by the R community](https://www.pipinghotdata.com/posts/2020-08-30-a-job-interview-presentation-inspired-by-the-r-community/).</p>
  
