@@ -1880,7 +1880,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_78ac6b94" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_4259ad1e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -1905,7 +1905,7 @@ By the end of building out this second app, you should:
 </p>
 <div class="fragment">
 <p class="body-text-s">
-<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span><code>be comfortable creating a shiny app using the two-file (</code>ui.R<code>&amp;</code>server.R<code>) format along with a</code>global.R` file
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> be comfortable creating a shiny app using the two-file (<code>ui.R</code> &amp; <code>server.R</code>) format along with a <code>global.R</code> file
 </p>
 </div>
 <div class="fragment">
@@ -2006,6 +2006,10 @@ Here’s what I’ve done in my <code>~scratch/practice_script_app2_lter.R</code
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>practice_script_app2_lter.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co">#..........................load packages.........................</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">library</span>(lterdatasampler)</span>
 <span id="cb27-3"><a href="#cb27-3"></a><span class="fu">library</span>(tidyverse)</span>
@@ -2055,6 +2059,7 @@ Here’s what I’ve done in my <code>~scratch/practice_script_app2_lter.R</code
 <span id="cb27-47"><a href="#cb27-47"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Trout Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Trout Weight (g)"</span>, <span class="at">color =</span> <span class="st">"Channel Type"</span>, <span class="at">shape =</span> <span class="st">"Channel Type"</span>) <span class="sc">+</span></span>
 <span id="cb27-48"><a href="#cb27-48"></a>  myCustomTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
@@ -2073,6 +2078,10 @@ We’ll use the <code>and_vertebrates</code> data set from <a href="https://gith
 <div class="columns">
 <div class="column" style="width:45%;">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>practice_script_app2_lter.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#..........................load packages.........................</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb28-3"><a href="#cb28-3"></a><span class="fu">library</span>(tidyverse)</span>
@@ -2088,6 +2097,7 @@ We’ll use the <code>and_vertebrates</code> data set from <a href="https://gith
 <span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
 <span id="cb28-14"><a href="#cb28-14"></a>       <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
 <span id="cb28-15"><a href="#cb28-15"></a>  myCustomTheme</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -2344,6 +2354,10 @@ First, let’s build a UI that has a navigation bar with two tabs – one for ba
 <strong>Tip:</strong> It can be <em>super</em> helpful add code comments at the start and end of each UI element – for example, see <code># data viz tabPanel---</code> and <code># END data viz tabPanel</code>, below. Adding text that you will eventually replace with content (e.g.&nbsp;plots, tables, images, longer text) may help to visualize what you’re working towards as well.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb34-2"><a href="#cb34-2"></a>  </span>
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="at">title =</span> <span class="st">"LTER Animal Data Explorer"</span>,</span>
@@ -2364,6 +2378,7 @@ First, let’s build a UI that has a navigation bar with two tabs – one for ba
 <span id="cb34-18"><a href="#cb34-18"></a>  </span>
 <span id="cb34-19"><a href="#cb34-19"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="add-tabs" class="slide level2" data-menu-title="Add tabs"><h2></h2>
 <p><span class="slide-title2">Add two tabs to the “Explore the Data” page</span></p>
 <hr>
@@ -2371,6 +2386,10 @@ First, let’s build a UI that has a navigation bar with two tabs – one for ba
 Give your tabs the following titles: <code>Trout</code> and <code>Penguins</code>.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb35" data-code-line-numbers="15-34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb35-2"><a href="#cb35-2"></a>  </span>
 <span id="cb35-3"><a href="#cb35-3"></a>  <span class="at">title =</span> <span class="st">"LTER Animal Data Explorer"</span>,</span>
@@ -2408,6 +2427,7 @@ Give your tabs the following titles: <code>Trout</code> and <code>Penguins</code
 <span id="cb35-35"><a href="#cb35-35"></a>  </span>
 <span id="cb35-36"><a href="#cb35-36"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="sidebar-main-panels" class="slide level2" data-menu-title="Create sidebar &amp; main panels"><h2></h2>
 <p><span class="slide-title2">Add sidebar &amp; main panels to the <code>Trout</code> tab</span></p>
 <hr>
@@ -2415,6 +2435,10 @@ Give your tabs the following titles: <code>Trout</code> and <code>Penguins</code
 We’ll eventually place our input in the sidebar and output in the main panel.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb36" data-code-line-numbers="21-38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb36-2"><a href="#cb36-2"></a>  </span>
 <span id="cb36-3"><a href="#cb36-3"></a>  <span class="at">title =</span> <span class="st">"LTER Animal Data Explorer"</span>,</span>
@@ -2469,6 +2493,7 @@ We’ll eventually place our input in the sidebar and output in the main panel.
 <span id="cb36-52"><a href="#cb36-52"></a>  </span>
 <span id="cb36-53"><a href="#cb36-53"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="exercise2-prompt" class="slide level2" data-menu-title="** Exercise 2 Prompt **"><h2></h2>
 <p><span class="slide-title2"><i class="fa-solid fa-question" title="question mark" aria-label="question"></i> Exercise 2: Add sidebar and main panels to the <code>Penguins</code> tab</span></p>
 <hr>
@@ -2494,6 +2519,10 @@ See next slide for a solution!
 </section><section id="exercise2-solution" class="slide level2" data-menu-title="** Exercise 2 Solution **"><h2></h2>
 <p><span class="slide-title2"><i class="fa-solid fa-check" title="a check mark" aria-label="check"></i> Exercise 2: A solution</span></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb37" data-code-line-numbers="45-62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb37-2"><a href="#cb37-2"></a>  </span>
 <span id="cb37-3"><a href="#cb37-3"></a>  <span class="at">title =</span> <span class="st">"LTER Animal Data Explorer"</span>,</span>
@@ -2565,6 +2594,7 @@ See next slide for a solution!
 <span id="cb37-69"><a href="#cb37-69"></a>  </span>
 <span id="cb37-70"><a href="#cb37-70"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="layout-review" class="slide level2" data-menu-title="Layout review"><h2></h2>
 <p><span class="slide-title">Some important things to remember when building your UI’s layout:</span></p>
 <hr>
@@ -2603,11 +2633,10 @@ We’ll be using the <a href="https://lter.github.io/lterdatasampler/reference/a
 <center>
 <img src="images/trout.png" alt="A drawing of the right-side profile of a coastal cutthroat trout." width="600">
 </center>
-<center>
-<p class="body-text-s gray-text">
+<p class="body-text-s gray-text center-text">
 Image Source: Joseph R. Tomelleri, as found on the <a href="https://westernnativetrout.org/coastal-cutthroat-trout/">Western Native Trout Initiative</a>
 </p>
-</center></section><section id="import-packages-global" class="slide level2" data-menu-title="Import packages in global.R"><h2></h2>
+</section><section id="import-packages-global" class="slide level2" data-menu-title="Import packages in global.R"><h2></h2>
 <p><span class="slide-title3">Add packages &amp; wrangle data in <code>global.R</code></span></p>
 <hr>
 <p class="body-text-s">
@@ -2617,22 +2646,28 @@ In addition to the <a href="https://lter.github.io/lterdatasampler/"><code>{lter
 <strong>Import those three packages at the top of your <code>global.R</code> file</strong>
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>global.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb38" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb38-3"><a href="#cb38-3"></a><span class="fu">library</span>(lterdatasampler) </span>
 <span id="cb38-4"><a href="#cb38-4"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb38-5"><a href="#cb38-5"></a><span class="fu">library</span>(shinyWidgets) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="wrangle-data-global" class="slide level2" data-menu-title="Wrangle data in global.R"><h2></h2>
 <p><span class="slide-title3">Add packages &amp; wrangle data in <code>global.R</code></span></p>
 <hr>
 <p class="body-text-s">
-We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g.&nbsp;.csv), we would do that here too. Our new data object <code>clean_trout</code>, will now be available for us to call directly in our server.
-</p>
-<p class="body-text-s">
-We can easily copy our wrangling code over from our <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots">practice script</a>.
+We can also do the bulk of our data wrangling here, rather than in the server (to keep our server code a bit more manageable). If we were reading in a data file (e.g.&nbsp;.csv), we would do that here too. Our new data object <code>clean_trout</code>, will now be available for us to call directly in our server (NOTE: we can easily copy our wrangling code over from our <a href="https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots">practice script</a>).
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>global.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb39" data-code-line-numbers="6-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb39-3"><a href="#cb39-3"></a><span class="fu">library</span>(lterdatasampler)</span>
@@ -2658,6 +2693,7 @@ We can easily copy our wrangling code over from our <a href="https://ucsb-meds.g
 <span id="cb39-23"><a href="#cb39-23"></a>  )) <span class="sc">|&gt;</span> </span>
 <span id="cb39-24"><a href="#cb39-24"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="trout-pickerInput" class="slide level2" data-menu-title="Add Trout pickerInput()"><h2></h2>
 <p><span class="slide-title2">Add a <code>pickerInput</code> for selecting <code>channel_type</code> to your UI</span></p>
 <hr>
@@ -2669,6 +2705,10 @@ The <code>channel_type</code> variable (originally called <code>unittype</code> 
 <strong>Reminder:</strong> When we we designed our UI layout, we added a <code>sidebarPanel</code> to our <strong>Trout</strong> tab with the placeholder text <code>"trout plot input(s) go here"</code>. Replace that text with the code for your <code>pickerInput</code>:
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># channel type pickerInput ----</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a><span class="fu">pickerInput</span>(<span class="at">inputId =</span> <span class="st">"channel_type_input"</span>, <span class="at">label =</span> <span class="st">"Select channel type(s):"</span>,</span>
 <span id="cb40-3"><a href="#cb40-3"></a>            <span class="at">choices =</span> <span class="fu">unique</span>(clean_trout<span class="sc">$</span>channel_type), <span class="co"># alternatively: choices = c("rapid", "cascade" ...)</span></span>
@@ -2676,10 +2716,10 @@ The <code>channel_type</code> variable (originally called <code>unittype</code> 
 <span id="cb40-5"><a href="#cb40-5"></a>            <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"cascade"</span>, <span class="st">"pool"</span>), </span>
 <span id="cb40-6"><a href="#cb40-6"></a>            <span class="at">multiple =</span> <span class="cn">TRUE</span>) <span class="co"># </span><span class="re">END</span><span class="co"> channel type pickerInput</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p class="body-text-s topbr">
 Save and run your app – a functional <code>pickerInput</code> should now appear in your UI.
 </p>
-<p><br></p>
 <p class="body-text-s gray-text topbr">
 A <code><a href="https://dreamrs.github.io/shinyWidgets/reference/pickerInput.html">shinyWidgets::pickerInput()</a></code> is functionally equivalent to <code><a href="https://rdrr.io/pkg/shiny/man/selectInput.html">shiny::selectInput()</a></code>, though it allows for greater customization and looks (in my opinion) a bit nicer.
 </p>
@@ -2695,7 +2735,12 @@ Next, we need to create a placeholder in our UI for our trout scatterplot to liv
 <strong>Reminder:</strong> When we we designed our UI layout, we added a <code>mainPanel</code> to our <strong>Trout</strong> tab with the placeholder text <code>"trout plot output goes here"</code>. Replace that text with the code for your <code>plotOuput()</code>:
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p class="body-text-s topbr">
 Save and run your app – it won’t look different at first glance, but inspecting your app in a browser window (using Chrome, right click &gt; Inspect) will reveal a placeholder box for your plot output to eventually live:
@@ -2713,6 +2758,10 @@ Save and run your app – it won’t look different at first glance, but inspect
 <div class="columns">
 <div class="column" style="width:55%;">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb42" data-code-line-numbers="3-25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb42-2"><a href="#cb42-2"></a>  </span>
 <span id="cb42-3"><a href="#cb42-3"></a>  <span class="co"># filter trout data ----</span></span>
@@ -2741,6 +2790,7 @@ Save and run your app – it won’t look different at first glance, but inspect
 <span id="cb42-26"><a href="#cb42-26"></a>  </span>
 <span id="cb42-27"><a href="#cb42-27"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:35%;">
@@ -2765,6 +2815,10 @@ Save and run your app – it won’t look different at first glance, but inspect
 Rather than re-typing your ggplot theme parameters out for every plot in your app, do so once in <code>global.R</code>, and save to an object name. You can then easily add your custom theme as a layer to each of your ggplots. <strong>Bonus:</strong> If you decide to modify your plot theme, you only have to do so in one place!
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>global.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb43" data-code-line-numbers="27-34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb43-3"><a href="#cb43-3"></a><span class="fu">library</span>(lterdatasampler)</span>
@@ -2800,6 +2854,7 @@ Rather than re-typing your ggplot theme parameters out for every plot in your ap
 <span id="cb43-33"><a href="#cb43-33"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
 <span id="cb43-34"><a href="#cb43-34"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="run-app2v1-first-widget" class="slide level2" data-menu-title="Run the App (trout pickerInput)"><h2></h2>
 <p><span class="slide-title">Run your app and try out your <code>pickerInput</code> widget!</span></p>
 <hr>
@@ -2807,15 +2862,19 @@ Rather than re-typing your ggplot theme parameters out for every plot in your ap
 <img src="images/app2_plot1_widget1.gif" alt="A user navigates to the 'Explore the Data' tab of our app, 'LTER Animal Data Explorer.' There is a scatterplot with Trout Length (mm) on the x-axis, and Trout Weight (g) on the y-axis. Points are colored and shaped by channel type. There is a pickerWidget to the left of the plot with the channel_types 'cascade' and 'pool' already selected. The user clicks other channel types on/off to see how the data points on the plot change." width="750">
 </center>
 </section><section id="second-input-ui" class="slide level2" data-menu-title="Add a second input"><h2></h2>
-<p><span class="slide-title">Add a second input that will update the same output</span></p>
+<p><span class="slide-title3">Add a second input that will update the same output</span></p>
 <hr>
 <p class="body-text-s">
 You can have more than one input control the same output. Let’s now add a <code>checkboxGroupButtons</code> widget to our <strong>UI</strong> for selecting forest <code>section</code> (either clear cut forest or old growth forest). Check out the <a href="https://dreamrs.github.io/shinyWidgets/reference/checkboxGroupButtons.html">function documentation</a> for more information on how to customize the appearance of your buttons.
 </p>
 <p class="body-text-s">
-Be sure to add the widget to the same <code>sidebarPanel</code> as our <code>pickerInput</code> (and separate them with a comma, <code>,</code>!:
+Be sure to add the widget to the same <code>sidebarPanel</code> as our <code>pickerInput</code> (and separate them with a comma!:
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb44" data-code-line-numbers="11-16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># trout plot sidebarPanel ----</span></span>
 <span id="cb44-2"><a href="#cb44-2"></a><span class="fu">sidebarPanel</span>(</span>
 <span id="cb44-3"><a href="#cb44-3"></a>  </span>
@@ -2835,6 +2894,7 @@ Be sure to add the widget to the same <code>sidebarPanel</code> as our <code>pic
 <span id="cb44-17"><a href="#cb44-17"></a>                   </span>
 <span id="cb44-18"><a href="#cb44-18"></a>            ) <span class="co"># </span><span class="re">END</span><span class="co"> trout plot sidebarPanel</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="second-input-server" class="slide level2" data-menu-title="Update reactive trout df"><h2></h2>
 <p><span class="slide-title2">Update your reactive df to <em>also</em> filter based on the new <code>checkboxGroupInput</code></span></p>
 <hr>
@@ -2842,6 +2902,10 @@ Be sure to add the widget to the same <code>sidebarPanel</code> as our <code>pic
 Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> – our data frame needs to be updated based on both the <code>pickerInput</code>, which selects for <code>channel_type</code>, <em>and</em> the <code>checkboxGrouptInput</code>, which selects for forest <code>section</code>:
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb45" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># filter trout data ----</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>trout_filtered_df <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
 <span id="cb45-3"><a href="#cb45-3"></a></span>
@@ -2867,6 +2931,7 @@ Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> 
 <span id="cb45-23"><a href="#cb45-23"></a></span>
 <span id="cb45-24"><a href="#cb45-24"></a> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="run-app2v1-second-widget" class="slide level2" data-menu-title="Run the App"><h2></h2>
 <p><span class="slide-title2">Run your app and try out your <code>pickerInput</code> &amp; <code>checkboxGrouptInput</code> widgets!</span></p>
 <hr>
@@ -2884,7 +2949,7 @@ Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a991912a" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_c01328ad" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3170,7 +3235,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_22f0a7e5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f953f321" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3214,6 +3279,10 @@ It’s usually valuable (and important) to provide some background information/c
 For example, I’ve added and formatted my landing page’s text directly in the <strong>UI</strong> using lots of nested <code>tags</code> – I’ve done this inside the <code>tabPanel</code> titled <strong>About this App</strong> (<strong>Note:</strong> I’ve formatted the layout of this page a bit using <code>fluidRow</code> and <code>column</code>s to create some white space around the edges. I’ve also created a faint gray horizontal line, using <code>hr()</code>, beneath which I added a footnote):
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb49" data-code-line-numbers="8-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb49-2"><a href="#cb49-2"></a>  </span>
 <span id="cb49-3"><a href="#cb49-3"></a>  <span class="at">title =</span> <span class="st">"LTER Animal Data Explorer"</span>,</span>
@@ -3322,6 +3391,7 @@ For example, I’ve added and formatted my landing page’s text directly in the
 <span id="cb49-106"><a href="#cb49-106"></a>  </span>
 <span id="cb49-107"><a href="#cb49-107"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="includeMarkdown" class="slide level2" data-menu-title="includeMarkdown()"><h2></h2>
 <p><span class="slide-title2">Instead, use <code>includeMarkdown()</code> to read in text from separate <code>.md</code> files</span></p>
 <hr>
@@ -3340,6 +3410,10 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <div class="tab-content">
 <div id="tabset-4-1">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb50" data-code-line-numbers="8-21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb50-2"><a href="#cb50-2"></a>  </span>
 <span id="cb50-3"><a href="#cb50-3"></a>  <span class="at">title =</span> <span class="st">"LTER Animal Data Explorer"</span>,</span>
@@ -3446,8 +3520,13 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb50-104"><a href="#cb50-104"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div id="tabset-4-2">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>text/about.md</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">## Welcome to the LTER Animal Data Explorer!</span></span>
 <span id="cb51-2"><a href="#cb51-2"></a></span>
 <span id="cb51-3"><a href="#cb51-3"></a><span class="kw">&lt;br&gt;</span></span>
@@ -3463,9 +3542,15 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 <span id="cb51-13"><a href="#cb51-13"></a>Check out the **Explore the Data** page to find interactive data visualizations looking at Cutthroat trout of the <span class="co">[</span><span class="ot">Andrews Forest LTER</span><span class="co">](https://andrewsforest.oregonstate.edu/)</span> and Adelie, Gentoo &amp; Chinstrap penguins of the <span class="co">[</span><span class="ot">Palmer Station LTER</span><span class="co">](https://pallter.marine.rutgers.edu/)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div id="tabset-4-3">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>text/footer/md</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>*This app is maintained by [Samantha Csik](https://samanthacsik.github.io/) and is updated as needed for teaching purposes. Please report any issues [here](https://github.com/samanthacsik/EDS430-shiny-app/issues). Source code can be found on [GitHub](https://github.com/samanthacsik/EDS430-shiny-app).*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -3473,10 +3558,8 @@ I recommend saving those <code>.md</code> files in a subdirectory named <code>/t
 </section><section id="last-run" class="slide level2" data-menu-title="Check out your full app!"><h2></h2>
 <p><span class="slide-title3">Run your app one more time to admire your beautiful creation!</span></p>
 <hr>
-<center>
-<img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750">
-</center>
-<p class="body-text-s">
+
+<img data-src="images/app2_v1.gif" style="width:80.0%" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." class="r-stretch quarto-figure-center"><p class="body-text-s">
 Again, we have some UX/UI quirks to fix (most notably, blank plots when all widget options are deselected), which we’ll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!
 </p>
 </section><section id="app2-code" class="slide level2" data-menu-title="App #2 code (so far)"><h2></h2>
@@ -3708,10 +3791,8 @@ Additionally, you should have a <code>/text</code> folder within your app’s di
 <p class="body-text-s">
 Go to <a href="https://www.shinyapps.io/">shinyapps.io</a> and login or create an account (if you don’t already have one) – I created my account and login with GitHub. To use shinyapps.io, you first need to link your account with RStudio on your computer. Follow the instructions on shinyapps.io when you first create your account to install the <a href="https://github.com/rstudio/rsconnect"><code>{rsconnect}</code> package</a> and authorize your account:
 </p>
-<center>
-<img src="images/shinyapps_setup.png" alt="shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`." width="750">
-</center>
-</section><section id="deploy-app" class="slide level2" data-menu-title="~~~ Deploy your app ~~~"><h2></h2>
+
+<img data-src="images/shinyapps_setup.png" style="width:80.0%" alt="shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`." class="r-stretch quarto-figure-center"></section><section id="deploy-app" class="slide level2" data-menu-title="~~~ Deploy your app ~~~"><h2></h2>
 <p><span class="slide-title3">Deploy your app to shinyapps.io</span></p>
 <hr>
 <p class="body-text-s">
@@ -3720,19 +3801,15 @@ Once your account has been authorized, run <code>rsconnect::deployApp("&lt;app_d
 <p class="body-text-s">
 Once deployed, a browser will open to your application. The URL will take the form: <strong>https://username.shinyapps.io/your_app_directory_name</strong>. You should also now see an <code>/rsconnect</code> folder within your app’s directory – this is generated when an application bundle is successfully deployed and contains a DCF file with information on the deployed content (i.e.&nbsp;the name, title, server address, account, URL, and time). <strong>This <code>/rsconnect</code> folder should be added and committed into version control (i.e.&nbsp;push it to GitHub!)</strong> so that future re-deployments target the same endpoint (i.e.&nbsp;your app’s URL).
 </p>
-<center>
-<img src="images/deployed_v1.gif" alt="Our shiny app, now hosted at the URL https://samanthacsik.shinyapps.io/two-file-app which functions the same as when it was hosted locally." width="650">
-</center>
-</section><section id="shinyapps-dashboard" class="slide level2" data-menu-title="shinyapps.io dashboard"><h2></h2>
+
+<img data-src="images/deployed_v1.gif" style="width:80.0%" alt="Our shiny app, now hosted at the URL https://samanthacsik.shinyapps.io/two-file-app which functions the same as when it was hosted locally." class="r-stretch quarto-figure-center"></section><section id="shinyapps-dashboard" class="slide level2" data-menu-title="shinyapps.io dashboard"><h2></h2>
 <p><span class="slide-title2">The shinyapps.io dashboard</span></p>
 <hr>
 <p class="body-text-s">
 Your shinyapps.io dashboard provides tons of information about your application metrics, instance (the virtualized server that your app is hosted on) and worker (a special type of R process that an Application Instance runs to service requests to an application) settings, plan management, and more. The free plan (the plan we’re using here today) allows you to deploy <strong>five</strong> Shiny apps. You are able to archive and/or delete once-deployed apps to make space for new ones.
 </p>
-<center>
-<img src="images/shinapps_dashboard.png" alt="The shinyapps.io dashboard displaying information about our two-file-app, now hosted at https://samanthacsik.shinyapps.io/two-file-app/. You can select different menu items from the navbar at the top of the page, including Overview, Metrics, URLs, Settings, Users, Logs, Restart, Archive, and Trash." width="750">
-</center>
-<p class="body-text-s">
+
+<img data-src="images/shinapps_dashboard.png" style="width:80.0%" alt="The shinyapps.io dashboard displaying information about our two-file-app, now hosted at https://samanthacsik.shinyapps.io/two-file-app/. You can select different menu items from the navbar at the top of the page, including Overview, Metrics, URLs, Settings, Users, Logs, Restart, Archive, and Trash." class="r-stretch quarto-figure-center"><p class="body-text-s">
 Check out the <a href="https://docs.posit.co/shinyapps.io/index.html">shinyapps.io user guide</a> for more information on hosting your apps on shinyapps.io.
 </p>
 </section><section id="other-hosting-options" class="slide level2" data-menu-title="Alternative ways to host apps"><h2></h2>
@@ -3878,6 +3955,10 @@ While this response is expected (and normal), we can generate a user-friendly <a
 Place your validation test(s) at the start of any <code>reactive()</code> or <code>render*()</code> expression that calls <code>input$data</code>. For example, we can add two validation tests inside the reactive that generates our <code>trout_filtered_df</code> – we’ll need two separate validation tests, one for each of our inputs where users can deselect all data.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb56" data-code-line-numbers="6-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb56-2"><a href="#cb56-2"></a>  </span>
 <span id="cb56-3"><a href="#cb56-3"></a>  <span class="co"># filter for channel types ----</span></span>
@@ -3894,6 +3975,7 @@ Place your validation test(s) at the start of any <code>reactive()</code> or <co
 <span id="cb56-14"><a href="#cb56-14"></a>        </span>
 <span id="cb56-15"><a href="#cb56-15"></a>    })</span>
 <span id="cb56-16"><a href="#cb56-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="exercise4-prompt-tips" class="slide level2" data-menu-title="** Exercise 4 Prompt &amp; Tips **"><h2></h2>
 <p><span class="slide-title2"><i class="fa-solid fa-question" title="question mark" aria-label="question"></i> &amp; <i class="fa-solid fa-lightbulb" title="a lightbulb" aria-label="lightbulb"></i> Exercise 4: Add a validation test for your penguin histogram</span></p>
@@ -3922,6 +4004,10 @@ See next slide for a solution!
 <p><span class="slide-title2"><i class="fa-solid fa-check" title="check mark" aria-label="check"></i> Exercise 4: A solution</span></p>
 <hr>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb57" data-code-line-numbers="39-41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb57-2"><a href="#cb57-2"></a>  </span>
 <span id="cb57-3"><a href="#cb57-3"></a>  <span class="co"># filter for channel types ----</span></span>
@@ -3983,6 +4069,7 @@ See next slide for a solution!
 <span id="cb57-59"><a href="#cb57-59"></a>  </span>
 <span id="cb57-60"><a href="#cb57-60"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="loading-animations" class="slide level2" data-menu-title="Add loading animations"><h2></h2>
 <p><span class="slide-title2">Add loading animations to re-rendering outputs</span></p>
 <hr>
@@ -3999,12 +4086,16 @@ We can pipe the <code>withSpinner()</code> function directly into our <code>plot
 <div class="column" style="width:45%;">
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># in ui.R</span></span>
-<span id="cb58-2"><a href="#cb58-2"></a><span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb58-3"><a href="#cb58-3"></a>  <span class="fu">withSpinner</span>(<span class="at">color =</span> <span class="st">"#006792"</span>, <span class="at">type =</span> <span class="dv">1</span>)</span>
-<span id="cb58-4"><a href="#cb58-4"></a></span>
-<span id="cb58-5"><a href="#cb58-5"></a><span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb58-6"><a href="#cb58-6"></a>  <span class="fu">withSpinner</span>(<span class="at">color =</span> <span class="st">"#4BA4A4"</span>, <span class="at">type =</span> <span class="dv">4</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"trout_scatterplot"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb58-2"><a href="#cb58-2"></a>  <span class="fu">withSpinner</span>(<span class="at">color =</span> <span class="st">"#006792"</span>, <span class="at">type =</span> <span class="dv">1</span>)</span>
+<span id="cb58-3"><a href="#cb58-3"></a></span>
+<span id="cb58-4"><a href="#cb58-4"></a><span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"flipperLength_histogram"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb58-5"><a href="#cb58-5"></a>  <span class="fu">withSpinner</span>(<span class="at">color =</span> <span class="st">"#4BA4A4"</span>, <span class="at">type =</span> <span class="dv">4</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div><div class="column" style="width:5%;">
 
@@ -4030,43 +4121,47 @@ We’ll talk a bit more about alt text <a href="https://ucsb-meds.github.io/EDS4
 
 </div><div class="column" style="width:55%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59" data-code-line-numbers="18|35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># in server.R</span></span>
-<span id="cb59-2"><a href="#cb59-2"></a><span class="co"># render trout scatterplot ----</span></span>
-<span id="cb59-3"><a href="#cb59-3"></a>output<span class="sc">$</span>trout_scatterplot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb59-4"><a href="#cb59-4"></a></span>
-<span id="cb59-5"><a href="#cb59-5"></a>  <span class="fu">ggplot</span>(<span class="fu">trout_filtered_df</span>(), <span class="fu">aes</span>(<span class="at">x =</span> length_mm, <span class="at">y =</span> weight_g, <span class="at">color =</span> channel_type, <span class="at">shape =</span> channel_type)) <span class="sc">+</span></span>
-<span id="cb59-6"><a href="#cb59-6"></a>      <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb59-7"><a href="#cb59-7"></a>      <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="st">"#2E2585"</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="st">"#337538"</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="st">"#DCCD7D"</span>,</span>
-<span id="cb59-8"><a href="#cb59-8"></a>                                    <span class="st">"pool"</span> <span class="ot">=</span> <span class="st">"#5DA899"</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="st">"#C16A77"</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="st">"#9F4A96"</span>,</span>
-<span id="cb59-9"><a href="#cb59-9"></a>                                    <span class="st">"side channel"</span> <span class="ot">=</span> <span class="st">"#94CBEC"</span>)) <span class="sc">+</span></span>
-<span id="cb59-10"><a href="#cb59-10"></a>      <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="dv">15</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="dv">19</span>,</span>
-<span id="cb59-11"><a href="#cb59-11"></a>                                    <span class="st">"pool"</span> <span class="ot">=</span> <span class="dv">18</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="dv">8</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="dv">23</span>,</span>
-<span id="cb59-12"><a href="#cb59-12"></a>                                    <span class="st">"side channel"</span> <span class="ot">=</span> <span class="dv">25</span>)) <span class="sc">+</span></span>
-<span id="cb59-13"><a href="#cb59-13"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Trout Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Trout Weight (g)"</span>, <span class="at">color =</span> <span class="st">"Channel Type"</span>, <span class="at">shape =</span> <span class="st">"Channel Type"</span>) <span class="sc">+</span></span>
-<span id="cb59-14"><a href="#cb59-14"></a>      myCustomTheme</span>
-<span id="cb59-15"><a href="#cb59-15"></a></span>
-<span id="cb59-16"><a href="#cb59-16"></a> },</span>
-<span id="cb59-17"><a href="#cb59-17"></a>  </span>
-<span id="cb59-18"><a href="#cb59-18"></a>  <span class="at">alt =</span> <span class="st">"A scatterplot of the relationship between cutthroat trout lengths (mm) (x-axis) and weights (g) (y-axis), with data points colored and shaped based on the water channel type from which they were collected. Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."</span></span>
-<span id="cb59-19"><a href="#cb59-19"></a>  </span>
-<span id="cb59-20"><a href="#cb59-20"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> render trout scatterplot</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>server.R</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59" data-code-line-numbers="17|34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># render trout scatterplot ----</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a>output<span class="sc">$</span>trout_scatterplot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb59-3"><a href="#cb59-3"></a></span>
+<span id="cb59-4"><a href="#cb59-4"></a>  <span class="fu">ggplot</span>(<span class="fu">trout_filtered_df</span>(), <span class="fu">aes</span>(<span class="at">x =</span> length_mm, <span class="at">y =</span> weight_g, <span class="at">color =</span> channel_type, <span class="at">shape =</span> channel_type)) <span class="sc">+</span></span>
+<span id="cb59-5"><a href="#cb59-5"></a>      <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb59-6"><a href="#cb59-6"></a>      <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="st">"#2E2585"</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="st">"#337538"</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="st">"#DCCD7D"</span>,</span>
+<span id="cb59-7"><a href="#cb59-7"></a>                                    <span class="st">"pool"</span> <span class="ot">=</span> <span class="st">"#5DA899"</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="st">"#C16A77"</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="st">"#9F4A96"</span>,</span>
+<span id="cb59-8"><a href="#cb59-8"></a>                                    <span class="st">"side channel"</span> <span class="ot">=</span> <span class="st">"#94CBEC"</span>)) <span class="sc">+</span></span>
+<span id="cb59-9"><a href="#cb59-9"></a>      <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"cascade"</span> <span class="ot">=</span> <span class="dv">15</span>, <span class="st">"riffle"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"isolated pool"</span> <span class="ot">=</span> <span class="dv">19</span>,</span>
+<span id="cb59-10"><a href="#cb59-10"></a>                                    <span class="st">"pool"</span> <span class="ot">=</span> <span class="dv">18</span>, <span class="st">"rapid"</span> <span class="ot">=</span> <span class="dv">8</span>, <span class="st">"step (small falls)"</span> <span class="ot">=</span> <span class="dv">23</span>,</span>
+<span id="cb59-11"><a href="#cb59-11"></a>                                    <span class="st">"side channel"</span> <span class="ot">=</span> <span class="dv">25</span>)) <span class="sc">+</span></span>
+<span id="cb59-12"><a href="#cb59-12"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Trout Length (mm)"</span>, <span class="at">y =</span> <span class="st">"Trout Weight (g)"</span>, <span class="at">color =</span> <span class="st">"Channel Type"</span>, <span class="at">shape =</span> <span class="st">"Channel Type"</span>) <span class="sc">+</span></span>
+<span id="cb59-13"><a href="#cb59-13"></a>      myCustomTheme</span>
+<span id="cb59-14"><a href="#cb59-14"></a></span>
+<span id="cb59-15"><a href="#cb59-15"></a> },</span>
+<span id="cb59-16"><a href="#cb59-16"></a>  </span>
+<span id="cb59-17"><a href="#cb59-17"></a>  <span class="at">alt =</span> <span class="st">"A scatterplot of the relationship between cutthroat trout lengths (mm) (x-axis) and weights (g) (y-axis), with data points colored and shaped based on the water channel type from which they were collected. Trout tend to be longer, but weight less in waterways within the old growth forest. Trout tend to be shorter, but weight more in waterways within the clear cut forest."</span></span>
+<span id="cb59-18"><a href="#cb59-18"></a>  </span>
+<span id="cb59-19"><a href="#cb59-19"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> render trout scatterplot</span></span>
+<span id="cb59-20"><a href="#cb59-20"></a></span>
 <span id="cb59-21"><a href="#cb59-21"></a></span>
-<span id="cb59-22"><a href="#cb59-22"></a></span>
-<span id="cb59-23"><a href="#cb59-23"></a><span class="co"># render flipperLength hisogram ----</span></span>
-<span id="cb59-24"><a href="#cb59-24"></a>output<span class="sc">$</span>flipperLength_histogram <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb59-25"><a href="#cb59-25"></a></span>
-<span id="cb59-26"><a href="#cb59-26"></a>  <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">island_df</span>()), <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb59-27"><a href="#cb59-27"></a>    <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> input<span class="sc">$</span>bin_num) <span class="sc">+</span></span>
-<span id="cb59-28"><a href="#cb59-28"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
-<span id="cb59-29"><a href="#cb59-29"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
-<span id="cb59-30"><a href="#cb59-30"></a>         <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
-<span id="cb59-31"><a href="#cb59-31"></a>    myCustomTheme</span>
-<span id="cb59-32"><a href="#cb59-32"></a>    </span>
-<span id="cb59-33"><a href="#cb59-33"></a> },</span>
-<span id="cb59-34"><a href="#cb59-34"></a>  </span>
-<span id="cb59-35"><a href="#cb59-35"></a>  <span class="at">alt =</span> <span class="st">"A histogram of penguin flipper lengths (mm), with data colored by penguin species. Flipper lengths tend to be smallest on Adélie penguins and largest on Gentoo penguins."</span></span>
-<span id="cb59-36"><a href="#cb59-36"></a>  </span>
-<span id="cb59-37"><a href="#cb59-37"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> render flipperLength histogram</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb59-22"><a href="#cb59-22"></a><span class="co"># render flipperLength hisogram ----</span></span>
+<span id="cb59-23"><a href="#cb59-23"></a>output<span class="sc">$</span>flipperLength_histogram <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb59-24"><a href="#cb59-24"></a></span>
+<span id="cb59-25"><a href="#cb59-25"></a>  <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">island_df</span>()), <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb59-26"><a href="#cb59-26"></a>    <span class="fu">geom_histogram</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">bins =</span> input<span class="sc">$</span>bin_num) <span class="sc">+</span></span>
+<span id="cb59-27"><a href="#cb59-27"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
+<span id="cb59-28"><a href="#cb59-28"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
+<span id="cb59-29"><a href="#cb59-29"></a>         <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span></span>
+<span id="cb59-30"><a href="#cb59-30"></a>    myCustomTheme</span>
+<span id="cb59-31"><a href="#cb59-31"></a>    </span>
+<span id="cb59-32"><a href="#cb59-32"></a> },</span>
+<span id="cb59-33"><a href="#cb59-33"></a>  </span>
+<span id="cb59-34"><a href="#cb59-34"></a>  <span class="at">alt =</span> <span class="st">"A histogram of penguin flipper lengths (mm), with data colored by penguin species. Flipper lengths tend to be smallest on Adélie penguins and largest on Gentoo penguins."</span></span>
+<span id="cb59-35"><a href="#cb59-35"></a>  </span>
+<span id="cb59-36"><a href="#cb59-36"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> render flipperLength histogram</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -4115,7 +4210,7 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d6d58771" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_82531d00" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4392,6 +4487,10 @@ Our goal is to create a <code>leaflet</code> map with makers placed on each of t
 <strong>NOTE:</strong> In this example exercise, I’ve removed all rows with missing values (i.e.&nbsp;<code>NaN</code>s in the <code>Depth</code> column &amp; <code>NA</code>s in the <code>BedTemperature</code> column) before calculating averages. <em>This is NOT good practice – exploring and thinking critically about missing data is an important part of data analysis, and in a real-life scenario, you should consider the most appropriate method for handling them.</em>
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>scratch/data_processing_app3_shinydashboard.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
 <span id="cb64-2"><a href="#cb64-2"></a></span>
 <span id="cb64-3"><a href="#cb64-3"></a><span class="co"># load packages ----</span></span>
@@ -4422,6 +4521,7 @@ Our goal is to create a <code>leaflet</code> map with makers placed on each of t
 <span id="cb64-28"><a href="#cb64-28"></a><span class="co"># save processed data to your app's data directory ----</span></span>
 <span id="cb64-29"><a href="#cb64-29"></a><span class="fu">write_csv</span>(unique_lakes, <span class="st">"shinydashboard/data/lake_data_processed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="file-types" class="slide level2" data-menu-title="File Types"><h2></h2>
 <p><span class="slide-title">A note on file types</span></p>
 <hr>
@@ -4449,13 +4549,17 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b6625ef23a92ec17eb04" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b6625ef23a92ec17eb04">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-47de8c171d0cd8bce9e7" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-47de8c171d0cd8bce9e7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 <div id="tabset-7-2">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>scratch/practice_script_app3_shinydashboard.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
 <span id="cb65-2"><a href="#cb65-2"></a></span>
 <span id="cb65-3"><a href="#cb65-3"></a><span class="co"># omitted for brevity (see slide 112 for code)</span></span>
@@ -4484,6 +4588,7 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 </div>
 </div>
 </div>
+</div>
 </section><section id="filter-leaflet" class="slide level2" data-menu-title="Filter Leaflet"><h2></h2>
 <p><span class="slide-title2">Practice filtering <code>leaflet</code> observations</span></p>
 <hr>
@@ -4499,13 +4604,17 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-41a1b903f9bb3c478aeb" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-41a1b903f9bb3c478aeb">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-864c35f3bae3c5c04fd5" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-864c35f3bae3c5c04fd5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 <div id="tabset-8-2">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>scratch/practice_script_app3_shinydashboard.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb66" data-code-line-numbers="5-10|26-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="co">#....................SETUP &amp; DATA PROCESSING.....................</span></span>
 <span id="cb66-2"><a href="#cb66-2"></a></span>
 <span id="cb66-3"><a href="#cb66-3"></a><span class="co"># omitted for brevity (see slide 112 for code)</span></span>
@@ -4542,6 +4651,7 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 </div>
 </div>
 </div>
+</div>
 </section><section id="sketch-ui" class="slide level2" data-menu-title="Sketch the UI"><h2></h2>
 <p><span class="slide-title2">Sketch out our dashboard UI</span></p>
 <hr>
@@ -4570,6 +4680,10 @@ First, add a title to <code>dashboardHeader()</code> and make more space using <
 Next, we’ll build our <code>dashboardSidebar()</code>. Add a <code>sidebarMenu()</code> that contains two <code>menuItem</code>s. Be sure to provide each <code>menuItem()</code> with <code>text</code> as you’d like it to appear in your app (for me, that’s <strong>Welcome</strong> and <strong>Dashboard</strong>), and a <code>tabName</code> which will be used to place <code>dashboardBody()</code> content in the appropriate <code>menuItem()</code>. Optionally, you can provide an icon. By default, <code>icon()</code> uses icons from <a href="https://fontawesome.com/">FontAwesome</a>.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb67" data-code-line-numbers="4-6|13-19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb67-2"><a href="#cb67-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb67-3"><a href="#cb67-3"></a>  </span>
@@ -4598,6 +4712,7 @@ Next, we’ll build our <code>dashboardSidebar()</code>. Add a <code>sidebarMenu
 <span id="cb67-26"><a href="#cb67-26"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
 <span id="cb67-27"><a href="#cb67-27"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="tabItems" class="slide level2" data-menu-title="tabItems"><h2></h2>
 <p><span class="slide-title2">Add <code>tabItems</code> to your <code>dashboardBody</code></span></p>
 <hr>
@@ -4605,6 +4720,10 @@ Next, we’ll build our <code>dashboardSidebar()</code>. Add a <code>sidebarMenu
 Next, we’ll create <code>tabItems</code> in our <code>dashboardBody</code> – we’ll make a <code>tabItem</code> (singular) for each <code>menuItem</code> in our <code>dashboardSidebar</code>. In order to match a <code>menuItem</code> and a <code>tabItem</code>, ensure that they have matching a <code>tabName</code> (e.g.&nbsp;any content added to the <strong>dashboard</strong> <code>tabItem</code> will appear under the <strong>dashboard</strong> <code>menuItem</code>).
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb68" data-code-line-numbers="26-43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb68-2"><a href="#cb68-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb68-3"><a href="#cb68-3"></a>  </span>
@@ -4654,6 +4773,7 @@ Next, we’ll create <code>tabItems</code> in our <code>dashboardBody</code> –
 <span id="cb68-47"><a href="#cb68-47"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
 <span id="cb68-48"><a href="#cb68-48"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="boxes" class="slide level2" data-menu-title="boxes"><h2></h2>
 <p><span class="slide-title2">Add <code>box</code>es to contain UI content (part 1)</span></p>
 <hr>
@@ -4661,6 +4781,10 @@ Next, we’ll create <code>tabItems</code> in our <code>dashboardBody</code> –
 <a href="https://rstudio.github.io/shinydashboard/structure.html#boxes">Boxes</a> are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g.&nbsp;text, inputs, outputs). Start by adding two side-by-side boxes to our <strong>dashboard</strong> tab inside a <code>fluidRow()</code>. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our <code>sliderInput</code>s and our <code>leafletOutput</code>.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb69" data-code-line-numbers="39-56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb69-2"><a href="#cb69-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb69-3"><a href="#cb69-3"></a>  </span>
@@ -4727,6 +4851,7 @@ Next, we’ll create <code>tabItems</code> in our <code>dashboardBody</code> –
 <span id="cb69-64"><a href="#cb69-64"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
 <span id="cb69-65"><a href="#cb69-65"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="columns" class="slide level2" data-menu-title="Columns"><h2></h2>
 <p><span class="slide-title2">Add <code>box</code>es to contain UI content (part 2)</span></p>
 <hr>
@@ -4734,6 +4859,10 @@ Next, we’ll create <code>tabItems</code> in our <code>dashboardBody</code> –
 Lastly, add boxes to our <strong>welcome</strong> tab We’ll use <code>column</code>s to place one box on the left-hand side of our page, and two stacked boxes on the right-hand side. Each <code>column</code> will take up half the page (<strong>Note:</strong> <em>For column-based layouts, use <code>NULL</code> for the box width, as the width is set by the column that contains the box</em>). We can create two <code>fluidRow</code>s within the right-hand column to stack two boxes vertically.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb70" data-code-line-numbers="32-71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb70-2"><a href="#cb70-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb70-3"><a href="#cb70-3"></a>  </span>
@@ -4839,6 +4968,7 @@ Lastly, add boxes to our <strong>welcome</strong> tab We’ll use <code>column</
 <span id="cb70-103"><a href="#cb70-103"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
 <span id="cb70-104"><a href="#cb70-104"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="import-data" class="slide level2" data-menu-title="Read in data"><h2></h2>
 <p><span class="slide-title2">Read data into <code>global.R</code> &amp; add necessary packages</span></p>
 <hr>
@@ -4846,6 +4976,10 @@ Lastly, add boxes to our <strong>welcome</strong> tab We’ll use <code>column</
 Remember to load your <em>pre-processed</em> data, which should live in the <code>/data</code> folder within your app’s directory.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>global.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb71" data-code-line-numbers="4-9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># LOAD LIBRARIES ----</span></span>
 <span id="cb71-2"><a href="#cb71-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb71-3"><a href="#cb71-3"></a><span class="fu">library</span>(shinydashboard)</span>
@@ -4856,6 +4990,7 @@ Remember to load your <em>pre-processed</em> data, which should live in the <cod
 <span id="cb71-8"><a href="#cb71-8"></a><span class="co"># READ IN DATA ----</span></span>
 <span id="cb71-9"><a href="#cb71-9"></a>lake_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/lake_data_processed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="add-sliderInput-leafletMap" class="slide level2" data-menu-title="Add Widget &amp; Leaflet Map"><h2></h2>
 <p><span class="slide-title2">Add a <code>sliderInput</code> &amp; <code>leafletOutput</code> to the UI</span></p>
 <hr>
@@ -4863,6 +4998,10 @@ Remember to load your <em>pre-processed</em> data, which should live in the <cod
 Start by adding just one <code>sliderInput</code> (for selecting a range of lake <code>Elevation</code>s) to the left-hand box in the <strong>dashboard</strong> tab. Then, add a <code>leafletOutput</code> to create a placeholder space for our map, along with a Spinner animation (from the <a href="https://github.com/daattali/shinycssloaders">shinycssloaders</a> package). While we’re here, we can also add <code>title</code>s to each box.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb72" data-code-line-numbers="84-89|96-99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb72-2"><a href="#cb72-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb72-3"><a href="#cb72-3"></a>  </span>
@@ -4976,6 +5115,7 @@ Start by adding just one <code>sliderInput</code> (for selecting a range of lake
 <span id="cb72-111"><a href="#cb72-111"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
 <span id="cb72-112"><a href="#cb72-112"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="build-map-server" class="slide level2" data-menu-title="Build map in server.R"><h2></h2>
 <p><span class="slide-title2">Assemble inputs &amp; outputs in <code>server.R</code></span></p>
 <hr>
@@ -4983,6 +5123,10 @@ Start by adding just one <code>sliderInput</code> (for selecting a range of lake
 Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs. And don’t forget to add <code>()</code> following each reactive data frame called in your leaflet map!
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb73" data-code-line-numbers="3-36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb73-2"><a href="#cb73-2"></a>  </span>
 <span id="cb73-3"><a href="#cb73-3"></a>  <span class="co"># filter lake data ----</span></span>
@@ -5020,6 +5164,7 @@ Remember to reference your practice data viz script and to follow our three step
 <span id="cb73-35"><a href="#cb73-35"></a>  })</span>
 <span id="cb73-36"><a href="#cb73-36"></a>  </span>
 <span id="cb73-37"><a href="#cb73-37"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="working-elev-widget" class="slide level2" data-menu-title="Test Elevation Widget"><h2></h2>
 <p><span class="slide-title2">Run your app &amp; test out your first widget</span></p>
@@ -5237,7 +5382,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5a0e8534" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_8678cd82" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -5266,19 +5411,34 @@ See next slide for a solution!
 <div class="tab-content">
 <div id="tabset-10-1">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>text/intro.md</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb76-1"><a href="#cb76-1"></a>The <span class="co">[</span><span class="ot">Fish Creek Watershed Observatory (FCWO)</span><span class="co">](http://www.fishcreekwatershed.org/)</span> is a focal watershed within the <span class="co">[</span><span class="ot">National Petroleum Reserve in Alaska (NPR-A)</span><span class="co">](https://www.blm.gov/programs/energy-and-minerals/oil-and-gas/about/alaska/NPR-A)</span>. Targeted lake and stream monitoring within the watershed provide site-specific data prior to and after the establishment of new petroleum development, as well as insight into dynamics related to climate change and variability. Eleven lakes of interest (Harry Potter, Hipbone, Iceshove, L9817, L9819, L9820, Little Alaska, Lower Snowman, M9925, Middle Snowman, and Serenity) are featured in this dashboard.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div id="tabset-10-2">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>text/citation.md</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb77-1"><a href="#cb77-1"></a>Data presented in this dashboard were collected as part of the <span class="co">[</span><span class="ot">Fish Creek Watershed Observatory</span><span class="co">](http://www.fishcreekwatershed.org/)</span> are archived and publicly accessible on the NSF <span class="co">[</span><span class="ot">Arctic Data Center</span><span class="co">](https://arcticdata.io/)</span>. **Citation:** </span>
 <span id="cb77-2"><a href="#cb77-2"></a></span>
 <span id="cb77-3"><a href="#cb77-3"></a>*Christopher Arp, Matthew Whitman, Katie Drew, and Allen Bondurant. 2022. Water depth, surface elevation, and water temperature of lakes in the Fish Creek Watershed in northern Alaska, USA, 2011-2022. Arctic Data Center [doi:10.18739/A2JH3D41P](https://arcticdata.io/catalog/view/doi%3A10.18739%2FA2JH3D41P).*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div id="tabset-10-3">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>text/disclaimer.md</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb78-1"><a href="#cb78-1"></a>This app is build for demonstration/teaching purposes only and is not paid for or endorsed by the Fish Creek Watershed Observatory or affiliates in any way. The data as presented here are not intended for publication nor scientific interpretation. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -5455,6 +5615,10 @@ As a final touch, let’s add an image to the Welcome page, inside the left-hand
 Next, use the <code>img</code> tag to add your image. Supply a file path, relative to your <code>/www</code> directory, using the <code>src</code> argument, and alt text using the <code>alt</code> argument.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb81" data-code-line-numbers="40-41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb81-2"><a href="#cb81-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb81-3"><a href="#cb81-3"></a>  </span>
@@ -5581,6 +5745,7 @@ Next, use the <code>img</code> tag to add your image. Supply a file path, relati
 <span id="cb81-124"><a href="#cb81-124"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
 <span id="cb81-125"><a href="#cb81-125"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="large-image" class="slide level2" data-menu-title="Image is too large"><h2></h2>
 <p><span class="slide-title2">Unfortunately, our image doesn’t look so great as-is…</span></p>
 <hr>
@@ -5597,6 +5762,10 @@ We can use in-line CSS to style our image element, as shown below (see <code>sty
 I’ve also added a caption below our image that links to the image source, and used in-line CSS to center my text within the box.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb82" data-code-line-numbers="42-44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="co">#........................dashboardHeader.........................</span></span>
 <span id="cb82-2"><a href="#cb82-2"></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(</span>
 <span id="cb82-3"><a href="#cb82-3"></a>  </span>
@@ -5725,6 +5894,7 @@ I’ve also added a caption below our image that links to the image source, and 
 <span id="cb82-126"><a href="#cb82-126"></a></span>
 <span id="cb82-127"><a href="#cb82-127"></a><span class="co">#..................combine all in dashboardPage..................</span></span>
 <span id="cb82-128"><a href="#cb82-128"></a><span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="final-dashboard" class="slide level2" data-menu-title="Final Dashboard"><h2></h2>
 <p><span class="slide-title2">Check out your finished dashboard!</span></p>
@@ -6049,6 +6219,10 @@ By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change
 <div class="column" style="width:45%;">
 <p><br></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/one-file-app/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb86-2"><a href="#cb86-2"></a>  </span>
 <span id="cb86-3"><a href="#cb86-3"></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(<span class="at">bootswatch =</span> <span class="st">"solar"</span>)</span>
@@ -6056,6 +6230,7 @@ By default, Shiny uses the Bootstrap v3 theme (which is not so exciting). Change
 <span id="cb86-5"><a href="#cb86-5"></a>  <span class="co"># ~ additional UI code omitted for brevity ~</span></span>
 <span id="cb86-6"><a href="#cb86-6"></a>  </span>
 <span id="cb86-7"><a href="#cb86-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p class="body-text-s">
 Check out the complete source code for App #1 <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app">here</a> (NOTE: applied themes are commented out).
@@ -6078,6 +6253,10 @@ Alternatively, you can fully customize your own theme. Explore the <a href="http
 <div class="column" style="width:45%;">
 <p><br></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/one-file-app/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb87-2"><a href="#cb87-2"></a>  </span>
 <span id="cb87-3"><a href="#cb87-3"></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(</span>
@@ -6089,6 +6268,7 @@ Alternatively, you can fully customize your own theme. Explore the <a href="http
 <span id="cb87-9"><a href="#cb87-9"></a>  <span class="co"># ~ additional UI code omitted for brevity ~</span></span>
 <span id="cb87-10"><a href="#cb87-10"></a>  </span>
 <span id="cb87-11"><a href="#cb87-11"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p class="body-text-s">
 Check out the complete source code for App #1 <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app">here</a> (NOTE: applied themes are commented out).
@@ -6114,6 +6294,10 @@ You probably noticed that our scatterplot looks a little silly against the darke
 <div class="column" style="width:45%;">
 <p><br></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/one-file-app/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb88" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a>thematic<span class="sc">::</span><span class="fu">thematic_shiny</span>()</span>
 <span id="cb88-2"><a href="#cb88-2"></a></span>
 <span id="cb88-3"><a href="#cb88-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -6127,6 +6311,7 @@ You probably noticed that our scatterplot looks a little silly against the darke
 <span id="cb88-11"><a href="#cb88-11"></a>  <span class="co"># ~ additional UI code omitted for brevity ~</span></span>
 <span id="cb88-12"><a href="#cb88-12"></a>  </span>
 <span id="cb88-13"><a href="#cb88-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p class="body-text-s">
 Check out the complete source code for App #1 <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/single-file-app">here</a> (NOTE: applied themes are commented out).
@@ -6207,42 +6392,46 @@ There are also a <a href="https://cran.r-project.org/web/packages/fresh/vignette
 <p><span class="slide-title3">Creating a <code>fresh</code> theme for <code>two-file-app</code></span></p>
 <hr>
 <p class="body-text-s">
-In this example, we update the colors of our app’s body, navbar, and tabPanels using the appropriate <code>fresh</code> <a href="https://dreamrs.github.io/fresh/articles/vars-shiny.html">variables for shiny <em>apps</em></a>. We specify a file path, <code>two-file-app/www</code> (you’ll need to create the <code>/www</code> directory, since we don’t have one yet), where our stylesheet (e.g.&nbsp;<code>shiny_fresh_themes.css</code>, as shown here) file will be saved to.
+In this example, we update the colors of our app’s body, navbar, and tabPanels using the appropriate <code>fresh</code> <a href="https://dreamrs.github.io/fresh/articles/vars-shiny.html">variables for shiny <em>apps</em></a>. We specify a file path, <code>two-file-app/www</code> (you’ll need to create the <code>/www</code> directory, since we don’t have one yet), where our stylesheet (e.g.&nbsp;<code>shiny-fresh-theme.css</code>, as shown here) file will be saved to.
 </p>
 <p class="body-text-s">
 Of course, these color combos are <em>not</em> recommended, but chosen purely for demonstration purposes <i class="fa-solid fa-face-smile" title="a smiling face" aria-label="face-smile"></i>.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a><span class="co"># in a separate script: ~/R/create_fresh_theme_shiny.R</span></span>
-<span id="cb89-2"><a href="#cb89-2"></a><span class="co"># load library ----</span></span>
-<span id="cb89-3"><a href="#cb89-3"></a><span class="fu">library</span>(fresh)</span>
-<span id="cb89-4"><a href="#cb89-4"></a></span>
-<span id="cb89-5"><a href="#cb89-5"></a><span class="co"># create theme -----</span></span>
-<span id="cb89-6"><a href="#cb89-6"></a><span class="fu">create_theme</span>(</span>
-<span id="cb89-7"><a href="#cb89-7"></a>  </span>
-<span id="cb89-8"><a href="#cb89-8"></a>  <span class="co"># you can supply a bootstrap theme to begin with</span></span>
-<span id="cb89-9"><a href="#cb89-9"></a>  <span class="at">theme =</span> <span class="st">"default"</span>,</span>
-<span id="cb89-10"><a href="#cb89-10"></a></span>
-<span id="cb89-11"><a href="#cb89-11"></a>  <span class="co"># global styling</span></span>
-<span id="cb89-12"><a href="#cb89-12"></a>  <span class="fu">bs_vars_global</span>(</span>
-<span id="cb89-13"><a href="#cb89-13"></a>    <span class="at">body_bg =</span> <span class="st">"#D2D0CA"</span>, <span class="co"># beige</span></span>
-<span id="cb89-14"><a href="#cb89-14"></a>    <span class="at">text_color =</span> <span class="st">"#F23ACB"</span>, <span class="co"># hot pink</span></span>
-<span id="cb89-15"><a href="#cb89-15"></a>    <span class="at">link_color =</span> <span class="st">"#0E4BE3"</span> <span class="co"># royal blue</span></span>
-<span id="cb89-16"><a href="#cb89-16"></a>  ),</span>
-<span id="cb89-17"><a href="#cb89-17"></a></span>
-<span id="cb89-18"><a href="#cb89-18"></a>  <span class="fu">bs_vars_navbar</span>(</span>
-<span id="cb89-19"><a href="#cb89-19"></a>    <span class="at">default_bg =</span> <span class="st">"#13CC13"</span>, <span class="co"># lime green</span></span>
-<span id="cb89-20"><a href="#cb89-20"></a>    <span class="at">default_color =</span> <span class="st">"#66656C"</span> <span class="co"># gray</span></span>
-<span id="cb89-21"><a href="#cb89-21"></a>  ),</span>
-<span id="cb89-22"><a href="#cb89-22"></a></span>
-<span id="cb89-23"><a href="#cb89-23"></a>  <span class="co"># tabPanels</span></span>
-<span id="cb89-24"><a href="#cb89-24"></a>  <span class="fu">bs_vars_tabs</span>(</span>
-<span id="cb89-25"><a href="#cb89-25"></a>    <span class="at">border_color =</span> <span class="st">"#F90909"</span> <span class="co"># red</span></span>
-<span id="cb89-26"><a href="#cb89-26"></a>  ),</span>
-<span id="cb89-27"><a href="#cb89-27"></a></span>
-<span id="cb89-28"><a href="#cb89-28"></a>  <span class="co"># generate css file</span></span>
-<span id="cb89-29"><a href="#cb89-29"></a>  <span class="at">output_file =</span> <span class="st">"two-file-app/www/shiny_fresh_theme.css"</span></span>
-<span id="cb89-30"><a href="#cb89-30"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/R/create-fresh-theme-shiny.R</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a><span class="co"># load library ----</span></span>
+<span id="cb89-2"><a href="#cb89-2"></a><span class="fu">library</span>(fresh)</span>
+<span id="cb89-3"><a href="#cb89-3"></a></span>
+<span id="cb89-4"><a href="#cb89-4"></a><span class="co"># create theme -----</span></span>
+<span id="cb89-5"><a href="#cb89-5"></a><span class="fu">create_theme</span>(</span>
+<span id="cb89-6"><a href="#cb89-6"></a>  </span>
+<span id="cb89-7"><a href="#cb89-7"></a>  <span class="co"># you can supply a bootstrap theme to begin with</span></span>
+<span id="cb89-8"><a href="#cb89-8"></a>  <span class="at">theme =</span> <span class="st">"default"</span>,</span>
+<span id="cb89-9"><a href="#cb89-9"></a></span>
+<span id="cb89-10"><a href="#cb89-10"></a>  <span class="co"># global styling</span></span>
+<span id="cb89-11"><a href="#cb89-11"></a>  <span class="fu">bs_vars_global</span>(</span>
+<span id="cb89-12"><a href="#cb89-12"></a>    <span class="at">body_bg =</span> <span class="st">"#D2D0CA"</span>, <span class="co"># beige</span></span>
+<span id="cb89-13"><a href="#cb89-13"></a>    <span class="at">text_color =</span> <span class="st">"#F23ACB"</span>, <span class="co"># hot pink</span></span>
+<span id="cb89-14"><a href="#cb89-14"></a>    <span class="at">link_color =</span> <span class="st">"#0E4BE3"</span> <span class="co"># royal blue</span></span>
+<span id="cb89-15"><a href="#cb89-15"></a>  ),</span>
+<span id="cb89-16"><a href="#cb89-16"></a></span>
+<span id="cb89-17"><a href="#cb89-17"></a>  <span class="fu">bs_vars_navbar</span>(</span>
+<span id="cb89-18"><a href="#cb89-18"></a>    <span class="at">default_bg =</span> <span class="st">"#13CC13"</span>, <span class="co"># lime green</span></span>
+<span id="cb89-19"><a href="#cb89-19"></a>    <span class="at">default_color =</span> <span class="st">"#66656C"</span> <span class="co"># gray</span></span>
+<span id="cb89-20"><a href="#cb89-20"></a>  ),</span>
+<span id="cb89-21"><a href="#cb89-21"></a></span>
+<span id="cb89-22"><a href="#cb89-22"></a>  <span class="co"># tabPanels</span></span>
+<span id="cb89-23"><a href="#cb89-23"></a>  <span class="fu">bs_vars_tabs</span>(</span>
+<span id="cb89-24"><a href="#cb89-24"></a>    <span class="at">border_color =</span> <span class="st">"#F90909"</span> <span class="co"># red</span></span>
+<span id="cb89-25"><a href="#cb89-25"></a>  ),</span>
+<span id="cb89-26"><a href="#cb89-26"></a></span>
+<span id="cb89-27"><a href="#cb89-27"></a>  <span class="co"># generate css file</span></span>
+<span id="cb89-28"><a href="#cb89-28"></a>  <span class="at">output_file =</span> <span class="st">"two-file-app/www/shiny-fresh-theme.css"</span></span>
+<span id="cb89-29"><a href="#cb89-29"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="apply-fresh-apps-theme" class="slide level2" data-menu-title="Apply {fresh} app theme"><h2></h2>
 <p><span class="slide-title2">Apply a <code>fresh</code> theme to our app</span></p>
@@ -6255,6 +6444,10 @@ To apply our theme, provide the <code>theme</code> argument of your <code>fluidP
 <div class="column" style="width:45%;">
 <p><br></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/two-file-app/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a><span class="co"># navbar page ----</span></span>
 <span id="cb90-2"><a href="#cb90-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">navbarPage</span>(</span>
 <span id="cb90-3"><a href="#cb90-3"></a></span>
@@ -6263,6 +6456,7 @@ To apply our theme, provide the <code>theme</code> argument of your <code>fluidP
 <span id="cb90-6"><a href="#cb90-6"></a>  <span class="co"># ~ additional UI code omitted for brevity ~</span></span>
 <span id="cb90-7"><a href="#cb90-7"></a>  </span>
 <span id="cb90-8"><a href="#cb90-8"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> navbarPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p class="body-text-s">
 Check out the complete source code for App #2 <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/two-file-app">here</a> (NOTE: applied themes are commented out).
@@ -6279,38 +6473,42 @@ Check out the complete source code for App #2 <a href="https://github.com/samant
 <p><span class="slide-title3">Creating a <code>fresh</code> theme for our <code>shinydashboard</code></span></p>
 <hr>
 <p class="body-text-s">
-In this example, we update the colors of our app’s header, body, and sidebar using the appropriate <code>fresh</code> <a href="https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html">variables for shiny <em>dashboards</em></a>. We specify a file path, <code>shinydashboard/www</code> where our stylesheet (e.g.&nbsp;<code>shinydashboard_fresh_themes.css</code>, as shown here) file will be saved to. Again, these color combos are <em>not</em> recommended, but chosen purely for demonstration purposes.
+In this example, we update the colors of our app’s header, body, and sidebar using the appropriate <code>fresh</code> <a href="https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html">variables for shiny <em>dashboards</em></a>. We specify a file path, <code>shinydashboard/www</code> where our stylesheet (e.g.&nbsp;<code>shinydashboard-fresh-theme.css</code>, as shown here) file will be saved to. Again, these color combos are <em>not</em> recommended, but chosen purely for demonstration purposes.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a><span class="co"># in a separate script: ~/R/create_fresh_theme_shinydashboard.R</span></span>
-<span id="cb91-2"><a href="#cb91-2"></a><span class="co"># load libraries ----</span></span>
-<span id="cb91-3"><a href="#cb91-3"></a><span class="fu">library</span>(fresh)</span>
-<span id="cb91-4"><a href="#cb91-4"></a></span>
-<span id="cb91-5"><a href="#cb91-5"></a><span class="co"># create theme ----</span></span>
-<span id="cb91-6"><a href="#cb91-6"></a><span class="fu">create_theme</span>(</span>
-<span id="cb91-7"><a href="#cb91-7"></a>  </span>
-<span id="cb91-8"><a href="#cb91-8"></a>  <span class="co"># change "light-blue"/"primary" color</span></span>
-<span id="cb91-9"><a href="#cb91-9"></a>  <span class="fu">adminlte_color</span>(</span>
-<span id="cb91-10"><a href="#cb91-10"></a>    <span class="at">light_blue =</span> <span class="st">"#150B5A"</span> <span class="co"># dark blue</span></span>
-<span id="cb91-11"><a href="#cb91-11"></a>  ),</span>
-<span id="cb91-12"><a href="#cb91-12"></a>  </span>
-<span id="cb91-13"><a href="#cb91-13"></a>  <span class="co"># dashboardBody styling (includes boxes)</span></span>
-<span id="cb91-14"><a href="#cb91-14"></a>  <span class="fu">adminlte_global</span>(</span>
-<span id="cb91-15"><a href="#cb91-15"></a>    <span class="at">content_bg =</span> <span class="st">"#E7B5B5"</span> <span class="co"># blush pink</span></span>
-<span id="cb91-16"><a href="#cb91-16"></a>  ),</span>
-<span id="cb91-17"><a href="#cb91-17"></a>  </span>
-<span id="cb91-18"><a href="#cb91-18"></a>  <span class="co"># dashboardSidebar styling</span></span>
-<span id="cb91-19"><a href="#cb91-19"></a>  <span class="fu">adminlte_sidebar</span>(</span>
-<span id="cb91-20"><a href="#cb91-20"></a>    <span class="at">width =</span> <span class="st">"400px"</span>, </span>
-<span id="cb91-21"><a href="#cb91-21"></a>    <span class="at">dark_bg =</span> <span class="st">"#57F8F3"</span>, <span class="co"># light blue</span></span>
-<span id="cb91-22"><a href="#cb91-22"></a>    <span class="at">dark_hover_bg =</span> <span class="st">"#BF21E6"</span>, <span class="co"># magenta</span></span>
-<span id="cb91-23"><a href="#cb91-23"></a>    <span class="at">dark_color =</span> <span class="st">"#F90000"</span> <span class="co"># red</span></span>
-<span id="cb91-24"><a href="#cb91-24"></a>  ),</span>
-<span id="cb91-25"><a href="#cb91-25"></a>  </span>
-<span id="cb91-26"><a href="#cb91-26"></a>  <span class="co"># generate css file</span></span>
-<span id="cb91-27"><a href="#cb91-27"></a>  <span class="at">output_file =</span> <span class="st">"shinydashboard/www/shinydashboard_fresh_theme.css"</span></span>
-<span id="cb91-28"><a href="#cb91-28"></a>  </span>
-<span id="cb91-29"><a href="#cb91-29"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/R/create-fresh-theme-shinydashboard.R</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a><span class="co"># load libraries ----</span></span>
+<span id="cb91-2"><a href="#cb91-2"></a><span class="fu">library</span>(fresh)</span>
+<span id="cb91-3"><a href="#cb91-3"></a></span>
+<span id="cb91-4"><a href="#cb91-4"></a><span class="co"># create theme ----</span></span>
+<span id="cb91-5"><a href="#cb91-5"></a><span class="fu">create_theme</span>(</span>
+<span id="cb91-6"><a href="#cb91-6"></a>  </span>
+<span id="cb91-7"><a href="#cb91-7"></a>  <span class="co"># change "light-blue"/"primary" color</span></span>
+<span id="cb91-8"><a href="#cb91-8"></a>  <span class="fu">adminlte_color</span>(</span>
+<span id="cb91-9"><a href="#cb91-9"></a>    <span class="at">light_blue =</span> <span class="st">"#150B5A"</span> <span class="co"># dark blue</span></span>
+<span id="cb91-10"><a href="#cb91-10"></a>  ),</span>
+<span id="cb91-11"><a href="#cb91-11"></a>  </span>
+<span id="cb91-12"><a href="#cb91-12"></a>  <span class="co"># dashboardBody styling (includes boxes)</span></span>
+<span id="cb91-13"><a href="#cb91-13"></a>  <span class="fu">adminlte_global</span>(</span>
+<span id="cb91-14"><a href="#cb91-14"></a>    <span class="at">content_bg =</span> <span class="st">"#E7B5B5"</span> <span class="co"># blush pink</span></span>
+<span id="cb91-15"><a href="#cb91-15"></a>  ),</span>
+<span id="cb91-16"><a href="#cb91-16"></a>  </span>
+<span id="cb91-17"><a href="#cb91-17"></a>  <span class="co"># dashboardSidebar styling</span></span>
+<span id="cb91-18"><a href="#cb91-18"></a>  <span class="fu">adminlte_sidebar</span>(</span>
+<span id="cb91-19"><a href="#cb91-19"></a>    <span class="at">width =</span> <span class="st">"400px"</span>, </span>
+<span id="cb91-20"><a href="#cb91-20"></a>    <span class="at">dark_bg =</span> <span class="st">"#57F8F3"</span>, <span class="co"># light blue</span></span>
+<span id="cb91-21"><a href="#cb91-21"></a>    <span class="at">dark_hover_bg =</span> <span class="st">"#BF21E6"</span>, <span class="co"># magenta</span></span>
+<span id="cb91-22"><a href="#cb91-22"></a>    <span class="at">dark_color =</span> <span class="st">"#F90000"</span> <span class="co"># red</span></span>
+<span id="cb91-23"><a href="#cb91-23"></a>  ),</span>
+<span id="cb91-24"><a href="#cb91-24"></a>  </span>
+<span id="cb91-25"><a href="#cb91-25"></a>  <span class="co"># generate css file</span></span>
+<span id="cb91-26"><a href="#cb91-26"></a>  <span class="at">output_file =</span> <span class="st">"shinydashboard/www/shinydashboard-fresh-theme.css"</span></span>
+<span id="cb91-27"><a href="#cb91-27"></a>  </span>
+<span id="cb91-28"><a href="#cb91-28"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="apply-fresh-dashboard-theme" class="slide level2" data-menu-title="Apply {fresh} dashboard theme"><h2></h2>
 <p><span class="slide-title2">Apply a <code>fresh</code> theme to our dashboard</span></p>
@@ -6323,6 +6521,10 @@ To apply our theme, use the <code><a href="https://rdrr.io/pkg/fresh/man/use_the
 <div class="column" style="width:45%;">
 <p><br></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/shinydashboard/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a>body <span class="ot">&lt;-</span> <span class="fu">dashboardBody</span>(</span>
 <span id="cb92-2"><a href="#cb92-2"></a>  </span>
 <span id="cb92-3"><a href="#cb92-3"></a>  <span class="co"># set theme</span></span>
@@ -6331,6 +6533,7 @@ To apply our theme, use the <code><a href="https://rdrr.io/pkg/fresh/man/use_the
 <span id="cb92-6"><a href="#cb92-6"></a>  <span class="co"># ~ additional dashboardBody code omitted for brevity ~</span></span>
 <span id="cb92-7"><a href="#cb92-7"></a>  </span>
 <span id="cb92-8"><a href="#cb92-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p class="body-text-s">
 Check out the complete source code for the shinydashboard <a href="https://github.com/samanthacsik/EDS430-shiny-app/tree/main/shinydashboard">here</a> (NOTE: applied themes are commented out).
@@ -6358,7 +6561,6 @@ Check out the complete source code for the shinydashboard <a href="https://githu
 <p class="body-text">
 You can write your own stylesheets using <a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a> and <a href="https://sass-lang.com/">Sass</a> to fully customize your apps, from background colors, to font styles, to size and shape of elements, and more. Unlike <code>bslib</code> and <code>fresh</code>, these are <em>languages</em>, meaning they can be a bit more challenging to get started with (but the payoff it big!).
 </p>
-<p><br></p>
 <div class="columns">
 <div class="column" style="width:45%;">
 <center>
@@ -6463,7 +6665,7 @@ CSS is a rule-based language, meaning that it allows you to define groups of sty
 </p>
 </div>
 </div>
-<p class="body-text">
+<p class="body-text-s">
 There are a variety of CSS selectors – check out some of the basics that will take you far in styling your apps, starting <a href="https://ucsb-meds.github.io/customizing-quarto-websites/#/selector-types">on this slide</a> of the <a href="https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide">Customizing Quarto Websites</a> workshop.
 </p>
 </section><section id="css-3ways" class="slide level2" data-menu-title="3 ways to add CSS styling"><h2></h2>
@@ -6480,7 +6682,7 @@ You can <strong>(1)</strong> add styling directly to <code>tags</code>, <strong>
 </ul>
 <div class="tab-content">
 <div id="tabset-13-1">
-<p class="body-text-s">
+<p class="body-text-xs">
 Add styling directly to tags. <strong>It’s best not to use a lot of these!</strong> It’s easy to lose track of your “in-line” styling in large projects, you can’t reuse rules easily, it’s hard to keep styling consistent, and it’s difficult to implement large stylistic changes.
 </p>
 <div class="columns">
@@ -6525,7 +6727,7 @@ Add styling directly to tags. <strong>It’s best not to use a lot of these!</st
 </div>
 </div>
 <div id="tabset-13-2">
-<p class="body-text-s">
+<p class="body-text-xs">
 Add CSS rules to your app’s header (<code>tags$head</code>). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can’t be cached (i.e.&nbsp;saved for future usage when you reopen your app). <strong>Note:</strong> explore Google fonts <a href="https://fonts.google.com/">here</a> and check out <a href="https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts">this slide</a> for instructions on selecting a font.
 </p>
 <div class="columns">
@@ -6578,7 +6780,7 @@ Add CSS rules to your app’s header (<code>tags$head</code>). This is a little 
 </div>
 </div>
 <div id="tabset-13-3">
-<p class="body-text-s">
+<p class="body-text-xs">
 Build a stylesheet (a <code>.css</code> file) inside your app’s <code>www/</code> directory and apply your styles to your app’s header (for shinydashboards, include your header inside <code>dashboardBody()</code>. <strong>This is the most ideal approach</strong> – it allows for style reuse, caching, and keeps styling contained in one spot. <strong>Tip:</strong> use <code>touch styles.css</code> in the terminal to create a new <code>.css</code> file.
 </p>
 <div class="columns">
@@ -6972,14 +7174,18 @@ We’ll practice on our <code>two-file-app</code> – first, remove any referenc
 </p>
 <div class="fragment">
 <p class="body-text-s">
-Next, create your Sass file within <code>two-file-app/www/</code>. Then, using your terminal, <code>cd</code> into <code>~/two-file-app/www</code> and use the <code>touch</code> command to create a <code>.scss</code> file (I’m calling mine <code>my_sass_styles.scss</code>).
+Next, create your Sass file within <code>two-file-app/www/</code>. Then, using your terminal, <code>cd</code> into <code>~/two-file-app/www</code> and use the <code>touch</code> command to create a <code>.scss</code> file (I’m calling mine <code>my-sass-styles.scss</code>).
 </p>
 </div>
 <div class="fragment">
 <p class="body-text-s">
-Add Sass variables and CSS rules to <code>my_sass_styles.scss</code>:
+Add Sass variables and CSS rules to <code>my-sass-styles.scss</code>:
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/two-file-app/www/my-sass-styles.scss</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb103-1"><a href="#cb103-1"></a><span class="er">// import 2 fonts</span></span>
 <span id="cb103-2"><a href="#cb103-2"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Karma&amp;family=Prompt:wght@200&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb103-3"><a href="#cb103-3"></a></span>
@@ -7030,6 +7236,7 @@ Add Sass variables and CSS rules to <code>my_sass_styles.scss</code>:
 <span id="cb103-48"><a href="#cb103-48"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section><section id="convert-sass" class="slide level2" data-menu-title="Convert Sass to CSS"><h2></h2>
 <p><span class="slide-title2">Then, compile Sass to CSS</span></p>
 <hr>
@@ -7040,14 +7247,14 @@ Because web browsers can only interpret CSS (not Sass), we need to compile our S
 We also need to apply our styles to our app by linking this newly-generated <code>.css</code> file in our app’s header.
 </p>
 <p class="body-text-s">
-<strong>Note:</strong> After running your app, you should see a <code>my_sass_styles.css</code> file appear in <code>www/</code> – it should look quite familiar, except all of our Sass variables have been converted to CSS.
+<strong>Note:</strong> After running your app, you should see a <code>my-sass-styles.css</code> file appear in <code>www/</code> – it should look quite familiar, except all of our Sass variables have been converted to CSS.
 </p>
 <div class="panel-tabset">
 <ul id="tabset-16" class="panel-tabset-tabby">
 <li><a data-tabby-default="" href="#tabset-16-1">our updated app</a></li>
 <li><a href="#tabset-16-2"><code>global.R</code></a></li>
 <li><a href="#tabset-16-3"><code>ui.R</code></a></li>
-<li><a href="#tabset-16-4"><code>my_sass_styles.css</code></a></li>
+<li><a href="#tabset-16-4"><code>my-sass-styles.css</code></a></li>
 </ul>
 <div class="tab-content">
 <div id="tabset-16-1">
@@ -7236,14 +7443,14 @@ By the end of this section, you should:
 </p>
 </div>
 </section><section id="what-is-accessibility" class="slide level2" data-menu-title="What is web accessibility?"><h2></h2>
-<p><span class="slide-title"><i class="fa-solid fa-universal-access" title="the symbol for universal access - a person standing with the arms widespread inside a circle" aria-label="universal-access"></i> What is web accessibility and why is it important?</span></p>
+<p><span class="slide-title"><i class="fa-solid fa-universal-access" title="the symbol for universal access - a person standing with the arms widespread inside a circle" aria-label="universal-access"></i> What is web accessibility?</span></p>
 <hr>
-<p class="body-text">
+<p class="body-text-s">
 From the <a href="https://www.w3.org/">World Wide Web Consortium (W3C)</a>’s <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Introduction to Web Accessibility</a>:
 </p>
 <div class="quote-text-bg">
 <p class="body-text-s">
-Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them. More specifically, people can:
+<strong>Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.</strong> More specifically, people can:
 </p>
 <p class="body-text-s">
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> perceive, understand, navigate, and interact with the Web
@@ -7252,10 +7459,10 @@ Web accessibility means that websites, tools, and technologies are designed and 
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> contribute to the Web
 </p>
 <p class="body-text-s">
-Web accessibility encompasses all disabilities that affect access to the Web, including: auditory, cognitive, neurological, physical, speech, and visual
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Web accessibility encompasses all disabilities that affect access to the Web, including: auditory, cognitive, neurological, physical, speech, and visual
 </p>
 <p class="body-text-s">
-Web accessibility also benefits people without disabilities, for example:
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Web accessibility also benefits people without disabilities, for example:
 </p>
 <p class="body-text-s">
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> people using mobile phones, smart watches, smart TVs, and other devices with small screens, different input modes, etc.
@@ -7273,11 +7480,11 @@ Web accessibility also benefits people without disabilities, for example:
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> people using a slow Internet connection, or who have limited or expensive bandwidth
 </p>
 </div>
-<p class="body-text">
+<p class="body-text-s">
 Check out the <a href="https://www.a11yproject.com/">A11Y Project</a> for lots of great tutorials and information about web accessibility.
 </p>
 </section><section id="small-steps" class="slide level2" data-menu-title="Small steps help!"><h2></h2>
-<p><span class="slide-title">Small changes can lead to tangible increases in functionality for all users</span></p>
+<p><span class="slide-title3">Small changes can lead to tangible increases in functionality for all users</span></p>
 <hr>
 <p class="body-text bottombr">
 Ensuring that your shiny apps are accessible can feel overwhelming – but considering even a few small changes can have a large impact on user experience.
@@ -7938,8 +8145,8 @@ To use <code>reactlog</code>, follow these <strong>steps:</strong>
 <p class="body-text-s">
 <strong>5.</strong> Use your <code>&lt;-</code> and <code>-&gt;</code> arrow keys (or <img src="images/previous.png" alt="A gray, left-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"> and <img src="images/forward.png" alt="A gray, right-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;">) to move forward and backward through your app’s reactive life cycle
 </p>
-<p><br><br></p>
-<p class="body-text-s">
+<p><br></p>
+<p class="body-text-s gray-text">
 Read about the components of the <a href="https://rstudio.github.io/reactlog/articles/reactlog.html#status-bar">status bar</a> and the meaning of different <a href="https://rstudio.github.io/reactlog/articles/reactlog.html#reactive-states">reactive states</a> in the <code>reactlog</code> vignette.
 </p>
 </section><section id="using-reactlog-working-app" class="slide level2" data-menu-title="Using {reactlog} - working app"><h2></h2>
@@ -7951,10 +8158,8 @@ To visualize the reactive life cycle of the <code>reactlog-working</code> app, I
 <p class="body-text-s">
 <strong>Note:</strong> I’ve left the scatter plot on Tab 2 (and it’s related UI elements) commented out (as we practiced in the earlier few slides) for this demo – the <a href="https://rstudio.github.io/reactlog/">reactlog</a> package has many features that allow you to explore reactive dependencies across your whole app, but it can get complicated quickly. For demo purposes, we’re going to work with this “smaller” version of our app, which contains just the problematic code.
 </p>
-<center>
-<img src="images/reactlog-working.gif" alt="" width="650">
-</center>
-</section><section id="interpreting-reactlog-working-app" class="slide level2" data-menu-title="Interpreting {reactlog}"><h2></h2>
+
+<img data-src="images/reactlog-working.gif" style="width:80.0%" class="r-stretch quarto-figure-center"></section><section id="interpreting-reactlog-working-app" class="slide level2" data-menu-title="Interpreting {reactlog}"><h2></h2>
 <p><span class="slide-title2">Interpreting <a href="https://rstudio.github.io/reactlog/">reactlog</a> (used with our correctly-functioning app)</span></p>
 <hr>
 <p class="body-text">
@@ -8003,10 +8208,10 @@ As we click down the list of radioButtons, the image output is invalidated, then
 </section><section id="id-bug" class="slide level2" data-menu-title="Identify the bug"><h2></h2>
 <p><span class="slide-title3">So what’s the issue with our app?</span></p>
 <hr>
-<p class="body-text-s">
+<p class="body-text-xs">
 Evidence from our diagnostic messages <em>and</em> <code>reactlog</code> suggests that we should make sure that our UI and server are actually able to communicate about our desired text output. After careful inspection of our <code>textOutput()</code> and <code>renderText()</code> code, we find that a spelling error is to blame:
 </p>
-<p class="body-text-s">
+<p class="body-text-xs">
 Our <code>outputId</code> in the <strong>UI</strong> is set to <code>penguin_text</code>:
 </p>
 <div class="cell">
@@ -8019,7 +8224,7 @@ Our <code>outputId</code> in the <strong>UI</strong> is set to <code>penguin_tex
 <span id="cb112-7"><a href="#cb112-7"></a>  </span>
 <span id="cb112-8"><a href="#cb112-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p class="body-text-s">
+<p class="body-text-xs">
 But we call <code>penguins_text</code> when rendering our output in the <strong>server</strong>:
 </p>
 <div class="cell">
@@ -8035,7 +8240,7 @@ But we call <code>penguins_text</code> when rendering our output in the <strong>
 <span id="cb113-10"><a href="#cb113-10"></a>  })</span>
 <span id="cb113-11"><a href="#cb113-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p class="body-text-s">
+<p class="body-text-xs">
 By updating our <code>outputId</code> to match in both the UI and the server, we fix our app.
 </p>
 </section><section id="testing" class="slide level2" data-menu-title="~~~ Testing ~~~" data-background="#053660"><h2></h2>
@@ -8082,6 +8287,7 @@ Packages introduced:
 <div class="slide-title">
 Why test our Shiny apps?
 </div>
+<hr>
 <p class="body-text">
 It’s almost inevitable that apps will break – there are lots of reasons why this happens, but to name a few:
 </p>
@@ -8106,7 +8312,7 @@ It can save a lot of time and headache (for you <em>and</em> your collaborators)
 </p>
 </div>
 </section><section id="shinytest2" class="slide level2" data-menu-title="{shinytest2}"><h2></h2>
-<p><span class="slide-title">Enter the <a href="https://rstudio.github.io/shinytest2/articles/shinytest2.html"><code>{shinytest2}</code> package</a></span></p>
+<p><span class="slide-title3">Enter the <a href="https://rstudio.github.io/shinytest2/articles/shinytest2.html"><code>{shinytest2}</code> package</a></span></p>
 <hr>
 <p class="body-text">
 The <a href="https://rstudio.github.io/shinytest2/articles/shinytest2.html"><code>{shinytest2}</code> package</a> is a useful tool for conducting regression testing on shiny apps – or in other words, testing existing app behavior for consistency over time.
@@ -8157,9 +8363,13 @@ Additional resources:
 This small app accepts a text input for users to type their name. When the “Greet” button is pressed, the app returns a short greeting message that says, “Hello <em>name</em>!
 </p>
 <p class="body-text">
-To get started, create a subdirectory called <code>/testing_app</code>, add a file named <code>app.R</code>, and drop this code in your file. Take a moment to try out the app.
+To get started, create a subdirectory called <code>~/testing_app</code>, add a file named <code>app.R</code>, and drop this code in your file. Take a moment to try out the app.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/testing_app/app.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb114-2"><a href="#cb114-2"></a></span>
 <span id="cb114-3"><a href="#cb114-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -8181,6 +8391,7 @@ To get started, create a subdirectory called <code>/testing_app</code>, add a fi
 <span id="cb114-19"><a href="#cb114-19"></a>}</span>
 <span id="cb114-20"><a href="#cb114-20"></a></span>
 <span id="cb114-21"><a href="#cb114-21"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="testing-procedure" class="slide level2" data-menu-title="Testing procedure"><h2></h2>
 <p><span class="slide-title">Testing using <code>shinytest2</code></span></p>
@@ -8363,7 +8574,7 @@ By the end of this section, you should:
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> successfully turn a piece of server logic into a function
 </p>
 </div>
-</section><section id="why-functions" class="slide level2" data-menu-title="Why write functions"><h2></h2>
+</section><section id="why-functions" class="slide level2" data-menu-title="Why write functions?"><h2></h2>
 <p><span class="slide-title">Why write functions</span></p>
 <hr>
 <p class="body-text bottombr">
@@ -8399,7 +8610,7 @@ You can <strong>source your function files into <code>global.R</code></strong> s
 <p><span class="slide-title2">Create a small app for function practice</span></p>
 <hr>
 <p class="body-text-s">
-Create a new subdirectory called <code>functions-app/</code> and add your <code>ui.R</code>, <code>server.R</code>, and <code>global.R</code> files with the following code. Run your app to see how it functions.
+Create a new subdirectory called <code>~/functions-app</code> and add your <code>ui.R</code>, <code>server.R</code>, and <code>global.R</code> files with the following code. Run your app to see how it functions.
 </p>
 <div class="panel-tabset">
 <ul id="tabset-20" class="panel-tabset-tabby">
@@ -8416,6 +8627,10 @@ Create a new subdirectory called <code>functions-app/</code> and add your <code>
 </div>
 <div id="tabset-20-2">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb118-2"><a href="#cb118-2"></a>  </span>
 <span id="cb118-3"><a href="#cb118-3"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"Demoing Functions"</span>),</span>
@@ -8459,8 +8674,13 @@ Create a new subdirectory called <code>functions-app/</code> and add your <code>
 <span id="cb118-41"><a href="#cb118-41"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div id="tabset-20-3">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb119-2"><a href="#cb119-2"></a>  </span>
 <span id="cb119-3"><a href="#cb119-3"></a>  </span>
@@ -8512,13 +8732,19 @@ Create a new subdirectory called <code>functions-app/</code> and add your <code>
 <span id="cb119-49"><a href="#cb119-49"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div id="tabset-20-4">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/global.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb120-2"><a href="#cb120-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb120-3"><a href="#cb120-3"></a><span class="fu">library</span>(shinyWidgets)</span>
 <span id="cb120-4"><a href="#cb120-4"></a><span class="fu">library</span>(palmerpenguins)</span>
 <span id="cb120-5"><a href="#cb120-5"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -8531,6 +8757,10 @@ Let’s first focus on the UI – where do we have nearly identically duplicated
 </p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb121" data-code-line-numbers="11-16|27-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb121-2"><a href="#cb121-2"></a>  </span>
 <span id="cb121-3"><a href="#cb121-3"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"Demoing Functions"</span>),</span>
@@ -8574,20 +8804,21 @@ Let’s first focus on the UI – where do we have nearly identically duplicated
 <span id="cb121-41"><a href="#cb121-41"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section><section id="write-ui-function" class="slide level2" data-menu-title="Write a UI function"><h2></h2>
-<p><span class="slide-title2">Write a function for adding a <code>pickerInput</code> to select for penguin species</span></p>
+<p><span class="slide-title3">Write a function for adding a <code>pickerInput</code> to select for penguin species</span></p>
 <hr>
 <p class="body-text-s">
 This app includes two <code>pickerInputs</code>, both of which allow users to select which penguin species to display data for. The only difference between both <code>pickerInput</code>s is the <code>inputId</code>. Let’s write a function for our <strong>penguin species pickerInput</strong> that we can use in place of these two, rather long, chunks of code.
 </p>
 <div class="fragment">
-<p class="body-text-s topbr">
+<p class="body-text-s">
 First, create an <code>/R</code> folder inside your <code>functions-app</code> directory. Then, add a new script to this folder. I’m calling mine <code>penguinSpp_pickerInput.R</code>.
 </p>
-<p class="body-text-s topbr">
+<p class="body-text-s">
 Since the only difference between our original two <code>pickerInput</code>s are their <code>inputId</code>s, we can write a function that takes <code>inputId</code> as an argument (<strong>Recall</strong> that <code>inputId</code>s must be unique within an app, so it makes sense that both of our <code>pickerInput</code>s have different <code>inputId</code>s).
 </p>
-<p class="body-text-s topbr">
+<p class="body-text-s">
 Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></code> your function script into <code>global.R</code> (if necessary) to make your function available for use in your app.
 </p>
 <div class="panel-tabset">
@@ -8598,6 +8829,10 @@ Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></c
 <div class="tab-content">
 <div id="tabset-21-1">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/R/penguinSpp_pickerInput.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a>penguinSpp_pickerInput <span class="ot">&lt;-</span> <span class="cf">function</span>(inputId) {</span>
 <span id="cb122-2"><a href="#cb122-2"></a>  <span class="fu">pickerInput</span>(<span class="at">inputId =</span> inputId, <span class="at">label =</span> <span class="st">"Select a species:"</span>,</span>
 <span id="cb122-3"><a href="#cb122-3"></a>              <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span>, <span class="st">"Chinstrap"</span>),</span>
@@ -8607,8 +8842,13 @@ Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></c
 <span id="cb122-7"><a href="#cb122-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div id="tabset-21-2">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/global.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb123" data-code-line-numbers="7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb123-2"><a href="#cb123-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb123-3"><a href="#cb123-3"></a><span class="fu">library</span>(shinyWidgets)</span>
@@ -8622,6 +8862,7 @@ Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></c
 </div>
 </div>
 </div>
+</div>
 </section><section id="apply-ui-fxn" class="slide level2" data-menu-title="Apply UI function"><h2></h2>
 <p><span class="slide-title2">Apply your function in <code>ui.R</code></span></p>
 <hr>
@@ -8629,6 +8870,10 @@ Once written, <code><a href="https://rdrr.io/r/base/source.html">source()</a></c
 Finally, replace your original UI code for building both <code>pickerInput</code>s with our <code>penguinSpp_pickerInput()</code> function, save, and run your app. It should look exactly the same as before!
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/ui.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb124" data-code-line-numbers="12|24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
 <span id="cb124-2"><a href="#cb124-2"></a>  </span>
 <span id="cb124-3"><a href="#cb124-3"></a>  tags<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"Demoing Functions"</span>),</span>
@@ -8663,6 +8908,7 @@ Finally, replace your original UI code for building both <code>pickerInput</code
 <span id="cb124-32"><a href="#cb124-32"></a>  </span>
 <span id="cb124-33"><a href="#cb124-33"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="ui-fxn-benefits" class="slide level2" data-menu-title="Benefits of our UI function"><h2></h2>
 <p><span class="slide-title">We reduced code redundancy and increased readability!</span></p>
 <hr>
@@ -8670,13 +8916,17 @@ Finally, replace your original UI code for building both <code>pickerInput</code
 By turning our <code>pickerInput</code> code into a function, <strong>we not only reduced <em>ten</em> lines of UI code into <em>two</em>, but we also made our UI code a bit easier to read</strong> – our function, <code>penguinSpp_pickerInput()</code> tells a reader/collaborator/future you <em>exactly</em> what that line of code is meant to do, which is create a <code>pickerInput</code> that allows users to select penguin species. Even without code comments or additional context, one may deduce what that line of code does.
 </p>
 </section><section id="server-fxns" class="slide level2" data-menu-title="Server functions"><h2></h2>
-<p><span class="slide-title2">Turn reactives &amp; rendered outputs into functions</span></p>
+<p><span class="slide-title3">Turn reactives &amp; rendered outputs into functions</span></p>
 <hr>
 <p class="body-text-s">
 Next, let’s see where we can streamline our server code using functions. We have two discrete sections of code – <strong>(1)</strong> a reactive data frame and scatterplot output and <strong>(2)</strong> a reactive data frame and histogram output.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125" data-code-line-numbers="3-25|27-46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/server.R</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb125" data-code-line-numbers="3-25|26-46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb125-2"><a href="#cb125-2"></a>  </span>
 <span id="cb125-3"><a href="#cb125-3"></a>  <span class="co"># filter penguin species (scatterplot) ----</span></span>
 <span id="cb125-4"><a href="#cb125-4"></a>  filtered_spp_scatterplot <span class="ot">&lt;-</span> <span class="fu">reactive</span> ({</span>
@@ -8723,45 +8973,54 @@ Next, let’s see where we can streamline our server code using functions. We ha
 <span id="cb125-45"><a href="#cb125-45"></a>  </span>
 <span id="cb125-46"><a href="#cb125-46"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="build-penguin-scatterplot-fxn" class="slide level2" data-menu-title="build_penguin_scatterplot()"><h2></h2>
 <p><span class="slide-title2">Create a function to builds our scatterplot</span></p>
 <hr>
-<p class="body-text-s">
-First, create a new file in <code>~/function-app/R</code> and name it <code>build_penguin_histogram.R</code> (or a name that is succinct/clear – I’m going to name my function similarly).
+<p class="body-text-xs">
+First, create a new file in <code>~/function-app/R</code> and name it <code>build-penguin-scatterplot.R</code> (or a name that is succinct/clear – I’m going to name my function similarly).
 </p>
-<p class="body-text-s">
-The goal of my function is to filter the <code>penguins</code> data based on the user input <em>and</em> render our ggplot scatterplot. To start, I’m going to cut/paste both the code to generate the reactive <code>filtered_spp_histogram</code> data frame and the <code>renderPlot()</code> code from <code>server.R</code> into our <code>build_penguin_histogram()</code> function.
+<p class="body-text-xs">
+The goal of my function is to filter the <code>penguins</code> data based on the user input <em>and</em> render our ggplot scatterplot. To start, I’m going to cut/paste both the code to generate the reactive <code>filtered_spp_scatterplot</code> data frame and the <code>renderPlot()</code> code from <code>server.R</code> into our <code>build_penguin_scatterplot()</code> function.
 </p>
-<p class="body-text-s">
+<p class="body-text-xs">
 <strong>Important:</strong> In isolation, our function <em>does not know</em> about the user input (<code>input</code> is not in our global environment, it’s only known within the <code>server()</code> function). Therefore, we must pass <code>input</code> as an argument to our function.
 </p>
-<p class="body-text-s">
-<strong>Note</strong> that in R, functions return the last executed line – when we run <code>build_penguin_histogram()</code> in our server, it will return the object created by <code>renderPlot()</code>.
+<p class="body-text-xs">
+<strong>Note</strong> that in R, functions return the last executed line – when we run <code>build_penguin_scatterplot()</code> in our server, it will return the object created by <code>renderPlot()</code>.
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1"></a>build_penguin_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(input) {</span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/R/build-penguin-scatterplot.R</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1"></a>build_penguin_scatterplot <span class="ot">&lt;-</span> <span class="cf">function</span>(input) {</span>
 <span id="cb126-2"><a href="#cb126-2"></a>  </span>
-<span id="cb126-3"><a href="#cb126-3"></a>  <span class="co"># filter penguin spp ----</span></span>
-<span id="cb126-4"><a href="#cb126-4"></a>  filtered_spp_histogram <span class="ot">&lt;-</span> <span class="fu">reactive</span> ({</span>
-<span id="cb126-5"><a href="#cb126-5"></a>    </span>
+<span id="cb126-3"><a href="#cb126-3"></a>  <span class="co"># filter penguin species (scatterplot) ----</span></span>
+<span id="cb126-4"><a href="#cb126-4"></a>  filtered_spp_scatterplot <span class="ot">&lt;-</span> <span class="fu">reactive</span> ({</span>
+<span id="cb126-5"><a href="#cb126-5"></a></span>
 <span id="cb126-6"><a href="#cb126-6"></a>    penguins <span class="sc">|&gt;</span></span>
-<span id="cb126-7"><a href="#cb126-7"></a>      <span class="fu">filter</span>(species <span class="sc">%in%</span> input<span class="sc">$</span>penguin_species_histogram_input)</span>
-<span id="cb126-8"><a href="#cb126-8"></a>    </span>
+<span id="cb126-7"><a href="#cb126-7"></a>      <span class="fu">filter</span>(species <span class="sc">%in%</span> input<span class="sc">$</span>penguin_species_scatterplot_input)</span>
+<span id="cb126-8"><a href="#cb126-8"></a></span>
 <span id="cb126-9"><a href="#cb126-9"></a>  })</span>
 <span id="cb126-10"><a href="#cb126-10"></a>  </span>
-<span id="cb126-11"><a href="#cb126-11"></a>  <span class="co"># render histogram ----</span></span>
-<span id="cb126-12"><a href="#cb126-12"></a>  <span class="fu">renderPlot</span>({</span>
-<span id="cb126-13"><a href="#cb126-13"></a>   </span>
-<span id="cb126-14"><a href="#cb126-14"></a>    <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">filtered_spp_histogram</span>()), </span>
-<span id="cb126-15"><a href="#cb126-15"></a>           <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb126-16"><a href="#cb126-16"></a>      <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb126-17"><a href="#cb126-17"></a>      <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
-<span id="cb126-18"><a href="#cb126-18"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>,</span>
-<span id="cb126-19"><a href="#cb126-19"></a>           <span class="at">fill =</span> <span class="st">"Penguin species"</span>)</span>
-<span id="cb126-20"><a href="#cb126-20"></a>    </span>
-<span id="cb126-21"><a href="#cb126-21"></a>  })</span>
-<span id="cb126-22"><a href="#cb126-22"></a>  </span>
-<span id="cb126-23"><a href="#cb126-23"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb126-11"><a href="#cb126-11"></a>  <span class="co"># render the scatterplot output ----</span></span>
+<span id="cb126-12"><a href="#cb126-12"></a>  output<span class="sc">$</span>penguin_scatterplot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb126-13"><a href="#cb126-13"></a>    </span>
+<span id="cb126-14"><a href="#cb126-14"></a>    <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(<span class="fu">filtered_spp_scatterplot</span>()),</span>
+<span id="cb126-15"><a href="#cb126-15"></a>           <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb126-16"><a href="#cb126-16"></a>               <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb126-17"><a href="#cb126-17"></a>      <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb126-18"><a href="#cb126-18"></a>      <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span> </span>
+<span id="cb126-19"><a href="#cb126-19"></a>      <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="st">"#FEA346"</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="st">"#B251F1"</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="st">"#4BA4A4"</span>)) <span class="sc">+</span></span>
+<span id="cb126-20"><a href="#cb126-20"></a>      <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Adelie"</span> <span class="ot">=</span> <span class="dv">19</span>, <span class="st">"Chinstrap"</span> <span class="ot">=</span> <span class="dv">17</span>, <span class="st">"Gentoo"</span> <span class="ot">=</span> <span class="dv">15</span>)) <span class="sc">+</span></span>
+<span id="cb126-21"><a href="#cb126-21"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Flipper length (mm)"</span>, <span class="at">y =</span> <span class="st">"Bill length (mm)"</span>,</span>
+<span id="cb126-22"><a href="#cb126-22"></a>           <span class="at">color =</span> <span class="st">"Penguin species"</span>, <span class="at">shape =</span> <span class="st">"Penguin species"</span>)</span>
+<span id="cb126-23"><a href="#cb126-23"></a>    </span>
+<span id="cb126-24"><a href="#cb126-24"></a>  })</span>
+<span id="cb126-25"><a href="#cb126-25"></a>  </span>
+<span id="cb126-26"><a href="#cb126-26"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="use-build-penguin-scatterplot-fxn" class="slide level2" data-menu-title="Use build_penguin_scatterplot()"><h2></h2>
 <p><span class="slide-title2">Now use your function inside the server</span></p>
@@ -8770,6 +9029,10 @@ The goal of my function is to filter the <code>penguins</code> data based on the
 <strong>Remember</strong>, the output of <code>build_penguin_scatterplot()</code> is <code>renderPlot()</code>, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function’s output to <code>output$penguin_scatterplot</code>. In doing so, we reduced 23 lines of code to 1 inside our server function.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb127" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb127-2"><a href="#cb127-2"></a>  </span>
 <span id="cb127-3"><a href="#cb127-3"></a>  <span class="co"># filter data &amp; create penguin scatterplot ----</span></span>
@@ -8798,6 +9061,7 @@ The goal of my function is to filter the <code>penguins</code> data based on the
 <span id="cb127-26"><a href="#cb127-26"></a></span>
 <span id="cb127-27"><a href="#cb127-27"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="create-build-penguin-histogram" class="slide level2" data-menu-title="Create &amp; use build_penguin_histogram()"><h2></h2>
 <p><span class="slide-title2">Build a function to create our histogram</span></p>
 <hr>
@@ -8806,12 +9070,16 @@ We can repeat a similar process to create a function for building our histogram:
 </p>
 <div class="panel-tabset">
 <ul id="tabset-22" class="panel-tabset-tabby">
-<li><a data-tabby-default="" href="#tabset-22-1"><code>build_penguin_histogram.R</code></a></li>
+<li><a data-tabby-default="" href="#tabset-22-1"><code>build-penguin-histogram.R</code></a></li>
 <li><a href="#tabset-22-2"><code>server.R</code></a></li>
 </ul>
 <div class="tab-content">
 <div id="tabset-22-1">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/R/build-penguin-histogram.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1"></a>build_penguin_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(input) {</span>
 <span id="cb128-2"><a href="#cb128-2"></a>  </span>
 <span id="cb128-3"><a href="#cb128-3"></a>  <span class="co"># filter penguin spp ----</span></span>
@@ -8837,8 +9105,13 @@ We can repeat a similar process to create a function for building our histogram:
 <span id="cb128-23"><a href="#cb128-23"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div id="tabset-22-2">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/functions-app/server.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb129" data-code-line-numbers="6-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
 <span id="cb129-2"><a href="#cb129-2"></a>  </span>
 <span id="cb129-3"><a href="#cb129-3"></a>  <span class="co"># filter data &amp; create penguin scatterplot ----</span></span>
@@ -8848,6 +9121,7 @@ We can repeat a similar process to create a function for building our histogram:
 <span id="cb129-7"><a href="#cb129-7"></a>  output<span class="sc">$</span>penguin_histogram <span class="ot">&lt;-</span> <span class="fu">build_penguin_histogram</span>(input)</span>
 <span id="cb129-8"><a href="#cb129-8"></a></span>
 <span id="cb129-9"><a href="#cb129-9"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>

@@ -44,7 +44,7 @@ format: revealjs
 
 <p class="body-text-s">For example, I've added and formatted my landing page's text directly in the **UI** using lots of nested `tags` -- I've done this inside the `tabPanel` titled **About this App** (**Note:** I've formatted the layout of this page a bit using `fluidRow` and `column`s to create some white space around the edges. I've also created a faint gray horizontal line, using `hr()`, beneath which I added a footnote):</p>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "8-24"
@@ -172,7 +172,7 @@ ui <- navbarPage(
 ::: {.panel-tabset}
 
 ## `ui.R`
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "8-21"
@@ -283,7 +283,7 @@ ui <- navbarPage(
 ```
 
 ## `text/about.md`
-```{markdown}
+```{markdown filename="text/about.md"}
 #| eval: false
 #| echo: true
 ## Welcome to the LTER Animal Data Explorer!
@@ -302,7 +302,7 @@ Check out the **Explore the Data** page to find interactive data visualizations 
 ```
 
 ## `text/footer.md`
-```{markdown}
+```{markdown filename="text/footer/md"}
 #| eval: false
 #| echo: true
 *This app is maintained by [Samantha Csik](https://samanthacsik.github.io/) and is updated as needed for teaching purposes. Please report any issues [here](https://github.com/samanthacsik/EDS430-shiny-app/issues). Source code can be found on [GitHub](https://github.com/samanthacsik/EDS430-shiny-app).*
@@ -318,7 +318,14 @@ Check out the **Explore the Data** page to find interactive data visualizations 
 
 <hr>
 
-<center><img src="images/app2_v1.gif" alt="An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins." width="750"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "An app titled 'LTER Animal Data Explorer'. The user starts on the 'About this App' page, which includes a couple paragraphs of intro text. The user then clicks on the 'Explore the Data' page which has two tabs: Trout and Penguins. On the Trout tab, we see a scatterplot with Trout Length (mm) on the x-axis and Trout Weight (g) on the y-axis. The user first filters data by Channel Type using a drop down list selector widget, then by Forest Section using two buttons that toggle on data from clear cut vs. old growth forest. In the Penguin tab, we see a histogram displaying Flipper Lengths (mm) of three penguin species. The user uses a drop down list selector widget to filter data by Island, then uses a slider widget to adjust the number of histogram bins."
+knitr::include_graphics("images/app2_v1.gif")
+```
 
 <p class="body-text-s">Again, we have some UX/UI quirks to fix (most notably, blank plots when all widget options are deselected), which we'll handle soon. But for now, we have a functioning app that we can practice deploying for the first time!</p>
 

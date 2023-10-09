@@ -45,6 +45,8 @@ format: revealjs
 
 <div class="slide-title">Why test our Shiny apps?</div>
 
+<hr>
+
 <p class="body-text">It's almost inevitable that apps will break -- there are lots of reasons why this happens, but to name a few:</p>
 
 . . . 
@@ -67,7 +69,7 @@ format: revealjs
 
 ##  {#shinytest2 data-menu-title="{shinytest2}"}
 
-[Enter the [`{shinytest2}` package](https://rstudio.github.io/shinytest2/articles/shinytest2.html)]{.slide-title}
+[Enter the [`{shinytest2}` package](https://rstudio.github.io/shinytest2/articles/shinytest2.html)]{.slide-title3}
 
 <hr>
 
@@ -125,9 +127,9 @@ format: revealjs
 
 <p class="body-text">This small app accepts a text input for users to type their name. When the "Greet" button is pressed, the app returns a short greeting message that says, "Hello *name*!</p>
 
-<p class="body-text">To get started, create a subdirectory called `/testing_app`, add a file named `app.R`, and drop this code in your file. Take a moment to try out the app.</p>
+<p class="body-text">To get started, create a subdirectory called `~/testing_app`, add a file named `app.R`, and drop this code in your file. Take a moment to try out the app.</p>
 
-```{r}
+```{r filename="~/testing_app/app.R"}
 #| eval: false
 #| echo: true
 library(shiny)

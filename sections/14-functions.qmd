@@ -38,7 +38,7 @@ format: revealjs
 
 ---
 
-##  {#why-functions data-menu-title="Why write functions"}
+##  {#why-functions data-menu-title="Why write functions?"}
 
 [Why write functions]{.slide-title}
 
@@ -68,7 +68,7 @@ format: revealjs
 
 <hr>
 
-<p class="body-text-s">Create a new subdirectory called `functions-app/` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
+<p class="body-text-s">Create a new subdirectory called `~/functions-app` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
 
 ::: {.panel-tabset}
 
@@ -77,7 +77,7 @@ format: revealjs
 <center><img src="images/functions_demo_app.gif" alt="A shiny app with two tabs. The first tab contains a pickerInput that allows the user to select which penguin species they want to visualize data for, along with a scatterplot. The second tab also contains a pickerInput with the exact same penguin species options, along with a histogram." width="650"/></center>
 
 ## `ui.R`
-```{r}
+```{r filename="~/functions-app/ui.R"}
 #| eval: false
 #| echo: true
 ui <- fluidPage(
@@ -125,7 +125,7 @@ ui <- fluidPage(
 ```
 
 ## `server.R`
-```{r}
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
 server <- function(input, output) {
@@ -180,7 +180,7 @@ server <- function(input, output) {
 ```
 
 ## `global.R`
-```{r}
+```{r filename="~/functions-app/global.R"}
 #| eval: false
 #| echo: true
 # load packages ----
@@ -204,7 +204,7 @@ library(tidyverse)
 
 . . . 
 
-```{r}
+```{r filename="~/functions-app/ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "11-16|27-32"
@@ -254,7 +254,7 @@ ui <- fluidPage(
 
 ##  {#write-ui-function data-menu-title="Write a UI function"}
 
-[Write a function for adding a `pickerInput` to select for penguin species]{.slide-title2}
+[Write a function for adding a `pickerInput` to select for penguin species]{.slide-title3}
 
 <hr>
 
@@ -262,16 +262,16 @@ ui <- fluidPage(
 
 . . . 
 
-<p class="body-text-s topbr">First, create an `/R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
+<p class="body-text-s">First, create an `/R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
 
-<p class="body-text-s topbr">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
+<p class="body-text-s">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
 
-<p class="body-text-s topbr">Once written, `source()` your function script into `global.R` (if necessary) to make your function available for use in your app.</p>
+<p class="body-text-s">Once written, `source()` your function script into `global.R` (if necessary) to make your function available for use in your app.</p>
 
 ::: {.panel-tabset}
 
 ## `penguinSpp_pickerInput.R`
-```{r}
+```{r filename="~/functions-app/R/penguinSpp_pickerInput.R"}
 #| eval: false  
 #| echo: true
 penguinSpp_pickerInput <- function(inputId) {
@@ -284,7 +284,7 @@ penguinSpp_pickerInput <- function(inputId) {
 ```
 
 ## `global.R` 
-```{r}
+```{r filename="~/functions-app/global.R"}
 #| eval: false  
 #| echo: true
 #| code-line-numbers: "7-8"
@@ -310,7 +310,7 @@ source("R/penguinSpp_pickerInput.R") # will source automatically with Shiny v1.5
 
 <p class="body-text-s">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function, save, and run your app. It should look exactly the same as before!</p>
 
-```{r}
+```{r filename="~/functions-app/ui.R"}
 #| eval: false  
 #| echo: true
 #| code-line-numbers: "12|24"
@@ -364,16 +364,16 @@ ui <- fluidPage(
 
 ##  {#server-fxns data-menu-title="Server functions"}
 
-[Turn reactives & rendered outputs into functions]{.slide-title2}
+[Turn reactives & rendered outputs into functions]{.slide-title3}
 
 <hr>
 
 <p class="body-text-s">Next, let's see where we can streamline our server code using functions. We have two discrete sections of code -- **(1)** a reactive data frame and scatterplot output and **(2)** a reactive data frame and histogram output.</p>
 
-```{r}
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "3-25|27-46"
+#| code-line-numbers: "3-25|26-46"
 server <- function(input, output) {
   
   # filter penguin species (scatterplot) ----
@@ -426,40 +426,43 @@ server <- function(input, output) {
 
 ##  {#build-penguin-scatterplot-fxn data-menu-title="build_penguin_scatterplot()"}
 
-[Create a function to builds our scatterplot]{.slide-title2}
+[Create a function to build our scatterplot]{.slide-title2}
 
 <hr>
 
-<p class="body-text-s">First, create a new file in `~/function-app/R` and name it `build_penguin_histogram.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
+<p class="body-text-xs">First, create a new file in `~/function-app/R` and name it `build-penguin-scatterplot.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
 
-<p class="body-text-s">The goal of my function is to filter the `penguins` data based on the user input *and* render our ggplot scatterplot. To start, I'm going to cut/paste both the code to generate the reactive `filtered_spp_histogram` data frame and the `renderPlot()` code from `server.R` into our `build_penguin_histogram()` function.</p>
+<p class="body-text-xs">The goal of my function is to filter the `penguins` data based on the user input *and* render our ggplot scatterplot. To start, I'm going to cut/paste both the code to generate the reactive `filtered_spp_scatterplot` data frame and the `renderPlot()` code from `server.R` into our `build_penguin_scatterplot()` function.</p>
 
-<p class="body-text-s">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
+<p class="body-text-xs">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
 
-<p class="body-text-s">**Note** that in R, functions return the last executed line -- when we run `build_penguin_histogram()` in our server, it will return the object created by `renderPlot()`.</p>
+<p class="body-text-xs">**Note** that in R, functions return the last executed line -- when we run `build_penguin_scatterplot()` in our server, it will return the object created by `renderPlot()`.</p>
 
-```{r}
+```{r filename="~/functions-app/R/build-penguin-scatterplot.R"}
 #| eval: false
 #| echo: true
-build_penguin_histogram <- function(input) {
+build_penguin_scatterplot <- function(input) {
   
-  # filter penguin spp ----
-  filtered_spp_histogram <- reactive ({
-    
+  # filter penguin species (scatterplot) ----
+  filtered_spp_scatterplot <- reactive ({
+
     penguins |>
-      filter(species %in% input$penguin_species_histogram_input)
-    
+      filter(species %in% input$penguin_species_scatterplot_input)
+
   })
   
-  # render histogram ----
-  renderPlot({
-   
-    ggplot(na.omit(filtered_spp_histogram()), 
-           aes(x = flipper_length_mm, fill = species)) +
-      geom_histogram() +
-      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
-      labs(x = "Flipper length (mm)", y = "Frequency",
-           fill = "Penguin species")
+  # render the scatterplot output ----
+  output$penguin_scatterplot <- renderPlot({
+    
+    ggplot(na.omit(filtered_spp_scatterplot()),
+           aes(x = bill_length_mm, y = bill_depth_mm,
+               color = species, shape = species)) +
+      geom_point() +
+      geom_smooth(method = "lm", se = FALSE, aes(color = species)) + 
+      scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+      labs(x = "Flipper length (mm)", y = "Bill length (mm)",
+           color = "Penguin species", shape = "Penguin species")
     
   })
   
@@ -475,7 +478,7 @@ build_penguin_histogram <- function(input) {
 <hr>
 
 <p class="body-text-s">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function's output to `output$penguin_scatterplot`. In doing so, we reduced 23 lines of code to 1 inside our server function.</p>
-```{r}
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "3-4"
@@ -521,9 +524,9 @@ server <- function(input, output) {
 
 ::: {.panel-tabset}
 
-## `build_penguin_histogram.R`
+## `build-penguin-histogram.R`
 
-```{r}
+```{r filename="~/functions-app/R/build-penguin-histogram.R"}
 #| eval: false
 #| echo: true
 build_penguin_histogram <- function(input) {
@@ -553,7 +556,7 @@ build_penguin_histogram <- function(input) {
 
 ## `server.R`
 
-```{r}
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6-7"

@@ -19,7 +19,14 @@ format: revealjs
 
 <p class="body-text-s">Go to [shinyapps.io](https://www.shinyapps.io/) and login or create an account (if you don't already have one) -- I created my account and login with GitHub. To use shinyapps.io, you first need to link your account with RStudio on your computer. Follow the instructions on shinyapps.io when you first create your account to install the [`{rsconnect}` package](https://github.com/rstudio/rsconnect) and authorize your account:</p>
 
-<center><img src="images/shinyapps_setup.png" alt="shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`." width="750"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "shinyapps.io displays setup instructions: (1) INSTALL RSCONNECT: The `rsconnect` package can be installed directly from CRAN. To make sure you have the latest version run following code in your R console: `install.packages('rsconnect')`. (2) AUTHORIZE ACCOUNT: The `rsconnect` package must be authorized to your account using a token and secret. To do this, click the copy button below and we'll copy the whole command you need to your clipboard. Just paste it into your console to authorize your account. Once you've entered the command successfully in R, that computer is now authorized to deploy applications to your shinyapps.io account. (3) DEPLOY: Once the `rsconnect` package has been configured, you're ready to deploy your first application. If you haven't written any applications yet, you can also checkout the Getting Started Guide for instruction son how to deploy our demo application. Run the following code in your R console: `library(rsconnect)`, then `rsconnect::deployApp('path/to/your/app')`."
+knitr::include_graphics("images/shinyapps_setup.png")
+```
 
 ---
 
@@ -33,7 +40,14 @@ format: revealjs
 
 <p class="body-text-s">Once deployed, a browser will open to your application. The URL will take the form: **https://username.shinyapps.io/your_app_directory_name**. You should also now see an `/rsconnect` folder within your app's directory -- this is generated when an application bundle is successfully deployed and contains a DCF file with information on the deployed content (i.e. the name, title, server address, account, URL, and time). **This `/rsconnect` folder should be added and committed into version control (i.e. push it to GitHub!)** so that future re-deployments target the same endpoint (i.e. your app's URL).</p>
 
-<center><img src="images/deployed_v1.gif" alt="Our shiny app, now hosted at the URL https://samanthacsik.shinyapps.io/two-file-app which functions the same as when it was hosted locally." width="650"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "Our shiny app, now hosted at the URL https://samanthacsik.shinyapps.io/two-file-app which functions the same as when it was hosted locally."
+knitr::include_graphics("images/deployed_v1.gif")
+```
 
 ---
 
@@ -45,7 +59,14 @@ format: revealjs
 
 <p class="body-text-s">Your shinyapps.io dashboard provides tons of information about your application metrics, instance (the virtualized server that your app is hosted on) and worker (a special type of R process that an Application Instance runs to service requests to an application) settings, plan management, and more. The free plan (the plan we're using here today) allows you to deploy **five** Shiny apps. You are able to archive and/or delete once-deployed apps to make space for new ones.</p>
 
-<center><img src="images/shinapps_dashboard.png" alt="The shinyapps.io dashboard displaying information about our two-file-app, now hosted at https://samanthacsik.shinyapps.io/two-file-app/. You can select different menu items from the navbar at the top of the page, including Overview, Metrics, URLs, Settings, Users, Logs, Restart, Archive, and Trash." width="750"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "The shinyapps.io dashboard displaying information about our two-file-app, now hosted at https://samanthacsik.shinyapps.io/two-file-app/. You can select different menu items from the navbar at the top of the page, including Overview, Metrics, URLs, Settings, Users, Logs, Restart, Archive, and Trash."
+knitr::include_graphics("images/shinapps_dashboard.png")
+```
 
 <p class="body-text-s">Check out the [shinyapps.io user guide](https://docs.posit.co/shinyapps.io/index.html) for more information on hosting your apps on shinyapps.io.</p>
 

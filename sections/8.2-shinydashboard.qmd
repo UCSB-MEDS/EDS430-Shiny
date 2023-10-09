@@ -16,14 +16,14 @@ format: revealjs
 ::: {.panel-tabset}
 
 ## `intro.md`
-```{markdown}
+```{markdown filename="text/intro.md"}
 #| eval: false
 #| echo: true
 The [Fish Creek Watershed Observatory (FCWO)](http://www.fishcreekwatershed.org/) is a focal watershed within the [National Petroleum Reserve in Alaska (NPR-A)](https://www.blm.gov/programs/energy-and-minerals/oil-and-gas/about/alaska/NPR-A). Targeted lake and stream monitoring within the watershed provide site-specific data prior to and after the establishment of new petroleum development, as well as insight into dynamics related to climate change and variability. Eleven lakes of interest (Harry Potter, Hipbone, Iceshove, L9817, L9819, L9820, Little Alaska, Lower Snowman, M9925, Middle Snowman, and Serenity) are featured in this dashboard.
 ```
 
 ## `citation.md`
-```{markdown}
+```{markdown filename="text/citation.md"}
 #| eval: false
 #| echo: true
 Data presented in this dashboard were collected as part of the [Fish Creek Watershed Observatory](http://www.fishcreekwatershed.org/) are archived and publicly accessible on the NSF [Arctic Data Center](https://arcticdata.io/). **Citation:** 
@@ -32,7 +32,7 @@ Data presented in this dashboard were collected as part of the [Fish Creek Water
 ```
 
 ## `disclaimer.md`
-```{markdown}
+```{markdown filename="text/disclaimer.md"}
 #| eval: false
 #| echo: true
 This app is build for demonstration/teaching purposes only and is not paid for or endorsed by the Fish Creek Watershed Observatory or affiliates in any way. The data as presented here are not intended for publication nor scientific interpretation. 
@@ -220,7 +220,7 @@ lake_data <- read_csv("data/lake_data_processed.csv")
 
 <p class="body-text-s">Next, use the `img` tag to add your image. Supply a file path, relative to your `/www` directory, using the `src` argument, and alt text using the `alt` argument.</p>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "40-41"
@@ -373,7 +373,7 @@ dashboardPage(header, sidebar, body)
 
 <p class="body-text-s">I've also added a caption below our image that links to the image source, and used in-line CSS to center my text within the box.</p>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "42-44"

@@ -35,32 +35,32 @@ format: revealjs
 
 ##  {#what-is-accessibility data-menu-title="What is web accessibility?"}
 
-[{{< fa universal-access title="the symbol for universal access - a person standing with the arms widespread inside a circle" >}} What is web accessibility and why is it important?]{.slide-title}
+[{{< fa universal-access title="the symbol for universal access - a person standing with the arms widespread inside a circle" >}} What is web accessibility?]{.slide-title}
 
 <hr>
 
-<p class="body-text">From the [World Wide Web Consortium (W3C)](https://www.w3.org/)'s [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/):</p>
+<p class="body-text-s">From the [World Wide Web Consortium (W3C)](https://www.w3.org/)'s [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/):</p>
 
-<div class="quote-text-bg">
-<p class="body-text-s">Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them. More specifically, people can:</p>
+::: {.quote-text-bg}
+<p class="body-text-s">**Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.** More specifically, people can:</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} perceive, understand, navigate, and interact with the Web</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} contribute to the Web</p> 
-<p class="body-text-s">Web accessibility encompasses all disabilities that affect access to the Web, including: auditory, cognitive, neurological, physical, speech, and visual</p>
-<p class="body-text-s">Web accessibility also benefits people without disabilities, for example:</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Web accessibility encompasses all disabilities that affect access to the Web, including: auditory, cognitive, neurological, physical, speech, and visual</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Web accessibility also benefits people without disabilities, for example:</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people using mobile phones, smart watches, smart TVs, and other devices with small screens, different input modes, etc.</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} older people with changing abilities due to ageing</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people with “temporary disabilities” such as a broken arm or lost glasses</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people with “situational limitations” such as in bright sunlight or in an environment where they cannot listen to audio</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people using a slow Internet connection, or who have limited or expensive bandwidth</p>
-</div>
+:::
 
-<p class="body-text">Check out the [A11Y Project](https://www.a11yproject.com/) for lots of great tutorials and information about web accessibility.</p>
+<p class="body-text-s">Check out the [A11Y Project](https://www.a11yproject.com/) for lots of great tutorials and information about web accessibility.</p>
 
 ---
 
 ##  {#small-steps data-menu-title="Small steps help!"}
 
-[Small changes can lead to tangible increases in functionality for all users]{.slide-title}
+[Small changes can lead to tangible increases in functionality for all users]{.slide-title3}
 
 <hr>
 

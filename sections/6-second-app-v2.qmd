@@ -112,7 +112,7 @@ format: revealjs
 
 <p class="body-text-s">Place your validation test(s) at the start of any `reactive()` or `render*()` expression that calls `input$data`. For example, we can add two validation tests inside the reactive that generates our `trout_filtered_df` -- we'll need two separate validation tests, one for each of our inputs where users can deselect all data.</p>
 
-```{r}
+```{r filename="server.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6-9"
@@ -167,7 +167,7 @@ server <- function(input, output) {
 
 <hr>
 
-```{r}
+```{r filename="server.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "39-41"
@@ -251,10 +251,9 @@ server <- function(input, output) {
 
 <br>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
-# in ui.R
 plotOutput(outputId = "trout_scatterplot") |> 
   withSpinner(color = "#006792", type = 1)
 
@@ -296,12 +295,11 @@ plotOutput(outputId = "flipperLength_histogram") |>
 :::
 
 ::: {.column width="55%"}
-```{r}
+```{r filename="server.R"}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "18|35"
+#| code-line-numbers: "17|34"
 
-# in server.R
 # render trout scatterplot ----
 output$trout_scatterplot <- renderPlot({
 

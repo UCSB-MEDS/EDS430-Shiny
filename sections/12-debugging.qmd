@@ -479,9 +479,8 @@ shinyApp(ui = ui, server = server)
 <p class="body-text-s">**5.** Use your `<-` and `->` arrow keys (or <img src="images/previous.png" alt="A gray, left-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/> and <img src="images/forward.png" alt="A gray, right-facing play button" style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>) to move forward and backward through your app's reactive life cycle</p>
 
 <br>
-<br>
 
-<p class="body-text-s">Read about the components of the [status bar](https://rstudio.github.io/reactlog/articles/reactlog.html#status-bar) and the meaning of different [reactive states](https://rstudio.github.io/reactlog/articles/reactlog.html#reactive-states) in the `reactlog` vignette.</p>
+<p class="body-text-s gray-text">Read about the components of the [status bar](https://rstudio.github.io/reactlog/articles/reactlog.html#status-bar) and the meaning of different [reactive states](https://rstudio.github.io/reactlog/articles/reactlog.html#reactive-states) in the `reactlog` vignette.</p>
 
 ---
 
@@ -495,7 +494,13 @@ shinyApp(ui = ui, server = server)
 
 <p class="body-text-s">**Note:** I've left the scatter plot on Tab 2 (and it's related UI elements) commented out (as we practiced in the earlier few slides) for this demo -- the `{reactlog}` package has many features that allow you to explore reactive dependencies across your whole app, but it can get complicated quickly. For demo purposes, we're going to work with this "smaller" version of our app, which contains just the problematic code.</p>
 
-<center><img src="images/reactlog-working.gif" alt="" width="650"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+knitr::include_graphics("images/reactlog-working.gif")
+```
 
 ---
 
@@ -556,9 +561,9 @@ shinyApp(ui = ui, server = server)
 
 <hr>
 
-<p class="body-text-s">Evidence from our diagnostic messages *and* `reactlog` suggests that we should make sure that our UI and server are actually able to communicate about our desired text output. After careful inspection of our `textOutput()` and `renderText()` code, we find that a spelling error is to blame:</p>
+<p class="body-text-xs">Evidence from our diagnostic messages *and* `reactlog` suggests that we should make sure that our UI and server are actually able to communicate about our desired text output. After careful inspection of our `textOutput()` and `renderText()` code, we find that a spelling error is to blame:</p>
 
-<p class="body-text-s">Our `outputId` in the **UI** is set to `penguin_text`:</p>
+<p class="body-text-xs">Our `outputId` in the **UI** is set to `penguin_text`:</p>
 
 ```{r}
 #| eval: false
@@ -574,7 +579,7 @@ ui <- fluidPage(
 )
 ```
 
-<p class="body-text-s">But we call `penguins_text` when rendering our output in the **server**:</p>
+<p class="body-text-xs">But we call `penguins_text` when rendering our output in the **server**:</p>
 
 ```{r}
 #| eval: false
@@ -593,4 +598,4 @@ server <- function(input, output){
 }
 ```
 
-<p class="body-text-s">By updating our `outputId` to match in both the UI and the server, we fix our app.</p>
+<p class="body-text-xs">By updating our `outputId` to match in both the UI and the server, we fix our app.</p>

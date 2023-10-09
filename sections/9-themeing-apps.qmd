@@ -88,7 +88,7 @@ format: revealjs
 
 <br>
 
-```{r}
+```{r filename="~/one-file-app/ui.R"}
 #| eval: false
 #| echo: true
 ui <- fluidPage(
@@ -128,7 +128,7 @@ ui <- fluidPage(
 
 <br>
 
-```{r}
+```{r filename="~/one-file-app/ui.R"}
 #| eval: false
 #| echo: true
 ui <- fluidPage(
@@ -174,7 +174,7 @@ ui <- fluidPage(
 
 <br>
 
-```{r}
+```{r filename="~/one-file-app/ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "1"
@@ -271,14 +271,13 @@ ui <- fluidPage(
 
 <hr>
 
-<p class="body-text-s">In this example, we update the colors of our app's body, navbar, and tabPanels using the appropriate `fresh` [variables for shiny *apps*](https://dreamrs.github.io/fresh/articles/vars-shiny.html). We specify a file path, `two-file-app/www` (you'll need to create the `/www` directory, since we don't have one yet), where our stylesheet (e.g. `shiny_fresh_themes.css`, as shown here) file will be saved to.</p>
+<p class="body-text-s">In this example, we update the colors of our app's body, navbar, and tabPanels using the appropriate `fresh` [variables for shiny *apps*](https://dreamrs.github.io/fresh/articles/vars-shiny.html). We specify a file path, `two-file-app/www` (you'll need to create the `/www` directory, since we don't have one yet), where our stylesheet (e.g. `shiny-fresh-theme.css`, as shown here) file will be saved to.</p>
 
 <p class="body-text-s">Of course, these color combos are *not* recommended, but chosen purely for demonstration purposes {{< fa face-smile title="a smiling face" >}}.</p>
 
-```{r}
+```{r filename="~/R/create-fresh-theme-shiny.R"}
 #| eval: false
 #| echo: true
-# in a separate script: ~/R/create_fresh_theme_shiny.R
 # load library ----
 library(fresh)
 
@@ -306,7 +305,7 @@ create_theme(
   ),
 
   # generate css file
-  output_file = "two-file-app/www/shiny_fresh_theme.css"
+  output_file = "two-file-app/www/shiny-fresh-theme.css"
 )
 
 ```
@@ -329,7 +328,7 @@ create_theme(
 
 <br>
 
-```{r}
+```{r filename="~/two-file-app/ui.R"}
 #| eval: false
 #| echo: true
 # navbar page ----
@@ -363,12 +362,11 @@ ui <- navbarPage(
 
 <hr>
 
-<p class="body-text-s">In this example, we update the colors of our app's header, body, and sidebar using the appropriate `fresh` [variables for shiny *dashboards*](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html). We specify a file path, `shinydashboard/www` where our stylesheet (e.g. `shinydashboard_fresh_themes.css`, as shown here) file will be saved to. Again, these color combos are *not* recommended, but chosen purely for demonstration purposes.</p>
+<p class="body-text-s">In this example, we update the colors of our app's header, body, and sidebar using the appropriate `fresh` [variables for shiny *dashboards*](https://dreamrs.github.io/fresh/articles/vars-shinydashboard.html). We specify a file path, `shinydashboard/www` where our stylesheet (e.g. `shinydashboard-fresh-theme.css`, as shown here) file will be saved to. Again, these color combos are *not* recommended, but chosen purely for demonstration purposes.</p>
 
-```{r}
+```{r filename="~/R/create-fresh-theme-shinydashboard.R"}
 #| eval: false
 #| echo: true
-# in a separate script: ~/R/create_fresh_theme_shinydashboard.R
 # load libraries ----
 library(fresh)
 
@@ -394,7 +392,7 @@ create_theme(
   ),
   
   # generate css file
-  output_file = "shinydashboard/www/shinydashboard_fresh_theme.css"
+  output_file = "shinydashboard/www/shinydashboard-fresh-theme.css"
   
 )
 ```
@@ -417,7 +415,7 @@ create_theme(
 
 <br>
 
-```{r}
+```{r filename="~/shinydashboard/ui.R"}
 #| eval: false
 #| echo: true
 body <- dashboardBody(
@@ -461,8 +459,6 @@ body <- dashboardBody(
 <hr>
 
 <p class="body-text">You can write your own stylesheets using [CSS](https://www.w3.org/Style/CSS/Overview.en.html) and [Sass](https://sass-lang.com/) to fully customize your apps, from background colors, to font styles, to size and shape of elements, and more. Unlike `bslib` and `fresh`, these are *languages*, meaning they can be a bit more challenging to get started with (but the payoff it big!).</p>
-
-<br>
 
 :::: {.columns}
 
@@ -562,7 +558,7 @@ body <- dashboardBody(
 
 ::::
 
-<p class="body-text">There are a variety of CSS selectors -- check out some of the basics that will take you far in styling your apps, starting [on this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/selector-types) of the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop.</p>
+<p class="body-text-s">There are a variety of CSS selectors -- check out some of the basics that will take you far in styling your apps, starting [on this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/selector-types) of the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop.</p>
 
 ---
 
@@ -578,7 +574,7 @@ body <- dashboardBody(
 
 ## tags
 
-<p class="body-text-s">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
+<p class="body-text-xs">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
 
 :::: {.columns}
 
@@ -629,7 +625,7 @@ shinyApp(ui, server)
 
 ## header
 
-<p class="body-text-s">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app). **Note:** explore Google fonts [here](https://fonts.google.com/) and check out [this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts) for instructions on selecting a font.</p>
+<p class="body-text-xs">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app). **Note:** explore Google fonts [here](https://fonts.google.com/) and check out [this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts) for instructions on selecting a font.</p>
 
 :::: {.columns}
 
@@ -686,7 +682,7 @@ shinyApp(ui, server)
 
 ## stylesheets
 
-<p class="body-text-s">Build a stylesheet (a `.css` file) inside your app's `www/` directory and apply your styles to your app's header (for shinydashboards, include your header inside `dashboardBody()`. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot. **Tip:** use `touch styles.css` in the terminal to create a new `.css` file.</p>
+<p class="body-text-xs">Build a stylesheet (a `.css` file) inside your app's `www/` directory and apply your styles to your app's header (for shinydashboards, include your header inside `dashboardBody()`. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot. **Tip:** use `touch styles.css` in the terminal to create a new `.css` file.</p>
 
 :::: {.columns}
 
@@ -951,7 +947,6 @@ library(palmerpenguins)
 
 ::::
 
-
 ## `styles.css`
 ```{css}
 #| eval: false
@@ -1119,13 +1114,13 @@ h1 {
 
 . . . 
 
-<p class="body-text-s">Next, create your Sass file within `two-file-app/www/`. Then, using your terminal, `cd` into `~/two-file-app/www` and use the `touch` command to create a `.scss` file (I'm calling mine `my_sass_styles.scss`).</p>
+<p class="body-text-s">Next, create your Sass file within `two-file-app/www/`. Then, using your terminal, `cd` into `~/two-file-app/www` and use the `touch` command to create a `.scss` file (I'm calling mine `my-sass-styles.scss`).</p>
 
 . . . 
 
-<p class="body-text-s">Add Sass variables and CSS rules to `my_sass_styles.scss`:</p>
+<p class="body-text-s">Add Sass variables and CSS rules to `my-sass-styles.scss`:</p>
 
-```{css}
+```{css filename="~/two-file-app/www/my-sass-styles.scss"}
 #| eval: false
 #| echo: true
 // import 2 fonts
@@ -1190,7 +1185,7 @@ a {
 
 <p class="body-text-s">We also need to apply our styles to our app by linking this newly-generated `.css` file in our app's header.</p>
 
-<p class="body-text-s">**Note:** After running your app, you should see a `my_sass_styles.css` file appear in `www/` -- it should look quite familiar, except all of our Sass variables have been converted to CSS.</p>
+<p class="body-text-s">**Note:** After running your app, you should see a `my-sass-styles.css` file appear in `www/` -- it should look quite familiar, except all of our Sass variables have been converted to CSS.</p>
 
 ::: {.panel-tabset}
 
@@ -1249,7 +1244,7 @@ ui <- navbarPage(
 )
 ```
 
-## `my_sass_styles.css`
+## `my-sass-styles.css`
 ```{css}
 #| eval: false
 #| echo: true

@@ -312,7 +312,7 @@ knitr::include_graphics("images/shinydashboard-directory-structure.png")
 
 <p class="body-text-s important-text-bg">**NOTE:** In this example exercise, I've removed all rows with missing values (i.e. `NaN`s in the `Depth` column & `NA`s in the `BedTemperature` column) before calculating averages. *This is NOT good practice -- exploring and thinking critically about missing data is an important part of data analysis, and in a real-life scenario, you should consider the most appropriate method for handling them.*</p>
 
-```{r}
+```{r filename="scratch/data_processing_app3_shinydashboard.R"}
 #| eval: false
 #| echo: true
 #....................SETUP & DATA PROCESSING.....................
@@ -408,7 +408,7 @@ map
 ```
 
 ## code
-```{r}
+```{r filename="scratch/practice_script_app3_shinydashboard.R"}
 #| eval: false
 #| echo: true
 #....................SETUP & DATA PROCESSING.....................
@@ -495,7 +495,7 @@ map
 
 ## code
 
-```{r}
+```{r filename="scratch/practice_script_app3_shinydashboard.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "5-10|26-32"
@@ -570,7 +570,7 @@ leaflet() |>
 
 <p class="body-text-s">Next, we'll build our `dashboardSidebar()`. Add a `sidebarMenu()` that contains two `menuItem`s. Be sure to provide each `menuItem()` with `text` as you'd like it to appear in your app (for me, that's **Welcome** and **Dashboard**), and a `tabName` which will be used to place `dashboardBody()` content in the appropriate `menuItem()`. Optionally, you can provide an icon. By default, `icon()` uses icons from [FontAwesome](https://fontawesome.com/).</p>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "4-6|13-19"
@@ -613,7 +613,7 @@ dashboardPage(header, sidebar, body)
 
 <p class="body-text-s">Next, we'll create `tabItems` in our `dashboardBody` -- we'll make a `tabItem` (singular) for each `menuItem` in our `dashboardSidebar`. In order to match a `menuItem` and a `tabItem`, ensure that they have matching a `tabName` (e.g. any content added to the **dashboard** `tabItem` will appear under the **dashboard** `menuItem`).</p>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true 
 #| code-line-numbers: "26-43"
@@ -677,7 +677,7 @@ dashboardPage(header, sidebar, body)
 
 <p class="body-text-s">[Boxes](https://rstudio.github.io/shinydashboard/structure.html#boxes) are the primary building blocks of shinydashboards and can contain almost any Shiny UI element (e.g. text, inputs, outputs). Start by adding two side-by-side boxes to our **dashboard** tab inside a `fluidRow()`. Together, their widths will add up to 12 (the total width of a browser page). These boxes will eventually contain our `sliderInput`s and our `leafletOutput`.</p>
 
-```{r} 
+```{r filename="ui.R"} 
 #| eval: false
 #| echo: true
 #| code-line-numbers: "39-56"
@@ -756,7 +756,7 @@ dashboardPage(header, sidebar, body)
 
 <p class="body-text-s">Lastly, add boxes to our **welcome** tab We'll use `column`s to place one box on the left-hand side of our page, and two stacked boxes on the right-hand side. Each `column` will take up half the page (**Note:** *For column-based layouts, use `NULL` for the box width, as the width is set by the column that contains the box*). We can create two `fluidRow`s within the right-hand column to stack two boxes vertically.</p>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "32-71"
@@ -875,7 +875,7 @@ dashboardPage(header, sidebar, body)
 <hr>
 
 <p class="body-text">Remember to load your *pre-processed* data, which should live in the `/data` folder within your app's directory.</p>
-```{r}
+```{r filename="global.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "4-9"
@@ -900,7 +900,7 @@ lake_data <- read_csv("data/lake_data_processed.csv")
 
 <p class="body-text-s">Start by adding just one `sliderInput` (for selecting a range of lake `Elevation`s) to the left-hand box in the **dashboard** tab. Then, add a `leafletOutput` to create a placeholder space for our map, along with a Spinner animation (from the `{shinycssloaders}` package). While we're here, we can also add `title`s to each box.</p>
 
-```{r}
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "84-89|96-99"
@@ -1028,7 +1028,7 @@ dashboardPage(header, sidebar, body)
 
 <p class="body-text-s">Remember to reference your practice data viz script and to follow our three steps for creating reactive outputs. And don't forget to add `()` following each reactive data frame called in your leaflet map!</p>
 
-```{r}
+```{r filename="server.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "3-36"
