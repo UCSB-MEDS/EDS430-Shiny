@@ -88,7 +88,14 @@ editor_options:
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating."
+knitr::include_graphics("images/reactive_app_v1.gif")
+```
 :::
 
 ::::
@@ -103,7 +110,7 @@ editor_options:
 
 <p class="body-text-xs">We'll do this in the **UI** within `fluidPage()`, a layout function that sets up the basic visual structure of the page and scales components in real time to fill all available browser width. Add a title and subtitle to your app (be sure to separate each with a comma, `,`), save, and run:</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 # user interface ----
@@ -122,7 +129,7 @@ ui <- fluidPage(
 
 <p class="body-text-xs">Recall that the UI is actually just an HTML document. We can style our text by adding static HTML elements [using `tags`](https://shiny.rstudio.com/articles/tag-glossary.html) -- a list of functions that parallel common HTML tags (e.g. `<h1>` == `tags$h1()`) The most common tags also have wrapper functions (e.g. `h1()`).</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 # user interface ----
@@ -206,7 +213,14 @@ ui <- fluidPage(
 ::: 
 
 ::: {.column width="45%"}
-<center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating."
+knitr::include_graphics("images/reactive_app_v1.gif")
+```
 :::
 
 ::::
@@ -246,7 +260,7 @@ selectInput(inputId = "island_input", label = "Choose and island:", ...)
 
 <p class="body-text">First let's add a `sliderInput()` that will allow users to select a range of penguin body masses (g).</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6-8"
@@ -265,7 +279,14 @@ ui <- fluidPage(
 
 <p class="body-text">When you run your app, you should see something similar to the image below. It's operable, but does not yet have an associated output.</p>
 
-<center><img src="images/3000_4000.png" alt="A basic Shiny app, with a title that says 'My App Title', a subtitle that says, 'Exploring Palmer Penguins and Antarctic Temperatures, and a slider input with a label that says 'Select a range of body masses (g)'. The slider bar has a minimum value of 2,700 and a maximum value of 6,300, and the moveable slider selectors currently range from 3,000 to 4,000." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "40%"
+#| fig-alt: "A basic Shiny app, with a title that says 'My App Title', a subtitle that says, 'Exploring Palmer Penguins and Antarctic Temperatures, and a slider input with a label that says 'Select a range of body masses (g)'. The slider bar has a minimum value of 2,700 and a maximum value of 6,300, and the moveable slider selectors currently range from 3,000 to 4,000."
+knitr::include_graphics("images/3000_4000.png")
+```
 
 ---
 
@@ -300,7 +321,7 @@ dataTableOutput(outputId = "penguin_data")
 
 <p class="body-text-s">Let's now add a `plotOutput()`, which will be updated based on the user inputs via the `sliderInput()`, then run the app.</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "10-11"
@@ -332,7 +353,14 @@ ui <- fluidPage(
 :::
 
 :::{.column width="45%"}
-<center><img src="images/output_placeholder.png" alt="A Google Chrome browser window with our Shiny app open on the left-hand side and the underlying HTML document open on the right. The app looks the same as before, except hovering over the HTML associated with our new plotOutput highlights a blue square region beneath the sliderInput. This highlighted region is the placeholder where our plot will eventually be rendered." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "A Google Chrome browser window with our Shiny app open on the left-hand side and the underlying HTML document open on the right. The app looks the same as before, except hovering over the HTML associated with our new plotOutput highlights a blue square region beneath the sliderInput. This highlighted region is the placeholder where our plot will eventually be rendered."
+knitr::include_graphics("images/output_placeholder.png")
+```
 :::
 
 ::::
@@ -392,7 +420,7 @@ ui <- fluidPage(
 :::: {.columns}
 
 ::: {.column width="65%"}
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "21-22"
@@ -446,7 +474,7 @@ server <- function(input, output) {
 
 <p class="body-text-s">Use the appropriate `render*()` function to make your output reactive (e.g. if you have a `plotOutput` in your UI, you will need to use `renderPlot()` in your server). Within your `render*()`, write any code inside a set of curly braces, `{}`. This allows you to include as many lines of code as it takes to build your object.</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "22-26"
@@ -493,7 +521,7 @@ server <- function(input, output) {
 :::: {.columns}
 
 ::: {.column width="45%"}
-```{r filename="practice-script.R"}
+```{r filename="~/scratch/practice-script-app1-penguins.R"}
 #| eval: false
 #| echo: true
 
@@ -520,12 +548,19 @@ ggplot(na.omit(penguins),
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/penguin_scatterplot.png" alt="A scatterplot with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis. Data points are colored by penguins species: Adelie in orange circles, Chinstrap in purple triangles, and Gentoo in green squares." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A scatterplot with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis. Data points are colored by penguins species: Adelie in orange circles, Chinstrap in purple triangles, and Gentoo in green squares."
+knitr::include_graphics("images/penguin_scatterplot.png")
+```
 :::
 
 ::::
 
-<p class="body-text-s important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to something like `~/scratch/practice_script.R`.</p>
+<p class="body-text-s important-text-bg">**Tip:** Save your practice script in a separate directory (i.e. not inside your app directory) -- I typically save mine to something like `~/scratch/practice-script.R`.</p>
 
 ---
 
@@ -537,7 +572,7 @@ ggplot(na.omit(penguins),
 
 <p class="body-text-s">Copy your code over to your app, placing it inside the `{}` (and make sure to add any additional required packages to the top of your `app.R` script). Run your app. What do you notice?</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "25-35" 
@@ -590,7 +625,14 @@ server <- function(input, output) {
 
 <p class="body-text bottombr">We have a plot (yay!), but it isn't reactive. We have not yet told the server how to update the plot based on user inputs via the `sliderInput()` in the UI. Let's do that next...</p>
 
-<center><img src="images/nonreactive_app.gif" alt="A user changes the sliderInput meant associated with the penguin data scatterplot, but the plot does not update (i.e. it is not yet reactive)." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A user changes the sliderInput meant associated with the penguin data scatterplot, but the plot does not update (i.e. it is not yet reactive)."
+knitr::include_graphics("images/nonreactive_app.gif")
+```
 
 ---
 
@@ -604,7 +646,7 @@ server <- function(input, output) {
 
 . . . 
 
-```{r filename="practice-script.R"}
+```{r filename="~/scratch/practice-script-app1-penguins.R"}
 #| eval: true
 #| echo: true
 # load packages
@@ -623,7 +665,7 @@ body_mass_df <- penguins |>
 :::: {.columns}
 
 :::{.column width="55%"}
-```{r filename="practice-script.R"}
+```{r filename="~/scratch/practice-script-app1-penguins.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "2"
@@ -647,7 +689,14 @@ ggplot(na.omit(body_mass_df), # plot 'body_mass_df' rather than 'penguins' df
 :::
 
 ::: {.column width="35%"}
-<center><img src="images/filtered_penguin_plot.png" alt="A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins. For all species, bill length tends to increase with flipper length." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins. For all species, bill length tends to increase with flipper length."
+knitr::include_graphics("images/filtered_penguin_plot.png")
+```
 :::
 
 ::::
@@ -662,7 +711,7 @@ ggplot(na.omit(body_mass_df), # plot 'body_mass_df' rather than 'penguins' df
 
 . . . 
 
-```{r}
+```{r filename="~/scratch/practice-script-app1-penguins.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "2"
@@ -684,7 +733,14 @@ body_mass_df <- penguins |>
   filter(body_mass_g %in% 2857:5903)
 ```
 
-<center><img src="images/2857_5903.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 2,857 and a maximum of 5,903." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 2,857 and a maximum of 5,903."
+knitr::include_graphics("images/2857_5903.png")
+```
 :::
 
 ::: {.column width="5%"}
@@ -698,7 +754,14 @@ body_mass_df <- penguins |>
   filter(body_mass_g %in% 3725:5191)
 ```
 
-<center><img src="images/3725_5191.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 3,725 and a maximum of 5,191." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 3,725 and a maximum of 5,191."
+knitr::include_graphics("images/3725_5191.png")
+```
 :::
 
 ::::
@@ -713,7 +776,7 @@ body_mass_df <- penguins |>
 
 <p class="body-text-s">Recall that in our **UI**, we gave our `sliderInput()` an `inputId = "body_mass_input"`.</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "9"
@@ -757,7 +820,7 @@ server <- function(input, output) {
 
 <p class="body-text-xs important-text-bg">**Importantly**, we need to use `reactive()` to create reactive data frames that update with user inputs. When you call your reactive data frame in your ggplot, **the data frame name must be followed by `()`**.</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "20-24|28"
@@ -805,7 +868,15 @@ server <- function(input, output) {
 
 <p class="body-text">You should now have a reactive Shiny app! *Note that reactivity automatically occurs whenever you use an **input value** to **render** an **output object**.*</p>
 
-<center><img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="550"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating."
+
+knitr::include_graphics("images/reactive_app_v1.gif")
+```
 
 ---
 
@@ -861,7 +932,14 @@ server <- function(input, output) {
 :::
 
 ::: {.column width="45%"}
-<center><img src="images/DT.gif" alt="A gif of our current Shiny app, demonstrating the newly added DT::datatable. The user is able to select which years (2007, 2008, 2009) to display data for by clicking on one more more checkboxes." width="550"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A gif of our current Shiny app, demonstrating the newly added DT::datatable. The user is able to select which years (2007, 2008, 2009) to display data for by clicking on one more more checkboxes."
+knitr::include_graphics("images/DT.gif")
+```
 :::
 
 ::::
@@ -905,7 +983,7 @@ server <- function(input, output) {
 
 <p class="body-text-s">Press the right arrow key to advance through the newly added lines of code.</p>
 
-```{r filename="app.R"}
+```{r filename="~/one-file-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "5|23-29|60-73"
@@ -1021,7 +1099,16 @@ shinyApp(ui = ui, server = server)
 
 ::: {.column width="45%"}
 <br>
-<center><img src="images/oops.gif" alt="A gif of Britney Spears in her iconic red spandex outfit singing 'Oops I did it again.'" width="700"/></center>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A gif of Britney Spears in her iconic red spandex outfit singing 'Oops I did it again.'"
+knitr::include_graphics("images/oops.gif")
+```
+
 :::
 
 ::::

@@ -51,7 +51,14 @@ format: revealjs
 
 <p class="body-text-s">It uses the `gapminder` data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.</p> 
 
-<center><img src="images/gapminder-app.gif" alt="The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly." width="550"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly."
+knitr::include_graphics("images/gapminder-app.gif")
+```
 
 ---
 
@@ -61,7 +68,7 @@ format: revealjs
 
 <hr>
 
-```{r}
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 # app.R
@@ -392,7 +399,9 @@ shinyApp(ui = ui, server = server)
 
 ##  {#repeated-code data-menu-title="Repeated gapminder code"}
 
-<div class="slide-title2">Repeated code sections</div>
+[Repeated code sections]{.slide-title3}
+
+<hr>
 
 <p class="body-text-s">Taking a closer look at the gapminder app code, we'll see that the following sections of code are repeated for each region (6 times total; only code sections for "all" regions shown below):</p>
 
@@ -512,10 +521,9 @@ output$all_plot <- renderPlot({
 
 <p class="body-text">Modules are a coding pattern, organized into **two** functions: one that creates the **UI elements** and one that **loads the server logic**. They can look a bit different, depending on your module, but they generally follow this pattern:</p>
 
-```{r}
+```{r filename="myModule.R"}
 #| eval: false
 #| echo: true
-# myModule.R
 #..........................ui function...........................
 
 myModuleUI <- function(id) {
@@ -571,11 +579,11 @@ myModuleServer <- function(id, ...) { # where `...` includes any number of addit
 
 <hr>
 
-<p class="body-text-s">The UI part of a module needs to do **two** things: **(1)** return a shiny element (e.g. an input & output), and **(2)** assign module elements to a unique namespace using `NS()`. `NS()` provides an easy way to help with namespacing within your module, ensuring that each time your module is called, a unique `id` is assigned.</p>
+<p class="body-text-xs">The UI part of a module needs to do **two** things: **(1)** return a shiny element (e.g. an input & output), and **(2)** assign module elements to a unique namespace using `NS()`. `NS()` provides an easy way to help with namespacing within your module, ensuring that each time your module is called, a unique `id` is assigned.</p>
 
-<p class="body-text-s">The UI function for our gapminder module will look like this (**NOTE:** code comments below denote the general order of operations I followed when writing this UI function):</p>
+<p class="body-text-xs">The UI function for our gapminder module will look like this (**NOTE:** code comments below denote the general order of operations I followed when writing this UI function):</p>
 
-```{r}
+```{r filename="~/modularized-app/R/gapModule.R"}
 #| eval: false
 #| echo: true
 # step 1: a good function naming convention is a descriptive base name, suffixed by `UI`
@@ -597,7 +605,7 @@ gapModuleUI <- function(id) { # step 2: the first argument to a UI function shou
 } # END gapModuleUI function
 ```
 
-<p class="body-text-s">Wrapping our input and output `Id`s in `ns()` will create unique Ids each time our module is called, preventing things from overwriting one one another. For example, if we call `gapModuleUI(id = "myFirstModuleCall")`, our `outputId` will be set to `myFirstModuleCall-plot` and our `inputId` will be set to `myFirstModuleCall-year`. Calling our module a second time (e.g. `gapModuleUI(id = "mySecondModuleCall")`) will generate two new unique Ids (e.g. `mySecondModuleCall-plot` & `mySecondModuleCall-year`).</p>
+<p class="body-text-xs">Wrapping our input and output `Id`s in `ns()` will create unique Ids each time our module is called, preventing things from overwriting one one another. For example, if we call `gapModuleUI(id = "myFirstModuleCall")`, our `outputId` will be set to `myFirstModuleCall-plot` and our `inputId` will be set to `myFirstModuleCall-year`. Calling our module a second time (e.g. `gapModuleUI(id = "mySecondModuleCall")`) will generate two new unique Ids (e.g. `mySecondModuleCall-plot` & `mySecondModuleCall-year`).</p>
 
 ---
 
@@ -607,11 +615,11 @@ gapModuleUI <- function(id) { # step 2: the first argument to a UI function shou
 
 <hr>
 
-<p class="body-text-s">The server part of a module looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first *required* parameter, `id`, along with any other necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Africa** vs. **Asia** etc.)).</p>
+<p class="body-text-xs">The server part of a module looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first *required* parameter, `id`, along with any other necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Africa** vs. **Asia** etc.)).</p>
 
-<p class="body-text-s">Next, call `moduleServer()` *inside* your server function and pass it the `id` variable, along with the module function. The module function *must* have three parameters: `input`, `output`, and `session`. You *do not* have to use `ns()` to refer to inputs and outputs here. Copy server code from our original app, plop it inside the module function, and sub in our `data` parameter where ever a data frame subset is called.</p>
+<p class="body-text-xs">Next, call `moduleServer()` *inside* your server function and pass it the `id` variable, along with the module function. The module function *must* have three parameters: `input`, `output`, and `session`. You *do not* have to use `ns()` to refer to inputs and outputs here. Copy server code from our original app, plop it inside the module function, and sub in our `data` parameter where ever a data frame subset is called.</p>
 
-```{r}
+```{r filename="~/modularized-app/R/gapModule.R"}
 #| eval: false
 #| echo: true
 # step 1: a good function naming convention is a descriptive base name, suffixed by `Server`
@@ -677,7 +685,7 @@ gapModuleServer <- function(id, data) { # step 2: the first argument to a server
 
 <p class="body-text-s">First, since we've saved our `gapModule.R` file to our app's directory, we'll need to source it at the top of our `app.R` file:</p>
 
-```{r}
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "5"
@@ -707,7 +715,7 @@ oceania_data <- filter(gapminder, continent == "Oceania")
 
 <p class="body-text-s">Next, let's use our module's UI function. We'll need to define/name each of our `tabPanel`s (one for each of our six regions), but rather than building a `plotOutput` and `sliderInput` inside each `tabPanel` (each with unique `Id`s), we can instead call our `gapModuleUI()` function, and ensure that each time we call it to supply a unique character string for our `id` parameter.</p>
 
-```{r}
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "25-30"
@@ -757,7 +765,7 @@ ui <- fluidPage(
 
 <p class="body-text-s">Finally, we can re-write our server. Rather than writing out the *lengthy* code required to make each plot six times over, we can instead call our `gapModuleServer()` function, supplying each call with `id`s that match those used in `gapModuleUI()`, along with the appropriate data subset. Now, run your app! If written correctly, your app should run exactly the same as your initial version.</p>
 
-```{r}
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "39-44"

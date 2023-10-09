@@ -406,7 +406,7 @@
 <div class="column" style="width:50%;">
 <p><span class="body-text baby-blue-text"><strong>Published:</strong> Oct 10, 2022</span></p>
 </div><div class="column" style="width:50%;">
-<p><span class="body-text baby-blue-text"><strong>Last updated:</strong> Oct 08, 2023</span></p>
+<p><span class="body-text baby-blue-text"><strong>Last updated:</strong> Oct 09, 2023</span></p>
 </div>
 </div>
 <hr class="hr-teal">
@@ -437,20 +437,24 @@
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> A GitHub profile &amp; git installed/configured
 </div>
 </div><div class="column" style="width:30%;">
-<center>
-<img src="images/shiny.png" alt="A blue hexagon with the word 'Shiny' in cursive lettering printed across the center." width="150">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/shiny.png" style="width:50.0%" alt="A blue hexagon with the word 'Shiny' in cursive lettering printed across the center."></p>
+</figure>
 </div>
 </div>
-<div class="body-text topbr">
+</div>
+</div>
+</div>
+<div class="body-text">
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> You have the required R packages installed. You can install/update them all at once by running:
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="at">pkgs =</span> <span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"shinydashboard"</span>, <span class="st">"shinyWidgets"</span>, <span class="st">"DT"</span>, <span class="st">"leaflet"</span>, <span class="st">"shinycssloaders"</span>, <span class="st">"tidyverse"</span>, <span class="st">"bslib"</span>, <span class="st">"fresh"</span>, <span class="st">"sass"</span>, <span class="st">"reactlog"</span>, <span class="st">"shinytest2"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"lterdatasampler"</span>, <span class="st">"gapminder"</span>, <span class="st">"markdown"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
 <center>
-<div class="body-text-xl teal-text">
+<div class="body-text-xl teal-text topbr">
 No prior Shiny experience necessary!
 </div>
 </center>
@@ -537,10 +541,8 @@ You can reference the source code of all the apps we’ll be building/playing wi
 <p class="quote-text-bg body-text bottombr">
 <em>“<strong>Shiny is an R package that makes it easy to build interactive web apps straight from R.</strong> You can host standalone apps on a webpage or embed them in <a href="https://rmarkdown.rstudio.com/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626">R Markdown</a> documents or build <a href="http://rstudio.github.io/shinydashboard/?_ga=2.242738759.492023234.1673556996-309155161.1666221806">dashboards</a>. You can also extend your Shiny apps with <a href="http://rstudio.github.io/shinythemes/?_ga=2.162383609.492023234.1673556996-309155161.1666221806">CSS themes</a>, <a href="http://www.htmlwidgets.org/">htmlwidgets</a>, and JavaScript <a href="https://github.com/daattali/shinyjs/blob/master/README.md">actions.</a>”</em> <strong>- RStudio</strong>
 </p>
-<center>
-<img src="images/worldbank-shiny.gif" alt="A gif of Andre Duarte's 'Worldbank-Shiny' app. On the lefthand side of the app, the title 'Gapminder Interactive Plot' sits above a series of three widgets. The first is a dropdown menu where the user can select a region (e.g. Europe &amp; Central Asia) or view all regions at the same time. The next two widgets are slider inputs -- the first allows the user to select a year between 1960 and 2014, and the second allows the user to select a population size between 500 and 5000. On the right hand side of the app is a bubble plot of Fertility Rate vs. Life Expectancy, which updates as inputs are changed by the user. Hovering a bubble displays thge corresponding Country, Region, Population, Life Expectancy, and Fertility Rate." width="700">
-</center>
-<center>
+
+<img data-src="images/worldbank-shiny.gif" style="width:80.0%" alt="A gif of Andre Duarte's 'Worldbank-Shiny' app. On the lefthand side of the app, the title 'Gapminder Interactive Plot' sits above a series of three widgets. The first is a dropdown menu where the user can select a region (e.g. Europe &amp; Central Asia) or view all regions at the same time. The next two widgets are slider inputs -- the first allows the user to select a year between 1960 and 2014, and the second allows the user to select a population size between 500 and 5000. On the right hand side of the app is a bubble plot of Fertility Rate vs. Life Expectancy, which updates as inputs are changed by the user. Hovering a bubble displays thge corresponding Country, Region, Population, Life Expectancy, and Fertility Rate." class="r-stretch quarto-figure-center"><center>
 <p class="body-text-s gray-text topbr">
 <a href="https://github.com/aguimaraesduarte/WorldBank-Shiny">Worldbank-Shiny</a> app to visualize fertility rate vs.&nbsp;life expectancy from 1960 to 2015, by <a href="https://github.com/aguimaraesduarte">Andre Duarte</a>
 </p>
@@ -560,10 +562,8 @@ You can reference the source code of all the apps we’ll be building/playing wi
 <p class="body-text bottombr">
 Shiny apps are composed in <em>two</em> parts: (1) a <strong>web page</strong> that displays the app to a user (i.e.&nbsp;the <strong>user interface</strong>, or <strong>UI</strong> for short), and (2) a <strong>computer</strong> that powers the app (i.e.&nbsp;the <strong>server</strong>)
 </p>
-<center>
-<img src="images/basic_shiny_app.png" alt="A simple schematic of a Shiny app, which includes the User Interface (UI, colored in blue) and the Server (colored in orange). The UI creates what the user will see and interact with, while the server builds the outputs that react and update based on user inputs." width="675">
-</center>
-<p class="body-text bottombr">
+
+<img data-src="images/basic_shiny_app.png" style="width:80.0%" alt="A simple schematic of a Shiny app, which includes the User Interface (UI, colored in blue) and the Server (colored in orange). The UI creates what the user will see and interact with, while the server builds the outputs that react and update based on user inputs." class="r-stretch quarto-figure-center"><p class="body-text bottombr">
 The <strong>UI</strong> controls the <strong>layout and appearance</strong> of your app and is written in HTML (except we use functions from the <a href="https://shiny.rstudio.com/">shiny</a> package to write that HTML). The <strong>server</strong> handles the <strong>logic</strong> of the app – in other words, it is a set of instructions that tells the webpage what to display when a user interacts with it.
 </p>
 </section><section id="widgets" class="slide level2" data-menu-title="Widgets"><h2></h2>
@@ -571,9 +571,14 @@ The <strong>UI</strong> controls the <strong>layout and appearance</strong> of y
 <hr>
 <div class="columns">
 <div class="column" style="width:60%;">
-<center>
-<img src="images/basic_widgets.png" alt="Examples of Shiny's pre-built widget options. These include buttons, single checkbox, checkbox groups, date input, date range, file input, numeric input, radio buttons, select box, sliders, and text input. The default color scheme is black and gray with selections highlighted in blue." width="675">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/basic_widgets.png" style="width:100.0%" alt="Examples of Shiny's pre-built widget options. These include buttons, single checkbox, checkbox groups, date input, date range, file input, numeric input, radio buttons, select box, sliders, and text input. The default color scheme is black and gray with selections highlighted in blue."></p>
+</figure>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:35%;">
@@ -591,10 +596,8 @@ The <strong>UI</strong> controls the <strong>layout and appearance</strong> of y
 <p class="body-text bottombr">
 Reactivity is what makes Shiny apps responsive i.e.&nbsp;it lets the app instantly update itself whenever the user makes a change. At a very basic level, it looks something like this:
 </p>
-<center>
-<img src="images/reactivity_intro.png" alt="A schematic of Shiny reactivity. The UI is represented by a light blue box. Inside the blue UI box, there is a radio button widget that says, 'Make a choice:' and three round radio buttons beneath it. Underneath that, there is a placeholder space for a reactive output to be created by the server. The server is to the left of the UI and is represented by an orange box. At a basic level, reactivity occurs after the following steps: (1) A widget gets information from a user which (2) is then passed to the server where it is used to update a data frame based on the users choice. (3) The new data frame is used to update outputs in the server, and (4) those outputs are then rendered in the UI." width="750">
-</center>
-<p class="body-text bottombr">
+
+<img data-src="images/reactivity_intro.png" style="width:80.0%" alt="A schematic of Shiny reactivity. The UI is represented by a light blue box. Inside the blue UI box, there is a radio button widget that says, 'Make a choice:' and three round radio buttons beneath it. Underneath that, there is a placeholder space for a reactive output to be created by the server. The server is to the left of the UI and is represented by an orange box. At a basic level, reactivity occurs after the following steps: (1) A widget gets information from a user which (2) is then passed to the server where it is used to update a data frame based on the users choice. (3) The new data frame is used to update outputs in the server, and (4) those outputs are then rendered in the UI." class="r-stretch quarto-figure-center"><p class="body-text bottombr">
 Check out Garrett Grolemund’s article, <a href="https://shiny.rstudio.com/articles/understanding-reactivity.html">How to understand reactivity in R</a> for a more detailed overview of Shiny reactivity.
 </p>
 </section><section id="examples-please" class="slide level2" data-menu-title="~~~ Examples Please? ~~~" data-background="#053660"><h2></h2>
@@ -678,28 +681,22 @@ Now let’s build our own!
 <p class="body-text">
 Let’s start by creating a GitHub repo to house our soon-to-be app(s), then we’ll clone our repo to our computer. I’m using RStudio to clone my repo in the example below, but you can also do this via the command line using <code>git clone &lt;repo-url&gt;</code>.
 </p>
-<center>
-<img src="images/create-repo.gif" alt="A gif demonstrating how to set up a GitHub repo and how to clone that repo to your computer. Start by clicking on the 'Repositories' tab from your GitHub profile, then click the green 'New' button. Give your repo a name, check the box next to 'Add a README file', Add a .gitigore by choosing 'R' from the drop down menu, then click the green 'Create repository' button. From your repo landing page, click the green 'Code' button, then copy the URL to your clipboard. In RStudio, select 'New Project' from the top left 'Project' button, select 'Version Control', then 'Git', and paste your URL in the 'Repository URL field'. Your repo name should be auto completed in the 'Project directory name:' field, but if not, press the 'Tab' key. Click 'Create Project' to complete the process." width="700">
-</center>
-</section><section id="repo-structure" class="slide level2" data-menu-title="Repo Structure"><h2></h2>
+
+<img data-src="images/create-repo.gif" style="width:100.0%" alt="A gif demonstrating how to set up a GitHub repo and how to clone that repo to your computer. Start by clicking on the 'Repositories' tab from your GitHub profile, then click the green 'New' button. Give your repo a name, check the box next to 'Add a README file', Add a .gitigore by choosing 'R' from the drop down menu, then click the green 'Create repository' button. From your repo landing page, click the green 'Code' button, then copy the URL to your clipboard. In RStudio, select 'New Project' from the top left 'Project' button, select 'Version Control', then 'Git', and paste your URL in the 'Repository URL field'. Your repo name should be auto completed in the 'Project directory name:' field, but if not, press the 'Tab' key. Click 'Create Project' to complete the process." class="r-stretch quarto-figure-center"></section><section id="repo-structure" class="slide level2" data-menu-title="Repo Structure"><h2></h2>
 <p><span class="slide-title">Shiny app repo structure</span></p>
 <hr>
 <p class="body-text-s">
 Not much is <em>required</em> to make a functional app (which is awesome) – for a basic app, you really just need an <code>app.R</code> file where you’ll write the code for your UI and server. To stay organized, we’ll place <code>app.R</code> into a subdirectory (e.g.&nbsp;<code>/myapp</code>), which will also house any dependencies (e.g.&nbsp;other scripts/files/etc.) used by <code>app.R</code>.
 </p>
-<center>
-<img src="images/repo_structure_details.png" alt="A visual representation of a basic shiny app repository file/folder structure." width="900">
-</center>
-</section><section id="begin-the-same" class="slide level2" data-menu-title="All Apps Begin the Same"><h2></h2>
+
+<img data-src="images/repo_structure_details.png" style="width:100.0%" alt="A visual representation of a basic shiny app repository file/folder structure." class="r-stretch quarto-figure-center"></section><section id="begin-the-same" class="slide level2" data-menu-title="All Apps Begin the Same"><h2></h2>
 <p><span class="slide-title2">All Shiny apps begin (in almost) the same way</span></p>
 <hr>
 <p class="body-text bottombr">
 You have the option of creating either a <strong>single-file app</strong> or <strong>two-file app</strong>, and they look nearly the same (we’ll see both formats in the coming slides).
 </p>
-<center>
-<img src="images/one-vs-two.png" alt="Shiny apps can be built using a single app.R file, or using ui.R plus server.R, and most often a global.R in conjunction." width="700">
-</center>
-<p class="body-text-s">
+
+<img data-src="images/one-vs-two.png" style="width:100.0%" alt="Shiny apps can be built using a single app.R file, or using ui.R plus server.R, and most often a global.R in conjunction." class="r-stretch quarto-figure-center"><p class="body-text-s">
 Why two options? Before v0.10.2, Shiny apps needed to be split into <strong>two separate files</strong>, <code>ui.R</code> and <code>server.R</code>, that defined the UI and server components, respectively. With v0.10.2+, users can create a <strong>single-file app</strong>, <code>app.R</code>, which contains both the UI and server components together. While it largely comes down to personal preference, a <strong>single-file format is best for smaller apps or when creating a <a href="https://reprex.tidyverse.org/">reprex</a></strong>, while the <strong>two-file format is beneficial when writing large, complex apps</strong> where breaking apart code can make things a bit more navigable/maintainable.
 </p>
 </section><section id="single-file" class="slide level2" data-menu-title="Single-file App"><h2></h2>
@@ -751,13 +748,23 @@ You should also notice a red stop sign, <img src="images/stop.png" alt="A red he
 </p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<center>
-<img src="images/blank_app.png" alt="The RStudio viewer showing a running app consisting of only a blank white screen since no elements have been added yet." width="400">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/blank_app.png" style="width:80.0%" alt="The RStudio viewer showing a running app consisting of only a blank white screen since no elements have been added yet."></p>
+</figure>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
-<center>
-<img src="images/run_app_RStudio.png" alt="RStudio running our blank app. In the console, we see the text 'Listening on http://127.0.0.1:6341' and a red stop sign indicating that RStudio is busy." width="400">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/run_app_RStudio.png" style="width:70.0%" alt="RStudio running our blank app. In the console, we see the text 'Listening on http://127.0.0.1:6341' and a red stop sign indicating that RStudio is busy."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -925,9 +932,14 @@ We’ll start by building a small <strong>single-file app</strong> using data fr
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<center>
-<img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/reactive_app_v1.gif" style="width:100.0%" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section><section id="adding-text" class="slide level2" data-menu-title="Adding text"><h2></h2>
@@ -939,7 +951,7 @@ We’ll do this in the <strong>UI</strong> within <code>fluidPage()</code>, a la
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># user interface ----</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -960,7 +972,7 @@ Recall that the UI is actually just an HTML document. We can style our text by a
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># user interface ----</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -1071,9 +1083,14 @@ Next, we’ll create a <strong>scatterplot of penguin bill lengths vs.&nbsp;peng
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<center>
-<img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="700">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/reactive_app_v1.gif" style="width:100.0%" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section><section id="input-syntax" class="slide level2" data-menu-title="Input Syntax"><h2></h2>
@@ -1108,7 +1125,7 @@ First let’s add a <code>sliderInput()</code> that will allow users to select a
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12" data-code-line-numbers="6-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># user interface ----</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -1125,9 +1142,14 @@ First let’s add a <code>sliderInput()</code> that will allow users to select a
 <p class="body-text">
 When you run your app, you should see something similar to the image below. It’s operable, but does not yet have an associated output.
 </p>
-<center>
-<img src="images/3000_4000.png" alt="A basic Shiny app, with a title that says 'My App Title', a subtitle that says, 'Exploring Palmer Penguins and Antarctic Temperatures, and a slider input with a label that says 'Select a range of body masses (g)'. The slider bar has a minimum value of 2,700 and a maximum value of 6,300, and the moveable slider selectors currently range from 3,000 to 4,000." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/3000_4000.png" style="width:40.0%" alt="A basic Shiny app, with a title that says 'My App Title', a subtitle that says, 'Exploring Palmer Penguins and Antarctic Temperatures, and a slider input with a label that says 'Select a range of body masses (g)'. The slider bar has a minimum value of 2,700 and a maximum value of 6,300, and the moveable slider selectors currently range from 3,000 to 4,000."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </section><section id="output-syntax" class="slide level2" data-menu-title="Output Syntax"><h2></h2>
 <p><span class="slide-title">Output function syntax</span></p>
@@ -1156,7 +1178,7 @@ Let’s now add a <code>plotOutput()</code>, which will be updated based on the 
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14" data-code-line-numbers="10-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># user interface ----</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
@@ -1182,9 +1204,14 @@ Okay, it looks like nothing changed?? <strong>Remember, <code>*Output()</code> f
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<center>
-<img src="images/output_placeholder.png" alt="A Google Chrome browser window with our Shiny app open on the left-hand side and the underlying HTML document open on the right. The app looks the same as before, except hovering over the HTML associated with our new plotOutput highlights a blue square region beneath the sliderInput. This highlighted region is the placeholder where our plot will eventually be rendered." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/output_placeholder.png" style="width:80.0%" alt="A Google Chrome browser window with our Shiny app open on the left-hand side and the underlying HTML document open on the right. The app looks the same as before, except hovering over the HTML associated with our new plotOutput highlights a blue square region beneath the sliderInput. This highlighted region is the placeholder where our plot will eventually be rendered."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1258,7 +1285,7 @@ The <strong>server function</strong> is defined with two arguments, <code>input<
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15" data-code-line-numbers="21-22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="fu">library</span>(shiny)</span>
@@ -1306,7 +1333,7 @@ Use the appropriate <code>render*()</code> function to make your output reactive
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16" data-code-line-numbers="22-26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="fu">library</span>(shiny)</span>
@@ -1348,7 +1375,7 @@ I find it easier to experiment and draft my objects (e.g.&nbsp;plots) first in a
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>practice-script.R</strong></pre>
+<pre><strong>~/scratch/practice-script-app1-penguins.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># load packages</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="fu">library</span>(palmerpenguins)</span>
@@ -1371,13 +1398,18 @@ I find it easier to experiment and draft my objects (e.g.&nbsp;plots) first in a
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<center>
-<img src="images/penguin_scatterplot.png" alt="A scatterplot with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis. Data points are colored by penguins species: Adelie in orange circles, Chinstrap in purple triangles, and Gentoo in green squares." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/penguin_scatterplot.png" style="width:100.0%" alt="A scatterplot with Flipper length (mm) on the x-axis and Bill length (mm) on the y-axis. Data points are colored by penguins species: Adelie in orange circles, Chinstrap in purple triangles, and Gentoo in green squares."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 <p class="body-text-s important-text-bg">
-<strong>Tip:</strong> Save your practice script in a separate directory (i.e.&nbsp;not inside your app directory) – I typically save mine to something like <code>~/scratch/practice_script.R</code>.
+<strong>Tip:</strong> Save your practice script in a separate directory (i.e.&nbsp;not inside your app directory) – I typically save mine to something like <code>~/scratch/practice-script.R</code>.
 </p>
 </section><section id="rule2.3" class="slide level2" data-menu-title="Copy code into server"><h2></h2>
 <p><span class="slide-title2">Copy your plot code into the server</span></p>
@@ -1388,7 +1420,7 @@ Copy your code over to your app, placing it inside the <code><a href="https://rd
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb18" data-code-line-numbers="25-35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="fu">library</span>(shiny)</span>
@@ -1434,10 +1466,8 @@ Copy your code over to your app, placing it inside the <code><a href="https://rd
 <p class="body-text bottombr">
 We have a plot (yay!), but it isn’t reactive. We have not yet told the server how to update the plot based on user inputs via the <code>sliderInput()</code> in the UI. Let’s do that next…
 </p>
-<center>
-<img src="images/nonreactive_app.gif" alt="A user changes the sliderInput meant associated with the penguin data scatterplot, but the plot does not update (i.e. it is not yet reactive)." width="450">
-</center>
-</section><section id="practice-filtering" class="slide level2" data-menu-title="Practice filtering data"><h2></h2>
+
+<img data-src="images/nonreactive_app.gif" style="width:100.0%" alt="A user changes the sliderInput meant associated with the penguin data scatterplot, but the plot does not update (i.e. it is not yet reactive)." class="r-stretch quarto-figure-center"></section><section id="practice-filtering" class="slide level2" data-menu-title="Practice filtering data"><h2></h2>
 <p><span class="slide-title2">Practice filtering data in our separate script</span></p>
 <hr>
 <p class="body-text-s">
@@ -1447,7 +1477,7 @@ First, create a new data frame where we filter the <code>body_mass_g</code> colu
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>practice-script.R</strong></pre>
+<pre><strong>~/scratch/practice-script-app1-penguins.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># load packages</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="fu">library</span>(palmerpenguins)</span>
@@ -1468,7 +1498,7 @@ Then, plot the new filtered data frame:
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>practice-script.R</strong></pre>
+<pre><strong>~/scratch/practice-script-app1-penguins.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb20" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># plot new, filtered data</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="fu">ggplot</span>(<span class="fu">na.omit</span>(body_mass_df), <span class="co"># plot 'body_mass_df' rather than 'penguins' df</span></span>
@@ -1487,9 +1517,14 @@ Then, plot the new filtered data frame:
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:35%;">
-<center>
-<img src="images/filtered_penguin_plot.png" alt="A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins. For all species, bill length tends to increase with flipper length." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/filtered_penguin_plot.png" style="width:100.0%" alt="A scatterplot of penguin Bill length (mm) vs. Flipper length (mm) for Adelie (orange circles), Chinstrap (purple triangles), and Gentoo (green squares) penguins. For all species, bill length tends to increase with flipper length."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1498,8 +1533,13 @@ Then, plot the new filtered data frame:
 <hr>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/scratch/practice-script-app1-penguins.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb21" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>body_mass_df <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> <span class="dv">3000</span><span class="sc">:</span><span class="dv">4000</span>) <span class="co"># 3000:4000 needs to be update-able (or in other words, reactive)!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -1512,9 +1552,14 @@ Then, plot the new filtered data frame:
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>body_mass_df <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
 <span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> <span class="dv">2857</span><span class="sc">:</span><span class="dv">5903</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<center>
-<img src="images/2857_5903.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 2,857 and a maximum of 5,903." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/2857_5903.png" style="width:100.0%" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 2,857 and a maximum of 5,903."></p>
+</figure>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
@@ -1522,9 +1567,14 @@ Then, plot the new filtered data frame:
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>body_mass_df <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">%in%</span> <span class="dv">3725</span><span class="sc">:</span><span class="dv">5191</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<center>
-<img src="images/3725_5191.png" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 3,725 and a maximum of 5,191." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/3725_5191.png" style="width:100.0%" alt="Our Shiny app with just a title, subtitle, and slider input, where the input values are at a minimum of 3,725 and a maximum of 5,191."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1537,7 +1587,7 @@ Recall that in our <strong>UI</strong>, we gave our <code>sliderInput()</code> a
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb24" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># load packages (omitted for brevity) ----</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
@@ -1578,7 +1628,7 @@ In our server, we can access the values of that slider input using the syntax, <
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb25" data-code-line-numbers="20-24|28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># load packages (omitted for brevity) ----</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a></span>
@@ -1619,10 +1669,8 @@ In our server, we can access the values of that slider input using the syntax, <
 <p class="body-text">
 You should now have a reactive Shiny app! <em>Note that reactivity automatically occurs whenever you use an <strong>input value</strong> to <strong>render</strong> an <strong>output object</strong>.</em>
 </p>
-<center>
-<img src="images/reactive_app_v1.gif" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." width="550">
-</center>
-</section><section id="recapp-app1" class="slide level2" data-menu-title="Recap: app #1"><h2></h2>
+
+<img data-src="images/reactive_app_v1.gif" style="width:100.0%" alt="A gif of our current Shiny app, demonstrating reactivity. At the top left of our app is the title, 'My App Title' in large header font. Beneath it is a subtitle, 'Exploring Antarctic Penguins and Temperatures'. Below the subtitle is the slider input with the label, 'Select a range of body masses (g)'. A gray horizontal slider bar ranges from the values 2,700 to 6,300. The interactive slider value selectors are two round white circles, which, when moved apart from one another highlight the selected value range in blue. The user is adjusting the slider value selectors and the scatterplot of penguin bill length (mm) vs. flipper length (mm) is automatically updating." class="r-stretch quarto-figure-center"></section><section id="recapp-app1" class="slide level2" data-menu-title="Recap: app #1"><h2></h2>
 <p><span class="slide-title3">Recap: We created our first <em>reactive</em> Shiny app following these steps:</span></p>
 <hr>
 <div class="fragment">
@@ -1679,9 +1727,14 @@ In the end, your app should look something like the example to the right.
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<center>
-<img src="images/DT.gif" alt="A gif of our current Shiny app, demonstrating the newly added DT::datatable. The user is able to select which years (2007, 2008, 2009) to display data for by clicking on one more more checkboxes." width="550">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/DT.gif" style="width:100.0%" alt="A gif of our current Shiny app, demonstrating the newly added DT::datatable. The user is able to select which years (2007, 2008, 2009) to display data for by clicking on one more more checkboxes."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 <p><br></p>
@@ -1755,7 +1808,7 @@ Press the right arrow key to advance through the newly added lines of code.
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>app.R</strong></pre>
+<pre><strong>~/one-file-app/app.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb26" data-code-line-numbers="5|23-29|60-73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># load packages ----</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a><span class="fu">library</span>(shiny)</span>
@@ -1864,9 +1917,15 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:45%;">
-<br><center>
-<img src="images/oops.gif" alt="A gif of Britney Spears in her iconic red spandex outfit singing 'Oops I did it again.'" width="700">
-</center>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/oops.gif" style="width:100.0%" alt="A gif of Britney Spears in her iconic red spandex outfit singing 'Oops I did it again.'"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section><section id="break1" class="slide level2" data-menu-title="# Break #" data-background="#047C90"><h2></h2>
@@ -1880,7 +1939,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4259ad1e" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_b9874abf" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -2949,7 +3008,7 @@ Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c01328ad" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_dd84c429" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3235,7 +3294,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f953f321" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_a743b659" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4210,7 +4269,7 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_82531d00" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_25ac99b9" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4549,8 +4608,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-47de8c171d0cd8bce9e7" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-47de8c171d0cd8bce9e7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6132b5363e82a49fa36a" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6132b5363e82a49fa36a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.097,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4604,8 +4663,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-864c35f3bae3c5c04fd5" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-864c35f3bae3c5c04fd5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7615f2eb6e8292f038d4" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7615f2eb6e8292f038d4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5382,7 +5441,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_8678cd82" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_08913128" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -8975,7 +9034,7 @@ Next, let’s see where we can streamline our server code using functions. We ha
 </div>
 </div>
 </section><section id="build-penguin-scatterplot-fxn" class="slide level2" data-menu-title="build_penguin_scatterplot()"><h2></h2>
-<p><span class="slide-title2">Create a function to builds our scatterplot</span></p>
+<p><span class="slide-title2">Create a function to build our scatterplot</span></p>
 <hr>
 <p class="body-text-xs">
 First, create a new file in <code>~/function-app/R</code> and name it <code>build-penguin-scatterplot.R</code> (or a name that is succinct/clear – I’m going to name my function similarly).
@@ -9176,13 +9235,15 @@ This app, developed by <a href="https://github.com/garrettgman">Garrett Grolemun
 <p class="body-text-s">
 It uses the <code>gapminder</code> data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.
 </p>
-<center>
-<img src="images/gapminder-app.gif" alt="The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly." width="550">
-</center>
-</section><section id="gapminder-code" class="slide level2" data-menu-title="Gapminder code"><h2></h2>
+
+<img data-src="images/gapminder-app.gif" style="width:80.0%" alt="The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly." class="r-stretch quarto-figure-center"></section><section id="gapminder-code" class="slide level2" data-menu-title="Gapminder code"><h2></h2>
 <p><span class="slide-title2">The code for this app isn’t particularly complex, but it’s repetitive and long</span></p>
 <hr>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/modularized-app/app.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1"></a><span class="co"># app.R</span></span>
 <span id="cb130-2"><a href="#cb130-2"></a></span>
 <span id="cb130-3"><a href="#cb130-3"></a><span class="co">#..............................setup.............................</span></span>
@@ -9506,10 +9567,10 @@ It uses the <code>gapminder</code> data set to display life expectancy by GDP pe
 <span id="cb130-321"><a href="#cb130-321"></a><span class="co"># Run the application </span></span>
 <span id="cb130-322"><a href="#cb130-322"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="repeated-code" class="slide level2" data-menu-title="Repeated gapminder code"><h2></h2>
-<div class="slide-title2">
-Repeated code sections
 </div>
+</section><section id="repeated-code" class="slide level2" data-menu-title="Repeated gapminder code"><h2></h2>
+<p><span class="slide-title3">Repeated code sections</span></p>
+<hr>
 <p class="body-text-s">
 Taking a closer look at the gapminder app code, we’ll see that the following sections of code are repeated for each region (6 times total; only code sections for “all” regions shown below):
 </p>
@@ -9612,30 +9673,34 @@ Taking a closer look at the gapminder app code, we’ll see that the following s
 Modules are a coding pattern, organized into <strong>two</strong> functions: one that creates the <strong>UI elements</strong> and one that <strong>loads the server logic</strong>. They can look a bit different, depending on your module, but they generally follow this pattern:
 </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1"></a><span class="co"># myModule.R</span></span>
-<span id="cb136-2"><a href="#cb136-2"></a><span class="co">#..........................ui function...........................</span></span>
-<span id="cb136-3"><a href="#cb136-3"></a></span>
-<span id="cb136-4"><a href="#cb136-4"></a>myModuleUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb136-5"><a href="#cb136-5"></a>  </span>
-<span id="cb136-6"><a href="#cb136-6"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb136-7"><a href="#cb136-7"></a>  </span>
-<span id="cb136-8"><a href="#cb136-8"></a>  <span class="fu">tagList</span>(</span>
-<span id="cb136-9"><a href="#cb136-9"></a>    <span class="co"># inputs with ids wrapped in ns() (e.g. `sliderInput(id = ns("slider"))`)</span></span>
-<span id="cb136-10"><a href="#cb136-10"></a>    <span class="co"># outputs with ids wrapped in ns() (e.g. `plotOutput(id = "ns(plot"))`)</span></span>
-<span id="cb136-11"><a href="#cb136-11"></a>  )</span>
-<span id="cb136-12"><a href="#cb136-12"></a>  </span>
-<span id="cb136-13"><a href="#cb136-13"></a>}</span>
-<span id="cb136-14"><a href="#cb136-14"></a></span>
-<span id="cb136-15"><a href="#cb136-15"></a><span class="co">#........................server function.........................</span></span>
-<span id="cb136-16"><a href="#cb136-16"></a>myModuleServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, ...) { <span class="co"># where `...` includes any number of additional parameters</span></span>
-<span id="cb136-17"><a href="#cb136-17"></a>  </span>
-<span id="cb136-18"><a href="#cb136-18"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb136-19"><a href="#cb136-19"></a>    </span>
-<span id="cb136-20"><a href="#cb136-20"></a>    <span class="co"># server logic</span></span>
-<span id="cb136-21"><a href="#cb136-21"></a>    </span>
-<span id="cb136-22"><a href="#cb136-22"></a>  }) </span>
-<span id="cb136-23"><a href="#cb136-23"></a>  </span>
-<span id="cb136-24"><a href="#cb136-24"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>myModule.R</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1"></a><span class="co">#..........................ui function...........................</span></span>
+<span id="cb136-2"><a href="#cb136-2"></a></span>
+<span id="cb136-3"><a href="#cb136-3"></a>myModuleUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb136-4"><a href="#cb136-4"></a>  </span>
+<span id="cb136-5"><a href="#cb136-5"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb136-6"><a href="#cb136-6"></a>  </span>
+<span id="cb136-7"><a href="#cb136-7"></a>  <span class="fu">tagList</span>(</span>
+<span id="cb136-8"><a href="#cb136-8"></a>    <span class="co"># inputs with ids wrapped in ns() (e.g. `sliderInput(id = ns("slider"))`)</span></span>
+<span id="cb136-9"><a href="#cb136-9"></a>    <span class="co"># outputs with ids wrapped in ns() (e.g. `plotOutput(id = "ns(plot"))`)</span></span>
+<span id="cb136-10"><a href="#cb136-10"></a>  )</span>
+<span id="cb136-11"><a href="#cb136-11"></a>  </span>
+<span id="cb136-12"><a href="#cb136-12"></a>}</span>
+<span id="cb136-13"><a href="#cb136-13"></a></span>
+<span id="cb136-14"><a href="#cb136-14"></a><span class="co">#........................server function.........................</span></span>
+<span id="cb136-15"><a href="#cb136-15"></a>myModuleServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, ...) { <span class="co"># where `...` includes any number of additional parameters</span></span>
+<span id="cb136-16"><a href="#cb136-16"></a>  </span>
+<span id="cb136-17"><a href="#cb136-17"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb136-18"><a href="#cb136-18"></a>    </span>
+<span id="cb136-19"><a href="#cb136-19"></a>    <span class="co"># server logic</span></span>
+<span id="cb136-20"><a href="#cb136-20"></a>    </span>
+<span id="cb136-21"><a href="#cb136-21"></a>  }) </span>
+<span id="cb136-22"><a href="#cb136-22"></a>  </span>
+<span id="cb136-23"><a href="#cb136-23"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section><section id="where-to-define-modules" class="slide level2" data-menu-title="Where to define modules"><h2></h2>
 <p><span class="slide-title2">Where should I define/save my module?</span></p>
@@ -9662,13 +9727,17 @@ If you choose this option, your module will automatically be sourced (as of Shin
 </section><section id="ui-function" class="slide level2" data-menu-title="UI function"><h2></h2>
 <p><span class="slide-title3">Breaking down the UI function:</span></p>
 <hr>
-<p class="body-text-s">
+<p class="body-text-xs">
 The UI part of a module needs to do <strong>two</strong> things: <strong>(1)</strong> return a shiny element (e.g.&nbsp;an input &amp; output), and <strong>(2)</strong> assign module elements to a unique namespace using <code>NS()</code>. <code>NS()</code> provides an easy way to help with namespacing within your module, ensuring that each time your module is called, a unique <code>id</code> is assigned.
 </p>
-<p class="body-text-s">
+<p class="body-text-xs">
 The UI function for our gapminder module will look like this (<strong>NOTE:</strong> code comments below denote the general order of operations I followed when writing this UI function):
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/modularized-app/R/gapModule.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1"></a><span class="co"># step 1: a good function naming convention is a descriptive base name, suffixed by `UI`</span></span>
 <span id="cb137-2"><a href="#cb137-2"></a></span>
 <span id="cb137-3"><a href="#cb137-3"></a>gapModuleUI <span class="ot">&lt;-</span> <span class="cf">function</span>(id) { <span class="co"># step 2: the first argument to a UI function should always be `id` -- this is the namespace for the module </span></span>
@@ -9687,19 +9756,24 @@ The UI function for our gapminder module will look like this (<strong>NOTE:</str
 <span id="cb137-16"><a href="#cb137-16"></a>  </span>
 <span id="cb137-17"><a href="#cb137-17"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> gapModuleUI function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p class="body-text-s">
+</div>
+<p class="body-text-xs">
 Wrapping our input and output <code>Id</code>s in <code>ns()</code> will create unique Ids each time our module is called, preventing things from overwriting one one another. For example, if we call <code>gapModuleUI(id = "myFirstModuleCall")</code>, our <code>outputId</code> will be set to <code>myFirstModuleCall-plot</code> and our <code>inputId</code> will be set to <code>myFirstModuleCall-year</code>. Calling our module a second time (e.g.&nbsp;<code>gapModuleUI(id = "mySecondModuleCall")</code>) will generate two new unique Ids (e.g.&nbsp;<code>mySecondModuleCall-plot</code> &amp; <code>mySecondModuleCall-year</code>).
 </p>
 </section><section id="server-function" class="slide level2" data-menu-title="Server function"><h2></h2>
 <p><span class="slide-title3">Breaking down the Server function:</span></p>
 <hr>
-<p class="body-text-s">
+<p class="body-text-xs">
 The server part of a module looks very similar to a normal (i.e.&nbsp;non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first <em>required</em> parameter, <code>id</code>, along with any other necessary parameters (we also need to pass our particular function a <code>data</code> parameter to differentiate between data subsets (e.g.&nbsp;<strong>All</strong> vs.&nbsp;<strong>Africa</strong> vs.&nbsp;<strong>Asia</strong> etc.)).
 </p>
-<p class="body-text-s">
+<p class="body-text-xs">
 Next, call <code>moduleServer()</code> <em>inside</em> your server function and pass it the <code>id</code> variable, along with the module function. The module function <em>must</em> have three parameters: <code>input</code>, <code>output</code>, and <code>session</code>. You <em>do not</em> have to use <code>ns()</code> to refer to inputs and outputs here. Copy server code from our original app, plop it inside the module function, and sub in our <code>data</code> parameter where ever a data frame subset is called.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/modularized-app/R/gapModule.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1"></a><span class="co"># step 1: a good function naming convention is a descriptive base name, suffixed by `Server`</span></span>
 <span id="cb138-2"><a href="#cb138-2"></a></span>
 <span id="cb138-3"><a href="#cb138-3"></a>gapModuleServer <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data) { <span class="co"># step 2: the first argument to a server function should always be `id`, followed by any other necessary arguments; here we include a 'data' parameter, since we need to be able to tell our server function which data subset to plot in each tab</span></span>
@@ -9752,6 +9826,7 @@ Next, call <code>moduleServer()</code> <em>inside</em> your server function and 
 <span id="cb138-50"><a href="#cb138-50"></a>  </span>
 <span id="cb138-51"><a href="#cb138-51"></a>} <span class="co"># </span><span class="re">END</span><span class="co"> server function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="using-module-1" class="slide level2" data-menu-title="Using your module 1"><h2></h2>
 <p><span class="slide-title2">Now let’s use our module:</span></p>
 <hr>
@@ -9759,6 +9834,10 @@ Next, call <code>moduleServer()</code> <em>inside</em> your server function and 
 First, since we’ve saved our <code>gapModule.R</code> file to our app’s directory, we’ll need to source it at the top of our <code>app.R</code> file:
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/modularized-app/app.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb139" data-code-line-numbers="5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1"></a><span class="co">#..............................setup.............................</span></span>
 <span id="cb139-2"><a href="#cb139-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb139-3"><a href="#cb139-3"></a><span class="fu">library</span>(gapminder) </span>
@@ -9774,6 +9853,7 @@ First, since we’ve saved our <code>gapModule.R</code> file to our app’s dire
 <span id="cb139-13"><a href="#cb139-13"></a>europe_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span>)</span>
 <span id="cb139-14"><a href="#cb139-14"></a>oceania_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Oceania"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="using-module-2" class="slide level2" data-menu-title="Using your module 2"><h2></h2>
 <p><span class="slide-title2">Now let’s use our module:</span></p>
 <hr>
@@ -9781,6 +9861,10 @@ First, since we’ve saved our <code>gapModule.R</code> file to our app’s dire
 Next, let’s use our module’s UI function. We’ll need to define/name each of our <code>tabPanel</code>s (one for each of our six regions), but rather than building a <code>plotOutput</code> and <code>sliderInput</code> inside each <code>tabPanel</code> (each with unique <code>Id</code>s), we can instead call our <code>gapModuleUI()</code> function, and ensure that each time we call it to supply a unique character string for our <code>id</code> parameter.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/modularized-app/app.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb140" data-code-line-numbers="25-30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1"></a><span class="co">#..............................setup.............................</span></span>
 <span id="cb140-2"><a href="#cb140-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb140-3"><a href="#cb140-3"></a><span class="fu">library</span>(gapminder) </span>
@@ -9816,6 +9900,7 @@ Next, let’s use our module’s UI function. We’ll need to define/name each o
 <span id="cb140-33"><a href="#cb140-33"></a>  </span>
 <span id="cb140-34"><a href="#cb140-34"></a>) <span class="co"># </span><span class="re">END</span><span class="co"> fluidPage</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="using-module-3" class="slide level2" data-menu-title="Using your module 3"><h2></h2>
 <p><span class="slide-title2">Now let’s use our module:</span></p>
 <hr>
@@ -9823,6 +9908,10 @@ Next, let’s use our module’s UI function. We’ll need to define/name each o
 Finally, we can re-write our server. Rather than writing out the <em>lengthy</em> code required to make each plot six times over, we can instead call our <code>gapModuleServer()</code> function, supplying each call with <code>id</code>s that match those used in <code>gapModuleUI()</code>, along with the appropriate data subset. Now, run your app! If written correctly, your app should run exactly the same as your initial version.
 </p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>~/modularized-app/app.R</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb141" data-code-line-numbers="39-44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1"></a><span class="co">#..............................setup.............................</span></span>
 <span id="cb141-2"><a href="#cb141-2"></a><span class="fu">library</span>(shiny)</span>
 <span id="cb141-3"><a href="#cb141-3"></a><span class="fu">library</span>(gapminder) </span>
@@ -9873,6 +9962,7 @@ Finally, we can re-write our server. Rather than writing out the <em>lengthy</em
 <span id="cb141-48"><a href="#cb141-48"></a><span class="co"># Run the application </span></span>
 <span id="cb141-49"><a href="#cb141-49"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section><section id="module-resources" class="slide level2" data-menu-title="Module resources"><h2></h2>
 <p><span class="slide-title2">Additional module resources</span></p>
 <hr>
@@ -9916,7 +10006,7 @@ We’ve barely scratched the surface of modules. Continue on with some of the fo
 </p>
 </div>
 </section><section id="shiny-alternatives" class="slide level2" data-menu-title="Other options"><h2></h2>
-<p><span class="slide-title">Additional data presentation frameworks</span></p>
+<p><span class="slide-title2">Additional data presentation frameworks</span></p>
 <hr>
 <p class="body-text-s">
 Shiny is awesome, but depending on your goals, vision, and end users, you may not need the full functionality that shiny provides. You can potentially save yourself (and your clients) the stress of deploying and maintaining apps by first considering other options:
@@ -9935,9 +10025,14 @@ Shiny is awesome, but depending on your goals, vision, and end users, you may no
 <p class="body-text-s topbr">
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Embed reactive shiny components (e.g.&nbsp;inputs &amp; outputs) in Quarto documents. By using some fun new code chunk options, you can instruct Quarto to spin up it’s own self-contained shiny server to run your reactives. Read the <a href="https://quarto.org/docs/interactive/shiny/">Quarto documentation</a> to learn more and check out some teaching examples <a href="https://quarto.org/docs/interactive/shiny/#examples">here</a>.
 </p>
-<center>
-<img src="images/shiny_alts.png" alt="Logos for htmlwidgets, flexdashboard, and quarto." width="450">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/shiny_alts.png" style="width:60.0%" alt="Logos for htmlwidgets, flexdashboard, and quarto."></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </section><section id="flexdashboard-examples" class="slide level2" data-menu-title="Examples of flexdashboards"><h2></h2>
 <p><span class="slide-title">Example flexdashboards built by some familiar folks <i class="fa-solid fa-face-smile" title="a smiling face" aria-label="face-smile"></i></span></p>
@@ -10046,9 +10141,14 @@ Posit/RStudio’s great instructional resources, examples, and help documentatio
 I’m excited to see what <em>Shiny</em> new apps you all create!
 </div>
 </center>
-<center>
-<img src="images/sparkle.gif" alt="A gif of sparkles that appear to be moving out of a dark background towards the viewer." width="325">
-</center>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/sparkle.gif" style="width:30.0%" alt="A gif of sparkles that appear to be moving out of a dark background towards the viewer."></p>
+</figure>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
 

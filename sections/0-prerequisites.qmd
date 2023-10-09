@@ -19,12 +19,19 @@ format: revealjs
 :::
 
 ::: {.column width="30%"}
-<center><img src="images/shiny.png" alt="A blue hexagon with the word 'Shiny' in cursive lettering printed across the center." width="150"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-alt: "A blue hexagon with the word 'Shiny' in cursive lettering printed across the center."
+knitr::include_graphics("images/shiny.png")
+```
 :::
 
 ::::
 
-<div class="body-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} You have the required R packages installed. You can install/update them all at once by running:</div>
+<div class="body-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} You have the required R packages installed. You can install/update them all at once by running:</div>
 
 ```{r}
 #| eval: false
@@ -32,7 +39,5 @@ format: revealjs
 install.packages(pkgs = c("shiny", "shinydashboard", "shinyWidgets", "DT", "leaflet", "shinycssloaders", "tidyverse", "bslib", "fresh", "sass", "reactlog", "shinytest2", "palmerpenguins", "lterdatasampler", "gapminder", "markdown"))
 ```
 
-<br>
-
-<center><div class="body-text-xl teal-text">No prior Shiny experience necessary!</div></center>
+<center><div class="body-text-xl teal-text topbr">No prior Shiny experience necessary!</div></center>
 

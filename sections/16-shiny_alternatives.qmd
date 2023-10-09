@@ -13,7 +13,7 @@ format: revealjs
 
 ##  {#shiny-alternatives data-menu-title="Other options"}
 
-[Additional data presentation frameworks]{.slide-title}
+[Additional data presentation frameworks]{.slide-title2}
 
 <hr>
 
@@ -31,7 +31,14 @@ format: revealjs
 
 <p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Embed reactive shiny components (e.g. inputs & outputs) in Quarto documents. By using some fun new code chunk options, you can instruct Quarto to spin up it's own self-contained shiny server to run your reactives. Read the [Quarto documentation](https://quarto.org/docs/interactive/shiny/) to learn more and check out some teaching examples [here](https://quarto.org/docs/interactive/shiny/#examples).</p>
 
-<center><img src="images/shiny_alts.png" alt="Logos for htmlwidgets, flexdashboard, and quarto." width="450"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "60%"
+#| fig-alt: "Logos for htmlwidgets, flexdashboard, and quarto."
+knitr::include_graphics("images/shiny_alts.png")
+```
 
 ---
 

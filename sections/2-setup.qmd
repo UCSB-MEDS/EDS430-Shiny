@@ -19,7 +19,14 @@ format: revealjs
 
 <p class="body-text">Let's start by creating a GitHub repo to house our soon-to-be app(s), then we'll clone our repo to our computer. I'm using RStudio to clone my repo in the example below, but you can also do this via the command line using `git clone <repo-url>`.</p>
 
-<center><img src="images/create-repo.gif" alt="A gif demonstrating how to set up a GitHub repo and how to clone that repo to your computer. Start by clicking on the 'Repositories' tab from your GitHub profile, then click the green 'New' button. Give your repo a name, check the box next to 'Add a README file', Add a .gitigore by choosing 'R' from the drop down menu, then click the green 'Create repository' button. From your repo landing page, click the green 'Code' button, then copy the URL to your clipboard. In RStudio, select 'New Project' from the top left 'Project' button, select 'Version Control', then 'Git', and paste your URL in the 'Repository URL field'. Your repo name should be auto completed in the 'Project directory name:' field, but if not, press the 'Tab' key. Click 'Create Project' to complete the process." width="700"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A gif demonstrating how to set up a GitHub repo and how to clone that repo to your computer. Start by clicking on the 'Repositories' tab from your GitHub profile, then click the green 'New' button. Give your repo a name, check the box next to 'Add a README file', Add a .gitigore by choosing 'R' from the drop down menu, then click the green 'Create repository' button. From your repo landing page, click the green 'Code' button, then copy the URL to your clipboard. In RStudio, select 'New Project' from the top left 'Project' button, select 'Version Control', then 'Git', and paste your URL in the 'Repository URL field'. Your repo name should be auto completed in the 'Project directory name:' field, but if not, press the 'Tab' key. Click 'Create Project' to complete the process."
+knitr::include_graphics("images/create-repo.gif")
+```
 
 ---
 
@@ -31,7 +38,14 @@ format: revealjs
 
 <p class="body-text-s">Not much is *required* to make a functional app (which is awesome) -- for a basic app, you really just need an `app.R` file where you'll write the code for your UI and server. To stay organized, we'll place `app.R` into a subdirectory (e.g. `/myapp`), which will also house any dependencies (e.g. other scripts/files/etc.) used by `app.R`.</p>
 
-<center><img src="images/repo_structure_details.png" alt="A visual representation of a basic shiny app repository file/folder structure." width="900"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A visual representation of a basic shiny app repository file/folder structure."
+knitr::include_graphics("images/repo_structure_details.png")
+```
 
 ---
 
@@ -43,7 +57,14 @@ format: revealjs
 
 <p class="body-text bottombr">You have the option of creating either a **single-file app** or **two-file app**, and they look nearly the same (we'll see both formats in the coming slides).</p>
 
-<center><img src="images/one-vs-two.png" alt="Shiny apps can be built using a single app.R file, or using ui.R plus server.R, and most often a global.R in conjunction." width="700"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Shiny apps can be built using a single app.R file, or using ui.R plus server.R, and most often a global.R in conjunction."
+knitr::include_graphics("images/one-vs-two.png")
+```
 
 <p class="body-text-s">Why two options? Before v0.10.2, Shiny apps needed to be split into **two separate files**, `ui.R` and `server.R`, that defined the UI and server components, respectively. With v0.10.2+, users can create a **single-file app**, `app.R`, which contains both the UI and server components together. While it largely comes down to personal preference, a **single-file format is best for smaller apps or when creating a [reprex](https://reprex.tidyverse.org/)**, while the **two-file format is beneficial when writing large, complex apps** where breaking apart code can make things a bit more navigable/maintainable.</p>                                                                
 
@@ -102,11 +123,25 @@ shinyApp(ui = ui, server = server)
 :::: {.columns}
 
 ::: {.column width="50%"}
-<center><img src="images/blank_app.png" alt="The RStudio viewer showing a running app consisting of only a blank white screen since no elements have been added yet." width="400"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "The RStudio viewer showing a running app consisting of only a blank white screen since no elements have been added yet."
+knitr::include_graphics("images/blank_app.png")
+```
 :::
 
 ::: {.column width="50%"}
-<center><img src="images/run_app_RStudio.png" alt="RStudio running our blank app. In the console, we see the text 'Listening on http://127.0.0.1:6341' and a red stop sign indicating that RStudio is busy." width="400"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+#| fig-alt: "RStudio running our blank app. In the console, we see the text 'Listening on http://127.0.0.1:6341' and a red stop sign indicating that RStudio is busy."
+knitr::include_graphics("images/run_app_RStudio.png")
+```
 :::
 
 ::::
