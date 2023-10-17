@@ -568,11 +568,11 @@ body <- dashboardBody(
 
 <hr>
 
-<p class="body-text-s">You can **(1)** add styling directly to `tags`, **(2)** add CSS rules to your `header`, and/or **(3)** build a stylesheet that is applied to your app. **Creating a stylesheet is the preferred approach, and you should do this whenever possible.**</p>
+<p class="body-text-s">You can **(1)** add styling directly to `tags`, **(2)** add CSS rules to your `header`, and/or **(3)** build a stylesheet that is applied to your app. **Creating a stylesheet is often the preferred approach.**</p>
 
 ::: {.panel-tabset}
 
-## tags
+## 1. tags
 
 <p class="body-text-xs">Add styling directly to tags. **It's best not to use a lot of these!** It's easy to lose track of your "in-line" styling in large projects, you can't reuse rules easily, it's hard to keep styling consistent, and it's difficult to implement large stylistic changes.</p>
 
@@ -623,7 +623,7 @@ shinyApp(ui, server)
 
 ::::
 
-## header
+## 2. header
 
 <p class="body-text-xs">Add CSS rules to your app's header (`tags$head`). This is a little bit better than option 1 since it allows for the reuse of rules, however, styles can't be cached (i.e. saved for future usage when you reopen your app). **Note:** explore Google fonts [here](https://fonts.google.com/) and check out [this slide](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts) for instructions on selecting a font.</p>
 
@@ -680,7 +680,7 @@ shinyApp(ui, server)
 :::
 ::::
 
-## stylesheets
+## 3. stylesheets
 
 <p class="body-text-xs">Build a stylesheet (a `.css` file) inside your app's `www/` directory and apply your styles to your app's header (for shinydashboards, include your header inside `dashboardBody()`. **This is the most ideal approach** -- it allows for style reuse, caching, and keeps styling contained in one spot. **Tip:** use `touch styles.css` in the terminal to create a new `.css` file.</p>
 

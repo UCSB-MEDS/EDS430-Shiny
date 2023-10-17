@@ -43,7 +43,7 @@ format: revealjs
 
 <hr>
 
-<p class="body-text-s">A quick Google search will yield *lots* of online resources, forum discussions, video tutorials, etc. for building Shiny applications. Many are linked throughout these slides, but here's an attempt at putting some of those that I referenced most often all in one spot (along with some that we didn't have time to cover). Be sure to poke around online yourself, and let me know if you come across any that you find particularly useful so that I can add them here!</p>
+<p class="body-text-s">A quick Google search will yield *lots* of online resources, forum discussions, video tutorials, etc. for building Shiny applications. Many are linked throughout these slides, but here's an attempt at putting some of those that I referenced most often all in one spot (along with some that we didn't have time to cover).</p>
 
 <p class="body-text-s">**Books**</p>
 

@@ -770,7 +770,7 @@ knitr::include_graphics("images/3725_5191.png")
 
 ##  {#rule3.1 data-menu-title="Rule #3a"}
 
-[**Rule 3:** Access input values with `input$<id>`]{.slide-title}
+[**Rule 3:** Access input values with `input$<id>`]{.slide-title3}
 
 <hr>
 
@@ -959,7 +959,7 @@ knitr::include_graphics("images/DT.gif")
 <p class="body-text">**Tips:**</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Use `?checkboxGroupInput` to learn more about which arguments you need (remember, all inputs require an `inputId` and oftentimes a `label`, but there are others required to make this work as well)</p>
 <p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Both `{shiny}` and `{DT}` packages have functions named `dataTableOutput()` and `renderDataTable()` -- `DT::renderDataTable()` allows you to create both server-side and client-side DataTables and supports additional DataTables features while `shiny::renderDataTable()` only provides server-side DataTables. Be sure to use the one from the `{DT}` package using the syntax `packageName::functionName()`.</p>
-<p class="body-text-s bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} There are lots of ways to customize DT tables, but to create a basic one, all you need is to `DT::dataTable(your_dataframe)`<p>
+<p class="body-text-s bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} There are lots of ways to customize DT tables, but to create a basic one, all you need is `DT::dataTable(your_dataframe)`<p>
 
 
 <p class="body-text">**And remember** to follow the steps outlined on the previous slides (jump back to [slide 27](https://ucsb-meds.github.io/EDS430-Shiny/#/reactive-plot-app1)):</p>
@@ -971,7 +971,7 @@ knitr::include_graphics("images/DT.gif")
 <p class="body-text-s">**3.2** Build reactive objects using a `render*()` function<p>
 <p class="body-text-s">**3.3** Access input values with `input$<id>`<p>
 
-<center><p class="body-text-xl teal-text topbr">See next slide for a solution!</p></center>
+<center><p class="body-text-l teal-text topbr">See next slide for a solution!</p></center>
 
 ---
 
