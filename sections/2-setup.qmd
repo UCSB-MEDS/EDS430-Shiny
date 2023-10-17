@@ -13,51 +13,80 @@ format: revealjs
 
 ##  {#github-repo data-menu-title="Create GitHub Repo"}
 
-<div class="slide-title">Create your GitHub repo</div>
+[Create your GitHub repo]{.slide-title}
+
+<hr>
 
 <p class="body-text">Let's start by creating a GitHub repo to house our soon-to-be app(s), then we'll clone our repo to our computer. I'm using RStudio to clone my repo in the example below, but you can also do this via the command line using `git clone <repo-url>`.</p>
 
-<center><img src="images/create-repo.gif" alt="A gif demonstrating how to set up a GitHub repo and how to clone that repo to your computer. Start by clicking on the 'Repositories' tab from your GitHub profile, then click the green 'New' button. Give your repo a name, check the box next to 'Add a README file', Add a .gitigore by choosing 'R' from the drop down menu, then click the green 'Create repository' button. From your repo landing page, click the green 'Code' button, then copy the URL to your clipboard. In RStudio, select 'New Project' from the top left 'Project' button, select 'Version Control', then 'Git', and paste your URL in the 'Repository URL field'. Your repo name should be auto completed in the 'Project directory name:' field, but if not, press the 'Tab' key. Click 'Create Project' to complete the process." width="700"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A gif demonstrating how to set up a GitHub repo and how to clone that repo to your computer. Start by clicking on the 'Repositories' tab from your GitHub profile, then click the green 'New' button. Give your repo a name, check the box next to 'Add a README file', Add a .gitigore by choosing 'R' from the drop down menu, then click the green 'Create repository' button. From your repo landing page, click the green 'Code' button, then copy the URL to your clipboard. In RStudio, select 'New Project' from the top left 'Project' button, select 'Version Control', then 'Git', and paste your URL in the 'Repository URL field'. Your repo name should be auto completed in the 'Project directory name:' field, but if not, press the 'Tab' key. Click 'Create Project' to complete the process."
+knitr::include_graphics("images/create-repo.gif")
+```
 
 ---
 
 ##  {#repo-structure data-menu-title="Repo Structure"}
 
-<div class="slide-title">Shiny app repo structure</div>
+[Shiny app repo structure]{.slide-title}
 
-<p class="small-text">Not much is *required* to make a functional app (which is awesome) -- for a basic app, you really just need an `app.R` file where you'll write the code for your UI and server. To stay organized, we'll place `app.R` into a subdirectory (e.g. `/myapp`), which will also house any dependencies (e.g. other scripts/files/etc.) used by `app.R`.</p>
+<hr>
 
-<center><img src="images/repo_structure_details.png" alt="A visual representation of a basic shiny app repository file/folder structure." width="900"/></center>
+<p class="body-text-s">Not much is *required* to make a functional app (which is awesome) -- for a basic app, you really just need an `app.R` file where you'll write the code for your UI and server. To stay organized, we'll place `app.R` into a subdirectory (e.g. `/myapp`), which will also house any dependencies (e.g. other scripts/files/etc.) used by `app.R`.</p>
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "A visual representation of a basic shiny app repository file/folder structure."
+knitr::include_graphics("images/repo_structure_details.png")
+```
 
 ---
 
 ##  {#begin-the-same data-menu-title="All Apps Begin the Same"}
 
-<div class="slide-title">All Shiny apps begin (in almost) the same way</div>
+[All Shiny apps begin (in almost) the same way]{.slide-title2}
+
+<hr>
 
 <p class="body-text bottombr">You have the option of creating either a **single-file app** or **two-file app**, and they look nearly the same (we'll see both formats in the coming slides).</p>
 
-<center><img src="images/one-vs-two.png" alt="Shiny apps can be built using a single app.R file, or using ui.R plus server.R, and most often a global.R in conjunction." width="700"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Shiny apps can be built using a single app.R file, or using ui.R plus server.R, and most often a global.R in conjunction."
+knitr::include_graphics("images/one-vs-two.png")
+```
 
-<p class="small-text">Why two options? Before v0.10.2, Shiny apps needed to be split into **two separate files**, `ui.R` and `server.R`, that defined the UI and server components, respectively. With v0.10.2+, users can create a **single-file app**, `app.R`, which contains both the UI and server components together. While it largely comes down to personal preference, a **single-file format is best for smaller apps or when creating a [reprex](https://reprex.tidyverse.org/)**, while the **two-file format is beneficial when writing large, complex apps** where breaking apart code can make things a bit more navigable/maintainable.</p>                                                                
+<p class="body-text-s">Why two options? Before v0.10.2, Shiny apps needed to be split into **two separate files**, `ui.R` and `server.R`, that defined the UI and server components, respectively. With v0.10.2+, users can create a **single-file app**, `app.R`, which contains both the UI and server components together. While it largely comes down to personal preference, a **single-file format is best for smaller apps or when creating a [reprex](https://reprex.tidyverse.org/)**, while the **two-file format is beneficial when writing large, complex apps** where breaking apart code can make things a bit more navigable/maintainable.</p>                                                                
 
 ---
 
 ##  {#single-file data-menu-title="Single-file App"}
 
-<div class="slide-title">Create a single-file Shiny app</div>
+[Create a single-file Shiny app]{.slide-title}
+
+<hr>
 
 <p class="body-text">You can create a single-file app using RStudio's built-in Shiny app template (e.g. File > New Project... > New Directory > Shiny Application), but it's just as easy to create it from scratch (and you'll memorize the structure faster!). Let's do that now.</p>
 
 . . . 
 
-<p class="small-text topbr">**1.** In your project repo, create a subdirectory to house your app -- I'm calling mine, `single-file-app`.</p>
+<p class="body-text-s topbr">**1.** In your project repo, create a subdirectory to house your app -- I'm calling mine, `single-file-app`.</p>
 
 . . . 
 
-<p class="small-text">**2.** Create a new R script inside `/single-file-app` and name it `app.R` -- you **must** name your script `app.R`. Copy/type the following code into `app.R`, or use the `shinyapp` [snippet](https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html) to automatically generate a shiny app template.<p>
+<p class="body-text-s">**2.** Create a new R script inside `/single-file-app` and name it `app.R` -- you **must** name your script `app.R`. Copy/type the following code into `app.R`, or use the `shinyapp` [snippet](https://rstudio.github.io/rstudio-extensions/rstudio_snippets.html) to automatically generate a shiny app template.<p>
 
-```{r}
+```{r filename-"app.R"}
 #| eval: false
 #| echo: true
 # load packages ----
@@ -73,30 +102,46 @@ server <- function(input, output) {}
 shinyApp(ui = ui, server = server)
 ```
 
-<p class="smaller-text">**Tip:** Use code sections (denoted by `# some text ----`) to make navigating different sections of your app code a bit easier. Code sections will appear in your document outline (find the button at the top right corner of the script/editor panel).</p>
+<p class="body-text-xs">**Tip:** Use code sections (denoted by `# some text ----`) to make navigating different sections of your app code a bit easier. Code sections will appear in your document outline (find the button at the top right corner of the script/editor panel).</p>
 
 ---
 
 ##  {#run-app data-menu-title="Run Your App"}
 
-<div class="slide-title">Run your app</div>
+[Run your app]{.slide-title2}
 
-<p class="small-text">Once you have saved your `app.R` file, the "Run" code button should turn into a "Run App" button that looks like: <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/>. Click that button to run your app (alternatively, run `runApp("directory-name")` in your console -- for me, that looks like, `runApp("single-file-app")`)!</p>
+<hr>
+
+<p class="body-text-s">Once you have saved your `app.R` file, the "Run" code button should turn into a "Run App" button that looks like: <img src="images/run_app.png" alt="A green, right facing triangular arrow next to the words 'Run App'" style="display: inline-block; margin: 0; position: relative; top: 3px; width:80px;height:20px;"/>. Click that button to run your app (alternatively, run `runApp("directory-name")` in your console -- for me, that looks like, `runApp("single-file-app")`)!</p>
 
 . . .
 
-<p class="small-text topbr">You won't see much yet, as we have only built a blank app (but a functioning app, nonetheless!). In your RStudio console, you should see something like: `Listening on http://127.0.0.1:XXXX`, which is the URL where your app can be found. 127.0.0.1 is a standard address that means "this computer," and the last four digits represent a randomly assigned port number. You can click the "Open in Browser" button, <img src="images/open_in_browser.png" alt="A button found on the top left-hand side of the RStudio viewer window that says 'Open in Browser' next to a small browser window icon with an arrow pointing up and to the right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:110px;height:20px;"/>, to see how your app will appear when viewed in your web browser.</p>
+<p class="body-text-s topbr">You won't see much yet, as we have only built a blank app (but a functioning app, nonetheless!). In your RStudio console, you should see something like: `Listening on http://127.0.0.1:XXXX`, which is the URL where your app can be found. 127.0.0.1 is a standard address that means "this computer," and the last four digits represent a randomly assigned port number. You can click the "Open in Browser" button, <img src="images/open_in_browser.png" alt="A button found on the top left-hand side of the RStudio viewer window that says 'Open in Browser' next to a small browser window icon with an arrow pointing up and to the right." style="display: inline-block; margin: 0; position: relative; top: 3px; width:110px;height:20px;"/>, to see how your app will appear when viewed in your web browser.</p>
 
-<p class="small-text topbr">You should also notice a red stop sign, <img src="images/stop.png" alt="A red hexagon with the word 'STOP' printed in white across the center." style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, appear in the top right corner of your console indicating that R is busy--this is because your R session is currently acting as your Shiny app server and listening for any user interaction with your app. Because of this, you won't be able to run any commands in the console until you quit your app. Do so by pressing the stop button.</p>
+<p class="body-text-s topbr">You should also notice a red stop sign, <img src="images/stop.png" alt="A red hexagon with the word 'STOP' printed in white across the center." style="display: inline-block; margin: 0; position: relative; top: 3px; width:15px;height:15px;"/>, appear in the top right corner of your console indicating that R is busy--this is because your R session is currently acting as your Shiny app server and listening for any user interaction with your app. Because of this, you won't be able to run any commands in the console until you quit your app. Do so by pressing the stop button.</p>
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-<center><img src="images/blank_app.png" alt="The RStudio viewer showing a running app consisting of only a blank white screen since no elements have been added yet." width="400"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "The RStudio viewer showing a running app consisting of only a blank white screen since no elements have been added yet."
+knitr::include_graphics("images/blank_app.png")
+```
 :::
 
 ::: {.column width="50%"}
-<center><img src="images/run_app_RStudio.png" alt="RStudio running our blank app. In the console, we see the text 'Listening on http://127.0.0.1:6341' and a red stop sign indicating that RStudio is busy." width="400"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%"
+#| fig-alt: "RStudio running our blank app. In the console, we see the text 'Listening on http://127.0.0.1:6341' and a red stop sign indicating that RStudio is busy."
+knitr::include_graphics("images/run_app_RStudio.png")
+```
 :::
 
 ::::
@@ -105,23 +150,25 @@ shinyApp(ui = ui, server = server)
 
 ##  {#two-file data-menu-title="Two-file App"}
 
-<div class="slide-title">Create a two-file Shiny app</div>
+[Create a two-file Shiny app]{.slide-title2}
+
+<hr>
 
 <p class="body-text">In practice, you will likely find yourself opting for the the two-file format -- code expands quickly, even when building relatively small apps. This two-file approach (well, three if you use a `global.R` file, which is encouraged) will help to keep your code a bit more manageable.</p>
 
 . . . 
 
-<p class="small-text topbr">**1.** In your project repo, create a new subdirectory to house your app -- I'm calling mine, `two-file-app`.</p>
+<p class="body-text-s topbr">**1.** In your project repo, create a new subdirectory to house your app -- I'm calling mine, `two-file-app`.</p>
 
 . . . 
 
-<p class="small-text">**2.** Create two new R scripts inside `/two-file-app` named `ui.R` and `server.R` -- you **must** name your scripts `ui.R` and `server.R`. Copy the following code into the respective files. **Note:** When splitting your UI and server into separate files, you do not need to include the `shinyApp(ui = ui, server = server)` line of code (as required in your single-file app).<p>
+<p class="body-text-s">**2.** Create two new R scripts inside `/two-file-app` named `ui.R` and `server.R` -- you **must** name your scripts `ui.R` and `server.R`. Copy the following code into the respective files. **Note:** When splitting your UI and server into separate files, you do not need to include the `shinyApp(ui = ui, server = server)` line of code (as required in your single-file app).<p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="body-text">**`ui.R`**</p>
-```{r}
+<!-- <p class="body-text">**`ui.R`**</p> -->
+```{r filename="ur.R"}
 #| eval: false
 #| echo: true
 # user interface ----
@@ -133,8 +180,8 @@ ui <- fluidPage()
 :::
 
 ::: {.column width="45%"}
-<p class="body-text">**`server.R`**</p>
-```{r}
+<!-- <p class="body-text">**`server.R`**</p> -->
+```{r filename="server.R"}
 #| eval: false
 #| echo: true
 # server instructions ----
@@ -146,10 +193,10 @@ server <- function(input, output) {}
 
 . . . 
 
-<p class="small-text">**3.** Lastly, let's create a `global.R` file within `/two-file-app` and add dependencies (right now, that's just loading the `shiny` package). Run your app as we did earlier.</p>
+<p class="body-text-s">**3.** Lastly, let's create a `global.R` file within `/two-file-app` and add dependencies (right now, that's just loading the `shiny` package). Run your app as we did earlier.</p>
 
-<p class="body-text">**`global.R`**</p>
-```{r}
+<!-- <p class="body-text">**`global.R`**</p> -->
+```{r filename="global.R"}
 #| eval: false
 #| echo: true
 # load libraries ----

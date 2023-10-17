@@ -5,7 +5,7 @@ format: revealjs
 ##  {#modules data-menu-title="~~~ Shiny Modules ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("cubes", fill = "#d2e3f3", a11y = "sem")` Writing modules</p>
+<p class="custom-subtitle bottombr">{{< fa cubes title="three cubes stacked on top of one another in a pyramid shape" >}} Writing modules</p>
 <p class="caption-text">*We can take our code abstraction a step further and bundle repeated UI & server components together into **modules**, streamlining our code and increasing efficiency.*</p>
 </div>
 
@@ -13,49 +13,62 @@ format: revealjs
 
 ##  {#LO-modules data-menu-title="Learning Objectives - Modules"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Modules</div>
+[{{< fa book-open title="an open book" >}} Learning Objectives - Modules]{.slide-title}
 
-<p class="medium-body-text bottombr">By the end of this section, you should have an intro-level understanding of:</p>
+<hr>
 
-. .  .
-
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` what is a shiny module and when it might make sense to build one</p>
+<p class="body-text-l teal-text bottombr">By the end of this section, you should have an intro-level understanding of:</p>
 
 . .  .
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the structure of a shiny module</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} what is a shiny module and when it might make sense to build one</p>
 
 . .  .
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` how to use a module</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} the structure of a shiny module</p>
 
 . .  .
 
-<p class="medium-body-text topbr">Packages introduced:</p> 
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} how to use a module</p>
+
+. .  .
+
+<p class="body-text-l teal-text topbr">Packages introduced:</p> 
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{gapminder}`: data</p>
+<p class="body-text-s">`r fontawesome::fa("box-open", fill = "#05859B", a11y = "sem")` `{gapminder}`: data</p>
 
 ----
 
 ##  {#gapminder-app data-menu-title="Gapminder app"}
 
-<div class="slide-title-smaller">The utility of modules is best demonstrated by taking a look at an example app</div>
+[The utility of modules is best demonstrated by taking a look at an example app]{.slide-title2}
 
-<p class="small-text">This app, developed by [Garrett Grolemund](https://github.com/garrettgman) & [Joe Cheng's](https://github.com/jcheng5) as part of their [Modules](https://www.rstudio.com/resources/shiny-dev-con/modules/?_ga=2.163786815.1475817156.1670220567-309155161.1666221806) lesson, taught at the 2016 Shiny Developer Conference, is a prime candidate for modularization.</p>
+<hr>
 
-<p class="small-text">It uses the `gapminder` data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.</p> 
+<p class="body-text-s">This app, developed by [Garrett Grolemund](https://github.com/garrettgman) & [Joe Cheng's](https://github.com/jcheng5) as part of their [Modules](https://www.rstudio.com/resources/shiny-dev-con/modules/?_ga=2.163786815.1475817156.1670220567-309155161.1666221806) lesson, taught at the 2016 Shiny Developer Conference, is a prime candidate for modularization.</p>
 
-<center><img src="images/gapminder-app.gif" alt="The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly." width="550"/></center>
+<p class="body-text-s">It uses the `gapminder` data set to display life expectancy by GDP per capita from 1952 to 2007 for Africa, the Americas, Asia, Europe, Oceania, and all regions collectively. The only difference between each tab is the subset of data displayed.</p> 
+
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "The gapminder app, which has 6 tabs, one for each global region. A bubble plot takes up the width of the ap and displays Life Expectancy by GDP per capita, where each bubble represents a country and the size of bubbles represent the population size of that country. An automated sliderInput advances through the years (1952-2007), and the plot updates accordingly."
+knitr::include_graphics("images/gapminder-app.gif")
+```
 
 ---
 
 ##  {#gapminder-code data-menu-title="Gapminder code"}
 
-<div class="slide-title-smaller">The code for this app isn't particularly complex, but it's repetitive and long</div>
+[The code for this app isn't particularly complex, but it's repetitive and long]{.slide-title2}
 
-```{r}
+<hr>
+
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 # app.R
@@ -386,11 +399,13 @@ shinyApp(ui = ui, server = server)
 
 ##  {#repeated-code data-menu-title="Repeated gapminder code"}
 
-<div class="slide-title-smaller">Repeated code sections</div>
+[Repeated code sections]{.slide-title3}
 
-<p class="small-text">Taking a closer look at the gapminder app code, we'll see that the following sections of code are repeated for each region (6 times total; only code sections for "all" regions shown below):</p>
+<hr>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `tabPanel` (**UI**)</p>
+<p class="body-text-s">Taking a closer look at the gapminder app code, we'll see that the following sections of code are repeated for each region (6 times total; only code sections for "all" regions shown below):</p>
+
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `tabPanel` (**UI**)</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -402,7 +417,7 @@ tabPanel(title = "All",
                      animate = animationOptions(interval = 500)))
 ```
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reactive data frame (**server**)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reactive data frame (**server**)</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -412,7 +427,7 @@ ydata_all <- reactive({
 })
 ```
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reactive data frame (**server**)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reactive data frame (**server**)</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -422,7 +437,7 @@ ydata_all <- reactive({
 })
 ```
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` calculating date ranges (**server**)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} calculating date ranges (**server**)</p>
 ```{r}
 #| eval: false
 #| echo: true
@@ -435,9 +450,11 @@ yrange_all <- range(all_data$lifeExp)
 
 ##  {#repeated-code-cont data-menu-title="Repeated gapminder code (cont.)"}
 
-<div class="slide-title-smaller">Repeated code sections (cont.)</div>
+[Repeated code sections (cont.)]{.slide-title2}
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` `renderPlot({})` (**server**)</p>
+<hr>
+
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} `renderPlot({})` (**server**)</p>
 
 ```{r}
 #| eval: false
@@ -480,30 +497,33 @@ output$all_plot <- renderPlot({
 
 ##  {#enter-modules data-menu-title="Enter shiny modules"}
 
-<div class="slide-title-smaller">Enter Shiny modules</div>
+[Enter Shiny modules]{.slide-title}
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **A shiny module is a piece of a shiny app** -- it can't be run directly, but instead is included as part of a larger app. While functions work well for code that that is either completely on the client (UI) side or completely on the server side, modules can be written for code that spans both.</p>
+<hr>
+
+<p class="body-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **A shiny module is a piece of a shiny app** -- it can't be run directly, but instead is included as part of a larger app. While functions work well for code that that is either completely on the client (UI) side or completely on the server side, modules can be written for code that spans both.</p>
 
 . . . 
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules can represent inputs, outputs, or both** (*we'll be building a module that represents both*). Motivation for building modules can range from enabling reuse of code (once created, modules can be reused within the same app or even across different apps), to breaking up a large, complex app into smaller, separate components.</p>
+<p class="body-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Modules can represent inputs, outputs, or both** (*we'll be building a module that represents both*). Motivation for building modules can range from enabling reuse of code (once created, modules can be reused within the same app or even across different apps), to breaking up a large, complex app into smaller, separate components.</p>
 
 . . .
 
-<p class="body-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` **Modules help to solve a *namespacing* problem** -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for organizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function()` e.g. `plyr::arrange()` vs `dplyr::arrange()`).</p>
+<p class="body-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} **Modules help to solve a *namespacing* problem** -- recall that all `Id`s (e.g. `inputId`s) *must* be unique across your app. **Namespacing** is a system for organizing objects with identical names (similar to namespacing functions from particular packages using the syntax `package::function()` e.g. `plyr::arrange()` vs `dplyr::arrange()`).</p>
 
 ---
 
 ##  {#modules-structure data-menu-title="Structure of modules"}
 
-<div class="slide-title-smaller">What do modules look like?</div>
+[What do modules look like?]{.slide-title2}
+
+<hr>
 
 <p class="body-text">Modules are a coding pattern, organized into **two** functions: one that creates the **UI elements** and one that **loads the server logic**. They can look a bit different, depending on your module, but they generally follow this pattern:</p>
 
-```{r}
+```{r filename="myModule.R"}
 #| eval: false
 #| echo: true
-# myModule.R
 #..........................ui function...........................
 
 myModuleUI <- function(id) {
@@ -533,7 +553,9 @@ myModuleServer <- function(id, ...) { # where `...` includes any number of addit
 
 ##  {#where-to-define-modules data-menu-title="Where to define modules"}
 
-<div class="slide-title-smaller">Where should I define/save my module?</div>
+[Where should I define/save my module?]{.slide-title2}
+
+<hr>
 
 <p class="body-text">Part of the appeal of creating modules is breaking your long `app.R` (or `ui.R` & `server.R`) scripts into smaller pieces. **Creating a separate R script to house a given module (both the UI *and* Server function components) is typically the best course of action (a good naming convention is giving it a descriptive name with the suffix "Module" e.g. `gapModule.R`).** There are a variety of places you can write and/or save your modularized code to, but I recommend one of the following two options (at least while we're just getting started on our shiny modules journey):</p>
 
@@ -541,25 +563,27 @@ myModuleServer <- function(id, ...) { # where `...` includes any number of addit
 
 <p class="body-text topbr">**(1)** save your modularized code script inside your app's directory (e.g. `~/app-directory/myModule.R`)</p>
 
-<p class="small-text">If you choose this option, call `source("myModule.R")` from `global.R` (if using ui.R/server.R) or `app.R`.</p>
+<p class="body-text-s">If you choose this option, call `source("myModule.R")` from `global.R` (if using ui.R/server.R) or `app.R`.</p>
 
 . . . 
 
 <p class="body-text topbr">**(2)** save your modularized code script inside the `/R` subdirectory of your application (e.g. `~/app-directory/R/myModule.R`)</p>
 
-<p class="small-text">If you choose this option, your module will automatically be sourced (as of Shiny 1.5.0) when the application is loaded.</p>
+<p class="body-text-s">If you choose this option, your module will automatically be sourced (as of Shiny 1.5.0) when the application is loaded.</p>
 
 ---
 
 ##  {#ui-function data-menu-title="UI function"}
 
-<div class="slide-title-smaller">Breaking down the UI function:</div>
+[Breaking down the UI function:]{.slide-title3}
 
-<p class="smaller-text">The UI part of a module needs to do **two** things: **(1)** return a shiny element (e.g. an input & output), and **(2)** assign module elements to a unique namespace using `NS()`. `NS()` provides an easy way to help with namespacing within your module, ensuring that each time your module is called, a unique `id` is assigned.</p>
+<hr>
 
-<p class="smaller-text">The UI function for our gapminder module will look like this (**NOTE:** code comments below denote the general order of operations I followed when writing this UI function):</p>
+<p class="body-text-xs">The UI part of a module needs to do **two** things: **(1)** return a shiny element (e.g. an input & output), and **(2)** assign module elements to a unique namespace using `NS()`. `NS()` provides an easy way to help with namespacing within your module, ensuring that each time your module is called, a unique `id` is assigned.</p>
 
-```{r}
+<p class="body-text-xs">The UI function for our gapminder module will look like this (**NOTE:** code comments below denote the general order of operations I followed when writing this UI function):</p>
+
+```{r filename="~/modularized-app/R/gapModule.R"}
 #| eval: false
 #| echo: true
 # step 1: a good function naming convention is a descriptive base name, suffixed by `UI`
@@ -581,19 +605,21 @@ gapModuleUI <- function(id) { # step 2: the first argument to a UI function shou
 } # END gapModuleUI function
 ```
 
-<p class="smaller-text">Wrapping our input and output `Id`s in `ns()` will create unique Ids each time our module is called, preventing things from overwriting one one another. For example, if we call `gapModuleUI(id = "myFirstModuleCall")`, our `outputId` will be set to `myFirstModuleCall-plot` and our `inputId` will be set to `myFirstModuleCall-year`. Calling our module a second time (e.g. `gapModuleUI(id = "mySecondModuleCall")`) will generate two new unique Ids (e.g. `mySecondModuleCall-plot` & `mySecondModuleCall-year`).</p>
+<p class="body-text-xs">Wrapping our input and output `Id`s in `ns()` will create unique Ids each time our module is called, preventing things from overwriting one one another. For example, if we call `gapModuleUI(id = "myFirstModuleCall")`, our `outputId` will be set to `myFirstModuleCall-plot` and our `inputId` will be set to `myFirstModuleCall-year`. Calling our module a second time (e.g. `gapModuleUI(id = "mySecondModuleCall")`) will generate two new unique Ids (e.g. `mySecondModuleCall-plot` & `mySecondModuleCall-year`).</p>
 
 ---
 
 ##  {#server-function data-menu-title="Server function"}
 
-<div class="slide-title-smaller">Breaking down the Server function:</div>
+[Breaking down the Server function:]{.slide-title3}
 
-<p class="smaller-text">The server part of a module looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first *required* parameter, `id`, along with any other necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Africa** vs. **Asia** etc.)).</p>
+<hr>
 
-<p class="smaller-text">Next, call `moduleServer()` *inside* your server function and pass it the `id` variable, along with the module function. The module function *must* have three parameters: `input`, `output`, and `session`. You *do not* have to use `ns()` to refer to inputs and outputs here. Copy server code from our original app, plop it inside the module function, and sub in our `data` parameter where ever a data frame subset is called.</p>
+<p class="body-text-xs">The server part of a module looks very similar to a normal (i.e. non-modular) Shiny app server function. Begin by defining your module server function name and provide it with the first *required* parameter, `id`, along with any other necessary parameters (we also need to pass our particular function a `data` parameter to differentiate between data subsets (e.g. **All** vs. **Africa** vs. **Asia** etc.)).</p>
 
-```{r}
+<p class="body-text-xs">Next, call `moduleServer()` *inside* your server function and pass it the `id` variable, along with the module function. The module function *must* have three parameters: `input`, `output`, and `session`. You *do not* have to use `ns()` to refer to inputs and outputs here. Copy server code from our original app, plop it inside the module function, and sub in our `data` parameter where ever a data frame subset is called.</p>
+
+```{r filename="~/modularized-app/R/gapModule.R"}
 #| eval: false
 #| echo: true
 # step 1: a good function naming convention is a descriptive base name, suffixed by `Server`
@@ -653,11 +679,13 @@ gapModuleServer <- function(id, data) { # step 2: the first argument to a server
 
 ##  {#using-module-1 data-menu-title="Using your module 1"}
 
-<div class="slide-title-smaller">Now let's use our module:</div>
+[Now let's use our module:]{.slide-title2}
 
-<p class="small-text">First, since we've saved our `gapModule.R` file to our app's directory, we'll need to source it at the top of our `app.R` file:</p>
+<hr>
 
-```{r}
+<p class="body-text-s">First, since we've saved our `gapModule.R` file to our app's directory, we'll need to source it at the top of our `app.R` file:</p>
+
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "5"
@@ -681,11 +709,13 @@ oceania_data <- filter(gapminder, continent == "Oceania")
 
 ##  {#using-module-2 data-menu-title="Using your module 2"}
 
-<div class="slide-title-smaller">Now let's use our module:</div>
+[Now let's use our module:]{.slide-title2}
 
-<p class="small-text">Next, let's use our module's UI function. We'll need to define/name each of our `tabPanel`s (one for each of our six regions), but rather than building a `plotOutput` and `sliderInput` inside each `tabPanel` (each with unique `Id`s), we can instead call our `gapModuleUI()` function, and ensure that each time we call it to supply a unique character string for our `id` parameter.</p>
+<hr>
 
-```{r}
+<p class="body-text-s">Next, let's use our module's UI function. We'll need to define/name each of our `tabPanel`s (one for each of our six regions), but rather than building a `plotOutput` and `sliderInput` inside each `tabPanel` (each with unique `Id`s), we can instead call our `gapModuleUI()` function, and ensure that each time we call it to supply a unique character string for our `id` parameter.</p>
+
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "25-30"
@@ -729,11 +759,13 @@ ui <- fluidPage(
 
 ##  {#using-module-3 data-menu-title="Using your module 3"}
 
-<div class="slide-title-smaller">Now let's use our module:</div>
+[Now let's use our module:]{.slide-title2}
 
-<p class="small-text">Finally, we can re-write our server. Rather than writing out the *lengthy* code required to make each plot six times over, we can instead call our `gapModuleServer()` function, supplying each call with `id`s that match those used in `gapModuleUI()`, along with the appropriate data subset. Now, run your app! If written correctly, your app should run exactly the same as your initial version.</p>
+<hr>
 
-```{r}
+<p class="body-text-s">Finally, we can re-write our server. Rather than writing out the *lengthy* code required to make each plot six times over, we can instead call our `gapModuleServer()` function, supplying each call with `id`s that match those used in `gapModuleUI()`, along with the appropriate data subset. Now, run your app! If written correctly, your app should run exactly the same as your initial version.</p>
+
+```{r filename="~/modularized-app/app.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "39-44"
@@ -792,16 +824,18 @@ shinyApp(ui = ui, server = server)
 
 ##  {#module-resources data-menu-title="Module resources"}
 
-<div class="slide-title-smaller">Additional module resources</div>
+[Additional module resources]{.slide-title2}
+
+<hr>
 
 <p class="body-text">We've barely scratched the surface of modules. Continue on with some of the following resources:</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Modularizing Shiny App Code](https://www.rstudio.com/resources/shiny-dev-con/modules/?_ga=2.163786815.1475817156.1670220567-309155161.1666221806) & [associated materials](https://github.com/rstudio/ShinyDeveloperConference/tree/master/Modules/Demo), by [Garrett Grolemund](https://github.com/garrettgman) & [Joe Cheng](https://github.com/jcheng5) at the 2016 Shiny Developer's Conference -- **NOTE:** This 2016 talk is an *excellent* introduction to modules and is definitely worth a watch, especially because we just explored the exact example demoed by G. Grolemund. Please note, however, that Shiny modules were overhauled in 2020 with the introduction of `moduleServer()`. The code on the previous slides has been updated to reflect those changes, and therefore differs slightly from what's taught in this video.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Modularizing Shiny App Code](https://www.rstudio.com/resources/shiny-dev-con/modules/?_ga=2.163786815.1475817156.1670220567-309155161.1666221806) & [associated materials](https://github.com/rstudio/ShinyDeveloperConference/tree/master/Modules/Demo), by [Garrett Grolemund](https://github.com/garrettgman) & [Joe Cheng](https://github.com/jcheng5) at the 2016 Shiny Developer's Conference -- **NOTE:** This 2016 talk is an *excellent* introduction to modules and is definitely worth a watch, especially because we just explored the exact example demoed by G. Grolemund. Please note, however, that Shiny modules were overhauled in 2020 with the introduction of `moduleServer()`. The code on the previous slides has been updated to reflect those changes, and therefore differs slightly from what's taught in this video.</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Mastering Shiny, Ch. 19 - Shiny Modules](https://mastering-shiny.org/scaling-modules.html#scaling-modules ), by [Hadley Wickham](https://github.com/hadley)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Mastering Shiny, Ch. 19 - Shiny Modules](https://mastering-shiny.org/scaling-modules.html#scaling-modules ), by [Hadley Wickham](https://github.com/hadley)</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Modularizing Shiny app code](https://shiny.rstudio.com/articles/modules.html), by [Winston Chang](https://github.com/wch)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Modularizing Shiny app code](https://shiny.rstudio.com/articles/modules.html), by [Winston Chang](https://github.com/wch)</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Effective use of Shiny modules in application development](https://www.youtube.com/watch?v=ylLLVo2VL50), by [Eric Nantz](https://r-podcast.org/host/enantz/) at rstudio::conf(2019)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Effective use of Shiny modules in application development](https://www.youtube.com/watch?v=ylLLVo2VL50), by [Eric Nantz](https://r-podcast.org/host/enantz/) at rstudio::conf(2019)</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`[A beginners guide to Shiny modules](https://emilyriederer.netlify.app/post/shiny-modules/), by [Emily Riederer](https://emilyriederer.netlify.app/about/)</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}[A beginners guide to Shiny modules](https://emilyriederer.netlify.app/post/shiny-modules/), by [Emily Riederer](https://emilyriederer.netlify.app/about/)</p>

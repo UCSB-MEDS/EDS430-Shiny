@@ -5,7 +5,7 @@ format: revealjs
 ##  {#resources-final-thoughts data-menu-title="~~~ Final Thoughts & Resources ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("lightbulb", fill = "#d2e3f3", a11y = "sem")` Final Thoughts & Additional Resources</p>
+<p class="custom-subtitle bottombr">{{< fa lightbulb title="a lightbulb" >}} Final Thoughts & Additional Resources</p>
 <p class="caption-text">*We've covered a lot in this workshop, and we've only just begun to scratch the surface -- we'll end with some final thoughts/words of wisdom, along with some resources that are worth returning to as you begin your deep dive into shiny app development.*</p>
 </div>
 
@@ -13,69 +13,75 @@ format: revealjs
 
 ##  {#words-of-wisdom data-menu-title="Words of wisdom"}
 
-<div class="slide-title">Some takeaway messages that are worth keeping in mind</div>
+[Some takeaway messages that are worth keeping in mind]{.slide-title}
 
-<p class="small-text topbr">`r fontawesome::fa("chart-column", fill = "#05859B", a11y = "sem")` Oftentimes, the most time consuming part of building a shiny app is deciding on how to present the data visually -- make your data visualizations first, *outside of shiny*, refine, decide which variables you think are important enough to make reactive, etc. **THEN**, build them into your shiny application.</p>
+<hr>
 
-. . .
-
-<p class="small-text topbr">`r fontawesome::fa("table", fill = "#05859B", a11y = "sem")` Get your data in the most wrangled form possible before loading it into your app to avoid unnecessary slowdowns.</p>
+<p class="body-text-s topbr">[{{< fa chart-column title="a bar chart" >}}]{.teal-text} Oftentimes, the most time consuming part of building a shiny app is deciding on how to present the data visually -- make your data visualizations first, *outside of shiny*, refine, decide which variables you think are important enough to make reactive, etc. **THEN**, build them into your shiny application.</p>
 
 . . .
 
-<p class="small-text topbr">`r fontawesome::fa("code", fill = "#05859B", a11y = "sem")` Code expands *quickly* -- stay organized! Create a repository map (see an example in this [README](https://github.com/UCSB-MEDS/shiny-dashboard/blob/main/README.md)), so you and your collaborators know where files live and what they do. Use rainbow parentheses, add extra space between sections of code, and include clear code comments to denote the start and end of parentheses. This will help save headaches later on.</p>
+<p class="body-text-s topbr">[{{< fa table title="a data table" >}}]{.teal-text} Get your data in the most wrangled form possible before loading it into your app to avoid unnecessary slowdowns.</p>
 
 . . .
 
-<p class="small-text topbr">`r fontawesome::fa("users", fill = "#05859B", a11y = "sem")` Keep in mind the [considerations for good UX/UI design](https://ucsb-meds.github.io/EDS430-Shiny/#/UX-UI-design-tips). You're building an app for the user first and foremost -- be sure to assess often if your app is going to meet their needs.</p>
+<p class="body-text-s topbr">[{{< fa code title="the symbol for code, </>" >}}]{.teal-text} Code expands *quickly* -- stay organized! Create a repository map (see an example in this [README](https://github.com/UCSB-MEDS/shiny-dashboard/blob/main/README.md)), so you and your collaborators know where files live and what they do. Use rainbow parentheses, add extra space between sections of code, and include clear code comments to denote the start and end of parentheses. This will help save headaches later on.</p>
 
 . . .
 
-<p class="small-text topbr">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Before taking the plunge, consider if you really need shiny at all -- maintaining apps can be challenging. What other options might you have for sharing your data with end users?</p>
+<p class="body-text-s topbr">[{{< fa users title="three people" >}}]{.teal-text} Keep in mind the [considerations for good UX/UI design](https://ucsb-meds.github.io/EDS430-Shiny/#/UX-UI-design-tips). You're building an app for the user first and foremost -- be sure to assess often if your app is going to meet their needs.</p>
+
+. . .
+
+<p class="body-text-s topbr">[{{< fa question title="question mark" >}}]{.teal-text} Before taking the plunge, consider if you really need shiny at all -- maintaining apps can be challenging. What other options might you have for sharing your data with end users?</p>
 
 ---
 
 ## {#resources1 data-menu-title="Resources"}
 
-<div class="slide-title-smaller">Great Shiny resources</div>
+[Great Shiny resources]{.slide-title2}
 
-<p class="smaller-text">A quick Google search will yield *lots* of online resources, forum discussions, video tutorials, etc. for building Shiny applications. Many are linked throughout these slides, but here's an attempt at putting some of those that I referenced most often all in one spot (along with some that we didn't have time to cover). Be sure to poke around online yourself, and let me know if you come across any that you find particularly useful so that I can add them here!</p>
+<hr>
 
-<p class="small-text">**Books**</p>
+<p class="body-text-s">A quick Google search will yield *lots* of online resources, forum discussions, video tutorials, etc. for building Shiny applications. Many are linked throughout these slides, but here's an attempt at putting some of those that I referenced most often all in one spot (along with some that we didn't have time to cover).</p>
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Mastering Shiny](https://mastering-shiny.org/basic-app.html), by Hadley Wickham</p>  
+<p class="body-text-s">**Books**</p>
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/index.html), by Colin Fay, Sébastien Rochette, Vincent Guyader & Cervan Girard.</p>  
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Mastering Shiny](https://mastering-shiny.org/basic-app.html), by Hadley Wickham</p>  
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Building Web Apps with R](https://debruine.github.io/shinyintro/index.html), by [Lisa DeBruine](https://github.com/debruine) -- an short course (paired with an online book with instructions, resources, etc.)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/index.html), by Colin Fay, Sébastien Rochette, Vincent Guyader & Cervan Girard.</p>  
 
-<p class="small-text">**Tutorials**</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Building Web Apps with R](https://debruine.github.io/shinyintro/index.html), by [Lisa DeBruine](https://github.com/debruine) -- an short course (paired with an online book with instructions, resources, etc.)</p>
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Building Shiny apps - an interactive tutorial](https://deanattali.com/blog/building-shiny-apps-tutorial/), by Dean Attali</p>  
+<p class="body-text-s">**Tutorials**</p>
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`[Speeding Up R Shiny](https://www.r-bloggers.com/2021/06/speeding-up-r-shiny-the-definitive-guide/), by Jakub Sobolewski in R bloggers -- details methods on improving app performance</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Building Shiny apps - an interactive tutorial](https://deanattali.com/blog/building-shiny-apps-tutorial/), by Dean Attali</p>  
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Allison Horst's [The Basics of Building Shiny Apps in R](https://github.com/allisonhorst/shiny-basics-sb-r-ladies) workshop</p>  
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text}[Speeding Up R Shiny](https://www.r-bloggers.com/2021/06/speeding-up-r-shiny-the-definitive-guide/), by Jakub Sobolewski in R bloggers -- details methods on improving app performance</p>
 
-<p class="small-text">**Tools**</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Allison Horst's [The Basics of Building Shiny Apps in R](https://github.com/allisonhorst/shiny-basics-sb-r-ladies) workshop</p>  
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [R Shiny & FontAwesome Icons -- How to Use Them in Your Dashboards](https://www.r-bloggers.com/2022/09/r-shiny-fontawesome-icons-how-to-use-them-in-your-dashboards/), by Dario Radečić in R Bloggers -- instructions for setting up your [fontawesome](https://fontawesome.com/) kit</p>
+<p class="body-text-s">**Tools**</p>
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny UI Editor](https://rstudio.github.io/shinyuieditor/) and [Nick Strayer](https://nickstrayer.me/)'s [rstudio::conf(2022) talk](https://www.rstudio.com/conference/2022/talks/new-way-to-build-shiny/) introducing it -- a visual tool for building the UI portion of a Shiny application that generates clean and human-readable code (**currently in Alpha**, as of January 2023)</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [R Shiny & FontAwesome Icons -- How to Use Them in Your Dashboards](https://www.r-bloggers.com/2022/09/r-shiny-fontawesome-icons-how-to-use-them-in-your-dashboards/), by Dario Radečić in R Bloggers -- instructions for setting up your [fontawesome](https://fontawesome.com/) kit</p>
 
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` The [`{golem}` package](https://github.com/ThinkR-open/golem) provides an opinionated framework for building production-grade shiny applications and is a part of a growing ecosystem of packages called the [`{golemverse}`](https://golemverse.org/). There are lots of accompanying learning materials, including the book, [Engineering Production Grade Shiny Apps](https://engineering-shiny.org/), by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny UI Editor](https://rstudio.github.io/shinyuieditor/) and [Nick Strayer](https://nickstrayer.me/)'s [rstudio::conf(2022) talk](https://www.rstudio.com/conference/2022/talks/new-way-to-build-shiny/) introducing it -- a visual tool for building the UI portion of a Shiny application that generates clean and human-readable code (**currently in Alpha**, as of January 2023)</p>
+
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} The [`{golem}` package](https://github.com/ThinkR-open/golem) provides an opinionated framework for building production-grade shiny applications and is a part of a growing ecosystem of packages called the [`{golemverse}`](https://golemverse.org/). There are lots of accompanying learning materials, including the book, [Engineering Production Grade Shiny Apps](https://engineering-shiny.org/), by Colin Fay, Sébastien Rochette, Vincent Guyader, and Cervan Girard.</p>
 
 ---
 
 ## {#resources1 data-menu-title="More resources"}
 
-<div class="slide-title">And don't forget about Posit's own excellent resources</div>
+[And don't forget about Posit's own excellent resources]{.slide-title}
+
+<hr>
 
 <p class="body-text bottombr">Posit/RStudio's great instructional resources, examples, and help documentation:</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` A thoughtfully organized [Articles](https://shiny.rstudio.com/articles/) page</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} A thoughtfully organized [Articles](https://shiny.rstudio.com/articles/) page</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` The [Shiny User Showcase](https://shiny.rstudio.com/gallery/#user-showcase), a collection of Shiny apps and their source code developed by the Shiny developer community -- many of these featured apps are winners or honorable mentions of the [annual Shiny contest](https://www.rstudio.com/blog/winners-of-the-3rd-annual-shiny-contest/)!</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} The [Shiny User Showcase](https://shiny.rstudio.com/gallery/#user-showcase), a collection of Shiny apps and their source code developed by the Shiny developer community -- many of these featured apps are winners or honorable mentions of the [annual Shiny contest](https://www.rstudio.com/blog/winners-of-the-3rd-annual-shiny-contest/)!</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` [Shiny Demos](https://shiny.rstudio.com/gallery/#demos), a series of apps created by the Shiny developers to highlight specific features of the shiny package -- these are *excellent* resources to turn to when you are learning how to implement a new type of widget, working on the layout of your app, and more.</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny Demos](https://shiny.rstudio.com/gallery/#demos), a series of apps created by the Shiny developers to highlight specific features of the shiny package -- these are *excellent* resources to turn to when you are learning how to implement a new type of widget, working on the layout of your app, and more.</p>
 

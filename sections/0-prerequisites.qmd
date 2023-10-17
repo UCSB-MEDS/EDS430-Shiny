@@ -4,25 +4,34 @@ format: revealjs
 
 ## {#prerequisites data-menu-title="Prerequisites"}
 
-<div class="slide-title">`r fontawesome::fa("check", fill = "#047C90", a11y = "sem")` Prerequisites</div>
+[{{< fa check title="check mark" >}} Prerequisites]{.slide-title}
+
+<hr>
 
 :::: {.columns} 
 
 ::: {.column width="70%"}
 <p class="body-text bottombr">*This workshop assumes that participants have the following:*</p>
 
-<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` R/RStudio installed & a basic familiarity with the language</div>
+<div class="body-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} R/RStudio installed & a basic familiarity with the language</div>
 
-<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` A GitHub profile & git installed/configured</div>
+<div class="body-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} A GitHub profile & git installed/configured</div>
 :::
 
 ::: {.column width="30%"}
-<center><img src="images/shiny.png" alt="A blue hexagon with the word 'Shiny' in cursive lettering printed across the center." width="150"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "50%"
+#| fig-alt: "A blue hexagon with the word 'Shiny' in cursive lettering printed across the center."
+knitr::include_graphics("images/shiny.png")
+```
 :::
 
 ::::
 
-<div class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` You have the required R packages installed. You can install/update them all at once by running:</div>
+<div class="body-text">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} You have the required R packages installed. You can install/update them all at once by running:</div>
 
 ```{r}
 #| eval: false
@@ -30,7 +39,5 @@ format: revealjs
 install.packages(pkgs = c("shiny", "shinydashboard", "shinyWidgets", "DT", "leaflet", "shinycssloaders", "tidyverse", "bslib", "fresh", "sass", "reactlog", "shinytest2", "palmerpenguins", "lterdatasampler", "gapminder", "markdown"))
 ```
 
-<br>
-
-<center><div class="large-body-text">No prior Shiny experience necessary!</div></center>
+<center><div class="body-text-xl teal-text topbr">No prior Shiny experience necessary!</div></center>
 

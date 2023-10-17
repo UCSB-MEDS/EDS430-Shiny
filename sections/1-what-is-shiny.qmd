@@ -5,7 +5,7 @@ format: revealjs
 ##  {#what-is-shiny data-menu-title="~~~ What is Shiny? ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("r-project", fill = "#d2e3f3", a11y = "sem")` What is Shiny?</p>
+<p class="custom-subtitle bottombr">{{< fa brands r-project title="R logo" >}} What is Shiny?</p>
 <p class="caption-text">*Think interactive web pages built by people who love to code in R (i.e. hopefully many of you!), no JavaScript experience necessary.*</p>
 </div>
 
@@ -13,20 +13,29 @@ format: revealjs
 
 ##  {#easy-web-apps data-menu-title="Shiny = easy web apps"}
 
-<div class="slide-title">Shiny makes building web apps easy</div>
+[Shiny makes building web apps easy]{.slide-title}
+
+<hr>
 
 <p class="quote-text-bg body-text bottombr">*"**Shiny is an R package that makes it easy to build interactive web apps straight from R.** You can host standalone apps on a webpage or embed them in [R Markdown](https://rmarkdown.rstudio.com/?_ga=2.5356915.1997816511.1640293283-2019993402.1637352626) documents or build [dashboards](http://rstudio.github.io/shinydashboard/?_ga=2.242738759.492023234.1673556996-309155161.1666221806). You can also extend your Shiny apps with [CSS themes](http://rstudio.github.io/shinythemes/?_ga=2.162383609.492023234.1673556996-309155161.1666221806), [htmlwidgets](http://www.htmlwidgets.org/), and JavaScript [actions.](https://github.com/daattali/shinyjs/blob/master/README.md)"* **- RStudio**</p>
 
-<center><img src="images/worldbank-shiny.gif" alt="A gif of Andre Duarte's 'Worldbank-Shiny' app. On the lefthand side of the app, the title 'Gapminder Interactive Plot' sits above a series of three widgets. The first is a dropdown menu where the user can select a region (e.g. Europe & Central Asia) or view all regions at the same time. The next two widgets are slider inputs -- the first allows the user to select a year between 1960 and 2014, and the second allows the user to select a population size between 500 and 5000. On the right hand side of the app is a bubble plot of Fertility Rate vs. Life Expectancy, which updates as inputs are changed by the user. Hovering a bubble displays thge corresponding Country, Region, Population, Life Expectancy, and Fertility Rate." width="700"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "A gif of Andre Duarte's 'Worldbank-Shiny' app. On the lefthand side of the app, the title 'Gapminder Interactive Plot' sits above a series of three widgets. The first is a dropdown menu where the user can select a region (e.g. Europe & Central Asia) or view all regions at the same time. The next two widgets are slider inputs -- the first allows the user to select a year between 1960 and 2014, and the second allows the user to select a population size between 500 and 5000. On the right hand side of the app is a bubble plot of Fertility Rate vs. Life Expectancy, which updates as inputs are changed by the user. Hovering a bubble displays thge corresponding Country, Region, Population, Life Expectancy, and Fertility Rate."
+knitr::include_graphics("images/worldbank-shiny.gif")
+```
 
-<center><p class="small-text gray-text topbr">[Worldbank-Shiny](https://github.com/aguimaraesduarte/WorldBank-Shiny) app to visualize fertility rate vs. life expectancy from 1960 to 2015, by [Andre Duarte](https://github.com/aguimaraesduarte)</p></center>
+<center><p class="body-text-s gray-text topbr">[Worldbank-Shiny](https://github.com/aguimaraesduarte/WorldBank-Shiny) app to visualize fertility rate vs. life expectancy from 1960 to 2015, by [Andre Duarte](https://github.com/aguimaraesduarte)</p></center>
 
 ---
 
 ##  {#app-anatomy data-menu-title="~~~ Anatomy of an app ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("puzzle-piece", fill = "#d2e3f3", a11y = "sem")` The anatomy of a Shiny app</p>
+<p class="custom-subtitle bottombr">{{< fa puzzle-piece title="puzzle piece" >}} The anatomy of a Shiny app</p>
 <p class="caption-text">*What does a Shiny app look like under the hood?*</p>
 </div>
 
@@ -34,11 +43,20 @@ format: revealjs
 
 ##  {#basic-anatomy data-menu-title="Basic Anatomy"}
 
-<div class="slide-title">The basic anatomy of a Shiny app</div>
+[The basic anatomy of a Shiny app]{.slide-title}
+
+<hr>
 
 <p class="body-text bottombr">Shiny apps are composed in *two* parts: (1) a **web page** that displays the app to a user (i.e. the **user interface**, or **UI** for short), and (2) a **computer** that powers the app (i.e. the **server**)</p>
 
-<center><img src="images/basic_shiny_app.png" alt="A simple schematic of a Shiny app, which includes the User Interface (UI, colored in blue) and the Server (colored in orange). The UI creates what the user will see and interact with, while the server builds the outputs that react and update based on user inputs." width="675"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "A simple schematic of a Shiny app, which includes the User Interface (UI, colored in blue) and the Server (colored in orange). The UI creates what the user will see and interact with, while the server builds the outputs that react and update based on user inputs."
+knitr::include_graphics("images/basic_shiny_app.png")
+```
 
 <p class="body-text bottombr">The **UI** controls the **layout and appearance** of your app and is written in HTML (except we use functions from the `{shiny}` package to write that HTML). The **server** handles the **logic** of the app -- in other words, it is a set of instructions that tells the webpage what to display when a user interacts with it.</p>
 
@@ -46,23 +64,30 @@ format: revealjs
 
 ##  {#widgets data-menu-title="Widgets"}
 
-<div class="slide-title">Widgets are web elements that users can interact with via the UI</div>
+[Widgets are web elements that users can interact with via the UI]{.slide-title2}
+
+<hr>
 
 ::::{.columns}
 
 ::: {.column width="60%"}
-<center><img src="images/basic_widgets.png" alt="Examples of Shiny's pre-built widget options. These include buttons, single checkbox, checkbox groups, date input, date range, file input, numeric input, radio buttons, select box, sliders, and text input. The default color scheme is black and gray with selections highlighted in blue." width="675"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "100%"
+#| fig-alt: "Examples of Shiny's pre-built widget options. These include buttons, single checkbox, checkbox groups, date input, date range, file input, numeric input, radio buttons, select box, sliders, and text input. The default color scheme is black and gray with selections highlighted in blue."
+knitr::include_graphics("images/basic_widgets.png")
+```
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="35%"}
-<br>
+<p class="body-text bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Widgets collect information from the user which is then used to update outputs created in the server.</p>
 
-<p class="body-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Widgets collect information from the user which is then used to update outputs created in the server.</p>
-
-<p class="body-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Shiny comes with a set of of [standard widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) (see left), but you can also explore widget extensions using a variety of other packages (e.g. [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets), [`{DT}`](https://rstudio.github.io/DT/), [`{plotly}`](https://plotly.com/r/))</p>
+<p class="body-text topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Shiny comes with a set of of [standard widgets](https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/) (see left), but you can also explore widget extensions using a variety of other packages (e.g. [`{shinyWidgets}`](https://github.com/dreamRs/shinyWidgets), [`{DT}`](https://rstudio.github.io/DT/), [`{plotly}`](https://plotly.com/r/))</p>
 :::
 
 ::::
@@ -71,11 +96,20 @@ format: revealjs
 
 ##  {#reactivity-intro data-menu-title="Reactivity Intro"}
 
-<div class="slide-title">Reactivity: a brief intro</div>
+[Reactivity: a brief intro]{.slide-title}
+
+<hr>
 
 <p class="body-text bottombr">Reactivity is what makes Shiny apps responsive i.e. it lets the app instantly update itself whenever the user makes a change. At a very basic level, it looks something like this:</p>
 
-<center><img src="images/reactivity_intro.png" alt="A schematic of Shiny reactivity. The UI is represented by a light blue box. Inside the blue UI box, there is a radio button widget that says, 'Make a choice:' and three round radio buttons beneath it. Underneath that, there is a placeholder space for a reactive output to be created by the server. The server is to the left of the UI and is represented by an orange box. At a basic level, reactivity occurs after the following steps: (1) A widget gets information from a user which (2) is then passed to the server where it is used to update a data frame based on the users choice. (3) The new data frame is used to update outputs in the server, and (4) those outputs are then rendered in the UI." width="750"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "A schematic of Shiny reactivity. The UI is represented by a light blue box. Inside the blue UI box, there is a radio button widget that says, 'Make a choice:' and three round radio buttons beneath it. Underneath that, there is a placeholder space for a reactive output to be created by the server. The server is to the left of the UI and is represented by an orange box. At a basic level, reactivity occurs after the following steps: (1) A widget gets information from a user which (2) is then passed to the server where it is used to update a data frame based on the users choice. (3) The new data frame is used to update outputs in the server, and (4) those outputs are then rendered in the UI."
+knitr::include_graphics("images/reactivity_intro.png")
+```
 
 <p class="body-text bottombr">Check out Garrett Grolemund's article, [How to understand reactivity in R ](https://shiny.rstudio.com/articles/understanding-reactivity.html) for a more detailed overview of Shiny reactivity.</p>
 
@@ -84,7 +118,7 @@ format: revealjs
 ##  {#examples-please data-menu-title="~~~ Examples Please? ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("laptop-code", fill = "#d2e3f3", a11y = "sem")` Can I see an example please?</p>
+<p class="custom-subtitle bottombr">{{< fa laptop-code title="a laptop computer with the code symbol, </>, on the screen" >}} Can I see an example please?</p>
 <p class="caption-text">*I'm glad you asked! There are lots of great examples online, including those developed by Bren alumni, as well as built-in teaching examples.*</p>
 </div>
 
@@ -92,23 +126,27 @@ format: revealjs
 
 ##  {#shinyapp-examples data-menu-title="Examples of shiny apps"}
 
-<div class="slide-title bottombr">Example shiny apps built by some familiar folks `r fontawesome::fa("face-smile", fill = "#05859B", a11y = "sem")`</div>
+[Example shiny apps built by some familiar folks {{< fa face-smile title="smiling face" >}}]{.slide-title}
 
-<p class="body-text">`r fontawesome::fa("droplet", fill = "#05859B", a11y = "sem")` [HydroTech Helper](https://danielkerstan.shinyapps.io/usgs_water_data/) ([video tutorial](https://www.youtube.com/watch?v=t8AUNpIb4eE)), *by MEDS 2022 alumn, [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/), developed during his time as a USGS Hydrologic Technician* -- access real-time monitoring of USGS hydrology sites and equipment</p>
+<hr>
 
-<p class="body-text">`r fontawesome::fa("fish-fins", fill = "#05859B", a11y = "sem")` [Moorea Coral Reef LTER Shiny Application](https://shinyapps.bren.ucsb.edu/ShinyAppMooreaViz/) ([source code](https://shinyapps.bren.ucsb.edu/ShinyAppMooreaViz/)), *by MEDS 2022 alumni, [Allie Cole](https://www.linkedin.com/in/allie-ingrid-cole-60351a1ba/), [Felicia Cruz](https://www.linkedin.com/in/cruz-felicia/), [Jake Eisaguirre](https://jake-eisaguirre.github.io/) & [Charles Henrickson](https://www.linkedin.com/in/charles-hendrickson-0001a0223/) as part of their MEDS capstone project* -- visualize spatial and temporal patterns of coral reef stressors surrounding Moorea, French Polynesia</p>
+<p class="body-text">[{{< fa droplet title="a water droplet" >}}]{.teal-text} [HydroTech Helper](https://danielkerstan.shinyapps.io/usgs_water_data/) ([video tutorial](https://www.youtube.com/watch?v=t8AUNpIb4eE)), *by MEDS 2022 alumn, [Daniel Kerstan](https://www.linkedin.com/in/daniel-kerstan-5b162321b/), developed during his time as a USGS Hydrologic Technician* -- access real-time monitoring of USGS hydrology sites and equipment</p>
 
-<p class="body-text">`r fontawesome::fa("water", fill = "#05859B", a11y = "sem")` [Marine Mammal Bycatch Impacts Exploration Tool](https://msiple.shinyapps.io/mmrefpoints/) ([source code](https://github.com/mcsiple/mmrefpoints)) *by [Dr. Megsie Siple](https://www.linkedin.com/in/margaret-siple-66157211/) and colleagues* -- compute population projections under different bycatch mortality levels</p>
+<p class="body-text">[{{< fa fish-fins title="a fish with fins" >}}]{.teal-text} [Moorea Coral Reef LTER Shiny Application](https://shinyapps.bren.ucsb.edu/ShinyAppMooreaViz/) ([source code](https://shinyapps.bren.ucsb.edu/ShinyAppMooreaViz/)), *by MEDS 2022 alumni, [Allie Cole](https://www.linkedin.com/in/allie-ingrid-cole-60351a1ba/), [Felicia Cruz](https://www.linkedin.com/in/cruz-felicia/), [Jake Eisaguirre](https://jake-eisaguirre.github.io/) & [Charles Henrickson](https://www.linkedin.com/in/charles-hendrickson-0001a0223/) as part of their MEDS capstone project* -- visualize spatial and temporal patterns of coral reef stressors surrounding Moorea, French Polynesia</p>
 
-<p class="body-text">`r fontawesome::fa("book-open-reader", fill = "#05859B", a11y = "sem")` [Novel-gazing](https://msiple.shinyapps.io/NovelGazingApp/) ([source code](https://github.com/mcsiple/novelgazing)) *by [Dr. Megsie Siple](https://www.linkedin.com/in/margaret-siple-66157211/)* -- a fun app for exploring your Goodreads data, inspired by community ecology</p>
+<p class="body-text">[{{< fa water title="three water waves" >}}]{.teal-text} [Marine Mammal Bycatch Impacts Exploration Tool](https://msiple.shinyapps.io/mmrefpoints/) ([source code](https://github.com/mcsiple/mmrefpoints)) *by [Dr. Megsie Siple](https://www.linkedin.com/in/margaret-siple-66157211/) and colleagues* -- compute population projections under different bycatch mortality levels</p>
+
+<p class="body-text">[{{< fa book-open-reader title="a person holding a book up to their face" >}}]{.teal-text} [Novel-gazing](https://msiple.shinyapps.io/NovelGazingApp/) ([source code](https://github.com/mcsiple/novelgazing)) *by [Dr. Megsie Siple](https://www.linkedin.com/in/margaret-siple-66157211/)* -- a fun app for exploring your Goodreads data, inspired by community ecology</p>
 
 ---
 
 ##  {#built-in-examples data-menu-title="Built-in Examples"}
 
-<div class="slide-title">The Shiny packages comes with 11 built-in examples</div>
+[The Shiny packages comes with 11 built-in examples]{.slide-title2}
 
-<p class="small-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Check out the available Shiny app examples by running this code in your console:</p>
+<hr>
+
+<p class="body-text-s bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Check out the available Shiny app examples by running this code in your console:</p>
 
 ```{r}
 #| eval: false
@@ -119,7 +157,7 @@ runExample(example = NA)
 
 . . .
 
-<p class="small-text topbr bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Run the first example, which plots R’s built-in `faithful` data set with a configurable number of bins:</p>
+<p class="body-text-s topbr bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Run the first example, which plots R’s built-in `faithful` data set with a configurable number of bins:</p>
 
 ```{r}
 #| eval: false
@@ -127,11 +165,11 @@ runExample(example = NA)
 runExample("01_hello")
 ```
 
-<p class="small-text topbr bottombr">Change the number of bins using the `sliderInput` widget and watch the histogram re-render.</p>
+<p class="body-text-s topbr bottombr">Change the number of bins using the `sliderInput` widget and watch the histogram re-render.</p>
 
 . . . 
 
-<p class="small-text topbr bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` These working examples also come paired with source code for you to see how the app is built. For example, the `sliderInput` is built with the following code:</p>
+<p class="body-text-s topbr bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} These working examples also come paired with source code for you to see how the app is built. For example, the `sliderInput` is built with the following code:</p>
 
 ```{r}
 #| eval: false
@@ -146,4 +184,4 @@ sliderInput(inputId = "bins",
 
 . . . 
 
-<center><p class="medium-body-text">Now let's build our own!</p></center>
+<center><p class="body-text-l teal-text">Now let's build our own!</p></center>

@@ -4,24 +4,26 @@ format: revealjs
 
 ##  {#exercise6-prompt-tips data-menu-title="** Exercise 6 Prompt & Tips **"}
 
-<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` & `r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 6: Add titles & text to Welcome page boxes</div>
+[{{< fa question title="question mark" >}} & {{< fa lightbulb title="a lightbulb" >}} Exercise 6: Add titles & text to Welcome page boxes]{.slide-title2}
+
+<hr>
 
 <p class="body-text">**To Do:**</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Add titles to each box</p>
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Create a `/text` folder within your app's directory and add three markdown (`.md`) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Add titles to each box</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Create a `/text` folder within your app's directory and add three markdown (`.md`) files. Write/format text for the background info (left), data citation (top-right), and disclaimer (bottom-right) boxes. Example text below:</p>
 
 ::: {.panel-tabset}
 
 ## `intro.md`
-```{markdown}
+```{markdown filename="text/intro.md"}
 #| eval: false
 #| echo: true
 The [Fish Creek Watershed Observatory (FCWO)](http://www.fishcreekwatershed.org/) is a focal watershed within the [National Petroleum Reserve in Alaska (NPR-A)](https://www.blm.gov/programs/energy-and-minerals/oil-and-gas/about/alaska/NPR-A). Targeted lake and stream monitoring within the watershed provide site-specific data prior to and after the establishment of new petroleum development, as well as insight into dynamics related to climate change and variability. Eleven lakes of interest (Harry Potter, Hipbone, Iceshove, L9817, L9819, L9820, Little Alaska, Lower Snowman, M9925, Middle Snowman, and Serenity) are featured in this dashboard.
 ```
 
 ## `citation.md`
-```{markdown}
+```{markdown filename="text/citation.md"}
 #| eval: false
 #| echo: true
 Data presented in this dashboard were collected as part of the [Fish Creek Watershed Observatory](http://www.fishcreekwatershed.org/) are archived and publicly accessible on the NSF [Arctic Data Center](https://arcticdata.io/). **Citation:** 
@@ -30,7 +32,7 @@ Data presented in this dashboard were collected as part of the [Fish Creek Water
 ```
 
 ## `disclaimer.md`
-```{markdown}
+```{markdown filename="text/disclaimer.md"}
 #| eval: false
 #| echo: true
 This app is build for demonstration/teaching purposes only and is not paid for or endorsed by the Fish Creek Watershed Observatory or affiliates in any way. The data as presented here are not intended for publication nor scientific interpretation. 
@@ -42,15 +44,17 @@ This app is build for demonstration/teaching purposes only and is not paid for o
 
 <p class="body-text">**Tips:**</p>
 
-<p class="small-text topbr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")`Titles can include icons! For example: `title = tagList(icon("icon-name"), strong("title text here"))`</p>
+<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Titles can include icons! For example: `title = tagList(icon("icon-name"), strong("title text here"))`</p>
 
 ---
 
 ##  {#exercise6-solution data-menu-title="** Exercise 6 Solution **"}
 
-<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 6: A solution</div>
+[{{< fa check title="check mark" >}} Exercise 6: A solution]{.slide-title2}
 
-<p class="small-text">Press the right arrow key to advance through the newly added lines of code.</p>
+<hr>
+
+<p class="body-text-s">Press the right arrow key to advance through the newly added lines of code.</p>
 
 ::: {.panel-tabset}
 
@@ -208,13 +212,15 @@ lake_data <- read_csv("data/lake_data_processed.csv")
 
 ##  {#add-image data-menu-title="Add Static Image"}
 
-<div class="slide-title-smaller">Add a static image</div>
+[Add a static image]{.slide-title2}
 
-<p class="small-text">As a final touch, let's add an image to the Welcome page, inside the left-hand box beneath our intro text. First, **create a `/www` folder inside your app's directory** (refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure) for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO's website [here](http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg) and save it to your `/www` directory.</p>
+<hr>
 
-<p class="small-text">Next, use the `img` tag to add your image. Supply a file path, relative to your `/www` directory, using the `src` argument, and alt text using the `alt` argument.</p>
+<p class="body-text-s">As a final touch, let's add an image to the Welcome page, inside the left-hand box beneath our intro text. First, **create a `/www` folder inside your app's directory** (refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/repo-structure) for a description of this special directory). Download the map of the Fish Creek Watershed from FCWO's website [here](http://www.fishcreekwatershed.org/images/FishCreekWatershedSiteMap_2020.jpg) and save it to your `/www` directory.</p>
 
-```{r}
+<p class="body-text-s">Next, use the `img` tag to add your image. Supply a file path, relative to your `/www` directory, using the `src` argument, and alt text using the `alt` argument.</p>
+
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "40-41"
@@ -349,9 +355,9 @@ dashboardPage(header, sidebar, body)
 
 ##  {#large-image data-menu-title="Image is too large"}
 
-<div class="slide-title-smaller">Unfortunately, our image doesn't look so great as-is...</div>
+[Unfortunately, our image doesn't look so great as-is...]{.slide-title2}
 
-<br>
+<hr>
 
 <center><img src="images/large-img.png" alt="Our Welcome page, with a map of Fish Creek Watershed beneath the intro text. The image is extremely large, spilling out of the box and across the page." width="750"/></center>
 
@@ -359,13 +365,15 @@ dashboardPage(header, sidebar, body)
 
 ##  {#adjust-image-size data-menu-title="Adjust Image Size"}
 
-<div class="slide-title-smaller">Use in-line CSS to adjust the image size</div>
+[Use in-line CSS to adjust the image size]{.slide-title2}
 
-<p class="small-text">We can use in-line CSS to style our image element, as shown below  (see `style` argument). It's okay if you don't fully understand what's going on here for now -- we'll talk in greater detail about how CSS (and Sass) can be used to customize the appearance of your apps in just a bit.</p>
+<hr>
 
-<p class="small-text">I've also added a caption below our image that links to the image source, and used in-line CSS to center my text within the box.</p>
+<p class="body-text-s">We can use in-line CSS to style our image element, as shown below  (see `style` argument). It's okay if you don't fully understand what's going on here for now -- we'll talk in greater detail about how CSS (and Sass) can be used to customize the appearance of your apps in just a bit.</p>
 
-```{r}
+<p class="body-text-s">I've also added a caption below our image that links to the image source, and used in-line CSS to center my text within the box.</p>
+
+```{r filename="ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "42-44"
@@ -503,15 +511,19 @@ dashboardPage(header, sidebar, body)
 
 ##  {#final-dashboard data-menu-title="Final Dashboard"}
 
-<div class="slide-title-smaller">Check out your finished dashboard!</div>
+[Check out your finished dashboard!]{.slide-title2}
+
+<hr>
 
 <center><img src="images/final-dashboard.gif" alt="Our completed dashboard, with our image styled so that it fits within the background info box on the Welcome page, and three functional sliderInputs that update the leaflet map on the Dashboard page." width="750"/></center>
 
-<p class="small-text">There's a ton more to learn about building shinydashboards. Check out the [documentation](https://rstudio.github.io/shinydashboard/) to find instructions on adding components like [`infoBox`es](https://rstudio.github.io/shinydashboard/structure.html#infobox) and [`valueBox`es](https://rstudio.github.io/shinydashboard/structure.html#valuebox), building [inputs in the sidebar](https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar), easy ways to update the color theme using [skins](https://rstudio.github.io/shinydashboard/appearance.html#skins), and more.</p>
+<p class="body-text-s">There's a ton more to learn about building shinydashboards. Check out the [documentation](https://rstudio.github.io/shinydashboard/) to find instructions on adding components like [`infoBox`es](https://rstudio.github.io/shinydashboard/structure.html#infobox) and [`valueBox`es](https://rstudio.github.io/shinydashboard/structure.html#valuebox), building [inputs in the sidebar](https://rstudio.github.io/shinydashboard/structure.html#inputs-in-the-sidebar), easy ways to update the color theme using [skins](https://rstudio.github.io/shinydashboard/appearance.html#skins), and more.</p>
 
 ##  {#final-dashboard-code data-menu-title="Complete dashboard code"}
 
-<div class="slide-title-smaller">Complete code for our dashboard thus far:</div>
+[Complete code for our dashboard thus far:]{.slide-title2}
+
+<hr>
 
 ::: {.panel-tabset}
 

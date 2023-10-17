@@ -5,7 +5,7 @@ format: revealjs
 ##  {#accessibility data-menu-title="~~~ Accessibility ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("universal-access", fill = "#d2e3f3", a11y = "sem")` Building accessible apps</p>
+<p class="custom-subtitle bottombr">{{< fa universal-access title="the symbol for universal access - a person standing with the arms widespread inside a circle" >}} Building accessible apps</p>
 <p class="caption-text">*Consider web accessibilty guidelines to ensure that your app is usable by all*</p>
 </div>
 
@@ -13,50 +13,56 @@ format: revealjs
 
 ##  {#LO-accessibility data-menu-title="Learning Objectives - Accessibility"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Accessibility</div>
+[{{< fa book-open title="an open book" >}} Learning Objectives - Accessibility]{.slide-title}
 
-<p class="medium-body-text bottombr">By the end of this section, you should:</p>
+<hr>
 
-. . . 
-
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a general understanding of what web accessibility means and who it can benefit (spoiler alert: it benefits us all!)</p>
+<p class="body-text-l teal-text bottombr">By the end of this section, you should:</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know how to make a few small tweaks/updates to your application to make it more accessible for all users</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a general understanding of what web accessibility means and who it can benefit (spoiler alert: it benefits us all!)</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` have a few great resources to turn to to learn more</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know how to make a few small tweaks/updates to your application to make it more accessible for all users</p>
+
+. . . 
+
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} have a few great resources to turn to to learn more</p>
 
 ---
 
 ##  {#what-is-accessibility data-menu-title="What is web accessibility?"}
 
-<div class="slide-title">`r fontawesome::fa("universal-access", fill = "#05859B", a11y = "sem")` What is web accessibility and why is it important?</div>
+[{{< fa universal-access title="the symbol for universal access - a person standing with the arms widespread inside a circle" >}} What is web accessibility?]{.slide-title}
 
-<p class="body-text">From the [World Wide Web Consortium (W3C)](https://www.w3.org/)'s [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/):</p>
+<hr>
 
-<div class="quote-text-bg">
-<p class="small-text">Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them. More specifically, people can:</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` perceive, understand, navigate, and interact with the Web</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` contribute to the Web</p> 
-<p class="small-text">Web accessibility encompasses all disabilities that affect access to the Web, including: auditory, cognitive, neurological, physical, speech, and visual</p>
-<p class="small-text">Web accessibility also benefits people without disabilities, for example:</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people using mobile phones, smart watches, smart TVs, and other devices with small screens, different input modes, etc.</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` older people with changing abilities due to ageing</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people with “temporary disabilities” such as a broken arm or lost glasses</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people with “situational limitations” such as in bright sunlight or in an environment where they cannot listen to audio</p>
-<p class="smaller-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` people using a slow Internet connection, or who have limited or expensive bandwidth</p>
-</div>
+<p class="body-text-s">From the [World Wide Web Consortium (W3C)](https://www.w3.org/)'s [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/):</p>
 
-<p class="body-text">Check out the [A11Y Project](https://www.a11yproject.com/) for lots of great tutorials and information about web accessibility.</p>
+::: {.quote-text-bg}
+<p class="body-text-s">**Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.** More specifically, people can:</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} perceive, understand, navigate, and interact with the Web</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} contribute to the Web</p> 
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Web accessibility encompasses all disabilities that affect access to the Web, including: auditory, cognitive, neurological, physical, speech, and visual</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Web accessibility also benefits people without disabilities, for example:</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people using mobile phones, smart watches, smart TVs, and other devices with small screens, different input modes, etc.</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} older people with changing abilities due to ageing</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people with “temporary disabilities” such as a broken arm or lost glasses</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people with “situational limitations” such as in bright sunlight or in an environment where they cannot listen to audio</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} people using a slow Internet connection, or who have limited or expensive bandwidth</p>
+:::
+
+<p class="body-text-s">Check out the [A11Y Project](https://www.a11yproject.com/) for lots of great tutorials and information about web accessibility.</p>
 
 ---
 
 ##  {#small-steps data-menu-title="Small steps help!"}
 
-<div class="slide-title">Small changes can lead to tangible increases in functionality for all users</div>
+[Small changes can lead to tangible increases in functionality for all users]{.slide-title3}
+
+<hr>
 
 <p class="body-text bottombr">Ensuring that your shiny apps are accessible can feel overwhelming -- but considering even a few small changes can have a large impact on user experience.</p>
 
@@ -66,10 +72,10 @@ format: revealjs
 
 ::: {.column width="45%"}
 <br>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use HTML elements appropriately (e.g. consider hierarchy)</p> 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Include alt text for graphical elements</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Consider navigation from a mobility perspective </p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Use colorblind-friendly palettes</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Use HTML elements appropriately (e.g. consider hierarchy)</p> 
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Include alt text for graphical elements</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Consider navigation from a mobility perspective </p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Use colorblind-friendly palettes</p>
 :::
 
 ::: {.column width="5%"}
@@ -77,7 +83,7 @@ format: revealjs
 
 ::: {.column width="45%"}
 <center><img src="images/web-access.png" alt="In the center, we see a computer monitor with the world wide web symbol on the screen. There is a circle around the computer made up of four smaller circles, each containing on of the following symbols: and eye, a hand with a finger touching something, a human head with a brain, and an ear." width="650"/></center>
-<center><p class="smaller-text gray-text">Image Source: [Accessibility Stack](https://accessibilityspark.com/9-awesome-web-accessibility-tools/)</p></center>
+<center><p class="body-text-s gray-text">Image Source: [Accessibility Stack](https://accessibilityspark.com/9-awesome-web-accessibility-tools/)</p></center>
 :::
 
 ::::
@@ -86,9 +92,11 @@ format: revealjs
 
 ##  {#hierarchy data-menu-title="Heirarchy"}
 
-<div class="slide-title-smaller">Use HTML elements appropriately</div>
+[Use HTML elements appropriately]{.slide-title2}
 
-<p class="small-text bottombr">**Screen readers use HTML elements to understand web page organization.** Header elements create hierarchy within a webpage and are used by screen readers (i.e. devices used by those with visual impairments) to understand a page's organizational structure. An `<h1>` element is more important (hierarchically speaking) than an `<h2>`, which is more important than an `<h3>`, and so on.</p>
+<hr>
+
+<p class="body-text-s bottombr">**Screen readers use HTML elements to understand web page organization.** Header elements create hierarchy within a webpage and are used by screen readers (i.e. devices used by those with visual impairments) to understand a page's organizational structure. An `<h1>` element is more important (hierarchically speaking) than an `<h2>`, which is more important than an `<h3>`, and so on.</p>
 
 . . . 
 
@@ -130,9 +138,9 @@ shinyApp(ui = ui, server = server)
 ::: {.column width="45%"}
 <br>
 
-<p class="small-text topbr">Ideally, you would only have one `<h1>` element (e.g. your app's **title**), a small number of `<h2>` elements, more `<h3>` elements, and so on. See the minimal example, to the left.</p>
+<p class="body-text-s topbr">Ideally, you would only have one `<h1>` element (e.g. your app's **title**), a small number of `<h2>` elements, more `<h3>` elements, and so on. See the minimal example, to the left.</p>
 
-<p class="small-text topbr">You *should not* rely on headers for styling purposes -- for example, you should not use a level-one header elsewhere in your app just because you want larger text. Instead, use CSS to increase text size (refer to the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop for [instruction on how to construct CSS selectors](https://ucsb-meds.github.io/customizing-quarto-websites/#/selector-types) for styling HTML elements).</p>
+<p class="body-text-s topbr">You *should not* rely on headers for styling purposes -- for example, you should not use a level-one header elsewhere in your app just because you want larger text. Instead, use CSS to increase text size (refer to the [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide) workshop for [instruction on how to construct CSS selectors](https://ucsb-meds.github.io/customizing-quarto-websites/#/selector-types) for styling HTML elements).</p>
 :::
 
 ::::
@@ -141,13 +149,15 @@ shinyApp(ui = ui, server = server)
 
 ##  {#alt-text data-menu-title="Alt text"}
 
-<div class="slide-title-smaller">Include alt text with all graphical elements</div>
+[Include alt text with all graphical elements]{.slide-title2}
+
+<hr>
 
 <p class="body-text bottombr">All images and graphical elements should include **alternative (alt) text** that describe the image and/or information being represented. This text won't appear in the UI, but is detected and read by screen readers.</p>
 
 . . . 
 
-<p class="small-text">Include the `alt` argument (similar to adding the `alt` attribute to an HTML element) when using [`renderPlot()`](https://shiny.rstudio.com/reference/shiny/1.7.1/renderplot) to add alt text to your reactive plots -- the `alt` argument lives *outside* of the `{}` but inside the `()`. For example:</p>
+<p class="body-text-s">Include the `alt` argument (similar to adding the `alt` attribute to an HTML element) when using [`renderPlot()`](https://shiny.rstudio.com/reference/shiny/1.7.1/renderplot) to add alt text to your reactive plots -- the `alt` argument lives *outside* of the `{}` but inside the `()`. For example:</p>
 
 ```{r}
 #| eval: false
@@ -165,7 +175,7 @@ renderPlot({
 
 . . . 
 
-<p class="small-text">Similarly, use the `alt` argument within `tags$img` when adding static images to your app. For example:</p>
+<p class="body-text-s">Similarly, use the `alt` argument within `tags$img` when adding static images to your app. For example:</p>
 
 ```{r}
 #| eval: false
@@ -180,7 +190,9 @@ tags$img(src = "file/path/to/img",
 
 ##  {#alt-text-tips data-menu-title="Alt text tips"}
 
-<div class="slide-title-smaller">Tips on writing alt text for data visualizations</div>
+[Tips on writing alt text for data visualizations]{.slide-title3}
+
+<hr>
 
 <p class="body-text">A good rule of thumb for writing alt text for data visualizations is <em>alt="<span style="background-color: #F9C9C8;">Chart type</span> of <span style="background-color: #FDC790;">type of data</span> where <span style="background-color: #D1EAEE;">reason for including chart</span>"</em> (see [this post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81#:~:text=Alt%20text%20) by [Amy Cesal](https://www.amycesal.com/) for more). One example:</p>
 
@@ -188,17 +200,19 @@ tags$img(src = "file/path/to/img",
 
 <p class="body-text"><em>alt="<span style="background-color: #F9C9C8;">Bar chart</span> of <span style="background-color: #FDC790;">gun murders per 100,000 people</span> where <span style="background-color: #D1EAEE;">America's murder rate is 6 times worse than Canada, and 30 times Australia</span>"</em></p>
 
-<p class="small-text topbr">For more great tips on how and when to use alt text, check out [this article](https://www.a11yproject.com/posts/alt-text/) by the A11Y Project. For examples of how to construct good alt text, take a peek at [this resource](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization) by Datawrapper.</p>
+<p class="body-text-s topbr">For more great tips on how and when to use alt text, check out [this article](https://www.a11yproject.com/posts/alt-text/) by the A11Y Project. For examples of how to construct good alt text, take a peek at [this resource](https://academy.datawrapper.de/article/330-how-to-write-good-alternative-descriptions-for-your-data-visualization) by Datawrapper.</p>
 
 ---
 
 ##  {#mobility data-menu-title="Mobility"}
 
-<div class="slide-title">Consider UI navigation for those with mobility impairments</div>
+[Consider UI navigation for those with mobility impairments]{.slide-title}
 
-<p class="small-text">For users with mobility impairments, using a mouse to navigate a UI packed with widgets may be challenging -- some users may even be exclusively using a keyboard to navigate the web.</p>
+<hr>
 
-<p class="small-text topbr">Ideally, actions required of your user can be done using a keyboard (e.g. pressing a button in the UI) -- however from a new shiny developer standpoint, this may be technically challenging to implement (the authors of Engineering Production-Grade Shiny Apps [suggest](https://engineering-shiny.org/ux-matters.html#c.-navigation) the [`{nter}` package](https://github.com/JohnCoene/nter) for building shiny action buttons that can be triggered by pressing `enter`, however, at the time of building this workshop, the package source code hadn't been updated since 2019).</p>
+<p class="body-text-s">For users with mobility impairments, using a mouse to navigate a UI packed with widgets may be challenging -- some users may even be exclusively using a keyboard to navigate the web.</p>
+
+<p class="body-text-s topbr">Ideally, actions required of your user can be done using a keyboard (e.g. pressing a button in the UI) -- however from a new shiny developer standpoint, this may be technically challenging to implement (the authors of Engineering Production-Grade Shiny Apps [suggest](https://engineering-shiny.org/ux-matters.html#c.-navigation) the [`{nter}` package](https://github.com/JohnCoene/nter) for building shiny action buttons that can be triggered by pressing `enter`, however, at the time of building this workshop, the package source code hadn't been updated since 2019).</p>
 
 :::: {.columns}
 
@@ -206,7 +220,7 @@ tags$img(src = "file/path/to/img",
 
 <br>
 
-<p class="small-text topbr">**At a minimum, consider spacing out and/or limiting the number of widgets on any given page to make navigation with a mouse as easy as possible.**</p>
+<p class="body-text-s topbr">**At a minimum, consider spacing out and/or limiting the number of widgets on any given page to make navigation with a mouse as easy as possible.**</p>
 :::
 
 ::: {.column width="5%"}
@@ -224,18 +238,20 @@ tags$img(src = "file/path/to/img",
 
 ##  {#color-palettes data-menu-title="Color Palettes"}
 
-<div class="slide-title">Use colorblind-friendly palettes</div>
+[Use colorblind-friendly palettes]{.slide-title}
 
-<p class="small-text">About 1 in 12 males and 1 in 200 females have some form of colorblindness ([Wikipedia](https://en.wikipedia.org/wiki/Color_blindness)). Ensuring that your color choices are distinguishable from one another and/or providing an additional non-color-based way (e.g. patterns, shapes) of distinguishing between treatments/variables/etc. can greatly help with interpretation of data visualizations.</p>
+<hr>
 
-<p class="small-text">There are lots of great colorblind-accessible palettes and resources (check out [this one](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf) by [Alex Phillips](https://www.alexandraatleephillips.com/) to start). Google Chrome also has a built-in vision deficiency emulator (see gif, below right; right click in your web browser > Inspect > Rendering (add tab by clicking on the three stacked dots if it's not already open) > scroll down and choose emulation type from drop down where it says "Emulate vision deficiencies").</p>
+<p class="body-text-s">About 1 in 12 males and 1 in 200 females have some form of colorblindness ([Wikipedia](https://en.wikipedia.org/wiki/Color_blindness)). Ensuring that your color choices are distinguishable from one another and/or providing an additional non-color-based way (e.g. patterns, shapes) of distinguishing between treatments/variables/etc. can greatly help with interpretation of data visualizations.</p>
+
+<p class="body-text-s">There are lots of great colorblind-accessible palettes and resources (check out [this one](https://www.nceas.ucsb.edu/sites/default/files/2022-06/Colorblind%20Safe%20Color%20Schemes.pdf) by [Alex Phillips](https://www.alexandraatleephillips.com/) to start). Google Chrome also has a built-in vision deficiency emulator (see gif, below right; right click in your web browser > Inspect > Rendering (add tab by clicking on the three stacked dots if it's not already open) > scroll down and choose emulation type from drop down where it says "Emulate vision deficiencies").</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
 <br>
 <center><img src="images/color-blind.png" alt="Four color palette wheels showing the difference in perceived colors for those with normal vision, protanopia, deuteranopia, and tritanopia." width="550"/></center>
-<center><p class="smaller-text gray-text">Four different forms of colorblindness. Image Source: [Venngage](https://venngage.com/blog/color-blind-friendly-palette/)</p></center>
+<center><p class="body-text-s gray-text">Four different forms of colorblindness. Image Source: [Venngage](https://venngage.com/blog/color-blind-friendly-palette/)</p></center>
 :::
 
 ::: {.column width="5%"}
@@ -243,7 +259,7 @@ tags$img(src = "file/path/to/img",
 
 ::: {.column width="45%"}
 <center><img src="images/chrome-visual.gif" alt="A gif of a user opening up the developer tools pane in Google Chrome and emulating how users with various vision deficiencies would see the webpage." width="550"/></center>
-<center><p class="smaller-text gray-text">Using Google Chrome's vision deficiency emulator to view webpages as seen by those with vision deficiencies</p></center>
+<center><p class="body-text-s gray-text">Using Google Chrome's vision deficiency emulator to view webpages as seen by those with vision deficiencies</p></center>
 :::
 
 ::::

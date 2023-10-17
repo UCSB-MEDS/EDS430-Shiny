@@ -4,35 +4,45 @@ format: revealjs
 
 ##  {#second-penguins data-menu-title="Next up, penguins"}
 
-<p class="slide-title">Add data viz: Next up, penguins</p>
+[Add data viz: Next up, penguins]{.slide-title2}
 
-<p class="small-text bottombr">We'll be using the `penguins` dataset from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/) to create our second reactive plot. These data contain penguin (genus *Pygoscelis*) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the [Palmer Station LTER](https://pallter.marine.rutgers.edu/). Original data can be found on the EDI Data Portal ([Adélie data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5), [Gentoo data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5), and [Chinstrap data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6)). Refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to revisit our practice data wrangling & visualization script.</p>
+<hr>
+
+<p class="body-text-s bottombr">We'll be using the `penguins` dataset from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/) to create our second reactive plot. These data contain penguin (genus *Pygoscelis*) body size measurements collected from three islands in the Palmer Archipelago, Antarctica, as part of the [Palmer Station LTER](https://pallter.marine.rutgers.edu/). Original data can be found on the EDI Data Portal ([Adélie data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.219.5), [Gentoo data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.220.5), and [Chinstrap data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-pal.221.6)). Refer back to [this slide](https://ucsb-meds.github.io/EDS430-Shiny/#/app2-plots) to revisit our practice data wrangling & visualization script.</p>
 
 <br>
 
-<center><img src="images/meet_the_penguins.png" alt="A cartoon drawing of Chinstrap (atop a purple background), Gentoo (atop a green background) and Adélie (atop an orange background) penguins." width="600"/></center>
+```{r}
+#| eval: true
+#| echo: false
+#| fig-align: "center"
+#| out-width: "80%"
+#| fig-alt: "A cartoon drawing of Chinstrap (atop a purple background), Gentoo (atop a green background) and Adélie (atop an orange background) penguins."
+knitr::include_graphics("images/meet_the_penguins.png")
+```
 
-<center><p class="small-text gray-text">Artwork by [@allison_horst](https://allisonhorst.com/)</p>
-
+<center><p class="body-text-s gray-text">Artwork by [@allison_horst](https://allisonhorst.com/)</p>
 
 ---
 
 ##  {#exercise3-prompt data-menu-title="** Exercise 3 Prompt **"}
 
-<div class="slide-title-smaller">`r fontawesome::fa("question", fill = "#05859B", a11y = "sem")` Exercise 3: Add a reactive plot to the 'Penguins' tab</div>
+[{{< fa question title="question mark" >}} Exercise 3: Add a reactive plot to the 'Penguins' tab]{.slide-title2}
 
-<p class="small-text">Working alone or in groups, add a reactive histogram of penguin flipper lengths (using the `penguins` data set from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/)) to the **Penguins** tab. Your plot should have the following features and look like the example below, when complete:</p>
+<hr>
+
+<p class="body-text-s">Working alone or in groups, add a reactive histogram of penguin flipper lengths (using the `penguins` data set from the [`{palmerpenguins}` package](https://allisonhorst.github.io/palmerpenguins/)) to the **Penguins** tab. Your plot should have the following features and look like the example below, when complete:</p>
 
 :::: {.columns}
 
 ::: {.column width="45%"}
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` data colored by penguin `species`</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} data colored by penguin `species`</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a `shinyWidgets::pickerInput` that allows users to filter data based on `island`, and that includes buttons to **Select All** / **Deselect All** island options at once</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} a `shinyWidgets::pickerInput` that allows users to filter data based on `island`, and that includes buttons to **Select All** / **Deselect All** island options at once</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` a `shiny::sliderInput` that allows users to change the number of histogram bins and that by default, displays a histogram with **25** bins</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} a `shiny::sliderInput` that allows users to change the number of histogram bins and that by default, displays a histogram with **25** bins</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` the two widgets should be placed in the `sidebarPanel` and the reactive histogram should be placed in the `mainPanel` of the **Penguins** tab</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} the two widgets should be placed in the `sidebarPanel` and the reactive histogram should be placed in the `mainPanel` of the **Penguins** tab</p>
 :::
 
 ::: {.column width="5%"}
@@ -44,21 +54,23 @@ format: revealjs
 
 ::::
 
-<center><p class="medium-body-text">See next slide for some tips on getting started!</p></center>
+<center><p class="body-text-l teal-text">See next slide for some tips on getting started!</p></center>
 
 ---
 
 ##  {#exercise3-tips data-menu-title="** Exercise 3 Tips **"}
 
-<div class="slide-title-smaller">`r fontawesome::fa("lightbulb", fill = "#05859B", a11y = "sem")` Exercise 3: Tips</div>
+[{{< fa lightbulb title="a lightbulb" >}} Exercise 3: Tips]{.slide-title2}
+
+<hr>
 
 <p class="body-text topbr">**Tips:**</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Remember to load the `palmerpenguins` package at the top of `global.R` so that your app can find the data</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Remember to load the `palmerpenguins` package at the top of `global.R` so that your app can find the data</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Add your widgets to the `sidebarPanel` and your plot output to the `mainPanel` of the **Penguins** tab -- look for that placeholder text we added earlier to help place your new code in the correct spot within your UI!</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Add your widgets to the `sidebarPanel` and your plot output to the `mainPanel` of the **Penguins** tab -- look for that placeholder text we added earlier to help place your new code in the correct spot within your UI!</p>
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` Try changing the histogram bin number in your practice code script first, before attempting to make it reactive</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} Try changing the histogram bin number in your practice code script first, before attempting to make it reactive</p>
 
 <p class="body-text topbr">**And remember** to follow the our three steps for building reactive outputs (1. add input to UI, 2. add output to UI, 3. tell server how to assemble inputs into outputs)!</p>
 
@@ -66,13 +78,15 @@ format: revealjs
 <br>
 <br>
 
-<center><p class="medium-body-text">See next slide for a solution!</p></center>
+<center><p class="body-text-l teal-text">See next slide for a solution!</p></center>
 
 ---
 
 ##  {#exercise3-solution data-menu-title="** Exercise 3 Solution **"}
 
-<div class="slide-title-smaller">`r fontawesome::fa("check", fill = "#05859B", a11y = "sem")` Exercise 3: A solution</div>
+[{{< fa check title="check mark" >}} Exercise 3: A solution]{.slide-title2}
+
+<hr>
 
 ::: {.panel-tabset}
 

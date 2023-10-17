@@ -5,7 +5,7 @@ format: revealjs
 ##  {#functions data-menu-title="~~~ Functions ~~~" background="#053660"}
 
 <div class="page-center vertical-center">
-<p class="custom-subtitle bottombr">`r fontawesome::fa("code", fill = "#d2e3f3", a11y = "sem")` Writing functions</p>
+<p class="custom-subtitle bottombr">{{< fa code title="the symbol for code, </>" >}} Writing functions</p>
 <p class="caption-text">*Functions have many benefits and can improve your code base, particularly as your app grows in complexity*</p>
 </div>
 
@@ -13,46 +13,50 @@ format: revealjs
 
 ##  {#LO-functions data-menu-title="Learning Objectives - Functions"}
 
-<div class="slide-title">`r fontawesome::fa("book-open", fill = "#05859B", a11y = "sem")` Learning Objectives - Functions</div>
+[{{< fa book-open title="an open book" >}} Learning Objectives - Functions]{.slide-title}
 
-<p class="medium-body-text bottombr">By the end of this section, you should:</p>
+<hr>
 
-. . . 
-
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` understand the benefits of turning UI elements and server logic into functions</p>
+<p class="body-text-l teal-text bottombr">By the end of this section, you should:</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` know where to write/save your functions</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} understand the benefits of turning UI elements and server logic into functions</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully turn a repeated input into a function</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} know where to write/save your functions</p>
 
 . . . 
 
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` successfully turn a piece of server logic into a function</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a repeated input into a function</p>
+
+. . . 
+
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} successfully turn a piece of server logic into a function</p>
 
 
 ---
 
-##  {#why-functions data-menu-title="Why write functions"}
+##  {#why-functions data-menu-title="Why write functions?"}
 
-<div class="slide-title">Why write functions</div>
+[Why write functions]{.slide-title}
+
+<hr>
 
 <p class="body-text bottombr">Functions are useful for a wide variety of reasons. Most notably:</p>
 
-<p class="small-text bottombr">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reducing redundancy</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` reducing complexity</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` increasing code comprehension</p>
-<p class="small-text">`r fontawesome::fa("angle-right", fill = "#05859B", a11y = "sem")` increasing testability</p>
+<p class="body-text-s bottombr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing redundancy</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} reducing complexity</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing code comprehension</p>
+<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} increasing testability</p>
 
 . . . 
 
 <p class="body-text topbr">Importantly, functions can live outside of your app file(s) (i.e. `app.R` or `ui.R`, `server.R` and `global.R`), helping you to break up/streamline your code. Hadley Wickham [recommends](https://mastering-shiny.org/scaling-functions.html#file-organisation) creating a folder called `/R` **inside** your app's directory (e.g. `~/app-directory/R/...`) and:</p>
 
-<p class="small-text bottombr">**(a)** storing larger functions in their own files (e.g. `~/app-directory/R/{function-name}.R`) and/or</p> 
-<p class="small-text bottombr">**(b)** creating a `utils.R` file (e.g `~/app-directory/R/utils.R`) to store smaller, simpler functions all in one script.</p> 
+<p class="body-text-s bottombr">**(a)** storing larger functions in their own files (e.g. `~/app-directory/R/{function-name}.R`) and/or</p> 
+<p class="body-text-s bottombr">**(b)** creating a `utils.R` file (e.g `~/app-directory/R/utils.R`) to store smaller, simpler functions all in one script.</p> 
 
 <p class="body-text topbr">You can **source your function files into `global.R`** so that your functions are made available for use throughout your app. **NOTE:** As of Shiny version 1.5.0, any scripts stored in `~/app-directory/R/` will be automatically sourced when your application is loaded (meaning you don't *need* to `source()` them into `global.R`, if you're running at least Shiny v1.5.0).</p>
 
@@ -60,9 +64,11 @@ format: revealjs
 
 ##  {#app-for-practicing-fxns data-menu-title="Example App for Fxn Practice"}
 
-<div class="slide-title-smaller">Create a small app for function practice</div>
+[Create a small app for function practice]{.slide-title2}
 
-<p class="small-text">Create a new subdirectory called `functions-app/` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
+<hr>
+
+<p class="body-text-s">Create a new subdirectory called `~/functions-app` and add your `ui.R`, `server.R`, and `global.R` files with the following code. Run your app to see how it functions.</p>
 
 ::: {.panel-tabset}
 
@@ -71,7 +77,7 @@ format: revealjs
 <center><img src="images/functions_demo_app.gif" alt="A shiny app with two tabs. The first tab contains a pickerInput that allows the user to select which penguin species they want to visualize data for, along with a scatterplot. The second tab also contains a pickerInput with the exact same penguin species options, along with a histogram." width="650"/></center>
 
 ## `ui.R`
-```{r}
+```{r filename="~/functions-app/ui.R"}
 #| eval: false
 #| echo: true
 ui <- fluidPage(
@@ -119,7 +125,7 @@ ui <- fluidPage(
 ```
 
 ## `server.R`
-```{r}
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
 server <- function(input, output) {
@@ -174,7 +180,7 @@ server <- function(input, output) {
 ```
 
 ## `global.R`
-```{r}
+```{r filename="~/functions-app/global.R"}
 #| eval: false
 #| echo: true
 # load packages ----
@@ -190,13 +196,15 @@ library(tidyverse)
 
 ##  {#id-ui-duplication data-menu-title="Identify code duplication in UI"}
 
-<div class="slide-title-smaller">Identify code duplication in `ui.R`</div>
+[Identify code duplication in `ui.R`]{.slide-title2}
+
+<hr>
 
 <p class="body-text">Let's first focus on the UI -- where do we have nearly identically duplicated code?</p>
 
 . . . 
 
-```{r}
+```{r filename="~/functions-app/ui.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "11-16|27-32"
@@ -246,22 +254,24 @@ ui <- fluidPage(
 
 ##  {#write-ui-function data-menu-title="Write a UI function"}
 
-<div class="slide-title-smaller">Write a function for adding a `pickerInput` to select for penguin species</div>
+[Write a function for adding a `pickerInput` to select for penguin species]{.slide-title3}
 
-<p class="small-text">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInput`s is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
+<hr>
+
+<p class="body-text-s">This app includes two `pickerInputs`, both of which allow users to select which penguin species to display data for. The only difference between both `pickerInput`s is the `inputId`. Let's write a function for our **penguin species pickerInput** that we can use in place of these two, rather long, chunks of code.</p> 
 
 . . . 
 
-<p class="small-text topbr">First, create an `/R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
+<p class="body-text-s">First, create an `/R` folder inside your `functions-app` directory. Then, add a new script to this folder. I'm calling mine `penguinSpp_pickerInput.R`.</p>
 
-<p class="small-text topbr">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
+<p class="body-text-s">Since the only difference between our original two `pickerInput`s are their `inputId`s, we can write a function that takes `inputId` as an argument (**Recall** that `inputId`s must be unique within an app, so it makes sense that both of our `pickerInput`s have different `inputId`s).</p>
 
-<p class="small-text topbr">Once written, `source()` your function script into `global.R` (if necessary) to make your function available for use in your app.</p>
+<p class="body-text-s">Once written, `source()` your function script into `global.R` (if necessary) to make your function available for use in your app.</p>
 
 ::: {.panel-tabset}
 
 ## `penguinSpp_pickerInput.R`
-```{r}
+```{r filename="~/functions-app/R/penguinSpp_pickerInput.R"}
 #| eval: false  
 #| echo: true
 penguinSpp_pickerInput <- function(inputId) {
@@ -274,7 +284,7 @@ penguinSpp_pickerInput <- function(inputId) {
 ```
 
 ## `global.R` 
-```{r}
+```{r filename="~/functions-app/global.R"}
 #| eval: false  
 #| echo: true
 #| code-line-numbers: "7-8"
@@ -294,11 +304,13 @@ source("R/penguinSpp_pickerInput.R") # will source automatically with Shiny v1.5
 
 ##  {#apply-ui-fxn data-menu-title="Apply UI function"}
 
-<div class="slide-title-smaller">Apply your function in `ui.R`</div>
+[Apply your function in `ui.R`]{.slide-title2}
 
-<p class="small-text">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function, save, and run your app. It should look exactly the same as before!</p>
+<hr>
 
-```{r}
+<p class="body-text-s">Finally, replace your original UI code for building both `pickerInput`s with our `penguinSpp_pickerInput()` function, save, and run your app. It should look exactly the same as before!</p>
+
+```{r filename="~/functions-app/ui.R"}
 #| eval: false  
 #| echo: true
 #| code-line-numbers: "12|24"
@@ -342,7 +354,9 @@ ui <- fluidPage(
 
 ##  {#ui-fxn-benefits data-menu-title="Benefits of our UI function"}
 
-<div class="slide-title bottombr">We reduced code redundancy and increased readability!</div>
+[We reduced code redundancy and increased readability!]{.slide-title}
+
+<hr>
 
 <p class="body-text">By turning our `pickerInput` code into a function, **we not only reduced *ten* lines of UI code into *two*, but we also made our UI code a bit easier to read** -- our function, `penguinSpp_pickerInput()` tells a reader/collaborator/future you *exactly* what that line of code is meant to do, which is create a `pickerInput` that allows users to select penguin species. Even without code comments or additional context, one may deduce what that line of code does.</p>
 
@@ -350,14 +364,16 @@ ui <- fluidPage(
 
 ##  {#server-fxns data-menu-title="Server functions"}
 
-<div class="slide-title-smaller">Turn reactives & rendered outputs into functions</div>
+[Turn reactives & rendered outputs into functions]{.slide-title3}
 
-<p class="small-text">Next, let's see where we can streamline our server code using functions. We have two discrete sections of code -- **(1)** a reactive data frame and scatterplot output and **(2)** a reactive data frame and histogram output.</p>
+<hr>
 
-```{r}
+<p class="body-text-s">Next, let's see where we can streamline our server code using functions. We have two discrete sections of code -- **(1)** a reactive data frame and scatterplot output and **(2)** a reactive data frame and histogram output.</p>
+
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "3-25|27-46"
+#| code-line-numbers: "3-25|26-46"
 server <- function(input, output) {
   
   # filter penguin species (scatterplot) ----
@@ -410,38 +426,43 @@ server <- function(input, output) {
 
 ##  {#build-penguin-scatterplot-fxn data-menu-title="build_penguin_scatterplot()"}
 
-<div class="slide-title-smaller">Create a function to builds our scatterplot</div>
+[Create a function to build our scatterplot]{.slide-title2}
 
-<p class="smaller-text">First, create a new file in `~/function-app/R` and name it `build_penguin_histogram.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
+<hr>
 
-<p class="smaller-text">The goal of my function is to filter the `penguins` data based on the user input *and* render our ggplot scatterplot. To start, I'm going to cut/paste both the code to generate the reactive `filtered_spp_histogram` data frame and the `renderPlot()` code from `server.R` into our `build_penguin_histogram()` function.</p>
+<p class="body-text-xs">First, create a new file in `~/function-app/R` and name it `build-penguin-scatterplot.R` (or a name that is succinct/clear -- I'm going to name my function similarly).</p>
 
-<p class="smaller-text">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
+<p class="body-text-xs">The goal of my function is to filter the `penguins` data based on the user input *and* render our ggplot scatterplot. To start, I'm going to cut/paste both the code to generate the reactive `filtered_spp_scatterplot` data frame and the `renderPlot()` code from `server.R` into our `build_penguin_scatterplot()` function.</p>
 
-<p class="smaller-text">**Note** that in R, functions return the last executed line -- when we run `build_penguin_histogram()` in our server, it will return the object created by `renderPlot()`.</p>
+<p class="body-text-xs">**Important:** In isolation, our function *does not know* about the user input (`input` is not in our global environment, it's only known within the `server()` function). Therefore, we must pass `input` as an argument to our function.</p>
 
-```{r}
+<p class="body-text-xs">**Note** that in R, functions return the last executed line -- when we run `build_penguin_scatterplot()` in our server, it will return the object created by `renderPlot()`.</p>
+
+```{r filename="~/functions-app/R/build-penguin-scatterplot.R"}
 #| eval: false
 #| echo: true
-build_penguin_histogram <- function(input) {
+build_penguin_scatterplot <- function(input) {
   
-  # filter penguin spp ----
-  filtered_spp_histogram <- reactive ({
-    
+  # filter penguin species (scatterplot) ----
+  filtered_spp_scatterplot <- reactive ({
+
     penguins |>
-      filter(species %in% input$penguin_species_histogram_input)
-    
+      filter(species %in% input$penguin_species_scatterplot_input)
+
   })
   
-  # render histogram ----
-  renderPlot({
-   
-    ggplot(na.omit(filtered_spp_histogram()), 
-           aes(x = flipper_length_mm, fill = species)) +
-      geom_histogram() +
-      scale_fill_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
-      labs(x = "Flipper length (mm)", y = "Frequency",
-           fill = "Penguin species")
+  # render the scatterplot output ----
+  output$penguin_scatterplot <- renderPlot({
+    
+    ggplot(na.omit(filtered_spp_scatterplot()),
+           aes(x = bill_length_mm, y = bill_depth_mm,
+               color = species, shape = species)) +
+      geom_point() +
+      geom_smooth(method = "lm", se = FALSE, aes(color = species)) + 
+      scale_color_manual(values = c("Adelie" = "#FEA346", "Chinstrap" = "#B251F1", "Gentoo" = "#4BA4A4")) +
+      scale_shape_manual(values = c("Adelie" = 19, "Chinstrap" = 17, "Gentoo" = 15)) +
+      labs(x = "Flipper length (mm)", y = "Bill length (mm)",
+           color = "Penguin species", shape = "Penguin species")
     
   })
   
@@ -452,10 +473,12 @@ build_penguin_histogram <- function(input) {
 
 ##  {#use-build-penguin-scatterplot-fxn data-menu-title="Use build_penguin_scatterplot()"}
 
-<div class="slide-title-smaller">Now use your function inside the server</div>
+[Now use your function inside the server]{.slide-title2}
 
-<p class="small-text">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function's output to `output$penguin_scatterplot`. In doing so, we reduced 23 lines of code to 1 inside our server function.</p>
-```{r}
+<hr>
+
+<p class="body-text-s">**Remember**, the output of `build_penguin_scatterplot()` is `renderPlot()`, which is used to build our reactive scatterplot. Following our rules for creating reactivity, we need to save our function's output to `output$penguin_scatterplot`. In doing so, we reduced 23 lines of code to 1 inside our server function.</p>
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "3-4"
@@ -493,15 +516,17 @@ server <- function(input, output) {
 
 ##  {#create-build-penguin-histogram data-menu-title="Create & use build_penguin_histogram()"}
 
-<div class="slide-title-smaller">Build a function to create our histogram</div>
+[Build a function to create our histogram]{.slide-title2}
 
-<p class="small-text">We can repeat a similar process to create a function for building our histogram:</p>
+<hr>
+
+<p class="body-text-s">We can repeat a similar process to create a function for building our histogram:</p>
 
 ::: {.panel-tabset}
 
-## `build_penguin_histogram.R`
+## `build-penguin-histogram.R`
 
-```{r}
+```{r filename="~/functions-app/R/build-penguin-histogram.R"}
 #| eval: false
 #| echo: true
 build_penguin_histogram <- function(input) {
@@ -531,7 +556,7 @@ build_penguin_histogram <- function(input) {
 
 ## `server.R`
 
-```{r}
+```{r filename="~/functions-app/server.R"}
 #| eval: false
 #| echo: true
 #| code-line-numbers: "6-7"
