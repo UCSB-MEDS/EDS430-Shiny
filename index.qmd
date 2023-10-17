@@ -86,7 +86,7 @@ format:
 
 ---
 
-##  {#toc data-menu-title="Table of Contents"}
+##  {#source-code data-menu-title="Source Code Repo"}
 
 [{{< fa code title="the symbol for code, </>" >}} See the source code {{< fa code title="the symbol for code, </>" >}}]{.slide-title}
 
