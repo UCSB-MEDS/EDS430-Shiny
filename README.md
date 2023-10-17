@@ -1,8 +1,6 @@
 ## EDS 430 - Intro to Shiny
 
-**Presenter:** Sam Csik  
-**Organization:** UCSB MEDS  
-**Date:** January 20 & 27, 2023  
+**Taught by:** [@samanthacsik](https://github.com/samanthacsik)\
 **Duration:** 2 days   
 
 #### Description: 
@@ -16,3 +14,14 @@ Presentation slides are available [here](https://ucsb-meds.github.io/EDS430-Shin
 #### Other documents:
 
 - [Winter 2023 Syllabus](https://docs.google.com/document/d/1ng6_0daWNr_n-g0OdEui6zE6SLEf5-b0UOuk8Jc0j20/edit?usp=sharing)
+
+---
+
+### Taught on the following dates:
+- January 20 & 27, 2023 ([Release v.1.0.0-meds-2023](https://github.com/UCSB-MEDS/EDS430-Shiny/releases/tag/v1.0-meds-2023))
+
+### Deprecated workshop materials (no longer maintained):
+- [Intro to Shiny](https://github.com/UCSB-MEDS/shiny-workshop)
+    - **Date:** February 18, 2021
+    - **Duration:** ~2 hours
+    
