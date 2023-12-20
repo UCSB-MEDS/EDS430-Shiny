@@ -78,13 +78,13 @@ knitr::include_graphics("images/shinapps_dashboard.png")
 
 <hr>
 
-<p class="body-text-s">[shinyapps.io](https://www.shinyapps.io/) is not the only Shiny app hosting service (though it's the easiest to get started with and the only one we'll be covering in detail in this workshop).</p>
+[shinyapps.io](https://www.shinyapps.io/) is not the only Shiny app hosting service (though it's the easiest to get started with and the only one we'll be covering in detail in this workshop).
 
 <p class="body-text topbr">**Posit also offers the following:**</p>
 
-<p class="body-text-s">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny server](https://posit.co/products/open-source/shinyserver/) is an open source server which you can deploy for free on your own hardware. It requires more setup and configuration, but can be used without a fee. The Bren and NCEAS servers are configured with Shiny Server for hosting for some in-house apps.</p>
+[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Shiny server](https://posit.co/products/open-source/shinyserver/) is an open source server which you can deploy for free on your own hardware. It requires more setup and configuration, but can be used without a fee. The Bren and NCEAS servers are configured with Shiny Server for hosting for some in-house apps.
 
-<p class="body-text-s topbr">[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Posit connect](https://posit.co/products/enterprise/connect/) is a paid product that provides an advanced suite of services for hosting Shiny apps, Quarto and R Markdown reports, APIs, and more.</p>
+[{{< fa angle-right title="a bullet point" >}}]{.teal-text} [Posit connect](https://posit.co/products/enterprise/connect/) is a paid product that provides an advanced suite of services for hosting Shiny apps, Quarto and R Markdown reports, APIs, and more.
 
 ---
 

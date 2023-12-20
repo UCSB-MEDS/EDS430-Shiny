@@ -9,6 +9,19 @@ format:
       - meds_styles.scss
 ---
 
+## {#banner data-menu-title="~~~ BANNER ~~~" background="#053660"} 
+
+<br>
+<br>
+
+[These EDS 430 (Intro to Shiny) materials are no longer maintained!]{.custom-title}
+
+[Please visit the new [course website](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/) if you're looking for the most up-to-date versions of these slides]{.custom-subtitle2}
+
+[Thank you {{< fa face-smile title="smiling face" >}}]{.custom-subtitle3}
+
+---
+
 ## {#title-slide data-menu-title="~~~ Title Slide ~~~" background="#053660"} 
 
 [EDS 430 - Intro to <img src="images/shiny_text.png" alt="The word 'Shiny' in cursive lettering, which is the logo used by Posit for the shiny package." style="display: inline-block; margin: 0; position: relative; top: 25px; width:130px;height:90px;"/>]{.custom-title}
@@ -246,7 +259,7 @@ countdown::countdown(
 
 <div class="page-center vertical-center">
 <p class="custom-subtitle bottombr">`r fontawesome::fa("mug-hot", fill = "#d2e3f3", a11y = "sem")` Break</p>
-<p class="caption-text">*Next, we'll finish up v1 of our app by adding some intro text to the landing page*</p>
+<p class="caption-text">*Next, we'll start building out a shiny dashboard!*</p>
 </div>
 
 ```{r}
@@ -416,5 +429,5 @@ knitr::include_graphics("images/sparkle.gif")
 ::: aside
 <center>This is a Quarto Presentation. To learn more, visit <https://quarto.org>.</center>
 
-<center><span style = 'font-size: 60%;'>*If you see mistakes or want to suggest changes, please create an [issue](https://github.com/UCSB-MEDS/customizing-quarto-websites/issues) on the source repository.*</span></center>
+<center><span style = 'font-size: 60%;'>*If you see mistakes or want to suggest changes, please create an [issue](https://github.com/UCSB-MEDS/EDS430-Shiny/issues) on the source repository.*</span></center>
 :::
