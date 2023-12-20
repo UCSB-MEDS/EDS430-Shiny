@@ -1,3 +1,5 @@
+# UPDATE 2023-12-20: Materials for EDS 430 (Intro to Shiny) have been moved to their own [course website](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/) (see [new repo](https://github.com/UCSB-MEDS/EDS-430-Intro-to-Shiny)). MATERIALS HERE ARE NO LONGER MAINTAINED!
+
 ## EDS 430 - Intro to Shiny
 
 **Taught by:** [@samanthacsik](https://github.com/samanthacsik)\
