@@ -16,7 +16,7 @@ format:
 
 [These EDS 430 (Intro to Shiny) materials are no longer maintained!]{.custom-title}
 
-[Please visit the new [course website](https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/) if you're looking for the most up-to-date versions of these slides]{.custom-subtitle2}
+[Please visit the new [course website](https://ucsb-meds.github.io/EDS-296-Intro-to-Shiny/) if you're looking for the most up-to-date versions of these slides]{.custom-subtitle2}
 
 [Thank you {{< fa face-smile title="smiling face" >}}]{.custom-subtitle3}
 

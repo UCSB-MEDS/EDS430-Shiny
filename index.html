@@ -388,10 +388,10 @@
     }
   </style>
 <link href="index_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-<script src="index_files/libs/countdown-0.4.0/countdown.js"></script><script src="index_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="index_files/libs/jquery-1.12.4/jquery.min.js"></script><link href="index_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="index_files/libs/countdown-0.4.0/countdown.js"></script><script src="index_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script><script src="index_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="index_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
 <script src="index_files/libs/leaflet-1.3.1/leaflet.js"></script><link href="index_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
 <script src="index_files/libs/proj4-2.6.2/proj4.min.js"></script><script src="index_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script><link href="index_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="index_files/libs/leaflet-binding-2.1.2/leaflet.js"></script><script src="index_files/libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script><script src="index_files/libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script><link href="index_files/libs/leaflet-minimap-3.3.1/Control.MiniMap.min.css" rel="stylesheet">
+<script src="index_files/libs/leaflet-binding-2.2.1/leaflet.js"></script><script src="index_files/libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script><script src="index_files/libs/leaflet-providers-plugin-2.2.1/leaflet-providers-plugin.js"></script><link href="index_files/libs/leaflet-minimap-3.3.1/Control.MiniMap.min.css" rel="stylesheet">
 <script src="index_files/libs/leaflet-minimap-3.3.1/Control.MiniMap.min.js"></script><script src="index_files/libs/leaflet-minimap-3.3.1/Minimap-binding.js"></script>
 </head>
 <body class="quarto-light">
@@ -402,7 +402,7 @@
 <section id="title-slide" class="slide level2 center" data-menu-title="~~~ Title Slide ~~~" data-background="#053660"><h2></h2>
 <p><br><br></p>
 <p><span class="custom-title">These EDS 430 (Intro to Shiny) materials are no longer maintained!</span></p>
-<p><span class="custom-subtitle2">Please visit the new <a href="https://ucsb-meds.github.io/EDS-430-Intro-to-Shiny/">course website</a> if you’re looking for the most up-to-date versions of these slides</span></p>
+<p><span class="custom-subtitle2">Please visit the new <a href="https://ucsb-meds.github.io/EDS-296-Intro-to-Shiny/">course website</a> if you’re looking for the most up-to-date versions of these slides</span></p>
 <p><span class="custom-subtitle3">Thank you <i class="fa-solid fa-face-smile" title="smiling face" aria-label="face-smile"></i></span></p>
 </section><section id="title-slide2" class="slide level2" data-menu-title="~~~ Title Slide (OLD) ~~~" data-background="#053660"><h2></h2>
 <p><span class="custom-title">EDS 430 - Intro to <img src="images/shiny_text.png" alt="The word 'Shiny' in cursive lettering, which is the logo used by Posit for the shiny package." style="display: inline-block; margin: 0; position: relative; top: 25px; width:130px;height:90px;"></span></p>
@@ -411,7 +411,7 @@
 <div class="column" style="width:50%;">
 <p><span class="body-text baby-blue-text"><strong>Published:</strong> Oct 10, 2022</span></p>
 </div><div class="column" style="width:50%;">
-<p><span class="body-text baby-blue-text"><strong>Last updated:</strong> Jan 23, 2024</span></p>
+<p><span class="body-text baby-blue-text"><strong>Last updated:</strong> Jul 05, 2024</span></p>
 </div>
 </div>
 <hr class="hr-teal">
@@ -569,7 +569,7 @@ Shiny apps are composed in <em>two</em> parts: (1) a <strong>web page</strong> t
 </p>
 
 <img data-src="images/basic_shiny_app.png" style="width:80.0%" alt="A simple schematic of a Shiny app, which includes the User Interface (UI, colored in blue) and the Server (colored in orange). The UI creates what the user will see and interact with, while the server builds the outputs that react and update based on user inputs." class="r-stretch quarto-figure-center"><p class="body-text bottombr">
-The <strong>UI</strong> controls the <strong>layout and appearance</strong> of your app and is written in HTML (except we use functions from the <a href="https://shiny.rstudio.com/">shiny</a> package to write that HTML). The <strong>server</strong> handles the <strong>logic</strong> of the app – in other words, it is a set of instructions that tells the webpage what to display when a user interacts with it.
+The <strong>UI</strong> controls the <strong>layout and appearance</strong> of your app and is written in HTML (except we use functions from the <a href="https://shiny.posit.co/">shiny</a> package to write that HTML). The <strong>server</strong> handles the <strong>logic</strong> of the app – in other words, it is a set of instructions that tells the webpage what to display when a user interacts with it.
 </p>
 </section><section id="widgets" class="slide level2" data-menu-title="Widgets"><h2></h2>
 <p><span class="slide-title2">Widgets are web elements that users can interact with via the UI</span></p>
@@ -898,7 +898,7 @@ Packages introduced:
 </div>
 <div class="fragment">
 <p class="body-text-s">
-<span class="teal-text"><i class="fa-solid fa-box-open" title="an open box" aria-label="box-open"></i></span> <a href="https://shiny.rstudio.com/">shiny</a>: framework for building our reactive app + standard widgets
+<span class="teal-text"><i class="fa-solid fa-box-open" title="an open box" aria-label="box-open"></i></span> <a href="https://shiny.posit.co/">shiny</a>: framework for building our reactive app + standard widgets
 </p>
 </div>
 <div class="fragment">
@@ -1759,7 +1759,7 @@ See next slide for some tips on getting started!
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Use <code>?checkboxGroupInput</code> to learn more about which arguments you need (remember, all inputs require an <code>inputId</code> and oftentimes a <code>label</code>, but there are others required to make this work as well)
 </p>
 <p class="body-text-s">
-<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Both <a href="https://shiny.rstudio.com/">shiny</a> and <a href="https://github.com/rstudio/DT">DT</a> packages have functions named <code>dataTableOutput()</code> and <code>renderDataTable()</code> – <code><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">DT::renderDataTable()</a></code> allows you to create both server-side and client-side DataTables and supports additional DataTables features while <code><a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html">shiny::renderDataTable()</a></code> only provides server-side DataTables. Be sure to use the one from the <a href="https://github.com/rstudio/DT">DT</a> package using the syntax <code>packageName::functionName()</code>.
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> Both <a href="https://shiny.posit.co/">shiny</a> and <a href="https://github.com/rstudio/DT">DT</a> packages have functions named <code>dataTableOutput()</code> and <code>renderDataTable()</code> – <code><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">DT::renderDataTable()</a></code> allows you to create both server-side and client-side DataTables and supports additional DataTables features while <code><a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html">shiny::renderDataTable()</a></code> only provides server-side DataTables. Be sure to use the one from the <a href="https://github.com/rstudio/DT">DT</a> package using the syntax <code>packageName::functionName()</code>.
 </p>
 <p class="body-text-s bottombr">
 <span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> There are lots of ways to customize DT tables, but to create a basic one, all you need is <code>DT::dataTable(your_dataframe)</code>
@@ -1944,7 +1944,7 @@ It’s inevitable that you’ll make mistakes here and there as you build out yo
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_223692af" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_88d6d78f" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3013,7 +3013,7 @@ Return to your <strong>server</strong> to modify <code>trout_filtered_df</code> 
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5523e8ac" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_930a6c72" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -3299,7 +3299,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_faa9fef4" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_476d0bac" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4268,7 +4268,7 @@ Check out my deployed app at <a href="https://samanthacsik.shinyapps.io/two-file
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_788924ef" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_d3736a61" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -4607,8 +4607,8 @@ There are lots of ways to customize <code>leaflet</code> maps. We’ll be keepin
 <div id="tabset-7-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-31484b2be2d3da2e7d86" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-31484b2be2d3da2e7d86">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.09699999999999,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2db24ce72a5d34d6391d" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2db24ce72a5d34d6391d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.236,70.17,70.233,70.27,70.267,70.032,70.09699999999999,70.247,70.113,70.246],[-152.194,-152.186,-152.785,-151.339,-151.355,-151.387,-152.194,-152.074,-151.478,-152.077,-152.141],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: Hipbone <br> Elevation: 21 meters (above SL) <br> Avg Depth: 2 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius","Site Name: Iceshove <br> Elevation: 20.3 meters (above SL) <br> Avg Depth: 1.8 meters <br> Avg Lake Bed Temperature: 10.9 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius","Site Name: L9819 <br> Elevation: 8.2 meters (above SL) <br> Avg Depth: 1.7 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9820 <br> Elevation: 9.5 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 5.5 deg Celsius","Site Name: LittleAlaska <br> Elevation: 28.9 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 5.2 deg Celsius","Site Name: LowerSnowman <br> Elevation: 27.4 meters (above SL) <br> Avg Depth: 1.2 meters <br> Avg Lake Bed Temperature: 7.2 deg Celsius","Site Name: M9925 <br> Elevation: 14.7 meters (above SL) <br> Avg Depth: 0.9 meters <br> Avg Lake Bed Temperature: 7 deg Celsius","Site Name: MiddleSnowman <br> Elevation: 26.3 meters (above SL) <br> Avg Depth: 1.1 meters <br> Avg Lake Bed Temperature: 6.4 deg Celsius","Site Name: Serenity <br> Elevation: 12 meters (above SL) <br> Avg Depth: 3.9 meters <br> Avg Lake Bed Temperature: 10.7 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.27],"lng":[-152.785,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -4662,8 +4662,8 @@ We’ll eventually build three <code>sliderInput</code>s to filter lake makers b
 <div id="tabset-8-1">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-de6cf3c33290c33dc149" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-de6cf3c33290c33dc149">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-35d76aef4c1bb11fb6a0" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-35d76aef4c1bb11fb6a0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMiniMap","args":[null,null,"bottomright",150,150,19,19,-5,false,false,false,true,false,false,{"color":"#ff7800","weight":1,"clickable":false},{"color":"#000000","weight":1,"clickable":false,"opacity":0,"fillOpacity":0},{"hideText":"Hide MiniMap","showText":"Show MiniMap"},[]]},{"method":"addMarkers","args":[[70.032,70.233],[-152.194,-151.339],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Site Name: HarryPotter <br> Elevation: 12.3 meters (above SL) <br> Avg Depth: 2.3 meters <br> Avg Lake Bed Temperature: 5.6 deg Celsius","Site Name: L9817 <br> Elevation: 16.1 meters (above SL) <br> Avg Depth: 2.6 meters <br> Avg Lake Bed Temperature: 5.9 deg Celsius"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[70.249234,-152.048442],6,[]],"limits":{"lat":[70.032,70.233],"lng":[-152.194,-151.339]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -5440,7 +5440,7 @@ See next slide for a solution!
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b345b732" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_61b91b06" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -10013,7 +10013,7 @@ Shiny is awesome, but depending on your goals and end users, you may not need th
 
 <img data-src="images/shiny_alts.png" style="width:60.0%" alt="Logos for htmlwidgets, flexdashboard, and quarto." class="r-stretch quarto-figure-center"><div class="fragment">
 <p class="body-text-s topbr">
-<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> <strong>Embed interactive <a href="https://www.htmlwidgets.org/">htmlwidgets</a> into your R Markdown &amp; Quarto markdown documents</strong> that range from geo-spatial mapping with <a href="https://rstudio.github.io/leaflet/">leaflet</a> to generating network graph diagrams with <a href="https://github.com/rich-iannone/DiagrammeR">DiagrammeR</a>. Check out the <a href="http://gallery.htmlwidgets.org/">htmlwidgets for R - gallery</a> for many more options.
+<span class="teal-text"><i class="fa-solid fa-angle-right" title="a bullet point" aria-label="angle-right"></i></span> <strong>Embed interactive <a href="https://www.htmlwidgets.org/">htmlwidgets</a> into your R Markdown &amp; Quarto markdown documents</strong> that range from geo-spatial mapping with <a href="https://rstudio.github.io/leaflet/">leaflet</a> to generating network graph diagrams with <a href="https://rich-iannone.github.io/DiagrammeR/">DiagrammeR</a>. Check out the <a href="http://gallery.htmlwidgets.org/">htmlwidgets for R - gallery</a> for many more options.
 </p>
 </div>
 <div class="fragment">
